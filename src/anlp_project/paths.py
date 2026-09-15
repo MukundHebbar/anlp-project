@@ -13,6 +13,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 PROMPTS_DIR = DATA_DIR / "prompts"
 MANIFESTS_DIR = DATA_DIR / "manifests"
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
+LEGACY_ARCHIVE_DIR = PROJECT_ROOT / "local" / "archive" / "legacy"
 ENV_FILE = PROJECT_ROOT / ".env"
 
 

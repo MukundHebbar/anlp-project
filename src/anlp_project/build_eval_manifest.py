@@ -8,13 +8,13 @@ import random
 from pathlib import Path
 from typing import Any
 
-from .paths import MANIFESTS_DIR, PROJECT_ROOT
+from .paths import LEGACY_ARCHIVE_DIR, MANIFESTS_DIR, PROJECT_ROOT
 from .storage import atomic_write_json, read_json
 
 
 ROOT_DIR = PROJECT_ROOT
 DEFAULT_DATASET = ROOT_DIR / "data" / "datasets" / "deepmath-60k"
-DEFAULT_PILOT = ROOT_DIR / "data" / "legacy-inputs" / "deepmath-pilot-50.json"
+DEFAULT_PILOT = LEGACY_ARCHIVE_DIR / "inputs" / "deepmath-pilot-50.json"
 DEFAULT_OUTPUT = MANIFESTS_DIR / "deepmath" / "deepmath-pilot-146.json"
 DEFAULT_NEW_OUTPUT = MANIFESTS_DIR / "deepmath" / "deepmath-pilot-100-new.json"
 SEED = 42
@@ -232,8 +232,8 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         nargs="+",
         default=[
-            ROOT_DIR / "data" / "legacy-generated-solutions" / "deepmath-pilot-25-attempts-24-completed-deepseek-v4-flash-medium.json",
-            ROOT_DIR / "data" / "legacy-generated-solutions" / "deepmath-pilot-26-attempts-22-completed-deepseek-v4-flash-medium.json",
+            LEGACY_ARCHIVE_DIR / "generated" / "solutions" / "deepmath-pilot-25-attempts-24-completed-deepseek-v4-flash-medium.json",
+            LEGACY_ARCHIVE_DIR / "generated" / "solutions" / "deepmath-pilot-26-attempts-22-completed-deepseek-v4-flash-medium.json",
         ],
     )
     return parser.parse_args()

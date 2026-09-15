@@ -15,8 +15,8 @@ tools for DeepMath SOLVE and EXPLAIN tasks.
 
 The local DeepMath Arrow dataset, wheelhouse, virtual environment, API secrets,
 logs, and superseded runs are intentionally excluded from Git. Superseded files
-remain under ignored `data/legacy-*` or `local/archive/` directories when they
-are useful for historical reference.
+remain under the ignored `local/archive/legacy/` directory when they are useful
+for historical reference.
 
 ## Setup
 

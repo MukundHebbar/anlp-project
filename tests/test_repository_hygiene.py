@@ -22,6 +22,20 @@ class RepositoryHygieneTests(unittest.TestCase):
         self.assertFalse((ROOT / "main.py").exists())
         self.assertFalse((ROOT / "notebooks" / "qwen_explain_colab.ipynb").exists())
 
+    def test_current_solve_evidence_includes_deepseek_and_qwen(self):
+        summary = ROOT / "artifacts" / "solve-evaluation-summary.md"
+        self.assertTrue(summary.is_file())
+        contents = summary.read_text(encoding="utf-8")
+        for relative in (
+            "deepseek-v4-flash/solve/146/results.json",
+            "deepseek-v4-flash/solve/146/report.txt",
+            "qwen3-4b/solve/113/results.json",
+            "qwen3-4b/solve/113/report.txt",
+        ):
+            with self.subTest(path=relative):
+                self.assertTrue((ROOT / "artifacts" / relative).is_file())
+                self.assertIn(relative, contents)
+
     def test_package_is_importable(self):
         import anlp_project
         from anlp_project.paths import PROJECT_ROOT

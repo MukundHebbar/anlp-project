@@ -10,9 +10,10 @@ from anlp_project.storage import atomic_write_json, read_json
 
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
+LEGACY_GENERATED_DIR = ROOT_DIR / "local" / "archive" / "legacy" / "generated"
 DEFAULT_INPUTS = [
-    ROOT_DIR / "data" / "legacy-generated-explanations" / "deepmath-pilot-24-completed-deepseek-v4-flash-medium-explain-23-valid.json",
-    ROOT_DIR / "data" / "legacy-generated-explanations" / "deepmath-pilot-22-completed-deepseek-v4-flash-medium-explain-22-valid.json",
+    LEGACY_GENERATED_DIR / "explanations" / "deepmath-pilot-24-completed-deepseek-v4-flash-medium-explain-23-valid.json",
+    LEGACY_GENERATED_DIR / "explanations" / "deepmath-pilot-22-completed-deepseek-v4-flash-medium-explain-22-valid.json",
 ]
 DEFAULT_OUTPUT = ROOT_DIR / "local" / "archive" / "deepmath-pilot-46-completed-deepseek-v4-flash-medium-explain-45-valid.json"
 
