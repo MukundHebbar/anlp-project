@@ -49,6 +49,14 @@ def verify_qwen_results(input_path: Path, output_path: Path) -> dict[str, Any]:
     method_counts = Counter(record["verification_method"] for record in verified)
     reason_counts = Counter(record["verification_reason"] for record in verified if record.get("verification_reason"))
     parseable = status_counts["correct"] + status_counts["incorrect"]
+    input_metadata = raw.get("metadata", {})
+    if not isinstance(input_metadata, dict):
+        input_metadata = {}
+    # Allow a prior verifier-v2 artifact to be re-scored without losing the
+    # original generation provenance in the new report.
+    raw_metadata = input_metadata.get("raw_metadata", input_metadata)
+    if not isinstance(raw_metadata, dict):
+        raw_metadata = {}
     metadata = {
         "schema": "qwen3_4b_solve_verification_v2",
         "raw_results": str(input_path),
@@ -62,7 +70,7 @@ def verify_qwen_results(input_path: Path, output_path: Path) -> dict[str, Any]:
         "generation_failure_count": sum(
             record.get("status") != "completed" for record in verified
         ),
-        "raw_metadata": raw.get("metadata", {}),
+        "raw_metadata": raw_metadata,
     }
     output = {"metadata": metadata, "results": verified}
     atomic_write_json(output_path, output)
