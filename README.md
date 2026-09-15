@@ -10,13 +10,16 @@ tools for DeepMath SOLVE and EXPLAIN tasks.
 - `data/manifests/` — tracked problem manifests and evaluation subsets.
 - `data/prompts/` — versioned SOLVE, EXPLAIN, and PLAN prompts.
 - `artifacts/` — curated model outputs, reports, and evaluation evidence.
-- `docs/` — experiment design, dataset notes, and Turing guidance.
+- `docs/` — tracked experiment design and dataset notes.
 - `tests/` — deterministic unit tests.
 
 The local DeepMath Arrow dataset, wheelhouse, virtual environment, API secrets,
 logs, and superseded runs are intentionally excluded from Git. Superseded files
 remain under the ignored `local/archive/legacy/` directory when they are useful
 for historical reference.
+
+`docs/guides/turing.md` is a local operational guide and is intentionally
+ignored. It is not required to install, test, or inspect the repository.
 
 ## Setup
 
@@ -47,12 +50,28 @@ uv run scripts/run_qwen.py --help
 uv run scripts/verify_qwen.py --help
 ```
 
+Run any command with `--help` before a new experiment to inspect its required
+inputs and defaults. Generation commands require `DEEPINFRA_API_KEY`; local
+verification commands do not make provider requests.
+
 For Turing execution, use the shell wrappers in `scripts/` after syncing this
 repository to the user-owned project path. They run the package from `src/` and
 keep model environments and GPU caches on the configured scratch partition.
 
-The Colab notebook workflow is currently archived and intentionally not part of
-the repository baseline.
+The Colab notebook workflow is archived and intentionally not part of the
+repository baseline.
+
+## Current evaluation evidence
+
+The retained SOLVE results and their non-identical evaluation denominators are
+summarized in [artifacts/solve-evaluation-summary.md](artifacts/solve-evaluation-summary.md).
+
+- DeepSeek V4 Flash SOLVE: full 146-problem manifest, verifier-v2 results and
+  report under `artifacts/deepseek-v4-flash/solve/146/`.
+- DeepSeek V4 Flash EXPLAIN-v2: retained generation artifacts under
+  `artifacts/deepseek-v4-flash/explain/v2-113/`.
+- Qwen3-4B SOLVE: 113-problem subset, independently scored only against
+  dataset gold answers under `artifacts/qwen3-4b/solve/113/`.
 
 ## Reproducibility policy
 

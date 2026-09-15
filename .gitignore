@@ -23,6 +23,7 @@ logs/
 slurm-*.out
 slurm-*.err
 data/legacy-*/
+docs/guides/turing.md
 
 .env
 **/.env

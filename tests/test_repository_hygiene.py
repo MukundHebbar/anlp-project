@@ -8,7 +8,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class RepositoryHygieneTests(unittest.TestCase):
     def test_local_only_paths_are_ignored(self):
-        paths = (".env", ".venv", "wheelhouse", "data/datasets", "local/archive", "logs/")
+        paths = (
+            ".env",
+            ".venv",
+            "wheelhouse",
+            "data/datasets",
+            "local/archive",
+            "logs/",
+            "docs/guides/turing.md",
+        )
         for relative in paths:
             with self.subTest(path=relative):
                 result = subprocess.run(
