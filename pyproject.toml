@@ -1,0 +1,25 @@
+[project]
+name = "anlp-project"
+version = "0.1.0"
+description = "Reproducible mathematical reasoning generation and evaluation tools"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "sympy>=1.14.0",
+]
+
+[project.optional-dependencies]
+data = ["datasets>=5.0.1"]
+notebooks = ["matplotlib>=3.8.0", "notebook>=7.6.2"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.unittest]
+start-directory = "tests"

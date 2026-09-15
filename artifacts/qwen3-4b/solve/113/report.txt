@@ -1,0 +1,181 @@
+Qwen3-4B local deterministic SOLVE verification
+Records: 113
+Model: Qwen/Qwen3-4B
+Slurm job: 31244
+Node: node11
+GPU: NVIDIA L40S
+Generation failures: 0
+Correct: 62
+Incorrect: 33
+Missing: 3
+Unverified: 15
+Strict accuracy: 0.5487
+Parseable accuracy: 0.6526315789473685
+Verification coverage: 0.8407
+
+Verification methods
+  leading_boolean: 6
+  leading_choice: 3
+  no_safe_equivalence_rule: 15
+  none: 3
+  normalized_exact: 48
+  rational_arithmetic: 34
+  sympy_symbolic_equivalence: 2
+  sympy_symbolic_non_equivalence: 2
+
+Verification reasons
+  conflicting_boolean: 2
+  conflicting_choice: 1
+  no_extractable_answer: 3
+  non_equal_supported_expressions: 2
+  unequal_numeric_values: 28
+  unsupported_symbolic_or_explanatory_text: 13
+  unsupported_symbolic_or_semantic_form: 2
+
+By topic:
+  Mathematics -> Algebra -> Algebra -> Algebraic Expressions: 1/2 strict=0.5000
+  Mathematics -> Algebra -> Algebra -> Equations and Inequalities: 2/4 strict=0.5000
+  Mathematics -> Algebra -> Algebra -> Polynomial Operations: 3/5 strict=0.6000
+  Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers: 3/5 strict=0.6000
+  Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions: 1/3 strict=0.3333
+  Mathematics -> Algebra -> Intermediate Algebra -> Other: 1/4 strict=0.2500
+  Mathematics -> Algebra -> Intermediate Algebra -> Quadratic Functions: 1/1 strict=1.0000
+  Mathematics -> Algebra -> Linear Algebra -> Linear Transformations: 1/2 strict=0.5000
+  Mathematics -> Algebra -> Linear Algebra -> Matrices: 2/3 strict=0.6667
+  Mathematics -> Algebra -> Other: 0/1 strict=0.0000
+  Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives: 3/7 strict=0.4286
+  Mathematics -> Calculus -> Differential Calculus -> Derivatives: 4/4 strict=1.0000
+  Mathematics -> Calculus -> Differential Calculus -> Other: 1/1 strict=1.0000
+  Mathematics -> Calculus -> Integral Calculus -> Applications of Integrals: 1/2 strict=0.5000
+  Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable: 3/5 strict=0.6000
+  Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable: 7/7 strict=1.0000
+  Mathematics -> Discrete Mathematics -> Algorithms: 1/2 strict=0.5000
+  Mathematics -> Discrete Mathematics -> Combinatorics: 8/20 strict=0.4000
+  Mathematics -> Discrete Mathematics -> Graph Theory: 2/2 strict=1.0000
+  Mathematics -> Discrete Mathematics -> Logic: 1/2 strict=0.5000
+  Mathematics -> Discrete Mathematics -> Other: 0/1 strict=0.0000
+  Mathematics -> Number Theory -> Congruences: 5/12 strict=0.4167
+  Mathematics -> Number Theory -> Divisibility: 1/1 strict=1.0000
+  Mathematics -> Number Theory -> Factorization: 4/7 strict=0.5714
+  Mathematics -> Number Theory -> Greatest Common Divisors (GCD): 0/1 strict=0.0000
+  Mathematics -> Number Theory -> Least Common Multiples (LCM): 0/1 strict=0.0000
+  Mathematics -> Number Theory -> Other: 1/1 strict=1.0000
+  Mathematics -> Number Theory -> Prime Numbers: 5/7 strict=0.7143
+By difficulty:
+  5.0-6.5: 49/93 strict=0.5269
+  7.0-8.0: 13/20 strict=0.6500
+
+Per-problem results
+0	pilot-0	correct	normalized_exact	None	gold='4'	extracted='4'
+1	pilot-1	correct	normalized_exact	None	gold='1'	extracted='1'
+3	pilot-3	incorrect	rational_arithmetic	unequal_numeric_values	gold='40'	extracted='16'
+5	pilot-5	missing	none	no_extractable_answer	gold='100! \\left( H_{100} - H_{50} \\right)'	extracted=None
+7	pilot-7	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='3'	extracted='\\frac{2}{2k + 1} + 1'
+8	pilot-8	correct	normalized_exact	None	gold='1'	extracted='1'
+10	pilot-10	incorrect	rational_arithmetic	unequal_numeric_values	gold='27'	extracted='37'
+11	pilot-11	correct	normalized_exact	None	gold='4'	extracted='4'
+12	pilot-12	correct	normalized_exact	None	gold='0'	extracted='0'
+13	pilot-13	incorrect	rational_arithmetic	unequal_numeric_values	gold='1'	extracted='11'
+16	pilot-16	incorrect	rational_arithmetic	unequal_numeric_values	gold='98'	extracted='126'
+17	pilot-17	incorrect	leading_choice	conflicting_choice	gold='B'	extracted='D. ka_1 = a_0'
+18	pilot-18	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='O(1)'	extracted='O(m log m)'
+20	pilot-20	incorrect	rational_arithmetic	unequal_numeric_values	gold='-4'	extracted='-\\frac{1}{2}'
+21	pilot-21	correct	normalized_exact	None	gold='2^{m-1}'	extracted='2^{m-1}'
+22	pilot-22	incorrect	rational_arithmetic	unequal_numeric_values	gold='11'	extracted='13'
+24	pilot-24	incorrect	rational_arithmetic	unequal_numeric_values	gold='4021'	extracted='3'
+27	pilot-27	incorrect	rational_arithmetic	unequal_numeric_values	gold='60'	extracted='90'
+28	pilot-28	correct	normalized_exact	None	gold='(0, \\infty)'	extracted='(0, \\infty)'
+29	pilot-29	correct	leading_boolean	None	gold='Yes'	extracted='Yes, there exists a composite number $ m $ such that for every integer $ n $, the congruence $ n^m \\equiv n \\pmod{m} $ holds true. One such example is $ m = 561 $.'
+30	pilot-30	incorrect	rational_arithmetic	unequal_numeric_values	gold='2'	extracted='3'
+31	pilot-31	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\dfrac{1}{n!}'	extracted='1/n!'
+32	pilot-32	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\aleph_0'	extracted='ℵ₀'
+33	pilot-33	correct	normalized_exact	None	gold='Yes'	extracted='yes'
+34	pilot-34	correct	normalized_exact	None	gold='71040'	extracted='71040'
+35	pilot-35	correct	normalized_exact	None	gold='Yes'	extracted='yes'
+36	pilot-36	incorrect	rational_arithmetic	unequal_numeric_values	gold='6'	extracted='13'
+38	pilot-38	correct	normalized_exact	None	gold='2^n - 1'	extracted='2^n - 1'
+39	pilot-39	incorrect	rational_arithmetic	unequal_numeric_values	gold='343'	extracted='743'
+40	pilot-40	incorrect	rational_arithmetic	unequal_numeric_values	gold='11'	extracted='121'
+41	pilot-41	correct	rational_arithmetic	None	gold='\\dfrac{3}{2}'	extracted='3/2'
+42	pilot-42	correct	normalized_exact	None	gold='0'	extracted='0'
+45	pilot-45	correct	normalized_exact	None	gold='181'	extracted='181'
+46	pilot-46	correct	normalized_exact	None	gold='560'	extracted='560'
+47	pilot-47	incorrect	rational_arithmetic	unequal_numeric_values	gold='12'	extracted='28'
+49	pilot-49	incorrect	rational_arithmetic	unequal_numeric_values	gold='1'	extracted='0'
+50	deepmath-row-71516-0d3af46aa0f2	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_semantic_form	gold='\\sqrt{3}'	extracted='√3'
+51	deepmath-row-6207-55c3f5b8fbbd	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='L \\equiv 0'	extracted='L ≡ 0'
+52	deepmath-row-10961-2f44427ebe0b	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='-2'	extracted='\\frac{3 \\pm \\sqrt{17}}{2}'
+53	deepmath-row-89534-f2d94f76aaad	correct	normalized_exact	None	gold='20'	extracted='20'
+54	deepmath-row-12880-25b4bdec8b33	incorrect	rational_arithmetic	unequal_numeric_values	gold='\\dfrac{1}{99}'	extracted='1/100'
+55	deepmath-row-60123-db26d81fee85	correct	leading_choice	None	gold='D'	extracted='D) $ a = b = c $'
+56	deepmath-row-50067-d3bc4300202b	incorrect	rational_arithmetic	unequal_numeric_values	gold='2'	extracted='1'
+57	deepmath-row-4226-4ab54c1b52ba	incorrect	rational_arithmetic	unequal_numeric_values	gold='2'	extracted='3'
+58	deepmath-row-64840-d42e7955a364	correct	normalized_exact	None	gold='0'	extracted='0'
+59	deepmath-row-21531-6b1a33b12929	correct	leading_choice	None	gold='D'	extracted='(d) Both an essential singularity and poles.'
+60	deepmath-row-79464-2d62ae819524	correct	normalized_exact	None	gold='9'	extracted='9'
+61	deepmath-row-47708-1a00135ac334	correct	rational_arithmetic	None	gold='\\dfrac{4}{3}'	extracted='4/3'
+62	deepmath-row-53202-60da07f01270	correct	normalized_exact	None	gold='\\infty'	extracted='∞'
+63	deepmath-row-33653-b20ae1e85537	incorrect	rational_arithmetic	unequal_numeric_values	gold='1'	extracted='1/2'
+65	deepmath-row-60456-f23a8f9742ea	incorrect	leading_boolean	conflicting_boolean	gold='Yes'	extracted='no'
+66	deepmath-row-90822-7fb99f636224	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='a_n = 9^n'	extracted='a_n = \n\\begin{cases} \na_1, & n = 1 \\\\\na_1 r^2, & n \\text{ even} \\\\\na_1^2 r^2, & n \\text{ odd and } n \\geq 3\n\\end{cases}'
+67	deepmath-row-24257-507c5bbe874b	correct	normalized_exact	None	gold='1'	extracted='1'
+68	deepmath-row-38144-d81addc18851	correct	normalized_exact	None	gold='0'	extracted='0'
+69	deepmath-row-6590-3cb7b6c045dc	correct	normalized_exact	None	gold='1'	extracted='1'
+71	deepmath-row-17753-1b2f6822ed49	correct	normalized_exact	None	gold='No'	extracted='No'
+72	deepmath-row-90146-51d1c4adf7d7	correct	normalized_exact	None	gold='2006'	extracted='2006'
+73	deepmath-row-79783-97304cabf626	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='a_n - 2'	extracted='a_n - a_0'
+76	deepmath-row-20390-75bb5a1cc37d	incorrect	sympy_symbolic_non_equivalence	non_equal_supported_expressions	gold='\\pi'	extracted='-\\pi'
+77	deepmath-row-94174-873f9d6e8cbf	correct	rational_arithmetic	None	gold='\\dfrac{1}{2}'	extracted='1/2'
+78	deepmath-row-38327-be0305f977f5	correct	normalized_exact	None	gold='-1'	extracted='-1'
+79	deepmath-row-60332-ce40c80546d2	correct	normalized_exact	None	gold='1'	extracted='1'
+80	deepmath-row-69011-98b5ecb82497	correct	normalized_exact	None	gold='0'	extracted='0'
+82	deepmath-row-57899-f543edd9c677	correct	rational_arithmetic	None	gold='\\dfrac{1}{2}'	extracted='1/2'
+83	deepmath-row-5889-40d22836c0e2	missing	none	no_extractable_answer	gold='1'	extracted=None
+85	deepmath-row-79180-cbfa24ce0c92	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='(9e^2, \\infty)'	extracted='0 < a < 9e^2'
+86	deepmath-row-82787-17012ac533a8	correct	normalized_exact	None	gold='a'	extracted='a'
+87	deepmath-row-52361-c3fc42fcb804	correct	normalized_exact	None	gold='No'	extracted='No'
+93	deepmath-row-38978-63c7a2c1005f	correct	rational_arithmetic	None	gold='\\dfrac{1}{2}'	extracted='1/2'
+94	deepmath-row-59803-a5931492d6e8	correct	normalized_exact	None	gold='\\dfrac{\\pi}{4}'	extracted='\\frac{\\pi}{4}'
+95	deepmath-row-3918-516fc78ca0c4	correct	normalized_exact	None	gold='0'	extracted='0'
+96	deepmath-row-76751-6e239f7c8db2	correct	rational_arithmetic	None	gold='\\dfrac{1}{12}'	extracted='1/12'
+97	deepmath-row-26138-f835dabf2712	correct	sympy_symbolic_equivalence	None	gold='l^2(\\mathbb{N})'	extracted='$ \\overline{l^1(\\mathbb{N})} = l^2(\\mathbb{N}) $'
+99	deepmath-row-51044-24c79c144221	correct	normalized_exact	None	gold='\\dfrac{\\pi}{4}'	extracted='$$ \\frac{\\pi}{4} $$'
+100	deepmath-row-79428-398177b2f61e	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='Yes'	extracted='f(x) = 0 at all points where f is continuous'
+101	deepmath-row-73155-b6fee4f6ae36	correct	normalized_exact	None	gold='e^x - x^2 - 1'	extracted='e^x - x^2 - 1'
+103	deepmath-row-23379-982c30a4f064	correct	normalized_exact	None	gold='1'	extracted='1'
+105	deepmath-row-71064-cc4f796cdfaf	incorrect	rational_arithmetic	unequal_numeric_values	gold='4'	extracted='0'
+107	deepmath-row-85998-6e0e35a3d0a1	correct	normalized_exact	None	gold='Jill'	extracted='Jill'
+108	deepmath-row-31068-309934ec4069	incorrect	sympy_symbolic_non_equivalence	non_equal_supported_expressions	gold='ab'	extracted='ab - 1'
+109	deepmath-row-30515-a9973db2527f	correct	normalized_exact	None	gold='1'	extracted='1'
+110	deepmath-row-54096-026cb3807bd2	incorrect	rational_arithmetic	unequal_numeric_values	gold='7'	extracted='2'
+111	deepmath-row-59184-afab0767707b	incorrect	rational_arithmetic	unequal_numeric_values	gold='4032066'	extracted='-2007'
+112	deepmath-row-97042-e1340127f53a	correct	normalized_exact	None	gold='-1011'	extracted='-1011'
+113	deepmath-row-58287-3a1d53d15e84	correct	sympy_symbolic_equivalence	None	gold='\\dfrac{1}{e}'	extracted='1/e'
+114	deepmath-row-16162-c793e1272a3d	correct	normalized_exact	None	gold='1'	extracted='1'
+115	deepmath-row-90747-cc0e48eb2cef	incorrect	rational_arithmetic	unequal_numeric_values	gold='8568'	extracted='1194168'
+117	deepmath-row-67328-2dd7ababc933	correct	leading_boolean	None	gold='No'	extracted='No, $ a $ and $ b $ cannot have a common factor greater than 1.'
+118	deepmath-row-41575-9f417c8b5a44	correct	normalized_exact	None	gold='5'	extracted='5'
+119	deepmath-row-50798-efeeb335ab53	correct	normalized_exact	None	gold='101'	extracted='101'
+120	deepmath-row-56921-e4904e86e16f	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='No'	extracted='7 cannot be the smallest prime factor of a repunit.'
+121	deepmath-row-57758-2bdb4590d36d	correct	normalized_exact	None	gold='7'	extracted='7'
+122	deepmath-row-89814-04e161f1428c	correct	normalized_exact	None	gold='(2, 2)'	extracted='(2, 2)'
+123	deepmath-row-25666-a1b3626fef17	correct	leading_boolean	None	gold='Yes'	extracted='Yes, there exists an infinite sequence of natural numbers such that any finite partial sum of this sequence is not a perfect power.'
+124	deepmath-row-36891-177b02b58dcf	correct	normalized_exact	None	gold='87'	extracted='87'
+125	deepmath-row-15434-b6e7c0d77e16	missing	none	no_extractable_answer	gold='27720'	extracted=None
+126	deepmath-row-80818-d0c9818b0be0	correct	normalized_exact	None	gold='0'	extracted='0'
+128	deepmath-row-91326-29e9c91a4e54	incorrect	rational_arithmetic	unequal_numeric_values	gold='3540'	extracted='3294'
+129	deepmath-row-92565-049d9e1aa615	incorrect	rational_arithmetic	unequal_numeric_values	gold='1392'	extracted='671'
+130	deepmath-row-76504-69e26d0a66bc	correct	leading_boolean	None	gold='Yes'	extracted='Yes, the set $ \\pi_{2}^{-1} ( [-1,1]) $ is compact.'
+131	deepmath-row-74921-c0cbeb238b52	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\aleph_0'	extracted='ℵ₀'
+132	deepmath-row-72365-7cc7e6e04212	incorrect	rational_arithmetic	unequal_numeric_values	gold='13'	extracted='15'
+134	deepmath-row-90990-ff9c37d07988	correct	normalized_exact	None	gold='8'	extracted='8'
+135	deepmath-row-47174-ee6be2a217e6	correct	normalized_exact	None	gold='k'	extracted='k'
+136	deepmath-row-91799-03d3156fb2d8	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_semantic_form	gold='A'	extracted='1987'
+137	deepmath-row-80293-2c04d55796e6	correct	normalized_exact	None	gold='6'	extracted='6'
+139	deepmath-row-51063-a209440fb64f	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='Yes'	extracted='Dense'
+140	deepmath-row-85763-23dc614ac8fe	incorrect	leading_boolean	conflicting_boolean	gold='No'	extracted='Yes'
+141	deepmath-row-79019-9bcd85bb8678	correct	normalized_exact	None	gold='204'	extracted='204'
+143	deepmath-row-89166-4f8172e30d63	incorrect	rational_arithmetic	unequal_numeric_values	gold='13'	extracted='0'
+144	deepmath-row-91996-deb60e4d96a5	correct	normalized_exact	None	gold='3'	extracted='3'
+145	deepmath-row-7341-165feaad79ba	incorrect	rational_arithmetic	unequal_numeric_values	gold='2'	extracted='3'
+146	deepmath-row-79369-86a7087e6914	incorrect	rational_arithmetic	unequal_numeric_values	gold='499'	extracted='0'

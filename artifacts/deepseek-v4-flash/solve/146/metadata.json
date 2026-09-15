@@ -1,0 +1,11 @@
+{
+  "provider": "DeepInfra",
+  "model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "task": "SOLVE",
+  "reasoning_effort": "medium",
+  "manifest": "data/manifests/deepmath/deepmath-pilot-146.json",
+  "result": "results.json",
+  "report": "report.txt",
+  "verification": "deterministic verifier v2",
+  "artifact_status": "curated final evidence"
+}

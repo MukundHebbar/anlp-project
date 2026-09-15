@@ -1,0 +1,917 @@
+{
+  "dataset": null,
+  "sample_size": 113,
+  "metadata": {
+    "purpose": "qwen3_4b_solve_evaluation",
+    "selection": "answer_status=correct from DeepSeek verifier v2",
+    "source_verification": "data/generated/solutions/deepmath-pilot-146-verified-v2.json",
+    "gold_answers_used_only_for_local_post_generation_scoring": true,
+    "deepseek_solution_text_included": false
+  },
+  "problems": [
+    {
+      "source_index": 0,
+      "source_id": "pilot-0",
+      "question": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "final_answer": "4",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 1,
+      "source_id": "pilot-1",
+      "question": "Consider the sequence \\( a_1, a_2, a_3, \\ldots \\) defined by \\( \\frac{1}{a_{k+1}} = \\frac{1}{a_1} + \\frac{1}{a_2} + \\cdots + \\frac{1}{a_k} \\) for \\( k > 1 \\) with \\( a_1 = 2^{2009} \\). Find the value of \\( a_{2011} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 3,
+      "source_id": "pilot-3",
+      "question": "Determine the number of 6-tuples \\((a_1,a_2,a_3,a_4,a_5,a_6)\\) such that each element \\(a_i\\) is chosen from the set \\(\\{1,2,3,4\\}\\) and the expressions \\[ a_j^2 - a_j a_{j+1} + a_{j+1}^2 \\] for \\(j = 1, 2, 3, 4, 5, 6\\) (with \\(a_7 = a_1\\)) are all equal to each other.",
+      "final_answer": "40",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 5,
+      "source_id": "pilot-5",
+      "question": "How many permutations in the symmetric group $S_{100}$ contain at least one cycle of length 51 or more?",
+      "final_answer": "100! \\left( H_{100} - H_{50} \\right)",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 7,
+      "source_id": "pilot-7",
+      "question": "Let $A=\\{\\frac{(-1)^n+1}{n+1}+(-1)^n, n\\in\\mathbb{N}\\}$. It is given that $\\forall x\\in A, x\\in [-1,3]$. Find $x_{\\varepsilon}\\in A$ such that $\\forall\\varepsilon>0, 3-\\varepsilon< x_{\\varepsilon}\\leq 3$. Determine the value of $x_{\\varepsilon}$.",
+      "final_answer": "3",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 8,
+      "source_id": "pilot-8",
+      "question": "Let \\( a, b, \\) and \\( c \\) be real numbers such that \\( a + b + c = 0 \\). Find the value of the expression:\n\\[\nP = \\frac{a^2}{2a^2+bc} + \\frac{b^2}{2b^2+ca} + \\frac{c^2}{2c^2+ab}.\n\\]",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Algebra -> Algebraic Expressions",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 10,
+      "source_id": "pilot-10",
+      "question": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "final_answer": "27",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 11,
+      "source_id": "pilot-11",
+      "question": "Find all composite positive integers \\( n \\) such that if \\( 1 = d_1 < d_2 < \\ldots < d_k = n \\) are all the positive divisors of \\( n \\), then the ratios of the differences between consecutive divisors are \\( 1 : 2 : \\cdots : (k-1) \\).",
+      "final_answer": "4",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 7.5
+    },
+    {
+      "source_index": 12,
+      "source_id": "pilot-12",
+      "question": "Determine the number of distinct ways to completely cover a $10 \\times 10$ checkerboard using exactly 25 T-shaped tetrominoes.",
+      "final_answer": "0",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 13,
+      "source_id": "pilot-13",
+      "question": "Let $m$ be the product of all positive integers less than $4!$ which are invertible modulo $4!$. Find the remainder when $m$ is divided by $4!$.\n\n(Here $n!$ denotes $1\\times\\cdots\\times n$ for each positive integer $n$.)",
+      "final_answer": "1",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 16,
+      "source_id": "pilot-16",
+      "question": "Determine the number of integral points on the hyperbola \\(x^2 - y^2 = (2000)^2\\). An integral point is a point where both coordinates are integers.",
+      "final_answer": "98",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 17,
+      "source_id": "pilot-17",
+      "question": "Suppose $o_1, o_2, \\dots, o_n$ are $n$ objects, each colored with a single color. For each object $o_i$, let $c_i$ be the number of objects having the same color as $o_i$. Consider the monic polynomial with roots $-c_1, -c_2, \\dots, -c_n$:\n\\[ x^n + a_{n-1}x^{n-1} + \\dots + a_1x + a_0 \\]\nIf exactly $k$ colors are used, determine which of the following statements is always true:\n\nA. $k > a_0$\nB. $ka_0 = a_1$\nC. $k = a_{n-1}$\nD. $ka_1 = a_0$",
+      "final_answer": "B",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 18,
+      "source_id": "pilot-18",
+      "question": "Determine the time complexity of an algorithm that uses Stirling's approximation to compute the hyperfactorial function for large input values $m$.",
+      "final_answer": "O(1)",
+      "topic": "Mathematics -> Discrete Mathematics -> Algorithms",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 20,
+      "source_id": "pilot-20",
+      "question": "Let \\( x = e^{2ir\\pi/7} \\) where \\( r \\equiv 0, \\pm1, \\pm2, \\pm3 \\pmod{7} \\). Evaluate the sum: \n\\[ \\sum_{r=1}^6 \\frac{x^r}{1+x^{2r}} \\]",
+      "final_answer": "-4",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 7.5
+    },
+    {
+      "source_index": 21,
+      "source_id": "pilot-21",
+      "question": "Let $p$ be an odd prime of the form $p=2^m+1$, for some positive integer $m$. Let $g$ be a primitive root mod $p$ with $1 \\le g \\le p$. How many such $g$ are there?",
+      "final_answer": "2^{m-1}",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 22,
+      "source_id": "pilot-22",
+      "question": "Find the smallest prime number \\( p \\) such that the number of trailing zeros in \\( 100! \\) when expressed in base \\( p \\) is less than \\( p \\).",
+      "final_answer": "11",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 24,
+      "source_id": "pilot-24",
+      "question": "Let \\( a_{1}=1, a_{2}=2 \\) and for all \\( n \\geq 2 \\), \\[ a_{n+1}=\\frac{2 n}{n+1} a_{n}-\\frac{n-1}{n+1} a_{n-1}. \\] It is known that \\( a_{n} > 2 + \\frac{2009}{2010} \\) for all \\( n \\geq m \\), where \\( m \\) is a positive integer. Find the least value of \\( m \\).",
+      "final_answer": "4021",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 27,
+      "source_id": "pilot-27",
+      "question": "What is the least number of square roots needed to express \\(\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{100}\\) in the form \\(a+b\\sqrt{c}+d\\sqrt{e}+\\cdots\\) where \\(a,b,c,d,e,\\ldots\\) are all integers?",
+      "final_answer": "60",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 28,
+      "source_id": "pilot-28",
+      "question": "Determine the values of $a > 0$ for which the function \\( f(x; a) = -\\frac{a}{x} \\cos (1/x^a) + ax^{a-1} \\sin(x^{-a}) \\) is unbounded in a right neighborhood of $0$. Provide your answer as a set of values for $a$.",
+      "final_answer": "(0, \\infty)",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 7.5
+    },
+    {
+      "source_index": 29,
+      "source_id": "pilot-29",
+      "question": "Determine whether there exists a composite number $m$ such that for every integer $n$, the congruence $n^m \\equiv n \\pmod{m}$ holds true.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 30,
+      "source_id": "pilot-30",
+      "question": "Determine the order of the pole of the function \\( \\frac{\\mathrm{Log}(z)}{(z-1)^3} \\) at \\( z=1 \\).",
+      "final_answer": "2",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 31,
+      "source_id": "pilot-31",
+      "question": "Evaluate the integral \\( \\int_{0}^{1}\\int_{0}^{1-x_1}...\\int_{0}^{1-\\sum_{i=1}^{n-1}{x_i}}1 \\,dx_n\\,dx_{n-1}...\\,dx_1 \\) over the region defined by \\( \\sum_{i=1}^{n}{x_i}=1 \\). Determine the value of this integral in terms of \\( n \\).",
+      "final_answer": "\\dfrac{1}{n!}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 32,
+      "source_id": "pilot-32",
+      "question": "Determine the cardinality of the set of recursive subsets of the natural numbers.",
+      "final_answer": "\\aleph_0",
+      "topic": "Mathematics -> Discrete Mathematics -> Logic",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 33,
+      "source_id": "pilot-33",
+      "question": "For every pair of continuous functions $f,g:[0,1] \\rightarrow \\mathbb{R}$ such that \\(\\max\\{f(x):x \\in [0,1]\\} = \\max\\{g(x):x \\in [0,1]\\}\\), is there always a point $c \\in [0,1]$ such that $f(c) = g(c)$? Answer yes or no.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 34,
+      "source_id": "pilot-34",
+      "question": "Find the exact coefficient of \\(x^{12}\\) in the expansion of \\((2+x^3+x^6)^{10}\\).",
+      "final_answer": "71040",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 35,
+      "source_id": "pilot-35",
+      "question": "Does the existence of the derivative $f'(x)$ for all $x \\in \\mathbb{R}$ and the fact that $f'$ is bounded on $\\mathbb{R}$ imply that the function $f: \\mathbb{R} \\rightarrow \\mathbb{R}$ is uniformly continuous? Answer yes or no and justify your answer.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 36,
+      "source_id": "pilot-36",
+      "question": "For how many positive integers \\( m \\leq 25 \\) does there exist a positive integer \\( n \\) such that the number of positive divisors of \\( S_n = \\sum_{k=1}^n k^3 \\) is equal to \\( m \\)?",
+      "final_answer": "6",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 38,
+      "source_id": "pilot-38",
+      "question": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "final_answer": "2^n - 1",
+      "topic": "Mathematics -> Discrete Mathematics -> Algorithms",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 39,
+      "source_id": "pilot-39",
+      "question": "Given the sequence defined by $a_1 = 7$, $a_2 = 7^7$, $a_3 = 7^{7^7}$, and so on, find the remainder when $a_{1000}$ is divided by 1000.",
+      "final_answer": "343",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 40,
+      "source_id": "pilot-40",
+      "question": "Let $a$, $b$, $c$, and $d$ be distinct real numbers such that\\[\\begin{align*}\na &= \\sqrt{4 + \\sqrt{5 + a}}, \\\\\nb &= \\sqrt{4 - \\sqrt{5 + b}}, \\\\\nc &= \\sqrt{4 + \\sqrt{5 - c}}, \\\\\nd &= \\sqrt{4 - \\sqrt{5 - d}}.\\end{align*}\\]Compute the product $abcd$. Provide your answer as a single number.",
+      "final_answer": "11",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 41,
+      "source_id": "pilot-41",
+      "question": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "final_answer": "\\dfrac{3}{2}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 42,
+      "source_id": "pilot-42",
+      "question": "Evaluate the integral \\( \\oint \\dfrac{\\sin(z)}{z(z^2-4)} \\, dz \\) using Cauchy's integral formula, given that \\((z^2-4) = (z+2)(z-2)\\).",
+      "final_answer": "0",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 7.5
+    },
+    {
+      "source_index": 45,
+      "source_id": "pilot-45",
+      "question": "Calculate the total number of distinct points of intersection possible among 4 distinct parabolas, 5 distinct circles, and 3 distinct lines in the $x-y$ plane.",
+      "final_answer": "181",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 46,
+      "source_id": "pilot-46",
+      "question": "In a shooting match, eight clay targets are arranged in two hanging columns of three targets each and one column of two targets. A marksman is to break all the targets according to the following rules:\n1) The marksman first chooses a column from which a target is to be broken.\n2) The marksman must then break the lowest remaining target in the chosen column.\nIf the rules are followed, in how many different orders can the eight targets be broken?",
+      "final_answer": "560",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 47,
+      "source_id": "pilot-47",
+      "question": "Let $X = \\{1, 2, 3, 4, 5, 6, 7, 8, 9\\}$. Determine the maximum number of 3-element subsets $\\mathcal{C}$ of $X$ such that for any two subsets $A, B \\in \\mathcal{C}$, the intersection $A \\cap B$ has at most one element. What is the maximum cardinality of $\\mathcal{C}$?",
+      "final_answer": "12",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 49,
+      "source_id": "pilot-49",
+      "question": "Consider the recursive sequence defined by \\( a_{n+1} = -ta_n^2 + (t+1)a_n \\) with initial condition \\( a_0 \\in \\left(0, \\frac{1}{t} + 1\\right) \\) and parameter \\( t \\in (0,1] \\). Determine whether the limit \\( \\lim\\limits_{n\\to\\infty}a_n \\) exists for all such \\( t \\) and \\( a_0 \\), and if it does, find the limit.",
+      "final_answer": "1",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 50,
+      "source_id": "deepmath-row-71516-0d3af46aa0f2",
+      "question": "Find the minimum value of \\( \\frac{ab}{c} + \\frac{bc}{a} + \\frac{ca}{b} \\) given that \\( a^2 + b^2 + c^2 = 1 \\) and \\( a, b, c > 0 \\).",
+      "final_answer": "\\sqrt{3}",
+      "topic": "Mathematics -> Algebra -> Algebra -> Equations and Inequalities",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 51,
+      "source_id": "deepmath-row-6207-55c3f5b8fbbd",
+      "question": "Let \\( L: \\mathbb{R}^n \\to \\mathbb{R}^m \\) be a linear function. Prove that if \\( \\lim_{\\hat{h} \\to \\hat{0}} \\frac{\\|L(\\hat{h})\\|}{\\|\\hat{h}\\|} = 0 \\), then \\( L \\equiv 0 \\).",
+      "final_answer": "L \\equiv 0",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Linear Transformations",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 52,
+      "source_id": "deepmath-row-10961-2f44427ebe0b",
+      "question": "Solve the equation for real numbers: $$\\sqrt{x^{2}-x+2}+\\sqrt{2x^{2}+2x+3}=\\sqrt{2x^{2}-1}+\\sqrt{x^{2}-3x-2}.$$",
+      "final_answer": "-2",
+      "topic": "Mathematics -> Algebra -> Algebra -> Equations and Inequalities",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 53,
+      "source_id": "deepmath-row-89534-f2d94f76aaad",
+      "question": "Given that the area of the region enclosed by the parabola \\( y^2 = ax \\) (where \\( a > 0 \\)) and the line \\( x = 1 \\) is \\(\\frac{4}{3}\\), find the coefficient of the term \\( x^{-18} \\) in the expansion of the binomial \\(\\left(x + \\frac{a}{x}\\right)^{20}\\).",
+      "final_answer": "20",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 54,
+      "source_id": "deepmath-row-12880-25b4bdec8b33",
+      "question": "Let \\( \\omega \\) and \\( z \\) be complex numbers such that \\( |\\omega| = 1 \\) and \\( |z| = 10 \\). Define \\( \\theta = \\arg\\left(\\frac{\\omega - z}{z}\\right) \\). Determine the maximum possible value of \\( \\tan^2 \\theta \\).",
+      "final_answer": "\\dfrac{1}{99}",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 55,
+      "source_id": "deepmath-row-60123-db26d81fee85",
+      "question": "Consider the three quadratic equations: \\( ax^2 - 2bx + c = 0 \\), \\( bx^2 - 2cx + a = 0 \\), and \\( cx^2 - 2ax + b = 0 \\). Each equation has both roots positive. Determine which of the following statements is true:\n\nA) \\( a^2 = bc \\)\n\nB) \\( b^2 = ac \\)\n\nC) \\( c^2 = ab \\)\n\nD) \\( a = b = c \\)",
+      "final_answer": "D",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Quadratic Functions",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 56,
+      "source_id": "deepmath-row-50067-d3bc4300202b",
+      "question": "Determine the largest integer power of the polynomial $x^2 + xy + y^2$ that divides the polynomial $(x+y)^7 - x^7 - y^7$. What is this power?",
+      "final_answer": "2",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 57,
+      "source_id": "deepmath-row-4226-4ab54c1b52ba",
+      "question": "Determine the rank of the matrix \\(\\begin{pmatrix} 4y+2z & 4x+4 & 2x-1 \\\\ y+2 & x & -1 \\end{pmatrix}\\) given that the variables \\((x,y,z)\\) satisfy the equations \\(4xy + 2xz + 4y - z = 0\\) and \\(xy + 2x - z = 0\\).",
+      "final_answer": "2",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Matrices",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 58,
+      "source_id": "deepmath-row-64840-d42e7955a364",
+      "question": "Determine the number of integral roots of the equation \\(x^{10} + ax^9 + b = 0\\), where \\(a\\) and \\(b\\) are odd integers.",
+      "final_answer": "0",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 59,
+      "source_id": "deepmath-row-21531-6b1a33b12929",
+      "question": "Determine the nature of the singularities of the function \\( f(z) = \\frac{\\sin(1/z)}{z^{2}+11z+13} \\). Choose the correct option:\n(a) No singularity.\n(b) Only poles.\n(c) Only an essential singularity.\n(d) Both an essential singularity and poles.",
+      "final_answer": "D",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 60,
+      "source_id": "deepmath-row-79464-2d62ae819524",
+      "question": "Find the maximum value of \\( x^3 + y^3 + z^3 \\) given that \\( x, y, z \\) are non-negative real numbers in the interval \\([0, 2]\\) and satisfy \\( x + y + z = 3 \\).",
+      "final_answer": "9",
+      "topic": "Mathematics -> Algebra -> Algebra -> Equations and Inequalities",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 61,
+      "source_id": "deepmath-row-47708-1a00135ac334",
+      "question": "Find the maximum value of the function \\( f(x) = \\sum_{n=0}^\\infty x^n(1-x)^n \\) on the interval \\((0, 1)\\).",
+      "final_answer": "\\dfrac{4}{3}",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 62,
+      "source_id": "deepmath-row-53202-60da07f01270",
+      "question": "Determine the radius of convergence of the Laurent series for the function \\( f(z) = \\frac{\\sin z}{(z-\\pi)^2} \\) centered at \\( z = \\pi \\).",
+      "final_answer": "\\infty",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 63,
+      "source_id": "deepmath-row-33653-b20ae1e85537",
+      "question": "Find the radius of convergence of the series \\( \\sum_{n=0}^{\\infty} 2^{n} z^{n!} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 65,
+      "source_id": "deepmath-row-60456-f23a8f9742ea",
+      "question": "Determine whether a prime number $p$ always divides the binomial coefficient $\\binom{p^2+1}{p}$. Provide a justification for your answer.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Algebra -> Other",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 66,
+      "source_id": "deepmath-row-90822-7fb99f636224",
+      "question": "Given sequences \\(\\{a_{n}\\}\\) and \\(\\{b_{n}\\}\\) satisfy:\n\\[ \nb_{n}=\\begin{cases} a_{\\frac{n+1}{2}}, & n \\text{ is odd;} \\\\\n\\sqrt{a_{n+1}}, & n \\text{ is even.}\n\\end{cases}\n\\]\nIf \\(\\{b_{n}\\}\\) is a geometric sequence and \\(a_{2}+b_{2}=108\\), find the general term formula for the sequence \\(\\{a_{n}\\}\\).",
+      "final_answer": "a_n = 9^n",
+      "topic": "Mathematics -> Algebra -> Algebra -> Algebraic Expressions",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 67,
+      "source_id": "deepmath-row-24257-507c5bbe874b",
+      "question": "Let $B = \\{ v_i \\}_{i=1}^n$ be a basis of a vector space $V$, and let $T: V \\rightarrow V$ be a linear operator such that $T(v_1) = \\sum_{i=1}^n v_i$. Find the sum of the elements of the matrix $[T^{-1}]_B$, where $[T^{-1}]_B$ is the matrix representation of the inverse of $T$ with respect to the basis $B$. Provide your answer as a single number.",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Linear Transformations",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 68,
+      "source_id": "deepmath-row-38144-d81addc18851",
+      "question": "Let $A$ be a non-singular 2x2 matrix with elements from the set $S=\\{-1,0,1\\}$. If $A^2 + I = 0$, where $I$ is the identity matrix, determine the probability that $\\det(A) = -1$. Express your answer as a fraction.",
+      "final_answer": "0",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Matrices",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 69,
+      "source_id": "deepmath-row-6590-3cb7b6c045dc",
+      "question": "Let $z$ and $a$ be complex numbers such that $|z|=1$ and $|a|<1$. Prove that \\( \\left|\\frac{z-a}{1-\\bar{a}z}\\right|=1 \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 71,
+      "source_id": "deepmath-row-17753-1b2f6822ed49",
+      "question": "For any given integer $n \\geq 1$, does there exist a stochastic matrix $P \\in [0,1]^{n \\times n}$ such that the kernel of $(P-I)^T$ contains only nonpositive vectors?",
+      "final_answer": "No",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Matrices",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 72,
+      "source_id": "deepmath-row-90146-51d1c4adf7d7",
+      "question": "Let \\((x,y,z)\\) be an ordered triplet of real numbers that satisfies the following system of equations: \\[x+y^2+z^4=0, \\quad y+z^2+x^4=0, \\quad z+x^2+y^4=0.\\] If \\(m\\) is the minimum possible value of \\(\\lfloor x^3+y^3+z^3\\rfloor\\), find \\(m \\mod 2007\\).",
+      "final_answer": "2006",
+      "topic": "Mathematics -> Algebra -> Algebra -> Equations and Inequalities",
+      "difficulty": 7.5
+    },
+    {
+      "source_index": 73,
+      "source_id": "deepmath-row-79783-97304cabf626",
+      "question": "Given a sequence $a_n$ defined as $a_n = 2^{x_n}$, where $x_n = p_1^{p_2^{\\cdots ^{p_n}}}$, express the sum of the differences between consecutive terms, $\\sum\\limits_{i=1}^n (a_i - a_{i-1})$, in terms of $a_n$.",
+      "final_answer": "a_n - 2",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions",
+      "difficulty": 7.0
+    },
+    {
+      "source_index": 76,
+      "source_id": "deepmath-row-20390-75bb5a1cc37d",
+      "question": "Let \\( F(x,y,z) = (y+\\sin(x),z^2+\\cos(y),x^3) \\) and \\( \\mathcal{C} \\) be the curve parametrized by \\( r(t)=(\\sin(t),\\cos(t),2\\sin(2t)) \\) with \\( t \\) ranging in \\([0,2\\pi)\\). Use the curl theorem to evaluate \\( \\int_\\mathcal{C} F \\cdot ds \\).",
+      "final_answer": "\\pi",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 77,
+      "source_id": "deepmath-row-94174-873f9d6e8cbf",
+      "question": "Find the maximum area of the region bounded by the curves \\( C_1 : y = x^3 - x \\) and \\( C_2 : y = (x-a)^3 - (x-a) \\), given that they intersect at two points.",
+      "final_answer": "\\dfrac{1}{2}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Applications of Integrals",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 78,
+      "source_id": "deepmath-row-38327-be0305f977f5",
+      "question": "Evaluate the limit: $$\\lim _{n \\rightarrow \\infty}\\left(n \\ln \\left(1-\\frac{1}{n}\\right) \\cos \\left(\\pi \\sqrt{4 n^2+10}\\right)\\right)$$",
+      "final_answer": "-1",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 79,
+      "source_id": "deepmath-row-60332-ce40c80546d2",
+      "question": "Determine the radius of convergence of the power series \\( \\sum a_n x^n \\) given that \\( 0 < p \\leq |a_n| \\leq q \\) for all \\( n \\in \\mathbb{N} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Other",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 80,
+      "source_id": "deepmath-row-69011-98b5ecb82497",
+      "question": "Evaluate the line integral \\(\\int_C (x+y) \\, dx + (x-y) \\, dy\\) using Green's Theorem, where \\(C\\) is the circle with center at the origin and radius \\(2\\).",
+      "final_answer": "0",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 82,
+      "source_id": "deepmath-row-57899-f543edd9c677",
+      "question": "Evaluate the limit \\(\\lim_{n \\to \\infty}\\dfrac{\\int_2^{n+1}\\frac{\\ln x}{x}\\,\\mathrm dx}{\\ln^2 n}.\\)",
+      "final_answer": "\\dfrac{1}{2}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 83,
+      "source_id": "deepmath-row-5889-40d22836c0e2",
+      "question": "Calculate \\( f(0) \\) given the following conditions:\n\n1) \\( \\int_{0}^{\\pi} [f(x) + f''(x)]\\sin(x)\\,dx = 2 \\)\n2) \\( f(\\pi) = 1 \\)\n3) \\( f''(x) \\) is continuous.\n\nFind \\( f(0) \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 85,
+      "source_id": "deepmath-row-79180-cbfa24ce0c92",
+      "question": "Determine the range of values for $a > 0$ such that the curves $C_1: y = e^{6x}$ and $C_2: y = ax^2$ have exactly two common tangents.",
+      "final_answer": "(9e^2, \\infty)",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 86,
+      "source_id": "deepmath-row-82787-17012ac533a8",
+      "question": "Evaluate the limit: $$\\lim_{n\\to\\infty} \\int^\\infty_0 \\frac{1}{1+\\left(\\frac{x}{a}\\right)^n} dx$$ where $a$ is a positive constant.",
+      "final_answer": "a",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 87,
+      "source_id": "deepmath-row-52361-c3fc42fcb804",
+      "question": "Is a function $f: \\mathbb{R} \\rightarrow \\mathbb{R}$, which satisfies $\\lim_{x \\rightarrow 0} \\frac{f(x)}{x^2} = 0$, necessarily differentiable in a neighborhood of $x = 0$ without any additional assumptions on $f$? Provide a justification for your answer.",
+      "final_answer": "No",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 93,
+      "source_id": "deepmath-row-38978-63c7a2c1005f",
+      "question": "Determine the radius of convergence of the Taylor series for the function \\( \\frac{2\\tan x}{1+4x^2} \\) centered at \\( x=0 \\).",
+      "final_answer": "\\dfrac{1}{2}",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 94,
+      "source_id": "deepmath-row-59803-a5931492d6e8",
+      "question": "Evaluate the integral \\( \\int_{0}^{1} \\frac{1}{x+\\sqrt{1-x^2}} \\, dx \\).",
+      "final_answer": "\\dfrac{\\pi}{4}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 95,
+      "source_id": "deepmath-row-3918-516fc78ca0c4",
+      "question": "Evaluate the limit: \\[ \\lim_{x \\to \\infty} \\int_0^1 \\frac{\\ln x}{\\sqrt{x+t}} \\, dt \\]",
+      "final_answer": "0",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 96,
+      "source_id": "deepmath-row-76751-6e239f7c8db2",
+      "question": "Determine whether the limit \\( \\lim_{x\\rightarrow0}\\frac{\\sin\\left(\\int\\limits _{x^{3}}^{x^{2}}\\left(\\int\\limits _{0}^{t}g\\left(s^{2}\\right)ds\\right)dt\\right)}{x^{8}} \\) converges, given that \\( g \\) is a function with a derivative defined for all \\( x \\) in the interval \\([-1, 1]\\), \\( g(0) = 0 \\), and \\( g'(0) = 1 \\).",
+      "final_answer": "\\dfrac{1}{12}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 97,
+      "source_id": "deepmath-row-26138-f835dabf2712",
+      "question": "Find the closure of \\(l^1(\\mathbb{N})\\) in \\(l^2(\\mathbb{N})\\).",
+      "final_answer": "l^2(\\mathbb{N})",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 99,
+      "source_id": "deepmath-row-51044-24c79c144221",
+      "question": "Evaluate the integral \\( \\int_0^{\\infty} \\frac{1}{(1+x^2)(1+x^{\\alpha})} \\, dx \\) for any \\( \\alpha > 0 \\).",
+      "final_answer": "\\dfrac{\\pi}{4}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 7.5
+    },
+    {
+      "source_index": 100,
+      "source_id": "deepmath-row-79428-398177b2f61e",
+      "question": "If a function $f$ is Riemann integrable on $[a,b]$ and \\( \\int_{a}^{b} fg = 0 \\) for all functions $g$ that are continuous on $[a,b]$, does it imply that $f(x) = 0$ at all points where $f$ is continuous?",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Applications of Integrals",
+      "difficulty": 7.0
+    },
+    {
+      "source_index": 101,
+      "source_id": "deepmath-row-73155-b6fee4f6ae36",
+      "question": "Find the general solution of the function $f(x)$ that satisfies the relation $f(x+y)=f(x)+f(y) - 2xy + (e^x -1)(e^y -1)$ for all $x, y \\in \\mathbb{R}$ and the condition $f'(0)=1$.",
+      "final_answer": "e^x - x^2 - 1",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 7.0
+    },
+    {
+      "source_index": 103,
+      "source_id": "deepmath-row-23379-982c30a4f064",
+      "question": "Determine the natural numbers \\( n \\) for which \\( 3^n + 5^n \\) is divisible by \\( 3^{n-1} + 5^{n-1} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 105,
+      "source_id": "deepmath-row-71064-cc4f796cdfaf",
+      "question": "Determine the number of ordered pairs \\((a, b)\\) of positive integers such that \\(\\gcd(a, b) = 1\\) and the expression \\(\\frac{a}{b} + \\frac{14b}{9a}\\) is an integer.",
+      "final_answer": "4",
+      "topic": "Mathematics -> Number Theory -> Greatest Common Divisors (GCD)",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 107,
+      "source_id": "deepmath-row-85998-6e0e35a3d0a1",
+      "question": "Six distinct positive integers \\( a, b, c, d, e, f \\) are given. Jack and Jill calculated the sums of each pair of these numbers. Jack claims that he has 10 prime numbers while Jill claims that she has 9 prime numbers among the sums. Determine who has the correct claim.",
+      "final_answer": "Jill",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 108,
+      "source_id": "deepmath-row-31068-309934ec4069",
+      "question": "Given a linear equation with two variables \\(x\\) and \\(y\\) and three integer coefficients \\(a\\), \\(b\\), and \\(c\\), where \\(a\\) and \\(b\\) are prime numbers greater than zero, determine the maximum value of \\(c\\) such that for any \\(c\\) greater than this value, the equation \\(ax + by = c\\) always has a positive integer solution for both \\(x\\) and \\(y\\).",
+      "final_answer": "ab",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 109,
+      "source_id": "deepmath-row-30515-a9973db2527f",
+      "question": "Find all positive integers \\( n \\) such that \\( 3^{n-1} + 5^{n-1} \\) divides \\( 3^n + 5^n \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 110,
+      "source_id": "deepmath-row-54096-026cb3807bd2",
+      "question": "Determine the largest integer $n$ such that $2^n$ divides $63^{2018} - 1$. Provide your answer as a single integer.",
+      "final_answer": "7",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 111,
+      "source_id": "deepmath-row-59184-afab0767707b",
+      "question": "Find the remainder when \\( P = 2008^{2007} - 2008 \\) is divided by \\( Q = 2008^2 + 2009 \\).",
+      "final_answer": "4032066",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 112,
+      "source_id": "deepmath-row-97042-e1340127f53a",
+      "question": "What is the largest four-digit negative integer congruent to $1 \\pmod{23}?$",
+      "final_answer": "-1011",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 113,
+      "source_id": "deepmath-row-58287-3a1d53d15e84",
+      "question": "Compute the limit \\( \\lim_{n\\rightarrow \\infty }\\frac{x_{n}}{n} \\) for the sequence \\((x_{n})_{n\\geq 2}\\) defined by \\(x_{n}=\\sqrt[n]{1+\\sum_{k=2}^{n}(k-1)(k-1)!}\\).",
+      "final_answer": "\\dfrac{1}{e}",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 114,
+      "source_id": "deepmath-row-16162-c793e1272a3d",
+      "question": "Find the radius of convergence of the power series \\( \\sum\\limits_{n=1}^{\\infty} a_n Z^n \\), where \\( a_n \\) is the number of divisors of \\( n^{50} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 115,
+      "source_id": "deepmath-row-90747-cc0e48eb2cef",
+      "question": "Determine the number of triples of natural numbers \\((a, b, c)\\) that satisfy the following system of equations:\n\n\\[\\begin{cases}\n\\gcd(a, b, c) = 15 \\\\\n\\text{lcm}(a, b, c) = 3^{15} \\cdot 5^{18}\n\\end{cases}\\]",
+      "final_answer": "8568",
+      "topic": "Mathematics -> Number Theory -> Least Common Multiples (LCM)",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 117,
+      "source_id": "deepmath-row-67328-2dd7ababc933",
+      "question": "Let $x$ be a positive rational number that is not an integer. If $x^x$ is expressed as $\\frac{a}{b}$, where $a$ and $b$ are positive integers, can $a$ and $b$ have a common factor greater than 1?",
+      "final_answer": "No",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 118,
+      "source_id": "deepmath-row-41575-9f417c8b5a44",
+      "question": "Find an odd integer $k$ such that the expression $\\frac{(k^2 - 1)}{8}$ is both a triangular number and a prime number.",
+      "final_answer": "5",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 119,
+      "source_id": "deepmath-row-50798-efeeb335ab53",
+      "question": "Solve the congruence equation: $$x^{257} \\equiv 5 \\pmod{2016}$$",
+      "final_answer": "101",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 120,
+      "source_id": "deepmath-row-56921-e4904e86e16f",
+      "question": "Determine whether 7 can be the smallest prime factor of a repunit.",
+      "final_answer": "No",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 121,
+      "source_id": "deepmath-row-57758-2bdb4590d36d",
+      "question": "Suppose that $x$, $y$, $x-y$, and $x+y$ are all distinct positive prime numbers. Find the smallest possible value of $x+y$. \\( \\boxed{} \\)",
+      "final_answer": "7",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 122,
+      "source_id": "deepmath-row-89814-04e161f1428c",
+      "question": "Determine all pairs of positive integers \\((m, n)\\) such that \\(m^2 - mn + n^2 + 1\\) divides both \\(3^{m+n} + (m+n)!\\) and \\(3^{m^3+n^3} + m + n\\).",
+      "final_answer": "(2, 2)",
+      "topic": "Mathematics -> Number Theory -> Divisibility",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 123,
+      "source_id": "deepmath-row-25666-a1b3626fef17",
+      "question": "Is there an infinite sequence of natural numbers such that any finite partial sum of this sequence is not a perfect power?",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Number Theory -> Other",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 124,
+      "source_id": "deepmath-row-36891-177b02b58dcf",
+      "question": "Find the last two digits of the expression \\(3^{3^{3^{\\cdots}}}\\) where there are a total of two thousand and fifteen 3's in the power tower.",
+      "final_answer": "87",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 8.0
+    },
+    {
+      "source_index": 125,
+      "source_id": "deepmath-row-15434-b6e7c0d77e16",
+      "question": "Find the smallest possible value of \\( n \\) such that there are exactly 77,000 ordered quadruples \\((a, b, c, d)\\) with \\( \\gcd(a, b, c, d) = 77 \\) and \\( \\mathrm{lcm}(a, b, c, d) = n \\).",
+      "final_answer": "27720",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 7.5
+    },
+    {
+      "source_index": 126,
+      "source_id": "deepmath-row-80818-d0c9818b0be0",
+      "question": "Evaluate \\( \\lim_{n \\to \\infty} \\frac{D_n}{n^n} \\), where \\( D_n \\) is the number of derangements of \\( n \\) elements.",
+      "final_answer": "0",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 128,
+      "source_id": "deepmath-row-91326-29e9c91a4e54",
+      "question": "Evan has 100 indivisible marbles to distribute among three volunteers: David, Justin, and Michael. Each volunteer must receive at least one marble. Lewis will later choose a positive integer \\( n > 1 \\) and attempt to steal \\( \\frac{1}{n} \\) of the marbles from each volunteer, but only if \\( n \\) divides the number of marbles that volunteer has. In how many ways can Evan distribute the 100 marbles so that Lewis cannot steal marbles from all three volunteers, regardless of the \\( n \\) he selects?",
+      "final_answer": "3540",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 129,
+      "source_id": "deepmath-row-92565-049d9e1aa615",
+      "question": "Let $A$ be the number of 12-digit words that can be formed from the alphabet $\\{0,1,2,3,4,5,6\\}$ if each pair of neighboring digits must differ by exactly $1$. Find the remainder when $A$ is divided by $2008$. \\( \\text{Provide your answer in the form } \\boxed{\\text{remainder}}. \\)",
+      "final_answer": "1392",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 130,
+      "source_id": "deepmath-row-76504-69e26d0a66bc",
+      "question": "Is the set \\( \\pi_{2}^{-1} ( [-1,1]) \\) compact, where \\( \\pi_2 : S^1 \\to \\mathbb{R} \\) is the natural projection onto the second coordinate?",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Discrete Mathematics -> Logic",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 131,
+      "source_id": "deepmath-row-74921-c0cbeb238b52",
+      "question": "Determine the cardinality of the set of all binary sequences (both finite and infinite) that do not contain the subsequence \"10\".",
+      "final_answer": "\\aleph_0",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 132,
+      "source_id": "deepmath-row-72365-7cc7e6e04212",
+      "question": "In a card game, you have a set of 18 distinct cards. Each card is part of four different combinations, and there are a total of 24 combinations, each consisting of three cards. How many cards must you draw in your opening hand to guarantee that at least one complete combination is present in your hand?",
+      "final_answer": "13",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 134,
+      "source_id": "deepmath-row-90990-ff9c37d07988",
+      "question": "Given the sets \\(A_1, A_2, \\ldots, A_{160}\\) such that \\(|A_i| = i\\) for all \\(i = 1, 2, \\ldots, 160\\), we create new sets \\(M_1, M_2, \\ldots, M_n\\) by the following procedure: In each step, choose some of the sets \\(A_1, A_2, \\ldots, A_{160}\\) and remove the same number of elements from each chosen set. The removed elements form the set \\(M_k\\) for the \\(k\\)-th step. Continue this process until all elements are removed from \\(A_1, A_2, \\ldots, A_{160}\\). Find the minimum value of \\(n\\).",
+      "final_answer": "8",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 135,
+      "source_id": "deepmath-row-47174-ee6be2a217e6",
+      "question": "In a directed graph, vertex \\( u \\) has an out-degree of \\( k \\) and an in-degree of 0, vertex \\( v \\) has an in-degree of \\( k \\) and an out-degree of 0, and all other vertices have equal in-degree and out-degree. What is the minimum number of arc-disjoint directed paths from \\( u \\) to \\( v \\) in this graph?",
+      "final_answer": "k",
+      "topic": "Mathematics -> Discrete Mathematics -> Graph Theory",
+      "difficulty": 5.5
+    },
+    {
+      "source_index": 136,
+      "source_id": "deepmath-row-91799-03d3156fb2d8",
+      "question": "Given 1987 sets, each containing exactly 45 elements, and the union of any two sets contains exactly 89 elements, determine the number of elements in the union of these 1987 sets. Choose the correct answer from the following options:\n\nA. 87429\nB. 89415\nC. 89326\nD. 89504",
+      "final_answer": "A",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 137,
+      "source_id": "deepmath-row-80293-2c04d55796e6",
+      "question": "Determine the number of vertices $n$ in a maximal planar graph where $\\frac{1}{3}n$ vertices have degree $3$, $\\frac{1}{3}n$ have degree $4$, and $\\frac{1}{3}n$ have degree $5$. Use the formula for the number of edges in a maximal planar graph, $e = 3n - 6$, where $e$ is the number of edges.",
+      "final_answer": "6",
+      "topic": "Mathematics -> Discrete Mathematics -> Graph Theory",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 139,
+      "source_id": "deepmath-row-51063-a209440fb64f",
+      "question": "In a metric space with a countable base, is it always possible to find a countable dense subset?",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Discrete Mathematics -> Other",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 140,
+      "source_id": "deepmath-row-85763-23dc614ac8fe",
+      "question": "On the coordinate plane, a grasshopper jumps from point to point with integer coordinates. The lengths of its jumps form a sequence of natural numbers: \\(1, 2, 3, \\ldots\\). Can the grasshopper return to the same point it started from after making exactly 2222 jumps? Answer with 'Yes' or 'No'.",
+      "final_answer": "No",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.5
+    },
+    {
+      "source_index": 141,
+      "source_id": "deepmath-row-79019-9bcd85bb8678",
+      "question": "Find the coefficient of \\(x^{21}\\) in the expansion of \\((x^3 + x^4 + x^5 + \\ldots + x^{10})^4\\).",
+      "final_answer": "204",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    {
+      "source_index": 143,
+      "source_id": "deepmath-row-89166-4f8172e30d63",
+      "question": "Determine the number of ordered quadruples \\((a, b, c, d)\\) of distinct positive integers such that \\(\\binom{\\binom{a}{b}}{\\binom{c}{d}} = 21\\).",
+      "final_answer": "13",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 144,
+      "source_id": "deepmath-row-91996-deb60e4d96a5",
+      "question": "A set \\( S \\) has a relation \\( \\rightarrow \\) defined on it for pairs of elements from the set \\( S \\), and it possesses the following properties: \n1) For any two distinct elements \\( a, b \\in S \\), exactly one of the relations \\( a \\rightarrow b \\) or \\( b \\rightarrow a \\) holds.\n2) For any three distinct elements \\( a, b, c \\in S \\), if the relations \\( a \\rightarrow b \\) and \\( b \\rightarrow c \\) hold, then the relation \\( c \\rightarrow a \\) also holds.\n\nWhat is the maximum number of elements that the set \\( S \\) can contain?",
+      "final_answer": "3",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 145,
+      "source_id": "deepmath-row-7341-165feaad79ba",
+      "question": "Let $X = \\{(x,y) : x^2 + y^2 < 5\\}$ and $K = \\{(x,y) : 1 \\leq x^2 + y^2 \\leq 2 \\text{ or } 3 \\leq x^2 + y^2 \\leq 4\\}$. Determine the number of relatively compact connected components of $X \\setminus K$ in $X$. Provide your answer as a single integer.",
+      "final_answer": "2",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    {
+      "source_index": 146,
+      "source_id": "deepmath-row-79369-86a7087e6914",
+      "question": "Consider a sequence of non-negative integers starting from $0$, where each subsequent term is either $0$ or the previous term plus $1$, taken modulo $500$. The sequence terminates when the number $499$ appears exactly twice. Determine the number of such sequences that contain exactly $1000$ instances of the number $0$. What is the remainder when this count is divided by $500$?",
+      "final_answer": "499",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 7.5
+    }
+  ]
+}

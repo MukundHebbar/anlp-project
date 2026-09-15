@@ -1,0 +1,215 @@
+DeepSeek SOLVE deterministic verification
+Records: 146
+Correct: 113
+Incorrect: 2
+Missing: 10
+Unverified: 21
+Strict accuracy: 0.7740
+Parseable accuracy: 0.9826086956521739
+Verification coverage: 0.7877
+
+Verification methods
+  congruence_residue: 1
+  interval_inequality: 1
+  leading_boolean: 10
+  leading_choice: 4
+  no_safe_equivalence_rule: 21
+  none: 10
+  normalized_exact: 81
+  rational_arithmetic: 14
+  safe_text_claim: 1
+  sympy_symbolic_equivalence: 3
+
+Verification reasons
+  no_extractable_answer: 10
+  unequal_numeric_values: 2
+  unsupported_symbolic_or_explanatory_text: 18
+  unsupported_symbolic_or_semantic_form: 3
+
+Token and cost totals
+Prompt tokens: 38784
+Completion tokens: 811602
+Calculated cost USD: 0.14919108
+Provider estimated cost USD: 0.1484154
+
+Breakdowns
+By topic:
+  Mathematics -> Algebra -> Algebra -> Algebraic Expressions: 2/2 strict=1.0000
+  Mathematics -> Algebra -> Algebra -> Equations and Inequalities: 4/5 strict=0.8000
+  Mathematics -> Algebra -> Algebra -> Polynomial Operations: 5/6 strict=0.8333
+  Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers: 5/6 strict=0.8333
+  Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions: 3/3 strict=1.0000
+  Mathematics -> Algebra -> Intermediate Algebra -> Other: 4/6 strict=0.6667
+  Mathematics -> Algebra -> Intermediate Algebra -> Quadratic Functions: 1/1 strict=1.0000
+  Mathematics -> Algebra -> Linear Algebra -> Linear Transformations: 2/2 strict=1.0000
+  Mathematics -> Algebra -> Linear Algebra -> Matrices: 3/5 strict=0.6000
+  Mathematics -> Algebra -> Other: 1/1 strict=1.0000
+  Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives: 7/13 strict=0.5385
+  Mathematics -> Calculus -> Differential Calculus -> Derivatives: 4/5 strict=0.8000
+  Mathematics -> Calculus -> Differential Calculus -> Other: 1/3 strict=0.3333
+  Mathematics -> Calculus -> Integral Calculus -> Applications of Integrals: 2/3 strict=0.6667
+  Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable: 5/6 strict=0.8333
+  Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable: 7/9 strict=0.7778
+  Mathematics -> Discrete Mathematics -> Algorithms: 2/3 strict=0.6667
+  Mathematics -> Discrete Mathematics -> Combinatorics: 20/23 strict=0.8696
+  Mathematics -> Discrete Mathematics -> Graph Theory: 2/4 strict=0.5000
+  Mathematics -> Discrete Mathematics -> Logic: 2/3 strict=0.6667
+  Mathematics -> Discrete Mathematics -> Other: 1/1 strict=1.0000
+  Mathematics -> Number Theory -> Congruences: 12/17 strict=0.7059
+  Mathematics -> Number Theory -> Divisibility: 1/1 strict=1.0000
+  Mathematics -> Number Theory -> Factorization: 7/7 strict=1.0000
+  Mathematics -> Number Theory -> Greatest Common Divisors (GCD): 1/1 strict=1.0000
+  Mathematics -> Number Theory -> Least Common Multiples (LCM): 1/1 strict=1.0000
+  Mathematics -> Number Theory -> Other: 1/1 strict=1.0000
+  Mathematics -> Number Theory -> Prime Numbers: 7/8 strict=0.8750
+By difficulty:
+  5.0-6.5: 93/117 strict=0.7949
+  7.0-8.0: 20/29 strict=0.6897
+
+Per-problem results
+0	pilot-0	correct	normalized_exact		gold='4'	extracted='4'
+1	pilot-1	correct	rational_arithmetic	None	gold='1'	extracted='a_{2011}=1'
+2	pilot-2	missing	none	no_extractable_answer	gold='Yes'	extracted=None
+3	pilot-3	correct	normalized_exact		gold='40'	extracted='40'
+4	pilot-4	missing	none	no_extractable_answer	gold='D'	extracted=None
+5	pilot-5	correct	normalized_exact		gold='100! \\left( H_{100} - H_{50} \\right)'	extracted='100!\\left(H_{100}-H_{50}\\right)'
+6	pilot-6	missing	none	no_extractable_answer	gold='Yes'	extracted=None
+7	pilot-7	correct	rational_arithmetic	None	gold='3'	extracted='x_\\varepsilon=3'
+8	pilot-8	correct	rational_arithmetic	None	gold='1'	extracted='P=1'
+9	pilot-9	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\min(K, L)'	extracted='\\displaystyle \\lim_{p\\to -\\infty} \\left(aK^p+bL^p\\right)^{1/p}=\\min(K,L)'
+10	pilot-10	correct	normalized_exact		gold='27'	extracted='27'
+11	pilot-11	correct	normalized_exact		gold='4'	extracted='4'
+12	pilot-12	correct	normalized_exact		gold='0'	extracted='0'
+13	pilot-13	correct	normalized_exact		gold='1'	extracted='1'
+15	pilot-15	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='Yes'	extracted='(a,b,c)=(0,0,0)'
+16	pilot-16	correct	normalized_exact		gold='98'	extracted='98'
+17	pilot-17	correct	leading_choice	None	gold='B'	extracted='\\text{B. } ka_0=a_1'
+18	pilot-18	correct	normalized_exact		gold='O(1)'	extracted='O(1)'
+19	pilot-19	missing	none	no_extractable_answer	gold='No'	extracted=None
+20	pilot-20	correct	normalized_exact		gold='-4'	extracted='-4'
+21	pilot-21	correct	normalized_exact		gold='2^{m-1}'	extracted='2^{m-1}'
+22	pilot-22	correct	normalized_exact		gold='11'	extracted='11'
+23	pilot-23	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\infty'	extracted='\\text{The radius of convergence is } \\infty. \\text{ The series converges absolutely for all } x.'
+24	pilot-24	correct	normalized_exact		gold='4021'	extracted='4021'
+26	pilot-26	missing	none	no_extractable_answer	gold='Yes'	extracted=None
+27	pilot-27	correct	normalized_exact		gold='60'	extracted='60'
+28	pilot-28	correct	normalized_exact		gold='(0, \\infty)'	extracted='(0,\\infty)'
+29	pilot-29	correct	leading_boolean	None	gold='Yes'	extracted='Yes; for example, \\(m=561\\) works.'
+30	pilot-30	correct	normalized_exact		gold='2'	extracted='2'
+31	pilot-31	correct	normalized_exact		gold='\\dfrac{1}{n!}'	extracted='\\frac{1}{n!}'
+32	pilot-32	correct	sympy_symbolic_equivalence		gold='\\aleph_0'	extracted='|\\mathcal R|=\\aleph_0'
+33	pilot-33	correct	normalized_exact		gold='Yes'	extracted='\\text{Yes}'
+34	pilot-34	correct	normalized_exact		gold='71040'	extracted='71040'
+35	pilot-35	correct	leading_boolean	None	gold='Yes'	extracted="\\text{Yes, the existence and boundedness of } f' \\text{ imply } f \\text{ is uniformly continuous.}"
+36	pilot-36	correct	normalized_exact		gold='6'	extracted='6'
+37	pilot-37	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='0'	extracted='\\begin{cases}\nR=0, & \\theta\\not\\equiv \\frac{\\pi}{2}\\pmod{\\pi},\\\\[2mm]\nR\\in\\mathbb R, & \\theta\\equiv \\frac{\\pi}{2}\\pmod{\\pi}.\n\\end{cases}'
+38	pilot-38	correct	sympy_symbolic_equivalence		gold='2^n - 1'	extracted='h_n=2^n-1'
+39	pilot-39	correct	normalized_exact		gold='343'	extracted='343'
+40	pilot-40	correct	normalized_exact		gold='11'	extracted='11'
+41	pilot-41	correct	normalized_exact		gold='\\dfrac{3}{2}'	extracted='\\frac32'
+42	pilot-42	correct	normalized_exact		gold='0'	extracted='0'
+44	pilot-44	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='Yes'	extracted="f'(a)=L."
+45	pilot-45	correct	normalized_exact		gold='181'	extracted='181'
+46	pilot-46	correct	normalized_exact		gold='560'	extracted='560'
+47	pilot-47	correct	normalized_exact		gold='12'	extracted='12'
+49	pilot-49	correct	normalized_exact		gold='1'	extracted='1'
+50	deepmath-row-71516-0d3af46aa0f2	correct	normalized_exact		gold='\\sqrt{3}'	extracted='\\(\\sqrt{3}\\)'
+51	deepmath-row-6207-55c3f5b8fbbd	correct	normalized_exact		gold='L \\equiv 0'	extracted='\\(L\\equiv 0\\)'
+52	deepmath-row-10961-2f44427ebe0b	correct	rational_arithmetic	None	gold='-2'	extracted='x = -2'
+53	deepmath-row-89534-f2d94f76aaad	correct	normalized_exact		gold='20'	extracted='20'
+54	deepmath-row-12880-25b4bdec8b33	correct	normalized_exact		gold='\\dfrac{1}{99}'	extracted='\\(\\frac{1}{99}\\)'
+55	deepmath-row-60123-db26d81fee85	correct	leading_choice	None	gold='D'	extracted='D) \\(a=b=c\\)'
+56	deepmath-row-50067-d3bc4300202b	correct	normalized_exact		gold='2'	extracted='2'
+57	deepmath-row-4226-4ab54c1b52ba	correct	normalized_exact		gold='2'	extracted='2'
+58	deepmath-row-64840-d42e7955a364	correct	normalized_exact		gold='0'	extracted='0'
+59	deepmath-row-21531-6b1a33b12929	correct	leading_choice	None	gold='D'	extracted='(d) Both an essential singularity and poles.'
+60	deepmath-row-79464-2d62ae819524	correct	normalized_exact		gold='9'	extracted='9'
+61	deepmath-row-47708-1a00135ac334	correct	normalized_exact		gold='\\dfrac{4}{3}'	extracted='\\(\\frac{4}{3}\\)'
+62	deepmath-row-53202-60da07f01270	correct	normalized_exact		gold='\\infty'	extracted='\\(\\infty\\)'
+63	deepmath-row-33653-b20ae1e85537	correct	normalized_exact		gold='1'	extracted='1'
+64	deepmath-row-94787-62e6149d159b	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_semantic_form	gold='9'	extracted='1,9'
+65	deepmath-row-60456-f23a8f9742ea	correct	leading_boolean	None	gold='Yes'	extracted='Yes, \\(p\\) always divides \\(\\binom{p^2+1}{p}\\).'
+66	deepmath-row-90822-7fb99f636224	correct	normalized_exact		gold='a_n = 9^n'	extracted='a_n=9^n'
+67	deepmath-row-24257-507c5bbe874b	correct	normalized_exact		gold='1'	extracted='1'
+68	deepmath-row-38144-d81addc18851	correct	normalized_exact		gold='0'	extracted='0'
+69	deepmath-row-6590-3cb7b6c045dc	correct	rational_arithmetic	None	gold='1'	extracted='\\[\n\\left|\\frac{z-a}{1-\\bar a z}\\right|=1\n\\]'
+70	deepmath-row-22668-57cc93bee7d6	missing	none	no_extractable_answer	gold='Yes'	extracted=None
+71	deepmath-row-17753-1b2f6822ed49	correct	leading_boolean	None	gold='No'	extracted='No; for every \\(n\\ge 1\\), no such stochastic matrix exists.'
+72	deepmath-row-90146-51d1c4adf7d7	correct	normalized_exact		gold='2006'	extracted='2006'
+73	deepmath-row-79783-97304cabf626	correct	normalized_exact		gold='a_n - 2'	extracted='\\(a_n-2\\)'
+74	deepmath-row-45783-473911c69604	incorrect	rational_arithmetic	unequal_numeric_values	gold='200'	extracted='0'
+75	deepmath-row-45739-12b2b90b3c38	missing	none	no_extractable_answer	gold='3'	extracted=None
+76	deepmath-row-20390-75bb5a1cc37d	correct	normalized_exact		gold='\\pi'	extracted='\\(\\pi\\)'
+77	deepmath-row-94174-873f9d6e8cbf	correct	normalized_exact		gold='\\dfrac{1}{2}'	extracted='\\(\\frac{1}{2}\\)'
+78	deepmath-row-38327-be0305f977f5	correct	normalized_exact		gold='-1'	extracted='-1'
+79	deepmath-row-60332-ce40c80546d2	correct	rational_arithmetic	None	gold='1'	extracted='R = 1'
+80	deepmath-row-69011-98b5ecb82497	correct	normalized_exact		gold='0'	extracted='0'
+81	deepmath-row-21371-0b9852cfb43e	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_semantic_form	gold='\\dfrac{2005}{2007!}'	extracted='2005/2007!'
+82	deepmath-row-57899-f543edd9c677	correct	rational_arithmetic	None	gold='\\dfrac{1}{2}'	extracted='1/2'
+83	deepmath-row-5889-40d22836c0e2	correct	normalized_exact		gold='1'	extracted='1'
+84	deepmath-row-77288-ca24f607ff4d	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='-4\\pi i'	extracted='-4πi'
+85	deepmath-row-79180-cbfa24ce0c92	correct	interval_inequality		gold='(9e^2, \\infty)'	extracted='\\[\n\\boxed{a>9e^2}\n\\]'
+86	deepmath-row-82787-17012ac533a8	correct	normalized_exact		gold='a'	extracted='a'
+87	deepmath-row-52361-c3fc42fcb804	correct	leading_boolean	None	gold='No'	extracted='No; the condition does not guarantee differentiability in any neighborhood of \\(0\\). A counterexample is \\(f(1/n)=1/n^3\\), \\(f(x)=0\\) otherwise, with \\(f(0)=0\\).'
+88	deepmath-row-32307-a5beb04c5c7b	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='(0, 1)'	extracted='0 < p < 1'
+89	deepmath-row-39186-ad5aa0dd19dc	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='6'	extracted='6 terms'
+90	deepmath-row-75340-647bf48e40bd	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\infty'	extracted='The limit diverges to \\(+\\infty\\).'
+91	deepmath-row-77769-fe951fc54698	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\phi(\\gamma(t))'	extracted='\\[\n\\alpha(t)=\\phi\\!\\left(\\Phi_t^X\\bigl(\\phi^{-1}(a,b)\\bigr)\\right)\n=\\phi\\!\\left(\\gamma_{\\phi^{-1}(a,b)}(t)\\right),\n\\]\nwhere \\(\\gamma_p(t)\\) is the integral curve of \\(X\\) with \\(\\gamma_p(0)=p\\), and \\(\\Phi_t^X\\) is the flow of \\(X\\).'
+92	deepmath-row-83888-f843685a5058	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='1'	extracted='\\(1/R\\) (so none of the listed options)'
+93	deepmath-row-38978-63c7a2c1005f	correct	normalized_exact		gold='\\dfrac{1}{2}'	extracted='\\(\\frac12\\)'
+94	deepmath-row-59803-a5931492d6e8	correct	normalized_exact		gold='\\dfrac{\\pi}{4}'	extracted='\\(\\frac{\\pi}{4}\\)'
+95	deepmath-row-3918-516fc78ca0c4	correct	normalized_exact		gold='0'	extracted='0'
+96	deepmath-row-76751-6e239f7c8db2	correct	rational_arithmetic	None	gold='\\dfrac{1}{12}'	extracted='1/12'
+97	deepmath-row-26138-f835dabf2712	correct	normalized_exact		gold='l^2(\\mathbb{N})'	extracted='\\(\\ell^2(\\mathbb N)\\)'
+98	deepmath-row-35442-df77f6f6ad0a	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\arctan(a)'	extracted='\\[\n\\int_0^\\infty \\frac{\\sin(ax)}{x e^x}\\,dx=\\arctan a\n\\]'
+99	deepmath-row-51044-24c79c144221	correct	normalized_exact		gold='\\dfrac{\\pi}{4}'	extracted='\\(\\frac{\\pi}{4}\\)'
+100	deepmath-row-79428-398177b2f61e	correct	leading_boolean	None	gold='Yes'	extracted='Yes. If \\(f\\) is Riemann integrable and \\(\\int_a^b fg=0\\) for every continuous \\(g\\), then \\(f(x)=0\\) at every point \\(x\\) where \\(f\\) is continuous.'
+101	deepmath-row-73155-b6fee4f6ae36	correct	sympy_symbolic_equivalence		gold='e^x - x^2 - 1'	extracted='f(x)=e^x-x^2-1'
+102	deepmath-row-6336-82fe088b2b5d	incorrect	rational_arithmetic	unequal_numeric_values	gold='7'	extracted='171'
+103	deepmath-row-23379-982c30a4f064	correct	rational_arithmetic	None	gold='1'	extracted='n = 1'
+104	deepmath-row-84996-2056c56cfc54	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_semantic_form	gold='D'	extracted='21'
+105	deepmath-row-71064-cc4f796cdfaf	correct	normalized_exact		gold='4'	extracted='4'
+106	deepmath-row-87758-0fa8fd6f2e1d	missing	none	no_extractable_answer	gold='31'	extracted=None
+107	deepmath-row-85998-6e0e35a3d0a1	correct	safe_text_claim		gold='Jill'	extracted='Jill is correct; at most 9 prime pair sums are possible, and 9 is attainable (e.g. \\(1,3,7,4,10,16\\)).'
+108	deepmath-row-31068-309934ec4069	correct	normalized_exact		gold='ab'	extracted='ab'
+109	deepmath-row-30515-a9973db2527f	correct	rational_arithmetic	None	gold='1'	extracted='\\(n=1\\)'
+110	deepmath-row-54096-026cb3807bd2	correct	normalized_exact		gold='7'	extracted='7'
+111	deepmath-row-59184-afab0767707b	correct	normalized_exact		gold='4032066'	extracted='4032066'
+112	deepmath-row-97042-e1340127f53a	correct	normalized_exact		gold='-1011'	extracted='-1011'
+113	deepmath-row-58287-3a1d53d15e84	correct	normalized_exact		gold='\\dfrac{1}{e}'	extracted='\\(\\frac{1}{e}\\)'
+114	deepmath-row-16162-c793e1272a3d	correct	normalized_exact		gold='1'	extracted='1'
+115	deepmath-row-90747-cc0e48eb2cef	correct	normalized_exact		gold='8568'	extracted='8568'
+116	deepmath-row-54933-562def36c7d5	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='\\tau(n)'	extracted='\\[\n\\tau(n)=\\prod_{p^\\alpha\\parallel n}(\\alpha+1)\n\\]'
+117	deepmath-row-67328-2dd7ababc933	correct	leading_boolean	None	gold='No'	extracted='No. In fact, for every positive rational non-integer \\(x\\), \\(x^x\\) is irrational, so it cannot be written as \\(\\frac ab\\) with positive integers \\(a\\) and \\(b\\).'
+118	deepmath-row-41575-9f417c8b5a44	correct	rational_arithmetic	None	gold='5'	extracted='k = 5'
+119	deepmath-row-50798-efeeb335ab53	correct	congruence_residue	None	gold='101'	extracted='x \\equiv 101 \\pmod{2016}'
+120	deepmath-row-56921-e4904e86e16f	correct	normalized_exact		gold='No'	extracted='No.'
+121	deepmath-row-57758-2bdb4590d36d	correct	normalized_exact		gold='7'	extracted='7'
+122	deepmath-row-89814-04e161f1428c	correct	normalized_exact		gold='(2, 2)'	extracted='(2,2)'
+123	deepmath-row-25666-a1b3626fef17	correct	leading_boolean	None	gold='Yes'	extracted='Yes; for example, the sequence \\(2,4,4,4,\\ldots\\) works.'
+124	deepmath-row-36891-177b02b58dcf	correct	normalized_exact		gold='87'	extracted='87'
+125	deepmath-row-15434-b6e7c0d77e16	correct	normalized_exact		gold='27720'	extracted='27720'
+126	deepmath-row-80818-d0c9818b0be0	correct	normalized_exact		gold='0'	extracted='0'
+127	deepmath-row-61278-a2d6f2ac1a4a	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='2n - 2'	extracted='\\(2n-2 = 2^{k+1}-2\\)'
+128	deepmath-row-91326-29e9c91a4e54	correct	normalized_exact		gold='3540'	extracted='3540'
+129	deepmath-row-92565-049d9e1aa615	correct	normalized_exact		gold='1392'	extracted='\\boxed{1392}'
+130	deepmath-row-76504-69e26d0a66bc	correct	leading_boolean	None	gold='Yes'	extracted='Yes, \\(\\pi_2^{-1}([-1,1])=S^1\\), which is compact.'
+131	deepmath-row-74921-c0cbeb238b52	correct	normalized_exact		gold='\\aleph_0'	extracted='\\(\\aleph_0\\)'
+132	deepmath-row-72365-7cc7e6e04212	correct	normalized_exact		gold='13'	extracted='13'
+133	deepmath-row-80471-1bf337d93164	missing	none	no_extractable_answer	gold='10'	extracted=None
+134	deepmath-row-90990-ff9c37d07988	correct	normalized_exact		gold='8'	extracted='8'
+135	deepmath-row-47174-ee6be2a217e6	correct	normalized_exact		gold='k'	extracted='k'
+136	deepmath-row-91799-03d3156fb2d8	correct	leading_choice	None	gold='A'	extracted='A. 87429'
+137	deepmath-row-80293-2c04d55796e6	correct	rational_arithmetic	None	gold='6'	extracted='\\(n=6\\)'
+138	deepmath-row-93809-1b706f14b3d0	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='4'	extracted='4 lines'
+139	deepmath-row-51063-a209440fb64f	correct	leading_boolean	None	gold='Yes'	extracted='Yes; every metric space with a countable base has a countable dense subset.'
+140	deepmath-row-85763-23dc614ac8fe	correct	normalized_exact		gold='No'	extracted='No'
+141	deepmath-row-79019-9bcd85bb8678	correct	normalized_exact		gold='204'	extracted='204'
+142	deepmath-row-86292-33b55c505fe9	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='n \\cdot 2^{n-1}'	extracted='\\(n2^{n-1}\\)'
+143	deepmath-row-89166-4f8172e30d63	correct	normalized_exact		gold='13'	extracted='13'
+144	deepmath-row-91996-deb60e4d96a5	correct	normalized_exact		gold='3'	extracted='3'
+145	deepmath-row-7341-165feaad79ba	correct	normalized_exact		gold='2'	extracted='2'
+146	deepmath-row-79369-86a7087e6914	correct	normalized_exact		gold='499'	extracted='499'
+147	deepmath-row-87984-6a2c5a7af888	missing	none	no_extractable_answer	gold='1'	extracted=None
+148	deepmath-row-37422-53c752c84169	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='C_3'	extracted='For every \\(n\\ge 3\\), take \\(G=C_n\\), the cycle graph on \\(n\\) vertices. Then \\(G\\cong L(G)\\).'
+149	deepmath-row-12523-5e2e894c20e3	unverified	no_safe_equivalence_rule	unsupported_symbolic_or_explanatory_text	gold='2^{\\mathfrak{c}}'	extracted='Yes, the cardinality is exactly \\(2^{\\mathfrak c}\\).'

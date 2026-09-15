@@ -1,0 +1,19 @@
+EXPLAIN-v2 DeepSeek generation
+Selected solutions: 113
+Valid EXPLAIN tasks: 101
+Successful task rate: 101/113 (89.38%)
+NOT_SUITABLE: 8
+Recovered locally without API request: 23
+Rejected/failed generations: 4
+Rejection rate: 4/113 (3.54%)
+Elapsed seconds: 603.408
+Prompt tokens: 386139
+Completion tokens: 519191
+Total tokens: 905330
+Calculated cost USD: 0.12434549999999998
+Provider-reported cost USD: 0.11662271999999999
+Failures:
+- source_index 49: ValueError: malformed JSON: Invalid \escape
+- source_index 57: ValueError: malformed JSON: Invalid \escape
+- source_index 62: ValueError: original final answer leaked into student-facing task
+- source_index 77: ValueError: malformed JSON: Invalid \escape

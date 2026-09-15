@@ -1,0 +1,10 @@
+{
+  "provider": "Turing",
+  "model": "Qwen/Qwen3-4B",
+  "task": "SOLVE",
+  "input_manifest": "data/manifests/deepmath/deepmath-pilot-113-deepseek-v2-correct.json",
+  "result": "results.json",
+  "report": "report.txt",
+  "scoring": "local deterministic verifier v2 against dataset gold answers",
+  "artifact_status": "curated final evidence"
+}

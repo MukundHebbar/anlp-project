@@ -1,0 +1,8 @@
+EXPLAIN-v1 DeepSeek generation (recovered)
+Expected records: 113
+Valid EXPLAIN tasks: 111
+NOT_SUITABLE: 1
+Fence-wrapped outputs recovered: 55
+Explicit failures: 1
+Failures:
+- source_index 145: GenerationInterrupted: request stopped before a response was returned

@@ -1,0 +1,11 @@
+{
+  "provider": "DeepInfra",
+  "model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "task": "EXPLAIN-v2",
+  "reasoning_effort": "medium",
+  "input_manifest": "data/manifests/deepmath/deepmath-pilot-113-deepseek-v2-correct-explain-v2.json",
+  "prompt": "data/prompts/explain/explain_v2_generator_prompt.md",
+  "result": "results.json",
+  "report": "report.txt",
+  "artifact_status": "curated final evidence; repaired locally without new API requests"
+}

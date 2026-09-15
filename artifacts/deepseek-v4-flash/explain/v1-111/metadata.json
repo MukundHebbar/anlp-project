@@ -1,0 +1,10 @@
+{
+  "provider": "DeepInfra",
+  "model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "task": "EXPLAIN-v1",
+  "input_manifest": "data/legacy-inputs/deepmath-pilot-113-deepseek-v2-correct-explain-v1.json",
+  "prompt": "data/prompts/explain/explain_v1.md",
+  "result": "results.json",
+  "report": "report.txt",
+  "artifact_status": "curated source artifact for Turing EXPLAIN evaluation"
+}

@@ -1,0 +1,33 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheelhouse/
+wheels/
+*.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+
+# Local data, archives, and generated runs
+data/datasets/
+local/
+logs/
+*.log
+slurm-*.out
+slurm-*.err
+data/legacy-*/
+
+.env
+**/.env
+
+# Notebook and editor state
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
