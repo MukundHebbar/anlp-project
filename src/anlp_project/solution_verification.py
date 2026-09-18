@@ -52,6 +52,50 @@ def extract_final_answer(response: str) -> tuple[str | None, str]:
     return None, "missing_final_answer"
 
 
+def split_reasoning_response(response: str) -> dict[str, str]:
+    """Separate Qwen reasoning markup from the visible solution.
+
+    Qwen/vLLM may return either paired ``<think>``/``<thinking>`` blocks or
+    the generated contents followed by only a closing ``</think>`` tag. A
+    response with an unclosed reasoning block is intentionally not treated as
+    a visible solution, so a final-answer tag inside it cannot be scored.
+    """
+    text = str(response or "")
+    opening = re.search(r"<(think|thinking)\s*>", text, re.IGNORECASE)
+    if opening:
+        tag = opening.group(1)
+        closing = re.search(rf"</{tag}\s*>", text[opening.end() :], re.IGNORECASE)
+        if closing is None:
+            return {
+                "reasoning_text": text[opening.end() :].strip(),
+                "solution_text": "",
+                "reasoning_parse_status": "unclosed",
+            }
+        close_start = opening.end() + closing.start()
+        close_end = opening.end() + closing.end()
+        reasoning = text[opening.end() : close_start].strip()
+        visible = (text[: opening.start()] + text[close_end:]).strip()
+        return {
+            "reasoning_text": reasoning,
+            "solution_text": visible,
+            "reasoning_parse_status": "paired",
+        }
+
+    closing = re.search(r"</(think|thinking)\s*>", text, re.IGNORECASE)
+    if closing:
+        return {
+            "reasoning_text": text[: closing.start()].strip(),
+            "solution_text": text[closing.end() :].strip(),
+            "reasoning_parse_status": "implicit_closed",
+        }
+
+    return {
+        "reasoning_text": "",
+        "solution_text": text.strip(),
+        "reasoning_parse_status": "none",
+    }
+
+
 def _replace_fractions(text: str) -> str:
     text = re.sub(r"\\(?:d?frac)\s*(\d+)\s*(\d+)", r"(\1)/(\2)", text)
     pattern = re.compile(r"\\(?:d?frac)\s*\{")

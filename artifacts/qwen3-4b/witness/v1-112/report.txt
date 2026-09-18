@@ -1,0 +1,126 @@
+Qwen3-4B WITNESS evaluation
+Model: Qwen/Qwen3-4B
+Tasks: 112
+Generation completed: 112/112
+Format-valid responses: 111/112
+Format-invalid responses: 1
+Failed generations: 0
+Prompt tokens: 43008
+Completion tokens: 132625
+Total tokens: 175633
+Elapsed seconds: 839.3227121829987 (evaluator; Slurm job 35010 elapsed 904 seconds)
+Semantic scoring: not performed.
+
+Per-task status
+WITNESS index 0: status=completed; format=valid
+WITNESS index 1: status=completed; format=valid
+WITNESS index 3: status=completed; format=valid
+WITNESS index 5: status=completed; format=valid
+WITNESS index 7: status=completed; format=valid
+WITNESS index 8: status=completed; format=valid
+WITNESS index 10: status=completed; format=valid
+WITNESS index 11: status=completed; format=valid
+WITNESS index 12: status=completed; format=valid
+WITNESS index 13: status=completed; format=valid
+WITNESS index 16: status=completed; format=valid
+WITNESS index 17: status=completed; format=valid
+WITNESS index 18: status=completed; format=valid
+WITNESS index 21: status=completed; format=valid
+WITNESS index 22: status=completed; format=valid
+WITNESS index 24: status=completed; format=valid
+WITNESS index 27: status=completed; format=valid
+WITNESS index 28: status=completed; format=valid
+WITNESS index 29: status=completed; format=valid
+WITNESS index 30: status=completed; format=valid
+WITNESS index 31: status=completed; format=valid
+WITNESS index 32: status=completed; format=valid
+WITNESS index 33: status=completed; format=valid
+WITNESS index 34: status=completed; format=valid
+WITNESS index 35: status=completed; format=valid
+WITNESS index 36: status=completed; format=valid
+WITNESS index 38: status=completed; format=valid
+WITNESS index 39: status=completed; format=valid
+WITNESS index 40: status=completed; format=valid
+WITNESS index 41: status=completed; format=valid
+WITNESS index 42: status=completed; format=valid
+WITNESS index 45: status=completed; format=valid
+WITNESS index 46: status=completed; format=valid
+WITNESS index 47: status=completed; format=valid
+WITNESS index 49: status=completed; format=valid
+WITNESS index 50: status=completed; format=valid
+WITNESS index 51: status=completed; format=valid
+WITNESS index 52: status=completed; format=valid
+WITNESS index 53: status=completed; format=valid
+WITNESS index 54: status=completed; format=valid
+WITNESS index 55: status=completed; format=valid
+WITNESS index 56: status=completed; format=valid
+WITNESS index 57: status=completed; format=valid
+WITNESS index 58: status=completed; format=valid
+WITNESS index 59: status=completed; format=valid
+WITNESS index 60: status=completed; format=valid
+WITNESS index 61: status=completed; format=valid
+WITNESS index 62: status=completed; format=valid
+WITNESS index 63: status=completed; format=valid
+WITNESS index 65: status=completed; format=valid
+WITNESS index 66: status=completed; format=valid
+WITNESS index 67: status=completed; format=valid
+WITNESS index 68: status=completed; format=valid
+WITNESS index 69: status=completed; format=valid
+WITNESS index 71: status=completed; format=valid
+WITNESS index 72: status=completed; format=valid
+WITNESS index 73: status=completed; format=valid
+WITNESS index 76: status=completed; format=valid
+WITNESS index 77: status=completed; format=valid
+WITNESS index 78: status=completed; format=valid
+WITNESS index 79: status=completed; format=valid
+WITNESS index 80: status=completed; format=valid
+WITNESS index 82: status=completed; format=valid
+WITNESS index 83: status=completed; format=valid
+WITNESS index 85: status=completed; format=valid
+WITNESS index 86: status=completed; format=valid
+WITNESS index 87: status=completed; format=valid
+WITNESS index 93: status=completed; format=valid
+WITNESS index 94: status=completed; format=valid
+WITNESS index 95: status=completed; format=valid
+WITNESS index 96: status=completed; format=valid
+WITNESS index 97: status=completed; format=valid
+WITNESS index 99: status=completed; format=valid
+WITNESS index 100: status=completed; format=valid
+WITNESS index 101: status=completed; format=valid
+WITNESS index 103: status=completed; format=valid
+WITNESS index 105: status=completed; format=valid
+WITNESS index 107: status=completed; format=valid
+WITNESS index 108: status=completed; format=valid
+WITNESS index 109: status=completed; format=valid
+WITNESS index 110: status=completed; format=valid
+WITNESS index 111: status=completed; format=valid
+WITNESS index 112: status=completed; format=valid
+WITNESS index 113: status=completed; format=valid
+WITNESS index 114: status=completed; format=valid
+WITNESS index 115: status=completed; format=valid
+WITNESS index 117: status=completed; format=valid
+WITNESS index 118: status=completed; format=valid
+WITNESS index 119: status=completed; format=valid
+WITNESS index 120: status=completed; format=valid
+WITNESS index 121: status=completed; format=valid
+WITNESS index 122: status=completed; format=valid
+WITNESS index 123: status=completed; format=valid
+WITNESS index 124: status=completed; format=valid
+WITNESS index 125: status=completed; format=valid
+WITNESS index 126: status=completed; format=valid
+WITNESS index 128: status=completed; format=valid
+WITNESS index 129: status=completed; format=valid
+WITNESS index 130: status=completed; format=valid
+WITNESS index 131: status=completed; format=valid
+WITNESS index 132: status=completed; format=valid
+WITNESS index 134: status=completed; format=valid
+WITNESS index 135: status=completed; format=valid
+WITNESS index 136: status=completed; format=valid
+WITNESS index 137: status=completed; format=valid
+WITNESS index 139: status=completed; format=valid
+WITNESS index 140: status=completed; format=valid
+WITNESS index 141: status=completed; format=valid
+WITNESS index 143: status=completed; format=valid
+WITNESS index 144: status=completed; format=valid
+WITNESS index 145: status=completed; format=valid
+WITNESS index 146: status=completed; format=expected Witness: followed by Verification:

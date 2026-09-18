@@ -1,0 +1,16 @@
+WITNESS-v1 DeepSeek generation
+Selected verified solutions: 112
+Schema-valid outputs: 112
+Valid WITNESS tasks: 112
+NOT_SUITABLE: 0
+Schema/API failures: 0
+Intentionally excluded source indices: [20]
+Elapsed seconds: 166.184
+Total recorded generation time (seconds): 1711.75
+Generation attempts: 3 (full pass plus two retries)
+Elapsed scope: three recorded 16k/high attempts; excludes the aborted exploratory 8k pass.
+Prompt tokens: 177134
+Completion tokens: 874295
+Total tokens: 1051429
+Calculated output cost USD: 0.18925722
+Provider-reported cost USD: 0.16794354000000003

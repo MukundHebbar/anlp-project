@@ -1,0 +1,25 @@
+You are answering a WITNESS mathematics task.
+
+Construct one concrete mathematical object or instance that satisfies the WITNESS request. Then give a short, correct verification of every required condition.
+
+Use the original problem and relevant context only to understand what phenomenon your witness must demonstrate. Do not re-solve the original problem, discuss alternative strategies, or merely restate the task.
+
+<source_problem>
+{source_problem}
+</source_problem>
+
+<relevant_context>
+{relevant_context}
+</relevant_context>
+
+<witness_task>
+{witness_request}
+</witness_task>
+
+Respond in exactly this format:
+
+Witness:
+[State one explicit object, instance, tuple, function, set, graph, polynomial, sequence, or other requested mathematical object.]
+
+Verification:
+[Briefly verify that the witness satisfies each required condition and genuinely demonstrates the requested phenomenon.]

@@ -118,6 +118,7 @@ def stream_solution(
     model: str,
     prompt: str,
     max_tokens: int,
+    reasoning_effort: str = DEFAULT_REASONING_EFFORT,
 ) -> tuple[str, str | None, str | None, dict[str, Any] | None]:
     visible_parts: list[str] = []
     reasoning_parts: list[str] = []
@@ -131,7 +132,7 @@ def stream_solution(
             max_tokens=max_tokens,
             stream=True,
             stream_options={"include_usage": True},
-            extra_body={"reasoning_effort": DEFAULT_REASONING_EFFORT},
+            extra_body={"reasoning_effort": reasoning_effort},
         )
         for chunk in stream:
             choices = getattr(chunk, "choices", None) or []

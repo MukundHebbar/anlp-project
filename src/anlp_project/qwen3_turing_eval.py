@@ -1,4 +1,4 @@
-"""Run batched Qwen3-4B EXPLAIN and SOLVE evaluation with vLLM."""
+"""Run Qwen3-4B EXPLAIN, SOLVE, or public-only WITNESS evaluation with vLLM."""
 
 from __future__ import annotations
 
@@ -14,7 +14,13 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from .paths import ARTIFACTS_DIR, MANIFESTS_DIR, PROMPTS_DIR, PROJECT_ROOT
-from .solution_verification import compare_answer_detailed, compare_answers, extract_final_answer, normalize_answer
+from .solution_verification import (
+    compare_answer_detailed,
+    compare_answers,
+    extract_final_answer,
+    normalize_answer,
+    split_reasoning_response,
+)
 from .storage import atomic_write_json, read_json
 
 
@@ -34,6 +40,19 @@ DEFAULT_MAX_MODEL_LEN = 16384
 DEFAULT_GPU_MEMORY_UTILIZATION = 0.90
 DEFAULT_EXPLAIN_V1_INPUT = ARTIFACTS_DIR / "deepseek-v4-flash" / "explain" / "v1-111" / "results.json"
 DEFAULT_STUDENT_EXPLAIN_PROMPT = PROMPTS_DIR / "explain" / "student_explain.md"
+DEFAULT_SOLVE_PROMPT = PROMPTS_DIR / "solve" / "solve_no_reference.md"
+DEFAULT_WITNESS_INPUT = ARTIFACTS_DIR / "deepseek-v4-flash" / "witness" / "v1-113" / "results.json"
+DEFAULT_WITNESS_OUTPUT = ARTIFACTS_DIR / "qwen3-4b" / "witness" / "v1-112" / "results.json"
+DEFAULT_WITNESS_REPORT = ARTIFACTS_DIR / "qwen3-4b" / "witness" / "v1-112" / "report.txt"
+DEFAULT_WITNESS_PROMPT = PROMPTS_DIR / "witness" / "witness_student.txt"
+
+WITNESS_TASK_KEYS = {"source_problem", "relevant_context", "witness_request", "response_instruction"}
+WITNESS_PROMPT_PLACEHOLDERS = (
+    "{source_problem}",
+    "{relevant_context}",
+    "{witness_request}",
+    "{response_instruction}",
+)
 
 EXPLAIN_SYSTEM = """You are answering a mathematics EXPLAIN task. Read the supplied task carefully and explain only why the selected step is valid. Identify the relevant mathematical principle, verify its conditions, and connect it to the supplied result. Do not choose a different strategy, continue solving the original problem, or state the original problem's final answer. Output only your explanation, without XML tags or a private reference answer."""
 SOLVE_SYSTEM = """You are solving a mathematics problem. Give a complete, rigorous derivation with no exploratory commentary. End your response with exactly one tag of the form <final_answer>...</final_answer>, containing only the final answer expression or text. Do not put the tag inside a code fence."""
@@ -149,6 +168,124 @@ def load_explain_v1_records(input_path: Path) -> list[dict[str, Any]]:
     return records
 
 
+def load_witness_records(input_path: Path) -> list[dict[str, Any]]:
+    """Load only public student-facing fields from a generated WITNESS artifact."""
+    batch = read_json(input_path)
+    items = batch.get("items")
+    if not isinstance(items, list):
+        raise ValueError(f"{input_path} must contain an 'items' list")
+
+    records: list[dict[str, Any]] = []
+    seen: set[int] = set()
+    for item in items:
+        if not isinstance(item, dict) or not isinstance(item.get("source_index"), int):
+            raise ValueError("WITNESS item has an invalid source_index")
+        source_index = item["source_index"]
+        if source_index in seen:
+            raise ValueError(f"WITNESS source index {source_index} is duplicated")
+        output = item.get("output")
+        if not isinstance(output, dict):
+            raise ValueError(f"WITNESS source index {source_index} has no generated task")
+        task = output.get("student_facing_task")
+        if not isinstance(task, dict) or set(task) != WITNESS_TASK_KEYS:
+            raise ValueError(f"WITNESS source index {source_index} has an invalid student task")
+        for field in ("source_problem", "witness_request", "response_instruction"):
+            if not isinstance(task[field], str) or not task[field].strip():
+                raise ValueError(f"WITNESS source index {source_index} has invalid {field}")
+        context = task["relevant_context"]
+        if not isinstance(context, list) or any(not isinstance(value, str) or not value.strip() for value in context):
+            raise ValueError(f"WITNESS source index {source_index} has invalid relevant_context")
+        seen.add(source_index)
+        records.append(
+            {
+                "source_index": source_index,
+                "source_problem": task["source_problem"],
+                "relevant_context": list(context),
+                "witness_request": task["witness_request"],
+                "response_instruction": task["response_instruction"],
+            }
+        )
+    if not records:
+        raise ValueError("No suitable WITNESS tasks were found")
+    records.sort(key=lambda item: item["source_index"])
+    return records
+
+
+def load_witness_prompt(prompt_path: Path = DEFAULT_WITNESS_PROMPT) -> str:
+    try:
+        template = prompt_path.read_text(encoding="utf-8")
+    except FileNotFoundError as exc:
+        raise ValueError(f"Student WITNESS prompt does not exist: {prompt_path}") from exc
+    # The checked-in student prompt already contains its own response-format
+    # instruction, so only the task content placeholders are mandatory.
+    missing = [placeholder for placeholder in WITNESS_PROMPT_PLACEHOLDERS[:3] if placeholder not in template]
+    if missing:
+        raise ValueError(f"Student WITNESS prompt is missing placeholders: {', '.join(missing)}")
+    return template
+
+
+def build_witness_prompt(record: dict[str, Any], template: str | None = None) -> str:
+    template = template if template is not None else load_witness_prompt()
+    values = {
+        "source_problem": record["source_problem"],
+        "relevant_context": "\n".join(f"- {fact}" for fact in record["relevant_context"]),
+        "witness_request": record["witness_request"],
+        "response_instruction": record["response_instruction"],
+    }
+    rendered = template
+    for key, value in values.items():
+        rendered = rendered.replace("{" + key + "}", value)
+    if "{response_instruction}" not in template:
+        rendered += f"\n\nAdditional response instruction:\n{values['response_instruction']}"
+    return rendered
+
+
+def parse_witness_response(response: str) -> dict[str, Any]:
+    """Check the required Witness/Verification headings without semantic scoring."""
+    if not isinstance(response, str):
+        return {"format_valid": False, "format_error": "response is not text"}
+    match = re.fullmatch(r"\s*Witness:\s*(.*?)\s*Verification:\s*(.*?)\s*", response, flags=re.DOTALL)
+    if not match:
+        return {"format_valid": False, "format_error": "expected Witness: followed by Verification:"}
+    witness = match.group(1).strip()
+    verification = match.group(2).strip()
+    if not witness:
+        return {"format_valid": False, "format_error": "Witness section is empty"}
+    if not verification:
+        return {"format_valid": False, "format_error": "Verification section is empty"}
+    return {"format_valid": True, "witness_text": witness, "verification_text": verification}
+
+
+def witness_prompt_metadata(prompt_path: Path, template: str) -> dict[str, Any]:
+    return {
+        "student_prompt_file": str(prompt_path),
+        "student_prompt_sha256": hashlib.sha256(template.encode("utf-8")).hexdigest(),
+        "student_prompt_placeholders": list(WITNESS_PROMPT_PLACEHOLDERS),
+    }
+
+
+def preflight_witness_prompts(llm: Any, records: list[dict[str, Any]], template: str, max_tokens: int, max_model_len: int) -> None:
+    """Tokenize chat-formatted prompts before generation and enforce context capacity."""
+    tokenizer = llm.get_tokenizer()
+    for record in records:
+        prompt = build_witness_prompt(record, template)
+        messages = [{"role": "user", "content": prompt}]
+        try:
+            token_ids = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
+        except (AttributeError, TypeError):
+            token_ids = tokenizer.encode(prompt, add_special_tokens=True)
+        if isinstance(token_ids, dict):
+            token_ids = token_ids.get("input_ids", [])
+        if token_ids and isinstance(token_ids[0], list):
+            token_ids = token_ids[0]
+        prompt_tokens = len(token_ids)
+        if prompt_tokens + max_tokens > max_model_len:
+            raise ValueError(
+                f"WITNESS source {record['source_index']} needs {prompt_tokens} prompt + "
+                f"{max_tokens} completion tokens, exceeding max_model_len={max_model_len}"
+            )
+
+
 def build_explain_prompt(task: str) -> str:
     return f"{EXPLAIN_SYSTEM}\n\n<task>\n{task}\n</task>"
 
@@ -196,6 +333,22 @@ def build_solve_prompt(question: str) -> str:
     return f"{SOLVE_SYSTEM}\n\n<problem>\n{question}\n</problem>"
 
 
+def load_solve_prompt(prompt_path: Path = DEFAULT_SOLVE_PROMPT) -> str:
+    """Load the public no-reference SOLVE prompt."""
+    try:
+        template = prompt_path.read_text(encoding="utf-8")
+    except FileNotFoundError as exc:
+        raise ValueError(f"SOLVE prompt does not exist: {prompt_path}") from exc
+    if "{{QUESTION}}" not in template:
+        raise ValueError(f"SOLVE prompt is missing {{QUESTION}}: {prompt_path}")
+    return template
+
+
+def build_solve_prompt_from_template(question: str, template: str) -> str:
+    """Render a no-reference SOLVE prompt without interpreting math braces."""
+    return template.replace("{{QUESTION}}", question)
+
+
 def verify_final_answer(expected: str, candidate: str | None) -> str:
     status = compare_answers(expected, candidate)
     return "missing_final_answer" if status == "missing" else status
@@ -233,6 +386,7 @@ def run_suite(
     sampling_params: Any,
     retry_failed: bool,
     prompt_template: str | None = None,
+    chat_template_kwargs: dict[str, Any] | None = None,
 ) -> None:
     results = output["results"]
     pending = [
@@ -244,11 +398,17 @@ def run_suite(
         batch = pending[start : start + batch_size]
         if kind == "explain_v1":
             prompts = [build_explain_v1_prompt(item, prompt_template) for item in batch]
+        elif kind == "witness":
+            prompts = [build_witness_prompt(item, prompt_template) for item in batch]
         else:
             prompts = [
                 build_explain_prompt(item["explain_task"])
                 if kind == "explain"
-                else build_solve_prompt(item["question"])
+                else (
+                    build_solve_prompt_from_template(item["question"], prompt_template)
+                    if prompt_template is not None
+                    else build_solve_prompt(item["question"])
+                )
                 for item in batch
             ]
         for item, prompt in zip(batch, prompts):
@@ -260,41 +420,62 @@ def run_suite(
                 [[{"role": "user", "content": prompt}] for prompt in prompts],
                 sampling_params,
                 use_tqdm=False,
-                chat_template_kwargs={"enable_thinking": False},
+                chat_template_kwargs=chat_template_kwargs or {"enable_thinking": False},
             )
             if len(generated) != len(batch):
                 raise ValueError(f"vLLM returned {len(generated)} outputs for {len(batch)} prompts")
             elapsed = time.perf_counter() - started
             per_item = elapsed / len(batch)
             for item, generated_item in zip(batch, generated):
-                text, finish_reason, prompt_tokens, completion_tokens = _result_from_output(generated_item)
-                item.update(
-                    {
-                        "status": "completed",
-                        "response": text,
-                        "response_nonempty": bool(text),
-                        "finish_reason": finish_reason,
-                        "prompt_tokens": prompt_tokens,
-                        "completion_tokens": completion_tokens,
-                        "batch_latency_seconds": elapsed,
-                        "latency_seconds_approx": per_item,
-                    }
-                )
-                if kind == "solve":
-                    extracted, extraction_method = extract_final_answer(text)
-                    verification_detail = compare_answer_detailed(item["final_answer"], extracted)
+                try:
+                    text, finish_reason, prompt_tokens, completion_tokens = _result_from_output(generated_item)
                     item.update(
                         {
-                            "extracted_final_answer": extracted,
-                            "final_answer_extraction": extraction_method,
-                            "verification": verify_final_answer(item["final_answer"], extracted),
-                            "verification_detail": verification_detail,
-                            "answer_status": verification_detail["answer_status"],
-                            "verification_method": verification_detail["verification_method"],
-                            "verification_reason": verification_detail.get("verification_reason"),
-                            "explain_eligible": verification_detail["answer_status"] == "correct",
+                            "status": "completed",
+                            "response": text,
+                            "response_nonempty": bool(text),
+                            "finish_reason": finish_reason,
+                            "prompt_tokens": prompt_tokens,
+                            "completion_tokens": completion_tokens,
+                            "batch_latency_seconds": elapsed,
+                            "latency_seconds_approx": per_item,
                         }
                     )
+                    if kind == "solve":
+                        separated = split_reasoning_response(text)
+                        visible_solution = separated["solution_text"]
+                        extracted, extraction_method = extract_final_answer(visible_solution)
+                        verification_detail = compare_answer_detailed(item["final_answer"], extracted)
+                        item.update(
+                            {
+                                "raw_response": text,
+                                "reasoning_text": separated["reasoning_text"],
+                                "solution_text": visible_solution,
+                                "reasoning_parse_status": separated["reasoning_parse_status"],
+                                "response": visible_solution,
+                                "response_nonempty": bool(visible_solution),
+                                "extracted_final_answer": extracted,
+                                "final_answer_extraction": extraction_method,
+                                "verification": verify_final_answer(item["final_answer"], extracted),
+                                "verification_detail": verification_detail,
+                                "answer_status": verification_detail["answer_status"],
+                                "verification_method": verification_detail["verification_method"],
+                                "verification_reason": verification_detail.get("verification_reason"),
+                                "explain_eligible": verification_detail["answer_status"] == "correct",
+                            }
+                        )
+                    elif kind == "witness":
+                        item.update(parse_witness_response(text))
+                except Exception as error:
+                    item.update(
+                        {
+                            "status": "failed",
+                            "error": f"{error.__class__.__name__}: {error}",
+                            "batch_latency_seconds": elapsed,
+                            "latency_seconds_approx": per_item,
+                        }
+                    )
+                    print(f"{kind} batch {batch_number}: source {item.get('source_index')} failed: {error}")
             print(f"{kind} batch {batch_number}: {len(batch)} completed")
         except Exception as error:
             elapsed = time.perf_counter() - started
@@ -409,6 +590,37 @@ def build_solve_report(output: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def build_witness_report(output: dict[str, Any]) -> str:
+    results = output["results"]
+    completed = sum(item.get("status") == "completed" for item in results)
+    failed = sum(item.get("status") == "failed" for item in results)
+    format_valid = sum(item.get("format_valid") is True for item in results)
+    format_invalid = sum(item.get("status") == "completed" and item.get("format_valid") is False for item in results)
+    prompt_tokens = sum(item.get("prompt_tokens") or 0 for item in results)
+    completion_tokens = sum(item.get("completion_tokens") or 0 for item in results)
+    metadata = output.get("metadata", {})
+    lines = [
+        "Qwen3-4B WITNESS evaluation",
+        f"Model: {metadata.get('model')}",
+        f"Tasks: {len(results)}",
+        f"Generation completed: {completed}/{len(results)}",
+        f"Format-valid responses: {format_valid}/{len(results)}",
+        f"Format-invalid responses: {format_invalid}",
+        f"Failed generations: {failed}",
+        f"Prompt tokens: {prompt_tokens}",
+        f"Completion tokens: {completion_tokens}",
+        f"Total tokens: {prompt_tokens + completion_tokens}",
+        f"Elapsed seconds: {metadata.get('elapsed_seconds')}",
+        "Semantic scoring: not performed.",
+        "",
+        "Per-task status",
+    ]
+    for item in results:
+        detail = item.get("format_error", "valid")
+        lines.append(f"WITNESS index {item['source_index']}: status={item.get('status')}; format={detail}")
+    return "\n".join(lines) + "\n"
+
+
 def _metadata(args: argparse.Namespace, kind: str) -> dict[str, Any]:
     return {
         "model": args.model,
@@ -420,6 +632,7 @@ def _metadata(args: argparse.Namespace, kind: str) -> dict[str, Any]:
         "top_p": args.top_p,
         "top_k": args.top_k,
         "enable_thinking": False,
+        "reasoning_effort": args.reasoning_effort,
         "backend": "vllm",
         "hostname": socket.gethostname(),
         "slurm_job_id": os.getenv("SLURM_JOB_ID"),
@@ -432,12 +645,22 @@ def _runtime_metadata() -> dict[str, Any]:
     import sys
 
     import torch
+    try:
+        import transformers
+    except ImportError:
+        transformers = None
+    try:
+        import vllm
+    except ImportError:
+        vllm = None
 
     cuda_available = bool(torch.cuda.is_available())
     return {
         "python_version": sys.version,
         "torch_version": torch.__version__,
         "torch_cuda_version": getattr(torch.version, "cuda", None),
+        "transformers_version": getattr(transformers, "__version__", None),
+        "vllm_version": getattr(vllm, "__version__", None),
         "cuda_available": cuda_available,
         "gpu_name": torch.cuda.get_device_name(0) if cuda_available else None,
     }
@@ -448,6 +671,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--explain-output", type=Path, default=DEFAULT_EXPLAIN_OUTPUT)
     parser.add_argument("--solve-output", type=Path, default=DEFAULT_SOLVE_OUTPUT)
+    parser.add_argument("--witness-output", type=Path, default=DEFAULT_WITNESS_OUTPUT)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
@@ -455,22 +679,40 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
     parser.add_argument("--top-p", type=float, default=DEFAULT_TOP_P)
     parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K)
+    parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--dtype", default=DEFAULT_DTYPE)
     parser.add_argument("--max-model-len", type=int, default=DEFAULT_MAX_MODEL_LEN)
     parser.add_argument("--gpu-memory-utilization", type=float, default=DEFAULT_GPU_MEMORY_UTILIZATION)
     parser.add_argument("--max-num-seqs", type=int, default=None)
     parser.add_argument("--student-prompt", type=Path, default=DEFAULT_STUDENT_EXPLAIN_PROMPT)
+    parser.add_argument("--solve-prompt", type=Path, default=None)
+    parser.add_argument("--witness-prompt", type=Path, default=DEFAULT_WITNESS_PROMPT)
+    parser.add_argument("--reasoning-effort", choices=("low", "medium", "xhigh"), default=None)
+    parser.add_argument("--thinking-token-budget", type=int, default=None)
+    parser.add_argument(
+        "--mtp-tokens",
+        type=int,
+        default=0,
+        help="Enable Qwen3.5 native MTP with this many speculative tokens (0 disables it).",
+    )
     parser.add_argument("--retry-failed", action="store_true")
-    parser.add_argument("--mode", choices=("suite", "explain-v1", "solve-only"), default="suite")
+    parser.add_argument("--mode", choices=("suite", "explain-v1", "solve-only", "witness"), default="suite")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    evaluation_started = time.perf_counter()
     if args.batch_size < 1 or args.max_tokens < 1 or args.top_k < 1 or args.max_model_len < 1:
         raise ValueError("batch-size, max-tokens, top-k, and max-model-len must be positive")
     if args.max_num_seqs is not None and args.max_num_seqs < 1:
         raise ValueError("max-num-seqs must be positive when supplied")
+    if args.thinking_token_budget is not None and args.thinking_token_budget < 1:
+        raise ValueError("thinking-token-budget must be positive when supplied")
+    if args.mtp_tokens < 0:
+        raise ValueError("mtp-tokens must be non-negative")
+    if args.mode == "witness" and args.reasoning_effort is not None:
+        raise ValueError("WITNESS mode requires non-thinking inference; omit --reasoning-effort")
     if not 0 < args.gpu_memory_utilization <= 1:
         raise ValueError("gpu-memory-utilization must be in (0, 1]")
     metadata = {
@@ -480,14 +722,35 @@ def main() -> None:
         "temperature": args.temperature,
         "top_p": args.top_p,
         "top_k": args.top_k,
+        "seed": args.seed,
         "dtype": args.dtype,
         "max_model_len": args.max_model_len,
         "gpu_memory_utilization": args.gpu_memory_utilization,
         "max_num_seqs": args.max_num_seqs,
         "enable_thinking": False,
         "backend": "vllm",
+        "reasoning_effort": args.reasoning_effort,
+        "thinking_token_budget": args.thinking_token_budget,
+        "mtp_tokens": args.mtp_tokens,
     }
-    if args.mode == "explain-v1":
+    if args.mode == "witness":
+        records = load_witness_records(args.input)
+        witness_prompt = load_witness_prompt(args.witness_prompt)
+        witness = initialize_output(
+            args.witness_output,
+            records,
+            "WITNESS",
+            {
+                **metadata,
+                **_metadata(args, "witness"),
+                **witness_prompt_metadata(args.witness_prompt, witness_prompt),
+                "source_witness_artifact": str(args.input),
+                "expected_task_count": len(records),
+                "semantic_scoring": False,
+            },
+        )
+        witness["_path"] = args.witness_output
+    elif args.mode == "explain-v1":
         records = load_explain_v1_records(args.input)
         student_prompt = load_student_explain_prompt(args.student_prompt)
         explain = initialize_output(
@@ -505,6 +768,7 @@ def main() -> None:
         explain["_path"] = args.explain_output
     elif args.mode == "solve-only":
         records = load_records(args.input)
+        solve_prompt = load_solve_prompt(args.solve_prompt) if args.solve_prompt else None
         solve = initialize_output(args.solve_output, records, "SOLVE", {**metadata, **_metadata(args, "solve")})
         solve["_path"] = args.solve_output
     else:
@@ -521,17 +785,29 @@ def main() -> None:
         raise RuntimeError("vLLM is required; install it in the Turing evaluation environment") from exc
 
     print(f"Loading {args.model} with vLLM")
+    llm_kwargs: dict[str, Any] = {
+        "model": args.model,
+        "trust_remote_code": True,
+        "dtype": args.dtype,
+        "max_model_len": args.max_model_len,
+        "gpu_memory_utilization": args.gpu_memory_utilization,
+        "tensor_parallel_size": 1,
+    }
+    if args.max_num_seqs is not None:
+        llm_kwargs["max_num_seqs"] = args.max_num_seqs
+    if args.mtp_tokens:
+        llm_kwargs["speculative_config"] = {
+            "method": "mtp",
+            "num_speculative_tokens": args.mtp_tokens,
+        }
     llm = LLM(
-        model=args.model,
-        trust_remote_code=True,
-        dtype=args.dtype,
-        max_model_len=args.max_model_len,
-        gpu_memory_utilization=args.gpu_memory_utilization,
-        tensor_parallel_size=1,
-        **({"max_num_seqs": args.max_num_seqs} if args.max_num_seqs is not None else {}),
+        **llm_kwargs,
     )
     runtime = _runtime_metadata()
-    if args.mode == "explain-v1":
+    if args.mode == "witness":
+        preflight_witness_prompts(llm, records, witness_prompt, args.max_tokens, args.max_model_len)
+        witness["metadata"].update(runtime)
+    elif args.mode == "explain-v1":
         explain["metadata"].update(runtime)
     elif args.mode == "solve-only":
         solve["metadata"].update(runtime)
@@ -543,8 +819,22 @@ def main() -> None:
         top_p=args.top_p,
         top_k=args.top_k,
         max_tokens=args.max_tokens,
+        **({"seed": args.seed} if args.seed is not None else {}),
     )
-    if args.mode == "explain-v1":
+    if args.mode == "witness":
+        run_suite(
+            llm,
+            witness,
+            "witness",
+            args.batch_size,
+            sampling_params,
+            args.retry_failed,
+            prompt_template=witness_prompt,
+            chat_template_kwargs={"enable_thinking": False},
+        )
+        witness.pop("_path", None)
+        atomic_write_json(args.witness_output, witness)
+    elif args.mode == "explain-v1":
         run_suite(
             llm,
             explain,
@@ -557,7 +847,21 @@ def main() -> None:
         explain.pop("_path", None)
         atomic_write_json(args.explain_output, explain)
     elif args.mode == "solve-only":
-        run_suite(llm, solve, "solve", args.batch_size, sampling_params, args.retry_failed)
+        thinking_kwargs: dict[str, Any] = {"enable_thinking": bool(args.reasoning_effort)}
+        if args.reasoning_effort:
+            thinking_kwargs["reasoning_effort"] = args.reasoning_effort
+        if args.thinking_token_budget is not None:
+            thinking_kwargs["thinking_token_budget"] = args.thinking_token_budget
+        run_suite(
+            llm,
+            solve,
+            "solve",
+            args.batch_size,
+            sampling_params,
+            args.retry_failed,
+            prompt_template=solve_prompt,
+            chat_template_kwargs=thinking_kwargs,
+        )
         solve.pop("_path", None)
         atomic_write_json(args.solve_output, solve)
     else:
@@ -567,9 +871,29 @@ def main() -> None:
         solve.pop("_path", None)
         atomic_write_json(args.explain_output, explain)
         atomic_write_json(args.solve_output, solve)
+    evaluation_metadata = {
+        "finished_at_utc": datetime.now(timezone.utc).isoformat(),
+        "elapsed_seconds": time.perf_counter() - evaluation_started,
+    }
+    if args.mode == "witness":
+        witness["metadata"].update(evaluation_metadata)
+        atomic_write_json(args.witness_output, witness)
+    elif args.mode == "explain-v1":
+        explain["metadata"].update(evaluation_metadata)
+        atomic_write_json(args.explain_output, explain)
+    elif args.mode == "solve-only":
+        solve["metadata"].update(evaluation_metadata)
+        atomic_write_json(args.solve_output, solve)
+    else:
+        explain["metadata"].update(evaluation_metadata)
+        solve["metadata"].update(evaluation_metadata)
+        atomic_write_json(args.explain_output, explain)
+        atomic_write_json(args.solve_output, solve)
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(
-        build_explain_v1_report(explain)
+        build_witness_report(witness)
+        if args.mode == "witness"
+        else build_explain_v1_report(explain)
         if args.mode == "explain-v1"
         else build_solve_report(solve)
         if args.mode == "solve-only"

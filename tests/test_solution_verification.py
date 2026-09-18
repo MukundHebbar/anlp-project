@@ -5,6 +5,7 @@ from anlp_project.solution_verification import (
     compare_answers,
     extract_final_answer,
     normalize_answer,
+    split_reasoning_response,
     usage_cost,
     verify_record,
 )
@@ -68,6 +69,24 @@ class SolutionVerificationTests(unittest.TestCase):
         self.assertEqual(result["answer_status"], "missing")
         self.assertEqual(result["verification_reason"], "no_extractable_answer")
         self.assertFalse(result["explain_eligible"])
+
+    def test_reasoning_response_split_supports_qwen_markers(self):
+        paired = split_reasoning_response(
+            "<think><final_answer>wrong</final_answer> check work</think>\n"
+            "Full derivation. <final_answer>4</final_answer>"
+        )
+        self.assertEqual(paired["reasoning_parse_status"], "paired")
+        self.assertIn("wrong", paired["reasoning_text"])
+        self.assertNotIn("wrong", paired["solution_text"])
+        self.assertIn("<final_answer>4</final_answer>", paired["solution_text"])
+
+        implicit = split_reasoning_response("thinking\n</think>\nsolution")
+        self.assertEqual(implicit["reasoning_parse_status"], "implicit_closed")
+        self.assertEqual(implicit["solution_text"], "solution")
+
+        unclosed = split_reasoning_response("<thinking>unfinished reasoning")
+        self.assertEqual(unclosed["reasoning_parse_status"], "unclosed")
+        self.assertEqual(unclosed["solution_text"], "")
 
 
 if __name__ == "__main__":

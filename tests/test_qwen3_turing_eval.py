@@ -10,11 +10,18 @@ from anlp_project.qwen3_turing_eval import (
     build_explain_prompt,
     build_explain_v1_prompt,
     build_solve_prompt,
+    build_solve_prompt_from_template,
     extract_final_answer,
     extract_student_task,
     load_explain_v1_records,
     load_records,
+    load_witness_prompt,
+    load_witness_records,
+    build_witness_prompt,
+    parse_witness_response,
+    preflight_witness_prompts,
     load_student_explain_prompt,
+    load_solve_prompt,
     normalize_answer,
     parse_args,
     student_explain_prompt_metadata,
@@ -23,6 +30,63 @@ from anlp_project.qwen3_turing_eval import (
 
 
 class Qwen3TuringEvalTests(unittest.TestCase):
+    def test_witness_loader_exposes_public_fields_only(self):
+        with tempfile.TemporaryDirectory() as directory_name:
+            path = Path(directory_name) / "witness.json"
+            path.write_text(
+                json.dumps({
+                    "items": [{
+                        "source_index": 8,
+                        "output": {
+                            "student_facing_task": {
+                                "source_problem": "Original",
+                                "relevant_context": ["Fact"],
+                                "witness_request": "Give x.",
+                                "response_instruction": "Verify.",
+                            },
+                            "reference_witness": {"object": "PRIVATE", "verification": "PRIVATE"},
+                            "evaluation_rubric": {"required_conditions": ["PRIVATE"]},
+                        },
+                    }]
+                }),
+                encoding="utf-8",
+            )
+            record = load_witness_records(path)[0]
+            self.assertEqual(set(record), {"source_index", "source_problem", "relevant_context", "witness_request", "response_instruction"})
+            prompt = build_witness_prompt(record, "{source_problem}|{relevant_context}|{witness_request}|{response_instruction}")
+            self.assertEqual(prompt, "Original|- Fact|Give x.|Verify.")
+            self.assertNotIn("PRIVATE", prompt)
+
+    def test_witness_prompt_loader_and_format_parser(self):
+        template = load_witness_prompt()
+        self.assertIn("{source_problem}", template)
+        valid = parse_witness_response("Witness:\n{x = 1}\n\nVerification:\nIt satisfies the condition.")
+        self.assertTrue(valid["format_valid"])
+        self.assertEqual(valid["witness_text"], "{x = 1}")
+        self.assertFalse(parse_witness_response("Verification: only")["format_valid"])
+        self.assertFalse(parse_witness_response("Witness:\n\nVerification: text")["format_valid"])
+        self.assertFalse(parse_witness_response("Witness: object\nVerification:")["format_valid"])
+
+    def test_witness_preflight_checks_prompt_plus_completion_capacity(self):
+        class FakeTokenizer:
+            def apply_chat_template(self, messages, tokenize, add_generation_prompt):
+                return [1, 2, 3]
+
+        class FakeLLM:
+            def get_tokenizer(self):
+                return FakeTokenizer()
+
+        record = {
+            "source_index": 1,
+            "source_problem": "P",
+            "relevant_context": [],
+            "witness_request": "W",
+            "response_instruction": "R",
+        }
+        preflight_witness_prompts(FakeLLM(), [record], "{source_problem}{relevant_context}{witness_request}{response_instruction}", 4, 7)
+        with self.assertRaises(ValueError):
+            preflight_witness_prompts(FakeLLM(), [record], "{source_problem}{relevant_context}{witness_request}{response_instruction}", 5, 7)
+
     def test_load_explain_v1_filters_not_suitable_and_private_fields(self):
         with tempfile.TemporaryDirectory() as directory_name:
             path = Path(directory_name) / "input.json"
@@ -173,6 +237,13 @@ class Qwen3TuringEvalTests(unittest.TestCase):
         self.assertEqual(extract_final_answer("work\n<final_answer>\\dfrac{3}{2}</final_answer>"), ("\\dfrac{3}{2}", "tag"))
         self.assertEqual(extract_final_answer(r"work \(\boxed{4}\)"), ("4", "boxed_fallback"))
         self.assertEqual(extract_final_answer("no answer"), (None, "missing_final_answer"))
+
+    def test_no_reference_solve_prompt_template(self):
+        template = load_solve_prompt()
+        prompt = build_solve_prompt_from_template("2+2?", template)
+        self.assertIn("2+2?", prompt)
+        self.assertNotIn("{{QUESTION}}", prompt)
+        self.assertNotIn("verified final answer", prompt.lower())
 
     def test_deterministic_normalization_and_verification(self):
         self.assertEqual(normalize_answer(r"\dfrac{3}{2}"), "(3)/(2)")

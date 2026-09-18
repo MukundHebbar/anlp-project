@@ -1,0 +1,102 @@
+You are generating one WITNESS item from a mathematical problem and a verified worked solution.
+
+Definition
+
+WITNESS is a problem-anchored mathematical construction task. Identify one load-bearing feature of the source problem or solution, then ask for a concrete mathematical instance that demonstrates the role, limit, failure, or attainability of that feature.
+
+The student must provide:
+1. a concrete object or instance; and
+2. a short verification that it satisfies the requested conditions.
+
+Inputs
+
+<problem>
+{problem}
+</problem>
+
+<verified_solution>
+{verified_solution}
+</verified_solution>
+
+Allowed transformation types
+
+- boundary_shift: change one meaningful threshold or bound and request an instance showing the resulting change.
+- assumption_weakening: remove or weaken one essential condition and request an instance satisfying the remaining conditions but violating the original conclusion.
+- domain_extension: move beyond the domain where a statement was proved and request an instance where it fails.
+- converse_failure: if the solution establishes A => B, request an instance satisfying B but not A. Use only when a verified counterexample exists.
+- equality_case: construct an object attaining a bound proved in the source solution.
+- structural_stress_test: make one small structural modification that preserves most of the setting and produces a concrete, checkable construction task.
+
+Generation requirements
+
+1. Identify exactly one load-bearing feature: an assumption, threshold, bound, domain restriction, structural condition, implication, or equality condition.
+2. Make exactly one primary change, unless the task is an equality_case.
+3. Keep the principal objects and mathematical setting of the source problem.
+4. Ask for a concrete object: for example, an integer, tuple, polynomial, permutation, set family, graph, function, sequence, or matrix.
+5. Generate and verify one valid reference witness before retaining the item.
+6. Create an evaluation rubric with atomic properties that can evaluate witnesses different from the reference.
+7. Put only the minimum source-solution context needed to understand the construction request in relevant_context. Do not expose the full worked solution to the student by default.
+
+Reject the source problem by returning exactly NOT_SUITABLE if:
+
+- there is no natural and important feature to use;
+- the construction would be generic or weakly connected to the problem;
+- more than one independent feature must be modified;
+- the answer is directly copied from the student-facing context;
+- the task is only routine substitution or a trivial calculation;
+- you cannot establish a correct reference witness confidently;
+- correctness cannot be stated as finite, concrete rubric conditions;
+- verification normally requires a new long proof or another unrestricted full solution;
+- a converse request has no verified counterexample; or
+- the source solution appears materially incorrect.
+
+Do not require a smallest, first, or simplest witness unless that optimality claim can be checked reliably.
+
+Output contract
+
+Return exactly one of these two forms:
+
+1. The raw text NOT_SUITABLE
+
+2. One valid JSON object matching this schema.
+
+Do not output Markdown. Do not use code fences. Do not add commentary before or after the JSON. The first output character must be { and the last output character must be }.
+
+{
+  "transformation_type": "boundary_shift | assumption_weakening | domain_extension | converse_failure | equality_case | structural_stress_test",
+  "load_bearing_feature": "Exact source assumption, bound, condition, or implication used by the solution.",
+  "connection_to_source": "Why the feature matters to the original reasoning and why this request remains problem-anchored.",
+  "student_facing_task": {
+    "source_problem": "Complete original problem statement.",
+    "relevant_context": [
+      "Only the minimum established facts needed to make the witness request self-contained."
+    ],
+    "witness_request": "Precise request for a concrete witness and a short verification.",
+    "response_instruction": "Give a concrete witness and briefly verify every required condition. Do not re-solve the original problem."
+  },
+  "reference_witness": {
+    "object": "One valid explicit witness.",
+    "verification": "Concise verification of every required condition."
+  },
+  "evaluation_rubric": {
+    "object_type": "Expected kind of mathematical object.",
+    "required_conditions": [
+      "Atomic binary condition 1.",
+      "Atomic binary condition 2."
+    ],
+    "required_phenomenon": "The exact failure, boundary behavior, converse failure, or equality attainment to demonstrate.",
+    "acceptable_variation": "Equivalent forms and alternative witnesses that must be accepted.",
+    "material_errors": [
+      "An error that makes a proposed witness invalid."
+    ]
+  },
+  "quality_checks": {
+    "single_primary_change": true,
+    "problem_anchored": true,
+    "reference_verified": true,
+    "not_trivial_copying": true,
+    "verification_shorter_than_full_solution": true
+  }
+}
+
+Before answering, privately verify that the witness request is mathematically sound, non-trivial, directly tied to the source problem, and evaluable using the rubric. Do not reveal this private reasoning.
