@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "model": "gpt-6-luna",
+    "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+    "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+    "source_indices": [0, 10, 38, 41],
+    "generation_mode": "Codex subagent",
+    "warning": "not a Qwen teacher output"
+  },
+  "items": [
+    {
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Because the identity holds for every polynomial of degree at most 2, apply it to f(x)=x and f(x)=x^2."},
+            {"step_id": "S2", "text": "For f(x)=x, the integral from 0 to 2 is 2, so α+β=2. For f(x)=x², the integral is 8/3, so α²+β²=8/3."},
+            {"step_id": "S3", "text": "Using (α+β)²=α²+β²+2αβ gives 4=8/3+2αβ, hence αβ=2/3."},
+            {"step_id": "S4", "text": "Thus (α−β)²=(α+β)²−4αβ=4−8/3=4/3, and 3(α−β)²=4."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "correct", "first_error_step_id": null, "first_error_explanation": null, "error_type": null, "error_position": null, "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: The moment equations imply α+β=2 and α²+β²=8/3, so αβ=2/3 and the requested value is 4."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Taking f(x)=x in the identity gives ∫₀²x dx=α+β."},
+            {"step_id": "S2", "text": "The integral is [x²/2]₀²=4/2−0=1, so α+β=1."},
+            {"step_id": "S3", "text": "Taking f(x)=x² gives α²+β²=∫₀²x² dx=8/3."},
+            {"step_id": "S4", "text": "Using the stated equations, 2αβ=(α+β)²−(α²+β²)=1−8/3=−5/3, so αβ=−5/6."},
+            {"step_id": "S5", "text": "Therefore (α−β)²=(α+β)²−4αβ=1+10/3=13/3, and the requested value is 13."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "incorrect", "first_error_step_id": "S2", "first_error_explanation": "Evaluating [x²/2] from 0 to 2 gives 4/2−0=2, not 1. Consequently S2's value for α+β does not follow.", "error_type": "arithmetic_algebra", "error_position": "early", "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S2.\nExplanation: [x²/2]₀²=4/2−0=2, not 1. The integral was evaluated incorrectly."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Since 61 is prime, Wilson's theorem gives 60! ≡ −1 (mod 61). Also 60!=51!·52·...·60."},
+            {"step_id": "S2", "text": "Modulo 61, the final nine factors are −9 through −1, so their product is −9!. Hence 51!·9!≡1 (mod 61)."},
+            {"step_id": "S3", "text": "Since 9!=362880≡−9 (mod 61), 51!≡(−9)⁻¹ (mod 61). The inverse of 9 is 34, so (−9)⁻¹≡−34≡27."},
+            {"step_id": "S4", "text": "The remainder is 27."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "correct", "first_error_step_id": null, "first_error_explanation": null, "error_type": null, "error_position": null, "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Wilson's theorem and the modular inverse computation yield 51!≡27 (mod 61)."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Because 61 is prime, Wilson's theorem says 60!≡−1 (mod 61)."},
+            {"step_id": "S2", "text": "Writing 60!=51!·52·...·60, the last nine factors have product (−9)(−8)...(−1)=−9! modulo 61."},
+            {"step_id": "S3", "text": "Thus 51!·9!≡1 (mod 61), and 9!≡−9, so 51!≡(−9)⁻¹ (mod 61)."},
+            {"step_id": "S4", "text": "The Euclidean algorithm gives 9⁻¹≡34 (mod 61), hence (−9)⁻¹≡27 (mod 61)."},
+            {"step_id": "S5", "text": "Euler's theorem applies to every integer modulo 61, including 0, so raising both sides to the 60th power confirms the remainder 27."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "incorrect", "first_error_step_id": "S5", "first_error_explanation": "Euler's theorem requires the base to be relatively prime to the modulus; it does not apply to every integer modulo 61, including 0. The claim in S5 is false. The preceding steps already establish the remainder, but the extra justification is invalid.", "error_type": "invalid_theorem_condition", "error_position": "late", "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S5.\nExplanation: Euler's theorem requires gcd(a,61)=1; it cannot be asserted for every residue, in particular 0. The earlier modular inverse argument is valid, but this theorem claim is not."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set h₀=0, consistent with h₁=2h₀+1, and let H(x)=Σₙ₌₀∞hₙxⁿ."},
+            {"step_id": "S2", "text": "Multiply hₙ=2hₙ₋₁+1 by xⁿ and sum for n≥1. This gives H(x)=2xH(x)+x/(1−x)."},
+            {"step_id": "S3", "text": "Solving yields H(x)=x/((1−x)(1−2x))=1/(1−2x)−1/(1−x)."},
+            {"step_id": "S4", "text": "Expanding the geometric series gives H(x)=Σₙ₌₀∞(2ⁿ−1)xⁿ, so hₙ=2ⁿ−1, which also gives h₁=1."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "correct", "first_error_step_id": null, "first_error_explanation": null, "error_type": null, "error_position": null, "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: The generating function satisfies H=2xH+x/(1−x), whose coefficients are hₙ=2ⁿ−1."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "incorrect",
+      "requested_error_type": "counting_bijection",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set h₀=0 and define H(x)=Σₙ₌₀∞hₙxⁿ. Summing the recurrence gives H(x)=2xH(x)+x/(1−x)."},
+            {"step_id": "S2", "text": "Solving and decomposing gives H(x)=1/(1−2x)−1/(1−x)."},
+            {"step_id": "S3", "text": "Expanding both geometric series gives H(x)=Σₙ₌₀∞(2ⁿ−1)xⁿ."},
+            {"step_id": "S4", "text": "Pair each Hanoi move with a binary string of length n, and claim this is a bijection onto all binary strings of length n. There are 2ⁿ such strings, so hₙ=2ⁿ."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "incorrect", "first_error_step_id": "S4", "first_error_explanation": "The claimed bijection onto all length-n binary strings cannot hold: the preceding coefficient calculation gives hₙ=2ⁿ−1 moves, while there are 2ⁿ length-n strings. Thus S4's counting correspondence and conclusion are false.", "error_type": "counting_bijection", "error_position": "late", "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: There are 2ⁿ length-n binary strings, but the derived move count is 2ⁿ−1. They cannot be in bijection, so S4's counting claim fails."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For |x|<1, Σₙ₌₀∞xⁿ=1/(1−x). Differentiating and multiplying by x gives Σₙ₌₁∞nxⁿ=x/(1−x)²."},
+            {"step_id": "S2", "text": "Differentiating x/(1−x)² and multiplying by x gives Σₙ₌₁∞n²xⁿ=x(1+x)/(1−x)³."},
+            {"step_id": "S3", "text": "Set x=1/3, which lies in the convergence interval, to obtain (1/3·4/3)/(2/3)³=(4/9)/(8/27)=3/2."},
+            {"step_id": "S4", "text": "Therefore the series equals 3/2."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "correct", "first_error_step_id": null, "first_error_explanation": null, "error_type": null, "error_position": null, "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Differentiating the geometric series twice gives x(1+x)/(1−x)³; at x=1/3 this is 3/2."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For |x|<1, the geometric series is 1/(1−x). Differentiating and multiplying by x gives Σₙ₌₁∞nxⁿ=x/(1−x)²."},
+            {"step_id": "S2", "text": "Differentiating again and multiplying by x yields Σₙ₌₁∞n²xⁿ=x(1+x)/(1−x)³."},
+            {"step_id": "S3", "text": "At x=1/3, we have 1−x=−2/3, so the series equals ((1/3)(4/3))/(−2/3)³."},
+            {"step_id": "S4", "text": "This gives −3/2, so the series is −3/2."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {"label": "incorrect", "first_error_step_id": "S3", "first_error_explanation": "The sign is wrong: 1−1/3=2/3, not −2/3. This makes the denominator positive; the actual sum is 3/2.", "error_type": "sign_inequality", "error_position": "middle", "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S3.\nExplanation: 1−1/3=2/3, not −2/3. The first invalid step reverses the sign, producing the wrong series value."}
+      },
+      "validation_errors": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "review_kind": "independent GPT-Luna agent review; not human adjudication",
+  "key_file": "artifacts/gpt-6-luna/judge/pilot-review-key.json",
+  "review_files": [
+    "artifacts/gpt-6-luna/judge/blind-audit-0-7.json",
+    "artifacts/gpt-6-luna/judge/blind-audit-8-15.json",
+    "artifacts/gpt-6-luna/judge/blind-audit-16-23.json",
+    "artifacts/gpt-6-luna/judge/blind-audit-24-30.json"
+  ],
+  "generated_items": 31,
+  "reviewed_items": 31,
+  "summaries": [
+    {
+      "candidate": "pilot-v1_rubric-4sources",
+      "generated_items": 8,
+      "reviewed_items": 8,
+      "label_matches": 8,
+      "first_error_matches": 8,
+      "all_prior_steps_valid": {
+        "yes": 8
+      },
+      "method_preserved": {
+        "yes": 8
+      }
+    },
+    {
+      "candidate": "pilot-v2_examples-4sources",
+      "generated_items": 8,
+      "reviewed_items": 8,
+      "label_matches": 8,
+      "first_error_matches": 8,
+      "all_prior_steps_valid": {
+        "yes": 8
+      },
+      "method_preserved": {
+        "yes": 8
+      }
+    },
+    {
+      "candidate": "pilot-v3_mutate-4sources",
+      "generated_items": 8,
+      "reviewed_items": 8,
+      "label_matches": 8,
+      "first_error_matches": 8,
+      "all_prior_steps_valid": {
+        "yes": 7,
+        "no": 1
+      },
+      "method_preserved": {
+        "yes": 8
+      }
+    },
+    {
+      "candidate": "pilot-v4_self_check-4sources",
+      "generated_items": 7,
+      "reviewed_items": 7,
+      "label_matches": 7,
+      "first_error_matches": 7,
+      "all_prior_steps_valid": {
+        "yes": 7
+      },
+      "method_preserved": {
+        "yes": 7
+      }
+    }
+  ],
+  "discrepancies": []
+}

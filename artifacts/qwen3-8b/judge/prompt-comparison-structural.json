@@ -1,0 +1,164 @@
+{
+  "summaries": [
+    {
+      "artifact": "artifacts/qwen3-8b/judge/judge_generator_v1_rubric-dev-60.json",
+      "model": "Qwen/Qwen3-8B",
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "item_count": 120,
+      "status_counts": {
+        "prepared": 120
+      },
+      "validation_counts": {},
+      "label_counts": {
+        "correct": 60,
+        "incorrect": 60
+      },
+      "requested_error_type_counts": {
+        "arithmetic_algebra": 10,
+        "invalid_theorem_condition": 12,
+        "unjustified_implication": 12,
+        "counting_bijection": 6,
+        "missing_case": 7,
+        "sign_inequality": 9,
+        "domain_restriction": 4
+      },
+      "requested_error_position_counts": {
+        "early": 20,
+        "middle": 20,
+        "late": 20
+      },
+      "prompt_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "completion_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "validation_error_counts": {}
+    },
+    {
+      "artifact": "artifacts/qwen3-8b/judge/judge_generator_v2_examples-dev-60.json",
+      "model": "Qwen/Qwen3-8B",
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "item_count": 120,
+      "status_counts": {
+        "prepared": 120
+      },
+      "validation_counts": {},
+      "label_counts": {
+        "correct": 60,
+        "incorrect": 60
+      },
+      "requested_error_type_counts": {
+        "arithmetic_algebra": 10,
+        "invalid_theorem_condition": 12,
+        "unjustified_implication": 12,
+        "counting_bijection": 6,
+        "missing_case": 7,
+        "sign_inequality": 9,
+        "domain_restriction": 4
+      },
+      "requested_error_position_counts": {
+        "early": 20,
+        "middle": 20,
+        "late": 20
+      },
+      "prompt_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "completion_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "validation_error_counts": {}
+    },
+    {
+      "artifact": "artifacts/qwen3-8b/judge/judge_generator_v3_mutate-dev-60.json",
+      "model": "Qwen/Qwen3-8B",
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "item_count": 120,
+      "status_counts": {
+        "prepared": 120
+      },
+      "validation_counts": {},
+      "label_counts": {
+        "correct": 60,
+        "incorrect": 60
+      },
+      "requested_error_type_counts": {
+        "arithmetic_algebra": 10,
+        "invalid_theorem_condition": 12,
+        "unjustified_implication": 12,
+        "counting_bijection": 6,
+        "missing_case": 7,
+        "sign_inequality": 9,
+        "domain_restriction": 4
+      },
+      "requested_error_position_counts": {
+        "early": 20,
+        "middle": 20,
+        "late": 20
+      },
+      "prompt_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "completion_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "validation_error_counts": {}
+    },
+    {
+      "artifact": "artifacts/qwen3-8b/judge/judge_generator_v4_self_check-dev-60.json",
+      "model": "Qwen/Qwen3-8B",
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "item_count": 120,
+      "status_counts": {
+        "prepared": 120
+      },
+      "validation_counts": {},
+      "label_counts": {
+        "correct": 60,
+        "incorrect": 60
+      },
+      "requested_error_type_counts": {
+        "arithmetic_algebra": 10,
+        "invalid_theorem_condition": 12,
+        "unjustified_implication": 12,
+        "counting_bijection": 6,
+        "missing_case": 7,
+        "sign_inequality": 9,
+        "domain_restriction": 4
+      },
+      "requested_error_position_counts": {
+        "early": 20,
+        "middle": 20,
+        "late": 20
+      },
+      "prompt_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "completion_tokens": {
+        "count": 0,
+        "mean": null,
+        "p95": null
+      },
+      "validation_error_counts": {}
+    }
+  ]
+}

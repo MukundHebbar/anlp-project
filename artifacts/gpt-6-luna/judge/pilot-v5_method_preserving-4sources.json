@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "model": "gpt-6-luna",
+    "prompt_file": "data/prompts/judge/judge_generator_v5_method_preserving.md",
+    "prompt_sha256": "5078fbec90edad8ed4f06ac09f0ff78b0cc12826de0f02a603b4188de4c5f701",
+    "source_indices": [0, 10, 38, 41],
+    "generation_mode": "Codex subagent"
+  },
+  "items": [
+    {
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Testing the identity on f(x)=x gives α+β=∫₀²x dx=2."},
+            {"step_id": "S2", "text": "Testing f(x)=x² gives α²+β²=∫₀²x² dx=8/3."},
+            {"step_id": "S3", "text": "Since (α+β)²=α²+β²+2αβ, we have 4=8/3+2αβ, hence αβ=2/3."},
+            {"step_id": "S4", "text": "Thus (α−β)²=(α+β)²−4αβ=4−8/3=4/3, so 3(α−β)²=4."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: The monomial tests yield α+β=2 and α²+β²=8/3, from which αβ=2/3 and the requested value is 4."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Testing f(x)=x gives α+β=∫₀²x dx=2."},
+            {"step_id": "S2", "text": "Testing f(x)=x² gives α²+β²=∫₀²x² dx=3."},
+            {"step_id": "S3", "text": "Using (α+β)²=α²+β²+2αβ, we get 4=3+2αβ, so αβ=1/2."},
+            {"step_id": "S4", "text": "Then (α−β)²=4−4(1/2)=2, and the requested value is 3·2=6."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S2",
+          "first_error_explanation": "The integral of x² from 0 to 2 is 8/3, not 3; this is the first error and makes the subsequent product and result incorrect.",
+          "error_type": "arithmetic_algebra",
+          "error_position": "early",
+          "teacher_target_response": "Decision: incorrect\nFirst wrong step: S2\nExplanation: ∫₀²x² dx=8/3, not 3, so the value substituted for α²+β² is wrong."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Since 61 is prime, Wilson's theorem gives 60! ≡ −1 (mod 61). Also 60!=51!·52·...·60, and 52·...·60 ≡ (−9)(−8)···(−1)=−9! (mod 61)."},
+            {"step_id": "S2", "text": "It follows that 51!·9! ≡1 (mod 61), so 51!≡(9!)⁻¹ (mod 61). Since 9!=362880≡−9 (mod 61), this is 51!≡(−9)⁻¹."},
+            {"step_id": "S3", "text": "The Euclidean algorithm gives 1=4·61−27·9, hence 9⁻¹≡−27≡34 (mod 61), and therefore (−9)⁻¹≡−34≡27 (mod 61)."},
+            {"step_id": "S4", "text": "Thus the remainder is 27."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: Wilson's theorem reduces the factorial to the inverse of 9! modulo 61, and the Euclidean algorithm yields the required remainder 27."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "parsed_output": "NOT_SUITABLE",
+      "failure_reason": "The requested late invalid_theorem_condition cannot be introduced naturally while preserving this solution's Wilson theorem and modular inverse method.",
+      "validation_errors": ["top-level output is not an object"]
+    },
+    {
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set h₀=0 and H(x)=Σₙ₌₀∞hₙxⁿ. Summing hₙ=2hₙ₋₁+1 after multiplying by xⁿ for n≥1 gives H(x)=2xH(x)+x/(1−x)."},
+            {"step_id": "S2", "text": "Solving yields H(x)=x/((1−x)(1−2x))=1/(1−2x)−1/(1−x)."},
+            {"step_id": "S3", "text": "Expanding the geometric series gives H(x)=Σₙ₌₀∞(2ⁿ−1)xⁿ, so hₙ=2ⁿ−1 for n≥0; in particular h₁=1."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: The generating function satisfies H=2xH+x/(1−x), and its coefficients are hₙ=2ⁿ−1, consistent with h₁=1."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set h₀=0 and H(x)=Σₙ₌₀∞hₙxⁿ. Summing the recurrence for n≥1 gives H(x)=2xH(x)+x/(1−x)."},
+            {"step_id": "S2", "text": "Rearranging, H(x)(1−2x)=x/(1−x), hence H(x)=x/((1−x)(1−2x))."},
+            {"step_id": "S3", "text": "Write H(x)=A/(1−x)+B/(1−2x). Clearing denominators gives x=A(1−2x)+B(1−x), so A+B=0 and −2A−B=1."},
+            {"step_id": "S4", "text": "Solving gives A=−1 and B=1, hence H(x)=1/(1−2x)−1/(1−x)."},
+            {"step_id": "S5", "text": "The geometric expansions therefore give H(x)=Σₙ₌₀∞(2ⁿ+1)xⁿ, so hₙ=2ⁿ+1."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S5",
+          "first_error_explanation": "The second geometric series is subtracted: 1/(1−2x)−1/(1−x)=Σ(2ⁿ−1)xⁿ, not Σ(2ⁿ+1)xⁿ. The coefficient arithmetic is the first error.",
+          "error_type": "arithmetic_algebra",
+          "error_position": "late",
+          "teacher_target_response": "Decision: incorrect\nFirst wrong step: S5\nExplanation: Subtracting the coefficients gives 2ⁿ−1, not 2ⁿ+1, so the stated coefficient sequence does not follow."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For |x|<1, Σₙ₌₀∞xⁿ=1/(1−x). Differentiating and multiplying by x gives Σₙ₌₁∞nxⁿ=x/(1−x)²."},
+            {"step_id": "S2", "text": "Differentiating the latter identity and multiplying by x yields Σₙ₌₁∞n²xⁿ=x(1+x)/(1−x)³."},
+            {"step_id": "S3", "text": "At x=1/3 this equals [(1/3)(4/3)]/(2/3)³=(4/9)/(8/27)=3/2."},
+            {"step_id": "S4", "text": "Therefore the infinite series sums to 3/2."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: Differentiating the geometric series twice gives x(1+x)/(1−x)³, which at x=1/3 is 3/2."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For |x|<1, the geometric series gives Σₙ₌₀∞xⁿ=1/(1−x)."},
+            {"step_id": "S2", "text": "Differentiating and multiplying by x twice gives Σₙ₌₁∞n²xⁿ=x(1+x)/(1−x)³."},
+            {"step_id": "S3", "text": "Here x=1/3, and 1/3>1, so this value is outside the interval |x|<1 where the series identity is valid."},
+            {"step_id": "S4", "text": "Substituting x=1/3 in the rational expression nonetheless gives [(1/3)(4/3)]/(2/3)³=3/2, so the series is 3/2."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S3",
+          "first_error_explanation": "The inequality is reversed: 1/3<1, so |1/3|<1 and the power series identity applies. The claimed failure of the convergence condition is the first wrong step.",
+          "error_type": "sign_inequality",
+          "error_position": "middle",
+          "teacher_target_response": "Decision: incorrect\nFirst wrong step: S3\nExplanation: Since 1/3<1, the value lies inside |x|<1; the stated inequality and conclusion are false."
+        }
+      },
+      "validation_errors": []
+    }
+  ]
+}

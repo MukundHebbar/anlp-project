@@ -1,0 +1,66 @@
+[
+  {
+    "review_id": "52eef66b13143eea",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "The generating-function equation gives H=x/((1-x)(1-2x)); its coefficients are 2^n-1, including h_0=0 and h_1=1, as required."
+  },
+  {
+    "review_id": "b471cf67669e5def",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Testing x and x^2 gives alpha+beta=2 and alpha^2+beta^2=8/3. Thus alpha beta=2/3, (alpha-beta)^2=4/3, and the requested value is 4."
+  },
+  {
+    "review_id": "ab4f4bd5bca7ac77",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S2",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "The identity in S1 applies for |x|<1, and x=1/3 is inside that interval. S2 incorrectly claims 1/3>1; the series converges, with sum (1/3)(4/3)/(2/3)^3=3/2."
+  },
+  {
+    "review_id": "84c46353408c1cf3",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S3",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "For x=1/3, 1-x=2/3, not -2/3. The identity in S2 is valid, but S3's sign error makes the final negative value wrong; the sum is 3/2."
+  },
+  {
+    "review_id": "0229879fcad207a8",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S5",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "S1-S4 correctly derive 51! congruent to 27 modulo 61. S5 misapplies Wilson's theorem: it concerns (p-1)! modulo prime p, so it does not assert 51! congruent to -1 modulo 61; 51 is not prime either."
+  },
+  {
+    "review_id": "44180946745038cc",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S4",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "S1-S3 correctly obtain 51! congruent to 27 modulo 61. S4 falsely applies Wilson's theorem to 51!: the theorem gives 60! congruent to -1 modulo 61, not 51!, and 51 is not prime."
+  },
+  {
+    "review_id": "1b423d60308eb8fc",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S3",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "S1-S2 correctly state the generating-function identity and numerator. At x=1/3, however, 1-x=2/3>0, so its cube is 8/27, not -8/27; the series sums to 3/2."
+  },
+  {
+    "review_id": "6fe3e3cc29a2e7ab",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S3",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "S1-S2 give alpha+beta=2 and alpha beta=2/3. Then (alpha-beta)^2=4-4(2/3)=4-8/3=4/3, not 2/3; the requested value is 4."
+  }
+]

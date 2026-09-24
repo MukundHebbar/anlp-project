@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "model": "gpt-6-luna",
+    "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+    "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+    "source_indices": [0, 10, 38, 41],
+    "generation_mode": "Codex subagent",
+    "warning": "not a Qwen teacher output"
+  },
+  "items": [
+    {
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Because both sides are linear in \\(f\\), test \\(f(x)=x\\) and \\(f(x)=x^2\\). These give \\(\\alpha+\\beta=2\\) and \\(\\alpha^2+\\beta^2=8/3\\)."},
+            {"step_id": "S2", "text": "Using \\( (\\alpha+\\beta)^2=\\alpha^2+\\beta^2+2\\alpha\\beta\\), we get \\(4=8/3+2\\alpha\\beta\\), so \\(\\alpha\\beta=2/3\\)."},
+            {"step_id": "S3", "text": "Then \\( (\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta=4-8/3=4/3\\), and the requested value is \\(3(4/3)=4\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: The moment identities imply the stated sum and product, giving the requested value 4."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Testing \\(f(x)=x\\) gives \\(\\alpha+\\beta=2\\), and testing \\(f(x)=x^2\\) gives \\(\\alpha^2+\\beta^2=8/3\\)."},
+            {"step_id": "S2", "text": "Since \\( (\\alpha+\\beta)^2=\\alpha^2+\\beta^2+2\\alpha\\beta\\), we have \\(4=8/3+2\\alpha\\beta\\), hence \\(2\\alpha\\beta=4/3\\) and \\(\\alpha\\beta=4/3\\)."},
+            {"step_id": "S3", "text": "Therefore \\( (\\alpha-\\beta)^2=4-4(4/3)=-4/3\\), so the requested value is \\(-4\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S2",
+          "first_error_explanation": "From 2αβ=4/3, division by 2 gives αβ=2/3, not 4/3. The preceding moment equations and identity are valid.",
+          "error_type": "arithmetic_algebra",
+          "error_position": "early",
+          "teacher_target_response": "Decision: incorrect\nFirst wrong step: S2\nExplanation: Dividing 2αβ=4/3 by 2 gives αβ=2/3, not 4/3."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Since 61 is prime, Wilson's theorem gives \\(60!\\equiv-1\\pmod{61}\\). Also, \\(60!=51!\\cdot52\\cdots60\\), and \\(52\\cdots60\\equiv(-9)(-8)\\cdots(-1)=-9!\\pmod{61}\\)."},
+            {"step_id": "S2", "text": "Thus \\(51!\\cdot9!\\equiv1\\pmod{61}\\), so \\(51!\\equiv(9!)^{-1}\\). Since \\(9!=362880\\equiv-9\\pmod{61}\\), this is \\((-9)^{-1}\\)."},
+            {"step_id": "S3", "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), hence \\((-9)^{-1}\\equiv-34\\equiv27\\pmod{61}\\). The remainder is 27."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: Wilson's theorem and the residue calculations yield 51! congruent to 27 modulo 61."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Because 61 is prime, Wilson's theorem states \\(60!\\equiv-1\\pmod{61}\\)."},
+            {"step_id": "S2", "text": "Writing \\(60!=51!\\cdot52\\cdots60\\), the trailing product is \\((-9)(-8)\\cdots(-1)=-9!\\pmod{61}\\). Therefore \\(51!\\cdot9!\\equiv1\\pmod{61}\\)."},
+            {"step_id": "S3", "text": "As \\(9!=362880\\equiv-9\\pmod{61}\\), we have \\(51!\\equiv(-9)^{-1}\\pmod{61}\\)."},
+            {"step_id": "S4", "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), so the inverse of \\(-9\\) is \\(27\\pmod{61}\\)."},
+            {"step_id": "S5", "text": "Applying Wilson's theorem to 51, we have \\(51!\\equiv-1\\pmod{61}\\), since 51 is the factorial index in the requested expression."},
+            {"step_id": "S6", "text": "Combining these congruences gives the remainder 27."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S5",
+          "first_error_explanation": "Wilson's theorem applies to (p−1)! modulo a prime p. It justifies 60! modulo 61, but gives no congruence 51!≡−1 modulo 61. Earlier steps correctly derive the inverse relation.",
+          "error_type": "invalid_theorem_condition",
+          "error_position": "late",
+          "teacher_target_response": "Decision: incorrect\nFirst wrong step: S5\nExplanation: Wilson's theorem only gives (p−1)!≡−1 modulo prime p; it does not apply to 51! modulo 61."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set \\(h_0=0\\) and \\(H(x)=\\sum_{n\\ge0}h_nx^n\\). Multiplying \\(h_n=2h_{n-1}+1\\) by \\(x^n\\) and summing for \\(n\\ge1\\) gives \\(H(x)=2xH(x)+x/(1-x)\\)."},
+            {"step_id": "S2", "text": "Solving yields \\(H(x)=x/((1-x)(1-2x))=1/(1-2x)-1/(1-x)\\)."},
+            {"step_id": "S3", "text": "Expanding the geometric series gives \\(H(x)=\\sum_{n\\ge0}(2^n-1)x^n\\). Thus \\(h_n=2^n-1\\), which satisfies \\(h_1=1\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: The generating function equation solves to coefficients 2^n−1, consistent with the initial value."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "incorrect",
+      "requested_error_type": "counting_bijection",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set \\(h_0=0\\) and \\(H(x)=\\sum_{n\\ge0}h_nx^n\\). Summing the recurrence after multiplying by \\(x^n\\) gives \\(H(x)=2xH(x)+x/(1-x)\\)."},
+            {"step_id": "S2", "text": "Hence \\(H(x)=x/((1-x)(1-2x))=1/(1-2x)-1/(1-x)\\)."},
+            {"step_id": "S3", "text": "Coefficient extraction gives \\(h_n=2^n-1\\) for every \\(n\\ge0\\)."},
+            {"step_id": "S4", "text": "There are \\(2^n-1\\) nonempty binary strings of length n, so pairing each such string with a distinct legal n-disk Tower of Hanoi configuration is a bijection; therefore this formula counts configurations."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S4",
+          "first_error_explanation": "The recurrence and coefficient extraction correctly count the required moves, but the claimed bijection with configurations is unsupported and false: the number 2^n−1 is the move count, not a count of distinct n-disk configurations indexed by nonempty binary strings.",
+          "error_type": "counting_bijection",
+          "error_position": "late",
+          "teacher_target_response": "Decision: incorrect\nFirst wrong step: S4\nExplanation: The generating function counts moves from the recurrence; it establishes no bijection between nonempty binary strings and Hanoi configurations."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For \\(|x|<1\\), \\(\\sum_{n\\ge0}x^n=1/(1-x)\\). Differentiating and multiplying by \\(x\\) gives \\(\\sum_{n\\ge1}nx^n=x/(1-x)^2\\)."},
+            {"step_id": "S2", "text": "Differentiate once more and multiply by \\(x\\): \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."},
+            {"step_id": "S3", "text": "Set \\(x=1/3\\), which lies in the convergence interval. The sum is \\((1/3)(4/3)/(2/3)^3= (4/9)/(8/27)=3/2\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: Termwise differentiation within |x|<1 yields the series formula, and substitution gives 3/2."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For \\(|x|<1\\), differentiating the geometric series twice gives \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."},
+            {"step_id": "S2", "text": "At \\(x=1/3\\), the numerator is \\((1/3)(4/3)=4/9\\)."},
+            {"step_id": "S3", "text": "Since \\(1-1/3=-2/3<0\\), its cube is negative; hence \\((1-1/3)^3=-8/27\\)."},
+            {"step_id": "S4", "text": "Substitution into the formula gives \\( (4/9)/(-8/27)=-3/2\\), so the series sum is \\(-3/2\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S3",
+          "first_error_explanation": "At x=1/3, 1−x=2/3>0, not −2/3<0. The sign is reversed in S3, so the denominator and resulting sum are positive. Earlier formula and numerator are valid.",
+          "error_type": "sign_inequality",
+          "error_position": "middle",
+          "teacher_target_response": "Decision: incorrect\nFirst wrong step: S3\nExplanation: 1−1/3=2/3>0, so its cube is 8/27; the claimed negative sign is wrong."
+        }
+      },
+      "validation_errors": []
+    }
+  ]
+}

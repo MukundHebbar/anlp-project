@@ -1,0 +1,627 @@
+{
+  "purpose": "private key for Judge blind review; do not give to reviewers before annotation",
+  "seed": 20260924,
+  "item_count": 31,
+  "items": [
+    {
+      "review_id": "7f8509e3cdf77407",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: The moment identities imply the stated sum and product, giving the requested value 4."
+      }
+    },
+    {
+      "review_id": "dbba15187647fbd9",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S2",
+        "first_error_explanation": "From 2αβ=4/3, division by 2 gives αβ=2/3, not 4/3. The preceding moment equations and identity are valid.",
+        "error_type": "arithmetic_algebra",
+        "error_position": "early",
+        "teacher_target_response": "Decision: incorrect\nFirst wrong step: S2\nExplanation: Dividing 2αβ=4/3 by 2 gives αβ=2/3, not 4/3."
+      }
+    },
+    {
+      "review_id": "10799dc99cc787d1",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: Wilson's theorem and the residue calculations yield 51! congruent to 27 modulo 61."
+      }
+    },
+    {
+      "review_id": "0229879fcad207a8",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S5",
+        "first_error_explanation": "Wilson's theorem applies to (p−1)! modulo a prime p. It justifies 60! modulo 61, but gives no congruence 51!≡−1 modulo 61. Earlier steps correctly derive the inverse relation.",
+        "error_type": "invalid_theorem_condition",
+        "error_position": "late",
+        "teacher_target_response": "Decision: incorrect\nFirst wrong step: S5\nExplanation: Wilson's theorem only gives (p−1)!≡−1 modulo prime p; it does not apply to 51! modulo 61."
+      }
+    },
+    {
+      "review_id": "8edb18f2d936782d",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: The generating function equation solves to coefficients 2^n−1, consistent with the initial value."
+      }
+    },
+    {
+      "review_id": "6c73b2eddb55e459",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "incorrect",
+      "requested_error_type": "counting_bijection",
+      "requested_error_position": "late",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S4",
+        "first_error_explanation": "The recurrence and coefficient extraction correctly count the required moves, but the claimed bijection with configurations is unsupported and false: the number 2^n−1 is the move count, not a count of distinct n-disk configurations indexed by nonempty binary strings.",
+        "error_type": "counting_bijection",
+        "error_position": "late",
+        "teacher_target_response": "Decision: incorrect\nFirst wrong step: S4\nExplanation: The generating function counts moves from the recurrence; it establishes no bijection between nonempty binary strings and Hanoi configurations."
+      }
+    },
+    {
+      "review_id": "5a9e69146570a311",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: correct\nFirst wrong step: none\nExplanation: Termwise differentiation within |x|<1 yields the series formula, and substitution gives 3/2."
+      }
+    },
+    {
+      "review_id": "1b423d60308eb8fc",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v1_rubric-4sources.json",
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v1_rubric.md",
+      "prompt_sha256": "ee43539e04e7fc1546c257be14cd170398dc04320bdebd03eba247a99db0854f",
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S3",
+        "first_error_explanation": "At x=1/3, 1−x=2/3>0, not −2/3<0. The sign is reversed in S3, so the denominator and resulting sum are positive. Earlier formula and numerator are valid.",
+        "error_type": "sign_inequality",
+        "error_position": "middle",
+        "teacher_target_response": "Decision: incorrect\nFirst wrong step: S3\nExplanation: 1−1/3=2/3>0, so its cube is 8/27; the claimed negative sign is wrong."
+      }
+    },
+    {
+      "review_id": "461ab35b56d06815",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: The moment equations imply α+β=2 and α²+β²=8/3, so αβ=2/3 and the requested value is 4."
+      }
+    },
+    {
+      "review_id": "3b33bd0821b06a73",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S2",
+        "first_error_explanation": "Evaluating [x²/2] from 0 to 2 gives 4/2−0=2, not 1. Consequently S2's value for α+β does not follow.",
+        "error_type": "arithmetic_algebra",
+        "error_position": "early",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S2.\nExplanation: [x²/2]₀²=4/2−0=2, not 1. The integral was evaluated incorrectly."
+      }
+    },
+    {
+      "review_id": "0d8d4dab242118ce",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Wilson's theorem and the modular inverse computation yield 51!≡27 (mod 61)."
+      }
+    },
+    {
+      "review_id": "a768c33cf51af193",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S5",
+        "first_error_explanation": "Euler's theorem requires the base to be relatively prime to the modulus; it does not apply to every integer modulo 61, including 0. The claim in S5 is false. The preceding steps already establish the remainder, but the extra justification is invalid.",
+        "error_type": "invalid_theorem_condition",
+        "error_position": "late",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S5.\nExplanation: Euler's theorem requires gcd(a,61)=1; it cannot be asserted for every residue, in particular 0. The earlier modular inverse argument is valid, but this theorem claim is not."
+      }
+    },
+    {
+      "review_id": "52eef66b13143eea",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: The generating function satisfies H=2xH+x/(1−x), whose coefficients are hₙ=2ⁿ−1."
+      }
+    },
+    {
+      "review_id": "c5264492c3a4dbb9",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "incorrect",
+      "requested_error_type": "counting_bijection",
+      "requested_error_position": "late",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S4",
+        "first_error_explanation": "The claimed bijection onto all length-n binary strings cannot hold: the preceding coefficient calculation gives hₙ=2ⁿ−1 moves, while there are 2ⁿ length-n strings. Thus S4's counting correspondence and conclusion are false.",
+        "error_type": "counting_bijection",
+        "error_position": "late",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: There are 2ⁿ length-n binary strings, but the derived move count is 2ⁿ−1. They cannot be in bijection, so S4's counting claim fails."
+      }
+    },
+    {
+      "review_id": "26d3ab5bf14b6c67",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Differentiating the geometric series twice gives x(1+x)/(1−x)³; at x=1/3 this is 3/2."
+      }
+    },
+    {
+      "review_id": "84c46353408c1cf3",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v2_examples-4sources.json",
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v2_examples.md",
+      "prompt_sha256": "fbd2cab5431bea97a15f42c6649cde7a87e7919bb3a1a02fb9ce1f766d7431f9",
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S3",
+        "first_error_explanation": "The sign is wrong: 1−1/3=2/3, not −2/3. This makes the denominator positive; the actual sum is 3/2.",
+        "error_type": "sign_inequality",
+        "error_position": "middle",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S3.\nExplanation: 1−1/3=2/3, not −2/3. The first invalid step reverses the sign, producing the wrong series value."
+      }
+    },
+    {
+      "review_id": "351a807a0e8789af",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Testing the identity with x and x^2 gives alpha+beta=2 and alpha^2+beta^2=8/3. These imply alpha beta=2/3, so (alpha-beta)^2=4/3 and the requested value is 4."
+      }
+    },
+    {
+      "review_id": "ad75a3f8bf72fdcd",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S1",
+        "first_error_explanation": "The integral is \\(\\int_0^2 x\\,dx=[x^2/2]_0^2=2\\), not 1. Thus the identity requires alpha+beta=2, and the arithmetic error in this first step invalidates the subsequent values.",
+        "error_type": "arithmetic_algebra",
+        "error_position": "early",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S1.\nExplanation: Evaluating the antiderivative x^2/2 at 2 and 0 gives 2, not 1. Therefore alpha+beta must equal 2, so the subsequent calculations based on a sum of 1 do not follow."
+      }
+    },
+    {
+      "review_id": "0050240f45d53a49",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Wilson's theorem modulo 61 and the factorization of 60! yield 51! times 9! congruent to 1. Since 9! is congruent to -9 and the inverse of -9 modulo 61 is 27, the remainder is 27."
+      }
+    },
+    {
+      "review_id": "44180946745038cc",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S4",
+        "first_error_explanation": "Wilson's theorem does not state that 51! is congruent to -1 modulo 61. Its prime-modulus conclusion here is 60! congruent to -1 modulo 61; the theorem's factorial endpoint is 61-1, and 51 is not prime either. The valid preceding derivation gives remainder 27.",
+        "error_type": "invalid_theorem_condition",
+        "error_position": "late",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: Wilson's theorem for modulus 61 applies to 60!, not 51!, and its hypothesis concerns the prime modulus 61. It cannot yield 51! congruent to -1 modulo 61. The preceding valid calculation gives remainder 27."
+      }
+    },
+    {
+      "review_id": "fbe4784d0ba352f3",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: With h_0=0, summing the recurrence gives H(x)=x/((1-x)(1-2x)). Its coefficients are 2^n-1, so h_n=2^n-1 and the initial value is satisfied."
+      }
+    },
+    {
+      "review_id": "074b0afc5222657d",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "incorrect",
+      "requested_error_type": "counting_bijection",
+      "requested_error_position": "late",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S4",
+        "first_error_explanation": "The coefficient-to-index correspondence for the ordinary generating function is h_n=[x^n]H(x); it does not shift to h_{n+1} when the zero coefficient h_0 is present. In fact [x^1]H(x)=1=h_1, so the proposed formula gives the wrong sequence index and fails at h_1.",
+        "error_type": "counting_bijection",
+        "error_position": "late",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: In H(x)=sum h_n x^n, the coefficient of x^n corresponds directly to h_n. The coefficient x^1 is 1 and equals h_1, so shifting the correspondence by one incorrectly assigns that count to h_2."
+      }
+    },
+    {
+      "review_id": "16c842f61f2f52a5",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Differentiating the geometric series twice with the indicated factors gives x(1+x)/(1-x)^3. Substitution of x=1/3 yields 3/2."
+      }
+    },
+    {
+      "review_id": "acd7d899b9c37485",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v3_mutate-4sources.json",
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+      "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S4",
+        "first_error_explanation": "The sign evaluation is wrong: 1-1/3=2/3, which is positive, not -2/3. The denominator is therefore (2/3)^3=8/27, and the series evaluates to 3/2.",
+        "error_type": "sign_inequality",
+        "error_position": "middle",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: The subtraction 1-1/3 equals 2/3, a positive number. Cubing gives 8/27, not -8/27, so the proposed negative sum has the wrong sign; the value is 3/2."
+      }
+    },
+    {
+      "review_id": "b471cf67669e5def",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v4_self_check-4sources.json",
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Each moment identity and the symmetric-polynomial calculation are valid, yielding 3(α−β)²=4."
+      }
+    },
+    {
+      "review_id": "6fe3e3cc29a2e7ab",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v4_self_check-4sources.json",
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S3",
+        "first_error_explanation": "The subtraction is miscomputed: 4−8/3=12/3−8/3=4/3, not 2/3. The earlier identities and αβ=2/3 are valid.",
+        "error_type": "arithmetic_algebra",
+        "error_position": "early",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S3.\nExplanation: The arithmetic 4−8/3 equals 4/3, not 2/3."
+      }
+    },
+    {
+      "review_id": "02c4b0ed118d7f75",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v4_self_check-4sources.json",
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Wilson's theorem applies to prime 61, and the subsequent congruences and modular inverse give the stated remainder."
+      }
+    },
+    {
+      "review_id": "82ebcfaf4aa94cf4",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v4_self_check-4sources.json",
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S4",
+        "first_error_explanation": "Wilson's theorem states (p−1)!≡−1 (mod p) for prime p. For p=9 its prime hypothesis fails; moreover the theorem would concern 8!, not 9!. The earlier derivation already gives the valid remainder 27.",
+        "error_type": "invalid_theorem_condition",
+        "error_position": "late",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: Wilson's theorem requires a prime modulus p and applies to (p−1)!. It cannot be applied with p=9, so the asserted congruence for 9! is unsupported and false."
+      }
+    },
+    {
+      "review_id": "f75e32ee7126a59d",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v4_self_check-4sources.json",
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: The generating-function equation follows from the recurrence and the partial fraction expansion yields the stated coefficients."
+      }
+    },
+    {
+      "review_id": "d1c4883a71bb7494",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v4_self_check-4sources.json",
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "private": {
+        "label": "correct",
+        "first_error_step_id": null,
+        "first_error_explanation": null,
+        "error_type": null,
+        "error_position": null,
+        "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Termwise differentiation is valid for |x|<1, and substitution of x=1/3 gives 3/2."
+      }
+    },
+    {
+      "review_id": "ab4f4bd5bca7ac77",
+      "artifact": "artifacts/gpt-6-luna/judge/pilot-v4_self_check-4sources.json",
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+      "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "private": {
+        "label": "incorrect",
+        "first_error_step_id": "S2",
+        "first_error_explanation": "The inequality is reversed: 1/3<1, so |1/3|<1 and the derived power-series identity applies. The series converges and equals 3/2.",
+        "error_type": "sign_inequality",
+        "error_position": "middle",
+        "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S2.\nExplanation: 1/3 is less than 1, not greater than 1; it lies inside the convergence interval."
+      }
+    }
+  ]
+}

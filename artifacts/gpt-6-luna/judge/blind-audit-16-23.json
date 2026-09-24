@@ -1,0 +1,66 @@
+[
+  {
+    "review_id": "0d8d4dab242118ce",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Wilson gives 51!·9! ≡ 1 mod 61. Since 9! ≡ −9 and 9⁻¹ ≡ 34, (−9)⁻¹ ≡ 27; the stated remainder follows."
+  },
+  {
+    "review_id": "26d3ab5bf14b6c67",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Differentiating the geometric series twice in the stated manner gives Σ n²xⁿ = x(1+x)/(1−x)³. At x=1/3 this is (4/9)/(8/27)=3/2."
+  },
+  {
+    "review_id": "a768c33cf51af193",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S5",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Steps S1–S4 correctly derive the remainder 27. S5 is false: Euler's theorem requires a number coprime to 61 and does not apply to 0; moreover, that assertion is unnecessary to the already established congruence."
+  },
+  {
+    "review_id": "461ab35b56d06815",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "The test polynomials give α+β=2 and α²+β²=8/3, hence αβ=2/3. Thus (α−β)²=4−4αβ=4−8/3=4/3, and the requested value is 4."
+  },
+  {
+    "review_id": "c5264492c3a4dbb9",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S4",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "The generating function through S3 gives hₙ=2ⁿ−1. S4's proposed bijection would instead imply 2ⁿ moves and contradicts that coefficient formula; the recurrence solution is hₙ=2ⁿ−1."
+  },
+  {
+    "review_id": "dbba15187647fbd9",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S2",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "From 2αβ=4/3, division by 2 gives αβ=2/3, not 4/3. The correct value is (α−β)²=4−8/3=4/3, so 3(α−β)²=4."
+  },
+  {
+    "review_id": "0050240f45d53a49",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "The tail product 52·…·60 is −9! mod 61, so Wilson yields 51!·9! ≡ 1. Since 9! ≡ −9 and (−9)⁻¹ ≡ 27, the remainder is 27."
+  },
+  {
+    "review_id": "82ebcfaf4aa94cf4",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S4",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Steps S1–S3 correctly obtain the remainder 27. Wilson's theorem applies to prime moduli, not to 9; in particular it does not imply 9! ≡ −1 mod 61. The prior computation already gives the answer."
+  }
+]

@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "model": "gpt-6-luna",
+    "prompt_file": "data/prompts/judge/judge_generator_v4_self_check.md",
+    "prompt_sha256": "1c863247f3194e6738ce6aabd60623932ee1a75582138bf5cf45bd101f1683d7",
+    "source_indices": [0, 10, 38, 41],
+    "generation_mode": "Codex subagent",
+    "warning": "not a Qwen teacher output"
+  },
+  "items": [
+    {
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id":"S1","text":"Taking f(x)=x gives α+β=∫₀²x dx=2. Taking f(x)=x² gives α²+β²=∫₀²x² dx=8/3."},
+            {"step_id":"S2","text":"From (α+β)²=α²+β²+2αβ, we get 4=8/3+2αβ, so αβ=2/3."},
+            {"step_id":"S3","text":"Thus (α−β)²=(α+β)²−4αβ=4−8/3=4/3, and 3(α−β)²=4."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label":"correct","first_error_step_id":null,"first_error_explanation":null,"error_type":null,"error_position":null,
+          "teacher_target_response":"Decision: Correct.\nFirst wrong step: None.\nExplanation: Each moment identity and the symmetric-polynomial calculation are valid, yielding 3(α−β)²=4."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id":"S1","text":"Taking f(x)=x gives α+β=2, and taking f(x)=x² gives α²+β²=8/3."},
+            {"step_id":"S2","text":"Since (α+β)²=α²+β²+2αβ, we have 4=8/3+2αβ, hence αβ=2/3."},
+            {"step_id":"S3","text":"Using (α−β)²=(α+β)²−4αβ, we obtain (α−β)²=4−4(2/3)=4−8/3=2/3."},
+            {"step_id":"S4","text":"Therefore 3(α−β)²=2."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label":"incorrect","first_error_step_id":"S3","first_error_explanation":"The subtraction is miscomputed: 4−8/3=12/3−8/3=4/3, not 2/3. The earlier identities and αβ=2/3 are valid.","error_type":"arithmetic_algebra","error_position":"early",
+          "teacher_target_response":"Decision: Incorrect.\nFirst wrong step: S3.\nExplanation: The arithmetic 4−8/3 equals 4/3, not 2/3."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem":"Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution":[
+            {"step_id":"S1","text":"Since 61 is prime, Wilson's theorem gives 60! ≡ −1 (mod 61). Also 60!=51!·52·…·60, and 52·…·60 ≡ (−9)(−8)…(−1)=−9! (mod 61)."},
+            {"step_id":"S2","text":"Thus 51!·(−9!)≡−1, so 51!·9!≡1 (mod 61), and 51!≡(9!)⁻¹ (mod 61)."},
+            {"step_id":"S3","text":"Because 9!=362880=61·5949−9, we have 9!≡−9 (mod 61). Euclid gives 9⁻¹≡34 (mod 61), so (−9)⁻¹≡−34≡27 (mod 61)."},
+            {"step_id":"S4","text":"Therefore the remainder is 27."}
+          ],
+          "instruction":"Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private":{"label":"correct","first_error_step_id":null,"first_error_explanation":null,"error_type":null,"error_position":null,"teacher_target_response":"Decision: Correct.\nFirst wrong step: None.\nExplanation: Wilson's theorem applies to prime 61, and the subsequent congruences and modular inverse give the stated remainder."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem":"Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution":[
+            {"step_id":"S1","text":"Wilson's theorem for the prime 61 gives 60!≡−1 (mod 61). Since 60!=51!·52·…·60 and 52·…·60≡−9! (mod 61), we obtain 51!·9!≡1 (mod 61)."},
+            {"step_id":"S2","text":"Hence 51!≡(9!)⁻¹ (mod 61). Also 9!=362880=61·5949−9, so 9!≡−9 (mod 61)."},
+            {"step_id":"S3","text":"Euclid's algorithm gives 9⁻¹≡34 (mod 61), and consequently (−9)⁻¹≡27 (mod 61)."},
+            {"step_id":"S4","text":"At this point, Wilson's theorem gives 9!≡−1 (mod 61), since 9 is prime. Therefore (9!)⁻¹≡−1, and the required remainder is 60."}
+          ],
+          "instruction":"Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private":{"label":"incorrect","first_error_step_id":"S4","first_error_explanation":"Wilson's theorem states (p−1)!≡−1 (mod p) for prime p. For p=9 its prime hypothesis fails; moreover the theorem would concern 8!, not 9!. The earlier derivation already gives the valid remainder 27.","error_type":"invalid_theorem_condition","error_position":"late","teacher_target_response":"Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: Wilson's theorem requires a prime modulus p and applies to (p−1)!. It cannot be applied with p=9, so the asserted congruence for 9! is unsupported and false."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem":"Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution":[
+            {"step_id":"S1","text":"Set h₀=0, consistent with h₁=2h₀+1, and let H(x)=Σₙ≥0 hₙxⁿ. Summing hₙ=2hₙ₋₁+1 over n≥1 after multiplying by xⁿ gives H(x)=2xH(x)+x/(1−x)."},
+            {"step_id":"S2","text":"Solving yields H(x)=x/((1−x)(1−2x))=1/(1−2x)−1/(1−x)."},
+            {"step_id":"S3","text":"Expanding both geometric series, H(x)=Σₙ≥0(2ⁿ−1)xⁿ, so hₙ=2ⁿ−1. This also gives h₁=1 as required."}
+          ],
+          "instruction":"Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private":{"label":"correct","first_error_step_id":null,"first_error_explanation":null,"error_type":null,"error_position":null,"teacher_target_response":"Decision: Correct.\nFirst wrong step: None.\nExplanation: The generating-function equation follows from the recurrence and the partial fraction expansion yields the stated coefficients."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "incorrect",
+      "requested_error_type": "counting_bijection",
+      "requested_error_position": "late",
+      "parsed_output": null,
+      "validation_errors": ["Failure: the verified reference and its generating-function method do not contain a counting or bijection argument to mutate; manufacturing one would violate the requirement to preserve the original method and would misclassify the error type."]
+    },
+    {
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem":"Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution":[
+            {"step_id":"S1","text":"For |x|<1, Σₙ≥0xⁿ=1/(1−x). Differentiating and multiplying by x gives Σₙ≥1nxⁿ=x/(1−x)²."},
+            {"step_id":"S2","text":"Differentiating again and multiplying by x gives Σₙ≥1n²xⁿ=x(1+x)/(1−x)³."},
+            {"step_id":"S3","text":"At x=1/3 this is ((1/3)(4/3))/((2/3)³)=(4/9)/(8/27)=3/2. Thus the series sums to 3/2."}
+          ],
+          "instruction":"Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private":{"label":"correct","first_error_step_id":null,"first_error_explanation":null,"error_type":null,"error_position":null,"teacher_target_response":"Decision: Correct.\nFirst wrong step: None.\nExplanation: Termwise differentiation is valid for |x|<1, and substitution of x=1/3 gives 3/2."}
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "parsed_output": {
+        "public": {
+          "problem":"Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution":[
+            {"step_id":"S1","text":"For |x|<1, the geometric series and two termwise differentiations give Σₙ≥1n²xⁿ=x(1+x)/(1−x)³."},
+            {"step_id":"S2","text":"Set x=1/3. Since 1/3>1, this substitution is outside the interval where the geometric-series expansion converges, so the expression cannot be evaluated by the derived identity."},
+            {"step_id":"S3","text":"Therefore the requested series diverges and has no finite sum."}
+          ],
+          "instruction":"Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private":{"label":"incorrect","first_error_step_id":"S2","first_error_explanation":"The inequality is reversed: 1/3<1, so |1/3|<1 and the derived power-series identity applies. The series converges and equals 3/2.","error_type":"sign_inequality","error_position":"middle","teacher_target_response":"Decision: Incorrect.\nFirst wrong step: S2.\nExplanation: 1/3 is less than 1, not greater than 1; it lies inside the convergence interval."}
+      },
+      "validation_errors": []
+    }
+  ]
+}

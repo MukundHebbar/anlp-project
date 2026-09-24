@@ -1,0 +1,1045 @@
+{
+  "purpose": "blind mathematical audit of GPT-Luna Judge prompt pilot",
+  "seed": 20260924,
+  "item_count": 31,
+  "items": [
+    {
+      "review_id": "acd7d899b9c37485",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For \\(|x|<1\\), \\(\\sum_{n\\ge0}x^n=1/(1-x)\\). Differentiating gives \\(\\sum_{n\\ge1}nx^{n-1}=1/(1-x)^2\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Multiplying by \\(x\\), \\(\\sum_{n\\ge1}nx^n=x/(1-x)^2\\). Differentiating again and multiplying by \\(x\\) gives \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Substitute \\(x=1/3\\), which is within the convergence interval, to obtain \\(\\sum_{n\\ge1}n^2/3^n= (1/3)(4/3)/(1-1/3)^3\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Here \\(1-1/3=-2/3\\), so the denominator cubed is \\(-8/27\\). Therefore the sum is \\((4/9)/(-8/27)=-3/2\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "d1c4883a71bb7494",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For |x|<1, Σₙ≥0xⁿ=1/(1−x). Differentiating and multiplying by x gives Σₙ≥1nxⁿ=x/(1−x)²."
+        },
+        {
+          "step_id": "S2",
+          "text": "Differentiating again and multiplying by x gives Σₙ≥1n²xⁿ=x(1+x)/(1−x)³."
+        },
+        {
+          "step_id": "S3",
+          "text": "At x=1/3 this is ((1/3)(4/3))/((2/3)³)=(4/9)/(8/27)=3/2. Thus the series sums to 3/2."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "f75e32ee7126a59d",
+      "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Set h₀=0, consistent with h₁=2h₀+1, and let H(x)=Σₙ≥0 hₙxⁿ. Summing hₙ=2hₙ₋₁+1 over n≥1 after multiplying by xⁿ gives H(x)=2xH(x)+x/(1−x)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Solving yields H(x)=x/((1−x)(1−2x))=1/(1−2x)−1/(1−x)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Expanding both geometric series, H(x)=Σₙ≥0(2ⁿ−1)xⁿ, so hₙ=2ⁿ−1. This also gives h₁=1 as required."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "10799dc99cc787d1",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Since 61 is prime, Wilson's theorem gives \\(60!\\equiv-1\\pmod{61}\\). Also, \\(60!=51!\\cdot52\\cdots60\\), and \\(52\\cdots60\\equiv(-9)(-8)\\cdots(-1)=-9!\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Thus \\(51!\\cdot9!\\equiv1\\pmod{61}\\), so \\(51!\\equiv(9!)^{-1}\\). Since \\(9!=362880\\equiv-9\\pmod{61}\\), this is \\((-9)^{-1}\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), hence \\((-9)^{-1}\\equiv-34\\equiv27\\pmod{61}\\). The remainder is 27."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "6c73b2eddb55e459",
+      "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Set \\(h_0=0\\) and \\(H(x)=\\sum_{n\\ge0}h_nx^n\\). Summing the recurrence after multiplying by \\(x^n\\) gives \\(H(x)=2xH(x)+x/(1-x)\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Hence \\(H(x)=x/((1-x)(1-2x))=1/(1-2x)-1/(1-x)\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Coefficient extraction gives \\(h_n=2^n-1\\) for every \\(n\\ge0\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "There are \\(2^n-1\\) nonempty binary strings of length n, so pairing each such string with a distinct legal n-disk Tower of Hanoi configuration is a bijection; therefore this formula counts configurations."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "351a807a0e8789af",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Test the identity on \\(f(x)=x\\): \\(\\int_0^2x\\,dx=2\\), so \\(\\alpha+\\beta=2\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "For \\(f(x)=x^2\\), \\(\\int_0^2x^2\\,dx=8/3\\), hence \\(\\alpha^2+\\beta^2=8/3\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Since \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\), we get \\(8/3=4-2\\alpha\\beta\\), so \\(\\alpha\\beta=2/3\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Therefore \\((\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta=4-8/3=4/3\\), and \\(3(\\alpha-\\beta)^2=4\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "5a9e69146570a311",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For \\(|x|<1\\), \\(\\sum_{n\\ge0}x^n=1/(1-x)\\). Differentiating and multiplying by \\(x\\) gives \\(\\sum_{n\\ge1}nx^n=x/(1-x)^2\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Differentiate once more and multiply by \\(x\\): \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Set \\(x=1/3\\), which lies in the convergence interval. The sum is \\((1/3)(4/3)/(2/3)^3= (4/9)/(8/27)=3/2\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "3b33bd0821b06a73",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Taking f(x)=x in the identity gives ∫₀²x dx=α+β."
+        },
+        {
+          "step_id": "S2",
+          "text": "The integral is [x²/2]₀²=4/2−0=1, so α+β=1."
+        },
+        {
+          "step_id": "S3",
+          "text": "Taking f(x)=x² gives α²+β²=∫₀²x² dx=8/3."
+        },
+        {
+          "step_id": "S4",
+          "text": "Using the stated equations, 2αβ=(α+β)²−(α²+β²)=1−8/3=−5/3, so αβ=−5/6."
+        },
+        {
+          "step_id": "S5",
+          "text": "Therefore (α−β)²=(α+β)²−4αβ=1+10/3=13/3, and the requested value is 13."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "52eef66b13143eea",
+      "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Set h₀=0, consistent with h₁=2h₀+1, and let H(x)=Σₙ₌₀∞hₙxⁿ."
+        },
+        {
+          "step_id": "S2",
+          "text": "Multiply hₙ=2hₙ₋₁+1 by xⁿ and sum for n≥1. This gives H(x)=2xH(x)+x/(1−x)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Solving yields H(x)=x/((1−x)(1−2x))=1/(1−2x)−1/(1−x)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Expanding the geometric series gives H(x)=Σₙ₌₀∞(2ⁿ−1)xⁿ, so hₙ=2ⁿ−1, which also gives h₁=1."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "b471cf67669e5def",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Taking f(x)=x gives α+β=∫₀²x dx=2. Taking f(x)=x² gives α²+β²=∫₀²x² dx=8/3."
+        },
+        {
+          "step_id": "S2",
+          "text": "From (α+β)²=α²+β²+2αβ, we get 4=8/3+2αβ, so αβ=2/3."
+        },
+        {
+          "step_id": "S3",
+          "text": "Thus (α−β)²=(α+β)²−4αβ=4−8/3=4/3, and 3(α−β)²=4."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "ab4f4bd5bca7ac77",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For |x|<1, the geometric series and two termwise differentiations give Σₙ≥1n²xⁿ=x(1+x)/(1−x)³."
+        },
+        {
+          "step_id": "S2",
+          "text": "Set x=1/3. Since 1/3>1, this substitution is outside the interval where the geometric-series expansion converges, so the expression cannot be evaluated by the derived identity."
+        },
+        {
+          "step_id": "S3",
+          "text": "Therefore the requested series diverges and has no finite sum."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "84c46353408c1cf3",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For |x|<1, the geometric series is 1/(1−x). Differentiating and multiplying by x gives Σₙ₌₁∞nxⁿ=x/(1−x)²."
+        },
+        {
+          "step_id": "S2",
+          "text": "Differentiating again and multiplying by x yields Σₙ₌₁∞n²xⁿ=x(1+x)/(1−x)³."
+        },
+        {
+          "step_id": "S3",
+          "text": "At x=1/3, we have 1−x=−2/3, so the series equals ((1/3)(4/3))/(−2/3)³."
+        },
+        {
+          "step_id": "S4",
+          "text": "This gives −3/2, so the series is −3/2."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "0229879fcad207a8",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Because 61 is prime, Wilson's theorem states \\(60!\\equiv-1\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Writing \\(60!=51!\\cdot52\\cdots60\\), the trailing product is \\((-9)(-8)\\cdots(-1)=-9!\\pmod{61}\\). Therefore \\(51!\\cdot9!\\equiv1\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "As \\(9!=362880\\equiv-9\\pmod{61}\\), we have \\(51!\\equiv(-9)^{-1}\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), so the inverse of \\(-9\\) is \\(27\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S5",
+          "text": "Applying Wilson's theorem to 51, we have \\(51!\\equiv-1\\pmod{61}\\), since 51 is the factorial index in the requested expression."
+        },
+        {
+          "step_id": "S6",
+          "text": "Combining these congruences gives the remainder 27."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "44180946745038cc",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Wilson's theorem for the prime 61 gives \\(60!\\equiv-1\\pmod{61}\\). Since \\(60!=51!\\cdot52\\cdots60\\), and \\(52\\cdots60\\equiv-9!\\pmod{61}\\), it follows that \\(51!\\,9!\\equiv1\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Because \\(9!=362880\\equiv-9\\pmod{61}\\), we have \\(51!\\equiv(-9)^{-1}\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), hence \\((-9)^{-1}\\equiv27\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "As a final evaluation, since 51 is prime, Wilson's theorem gives \\(51!\\equiv-1\\pmod{61}\\). Therefore the remainder is 60."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "1b423d60308eb8fc",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For \\(|x|<1\\), differentiating the geometric series twice gives \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "At \\(x=1/3\\), the numerator is \\((1/3)(4/3)=4/9\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Since \\(1-1/3=-2/3<0\\), its cube is negative; hence \\((1-1/3)^3=-8/27\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Substitution into the formula gives \\( (4/9)/(-8/27)=-3/2\\), so the series sum is \\(-3/2\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "6fe3e3cc29a2e7ab",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Taking f(x)=x gives α+β=2, and taking f(x)=x² gives α²+β²=8/3."
+        },
+        {
+          "step_id": "S2",
+          "text": "Since (α+β)²=α²+β²+2αβ, we have 4=8/3+2αβ, hence αβ=2/3."
+        },
+        {
+          "step_id": "S3",
+          "text": "Using (α−β)²=(α+β)²−4αβ, we obtain (α−β)²=4−4(2/3)=4−8/3=2/3."
+        },
+        {
+          "step_id": "S4",
+          "text": "Therefore 3(α−β)²=2."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "0d8d4dab242118ce",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Since 61 is prime, Wilson's theorem gives 60! ≡ −1 (mod 61). Also 60!=51!·52·...·60."
+        },
+        {
+          "step_id": "S2",
+          "text": "Modulo 61, the final nine factors are −9 through −1, so their product is −9!. Hence 51!·9!≡1 (mod 61)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Since 9!=362880≡−9 (mod 61), 51!≡(−9)⁻¹ (mod 61). The inverse of 9 is 34, so (−9)⁻¹≡−34≡27."
+        },
+        {
+          "step_id": "S4",
+          "text": "The remainder is 27."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "26d3ab5bf14b6c67",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For |x|<1, Σₙ₌₀∞xⁿ=1/(1−x). Differentiating and multiplying by x gives Σₙ₌₁∞nxⁿ=x/(1−x)²."
+        },
+        {
+          "step_id": "S2",
+          "text": "Differentiating x/(1−x)² and multiplying by x gives Σₙ₌₁∞n²xⁿ=x(1+x)/(1−x)³."
+        },
+        {
+          "step_id": "S3",
+          "text": "Set x=1/3, which lies in the convergence interval, to obtain (1/3·4/3)/(2/3)³=(4/9)/(8/27)=3/2."
+        },
+        {
+          "step_id": "S4",
+          "text": "Therefore the series equals 3/2."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "a768c33cf51af193",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Because 61 is prime, Wilson's theorem says 60!≡−1 (mod 61)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Writing 60!=51!·52·...·60, the last nine factors have product (−9)(−8)...(−1)=−9! modulo 61."
+        },
+        {
+          "step_id": "S3",
+          "text": "Thus 51!·9!≡1 (mod 61), and 9!≡−9, so 51!≡(−9)⁻¹ (mod 61)."
+        },
+        {
+          "step_id": "S4",
+          "text": "The Euclidean algorithm gives 9⁻¹≡34 (mod 61), hence (−9)⁻¹≡27 (mod 61)."
+        },
+        {
+          "step_id": "S5",
+          "text": "Euler's theorem applies to every integer modulo 61, including 0, so raising both sides to the 60th power confirms the remainder 27."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "461ab35b56d06815",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Because the identity holds for every polynomial of degree at most 2, apply it to f(x)=x and f(x)=x^2."
+        },
+        {
+          "step_id": "S2",
+          "text": "For f(x)=x, the integral from 0 to 2 is 2, so α+β=2. For f(x)=x², the integral is 8/3, so α²+β²=8/3."
+        },
+        {
+          "step_id": "S3",
+          "text": "Using (α+β)²=α²+β²+2αβ gives 4=8/3+2αβ, hence αβ=2/3."
+        },
+        {
+          "step_id": "S4",
+          "text": "Thus (α−β)²=(α+β)²−4αβ=4−8/3=4/3, and 3(α−β)²=4."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "c5264492c3a4dbb9",
+      "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Set h₀=0 and define H(x)=Σₙ₌₀∞hₙxⁿ. Summing the recurrence gives H(x)=2xH(x)+x/(1−x)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Solving and decomposing gives H(x)=1/(1−2x)−1/(1−x)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Expanding both geometric series gives H(x)=Σₙ₌₀∞(2ⁿ−1)xⁿ."
+        },
+        {
+          "step_id": "S4",
+          "text": "Pair each Hanoi move with a binary string of length n, and claim this is a bijection onto all binary strings of length n. There are 2ⁿ such strings, so hₙ=2ⁿ."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "dbba15187647fbd9",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Testing \\(f(x)=x\\) gives \\(\\alpha+\\beta=2\\), and testing \\(f(x)=x^2\\) gives \\(\\alpha^2+\\beta^2=8/3\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Since \\( (\\alpha+\\beta)^2=\\alpha^2+\\beta^2+2\\alpha\\beta\\), we have \\(4=8/3+2\\alpha\\beta\\), hence \\(2\\alpha\\beta=4/3\\) and \\(\\alpha\\beta=4/3\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Therefore \\( (\\alpha-\\beta)^2=4-4(4/3)=-4/3\\), so the requested value is \\(-4\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "0050240f45d53a49",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Since 61 is prime, Wilson's theorem gives \\(60!\\equiv-1\\pmod{61}\\). Also \\(60!=51!\\cdot52\\cdots60\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Modulo 61, the final nine factors are \\((-9)(-8)\\cdots(-1)=-9!\\). Hence \\(51!(-9!)\\equiv-1\\), or \\(51!\\,9!\\equiv1\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "We have \\(9!=362880\\equiv-9\\pmod{61}\\), because \\(362880=5949\\cdot61-9\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), so \\((-9)^{-1}\\equiv-34\\equiv27\\pmod{61}\\)."
+        },
+        {
+          "step_id": "S5",
+          "text": "Thus \\(51!\\equiv27\\pmod{61}\\), and the remainder is 27."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "82ebcfaf4aa94cf4",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Wilson's theorem for the prime 61 gives 60!≡−1 (mod 61). Since 60!=51!·52·…·60 and 52·…·60≡−9! (mod 61), we obtain 51!·9!≡1 (mod 61)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Hence 51!≡(9!)⁻¹ (mod 61). Also 9!=362880=61·5949−9, so 9!≡−9 (mod 61)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Euclid's algorithm gives 9⁻¹≡34 (mod 61), and consequently (−9)⁻¹≡27 (mod 61)."
+        },
+        {
+          "step_id": "S4",
+          "text": "At this point, Wilson's theorem gives 9!≡−1 (mod 61), since 9 is prime. Therefore (9!)⁻¹≡−1, and the required remainder is 60."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "8edb18f2d936782d",
+      "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Set \\(h_0=0\\) and \\(H(x)=\\sum_{n\\ge0}h_nx^n\\). Multiplying \\(h_n=2h_{n-1}+1\\) by \\(x^n\\) and summing for \\(n\\ge1\\) gives \\(H(x)=2xH(x)+x/(1-x)\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Solving yields \\(H(x)=x/((1-x)(1-2x))=1/(1-2x)-1/(1-x)\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Expanding the geometric series gives \\(H(x)=\\sum_{n\\ge0}(2^n-1)x^n\\). Thus \\(h_n=2^n-1\\), which satisfies \\(h_1=1\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "16c842f61f2f52a5",
+      "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "For \\(|x|<1\\), \\(\\sum_{n\\ge0}x^n=1/(1-x)\\). Differentiating and multiplying by \\(x\\) gives \\(\\sum_{n\\ge1}nx^n=x/(1-x)^2\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Differentiate this identity and multiply by \\(x\\): \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "At \\(x=1/3\\), the sum is \\((4/9)/(8/27)= (4/9)(27/8)=3/2\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "fbe4784d0ba352f3",
+      "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Set \\(h_0=0\\), consistent with \\(h_1=2h_0+1=1\\), and define \\(H(x)=\\sum_{n\\ge0}h_nx^n\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Multiply the recurrence by \\(x^n\\) and sum over \\(n\\ge1\\): \\(H(x)=2xH(x)+\\sum_{n\\ge1}x^n=2xH(x)+x/(1-x)\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Solving gives \\(H(x)=x/((1-x)(1-2x))\\). Partial fractions yield \\(H(x)=1/(1-2x)-1/(1-x)\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Expanding the geometric series gives \\(H(x)=\\sum_{n\\ge0}(2^n-1)x^n\\). Thus the coefficient of \\(x^n\\), which is \\(h_n\\), equals \\(2^n-1\\)."
+        },
+        {
+          "step_id": "S5",
+          "text": "Therefore \\(h_n=2^n-1\\); at \\(n=1\\) this gives 1, as required."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "ad75a3f8bf72fdcd",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Testing \\(f(x)=x\\) gives \\(\\int_0^2x\\,dx=1\\), hence \\(\\alpha+\\beta=1\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Testing \\(f(x)=x^2\\) correctly gives \\(\\alpha^2+\\beta^2=8/3\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Using \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\), we obtain \\(8/3=1-2\\alpha\\beta\\), so \\(\\alpha\\beta=-5/6\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Then \\((\\alpha-\\beta)^2=1-4(-5/6)=13/3\\), so the requested value is \\(13\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "074b0afc5222657d",
+      "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Set \\(h_0=0\\) and \\(H(x)=\\sum_{n\\ge0}h_nx^n\\). Summing \\(h_n=2h_{n-1}+1\\) over \\(n\\ge1\\) after multiplying by \\(x^n\\) gives \\(H(x)=2xH(x)+x/(1-x)\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Solving and taking partial fractions gives \\(H(x)=x/((1-x)(1-2x))=1/(1-2x)-1/(1-x)\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "The geometric expansions imply \\(H(x)=\\sum_{n\\ge0}(2^n-1)x^n\\), so the coefficient sequence indexed from its first nonzero term is \\(1,3,7,15,\\ldots\\)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Matching these coefficients to the Hanoi sequence shifts the disk count by one: the first nonzero coefficient is assigned to \\(h_2\\), so \\(h_n=2^{n-1}-1\\) for \\(n\\ge1\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "02c4b0ed118d7f75",
+      "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Since 61 is prime, Wilson's theorem gives 60! ≡ −1 (mod 61). Also 60!=51!·52·…·60, and 52·…·60 ≡ (−9)(−8)…(−1)=−9! (mod 61)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Thus 51!·(−9!)≡−1, so 51!·9!≡1 (mod 61), and 51!≡(9!)⁻¹ (mod 61)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Because 9!=362880=61·5949−9, we have 9!≡−9 (mod 61). Euclid gives 9⁻¹≡34 (mod 61), so (−9)⁻¹≡−34≡27 (mod 61)."
+        },
+        {
+          "step_id": "S4",
+          "text": "Therefore the remainder is 27."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    },
+    {
+      "review_id": "7f8509e3cdf77407",
+      "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "proposed_solution": [
+        {
+          "step_id": "S1",
+          "text": "Because both sides are linear in \\(f\\), test \\(f(x)=x\\) and \\(f(x)=x^2\\). These give \\(\\alpha+\\beta=2\\) and \\(\\alpha^2+\\beta^2=8/3\\)."
+        },
+        {
+          "step_id": "S2",
+          "text": "Using \\( (\\alpha+\\beta)^2=\\alpha^2+\\beta^2+2\\alpha\\beta\\), we get \\(4=8/3+2\\alpha\\beta\\), so \\(\\alpha\\beta=2/3\\)."
+        },
+        {
+          "step_id": "S3",
+          "text": "Then \\( (\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta=4-8/3=4/3\\), and the requested value is \\(3(4/3)=4\\)."
+        }
+      ],
+      "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error.",
+      "review": {
+        "true_label": null,
+        "true_first_error_step_id": null,
+        "all_prior_steps_valid": null,
+        "reference_method_preserved": null,
+        "error_type_matches": null,
+        "error_position_matches": null,
+        "teacher_target_correct": null,
+        "label_shortcut": null,
+        "mathematical_comment": null
+      }
+    }
+  ]
+}

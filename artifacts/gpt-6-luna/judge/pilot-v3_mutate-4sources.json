@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "model": "gpt-6-luna",
+    "prompt_file": "data/prompts/judge/judge_generator_v3_mutate.md",
+    "prompt_sha256": "f05745a70d6c3152e1606849e77a03473a67b40619071d3c4ecf737b60e0fb15",
+    "source_indices": [0, 10, 38, 41],
+    "generation_mode": "Codex subagent",
+    "warning": "not a Qwen teacher output"
+  },
+  "items": [
+    {
+      "item_id": "pilot-0::correct",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Test the identity on \\(f(x)=x\\): \\(\\int_0^2x\\,dx=2\\), so \\(\\alpha+\\beta=2\\)."},
+            {"step_id": "S2", "text": "For \\(f(x)=x^2\\), \\(\\int_0^2x^2\\,dx=8/3\\), hence \\(\\alpha^2+\\beta^2=8/3\\)."},
+            {"step_id": "S3", "text": "Since \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\), we get \\(8/3=4-2\\alpha\\beta\\), so \\(\\alpha\\beta=2/3\\)."},
+            {"step_id": "S4", "text": "Therefore \\((\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta=4-8/3=4/3\\), and \\(3(\\alpha-\\beta)^2=4\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Testing the identity with x and x^2 gives alpha+beta=2 and alpha^2+beta^2=8/3. These imply alpha beta=2/3, so (alpha-beta)^2=4/3 and the requested value is 4."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-0::incorrect",
+      "source_id": "pilot-0",
+      "source_index": 0,
+      "target_label": "incorrect",
+      "requested_error_type": "arithmetic_algebra",
+      "requested_error_position": "early",
+      "parsed_output": {
+        "public": {
+          "problem": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Testing \\(f(x)=x\\) gives \\(\\int_0^2x\\,dx=1\\), hence \\(\\alpha+\\beta=1\\)."},
+            {"step_id": "S2", "text": "Testing \\(f(x)=x^2\\) correctly gives \\(\\alpha^2+\\beta^2=8/3\\)."},
+            {"step_id": "S3", "text": "Using \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\), we obtain \\(8/3=1-2\\alpha\\beta\\), so \\(\\alpha\\beta=-5/6\\)."},
+            {"step_id": "S4", "text": "Then \\((\\alpha-\\beta)^2=1-4(-5/6)=13/3\\), so the requested value is \\(13\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S1",
+          "first_error_explanation": "The integral is \\(\\int_0^2 x\\,dx=[x^2/2]_0^2=2\\), not 1. Thus the identity requires alpha+beta=2, and the arithmetic error in this first step invalidates the subsequent values.",
+          "error_type": "arithmetic_algebra",
+          "error_position": "early",
+          "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S1.\nExplanation: Evaluating the antiderivative x^2/2 at 2 and 0 gives 2, not 1. Therefore alpha+beta must equal 2, so the subsequent calculations based on a sum of 1 do not follow."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::correct",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Since 61 is prime, Wilson's theorem gives \\(60!\\equiv-1\\pmod{61}\\). Also \\(60!=51!\\cdot52\\cdots60\\)."},
+            {"step_id": "S2", "text": "Modulo 61, the final nine factors are \\((-9)(-8)\\cdots(-1)=-9!\\). Hence \\(51!(-9!)\\equiv-1\\), or \\(51!\\,9!\\equiv1\\pmod{61}\\)."},
+            {"step_id": "S3", "text": "We have \\(9!=362880\\equiv-9\\pmod{61}\\), because \\(362880=5949\\cdot61-9\\)."},
+            {"step_id": "S4", "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), so \\((-9)^{-1}\\equiv-34\\equiv27\\pmod{61}\\)."},
+            {"step_id": "S5", "text": "Thus \\(51!\\equiv27\\pmod{61}\\), and the remainder is 27."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Wilson's theorem modulo 61 and the factorization of 60! yield 51! times 9! congruent to 1. Since 9! is congruent to -9 and the inverse of -9 modulo 61 is 27, the remainder is 27."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-10::incorrect",
+      "source_id": "pilot-10",
+      "source_index": 10,
+      "target_label": "incorrect",
+      "requested_error_type": "invalid_theorem_condition",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Wilson's theorem for the prime 61 gives \\(60!\\equiv-1\\pmod{61}\\). Since \\(60!=51!\\cdot52\\cdots60\\), and \\(52\\cdots60\\equiv-9!\\pmod{61}\\), it follows that \\(51!\\,9!\\equiv1\\pmod{61}\\)."},
+            {"step_id": "S2", "text": "Because \\(9!=362880\\equiv-9\\pmod{61}\\), we have \\(51!\\equiv(-9)^{-1}\\pmod{61}\\)."},
+            {"step_id": "S3", "text": "The Euclidean algorithm gives \\(9^{-1}\\equiv34\\pmod{61}\\), hence \\((-9)^{-1}\\equiv27\\pmod{61}\\)."},
+            {"step_id": "S4", "text": "As a final evaluation, since 51 is prime, Wilson's theorem gives \\(51!\\equiv-1\\pmod{61}\\). Therefore the remainder is 60."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S4",
+          "first_error_explanation": "Wilson's theorem does not state that 51! is congruent to -1 modulo 61. Its prime-modulus conclusion here is 60! congruent to -1 modulo 61; the theorem's factorial endpoint is 61-1, and 51 is not prime either. The valid preceding derivation gives remainder 27.",
+          "error_type": "invalid_theorem_condition",
+          "error_position": "late",
+          "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: Wilson's theorem for modulus 61 applies to 60!, not 51!, and its hypothesis concerns the prime modulus 61. It cannot yield 51! congruent to -1 modulo 61. The preceding valid calculation gives remainder 27."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::correct",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set \\(h_0=0\\), consistent with \\(h_1=2h_0+1=1\\), and define \\(H(x)=\\sum_{n\\ge0}h_nx^n\\)."},
+            {"step_id": "S2", "text": "Multiply the recurrence by \\(x^n\\) and sum over \\(n\\ge1\\): \\(H(x)=2xH(x)+\\sum_{n\\ge1}x^n=2xH(x)+x/(1-x)\\)."},
+            {"step_id": "S3", "text": "Solving gives \\(H(x)=x/((1-x)(1-2x))\\). Partial fractions yield \\(H(x)=1/(1-2x)-1/(1-x)\\)."},
+            {"step_id": "S4", "text": "Expanding the geometric series gives \\(H(x)=\\sum_{n\\ge0}(2^n-1)x^n\\). Thus the coefficient of \\(x^n\\), which is \\(h_n\\), equals \\(2^n-1\\)."},
+            {"step_id": "S5", "text": "Therefore \\(h_n=2^n-1\\); at \\(n=1\\) this gives 1, as required."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: With h_0=0, summing the recurrence gives H(x)=x/((1-x)(1-2x)). Its coefficients are 2^n-1, so h_n=2^n-1 and the initial value is satisfied."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-38::incorrect",
+      "source_id": "pilot-38",
+      "source_index": 38,
+      "target_label": "incorrect",
+      "requested_error_type": "counting_bijection",
+      "requested_error_position": "late",
+      "parsed_output": {
+        "public": {
+          "problem": "Find the formula for the Tower of Hanoi numbers given by the recurrence relation \\( h_n = 2h_{n-1} + 1 \\) with \\( h_1 = 1 \\) using generating functions.",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "Set \\(h_0=0\\) and \\(H(x)=\\sum_{n\\ge0}h_nx^n\\). Summing \\(h_n=2h_{n-1}+1\\) over \\(n\\ge1\\) after multiplying by \\(x^n\\) gives \\(H(x)=2xH(x)+x/(1-x)\\)."},
+            {"step_id": "S2", "text": "Solving and taking partial fractions gives \\(H(x)=x/((1-x)(1-2x))=1/(1-2x)-1/(1-x)\\)."},
+            {"step_id": "S3", "text": "The geometric expansions imply \\(H(x)=\\sum_{n\\ge0}(2^n-1)x^n\\), so the coefficient sequence indexed from its first nonzero term is \\(1,3,7,15,\\ldots\\)."},
+            {"step_id": "S4", "text": "Matching these coefficients to the Hanoi sequence shifts the disk count by one: the first nonzero coefficient is assigned to \\(h_2\\), so \\(h_n=2^{n-1}-1\\) for \\(n\\ge1\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S4",
+          "first_error_explanation": "The coefficient-to-index correspondence for the ordinary generating function is h_n=[x^n]H(x); it does not shift to h_{n+1} when the zero coefficient h_0 is present. In fact [x^1]H(x)=1=h_1, so the proposed formula gives the wrong sequence index and fails at h_1.",
+          "error_type": "counting_bijection",
+          "error_position": "late",
+          "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: In H(x)=sum h_n x^n, the coefficient of x^n corresponds directly to h_n. The coefficient x^1 is 1 and equals h_1, so shifting the correspondence by one incorrectly assigns that count to h_2."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::correct",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "correct",
+      "requested_error_type": "none",
+      "requested_error_position": "none",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For \\(|x|<1\\), \\(\\sum_{n\\ge0}x^n=1/(1-x)\\). Differentiating and multiplying by \\(x\\) gives \\(\\sum_{n\\ge1}nx^n=x/(1-x)^2\\)."},
+            {"step_id": "S2", "text": "Differentiate this identity and multiply by \\(x\\): \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."},
+            {"step_id": "S3", "text": "At \\(x=1/3\\), the sum is \\((4/9)/(8/27)= (4/9)(27/8)=3/2\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "correct",
+          "first_error_step_id": null,
+          "first_error_explanation": null,
+          "error_type": null,
+          "error_position": null,
+          "teacher_target_response": "Decision: Correct.\nFirst wrong step: None.\nExplanation: Differentiating the geometric series twice with the indicated factors gives x(1+x)/(1-x)^3. Substitution of x=1/3 yields 3/2."
+        }
+      },
+      "validation_errors": []
+    },
+    {
+      "item_id": "pilot-41::incorrect",
+      "source_id": "pilot-41",
+      "source_index": 41,
+      "target_label": "incorrect",
+      "requested_error_type": "sign_inequality",
+      "requested_error_position": "middle",
+      "parsed_output": {
+        "public": {
+          "problem": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+          "proposed_solution": [
+            {"step_id": "S1", "text": "For \\(|x|<1\\), \\(\\sum_{n\\ge0}x^n=1/(1-x)\\). Differentiating gives \\(\\sum_{n\\ge1}nx^{n-1}=1/(1-x)^2\\)."},
+            {"step_id": "S2", "text": "Multiplying by \\(x\\), \\(\\sum_{n\\ge1}nx^n=x/(1-x)^2\\). Differentiating again and multiplying by \\(x\\) gives \\(\\sum_{n\\ge1}n^2x^n=x(1+x)/(1-x)^3\\)."},
+            {"step_id": "S3", "text": "Substitute \\(x=1/3\\), which is within the convergence interval, to obtain \\(\\sum_{n\\ge1}n^2/3^n= (1/3)(4/3)/(1-1/3)^3\\)."},
+            {"step_id": "S4", "text": "Here \\(1-1/3=-2/3\\), so the denominator cubed is \\(-8/27\\). Therefore the sum is \\((4/9)/(-8/27)=-3/2\\)."}
+          ],
+          "instruction": "Decide whether the proposed solution is correct. If it is incorrect, identify the first wrong step and explain the mathematical error."
+        },
+        "private": {
+          "label": "incorrect",
+          "first_error_step_id": "S4",
+          "first_error_explanation": "The sign evaluation is wrong: 1-1/3=2/3, which is positive, not -2/3. The denominator is therefore (2/3)^3=8/27, and the series evaluates to 3/2.",
+          "error_type": "sign_inequality",
+          "error_position": "middle",
+          "teacher_target_response": "Decision: Incorrect.\nFirst wrong step: S4.\nExplanation: The subtraction 1-1/3 equals 2/3, a positive number. Cubing gives 8/27, not -8/27, so the proposed negative sum has the wrong sign; the value is 3/2."
+        }
+      },
+      "validation_errors": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "review_id": "8edb18f2d936782d",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "With h_0=0, summing the recurrence from n=1 gives H=2xH+x/(1-x). Its solution is 1/(1-2x)-1/(1-x), whose coefficient of x^n is 2^n-1, including h_1=1."
+  },
+  {
+    "review_id": "16c842f61f2f52a5",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Differentiating x/(1-x)^2 and multiplying by x yields x(1+x)/(1-x)^3. At x=1/3 this is (4/9)/(8/27)=3/2, and the series converges there."
+  },
+  {
+    "review_id": "fbe4784d0ba352f3",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "The generating-function equation and partial fractions are valid; coefficient extraction gives h_n=2^n-1 for n>=0. This satisfies h_0=0 and the recurrence, including h_1=1."
+  },
+  {
+    "review_id": "ad75a3f8bf72fdcd",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S1",
+    "all_prior_steps_valid": "no",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "The first error is S1: integral_0^2 x dx=2, so the identity requires alpha+beta=2, not 1. Testing monomials and using symmetric polynomial identities is an appropriate method, but subsequent results based on the wrong sum do not answer the stated problem."
+  },
+  {
+    "review_id": "074b0afc5222657d",
+    "true_label": "incorrect",
+    "true_first_error_step_id": "S4",
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "S1-S3 correctly yield coefficients h_n=2^n-1, with coefficient index n unchanged and h_1=1. S4 wrongly reassigns the coefficient of x to h_2; the claimed shifted formula contradicts the given initial value."
+  },
+  {
+    "review_id": "02c4b0ed118d7f75",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Wilson's theorem and 52...60 congruent to -9! give 51! congruent to (9!)^{-1}. Since 9! congruent to -9 modulo 61 and 9^{-1} congruent to 34, the inverse is -34 congruent to 27."
+  },
+  {
+    "review_id": "7f8509e3cdf77407",
+    "true_label": "correct",
+    "true_first_error_step_id": null,
+    "all_prior_steps_valid": "yes",
+    "reference_method_preserved": "yes",
+    "mathematical_comment": "Testing f(x)=x and x^2 gives alpha+beta=2 and alpha^2+beta^2=8/3. Thus alpha beta=2/3, (alpha-beta)^2=4/3, and the requested value is 4; the identity also holds for constants."
+  }
+]
