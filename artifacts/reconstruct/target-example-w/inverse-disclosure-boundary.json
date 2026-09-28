@@ -1,0 +1,9 @@
+{
+  "source_index": 46,
+  "audit_output_hash": "84f07471db9bfbce2b20cafc80cb4f0f0d12af9d59654e117eef0fbc4154016b",
+  "bank_output_hash": "892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+  "raw_decision": "REJECT",
+  "gate_override": false,
+  "diagnostic": "Public auditor calls answer-conditioned inverse inference of heights direct disclosure. This requires a boundary calibration against the converter positive example; both withhold an essential numerical premise and use the answer to infer it. Uniqueness alone is not a measure of direct copying. Existing protocol also rejects merely routine completion, so the difficulty boundary is not yet operationally resolved.",
+  "next_step": "Retain rejection in W. If the source-aware reviewer disagrees, exclude as unresolved. Before changing judge instructions, author matched positive/negative inverse-versus-copy controls with explicit transformations and freeze their intended criteria. No result is rescored to gain eligibility in W."
+}

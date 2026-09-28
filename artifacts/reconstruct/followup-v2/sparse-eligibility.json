@@ -1,0 +1,57 @@
+{
+  "registered_amendment": "F",
+  "created_at_utc": "2026-09-20T06:17:53.256470+00:00",
+  "audited": {
+    "base_sparse_2": 12,
+    "role_sparse_2": 12
+  },
+  "accepted": {
+    "base_sparse_2": [
+      11,
+      22,
+      30,
+      40,
+      49,
+      50,
+      73,
+      95,
+      105,
+      131,
+      134,
+      144
+    ],
+    "role_sparse_2": [
+      11,
+      22,
+      30,
+      49,
+      50,
+      73,
+      95,
+      105,
+      131,
+      134,
+      144
+    ]
+  },
+  "common_sources": [
+    11,
+    22,
+    30,
+    49,
+    50,
+    73,
+    95,
+    105,
+    131,
+    134,
+    144
+  ],
+  "coverage_gate_passed": true,
+  "smoke_sources": [
+    11,
+    22,
+    30,
+    49
+  ]
+}

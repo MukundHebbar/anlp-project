@@ -1,0 +1,30 @@
+{
+  "word_length6": {
+    "terminal_counts": [
+      10,
+      20,
+      24,
+      28,
+      24,
+      20,
+      10
+    ],
+    "word_count": 136,
+    "number_count_no_leading_zero": 126,
+    "independently_verified_by": "exhaustive enumeration of all7^6 digit tuples"
+  },
+  "source0_counterexample": "f=0 makes any integral0, contradicting universal integral4",
+  "source96_limit": "a/12, with required a=1 absent",
+  "source137_student_calculation": "n9 implies e21; degree sum42; equal groups3 imply missing degree7, not supplied answer6",
+  "source137_nonexistence_certificate": {
+    "assumption": "A simple planar graph on9 vertices with at least3 vertices of degree7.",
+    "argument": [
+      "Choose3 degree7 vertices H and let L be the other6 vertices.",
+      "Each h in H is nonadjacent to exactly1 of the other8 vertices, so at most1 vertex in L fails adjacency to h.",
+      "Across3 vertices in H, at most3 vertices in L fail adjacency to any H vertex.",
+      "At least3 vertices in L are adjacent to all3 vertices in H; those cross-edges form a K3,3 subgraph.",
+      "K3,3 is nonplanar, contradicting planarity."
+    ],
+    "conclusion": "The student degree sequence3x3,4x3,7x3 at n9 is impossible; primary judge well_posed=true is a false positive."
+  }
+}

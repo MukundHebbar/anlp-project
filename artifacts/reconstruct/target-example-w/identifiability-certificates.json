@@ -1,0 +1,142 @@
+{
+  "scope": "Pre-student W development diagnostics; no claims about population identifiability or Qwen outcomes",
+  "source46": {
+    "candidate_domain": "Three positive unordered integer heights summing8; all five partitions enumerated",
+    "enumeration": [
+      {
+        "heights": [
+          1,
+          1,
+          6
+        ],
+        "legal_orders": 56
+      },
+      {
+        "heights": [
+          1,
+          2,
+          5
+        ],
+        "legal_orders": 168
+      },
+      {
+        "heights": [
+          1,
+          3,
+          4
+        ],
+        "legal_orders": 280
+      },
+      {
+        "heights": [
+          2,
+          2,
+          4
+        ],
+        "legal_orders": 420
+      },
+      {
+        "heights": [
+          2,
+          3,
+          3
+        ],
+        "legal_orders": 560
+      }
+    ],
+    "unique_matching_height_multiset": [
+      2,
+      3,
+      3
+    ],
+    "meaning": "Answer560 and public structural constraints identify missing heights within this explicit finite domain. This does not by itself establish non-disclosure."
+  },
+  "source129": {
+    "recurrence": "v1=(1,1,1,1,1,1,1); next[d]=v[d-1]+v[d+1], zero outside0..6",
+    "exact_totals": {
+      "12": {
+        "total": 5408,
+        "remainder_mod_2008": 1392
+      },
+      "35": {
+        "total": 7366096384,
+        "remainder_mod_2008": 1392
+      }
+    },
+    "meaning": "Both distinct lengths satisfy public recurrence, initial counts and final remainder. Converter uniqueness claim is false; no unregistered length bound is permitted."
+  },
+  "source120": {
+    "orders_of_10": {
+      "7": 6,
+      "13": 6
+    },
+    "proof": "For p=7 or13, p divides R_n iff10^n=1 modp since9 is invertible modp. Thus6 dividesn, so3 divides R_n. Neither prime can be the least divisor. Both primes exceed3 and satisfy the same public clues and No answer.",
+    "meaning": "Prime identity is not fixed by the observations. A valid reconstruction using13 would not preserve the essential source parameter7."
+  },
+  "source137": {
+    "witness": "Octahedral graph K_(2,2,2), with opposite pairs(0,1),(2,3),(4,5)",
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "n": 6,
+    "e": 12,
+    "meaning": "The graph is planar and triangulated, has degree sum4n and handshaking, but lacks equal-sized degree3/4/5 groups. Even adding maximal-planarity does not make aggregate degree data equivalent to the original degree premises."
+  },
+  "source0_caution": "Opposite first-moment signs alone are not proof of semantic inequivalence: simultaneous sign reversal preserves squared difference. Evaluate any actual reconstruction by an explicit premise/target correspondence.",
+  "decision_constraint": "These diagnostics explain ambiguity and constrain claims; they do not authorize editing individual clues or count as student successes."
+}

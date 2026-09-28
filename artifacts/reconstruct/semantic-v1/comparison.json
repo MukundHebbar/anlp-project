@@ -1,0 +1,406 @@
+{
+  "incumbent": {
+    "planned": 24,
+    "resolved": 24,
+    "exact_agreements": 24,
+    "binary_agreements": 24,
+    "families": 8,
+    "recorded_cost_usd": 0.00196994,
+    "rows": [
+      {
+        "id": "polynomial-2",
+        "family": "polynomial",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "polynomial-1",
+        "family": "polynomial",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "polynomial-0",
+        "family": "polynomial",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "dice-2",
+        "family": "dice",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "dice-1",
+        "family": "dice",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "dice-0",
+        "family": "dice",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "derivative-2",
+        "family": "derivative",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "derivative-1",
+        "family": "derivative",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "derivative-0",
+        "family": "derivative",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "modular-2",
+        "family": "modular",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "modular-1",
+        "family": "modular",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "modular-0",
+        "family": "modular",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "integral-2",
+        "family": "integral",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "integral-1",
+        "family": "integral",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "integral-0",
+        "family": "integral",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "graph-2",
+        "family": "graph",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "graph-1",
+        "family": "graph",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "graph-0",
+        "family": "graph",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "sequence-2",
+        "family": "sequence",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "sequence-1",
+        "family": "sequence",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "sequence-0",
+        "family": "sequence",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "quantifiers-2",
+        "family": "quantifiers",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "quantifiers-1",
+        "family": "quantifiers",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "quantifiers-0",
+        "family": "quantifiers",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      }
+    ]
+  },
+  "candidate": {
+    "planned": 24,
+    "resolved": 24,
+    "exact_agreements": 23,
+    "binary_agreements": 24,
+    "families": 8,
+    "recorded_cost_usd": 0.002738204,
+    "rows": [
+      {
+        "id": "polynomial-2",
+        "family": "polynomial",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "polynomial-1",
+        "family": "polynomial",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "polynomial-0",
+        "family": "polynomial",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "dice-2",
+        "family": "dice",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "dice-1",
+        "family": "dice",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "dice-0",
+        "family": "dice",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "derivative-2",
+        "family": "derivative",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "derivative-1",
+        "family": "derivative",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "derivative-0",
+        "family": "derivative",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "modular-2",
+        "family": "modular",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "modular-1",
+        "family": "modular",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "modular-0",
+        "family": "modular",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "integral-2",
+        "family": "integral",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "integral-1",
+        "family": "integral",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "integral-0",
+        "family": "integral",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "graph-2",
+        "family": "graph",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "graph-1",
+        "family": "graph",
+        "expected": 1,
+        "observed": 0,
+        "exact_agreement": false,
+        "binary_agreement": true
+      },
+      {
+        "id": "graph-0",
+        "family": "graph",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "sequence-2",
+        "family": "sequence",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "sequence-1",
+        "family": "sequence",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "sequence-0",
+        "family": "sequence",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "quantifiers-2",
+        "family": "quantifiers",
+        "expected": 2,
+        "observed": 2,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "quantifiers-1",
+        "family": "quantifiers",
+        "expected": 1,
+        "observed": 1,
+        "exact_agreement": true,
+        "binary_agreement": true
+      },
+      {
+        "id": "quantifiers-0",
+        "family": "quantifiers",
+        "expected": 0,
+        "observed": 0,
+        "exact_agreement": true,
+        "binary_agreement": true
+      }
+    ]
+  }
+}

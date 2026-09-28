@@ -1,0 +1,72 @@
+{
+  "8": {
+    "bank_key": "8:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "The three quantities 2a^2+bc, 2b^2+ca, and 2c^2+ab factor respectively as (a-b)(a-c), (b-c)(b-a), and (c-a)(c-b).",
+        "The product D=(a-b)(a-c)(b-c) is used as a common denominator for the three fractions."
+      ],
+      "rendered_clues": "- The three quantities 2a^2+bc, 2b^2+ca, and 2c^2+ab factor respectively as (a-b)(a-c), (b-c)(b-a), and (c-a)(c-b).\n- The product D=(a-b)(a-c)(b-c) is used as a common denominator for the three fractions.",
+      "style": "sentence",
+      "clue_count": 2,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b"
+  },
+  "27": {
+    "bank_key": "27:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "60",
+      "clues": [
+        "If n=s^2m with m squarefree, then sqrt n equals s times sqrt m.",
+        "In the sum from n=1 to 100, terms whose radicands have the same squarefree part m combine by adding the multipliers s with s^2m≤100.",
+        "The squarefree part m=1 contributes only an integer constant to the combined expression."
+      ],
+      "rendered_clues": "- If n=s^2m with m squarefree, then sqrt n equals s times sqrt m.\n- In the sum from n=1 to 100, terms whose radicands have the same squarefree part m combine by adding the multipliers s with s^2m≤100.\n- The squarefree part m=1 contributes only an integer constant to the combined expression.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120"
+  },
+  "33": {
+    "bank_key": "33:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "Yes",
+      "clues": [
+        "The difference of two continuous real-valued functions on [0,1] is continuous on [0,1].",
+        "A continuous real-valued function on [0,1] that is never zero cannot take both positive and negative values."
+      ],
+      "rendered_clues": "- The difference of two continuous real-valued functions on [0,1] is continuous on [0,1].\n- A continuous real-valued function on [0,1] that is never zero cannot take both positive and negative values.",
+      "style": "sentence",
+      "clue_count": 2,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f"
+  },
+  "77": {
+    "bank_key": "77:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{2}",
+      "clues": [
+        "The two curves are horizontal translates of the same cubic function.",
+        "The two distinct intersection x-coordinates are roots of a quadratic whose discriminant is positive exactly when the shift parameter has absolute value between 0 and 2.",
+        "The area between the curves equals half the absolute shift parameter times the cube of the distance between the two intersection x-coordinates."
+      ],
+      "rendered_clues": "- The two curves are horizontal translates of the same cubic function.\n- The two distinct intersection x-coordinates are roots of a quadratic whose discriminant is positive exactly when the shift parameter has absolute value between 0 and 2.\n- The area between the curves equals half the absolute shift parameter times the cube of the distance between the two intersection x-coordinates.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "129:full:0": {
+    "source_index": 129,
+    "arm": "full",
+    "bank_key": "129:7c73a5dc363f9c285f3c1290f93875174e729620544c63330e38b006cb8daf83:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1392",
+      "clues": [
+        "Words are formed from the alphabet {0,1,2,3,4,5,6}, and each pair of neighboring digits must differ by exactly 1.",
+        "Let f_k(d) count valid k-digit words ending in digit d; for k=1, every digit is possible, so f_1(d)=1 for all d in {0,1,2,3,4,5,6}.",
+        "For k at least 1, the recurrence is f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+        "By reflection symmetry, f_k(0)=f_k(6), f_k(1)=f_k(5), and f_k(2)=f_k(4); denote these a_k, b_k, c_k respectively, and let d_k=f_k(3).",
+        "The target is the remainder when the total number A of valid words of an unreported length n is divided by 2008, and for any length k the total count is 2a_k+2b_k+2c_k+d_k."
+      ],
+      "rendered_clues": "- Words are formed from the alphabet {0,1,2,3,4,5,6}, and each pair of neighboring digits must differ by exactly 1.\n- Let f_k(d) count valid k-digit words ending in digit d; for k=1, every digit is possible, so f_1(d)=1 for all d in {0,1,2,3,4,5,6}.\n- For k at least 1, the recurrence is f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.\n- By reflection symmetry, f_k(0)=f_k(6), f_k(1)=f_k(5), and f_k(2)=f_k(4); denote these a_k, b_k, c_k respectively, and let d_k=f_k(3).\n- The target is the remainder when the total number A of valid words of an unreported length n is divided by 2008, and for any length k the total count is 2a_k+2b_k+2c_k+d_k.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_full",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "f88856922dac8069d9518d5ffa505ed09aba48a443b0df12a62cbd2df2cd3dee",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\n- Words are formed from the alphabet {0,1,2,3,4,5,6}, and each pair of neighboring digits must differ by exactly 1.\n- Let f_k(d) count valid k-digit words ending in digit d; for k=1, every digit is possible, so f_1(d)=1 for all d in {0,1,2,3,4,5,6}.\n- For k at least 1, the recurrence is f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.\n- By reflection symmetry, f_k(0)=f_k(6), f_k(1)=f_k(5), and f_k(2)=f_k(4); denote these a_k, b_k, c_k respectively, and let d_k=f_k(3).\n- The target is the remainder when the total number A of valid words of an unreported length n is divided by 2008, and for any length k the total count is 2a_k+2b_k+2c_k+d_k.",
+    "rendered_input_hash": "da077fde47130cecdc5c51e661563c30955832fb83b2ef7bc67b4c23b4c8fcb0"
+  }
+}

@@ -1,0 +1,709 @@
+{
+  "metadata": {
+    "protocol": "docs/plans/reconstruct-amendment-aq.md",
+    "created_at": "2026-09-20T17:04:12.417150+00:00",
+    "model": "Qwen/Qwen3-4B",
+    "prompt_hash": "69f9e85f9ee0427094b7ae9e1f2b00eb054393630a2a7a37910e19d6f0906709",
+    "sources_hash": "be3927d2633b5644c66ad3213209fdc1bbafb0f794b32024138cf77e1a04e3f5",
+    "thinking": false,
+    "quantization": "Q4_K_M",
+    "max_tokens": 8192,
+    "seed": 0,
+    "requests_hash": "6bfbd8c5dfdb50d17089fc0ce3a606f827346f1a9bc9f1933faf2b804afa0b0f",
+    "source_preflight_exclusions": {
+      "1": "Quarantine: recurrence applies only for k>1 and leaves a2 unspecified. Given a1=2^2009, a2011=[2^2008*(2^-2009+1/a2)]^-1. Choosing a2=2^2009 gives1, but a2=2^2010 gives4/3. The supplied solution silently assumes the missing k1 step."
+    },
+    "original_denominator": 16,
+    "source_run": "artifacts/reconstruct/fresh-development-ak/run.json"
+  },
+  "sources": {
+    "1": {
+      "source_index": 1,
+      "source_id": "pilot-1",
+      "question": "Consider the sequence \\( a_1, a_2, a_3, \\ldots \\) defined by \\( \\frac{1}{a_{k+1}} = \\frac{1}{a_1} + \\frac{1}{a_2} + \\cdots + \\frac{1}{a_k} \\) for \\( k > 1 \\) with \\( a_1 = 2^{2009} \\). Find the value of \\( a_{2011} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let\n\n\\[\nS_k=\\sum_{i=1}^k \\frac1{a_i}.\n\\]\n\nThe recurrence is\n\n\\[\n\\frac1{a_{k+1}}=S_k.\n\\]\n\nThen\n\n\\[\nS_{k+1}=S_k+\\frac1{a_{k+1}}=S_k+S_k=2S_k.\n\\]\n\nSo \\(S_k\\) doubles at each step. Since\n\n\\[\nS_1=\\frac1{a_1}=\\frac1{2^{2009}}=2^{-2009},\n\\]\n\nwe get\n\n\\[\nS_k=2^{k-1}S_1=2^{k-1}\\cdot 2^{-2009}=2^{k-2010}.\n\\]\n\nNow\n\n\\[\n\\frac1{a_{2011}}=S_{2010}=2^{2010-2010}=2^0=1.\n\\]\n\nTherefore,\n\n\\[\n\\boxed{a_{2011}=1}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "5": {
+      "source_index": 5,
+      "source_id": "pilot-5",
+      "question": "How many permutations in the symmetric group $S_{100}$ contain at least one cycle of length 51 or more?",
+      "final_answer": "100! \\left( H_{100} - H_{50} \\right)",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 6.5,
+      "checked_solution": "Let a “long” cycle mean a cycle of length at least \\(51\\).\n\nIn any permutation of \\(100\\) elements, there can be at most one long cycle, since two such cycles would have total length at least\n\n\\[\n51+51=102>100.\n\\]\n\nSo we may count permutations by the length \\(k\\) of their unique long cycle, where\n\n\\[\nk=51,52,\\dots,100.\n\\]\n\nFor a fixed \\(k\\):\n\n1. Choose the \\(k\\) elements that form the long cycle:\n\n\\[\n\\binom{100}{k}\n\\]\n\n2. Arrange them into a \\(k\\)-cycle. The number of distinct \\(k\\)-cycles on \\(k\\) given elements is\n\n\\[\n(k-1)!\n\\]\n\n3. Arrange the remaining \\(100-k\\) elements arbitrarily:\n\n\\[\n(100-k)!\n\\]\n\nThus the number of permutations containing a cycle of length exactly \\(k\\) is\n\n\\[\n\\binom{100}{k}(k-1)!(100-k)!\n=\n\\frac{100!}{k!(100-k)!}(k-1)!(100-k)!\n=\n\\frac{100!}{k}.\n\\]\n\nSince these cases for different \\(k\\) are disjoint, the total number of permutations containing at least one cycle of length \\(51\\) or more is\n\n\\[\n\\sum_{k=51}^{100} \\frac{100!}{k}.\n\\]\n\nEquivalently,\n\n\\[\n100!\\sum_{k=51}^{100}\\frac1k\n=\n100!\\left(H_{100}-H_{50}\\right),\n\\]\n\nwhere \\(H_m=1+\\frac12+\\cdots+\\frac1m\\).\n\n\\[\n\\boxed{100!\\left(H_{100}-H_{50}\\right)}\n\\]\n\nSo the number of permutations in \\(S_{100}\\) with at least one cycle of length \\(51\\) or more is\n\n\\[\n\\boxed{\\sum_{k=51}^{100}\\frac{100!}{k}}\n=\n\\boxed{100!\\left(H_{100}-H_{50}\\right)}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "10": {
+      "source_index": 10,
+      "source_id": "pilot-10",
+      "question": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "final_answer": "27",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.0,
+      "checked_solution": "Since \\(61\\) is prime, Wilson’s theorem gives\n\n\\[\n60! \\equiv -1 \\pmod{61}.\n\\]\n\nNow write\n\n\\[\n60! = 51! \\cdot 52 \\cdot 53 \\cdots 60.\n\\]\n\nModulo \\(61\\),\n\n\\[\n52 \\equiv -9,\\quad 53 \\equiv -8,\\quad \\dots,\\quad 60 \\equiv -1.\n\\]\n\nTherefore\n\n\\[\n52 \\cdot 53 \\cdots 60 \\equiv (-9)(-8)\\cdots(-1) = (-1)^9 \\cdot 9! = -9! \\pmod{61}.\n\\]\n\nSo\n\n\\[\n60! \\equiv 51! \\cdot (-9!) \\equiv -1 \\pmod{61}.\n\\]\n\nMultiplying both sides by \\(-1\\),\n\n\\[\n51! \\cdot 9! \\equiv 1 \\pmod{61}.\n\\]\n\nHence\n\n\\[\n51! \\equiv (9!)^{-1} \\pmod{61}.\n\\]\n\nCompute \\(9!\\):\n\n\\[\n9! = 362880.\n\\]\n\nSince\n\n\\[\n61 \\cdot 5949 = 362889,\n\\]\n\nwe get\n\n\\[\n9! \\equiv -9 \\pmod{61}.\n\\]\n\nThus\n\n\\[\n51! \\equiv (-9)^{-1} \\pmod{61}.\n\\]\n\nNow find the inverse of \\(9\\) modulo \\(61\\). Solve\n\n\\[\n9x \\equiv 1 \\pmod{61}.\n\\]\n\nUsing the Euclidean algorithm:\n\n\\[\n61 = 6\\cdot 9 + 7,\n\\]\n\\[\n9 = 1\\cdot 7 + 2,\n\\]\n\\[\n7 = 3\\cdot 2 + 1.\n\\]\n\nBack-substituting:\n\n\\[\n1 = 7 - 3\\cdot 2\n= 7 - 3(9 - 7)\n= 4\\cdot 7 - 3\\cdot 9\n= 4(61 - 6\\cdot 9) - 3\\cdot 9\n= 4\\cdot 61 - 27\\cdot 9.\n\\]\n\nSo\n\n\\[\n9^{-1} \\equiv -27 \\equiv 34 \\pmod{61}.\n\\]\n\nTherefore\n\n\\[\n(-9)^{-1} \\equiv -34 \\equiv 27 \\pmod{61}.\n\\]\n\nThus\n\n\\[\n51! \\equiv 27 \\pmod{61}.\n\\]\n\nThe remainder when \\(51!\\) is divided by \\(61\\) is\n\n\\[\n\\boxed{27}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "16": {
+      "source_index": 16,
+      "source_id": "pilot-16",
+      "question": "Determine the number of integral points on the hyperbola \\(x^2 - y^2 = (2000)^2\\). An integral point is a point where both coordinates are integers.",
+      "final_answer": "98",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.5,
+      "checked_solution": "Let  \n\\[\nu=x-y,\\qquad v=x+y.\n\\]\nThen\n\\[\nuv=(x-y)(x+y)=x^2-y^2=2000^2.\n\\]\n\nSince\n\\[\nx=\\frac{u+v}{2},\\qquad y=\\frac{v-u}{2},\n\\]\nthe integers \\(u\\) and \\(v\\) must have the same parity. Their product \\(2000^2\\) is even, so they cannot both be odd. Hence both \\(u\\) and \\(v\\) are even.\n\nWrite\n\\[\nu=2a,\\qquad v=2b.\n\\]\nThen\n\\[\n4ab=2000^2,\n\\]\nso\n\\[\nab=\\frac{2000^2}{4}=1000^2=1{,}000{,}000.\n\\]\n\nNow factor:\n\\[\n1{,}000{,}000=10^6=2^6\\cdot 5^6.\n\\]\n\nWe need ordered integer pairs \\((a,b)\\) such that\n\\[\nab=2^6\\cdot 5^6.\n\\]\nSince the product is positive, \\(a\\) and \\(b\\) are either both positive or both negative.\n\nFor positive pairs, \\(a\\) can be any positive divisor of \\(2^6\\cdot 5^6\\), and then \\(b\\) is determined. The number of positive divisors is\n\\[\n(6+1)(6+1)=49.\n\\]\nFor negative pairs, there are also \\(49\\) choices.\n\nThus the total number of integral points is\n\\[\n49+49=98.\n\\]\n\n\\[\n\\boxed{98}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "17": {
+      "source_index": 17,
+      "source_id": "pilot-17",
+      "question": "Suppose $o_1, o_2, \\dots, o_n$ are $n$ objects, each colored with a single color. For each object $o_i$, let $c_i$ be the number of objects having the same color as $o_i$. Consider the monic polynomial with roots $-c_1, -c_2, \\dots, -c_n$:\n\\[ x^n + a_{n-1}x^{n-1} + \\dots + a_1x + a_0 \\]\nIf exactly $k$ colors are used, determine which of the following statements is always true:\n\nA. $k > a_0$\nB. $ka_0 = a_1$\nC. $k = a_{n-1}$\nD. $ka_1 = a_0$",
+      "final_answer": "$ka_0 = a_1$",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "broad_topic": "Algebra",
+      "difficulty": 5.0,
+      "checked_solution": "Let the color class sizes be\n\n\\[\nm_1,m_2,\\dots,m_k,\n\\]\n\nwhere each \\(m_j\\ge 1\\) and \\(\\sum_{j=1}^k m_j=n\\). If an object belongs to the color class of size \\(m_j\\), then its corresponding \\(c_i\\) is \\(m_j\\). Therefore the polynomial is\n\n\\[\nP(x)=\\prod_{i=1}^n (x+c_i)\n=\\prod_{j=1}^k (x+m_j)^{m_j}.\n\\]\n\nWrite\n\n\\[\nP(x)=x^n+a_{n-1}x^{n-1}+\\cdots+a_1x+a_0.\n\\]\n\nThe constant term is\n\n\\[\na_0=P(0)=\\prod_{j=1}^k m_j^{m_j}.\n\\]\n\nNow examine the coefficient of \\(x\\). For each factor,\n\n\\[\n(x+m_j)^{m_j}\n= m_j^{m_j}+m_j^{m_j}x+\\cdots,\n\\]\n\nbecause the linear term is\n\n\\[\n\\binom{m_j}{1}m_j^{m_j-1}x=m_j^{m_j}x.\n\\]\n\nThus each factor \\((x+m_j)^{m_j}\\) has linear coefficient equal to its constant term. When multiplying the \\(k\\) factors, the coefficient of \\(x\\) is obtained by choosing the linear term from exactly one factor and the constant term from all the others. For each fixed \\(j\\), that contribution is\n\n\\[\nm_j^{m_j}\\prod_{r\\ne j}m_r^{m_r}\n=\n\\prod_{r=1}^k m_r^{m_r}\n=a_0.\n\\]\n\nThere are \\(k\\) choices of \\(j\\), so\n\n\\[\na_1=ka_0.\n\\]\n\nTherefore the always true statement is\n\n\\[\n\\boxed{\\text{B. } ka_0=a_1}.\n\\]\n\nThe other options are not always true; for example, with one color and \\(n=2\\),\n\n\\[\nP(x)=(x+2)^2=x^2+4x+4,\n\\]\n\nso \\(k=1\\), \\(a_0=4\\), and \\(a_{n-1}=4\\), disproving A and C. With two singleton color classes,\n\n\\[\nP(x)=(x+1)^2=x^2+2x+1,\n\\]\n\nso \\(k=2\\), \\(a_0=1\\), \\(a_1=2\\), and \\(ka_1=4\\ne 1\\), disproving D.",
+      "solution_origin": "deepseek_verified_answer",
+      "answer_normalization": {
+        "method": "unique explicit option-label lookup, no mathematical repair",
+        "original_answer": "B",
+        "normalized_answer": "$ka_0 = a_1$"
+      }
+    },
+    "21": {
+      "source_index": 21,
+      "source_id": "pilot-21",
+      "question": "Let $p$ be an odd prime of the form $p=2^m+1$, for some positive integer $m$. Let $g$ be a primitive root mod $p$ with $1 \\le g \\le p$. How many such $g$ are there?",
+      "final_answer": "2^{m-1}",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "broad_topic": "Number Theory",
+      "difficulty": 6.5,
+      "checked_solution": "Let \\(p\\) be an odd prime with\n\n\\[\np=2^m+1.\n\\]\n\nThen\n\n\\[\np-1=2^m.\n\\]\n\nThe multiplicative group modulo \\(p\\), denoted \\((\\mathbb Z/p\\mathbb Z)^\\times\\), is cyclic of order \\(p-1=2^m\\). A primitive root modulo \\(p\\) is exactly a generator of this cyclic group.\n\nIn a cyclic group of order \\(n\\), the number of generators is \\(\\varphi(n)\\), where \\(\\varphi\\) is Euler’s totient function. Therefore the number of primitive roots modulo \\(p\\) is\n\n\\[\n\\varphi(p-1)=\\varphi(2^m).\n\\]\n\nSince\n\n\\[\n\\varphi(2^m)=2^m-2^{m-1}=2^{m-1},\n\\]\n\nthe number of primitive roots \\(g\\) with \\(1\\le g\\le p\\) is\n\n\\[\n\\boxed{2^{m-1}}.\n\\]\n\nEquivalently, since \\(p=2^m+1\\),\n\n\\[\n2^{m-1}=\\frac{p-1}{2}.\n\\]\n\nSo there are \\(\\boxed{2^{m-1}}\\) primitive roots modulo \\(p\\).",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "29": {
+      "source_index": 29,
+      "source_id": "pilot-29",
+      "question": "Determine whether there exists a composite number $m$ such that for every integer $n$, the congruence $n^m \\equiv n \\pmod{m}$ holds true.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 6.5,
+      "checked_solution": "Yes. A concrete example is\n\n\\[\nm=561=3\\cdot 11\\cdot 17,\n\\]\n\nwhich is composite. We verify that for every integer \\(n\\),\n\n\\[\nn^{561}\\equiv n \\pmod{561}.\n\\]\n\nIt suffices to check the congruence modulo each prime factor \\(3,11,17\\), since they are pairwise coprime.\n\nFor each prime \\(p\\in\\{3,11,17\\}\\), we have\n\n\\[\np-1 \\mid 560,\n\\]\n\nbecause\n\n\\[\n3-1=2\\mid 560,\\qquad 11-1=10\\mid 560,\\qquad 17-1=16\\mid 560.\n\\]\n\nNow fix such a prime \\(p\\). If \\(p\\mid n\\), then\n\n\\[\nn^{561}\\equiv 0\\equiv n \\pmod{p}.\n\\]\n\nIf \\(p\\nmid n\\), then by Fermat’s little theorem,\n\n\\[\nn^{p-1}\\equiv 1 \\pmod{p}.\n\\]\n\nSince \\(p-1\\mid 560\\),\n\n\\[\nn^{560}\\equiv 1 \\pmod{p}.\n\\]\n\nTherefore\n\n\\[\nn^{561}=n\\cdot n^{560}\\equiv n \\pmod{p}.\n\\]\n\nThus\n\n\\[\nn^{561}\\equiv n \\pmod{3},\\qquad\nn^{561}\\equiv n \\pmod{11},\\qquad\nn^{561}\\equiv n \\pmod{17}.\n\\]\n\nBy the Chinese remainder theorem,\n\n\\[\nn^{561}\\equiv n \\pmod{561}.\n\\]\n\nHence such a composite number exists.\n\n<final_answer>Yes; for example, \\(m=561\\) works.</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "35": {
+      "source_index": 35,
+      "source_id": "pilot-35",
+      "question": "Does the existence of the derivative $f'(x)$ for all $x \\in \\mathbb{R}$ and the fact that $f'$ is bounded on $\\mathbb{R}$ imply that the function $f: \\mathbb{R} \\rightarrow \\mathbb{R}$ is uniformly continuous? Answer yes or no and justify your answer.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "broad_topic": "Calculus",
+      "difficulty": 6.0,
+      "checked_solution": "Yes.\n\nLet \\(f:\\mathbb R\\to\\mathbb R\\) be differentiable everywhere, and suppose there exists \\(M>0\\) such that\n\n\\[\n|f'(x)|\\le M \\quad \\text{for all } x\\in\\mathbb R.\n\\]\n\nTake any \\(x<y\\). Since \\(f\\) is differentiable on \\(\\mathbb R\\), it is continuous on \\([x,y]\\) and differentiable on \\((x,y)\\). Therefore the Mean Value Theorem applies, so there exists \\(c\\in(x,y)\\) such that\n\n\\[\nf(y)-f(x)=f'(c)(y-x).\n\\]\n\nHence\n\n\\[\n|f(y)-f(x)|=|f'(c)||y-x|\\le M|y-x|.\n\\]\n\nThe same inequality holds for \\(y<x\\) by symmetry, and it is trivial for \\(x=y\\). Thus for all \\(x,y\\in\\mathbb R\\),\n\n\\[\n|f(x)-f(y)|\\le M|x-y|.\n\\]\n\nSo \\(f\\) is Lipschitz continuous on \\(\\mathbb R\\).\n\nNow let \\(\\varepsilon>0\\). Choose\n\n\\[\n\\delta=\\frac{\\varepsilon}{M+1}.\n\\]\n\nThen whenever \\(|x-y|<\\delta\\),\n\n\\[\n|f(x)-f(y)|\\le M|x-y|\n< M\\frac{\\varepsilon}{M+1}\n<\\varepsilon.\n\\]\n\nTherefore \\(f\\) is uniformly continuous on \\(\\mathbb R\\).\n\n\\[\n\\boxed{\\text{Yes, the existence and boundedness of } f' \\text{ imply } f \\text{ is uniformly continuous.}}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "41": {
+      "source_index": 41,
+      "source_id": "pilot-41",
+      "question": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "final_answer": "\\dfrac{3}{2}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 5.0,
+      "checked_solution": "Let  \n\\[\nS(x)=\\sum_{n=0}^{\\infty}x^n=\\frac{1}{1-x},\\qquad |x|<1.\n\\]\n\nDifferentiate term by term with respect to \\(x\\):\n\n\\[\n\\sum_{n=1}^{\\infty} n x^{n-1}=\\frac{1}{(1-x)^2}.\n\\]\n\nMultiplying by \\(x\\),\n\n\\[\n\\sum_{n=1}^{\\infty} n x^n=\\frac{x}{(1-x)^2}.\n\\]\n\nDifferentiate again:\n\n\\[\n\\sum_{n=1}^{\\infty} n^2 x^{n-1}\n=\\frac{d}{dx}\\left(\\frac{x}{(1-x)^2}\\right)\n=\\frac{1+x}{(1-x)^3}.\n\\]\n\nMultiplying by \\(x\\),\n\n\\[\n\\sum_{n=1}^{\\infty} n^2 x^n\n=\\frac{x(1+x)}{(1-x)^3}.\n\\]\n\nNow set \\(x=\\frac13\\):\n\n\\[\n\\sum_{n=1}^{\\infty} \\frac{n^2}{3^n}\n=\n\\frac{\\frac13\\left(1+\\frac13\\right)}{\\left(1-\\frac13\\right)^3}\n=\n\\frac{\\frac13\\cdot \\frac43}{\\left(\\frac23\\right)^3}\n=\n\\frac{\\frac49}{\\frac{8}{27}}\n=\n\\frac{4}{9}\\cdot \\frac{27}{8}\n=\n\\frac32.\n\\]\n\n\\[\n\\boxed{\\frac32}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "54": {
+      "source_index": 54,
+      "source_id": "deepmath-row-12880-25b4bdec8b33",
+      "question": "Let \\( \\omega \\) and \\( z \\) be complex numbers such that \\( |\\omega| = 1 \\) and \\( |z| = 10 \\). Define \\( \\theta = \\arg\\left(\\frac{\\omega - z}{z}\\right) \\). Determine the maximum possible value of \\( \\tan^2 \\theta \\).",
+      "final_answer": "\\dfrac{1}{99}",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let  \n\\[\nu=\\frac{\\omega-z}{z}.\n\\]\nThen\n\\[\nu+1=\\frac{\\omega}{z},\n\\]\nso\n\\[\n|u+1|=\\frac{|\\omega|}{|z|}=\\frac{1}{10}.\n\\]\nConversely, every \\(u\\) with \\(|u+1|=1/10\\) can be realized by taking \\(z=10\\), \\(\\omega=10(u+1)\\), since then \\(|\\omega|=1\\). Thus we only need to maximize \\(\\tan^2(\\arg u)\\) over the circle\n\\[\n|u+1|=\\frac{1}{10}.\n\\]\n\nWrite \\(u=X+iY\\). Then\n\\[\n(X+1)^2+Y^2=\\frac{1}{100}.\n\\]\nAlso \\(X\\in[-11/10,-9/10]\\), so \\(X\\neq 0\\). Since \\(\\theta=\\arg u\\),\n\\[\n\\tan^2\\theta=\\frac{Y^2}{X^2}.\n\\]\n\nLet\n\\[\nm=\\frac{Y}{X}=\\tan\\theta.\n\\]\nThen \\(Y=mX\\). Substituting into the circle equation gives\n\\[\n(X+1)^2+m^2X^2=\\frac{1}{100},\n\\]\nor\n\\[\n(1+m^2)X^2+2X+\\frac{99}{100}=0.\n\\]\nFor a real \\(X\\) to exist, the discriminant must be nonnegative:\n\\[\n4-4(1+m^2)\\frac{99}{100}\\ge 0.\n\\]\nThus\n\\[\n1-\\frac{99}{100}(1+m^2)\\ge 0,\n\\]\nso\n\\[\n1+m^2\\le \\frac{100}{99}.\n\\]\nTherefore\n\\[\nm^2\\le \\frac{1}{99}.\n\\]\n\nEquality is attainable when the discriminant is zero, so the maximum value is\n\n<final_answer>\\(\\frac{1}{99}\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "59": {
+      "source_index": 59,
+      "source_id": "deepmath-row-21531-6b1a33b12929",
+      "question": "Determine the nature of the singularities of the function \\( f(z) = \\frac{\\sin(1/z)}{z^{2}+11z+13} \\). Choose the correct option:\n(a) No singularity.\n(b) Only poles.\n(c) Only an essential singularity.\n(d) Both an essential singularity and poles.",
+      "final_answer": "Both an essential singularity and poles.",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "broad_topic": "Algebra",
+      "difficulty": 5.5,
+      "checked_solution": "The denominator has zeros where  \n\\[\nz^2+11z+13=0.\n\\]\nThe discriminant is\n\\[\n11^2-4\\cdot 13=121-52=69,\n\\]\nso\n\\[\nz_{1,2}=\\frac{-11\\pm \\sqrt{69}}{2}.\n\\]\nThese are two distinct nonzero roots. Also both roots satisfy \\(|z_j|>1\\), so\n\\[\n\\left|\\frac1{z_j}\\right|<1<\\pi.\n\\]\nSince \\(\\sin w=0\\) only when \\(w=k\\pi\\), \\(k\\in\\mathbb Z\\), and \\(|1/z_j|<\\pi\\), we cannot have \\(\\sin(1/z_j)=0\\). Thus the numerator is analytic and nonzero at each \\(z_j\\).\n\nThe denominator has a simple zero at each \\(z_j\\), because\n\\[\n\\frac{d}{dz}(z^2+11z+13)=2z+11\n\\]\nis nonzero at both roots. Therefore \\(f\\) has a simple pole at each of\n\\[\nz=\\frac{-11\\pm \\sqrt{69}}{2}.\n\\]\n\nNow consider \\(z=0\\). The denominator is \\(13\\neq 0\\) there, so near \\(0\\),\n\\[\nf(z)=h(z)\\sin(1/z),\n\\]\nwhere \\(h(z)=1/(z^2+11z+13)\\) is analytic and \\(h(0)=1/13\\neq 0\\). The Laurent expansion\n\\[\n\\sin(1/z)=\\frac1z-\\frac1{3!z^3}+\\frac1{5!z^5}-\\cdots\n\\]\nhas infinitely many negative powers. Multiplication by \\(h(z)\\), whose constant term is nonzero, leaves infinitely many negative powers in the Laurent expansion. Hence \\(z=0\\) is an essential singularity.\n\nThus \\(f\\) has an essential singularity at \\(0\\) and simple poles at the two zeros of the denominator.\n\n<final_answer>(d) Both an essential singularity and poles.</final_answer>",
+      "solution_origin": "deepseek_verified_answer",
+      "answer_normalization": {
+        "method": "unique explicit parenthesized option lookup; analytic correctness independently checked",
+        "original_answer": "D",
+        "normalized_answer": "Both an essential singularity and poles."
+      }
+    },
+    "67": {
+      "source_index": 67,
+      "source_id": "deepmath-row-24257-507c5bbe874b",
+      "question": "Let $B = \\{ v_i \\}_{i=1}^n$ be a basis of a vector space $V$, and let $T: V \\rightarrow V$ be a linear operator such that $T(v_1) = \\sum_{i=1}^n v_i$. Find the sum of the elements of the matrix $[T^{-1}]_B$, where $[T^{-1}]_B$ is the matrix representation of the inverse of $T$ with respect to the basis $B$. Provide your answer as a single number.",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Linear Transformations",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let \\(A=[T]_B\\). Then \\([T^{-1}]_B=A^{-1}\\).\n\nThe first column of \\(A\\) is the coordinate vector of \\(T(v_1)\\) in the basis \\(B\\). Since\n\n\\[\nT(v_1)=v_1+v_2+\\cdots+v_n,\n\\]\n\nwe have\n\n\\[\nA e_1=\\mathbf{1},\n\\]\n\nwhere \\(\\mathbf{1}=(1,1,\\ldots,1)^T\\).\n\nThe sum of all entries of \\(A^{-1}\\) is\n\n\\[\n\\mathbf{1}^T A^{-1}\\mathbf{1}.\n\\]\n\nUsing \\(A e_1=\\mathbf{1}\\),\n\n\\[\n\\mathbf{1}^T A^{-1}\\mathbf{1}\n=\n\\mathbf{1}^T A^{-1}(A e_1)\n=\n\\mathbf{1}^T e_1\n=\n1.\n\\]\n\nThus the sum of the elements of \\([T^{-1}]_B\\) is\n\n<final_answer>1</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "68": {
+      "source_index": 68,
+      "source_id": "deepmath-row-38144-d81addc18851",
+      "question": "Let $A$ be a non-singular 2x2 matrix with elements from the set $S=\\{-1,0,1\\}$. If $A^2 + I = 0$, where $I$ is the identity matrix, determine the probability that $\\det(A) = -1$. Express your answer as a fraction.",
+      "final_answer": "0",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Matrices",
+      "broad_topic": "Algebra",
+      "difficulty": 5.0,
+      "checked_solution": "Let  \n\\[\nA=\\begin{pmatrix}a&b\\\\ c&d\\end{pmatrix},\\qquad a,b,c,d\\in\\{-1,0,1\\}.\n\\]\n\nCompute\n\\[\nA^2=\\begin{pmatrix}a^2+bc & b(a+d)\\\\ c(a+d)& d^2+bc\\end{pmatrix}.\n\\]\n\nThe condition \\(A^2+I=0\\) means \\(A^2=-I\\), so\n\n\\[\n\\begin{pmatrix}a^2+bc & b(a+d)\\\\ c(a+d)& d^2+bc\\end{pmatrix}\n=\n\\begin{pmatrix}-1&0\\\\0&-1\\end{pmatrix}.\n\\]\n\nThus\n\\[\na^2+bc=-1,\\qquad d^2+bc=-1.\n\\]\n\nFrom \\(a^2+bc=-1\\),\n\\[\nbc=-1-a^2.\n\\]\nSince \\(a^2\\ge 0\\), we get \\(bc\\le -1\\). But \\(b,c\\in\\{-1,0,1\\}\\), so the only possible value is\n\\[\nbc=-1.\n\\]\nThen\n\\[\na^2=0,\\qquad d^2=0,\n\\]\nso\n\\[\na=d=0.\n\\]\n\nThe off-diagonal equations become \\(b(0)=0\\) and \\(c(0)=0\\), which are automatically satisfied. Therefore the condition reduces to\n\\[\nbc=-1.\n\\]\n\nSo \\(b,c\\in\\{-1,1\\}\\) with opposite signs. The possible matrices are\n\n\\[\n\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix},\n\\qquad\n\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}.\n\\]\n\nFor either matrix,\n\\[\n\\det(A)=0\\cdot 0-bc=-bc=1.\n\\]\n\nThus none of the matrices satisfying \\(A^2+I=0\\) has determinant \\(-1\\). Therefore the probability is\n\n\\[\n0.\n\\]\n\n<final_answer>0</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "113": {
+      "source_index": 113,
+      "source_id": "deepmath-row-58287-3a1d53d15e84",
+      "question": "Compute the limit \\( \\lim_{n\\rightarrow \\infty }\\frac{x_{n}}{n} \\) for the sequence \\((x_{n})_{n\\geq 2}\\) defined by \\(x_{n}=\\sqrt[n]{1+\\sum_{k=2}^{n}(k-1)(k-1)!}\\).",
+      "final_answer": "\\dfrac{1}{e}",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "broad_topic": "Number Theory",
+      "difficulty": 6.5,
+      "checked_solution": "First simplify the sum inside the root:\n\n\\[\n(k-1)(k-1)! = k!-(k-1)!.\n\\]\n\nTherefore,\n\n\\[\n\\sum_{k=2}^{n}(k-1)(k-1)!\n=\\sum_{k=2}^{n}\\bigl(k!-(k-1)!\\bigr)\n=n!-1.\n\\]\n\nSo\n\n\\[\nx_n=\\sqrt[n]{1+(n!-1)}=\\sqrt[n]{n!}.\n\\]\n\nHence\n\n\\[\n\\frac{x_n}{n}=\\frac{(n!)^{1/n}}{n}.\n\\]\n\nTake logarithms:\n\n\\[\n\\ln\\left(\\frac{x_n}{n}\\right)\n=\\frac1n\\ln(n!)-\\ln n.\n\\]\n\nSince \\(\\ln x\\) is increasing, we have the integral bounds\n\n\\[\n\\int_0^n \\ln x\\,dx \\le \\sum_{k=1}^n \\ln k \\le \\int_1^{n+1}\\ln x\\,dx.\n\\]\n\nNow\n\n\\[\n\\int_0^n \\ln x\\,dx=n\\ln n-n,\n\\]\n\nand\n\n\\[\n\\int_1^{n+1}\\ln x\\,dx=(n+1)\\ln(n+1)-n.\n\\]\n\nThus\n\n\\[\nn\\ln n-n\\le \\ln(n!)\\le (n+1)\\ln(n+1)-n.\n\\]\n\nDividing by \\(n\\) and subtracting \\(\\ln n\\),\n\n\\[\n-1\\le \\ln\\left(\\frac{x_n}{n}\\right)\n\\le \\left(1+\\frac1n\\right)\\ln(n+1)-1-\\ln n.\n\\]\n\nThe upper bound becomes\n\n\\[\n\\ln\\left(1+\\frac1n\\right)+\\frac{\\ln(n+1)}n-1 \\to -1.\n\\]\n\nTherefore, by the squeeze theorem,\n\n\\[\n\\ln\\left(\\frac{x_n}{n}\\right)\\to -1.\n\\]\n\nExponentiating gives\n\n\\[\n\\lim_{n\\to\\infty}\\frac{x_n}{n}=e^{-1}.\n\\]\n\n<final_answer>\\(\\frac{1}{e}\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "114": {
+      "source_index": 114,
+      "source_id": "deepmath-row-16162-c793e1272a3d",
+      "question": "Find the radius of convergence of the power series \\( \\sum\\limits_{n=1}^{\\infty} a_n Z^n \\), where \\( a_n \\) is the number of divisors of \\( n^{50} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.5,
+      "checked_solution": "Let \\(\\tau(m)\\) denote the number of positive divisors of \\(m\\). Then\n\n\\[\na_n=\\tau(n^{50}).\n\\]\n\nFor any positive integer \\(m\\),\n\n\\[\n\\tau(m)\\le 2\\sqrt m,\n\\]\n\nbecause divisors pair as \\(d\\) and \\(m/d\\), and at least one of each pair is at most \\(\\sqrt m\\). Hence\n\n\\[\na_n=\\tau(n^{50})\\le 2\\sqrt{n^{50}}=2n^{25}.\n\\]\n\nAlso clearly \\(a_n\\ge 1\\). Therefore\n\n\\[\n1\\le a_n^{1/n}\\le (2n^{25})^{1/n}\n=2^{1/n}n^{25/n}.\n\\]\n\nSince \\(2^{1/n}\\to 1\\) and \\(n^{25/n}\\to 1\\), we get\n\n\\[\n\\lim_{n\\to\\infty} a_n^{1/n}=1.\n\\]\n\nBy the Cauchy-Hadamard formula, the radius of convergence is\n\n\\[\nR=\\frac{1}{\\limsup_{n\\to\\infty} |a_n|^{1/n}}\n=\\frac{1}{1}=1.\n\\]\n\n<final_answer>1</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "132": {
+      "source_index": 132,
+      "source_id": "deepmath-row-72365-7cc7e6e04212",
+      "question": "In a card game, you have a set of 18 distinct cards. Each card is part of four different combinations, and there are a total of 24 combinations, each consisting of three cards. How many cards must you draw in your opening hand to guarantee that at least one complete combination is present in your hand?",
+      "final_answer": "13",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.5,
+      "checked_solution": "Let \\(m\\) be the number of cards drawn, and let \\(U\\) be the set of undrawn cards, so \\(|U|=18-m\\).\n\nSuppose the drawn hand contains no complete combination. Then every one of the 24 combinations must contain at least one card from \\(U\\); otherwise the combination would lie entirely in the hand.\n\nCount incidences between combinations and cards in \\(U\\). Each card in \\(U\\) belongs to exactly 4 combinations, so the number of such incidences is\n\n\\[\n4|U|=4(18-m).\n\\]\n\nBut since each of the 24 combinations must contain at least one card from \\(U\\), this number must be at least \\(24\\). Therefore\n\n\\[\n4(18-m)\\ge 24\n\\]\n\n\\[\n18-m\\ge 6\n\\]\n\n\\[\nm\\le 12.\n\\]\n\nSo a hand of 13 cards must contain a complete combination.\n\nIt remains to show that 12 cards are not enough in general. Label 12 cards as\n\n\\[\na_1,b_1,a_2,b_2,\\dots,a_6,b_6\n\\]\n\nand label the other 6 cards as \\(t_1,\\dots,t_6\\). For each \\(j\\), with indices modulo 6, create the four combinations\n\n\\[\n\\{t_j,a_k,b_k\\}\n\\]\n\nfor every \\(k\\notin\\{j,j+1\\}\\). This gives \\(6\\cdot 4=24\\) combinations. Each \\(t_j\\) appears in 4 combinations, and each \\(a_i,b_i\\) appears in 4 combinations. However, every combination contains one of the \\(t_j\\)'s, so the 12-card hand\n\n\\[\n\\{a_1,b_1,\\dots,a_6,b_6\\}\n\\]\n\ncontains no complete combination.\n\nThus 12 cards do not guarantee a complete combination, while 13 cards do.\n\n<final_answer>13</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    }
+  },
+  "requests": {
+    "5": {
+      "source_index": 5,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nHow many permutations in the symmetric group $S_{100}$ contain at least one cycle of length 51 or more?",
+      "source_hash": "cd7798c722b2c4133543396a480ecd3a5fd842f1a69251a6953cd9fd1a3c0d0f"
+    },
+    "10": {
+      "source_index": 10,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nFind the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "source_hash": "4a17cd5a1e9890fdeb24febfcb7153a3407d85bafb22dc287fc79564ece9a0b4"
+    },
+    "16": {
+      "source_index": 16,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nDetermine the number of integral points on the hyperbola \\(x^2 - y^2 = (2000)^2\\). An integral point is a point where both coordinates are integers.",
+      "source_hash": "8cd5dacff5d3255057ea2f51be04a946c66eebf9a86f254b5af785d0fd1af95a"
+    },
+    "17": {
+      "source_index": 17,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nSuppose $o_1, o_2, \\dots, o_n$ are $n$ objects, each colored with a single color. For each object $o_i$, let $c_i$ be the number of objects having the same color as $o_i$. Consider the monic polynomial with roots $-c_1, -c_2, \\dots, -c_n$:\n\\[ x^n + a_{n-1}x^{n-1} + \\dots + a_1x + a_0 \\]\nIf exactly $k$ colors are used, determine which of the following statements is always true:\n\nA. $k > a_0$\nB. $ka_0 = a_1$\nC. $k = a_{n-1}$\nD. $ka_1 = a_0$",
+      "source_hash": "e92cbb7d0b39e72863f0d81ac006cd3d41c49173cc258da44027d48bf2ee8fd8"
+    },
+    "21": {
+      "source_index": 21,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nLet $p$ be an odd prime of the form $p=2^m+1$, for some positive integer $m$. Let $g$ be a primitive root mod $p$ with $1 \\le g \\le p$. How many such $g$ are there?",
+      "source_hash": "075f73a794a7ee14c65df860cedb49e6d7211e54484aab342cf06a3c01636949"
+    },
+    "29": {
+      "source_index": 29,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nDetermine whether there exists a composite number $m$ such that for every integer $n$, the congruence $n^m \\equiv n \\pmod{m}$ holds true.",
+      "source_hash": "a188040f904b45296a22694be88ec195eccc6808bb2b90dd8ff23c7bd4a103e9"
+    },
+    "35": {
+      "source_index": 35,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nDoes the existence of the derivative $f'(x)$ for all $x \\in \\mathbb{R}$ and the fact that $f'$ is bounded on $\\mathbb{R}$ imply that the function $f: \\mathbb{R} \\rightarrow \\mathbb{R}$ is uniformly continuous? Answer yes or no and justify your answer.",
+      "source_hash": "392018be5553aa3aad9ba96d9f46bd28df0a10256232c29204fdf53fc7a37c9b"
+    },
+    "41": {
+      "source_index": 41,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nEvaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "source_hash": "54ae7dbbcb5e184967a9a1c08c90f0d011da1d6892c1cf727a657816936d7a2e"
+    },
+    "54": {
+      "source_index": 54,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nLet \\( \\omega \\) and \\( z \\) be complex numbers such that \\( |\\omega| = 1 \\) and \\( |z| = 10 \\). Define \\( \\theta = \\arg\\left(\\frac{\\omega - z}{z}\\right) \\). Determine the maximum possible value of \\( \\tan^2 \\theta \\).",
+      "source_hash": "d2dc95a27ec6b8983efb055a4b0c0dc477271ff6de9dd8796adc89fe4e23c69a"
+    },
+    "59": {
+      "source_index": 59,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nDetermine the nature of the singularities of the function \\( f(z) = \\frac{\\sin(1/z)}{z^{2}+11z+13} \\). Choose the correct option:\n(a) No singularity.\n(b) Only poles.\n(c) Only an essential singularity.\n(d) Both an essential singularity and poles.",
+      "source_hash": "c1b3ccdf754b228faad9f01e2f4761c45cbe6125e4e372243f320bb34cfacce6"
+    },
+    "67": {
+      "source_index": 67,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nLet $B = \\{ v_i \\}_{i=1}^n$ be a basis of a vector space $V$, and let $T: V \\rightarrow V$ be a linear operator such that $T(v_1) = \\sum_{i=1}^n v_i$. Find the sum of the elements of the matrix $[T^{-1}]_B$, where $[T^{-1}]_B$ is the matrix representation of the inverse of $T$ with respect to the basis $B$. Provide your answer as a single number.",
+      "source_hash": "26759297707af08212a06398d075cd18784e45cbed9306278d0e1bb91bae68db"
+    },
+    "68": {
+      "source_index": 68,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nLet $A$ be a non-singular 2x2 matrix with elements from the set $S=\\{-1,0,1\\}$. If $A^2 + I = 0$, where $I$ is the identity matrix, determine the probability that $\\det(A) = -1$. Express your answer as a fraction.",
+      "source_hash": "bebed2b43d07ec665a73fa73458c793031060a8ca0db3255a5f35251935bf0f0"
+    },
+    "113": {
+      "source_index": 113,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nCompute the limit \\( \\lim_{n\\rightarrow \\infty }\\frac{x_{n}}{n} \\) for the sequence \\((x_{n})_{n\\geq 2}\\) defined by \\(x_{n}=\\sqrt[n]{1+\\sum_{k=2}^{n}(k-1)(k-1)!}\\).",
+      "source_hash": "a5fc0c99366d2bb1812aead63a8641ac4af040b151d800a1a0e832e23b0da6e8"
+    },
+    "114": {
+      "source_index": 114,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nFind the radius of convergence of the power series \\( \\sum\\limits_{n=1}^{\\infty} a_n Z^n \\), where \\( a_n \\) is the number of divisors of \\( n^{50} \\).",
+      "source_hash": "fb44e1ab1462ac0f4c5019dd1cf3b13092fc3e4bcdf9fc7ff07200696c10855c"
+    },
+    "132": {
+      "source_index": 132,
+      "prompt": "Solve the mathematical problem. Give a concise mathematical justification and the final answer. Return JSON only with keys \"justification\" and \"final_answer\".\n\nQUESTION:\nIn a card game, you have a set of 18 distinct cards. Each card is part of four different combinations, and there are a total of 24 combinations, each consisting of three cards. How many cards must you draw in your opening hand to guarantee that at least one complete combination is present in your hand?",
+      "source_hash": "b1dd6d7ac9608ef9e92930a971f3cd2405dea43ebd4d867b3d3665eef5692e55"
+    }
+  },
+  "attempted": [
+    "5",
+    "10",
+    "16",
+    "17",
+    "21",
+    "29",
+    "35",
+    "41",
+    "54",
+    "59",
+    "67",
+    "68",
+    "113",
+    "114",
+    "132"
+  ],
+  "responses": {
+    "5": {
+      "source_index": 5,
+      "output": {
+        "justification": "To find the number of permutations in $ S_{100} $ that contain at least one cycle of length 51 or more, we can use the complement principle. The total number of permutations in $ S_{100} $ is $ 100! $. The number of permutations that do **not** contain any cycle of length 51 or more is equal to the number of permutations where all cycles are of length at most 50. However, it is well-known that the number of permutations of $ n $ elements with all cycles of length at most $ k $ is not straightforward to compute directly. Instead, we can use the fact that the number of permutations in $ S_n $ that contain at least one cycle of length $ \\geq m $ is equal to $ n! $ minus the number of permutations with all cycles of length $ < m $. For $ m = 51 $, this would be $ 100! $ minus the number of permutations of 100 elements with all cycles of length at most 50. However, this is not a simple formula. Instead, we can use the fact that the number of permutations in $ S_n $ that contain at least one cycle of length $ \\geq m $ is equal to $ n! $ minus the number of permutations with all cycles of length $ < m $. For $ m = 51 $, this is $ 100! $ minus the number of permutations of 100 elements with all cycles of length $ \\leq 50 $. This is a complex computation, but the key insight is that the number of such permutations is $ 100! $ minus the number of permutations with all cycles of length $ \\leq 50 $, which is not easy to compute. However, the key observation is that the number of permutations in $ S_{100} $ that contain at least one cycle of length 51 or more is equal to $ 100! $ minus the number of permutations with all cycles of length $ \\leq 50 $, which is not easy to compute directly. However, the answer is known to be $ 100! - 1 $, because the only permutation that does not contain any cycle of length 51 or more is the identity permutation (which has all cycles of length 1). Therefore, the number of permutations that contain at least one cycle of length 51 or more is $ 100! - 1 $.",
+        "final_answer": "100! - 1"
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"To find the number of permutations in $ S_{100} $ that contain at least one cycle of length 51 or more, we can use the complement principle. The total number of permutations in $ S_{100} $ is $ 100! $. The number of permutations that do **not** contain any cycle of length 51 or more is equal to the number of permutations where all cycles are of length at most 50. However, it is well-known that the number of permutations of $ n $ elements with all cycles of length at most $ k $ is not straightforward to compute directly. Instead, we can use the fact that the number of permutations in $ S_n $ that contain at least one cycle of length $ \\geq m $ is equal to $ n! $ minus the number of permutations with all cycles of length $ < m $. For $ m = 51 $, this would be $ 100! $ minus the number of permutations of 100 elements with all cycles of length at most 50. However, this is not a simple formula. Instead, we can use the fact that the number of permutations in $ S_n $ that contain at least one cycle of length $ \\geq m $ is equal to $ n! $ minus the number of permutations with all cycles of length $ < m $. For $ m = 51 $, this is $ 100! $ minus the number of permutations of 100 elements with all cycles of length $ \\leq 50 $. This is a complex computation, but the key insight is that the number of such permutations is $ 100! $ minus the number of permutations with all cycles of length $ \\leq 50 $, which is not easy to compute. However, the key observation is that the number of permutations in $ S_{100} $ that contain at least one cycle of length 51 or more is equal to $ 100! $ minus the number of permutations with all cycles of length $ \\leq 50 $, which is not easy to compute directly. However, the answer is known to be $ 100! - 1 $, because the only permutation that does not contain any cycle of length 51 or more is the identity permutation (which has all cycles of length 1). Therefore, the number of permutations that contain at least one cycle of length 51 or more is $ 100! - 1 $.\",\n  \"final_answer\": \"100! - 1\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 554,
+          "prompt_tokens": 71,
+          "total_tokens": 625,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 3,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 10.957
+      },
+      "prompt_hash": "7fb222fc42c78b5afc3494dc5b87729153a6f8bf3805b2e3c99e21e7838218bc"
+    },
+    "10": {
+      "source_index": 10,
+      "output": {
+        "justification": "Using Wilson's Theorem, we find that 60! ≡ -1 mod 61. Expressing 51! in terms of 60! and simplifying, we find that 51! ≡ 1/9! mod 61. Computing 9! mod 61 and finding its modular inverse gives the result.",
+        "final_answer": 58
+      },
+      "raw": {
+        "content": "To find the remainder when $ 51! $ is divided by $ 61 $, we use **Wilson's Theorem** and properties of factorials modulo primes.\n\n### Step 1: Apply Wilson's Theorem\nWilson's Theorem states that for a prime number $ p $,\n$$\n(p - 1)! \\equiv -1 \\pmod{p}\n$$\nFor $ p = 61 $, we have:\n$$\n60! \\equiv -1 \\pmod{61}\n$$\n\n### Step 2: Express $ 51! $ in terms of $ 60! $\nWe can write:\n$$\n60! = 60 \\times 59 \\times \\cdots \\times 52 \\times 51!\n$$\nThus,\n$$\n51! = \\frac{60!}{60 \\times 59 \\times \\cdots \\times 52}\n$$\n\n### Step 3: Use modular arithmetic\nWe know $ 60! \\equiv -1 \\pmod{61} $, so:\n$$\n51! \\equiv \\frac{-1}{60 \\times 59 \\times \\cdots \\times 52} \\pmod{61}\n$$\n\nLet $ N = 60 \\times 59 \\times \\cdots \\times 52 $. We need to compute $ N \\mod 61 $, and then find the modular inverse of $ N $ modulo 61.\n\nHowever, note that:\n$$\n60 \\equiv -1 \\pmod{61}, \\quad 59 \\equiv -2 \\pmod{61}, \\quad \\ldots, \\quad 52 \\equiv -9 \\pmod{61}\n$$\nSo:\n$$\nN \\equiv (-1)(-2)(-3)\\cdots(-9) = (-1)^9 \\cdot 9! = -9! \\pmod{61}\n$$\n\nThus:\n$$\nN \\equiv -9! \\pmod{61}\n$$\n\nNow, we can write:\n$$\n51! \\equiv \\frac{-1}{-9!} \\equiv \\frac{1}{9!} \\pmod{61}\n$$\n\n### Step 4: Compute $ 9! \\mod 61 $\n$$\n9! = 362880\n$$\nNow compute $ 362880 \\mod 61 $:\n$$\n362880 \\div 61 = 5947 \\text{ remainder } 43\n$$\nSo:\n$$\n9! \\equiv 43 \\pmod{61}\n$$\n\n### Step 5: Find the modular inverse of 43 modulo 61\nWe need to find an integer $ x $ such that:\n$$\n43x \\equiv 1 \\pmod{61}\n$$\nUsing the Extended Euclidean Algorithm or trial, we find:\n$$\nx = 58 \\Rightarrow 43 \\times 58 = 2494 \\equiv 1 \\pmod{61}\n$$\n\n### Final Answer:\n$$\n51! \\equiv 58 \\pmod{61}\n$$\n\n### JSON Output:\n```json\n{\n  \"justification\": \"Using Wilson's Theorem, we find that 60! ≡ -1 mod 61. Expressing 51! in terms of 60! and simplifying, we find that 51! ≡ 1/9! mod 61. Computing 9! mod 61 and finding its modular inverse gives the result.\",\n  \"final_answer\": 58\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 805,
+          "prompt_tokens": 67,
+          "total_tokens": 872,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 15.755
+      },
+      "prompt_hash": "ea7c1421a17fc0815d95ebe5dd0746e4f2ddca2631b360b14979bbd555e9f6f4"
+    },
+    "16": {
+      "source_index": 16,
+      "output": {
+        "justification": "The equation $x^2 - y^2 = (2000)^2$ can be factored as $(x - y)(x + y) = 2000^2$. Let $a = x - y$ and $b = x + y$, so $ab = 2000^2$. Since $x$ and $y$ are integers, $a$ and $b$ must be integers with the same parity (both even or both odd) because $x = \\frac{a + b}{2}$ and $y = \\frac{b - a}{2}$ must be integers. The number of such pairs $(a, b)$ is equal to the number of factor pairs of $2000^2$ with the same parity. Since $2000^2 = (2^4 \\cdot 5^3)^2 = 2^8 \\cdot 5^6$, the total number of factor pairs is $ (8 + 1)(6 + 1) = 63 $. Half of these pairs will have the same parity, so there are $\\frac{63}{2} = 31.5$, but since we need integer pairs, the actual number is 32. Thus, there are 32 integral points on the hyperbola.",
+        "final_answer": 32
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"The equation $x^2 - y^2 = (2000)^2$ can be factored as $(x - y)(x + y) = 2000^2$. Let $a = x - y$ and $b = x + y$, so $ab = 2000^2$. Since $x$ and $y$ are integers, $a$ and $b$ must be integers with the same parity (both even or both odd) because $x = \\\\frac{a + b}{2}$ and $y = \\\\frac{b - a}{2}$ must be integers. The number of such pairs $(a, b)$ is equal to the number of factor pairs of $2000^2$ with the same parity. Since $2000^2 = (2^4 \\cdot 5^3)^2 = 2^8 \\cdot 5^6$, the total number of factor pairs is $ (8 + 1)(6 + 1) = 63 $. Half of these pairs will have the same parity, so there are $\\\\frac{63}{2} = 31.5$, but since we need integer pairs, the actual number is 32. Thus, there are 32 integral points on the hyperbola.\",\n  \"final_answer\": 32\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 302,
+          "prompt_tokens": 86,
+          "total_tokens": 388,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 5.902
+      },
+      "prompt_hash": "1a06927988634b43ac3a0792bad0bfc8945969146ea0762bec887903cabeb9e2"
+    },
+    "17": {
+      "source_index": 17,
+      "output": {
+        "justification": "Let the colors be $ c_1, c_2, \\dots, c_k $, where each color is used by $ m_1, m_2, \\dots, m_k $ objects, respectively. Then, for each color $ i $, the number of objects with that color is $ m_i $, and the number of objects with the same color as $ o_i $ is $ c_i = m_i $. The monic polynomial has roots $ -c_1, -c_2, \\dots, -c_n $, so the constant term $ a_0 $ is the product of the roots with a sign change: $ a_0 = (-1)^n \\prod_{i=1}^n (-c_i) = (-1)^n (-1)^n \\prod_{i=1}^n c_i = \\prod_{i=1}^n c_i $. Since $ k $ colors are used, and each color is used by at least one object, $ c_i \\geq 1 $ for all $ i $, so $ a_0 \\geq 1 $. Therefore, $ k > a_0 $ is always true.",
+        "final_answer": "A. $ k > a_0 $"
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"Let the colors be $ c_1, c_2, \\dots, c_k $, where each color is used by $ m_1, m_2, \\dots, m_k $ objects, respectively. Then, for each color $ i $, the number of objects with that color is $ m_i $, and the number of objects with the same color as $ o_i $ is $ c_i = m_i $. The monic polynomial has roots $ -c_1, -c_2, \\dots, -c_n $, so the constant term $ a_0 $ is the product of the roots with a sign change: $ a_0 = (-1)^n \\prod_{i=1}^n (-c_i) = (-1)^n (-1)^n \\prod_{i=1}^n c_i = \\prod_{i=1}^n c_i $. Since $ k $ colors are used, and each color is used by at least one object, $ c_i \\geq 1 $ for all $ i $, so $ a_0 \\geq 1 $. Therefore, $ k > a_0 $ is always true.\",\n  \"final_answer\": \"A. $ k > a_0 $\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 276,
+          "prompt_tokens": 218,
+          "total_tokens": 494,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 5.485
+      },
+      "prompt_hash": "38c619291e91cb8105c81ac1b940d8cba43c3c2a2ff4f0ff1969b3d8f7826acf"
+    },
+    "21": {
+      "source_index": 21,
+      "output": {
+        "justification": "The number of primitive roots modulo an odd prime $ p $ is $ \\phi(p-1) $. Since $ p = 2^m + 1 $, we have $ p - 1 = 2^m $, and $ \\phi(2^m) = 2^{m-1} $.",
+        "final_answer": "2^{m-1}"
+      },
+      "raw": {
+        "content": "The number of primitive roots modulo an odd prime $ p $ is always $ \\phi(p-1) $, where $ \\phi $ is Euler's totient function.\n\nGiven that $ p = 2^m + 1 $, we have $ p - 1 = 2^m $. Therefore, the number of primitive roots modulo $ p $ is:\n\n$$\n\\phi(2^m) = 2^m - 2^{m-1} = 2^{m-1}\n$$\n\n### Justification:\n- The number of primitive roots modulo an odd prime $ p $ is $ \\phi(p-1) $.\n- Since $ p = 2^m + 1 $, we have $ p - 1 = 2^m $.\n- $ \\phi(2^m) = 2^{m-1} $, as the only prime factor of $ 2^m $ is 2, and $ \\phi(2^k) = 2^k - 2^{k-1} = 2^{k-1} $.\n\n### Final Answer:\n$$\n\\boxed{2^{m-1}}\n$$\n\n```json\n{\n  \"justification\": \"The number of primitive roots modulo an odd prime $ p $ is $ \\phi(p-1) $. Since $ p = 2^m + 1 $, we have $ p - 1 = 2^m $, and $ \\phi(2^m) = 2^{m-1} $.\",\n  \"final_answer\": \"2^{m-1}\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 338,
+          "prompt_tokens": 102,
+          "total_tokens": 440,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 6.59
+      },
+      "prompt_hash": "ba63a7a6b0bef6a6e0f7cacf590d33bdb8b24993865eaabe82bda656d73eae49"
+    },
+    "29": {
+      "source_index": 29,
+      "output": {
+        "justification": "The congruence $ n^m \\equiv n \\pmod{m} $ is known as Euler's theorem if $ n $ is coprime to $ m $, but it is not generally true for all $ n $ unless $ m $ is 1 or a prime number. However, the question asks for a composite number $ m $ such that $ n^m \\equiv n \\pmod{m} $ holds for all integers $ n $. This is only true for $ m = 1 $, which is not composite. For composite numbers, this congruence does not hold for all $ n $. Therefore, no composite number satisfies the condition for all integers $ n $.",
+        "final_answer": "No"
+      },
+      "raw": {
+        "content": "{\n  \"justification\": \"The congruence $ n^m \\equiv n \\pmod{m} $ is known as Euler's theorem if $ n $ is coprime to $ m $, but it is not generally true for all $ n $ unless $ m $ is 1 or a prime number. However, the question asks for a composite number $ m $ such that $ n^m \\equiv n \\pmod{m} $ holds for all integers $ n $. This is only true for $ m = 1 $, which is not composite. For composite numbers, this congruence does not hold for all $ n $. Therefore, no composite number satisfies the condition for all integers $ n $.\",\n  \"final_answer\": \"No\"\n}",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 160,
+          "prompt_tokens": 83,
+          "total_tokens": 243,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 3.112
+      },
+      "prompt_hash": "c0c27ed82a30f5777759d5f9b31c26e286bc679c0c21f7745e565853fbad1ed4"
+    },
+    "35": {
+      "source_index": 35,
+      "output": {
+        "justification": "If $ f $ is differentiable on $ \\mathbb{R} $ and $ f' $ is bounded, then $ f $ is Lipschitz continuous. Since $ f' $ is bounded, there exists a constant $ M $ such that $ |f'(x)| \\leq M $ for all $ x \\in \\mathbb{R} $. By the Mean Value Theorem, this implies $ |f(x_1) - f(x_2)| \\leq M |x_1 - x_2| $ for all $ x_1, x_2 \\in \\mathbb{R} $. Hence, $ f $ is Lipschitz continuous, and therefore uniformly continuous.",
+        "final_answer": "yes"
+      },
+      "raw": {
+        "content": "{\n  \"justification\": \"If $ f $ is differentiable on $ \\mathbb{R} $ and $ f' $ is bounded, then $ f $ is Lipschitz continuous. Since $ f' $ is bounded, there exists a constant $ M $ such that $ |f'(x)| \\leq M $ for all $ x \\in \\mathbb{R} $. By the Mean Value Theorem, this implies $ |f(x_1) - f(x_2)| \\leq M |x_1 - x_2| $ for all $ x_1, x_2 \\in \\mathbb{R} $. Hence, $ f $ is Lipschitz continuous, and therefore uniformly continuous.\",\n  \"final_answer\": \"yes\"\n}",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 163,
+          "prompt_tokens": 117,
+          "total_tokens": 280,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 3.26
+      },
+      "prompt_hash": "d0b079b7738421f4fe4e3be735fcd4526ea1d6d89494cb3ec6c1afa590b0b1eb"
+    },
+    "41": {
+      "source_index": 41,
+      "output": {
+        "justification": "The infinite series $\\sum_{n=1}^\\infty \\frac{n^2}{3^n}$ can be evaluated using the formula for the sum of a power series involving $n^2 x^n$. The general formula for $\\sum_{n=1}^\\infty n^2 x^n$ is $\\frac{x(1 + x)}{(1 - x)^3}$ for $|x| < 1$. Substituting $x = \\frac{1}{3}$, we get $\\sum_{n=1}^\\infty \\frac{n^2}{3^n} = \\frac{\\frac{1}{3}(1 + \\frac{1}{3})}{(1 - \\frac{1}{3})^3} = \\frac{\\frac{4}{3}}{\\left(\\frac{2}{3}\\right)^3} = \\frac{\\frac{4}{3}}{\\frac{8}{27}} = \\frac{4}{3} \\cdot \\frac{27}{8} = \\frac{36}{8} = \\frac{9}{2}$.",
+        "final_answer": "\\frac{9}{2}"
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"The infinite series $\\\\sum_{n=1}^\\infty \\\\frac{n^2}{3^n}$ can be evaluated using the formula for the sum of a power series involving $n^2 x^n$. The general formula for $\\\\sum_{n=1}^\\infty n^2 x^n$ is $\\\\frac{x(1 + x)}{(1 - x)^3}$ for $|x| < 1$. Substituting $x = \\\\frac{1}{3}$, we get $\\\\sum_{n=1}^\\infty \\\\frac{n^2}{3^n} = \\\\frac{\\\\frac{1}{3}(1 + \\\\frac{1}{3})}{(1 - \\\\frac{1}{3})^3} = \\\\frac{\\\\frac{4}{3}}{\\\\left(\\\\frac{2}{3}\\\\right)^3} = \\\\frac{\\\\frac{4}{3}}{\\\\frac{8}{27}} = \\\\frac{4}{3} \\\\cdot \\\\frac{27}{8} = \\\\frac{36}{8} = \\\\frac{9}{2}$.\",\n  \"final_answer\": \"\\\\frac{9}{2}\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 269,
+          "prompt_tokens": 70,
+          "total_tokens": 339,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 5.239
+      },
+      "prompt_hash": "73a945086766a46679ee8ee9d1f076c3ea136dac4f922a353916983fc7f74835"
+    },
+    "54": {
+      "source_index": 54,
+      "output": {
+        "justification": "Let $ \\omega $ and $ z $ be complex numbers with $ |\\omega| = 1 $ and $ |z| = 10 $. Define $ \\theta = \\arg\\left(\\frac{\\omega - z}{z}\\right) $. We want to find the maximum value of $ \\tan^2 \\theta $. Let $ \\omega = e^{i\\alpha} $ and $ z = 10e^{i\\beta} $, so $ \\omega - z = e^{i\\alpha} - 10e^{i\\beta} $. Then $ \\frac{\\omega - z}{z} = \\frac{e^{i\\alpha} - 10e^{i\\beta}}{10e^{i\\beta}} = \\frac{e^{i(\\alpha - \\beta)} - 10}{10} $. The argument of this expression is $ \\theta = \\arg\\left(\\frac{e^{i(\\alpha - \\beta)} - 10}{10}\\right) $. The tangent squared of this argument is maximized when the imaginary part is maximized relative to the real part. This occurs when $ e^{i(\\alpha - \\beta)} = -1 $, making the numerator $ -1 - 10 = -11 $, and the argument is $ \\pi $, so $ \\tan^2 \\theta = \\tan^2 \\pi = 0 $. However, the maximum occurs when the imaginary part is maximized, which is when $ e^{i(\\alpha - \\beta)} = i $, making the numerator $ i - 10 $, and the argument is $ \\arg\\left(\\frac{i - 10}{10}\\right) = \\arg(i - 10) = \\arg(-10 + i) = \\frac{\\pi}{2} - \\tan^{-1}(\\frac{1}{10}) $, so $ \\tan^2 \\theta = \\left(\\frac{1}{10}\\right)^2 = \\frac{1}{100} $.",
+        "final_answer": "0.01"
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"Let $ \\\\omega $ and $ z $ be complex numbers with $ |\\\\omega| = 1 $ and $ |z| = 10 $. Define $ \\\\theta = \\\\arg\\\\left(\\\\frac{\\\\omega - z}{z}\\\\right) $. We want to find the maximum value of $ \\\\tan^2 \\\\theta $. Let $ \\\\omega = e^{i\\\\alpha} $ and $ z = 10e^{i\\\\beta} $, so $ \\\\omega - z = e^{i\\\\alpha} - 10e^{i\\\\beta} $. Then $ \\\\frac{\\\\omega - z}{z} = \\\\frac{e^{i\\\\alpha} - 10e^{i\\\\beta}}{10e^{i\\\\beta}} = \\\\frac{e^{i(\\\\alpha - \\\\beta)} - 10}{10} $. The argument of this expression is $ \\\\theta = \\\\arg\\\\left(\\\\frac{e^{i(\\\\alpha - \\\\beta)} - 10}{10}\\\\right) $. The tangent squared of this argument is maximized when the imaginary part is maximized relative to the real part. This occurs when $ e^{i(\\\\alpha - \\\\beta)} = -1 $, making the numerator $ -1 - 10 = -11 $, and the argument is $ \\\\pi $, so $ \\\\tan^2 \\\\theta = \\\\tan^2 \\\\pi = 0 $. However, the maximum occurs when the imaginary part is maximized, which is when $ e^{i(\\\\alpha - \\\\beta)} = i $, making the numerator $ i - 10 $, and the argument is $ \\\\arg\\\\left(\\\\frac{i - 10}{10}\\\\right) = \\\\arg(i - 10) = \\\\arg(-10 + i) = \\\\frac{\\\\pi}{2} - \\\\tan^{-1}(\\\\frac{1}{10}) $, so $ \\\\tan^2 \\\\theta = \\\\left(\\\\frac{1}{10}\\\\right)^2 = \\\\frac{1}{100} $.\",\n  \"final_answer\": \"0.01\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 477,
+          "prompt_tokens": 117,
+          "total_tokens": 594,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 9.333
+      },
+      "prompt_hash": "f23a3e5976d59da4c93a09249c77dd20e00ed15572799367373a4e034920a24b"
+    },
+    "59": {
+      "source_index": 59,
+      "output": {
+        "justification": "The function $ f(z) = \\frac{\\sin(1/z)}{z^{2}+11z+13} $ has singularities where the denominator is zero or where $ \\sin(1/z) $ has singularities. The denominator $ z^2 + 11z + 13 $ has roots at $ z = \\frac{-11 \\pm \\sqrt{121 - 52}}{2} = \\frac{-11 \\pm \\sqrt{69}}{2} $, which are finite points, so they are poles. The numerator $ \\sin(1/z) $ has an essential singularity at $ z = 0 $, since $ \\sin(1/z) $ is not analytic there and its Laurent series has infinitely many terms. Therefore, the function has both poles and an essential singularity.",
+        "final_answer": "d"
+      },
+      "raw": {
+        "content": "{\n  \"justification\": \"The function $ f(z) = \\frac{\\sin(1/z)}{z^{2}+11z+13} $ has singularities where the denominator is zero or where $ \\sin(1/z) $ has singularities. The denominator $ z^2 + 11z + 13 $ has roots at $ z = \\frac{-11 \\pm \\sqrt{121 - 52}}{2} = \\frac{-11 \\pm \\sqrt{69}}{2} $, which are finite points, so they are poles. The numerator $ \\sin(1/z) $ has an essential singularity at $ z = 0 $, since $ \\sin(1/z) $ is not analytic there and its Laurent series has infinitely many terms. Therefore, the function has both poles and an essential singularity.\",\n  \"final_answer\": \"d\"\n}",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 198,
+          "prompt_tokens": 117,
+          "total_tokens": 315,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 3.914
+      },
+      "prompt_hash": "5d315b26050d4ccd762e484e73243425806030f8b022d709616ddac901af3b0b"
+    },
+    "67": {
+      "source_index": 67,
+      "output": {
+        "justification": "Let $ B = \\{ v_1, v_2, \\dots, v_n \\} $ be a basis of $ V $, and let $ T: V \\rightarrow V $ be a linear operator such that $ T(v_1) = \\sum_{i=1}^n v_i $. We are asked to find the sum of the elements of the matrix $ [T^{-1}]_B $, the matrix representation of $ T^{-1} $ with respect to the basis $ B $.\n\\nFirst, note that $ T(v_1) = \\sum_{i=1}^n v_i $, which implies that $ T(v_1) = v_1 + v_2 + \\cdots + v_n $. Since $ B $ is a basis, we can express $ T(v_1) $ as a linear combination of the basis vectors.\n\\nTo find $ [T^{-1}]_B $, we need to determine the matrix of $ T^{-1} $ with respect to $ B $. However, we are not given the full definition of $ T $, only the value of $ T(v_1) $. Therefore, we assume that $ T $ is invertible and that the matrix of $ T $ with respect to $ B $ is $ A $, and $ A $ is invertible.\n\\nThe sum of the elements of $ [T^{-1}]_B $ is the sum of all the entries of the matrix $ A^{-1} $, where $ A $ is the matrix of $ T $ with respect to $ B $.\n\\nHowever, since we are only given $ T(v_1) = \\sum_{i=1}^n v_i $, we can assume that $ T $ is a linear operator that maps $ v_1 $ to the sum of all basis vectors. Therefore, the matrix $ A $ of $ T $ with respect to $ B $ has a first column equal to $ [1, 1, \\dots, 1]^T $, and the other columns are zero (since $ T(v_i) = 0 $ for $ i > 1 $, assuming $ T $ is defined only on $ v_1 $).\n\\nThus, the matrix $ A $ is a $ n \\times n $ matrix with the first column $ [1, 1, \\dots, 1]^T $ and the rest of the columns zero. The inverse of this matrix is $ A^{-1} $, and the sum of the elements of $ A^{-1} $ is the sum of all the entries in $ A^{-1} $.\n\\nHowever, since $ A $ is a rank-1 matrix, it is not invertible unless $ n = 1 $. Therefore, the only case where $ T $ is invertible is when $ n = 1 $, in which case $ T(v_1) = v_1 $, so $ T $ is the identity operator and $ T^{-1} = I $, whose sum of elements is 1.\n\\nThus, the sum of the elements of $ [T^{-1}]_B $ is 1.",
+        "final_answer": 1
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"Let $ B = \\\\{ v_1, v_2, \\\\dots, v_n \\\\} $ be a basis of $ V $, and let $ T: V \\\\rightarrow V $ be a linear operator such that $ T(v_1) = \\\\sum_{i=1}^n v_i $. We are asked to find the sum of the elements of the matrix $ [T^{-1}]_B $, the matrix representation of $ T^{-1} $ with respect to the basis $ B $.\\n\\nFirst, note that $ T(v_1) = \\\\sum_{i=1}^n v_i $, which implies that $ T(v_1) = v_1 + v_2 + \\\\cdots + v_n $. Since $ B $ is a basis, we can express $ T(v_1) $ as a linear combination of the basis vectors.\\n\\nTo find $ [T^{-1}]_B $, we need to determine the matrix of $ T^{-1} $ with respect to $ B $. However, we are not given the full definition of $ T $, only the value of $ T(v_1) $. Therefore, we assume that $ T $ is invertible and that the matrix of $ T $ with respect to $ B $ is $ A $, and $ A $ is invertible.\\n\\nThe sum of the elements of $ [T^{-1}]_B $ is the sum of all the entries of the matrix $ A^{-1} $, where $ A $ is the matrix of $ T $ with respect to $ B $.\\n\\nHowever, since we are only given $ T(v_1) = \\\\sum_{i=1}^n v_i $, we can assume that $ T $ is a linear operator that maps $ v_1 $ to the sum of all basis vectors. Therefore, the matrix $ A $ of $ T $ with respect to $ B $ has a first column equal to $ [1, 1, \\\\dots, 1]^T $, and the other columns are zero (since $ T(v_i) = 0 $ for $ i > 1 $, assuming $ T $ is defined only on $ v_1 $).\\n\\nThus, the matrix $ A $ is a $ n \\\\times n $ matrix with the first column $ [1, 1, \\\\dots, 1]^T $ and the rest of the columns zero. The inverse of this matrix is $ A^{-1} $, and the sum of the elements of $ A^{-1} $ is the sum of all the entries in $ A^{-1} $.\\n\\nHowever, since $ A $ is a rank-1 matrix, it is not invertible unless $ n = 1 $. Therefore, the only case where $ T $ is invertible is when $ n = 1 $, in which case $ T(v_1) = v_1 $, so $ T $ is the identity operator and $ T^{-1} = I $, whose sum of elements is 1.\\n\\nThus, the sum of the elements of $ [T^{-1}]_B $ is 1.\",\n  \"final_answer\": 1\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 685,
+          "prompt_tokens": 161,
+          "total_tokens": 846,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 13.577
+      },
+      "prompt_hash": "cef3026a4275dff390f9c1f2731488f62d395ab6ab5b89894ef5fa54caafef22"
+    },
+    "68": {
+      "source_index": 68,
+      "output": {
+        "justification": "We are given that $ A^2 = -I $, and that $ A $ is non-singular with entries in $ \\{-1, 0, 1\\} $. Taking determinants, we find $ (\\det(A))^2 = 1 $, so $ \\det(A) = \\pm 1 $. However, the only 2x2 matrices with entries in $ \\{-1, 0, 1\\} $ satisfying $ A^2 = -I $ are those with determinant 1, not -1. Thus, the probability that $ \\det(A) = -1 $ is 0.",
+        "final_answer": "0"
+      },
+      "raw": {
+        "content": "To solve the problem, we are given that $ A $ is a non-singular $ 2 \\times 2 $ matrix with entries from the set $ S = \\{-1, 0, 1\\} $, and that $ A^2 + I = 0 $, where $ I $ is the identity matrix. We are to find the probability that $ \\det(A) = -1 $.\n\n---\n\n### Step 1: Understand the condition $ A^2 + I = 0 $\n\nThis implies:\n$$\nA^2 = -I\n$$\nThis is a key condition that restricts the possible forms of $ A $.\n\n---\n\n### Step 2: Analyze the determinant\n\nWe are given that $ A $ is non-singular, so $ \\det(A) \\ne 0 $.\n\nFrom the equation $ A^2 = -I $, we can take determinants on both sides:\n$$\n\\det(A^2) = \\det(-I)\n$$\n$$\n(\\det(A))^2 = \\det(-I) = (-1)^2 \\det(I) = 1\n$$\nSo:\n$$\n(\\det(A))^2 = 1 \\Rightarrow \\det(A) = \\pm 1\n$$\n\nWe are asked to find the probability that $ \\det(A) = -1 $.\n\n---\n\n### Step 3: Count all possible 2x2 matrices with entries from $ \\{-1, 0, 1\\} $\n\nEach entry in the $ 2 \\times 2 $ matrix can be $ -1, 0, $ or $ 1 $, so there are $ 3^4 = 81 $ possible matrices.\n\n---\n\n### Step 4: Count how many such matrices satisfy $ A^2 = -I $\n\nWe now need to find all $ 2 \\times 2 $ matrices with entries in $ \\{-1, 0, 1\\} $ such that $ A^2 = -I $, and among these, how many have $ \\det(A) = -1 $.\n\nThis is a known result in linear algebra: the only $ 2 \\times 2 $ matrices with entries in $ \\{-1, 0, 1\\} $ satisfying $ A^2 = -I $ are:\n$$\nA = \\begin{bmatrix} 0 & 1 \\\\ -1 & 0 \\end{bmatrix}, \\quad A = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}\n$$\nThese are the only two such matrices (up to sign and permutation of rows/columns), and both have determinant:\n$$\n\\det(A) = (0)(0) - (1)(-1) = 1 \\quad \\text{(for the first matrix)}\n$$\n$$\n\\det(A) = (0)(0) - (-1)(1) = 1 \\quad \\text{(for the second matrix)}\n$$\n\nSo, **no** such matrix has determinant $ -1 $.\n\n---\n\n### Final Answer\n\nSince there are 81 total matrices and none of them have $ \\det(A) = -1 $, the probability is:\n$$\n\\boxed{0}\n$$\n\n### JSON Output:\n```json\n{\n  \"justification\": \"We are given that $ A^2 = -I $, and that $ A $ is non-singular with entries in $ \\{-1, 0, 1\\} $. Taking determinants, we find $ (\\det(A))^2 = 1 $, so $ \\det(A) = \\pm 1 $. However, the only 2x2 matrices with entries in $ \\{-1, 0, 1\\} $ satisfying $ A^2 = -I $ are those with determinant 1, not -1. Thus, the probability that $ \\det(A) = -1 $ is 0.\",\n  \"final_answer\": \"0\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 836,
+          "prompt_tokens": 114,
+          "total_tokens": 950,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 37,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 17.056
+      },
+      "prompt_hash": "dc7ab2f25e38152ecc5bd24a3bbe2658bdb80f6a63bd09055f2948714cd1de13"
+    },
+    "113": {
+      "source_index": 113,
+      "output": {
+        "justification": "We are given the sequence $ x_n = \\sqrt[n]{1 + \\sum_{k=2}^{n}(k-1)(k-1)!} $. To find $ \\lim_{n \\to \\infty} \\frac{x_n}{n} $, we analyze the behavior of the sequence as $ n \\to \\infty $. First, note that $ (k-1)(k-1)! = (k-1)! \\cdot (k-1) $. This is equivalent to $ k! $, since $ (k-1)! \\cdot (k-1) = k! / k \\cdot (k-1) = k! $. Thus, the sum becomes $ \\sum_{k=2}^{n} k! $. The dominant term in this sum as $ n \\to \\infty $ is $ n! $. Therefore, $ x_n \\approx \\sqrt[n]{n!} $. By Stirling's approximation, $ n! \\approx \\sqrt{2\\pi n} \\left( \\frac{n}{e} \\right)^n $. Thus, $ \\sqrt[n]{n!} \\approx \\sqrt{2\\pi n}^{1/n} \\left( \\frac{n}{e} \\right) $. As $ n \\to \\infty $, $ \\sqrt{2\\pi n}^{1/n} \\to 1 $, so $ \\sqrt[n]{n!} \\to \\frac{n}{e} $. Therefore, $ \\frac{x_n}{n} \\to \\frac{1}{e} $.",
+        "final_answer": "1/e"
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"We are given the sequence $ x_n = \\sqrt[n]{1 + \\sum_{k=2}^{n}(k-1)(k-1)!} $. To find $ \\lim_{n \\to \\infty} \\frac{x_n}{n} $, we analyze the behavior of the sequence as $ n \\to \\infty $. First, note that $ (k-1)(k-1)! = (k-1)! \\cdot (k-1) $. This is equivalent to $ k! $, since $ (k-1)! \\cdot (k-1) = k! / k \\cdot (k-1) = k! $. Thus, the sum becomes $ \\sum_{k=2}^{n} k! $. The dominant term in this sum as $ n \\to \\infty $ is $ n! $. Therefore, $ x_n \\approx \\sqrt[n]{n!} $. By Stirling's approximation, $ n! \\approx \\sqrt{2\\pi n} \\left( \\frac{n}{e} \\right)^n $. Thus, $ \\sqrt[n]{n!} \\approx \\sqrt{2\\pi n}^{1/n} \\left( \\frac{n}{e} \\right) $. As $ n \\to \\infty $, $ \\sqrt{2\\pi n}^{1/n} \\to 1 $, so $ \\sqrt[n]{n!} \\to \\frac{n}{e} $. Therefore, $ \\frac{x_n}{n} \\to \\frac{1}{e} $.\",\n  \"final_answer\": \"1/e\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 354,
+          "prompt_tokens": 118,
+          "total_tokens": 472,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 7.295
+      },
+      "prompt_hash": "02e6b895ef7ea42cb3b3148611fc910b51501197a2fdd526bb3e88471b7b2d98"
+    },
+    "114": {
+      "source_index": 114,
+      "output": {
+        "justification": "The radius of convergence $ R $ of the power series $ \\sum_{n=1}^{\\infty} a_n Z^n $ can be determined using the formula $ R = \\liminf_{n \\to \\infty} \\frac{1}{|a_n|^{1/n}} $. Here, $ a_n $ is the number of divisors of $ n^{50} $. The number of divisors of $ n^{50} $ is approximately proportional to $ n^{50} $, so $ |a_n|^{1/n} $ approaches 1 as $ n \\to \\infty $. Thus, $ R = 1 $.",
+        "final_answer": "1"
+      },
+      "raw": {
+        "content": "```json\n{\n  \"justification\": \"The radius of convergence $ R $ of the power series $ \\sum_{n=1}^{\\infty} a_n Z^n $ can be determined using the formula $ R = \\liminf_{n \\to \\infty} \\\\frac{1}{|a_n|^{1/n}} $. Here, $ a_n $ is the number of divisors of $ n^{50} $. The number of divisors of $ n^{50} $ is approximately proportional to $ n^{50} $, so $ |a_n|^{1/n} $ approaches 1 as $ n \\to \\infty $. Thus, $ R = 1 $.\",\n  \"final_answer\": \"1\"\n}\n```",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 161,
+          "prompt_tokens": 95,
+          "total_tokens": 256,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 3.297
+      },
+      "prompt_hash": "caa39bee4b97ad2bff36f882f98a531413a7f0184734c1f741d9384b69b6865d"
+    },
+    "132": {
+      "source_index": 132,
+      "output": {
+        "justification": "We are given 18 distinct cards, each part of 4 combinations, and there are 24 total combinations, each consisting of 3 cards. To guarantee at least one complete combination, we need to consider the worst-case scenario. Each card is in 4 combinations, so there are 4 combinations per card. However, since there are 24 combinations in total, and each combination has 3 cards, the total number of card appearances across all combinations is 24 * 3 = 72. Since there are 18 cards, each card appears in 72 / 18 = 4 combinations, which matches the given information. To guarantee a complete combination, we must consider the maximum number of cards that can be drawn without forming a complete combination. Since each combination has 3 cards, the worst case is that we draw 2 cards from each of the 4 combinations that a card is part of, which would be 2 * 4 = 8 cards. Adding one more card would ensure that at least one combination is complete. Therefore, the minimum number of cards needed to guarantee a complete combination is 9.",
+        "final_answer": "9"
+      },
+      "raw": {
+        "content": "{\n  \"justification\": \"We are given 18 distinct cards, each part of 4 combinations, and there are 24 total combinations, each consisting of 3 cards. To guarantee at least one complete combination, we need to consider the worst-case scenario. Each card is in 4 combinations, so there are 4 combinations per card. However, since there are 24 combinations in total, and each combination has 3 cards, the total number of card appearances across all combinations is 24 * 3 = 72. Since there are 18 cards, each card appears in 72 / 18 = 4 combinations, which matches the given information. To guarantee a complete combination, we must consider the maximum number of cards that can be drawn without forming a complete combination. Since each combination has 3 cards, the worst case is that we draw 2 cards from each of the 4 combinations that a card is part of, which would be 2 * 4 = 8 cards. Adding one more card would ensure that at least one combination is complete. Therefore, the minimum number of cards needed to guarantee a complete combination is 9.\",\n  \"final_answer\": \"9\"\n}",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 254,
+          "prompt_tokens": 110,
+          "total_tokens": 364,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 35,
+            "image_tokens": null,
+            "text_tokens": null
+          }
+        },
+        "elapsed_seconds": 5.198
+      },
+      "prompt_hash": "9d1c99cfff81feb55346f3490b9e34180cd8413dd6283f8319947899a8925870"
+    }
+  },
+  "failures": []
+}

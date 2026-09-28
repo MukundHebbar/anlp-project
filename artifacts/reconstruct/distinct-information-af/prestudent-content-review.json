@@ -1,0 +1,103 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "before_student_calls": true,
+  "scope": "Input validity only; no Qwen-result-based inclusion",
+  "rows": [
+    {
+      "source_index": 62,
+      "bank_hash": "1a9fc8a6a1a57564a61416243f4217397bbb73a552ffcecf41e9409ebfb0c189",
+      "source_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "manual_content_pass": false,
+      "reason": "The shifted sine expansion, principal part structure and analyticity are exposed, supplying essentially the full Laurent-radius derivation. Also a is only constrained modulo2pi, not uniquely pi. Full bank is not an appropriately partial solution exposure.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 13,
+      "bank_hash": "39afe10205da191420c51b55094f96e8773b57716e1fbc4484a9279fb815f732",
+      "source_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "manual_content_pass": true,
+      "reason": "The factorial index k is absent. Unit-square and pairing relations restrict the modulus but do not display its value or the final pair count. The original k4 can be inferred with additional mathematical classification/counting; do not treat the blank alone as proof of recoverability.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 46,
+      "bank_hash": "04064098aba8baf5e8794ec9c90e47549050a55d2528ce2bdc8660fce90ff3e1",
+      "source_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "manual_content_pass": false,
+      "reason": "Manual boundary uncertainty: all counting-method steps through the final multinomial formula are exposed, while heights and total are missing. The backward factorial inference is substantive but complete-method exposure remains unresolved; conservatively exclude this full bank and test the independently audited prefix instead.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 0,
+      "bank_hash": "0f85f9521685922af97d8adc7fbab8bb862dbde6ee5805ad2068df1e0031ed8f",
+      "source_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "manual_content_pass": true,
+      "reason": "The interval endpoint is missing, the exact integral-identity form is not fully public, and the final separation computation is absent. Moment observations remain partial. Solving3L^4-8L^3+16=(L-2)^2(3L^2+4L+4)=0 from the answer identifiesL2; full equivalence still requires reconstructing the quadrature identity.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 96,
+      "bank_hash": "bc004e8a1630cec69d1b27982c4b16c21fc69f901a8e8beeaf53ab7090895fbc",
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "manual_content_pass": false,
+      "reason": "The entire asymptotic calculation through limit=a/12 is explicitly public. This is complete parameterized solution exposure, not merely an incomplete intermediate. The sentence about integrating also omits a in one subexpression.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 80,
+      "bank_hash": "449963f76e3a2623f8f40854330d20b186f6b5b06ca0855d048f357ca09f5493",
+      "source_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "manual_content_pass": false,
+      "reason": "Green reduction and the constant double-integrand1-b expose nearly all forward calculation; only multiplying by known disk area remains. A missing parameter does not excuse near-complete solution exposure.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 87,
+      "bank_hash": "20b749b575c346614a9bb9a2c3b7dbd0276f5d06cae734fdb4e779318b52a4e6",
+      "source_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "manual_content_pass": false,
+      "reason": "The complete source target and ratio condition are shown, then the spike construction and ratio1/n expose the withheld limiting value0 by elementary forward simplification. Near-complete counterexample is also present.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 118,
+      "bank_hash": "6e723fffbe4d5703705d77919ed6c8f9da83e4b0184c0a4341481404893f65a2",
+      "source_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "manual_content_pass": false,
+      "reason": "The actual witness k5, its evaluated expression3 and triangular verification are already exposed; adding the primality check of3 completes the construction. Near-complete solution exposure.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 63,
+      "bank_hash": "50234833f3fe9bf4586dc99ecbe066568831426a16f5c0fddf6d878f9942514d",
+      "source_hash": "f15efc1e7c16bfc117728be4698c80afe7687fa8834804c91ba240cad567600b",
+      "manual_content_pass": false,
+      "reason": "The ratio expression, growing exponent gaps and unit-circle divergence supply essentially all convergence reasoning. Index scope is additionally ambiguous because0!=1!. Keep this full bank unapproved; a separately audited subset may differ.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 120,
+      "bank_hash": "e38010416b9d65074e05f36bf5f7c413bccf65c7565fa261bc2e11c3c0e2b356",
+      "source_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "manual_content_pass": false,
+      "reason": "Clue2 directly states the original smallest-prime-factor question. The withheld field wrongly withholds a proof implication rather than question information.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 129,
+      "bank_hash": "4a272101bdb4209f8f775756fc858aa6235b2fb666b16cccce5329a54faccff3",
+      "source_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "manual_content_pass": true,
+      "reason": "The word length is absent. A recurrence and symmetry reduction are given without the length-specific vector or computed total. The modulus permits multiple lengths, so this is ambiguous but not a direct original-question copy. Do not claim unique identification.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    },
+    {
+      "source_index": 137,
+      "bank_hash": "f1d604ef3a4fa117b2451e3ef0f6fd2bf428fff189a2143a539207e390c16bd8",
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "manual_content_pass": false,
+      "reason": "Manual boundary uncertainty: full degree-sum and edge equations expose almost the entire forward method, with degree d missing. Preserve uncertainty rather than overriding disagreement to create eligibility; the prefix omits the handshaking computation and is a separate condition.",
+      "derived_transform_review": "Exact declared public exposure reviewed before any new Qwen calls."
+    }
+  ]
+}

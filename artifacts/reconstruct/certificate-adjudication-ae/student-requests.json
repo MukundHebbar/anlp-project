@@ -1,0 +1,27 @@
+{
+  "96:rich6:0": {
+    "source_index": 96,
+    "arm": "rich6",
+    "bank_key": "96:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{12}",
+      "clues": [
+        "The expression under consideration is a limit as x approaches 0 of a quotient whose numerator is the sine of a double integral and whose denominator is x^8.",
+        "The double integral F(x) has outer limits from x^3 to x^2 and inner limits from 0 to t, with integrand g(s^2) ds dt.",
+        "The requested quantity is whether this limit converges and, if it does, what its value is.",
+        "The function g is differentiable on the interval [-1,1] and satisfies g(0)=0.",
+        "For small t, the inner integral H(t)=∫_0^t g(s^2) ds controls F(x), because F(x)=∫_{x^3}^{x^2} H(t) dt.",
+        "If the double integral F(x) tends to 0 as x tends to 0, then the sine factor can be replaced by F(x) in the limit."
+      ],
+      "rendered_clues": "- The expression under consideration is a limit as x approaches 0 of a quotient whose numerator is the sine of a double integral and whose denominator is x^8.\n- The double integral F(x) has outer limits from x^3 to x^2 and inner limits from 0 to t, with integrand g(s^2) ds dt.\n- The requested quantity is whether this limit converges and, if it does, what its value is.\n- The function g is differentiable on the interval [-1,1] and satisfies g(0)=0.\n- For small t, the inner integral H(t)=∫_0^t g(s^2) ds controls F(x), because F(x)=∫_{x^3}^{x^2} H(t) dt.\n- If the double integral F(x) tends to 0 as x tends to 0, then the sine factor can be replaced by F(x) in the limit.",
+      "style": "sentence",
+      "clue_count": 6,
+      "selection_policy": "frozen_AA_rich6",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "e175edf21de06fcb79957b83483a1f84054ac28bd7cc20a3783b935645116ffb",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{12}\nOBSERVATIONS:\n- The expression under consideration is a limit as x approaches 0 of a quotient whose numerator is the sine of a double integral and whose denominator is x^8.\n- The double integral F(x) has outer limits from x^3 to x^2 and inner limits from 0 to t, with integrand g(s^2) ds dt.\n- The requested quantity is whether this limit converges and, if it does, what its value is.\n- The function g is differentiable on the interval [-1,1] and satisfies g(0)=0.\n- For small t, the inner integral H(t)=∫_0^t g(s^2) ds controls F(x), because F(x)=∫_{x^3}^{x^2} H(t) dt.\n- If the double integral F(x) tends to 0 as x tends to 0, then the sine factor can be replaced by F(x) in the limit.",
+    "rendered_input_hash": "3fb523dbfd81b780bd58687c9de391672ccbe33a4dd0591b4c3de3a598cf9232"
+  }
+}

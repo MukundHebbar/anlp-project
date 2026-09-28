@@ -1,0 +1,707 @@
+{
+  "sources": {
+    "0": {
+      "source_index": 46,
+      "source_id": "pilot-46",
+      "question": "In a shooting match, eight clay targets are arranged in two hanging columns of three targets each and one column of two targets. A marksman is to break all the targets according to the following rules:\n1) The marksman first chooses a column from which a target is to be broken.\n2) The marksman must then break the lowest remaining target in the chosen column.\nIf the rules are followed, in how many different orders can the eight targets be broken?",
+      "final_answer": "560",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.0,
+      "checked_solution": "Label the three columns \\(A,B,C\\), with heights \\(3,3,2\\). In each column, targets must be broken from bottom to top, so the order within each column is fixed.\n\nA legal order is determined by the sequence of column choices. For example, the word\n\n\\[\nAABCBACB\n\\]\n\nmeans: first break the bottom target in \\(A\\), then the next target in \\(A\\), then the bottom target in \\(B\\), etc.\n\nThus we need to count words of length \\(8\\) using:\n\n- \\(3\\) letters \\(A\\),\n- \\(3\\) letters \\(B\\),\n- \\(2\\) letters \\(C\\).\n\nThe number of such words is the multinomial coefficient\n\n\\[\n\\frac{8!}{3!3!2!}\n=\n\\frac{40320}{6\\cdot 6\\cdot 2}\n=\n560.\n\\]\n\nTherefore, the eight targets can be broken in\n\n\\[\n\\boxed{560}\n\\]\n\ndifferent orders.",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "1": {
+      "source_index": 129,
+      "source_id": "deepmath-row-92565-049d9e1aa615",
+      "question": "Let $A$ be the number of 12-digit words that can be formed from the alphabet $\\{0,1,2,3,4,5,6\\}$ if each pair of neighboring digits must differ by exactly $1$. Find the remainder when $A$ is divided by $2008$. \\( \\text{Provide your answer in the form } \\boxed{\\text{remainder}}. \\)",
+      "final_answer": "1392",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.5,
+      "checked_solution": "Let \\(f_k(d)\\) be the number of valid \\(k\\)-digit words ending in digit \\(d\\), where \\(d\\in\\{0,1,\\dots,6\\}\\).\n\nFor one digit, all choices are valid:\n\\[\nf_1(d)=1.\n\\]\nFor \\(k\\ge 1\\),\n\\[\nf_{k+1}(d)=f_k(d-1)+f_k(d+1),\n\\]\nwhere \\(f_k(-1)=f_k(7)=0\\).\n\nBy symmetry, let\n\\[\na_k=f_k(0)=f_k(6),\\quad b_k=f_k(1)=f_k(5),\\quad c_k=f_k(2)=f_k(4),\\quad d_k=f_k(3).\n\\]\nThen\n\\[\n\\begin{aligned}\na_{k+1}&=b_k,\\\\\nb_{k+1}&=a_k+c_k,\\\\\nc_{k+1}&=b_k+d_k,\\\\\nd_{k+1}&=2c_k,\n\\end{aligned}\n\\]\nwith \\(a_1=b_1=c_1=d_1=1\\).\n\nComputing up to length \\(12\\):\n\n\\[\n\\begin{array}{c|rrrr|r}\nk & a_k & b_k & c_k & d_k & \\text{total}\\\\\n\\hline\n1 & 1 & 1 & 1 & 1 & 7\\\\\n2 & 1 & 2 & 2 & 2 & 12\\\\\n3 & 2 & 3 & 4 & 4 & 22\\\\\n4 & 3 & 6 & 7 & 8 & 40\\\\\n5 & 6 & 10 & 14 & 14 & 74\\\\\n6 & 10 & 20 & 24 & 28 & 136\\\\\n7 & 20 & 34 & 48 & 48 & 252\\\\\n8 & 34 & 68 & 82 & 96 & 464\\\\\n9 & 68 & 116 & 164 & 164 & 860\\\\\n10 & 116 & 232 & 280 & 328 & 1584\\\\\n11 & 232 & 396 & 560 & 560 & 2936\\\\\n12 & 396 & 792 & 956 & 1120 & 5408\n\\end{array}\n\\]\n\nThus\n\\[\nA=5408.\n\\]\nNow\n\\[\n5408=2\\cdot 2008+1392,\n\\]\nso the required remainder is\n\n\\[\n\\boxed{1392}\n\\]\n\n<final_answer>\\boxed{1392}</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "2": {
+      "source_index": 80,
+      "source_id": "deepmath-row-69011-98b5ecb82497",
+      "question": "Evaluate the line integral \\(\\int_C (x+y) \\, dx + (x-y) \\, dy\\) using Green's Theorem, where \\(C\\) is the circle with center at the origin and radius \\(2\\).",
+      "final_answer": "0",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 5.0,
+      "checked_solution": "Let  \n\\[\nP(x,y)=x+y,\\qquad Q(x,y)=x-y.\n\\]\nThen the given line integral is\n\\[\n\\oint_C P\\,dx+Q\\,dy.\n\\]\n\nBy Green’s Theorem, for a positively oriented simple closed curve \\(C\\) bounding a region \\(D\\),\n\\[\n\\oint_C P\\,dx+Q\\,dy=\\iint_D \\left(\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}\\right)\\,dA.\n\\]\n\nCompute the partial derivatives:\n\\[\n\\frac{\\partial Q}{\\partial x}=\\frac{\\partial}{\\partial x}(x-y)=1,\n\\]\n\\[\n\\frac{\\partial P}{\\partial y}=\\frac{\\partial}{\\partial y}(x+y)=1.\n\\]\n\nTherefore,\n\\[\n\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}=1-1=0.\n\\]\n\nThus,\n\\[\n\\oint_C (x+y)\\,dx+(x-y)\\,dy=\\iint_D 0\\,dA=0.\n\\]\n\n<final_answer>0</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "3": {
+      "source_index": 80,
+      "source_id": "deepmath-row-69011-98b5ecb82497",
+      "question": "Evaluate the line integral \\(\\int_C (x+y) \\, dx + (x-y) \\, dy\\) using Green's Theorem, where \\(C\\) is the circle with center at the origin and radius \\(2\\).",
+      "final_answer": "0",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 5.0,
+      "checked_solution": "Let  \n\\[\nP(x,y)=x+y,\\qquad Q(x,y)=x-y.\n\\]\nThen the given line integral is\n\\[\n\\oint_C P\\,dx+Q\\,dy.\n\\]\n\nBy Green’s Theorem, for a positively oriented simple closed curve \\(C\\) bounding a region \\(D\\),\n\\[\n\\oint_C P\\,dx+Q\\,dy=\\iint_D \\left(\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}\\right)\\,dA.\n\\]\n\nCompute the partial derivatives:\n\\[\n\\frac{\\partial Q}{\\partial x}=\\frac{\\partial}{\\partial x}(x-y)=1,\n\\]\n\\[\n\\frac{\\partial P}{\\partial y}=\\frac{\\partial}{\\partial y}(x+y)=1.\n\\]\n\nTherefore,\n\\[\n\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}=1-1=0.\n\\]\n\nThus,\n\\[\n\\oint_C (x+y)\\,dx+(x-y)\\,dy=\\iint_D 0\\,dA=0.\n\\]\n\n<final_answer>0</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "4": {
+      "source_index": 96,
+      "source_id": "deepmath-row-76751-6e239f7c8db2",
+      "question": "Determine whether the limit \\( \\lim_{x\\rightarrow0}\\frac{\\sin\\left(\\int\\limits _{x^{3}}^{x^{2}}\\left(\\int\\limits _{0}^{t}g\\left(s^{2}\\right)ds\\right)dt\\right)}{x^{8}} \\) converges, given that \\( g \\) is a function with a derivative defined for all \\( x \\) in the interval \\([-1, 1]\\), \\( g(0) = 0 \\), and \\( g'(0) = 1 \\).",
+      "final_answer": "\\dfrac{1}{12}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 8.0,
+      "checked_solution": "Let  \n\\[\nF(x)=\\int_{x^3}^{x^2}\\left(\\int_0^t g(s^2)\\,ds\\right)dt.\n\\]\n\nSince \\(g(0)=0\\) and \\(g'(0)=1\\), Taylor’s formula gives\n\\[\ng(u)=u+o(u)\\qquad (u\\to 0).\n\\]\nThus, as \\(s\\to 0\\),\n\\[\ng(s^2)=s^2+o(s^2).\n\\]\n\nDefine\n\\[\nH(t)=\\int_0^t g(s^2)\\,ds.\n\\]\nFor small \\(t\\), using \\(|g(s^2)-s^2|\\le \\varepsilon s^2\\), we get\n\\[\n\\left|H(t)-\\frac{t^3}{3}\\right|\n=\\left|\\int_0^t \\bigl(g(s^2)-s^2\\bigr)\\,ds\\right|\n\\le \\int_0^{|t|}\\varepsilon s^2\\,ds\n=\\frac{\\varepsilon}{3}|t|^3.\n\\]\nHence\n\\[\nH(t)=\\frac{t^3}{3}+o(t^3)\\qquad (t\\to 0).\n\\]\n\nTherefore\n\\[\nF(x)=\\int_{x^3}^{x^2}\\frac{t^3}{3}\\,dt+R(x),\n\\]\nwhere the remainder satisfies\n\\[\n|R(x)|\\le \\frac{\\varepsilon}{3}\\int_{x^3}^{x^2}|t|^3\\,dt.\n\\]\nFor small \\(x\\),\n\\[\n\\int_{x^3}^{x^2}|t|^3\\,dt\\le \\frac{x^8+x^{12}}4\\le \\frac{x^8}{2}.\n\\]\nSo \\(R(x)=o(x^8)\\). Thus\n\\[\nF(x)=\\frac{x^8-x^{12}}{12}+o(x^8)\n=\\frac{x^8}{12}+o(x^8).\n\\]\nHence\n\\[\n\\frac{F(x)}{x^8}\\to \\frac{1}{12}.\n\\]\n\nSince \\(F(x)\\to 0\\), we also have\n\\[\n\\frac{\\sin F(x)}{F(x)}\\to 1.\n\\]\nTherefore\n\\[\n\\lim_{x\\to0}\\frac{\\sin F(x)}{x^8}\n=\n\\lim_{x\\to0}\\frac{\\sin F(x)}{F(x)}\\cdot \\frac{F(x)}{x^8}\n=\n\\frac{1}{12}.\n\\]\n\n<final_answer>1/12</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "5": {
+      "source_index": 62,
+      "source_id": "deepmath-row-53202-60da07f01270",
+      "question": "Determine the radius of convergence of the Laurent series for the function \\( f(z) = \\frac{\\sin z}{(z-\\pi)^2} \\) centered at \\( z = \\pi \\).",
+      "final_answer": "\\infty",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "broad_topic": "Algebra",
+      "difficulty": 5.0,
+      "checked_solution": "Let \\(w = z - \\pi\\). Then \\(z = \\pi + w\\), and\n\n\\[\n\\sin z = \\sin(\\pi + w) = -\\sin w.\n\\]\n\nUsing the Maclaurin series for \\(\\sin w\\),\n\n\\[\n\\sin w = \\sum_{n=0}^{\\infty} \\frac{(-1)^n w^{2n+1}}{(2n+1)!},\n\\]\n\nwe get\n\n\\[\nf(z)=\\frac{\\sin z}{(z-\\pi)^2}\n= \\frac{-\\sin w}{w^2}\n= -\\frac{1}{w^2}\\sum_{n=0}^{\\infty} \\frac{(-1)^n w^{2n+1}}{(2n+1)!}.\n\\]\n\nTherefore,\n\n\\[\nf(\\pi+w)\n= \\sum_{n=0}^{\\infty} \\frac{(-1)^{n+1} w^{2n-1}}{(2n+1)!}\n= -\\frac1w + \\frac{w}{6} - \\frac{w^3}{120} + \\cdots.\n\\]\n\nThis is the Laurent series centered at \\(z=\\pi\\). The negative-power part is only the single term \\(-1/(z-\\pi)\\), which converges for every \\(z\\neq \\pi\\). The positive-power part is an entire power series, so it converges for all finite \\(w\\).\n\nThus the Laurent series converges exactly on the punctured plane\n\n\\[\n0<|z-\\pi|<\\infty.\n\\]\n\nHence the outer radius of convergence is \\(\\infty\\), and the inner radius is \\(0\\).\n\n<final_answer>\\(\\infty\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "6": {
+      "source_index": 123,
+      "source_id": "deepmath-row-25666-a1b3626fef17",
+      "question": "Is there an infinite sequence of natural numbers such that any finite partial sum of this sequence is not a perfect power?",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Number Theory -> Other",
+      "broad_topic": "Number Theory",
+      "difficulty": 8.0,
+      "checked_solution": "Yes.\n\nDefine the sequence by  \n\\[\na_1=2,\\qquad a_n=4\\quad(n\\ge 2).\n\\]\nThen the \\(n\\)-th partial sum is\n\\[\nS_n=a_1+a_2+\\cdots+a_n=2+4(n-1)=4n-2.\n\\]\nThus every partial sum satisfies\n\\[\nS_n\\equiv 2 \\pmod 4.\n\\]\n\nNow suppose \\(S_n\\) were a perfect power, say \\(S_n=m^k\\) with \\(k\\ge 2\\). If \\(m\\) is odd, then \\(m^k\\) is odd, contradicting \\(S_n\\equiv 2\\pmod 4\\). If \\(m\\) is even, then \\(m^k\\) is divisible by \\(2^k\\), hence by \\(4\\), so \\(m^k\\equiv 0\\pmod 4\\), also a contradiction.\n\nTherefore no partial sum \\(S_n=4n-2\\) is a perfect power. Hence such an infinite sequence exists.\n\n<final_answer>Yes; for example, the sequence \\(2,4,4,4,\\ldots\\) works.</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    }
+  },
+  "partitions": {
+    "D1": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "banks": {
+    "0:witness_boundary_z:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e": {
+      "source_index": 0,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The eight targets are arranged in three vertical columns.",
+            "fragment": "eight targets in three columns",
+            "hidden_support": "The source labels three columns A, B, C with heights 3, 3, and 2."
+          },
+          {
+            "id": "c2",
+            "sentence": "In any legal breaking order, the targets within a single column must be taken from bottom to top, so their relative order inside that column is fixed.",
+            "fragment": "within each column, bottom-to-top fixed order",
+            "hidden_support": "Rule 2 says the marksman must break the lowest remaining target in the chosen column."
+          },
+          {
+            "id": "c3",
+            "sentence": "The number of legal orders is a multinomial coefficient determined by the three column sizes.",
+            "fragment": "count = multinomial of column sizes",
+            "hidden_support": "The checked solution counts words with 3 A's, 3 B's, and 2 C's using 8!/(3!3!2!)."
+          },
+          {
+            "id": "c4",
+            "sentence": "The requested quantity is the number of different legal breaking orders.",
+            "fragment": "target: count of legal breaking orders",
+            "hidden_support": "The source asks in how many different orders the eight targets can be broken, and the checked solution gives 560."
+          }
+        ],
+        "withheld": "The column heights 3, 3, 2 and the exact step rule (choose a column, then break its lowest remaining target) are absent. From the supplied answer 560 and the multinomial relation for three columns totaling eight targets, infer that the only positive column sizes giving 560 are 3, 3, and 2; this reconstructs the missing height premise and connects it to the count target."
+      }
+    },
+    "1:witness_boundary_z:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e": {
+      "source_index": 1,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "For each digit d in {0,1,2,3,4,5,6}, the number of valid words of length k ending in d satisfies f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+            "fragment": "f_{k+1}(d)=f_k(d-1)+f_k(d+1), boundaries zero",
+            "hidden_support": "The checked solution defines f_k(d) as the number of valid k-digit words ending in d and states this recurrence for k>=1."
+          },
+          {
+            "id": "c2",
+            "sentence": "For one-digit words, every allowed ending digit has count 1.",
+            "fragment": "f_1(d)=1 for d=0,...,6",
+            "hidden_support": "The checked solution sets f_1(d)=1 for all d in {0,...,6}."
+          },
+          {
+            "id": "c3",
+            "sentence": "The requested quantity is the remainder modulo 2008 of the total count for a certain word length.",
+            "fragment": "target: total count modulo 2008",
+            "hidden_support": "The source asks for the remainder when A is divided by 2008, where A is the total number of valid words of a specified length; the checked solution computes A=5408 and remainder 1392."
+          }
+        ],
+        "withheld": "The specified word length 12 and the total count A=5408 are absent. The target role is retained. From the final answer 1392 and the recurrence/initial values, one can compute totals by length and identify the length whose total is congruent to 1392 modulo 2008, namely 12, and then recover A=5408."
+      }
+    },
+    "2:witness_boundary_z:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce": {
+      "source_index": 2,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The curve C is the circle centered at the origin with radius 2.",
+            "fragment": "C: circle centered at origin, radius 2",
+            "hidden_support": "The source question states that C is the circle with center at the origin and radius 2."
+          },
+          {
+            "id": "c2",
+            "sentence": "The line integral is evaluated by applying Green's Theorem to a closed curve bounding a plane region.",
+            "fragment": "Green's Theorem applied to closed curve bounding region",
+            "hidden_support": "The checked solution uses Green's Theorem for a positively oriented simple closed curve C bounding a region D."
+          },
+          {
+            "id": "c3",
+            "sentence": "The differential form in the line integral has two components that are linear in x and y.",
+            "fragment": "P and Q are linear in x and y",
+            "hidden_support": "The checked solution sets P(x,y)=x+y and Q(x,y)=x-y, both linear expressions."
+          },
+          {
+            "id": "c4",
+            "sentence": "The requested quantity is the value of a line integral over that closed curve.",
+            "fragment": "target: line integral value over C",
+            "hidden_support": "The source asks to evaluate the line integral, and the checked solution gives final answer 0."
+          }
+        ],
+        "withheld": "The exact component functions P=x+y and Q=x-y, the computed partial derivatives Q_x=1 and P_y=1, and the resulting zero Green integrand are absent. The key inference is that the specific linear form makes the Green integrand vanish, so the double integral over the disk is 0."
+      }
+    },
+    "3:witness_boundary_z:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428": {
+      "source_index": 3,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "For the differential form in the line integral, the partial derivative of the second component with respect to x is 1.",
+            "fragment": "∂Q/∂x = 1",
+            "hidden_support": "The checked solution sets Q(x,y)=x-y and computes ∂Q/∂x=1."
+          },
+          {
+            "id": "c2",
+            "sentence": "For the same differential form, the partial derivative of the first component with respect to y is 1.",
+            "fragment": "∂P/∂y = 1",
+            "hidden_support": "The checked solution sets P(x,y)=x+y and computes ∂P/∂y=1."
+          },
+          {
+            "id": "c3",
+            "sentence": "The Green's theorem integrand is the difference of those partial derivatives, and it is identically zero.",
+            "fragment": "∂Q/∂x - ∂P/∂y = 0",
+            "hidden_support": "The checked solution subtracts 1-1=0."
+          },
+          {
+            "id": "c4",
+            "sentence": "The requested quantity is the value of a line integral over a closed curve.",
+            "fragment": "target: line integral value",
+            "hidden_support": "The source asks to evaluate the line integral; the checked solution gives final answer 0."
+          }
+        ],
+        "withheld": "The specific component functions P=x+y and Q=x-y, and the contour C being the circle centered at the origin with radius 2, are absent. From the zero Green integrand and the closed-curve target, Green's theorem forces the line integral to be 0, so the final answer 0 follows without exposing the exact integrand or contour."
+      }
+    },
+    "4:witness_boundary_z:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048": {
+      "source_index": 4,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The inner integral H(t) has leading term t^3/3 as t→0.",
+            "fragment": "H(t)=t^3/3+o(t^3)",
+            "hidden_support": "In the checked solution, H(t)=∫_0^t g(s^2) ds and g(s^2)=s^2+o(s^2), so integrating gives H(t)=t^3/3+o(t^3)."
+          },
+          {
+            "id": "c2",
+            "sentence": "The iterated integral F(x) has leading term x^8/12 as x→0.",
+            "fragment": "F(x)=x^8/12+o(x^8)",
+            "hidden_support": "The checked solution defines F(x)=∫_{x^3}^{x^2} H(t) dt and uses H(t)=t^3/3+o(t^3) to obtain F(x)=x^8/12+o(x^8)."
+          },
+          {
+            "id": "c3",
+            "sentence": "The requested quantity is a limit as x→0 of a ratio whose numerator is the sine of F(x) and whose denominator is x^8.",
+            "fragment": "target: lim_{x→0} sin(F(x))/x^8",
+            "hidden_support": "The source asks for the limit of sin(∫_{x^3}^{x^2}(∫_0^t g(s^2) ds) dt)/x^8, and the checked solution evaluates it to 1/12."
+          }
+        ],
+        "withheld": "The exact definitions of H and F as iterated integrals, the integration limits x^3 and x^2, the integrand g(s^2), and the hypotheses g(0)=0 and g'(0)=1 are absent. From the supplied leading term F(x)=x^8/12+o(x^8) and the target limit of sin(F(x))/x^8, infer sin(F)/F→1 and hence the missing limit value 1/12; the original iterated-integral setup is needed to derive that leading term."
+      }
+    },
+    "5:witness_boundary_z:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2": {
+      "source_index": 5,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "After shifting the variable by the center, the numerator becomes the negative of the sine of the shifted variable.",
+            "fragment": "numerator after shift = -sin(w)",
+            "hidden_support": "With w=z-π, sin z=sin(π+w)=-sin w."
+          },
+          {
+            "id": "c2",
+            "sentence": "The denominator in the shifted expression is the square of the shifted variable.",
+            "fragment": "denominator after shift = w^2",
+            "hidden_support": "The original denominator is (z-π)^2, so with w=z-π it becomes w^2."
+          },
+          {
+            "id": "c3",
+            "sentence": "The resulting Laurent expansion has exactly one negative-power term, namely -1/w.",
+            "fragment": "Laurent expansion has only the negative-power term -1/w",
+            "hidden_support": "Expanding -sin w/w^2 gives -1/w + w/6 - w^3/120 + ...; only the n=0 term has negative power."
+          },
+          {
+            "id": "c4",
+            "sentence": "The nonnegative-power part of that expansion is an entire power series.",
+            "fragment": "positive-power part is entire",
+            "hidden_support": "The positive powers come from the Maclaurin series of sin w divided by w^2, which converges for all finite w."
+          }
+        ],
+        "withheld": "The original center z=π and the requested radius of convergence are not stated. The clues give the shifted numerator, denominator, and Laurent structure; one must infer that the single negative-power term gives inner radius 0 and the entire positive part gives outer radius ∞."
+      }
+    },
+    "6:witness_boundary_z:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a": {
+      "source_index": 6,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The proposed example is an infinite sequence of natural numbers that is eventually constant.",
+            "fragment": "a_n is constant for all sufficiently large n",
+            "hidden_support": "The checked solution defines a_1=2 and a_n=4 for every n≥2, so the sequence is constant from the second term onward."
+          },
+          {
+            "id": "c2",
+            "sentence": "In that example, every partial sum is even.",
+            "fragment": "S_n is even for every n",
+            "hidden_support": "The checked solution computes S_n=4n-2, which is even for every n."
+          },
+          {
+            "id": "c3",
+            "sentence": "The solution rules out perfect powers by considering the parity of a hypothetical perfect power.",
+            "fragment": "the parity of m^k is considered when S_n=m^k",
+            "hidden_support": "The checked solution supposes S_n=m^k and splits into the cases where m is odd and where m is even."
+          }
+        ],
+        "withheld": "The exact sequence (2,4,4,...), the formula S_n=4n-2, and the decisive congruence S_n≡2 mod 4 are absent. The remaining inference is to construct an eventually constant natural sequence whose partial sums are even but not divisible by 4, and to prove that no perfect power with exponent at least 2 can have that parity/residue property."
+      }
+    }
+  },
+  "audits": {
+    "2:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 2,
+      "bank_key": "2:witness_boundary_z:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "bank_output_hash": "46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "rendered_input_hash": "48a067a65380e09facc6294f6f088b9e72be5b7796860a93c0c2d99e4c1ff180",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "0",
+          "The curve C is the circle centered at the origin with radius 2.",
+          "The line integral is evaluated by applying Green's Theorem to a closed curve bounding a plane region.",
+          "The differential form in the line integral has two components that are linear in x and y.",
+          "The requested quantity is the value of a line integral over that closed curve."
+        ],
+        "missing_essential_element": "The exact differential form of the line integral, specifically P(x,y)=x+y and Q(x,y)=x-y in ∫_C P dx + Q dy.",
+        "inference_required": "The public clues only state that the form has two components linear in x and y; they do not determine the coefficients. The final answer 0 is compatible with many different linear differential forms over the given circle, so the exact source integrand cannot be uniquely recovered from the public material alone.",
+        "reason": "The public text exposes the curve, the use of Green's Theorem, the general linear-form nature, and the target value, but it omits the essential exact integrand. Without the coefficients x+y and x-y, the original question cannot be assembled or uniquely inferred from the answer."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source question: Evaluate line integral ∫_C (x+y) dx + (x-y) dy using Green's Theorem, C circle center origin radius 2. Public final answer 0. Clues: c1 curve C circle centered origin radius 2. c2 line integral evaluated by applying Green's Theorem to closed curve bounding plane region. c3 differential form has two components linear in x and y. c4 requested quantity value of line integral over that closed curve.\n\nNeed determine if public material exposes original task. Missing essential element? The exact differential form components? c3 says two components linear in x and y, but not coefficients. Private integrand is (x+y) dx + (x-y) dy. Public clues do not specify P=x+y, Q=x-y. Answer 0. Can infer? Need use answer to infer missing integrand? There are many linear forms yielding 0 over circle radius 2. Not unique. So missing essential premise: exact differential form P=x+y, Q=x-y. Public c3 only generic linear. c1 radius 2, c2 Green, c4 target. So question cannot be assembled. Answer 0 alone not enough. Thus ACCEPT? Need flags false. direct_question_copy false. premise_target_bundle_exposed false. complete_solution_exposed false. public_quotes exact substrings. missing_essential_element specific. inference_required: need infer exact coefficients of differential form? But not inferable uniquely from public. Wait ACCEPT requires all flags false and at least one missing essential element. Yes. But \"inference_required\" maybe none? They ask inference needed beyond copying/paraphrase/routine calculation. Since missing element not recoverable, maybe \"No public inference can recover exact form; answer 0 is compatible with many linear forms.\" But ACCEPT? The status ACCEPT means safe? In this rubric, ACCEPT if no disclosure. Need include missing essential element. inference_required can say not recoverable from public alone. But they want inference needed to recover it. If not recoverable, maybe \"None possible; exact coefficients are not inferable.\" That's okay.\n\nNeed ensure public_quotes nonempty exact substrings from public answer/clues only. Include \"0\", \"The curve C is the circle centered at the origin with radius 2.\", \"The line integral is evaluated by applying Green's Theorem to a closed curve bounding a plane region.\", \"The differential form in the line integral has two components that are linear in x and y.\", \"The requested quantity is the value of a line integral over that closed curve.\" Exact.\n\nNeed reason. Also note c2 says applying Green's Theorem, c4 target. Missing exact integrand. Could c3 \"two components linear in x and y\" plus answer 0 maybe infer? No. Many forms e.g. x dx + y dy? Actually over circle? Need not. So ACCEPT.\n\nNeed JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 900,
+          "prompt_tokens": 1159,
+          "total_tokens": 2059,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 618,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 1024,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00040120079999999994
+        },
+        "elapsed_seconds": 22.513
+      },
+      "raw_content": "{\"status\":\"ACCEPT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":false,\"public_quotes\":[\"0\",\"The curve C is the circle centered at the origin with radius 2.\",\"The line integral is evaluated by applying Green's Theorem to a closed curve bounding a plane region.\",\"The differential form in the line integral has two components that are linear in x and y.\",\"The requested quantity is the value of a line integral over that closed curve.\"],\"missing_essential_element\":\"The exact differential form of the line integral, specifically P(x,y)=x+y and Q(x,y)=x-y in ∫_C P dx + Q dy.\",\"inference_required\":\"The public clues only state that the form has two components linear in x and y; they do not determine the coefficients. The final answer 0 is compatible with many different linear differential forms over the given circle, so the exact source integrand cannot be uniquely recovered from the public material alone.\",\"reason\":\"The public text exposes the curve, the use of Green's Theorem, the general linear-form nature, and the target value, but it omits the essential exact integrand. Without the coefficients x+y and x-y, the original question cannot be assembled or uniquely inferred from the answer.\"}"
+    },
+    "0:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 0,
+      "bank_key": "0:witness_boundary_z:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "bank_output_hash": "892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "source_record_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "rendered_input_hash": "487eb840e59866c1a238675c7c883d9f5de4bb3ce6059a8f654b2901c9699349",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The eight targets are arranged in three vertical columns.",
+          "In any legal breaking order, the targets within a single column must be taken from bottom to top, so their relative order inside that column is fixed.",
+          "The number of legal orders is a multinomial coefficient determined by the three column sizes.",
+          "The requested quantity is the number of different legal breaking orders.",
+          "560"
+        ],
+        "missing_essential_element": "The column sizes: two columns of three targets each and one column of two targets.",
+        "inference_required": "Use the public answer 560 together with the multinomial-coefficient clue to infer the only column-size multiset summing to 8 that gives 8!/(a!b!c!) = 560, namely {3,3,2}.",
+        "reason": "The public clues expose the target and the general multinomial structure, but they do not state the essential column sizes from the source question. Those sizes must be recovered by inverse inference from the supplied answer and the multinomial formula. No complete derivation or copied question is present."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source question: shooting match, eight clay targets arranged in two hanging columns of three each and one column of two. Count orders under rules. Public answer 560. Clues: eight targets arranged in three vertical columns. In any legal order, within single column bottom to top fixed. Number legal orders is multinomial coefficient determined by three column sizes. Requested quantity number different legal breaking orders.\n\nNeed determine if public material exposes original task? Missing essential premise: column sizes? Private has two columns of 3 and one of 2. Public says three vertical columns but not sizes. Answer 560. Can infer column sizes from answer? Multinomial coefficient for total 8 with three column sizes summing 8. Need find sizes? 8!/(a!b!c!) = 560. Factor 560 = 8! / 72? 40320/560=72. Need a!b!c! =72. With a+b+c=8. Possibilities? 3!*3!*2! =6*6*2=72. Also 4!*3!*1! =24*6=144 no. 4!*2!*2!=96. 3!*2!*2!=24. So unique multiset {3,3,2}. Thus answer plus clue \"multinomial coefficient determined by three column sizes\" allows inverse inference of column sizes. Is that a missing essential premise? Yes, original question states arrangement sizes. Public clues omit sizes. But answer 560 and formula clue allow infer sizes. Boundary says genuinely absent essential premise may have to be inferred using supplied final answer as constraint; legitimate inverse task even elementary/unique. So ACCEPT? Need check if other clues state equivalently? c3 says multinomial coefficient determined by three column sizes, but not sizes. c1 three vertical columns. c4 target. Missing sizes. Inference required: solve 8!/(a!b!c!)=560 with a+b+c=8 to get {3,3,2}. That is nontrivial? It's inverse. So likely ACCEPT. Need ensure no complete solution exposed. c3 says number is multinomial coefficient determined by sizes. If sizes absent, not complete. Public answer 560. Direct question copy? No, not copied. Premise-target bundle exposed? Target exposed c4, but premise sizes missing. Complete solution? No, formula clue but no sizes. Need public quotes exact nonempty substrings from public answer/clues only. We can quote c1, c3, c4, answer \"560\". Need missing essential element: column sizes: two columns of three and one column of two. Inference: use 560 and multinomial formula to solve for sizes. Status ACCEPT. Need JSON only. Ensure flags false. public_quotes include exact substrings. \"The eight targets are arranged in three vertical columns.\" \"The number of legal orders is a multinomial coefficient determined by the three column sizes.\" \"The requested quantity is the number of different legal breaking orders.\" \"560\". Maybe c2 too. Need not overdo. Reason.\n\nNeed be careful: Is c3 \"multinomial coefficient determined by the three column sizes\" plus answer 560 enough to infer sizes? Yes. But is column sizes needed to state original question? Yes. Public text says three vertical columns but not sizes. Could there be other arrangements with same answer? We found unique multiset. But order of columns irrelevant. So recover.\n\nPotential issue: The original question also says \"two hanging columns of three targets each and one column of two targets\" and \"lowest remaining target\" rules. Public c2 states within column bottom to top fixed. c1 three vertical columns. c4 target. Missing sizes. The rule \"marksman first chooses a column\" maybe implied by c2/c3? c3 multinomial coefficient determined by column sizes implies interleavings of fixed column sequences. c2 says within column fixed. c4 target. So enough to state? Need column sizes. Missing.\n\nThus ACCEPT. Final JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1110,
+          "prompt_tokens": 1210,
+          "total_tokens": 2320,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 851,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0005139232
+        },
+        "elapsed_seconds": 24.787
+      },
+      "raw_content": "{\"status\":\"ACCEPT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":false,\"public_quotes\":[\"The eight targets are arranged in three vertical columns.\",\"In any legal breaking order, the targets within a single column must be taken from bottom to top, so their relative order inside that column is fixed.\",\"The number of legal orders is a multinomial coefficient determined by the three column sizes.\",\"The requested quantity is the number of different legal breaking orders.\",\"560\"],\"missing_essential_element\":\"The column sizes: two columns of three targets each and one column of two targets.\",\"inference_required\":\"Use the public answer 560 together with the multinomial-coefficient clue to infer the only column-size multiset summing to 8 that gives 8!/(a!b!c!) = 560, namely {3,3,2}.\",\"reason\":\"The public clues expose the target and the general multinomial structure, but they do not state the essential column sizes from the source question. Those sizes must be recovered by inverse inference from the supplied answer and the multinomial formula. No complete derivation or copied question is present.\"}"
+    },
+    "3:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 3,
+      "bank_key": "3:witness_boundary_z:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "bank_output_hash": "6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "rendered_input_hash": "891626e4d73b56303eb0853691bc818159f070b72b52cf386b23187561d3f521",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "For the differential form in the line integral, the partial derivative of the second component with respect to x is 1.",
+          "For the same differential form, the partial derivative of the first component with respect to y is 1.",
+          "The Green's theorem integrand is the difference of those partial derivatives, and it is identically zero.",
+          "The requested quantity is the value of a line integral over a closed curve.",
+          "0"
+        ],
+        "missing_essential_element": "The exact differential form (x+y) dx + (x-y) dy and the circle radius 2 are not stated in the public clues.",
+        "inference_required": "No nontrivial inference is needed to obtain the result: the public clues already state the two relevant partial derivatives and that their Green's theorem difference is identically zero, yielding the final value 0.",
+        "reason": "Although the public text does not copy the full source question and omits the specific differential form and curve, the public clues c1-c3 expose the complete Green's theorem derivation: Q_x=1, P_y=1, so the integrand is zero, and the final answer 0 is supplied. This is a complete solution disclosure."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. We have private source question: Evaluate line integral ∫_C (x+y) dx + (x-y) dy using Green's Theorem, C circle center origin radius 2. Public final answer 0. Public clues: c1 partial derivative of second component wrt x is 1. c2 partial derivative of first component wrt y is 1. c3 Green's theorem integrand difference partial derivatives identically zero. c4 requested quantity is value of line integral over closed curve.\n\nNeed determine if public material directly disclosed original task or complete solution. Need identify missing essential premise/target. Public clues do not state differential form components? c1 \"second component\" and c2 \"first component\" but not actual P=x+y, Q=x-y? They state partial derivatives are 1. c3 integrand zero. c4 line integral over closed curve. Final answer 0. Does this expose question? The original question asks evaluate line integral using Green's theorem for specific vector field and circle radius 2. Public clues omit the actual differential form and curve? They mention differential form but not components. They mention closed curve but not circle radius 2. However c1/c2 partial derivatives being 1 for both implies P_y=1, Q_x=1. But many forms. The answer 0 follows from Green's theorem if integrand zero. But to state original question, need specific integrand (x+y) dx + (x-y) dy and circle radius 2. Are these absent? Yes. But maybe c1/c2 plus answer? Need infer missing essential premise? The public material alone: c1 says second component partial wrt x is 1. c2 first component partial wrt y is 1. c3 difference zero. c4 line integral over closed curve. It doesn't specify P and Q. It doesn't specify C radius 2. The final answer 0. Could one recover original? No, many line integrals with P_y=Q_x=1 over any closed curve yield 0. The specific P=x+y, Q=x-y and circle radius 2 are not inferable from public alone. But is that a question leak? No, missing essential elements. Need status ACCEPT? Wait criteria: ACCEPT requires all flags false. We need decide if public material directly disclosed original task or complete solution. It seems not. Missing essential source premise/target remains absent. But need check if any clue states equivalently? c1/c2 state partial derivatives, which are derived from P=x+y, Q=x-y. But not the actual components. c3 states Green integrand zero, which is complete solution derivation? It gives that integrand is zero, so line integral is zero. That is essentially complete solution for any such form. But original question asks evaluate using Green's theorem. Public clues c1-c3 provide the key derivation: partial derivatives difference zero, so integral zero. Does that count as complete solution exposed? The \"solution exposed\" means mathematical derivation/construction, not merely result. c1-c3: \"partial derivative of second component wrt x is 1\", \"partial derivative of first component wrt y is 1\", \"Green's theorem integrand is difference... identically zero.\" This is a complete derivation of the result 0, assuming Green's theorem. It doesn't state the original differential form, but it gives enough to compute the integrand for the original? Wait c1/c2 are specific to the differential form in the line integral. They don't name P and Q, but they assert their partial derivatives. For original P=x+y, Q=x-y, indeed Q_x=1, P_y=1. So the clues reveal the necessary computation. But do they expose the original question? The question statement includes the integrand and curve. The public clues do not state the integrand or curve. However c1/c2 refer to \"the differential form in the line integral\" and c4 \"line integral over a closed curve.\" This is a paraphrase of the question? It omits the actual form and curve. But the answer 0 and clues about partial derivatives might allow reconstructing? No, not uniquely. But the original task is to evaluate a specific integral. The public material doesn't state the specific integral. So question not copied. But complete solution? The solution to original is: Q_x=1, P_y=1, difference 0, integral 0. Public clues c1-c3 exactly state Q_x=1, P_y=1, difference zero. That is the complete solution derivation. Even though it doesn't state P and Q, it states the needed partial derivatives. Is that a complete solution exposed? The criteria: \"complete/nearly complete derivations even when word overlap is low\" reject. c1-c3 are a complete derivation of the result. But is it a solution to the original? It doesn't show how Q_x and P_y were computed from P=x+y, Q=x-y. But it states them. The derivation from Green's theorem to zero is complete. The missing step is computing partial derivatives from the specific form. But c1/c2 already give the partial derivatives. So the solution is exposed. However, the question itself is not exposed because the specific form and curve are missing. The review asks: \"Determine whether DeepSeek directly disclosed the original task or a complete solution.\" If complete solution exposed, REJECT. The public observations include c1-c3 which are essentially the solution. So likely REJECT with complete_solution_exposed true. But need be careful: The final answer is always supplied. The clues c1-c3 are public observations. They state the Green's theorem integrand is zero. That is the core solution. So complete solution exposed. Also maybe premise_target_bundle? The target is value of line integral. c4 says requested quantity is value of line integral over closed curve. Final answer 0. But target is not fully specified? The target is \"value\" and answer 0. The premise bundle? Not full because missing specific form and curve. But complete solution exposed true.\n\nNeed output JSON. Need include public_quotes exact nonempty substrings from public answer/clues only. We can quote c1, c2, c3, c4, final answer \"0\". Need missing_essential_element: specific differential form (x+y)dx+(x-y)dy and circle radius 2? But if we reject due complete solution, missing essential element maybe none? Actually missing essential element for question statement: the exact differential form and curve. But complete solution exposed despite missing question premise. The instructions: \"At least one genuinely missing essential element is necessary for acceptance, but does not by itself prove safety.\" For REJECT, at least one true. We can set missing_essential_element to \"The exact differential form (x+y)dx+(x-y)dy and the circle radius 2 are not stated in public clues.\" But if complete solution exposed, missing element still exists. However, if complete solution exposed, we reject. Need flags: direct_question_copy false, premise_target_bundle_exposed false? Complete_solution_exposed true. Status REJECT. Reason: Public clues c1-c3 state the partial derivatives and that Green's theorem integrand is identically zero, which is the complete derivation yielding 0; although exact form/curve omitted, the solution is exposed. Need ensure not overstate. The public clues do not state P and Q, but they state the partial derivatives. Is that enough to be complete solution? The original solution would compute Q_x=1, P_y=1, then difference 0. The clues state exactly those. So yes.\n\nBut wait: The question asks \"using Green's Theorem\". The public clues c1-c3 are essentially the Green's theorem computation. So complete solution exposed. The final answer 0 is also given. So REJECT.\n\nNeed JSON only. Ensure valid JSON. Use exact substrings. Public quotes: \"For the differential form in the line integral, the partial derivative of the second component with respect to x is 1.\" etc. Also \"0\". The final answer is public. Include c3. Maybe c4. Need nonempty.\n\nLet's craft.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1987,
+          "prompt_tokens": 1173,
+          "total_tokens": 3160,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1699,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0008770832
+        },
+        "elapsed_seconds": 43.982
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":true,\"public_quotes\":[\"For the differential form in the line integral, the partial derivative of the second component with respect to x is 1.\",\"For the same differential form, the partial derivative of the first component with respect to y is 1.\",\"The Green's theorem integrand is the difference of those partial derivatives, and it is identically zero.\",\"The requested quantity is the value of a line integral over a closed curve.\",\"0\"],\"missing_essential_element\":\"The exact differential form (x+y) dx + (x-y) dy and the circle radius 2 are not stated in the public clues.\",\"inference_required\":\"No nontrivial inference is needed to obtain the result: the public clues already state the two relevant partial derivatives and that their Green's theorem difference is identically zero, yielding the final value 0.\",\"reason\":\"Although the public text does not copy the full source question and omits the specific differential form and curve, the public clues c1-c3 expose the complete Green's theorem derivation: Q_x=1, P_y=1, so the integrand is zero, and the final answer 0 is supplied. This is a complete solution disclosure.\"}"
+    },
+    "4:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 4,
+      "bank_key": "4:witness_boundary_z:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "bank_output_hash": "165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "source_record_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "rendered_input_hash": "b47f3839cbef485c0b967a19d6de1da3fbba10ddbe27c3478f7f747db9b79627",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The inner integral H(t) has leading term t^3/3 as t→0.",
+          "The iterated integral F(x) has leading term x^8/12 as x→0.",
+          "The requested quantity is a limit as x→0 of a ratio whose numerator is the sine of F(x) and whose denominator is x^8.",
+          "\\dfrac{1}{12}"
+        ],
+        "missing_essential_element": "The original integral definition of F(x) and the hypotheses on g, including g(0)=0 and g'(0)=1, are absent from the public text.",
+        "inference_required": "No nontrivial inference is needed to obtain the limit from the public clues: c2 gives F(x)~x^8/12 and c3 gives sin(F(x))/x^8, so sin(F)~F yields 1/12. Recovering the exact original integral statement would require additional inference, but the public material already exposes the key derived leading term and the final ratio.",
+        "reason": "The public clues supply the essential derived leading term F(x)~x^8/12 and identify the requested limit as sin(F(x))/x^8. Together with the final answer 1/12, this is a complete or nearly complete solution to the original limit problem, even though the original integral definition and g hypotheses are not copied verbatim."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. We have private source question: determine whether limit converges, given g derivative etc. Public final answer 1/12. Public clues: inner integral H(t) leading term t^3/3; iterated integral F(x) leading term x^8/12; requested quantity is limit as x→0 of ratio whose numerator is sine of F(x) and denominator x^8.\n\nNeed determine if public material directly disclosed original task or complete solution. Need identify missing essential premise/target. Source question asks determine whether limit converges, with g conditions. Public answer gives value 1/12. Clues mention H(t), F(x), ratio. Do they expose full question? They don't mention g, g(0)=0, g'(0)=1, interval, sin? c3 mentions sine of F(x) and denominator x^8. c1/c2 give leading terms. This is essentially complete solution? Let's parse.\n\nPrivate question: limit of sin( ∫_{x^3}^{x^2} (∫_0^t g(s^2) ds) dt ) / x^8 as x→0, given g differentiable on [-1,1], g(0)=0, g'(0)=1. Need determine convergence. The answer 1/12.\n\nPublic clues:\nc1: inner integral H(t) has leading term t^3/3 as t→0.\nc2: iterated integral F(x) has leading term x^8/12 as x→0.\nc3: requested quantity is a limit as x→0 of a ratio whose numerator is sine of F(x) and denominator x^8.\n\nThese clues define H(t) and F(x) but not their definitions? c1 says inner integral H(t) leading term t^3/3. c2 says iterated integral F(x) leading term x^8/12. c3 says numerator sine of F(x), denominator x^8. This seems enough to compute limit: sin(F(x))/x^8 ~ F(x)/x^8 ~ (x^8/12)/x^8 = 1/12. It also states requested quantity is limit. But does it expose original question? It doesn't state g conditions or exact integral expression. However c1/c2 are solution steps, not question premises. The public material includes leading terms, which are derived from g conditions. It may be a complete/nearly complete derivation? c1 and c2 give the key leading terms, c3 gives ratio. Then final answer. This is essentially complete solution exposed: from c2 and c3, limit is 1/12. But question asks determine whether converges; public answer 1/12 and clues show convergence. The original task's essential premise? The g conditions and integral expression are absent. But are they needed to state original question? Yes, to state original question, need the integral expression and g conditions. Public clues mention \"inner integral H(t)\" and \"iterated integral F(x)\" but not their definitions. However c3 says numerator is sine of F(x) and denominator x^8. c2 says F(x) leading term x^8/12. This doesn't state the original integral expression. But it does provide enough to solve the limit if F is known? Actually c2 directly gives F leading term, so no need to know integral. But to recover original question, one would need infer that F(x) is the iterated integral of g(s^2) with limits x^3 to x^2, and g conditions. The public text does not specify g(0)=0, g'(0)=1, or the integral limits. Could one infer from c1 \"inner integral H(t) has leading term t^3/3\" that H(t)=∫_0^t g(s^2) ds? Not uniquely. Many functions. c2 \"iterated integral F(x)\" leading term x^8/12. Not enough to recover exact original. So missing essential premise: the definition of F(x) as ∫_{x^3}^{x^2} H(t) dt and g conditions. But the public material includes a complete solution to the limit? It gives F leading term and ratio, so yes complete solution exposed? The question asks determine whether limit converges. Public answer 1/12 and clues c2/c3 show limit = 1/12. That is a complete solution? It doesn't show derivation of F leading term, but c2 states it. The \"solution exposed\" means mathematical derivation/construction, not merely result. c2 is a key derived result. c1 is another. c3 sets up ratio. Together they are nearly complete derivation: if F~x^8/12, sin F~F, ratio ->1/12. But c2 already gives F leading term, so the only remaining step is sin F ~ F and divide. That's routine. So complete/nearly complete solution exposed? The instructions: \"Reject copied/paraphrased questions, complete premise-target bundles, and complete/nearly complete derivations even when word overlap is low.\" Here public clues provide leading terms and ratio, which is a complete solution skeleton. But is it a \"complete solution\" of original? It doesn't mention g conditions, but those are not needed if F leading term is given. However the original question's target is \"determine whether limit converges\" not \"compute limit\". Public answer gives value, so convergence. The clues c2/c3 directly imply convergence. So likely REJECT due to complete solution exposed. Also maybe premise-target bundle? c3 states requested quantity is limit of ratio with sine F and denominator x^8. c2 states F leading term. That's enough to state a simplified question: find limit of sin(F(x))/x^8 given F~x^8/12. But that's not original question; it's a replacement task. The original integral definition is missing. But the public material is a complete solution to the original? It doesn't state original integral, but if we know original, c2 is the derived leading term. The public material alone doesn't allow recovering original question, but it does expose the solution to the original if one knows it. The review asks: \"Compare private original question with exact public answer and clues. Determine whether DeepSeek directly disclosed the original task or a complete solution.\" So if public clues include c2 leading term and c3 ratio, that's a complete solution to the original limit. The missing original question premises are not in public, but the solution is exposed. So REJECT with complete_solution_exposed true. Need cite exact public substrings. Public quotes: \"The inner integral H(t) has leading term t^3/3 as t→0.\" \"The iterated integral F(x) has leading term x^8/12 as x→0.\" \"The requested quantity is a limit as x→0 of a ratio whose numerator is the sine of F(x) and whose denominator is x^8.\" Also final answer \"1/12\" maybe. Need include exact nonempty substrings from public answer/clues only. We can quote those.\n\nNeed fill JSON. status REJECT. scope source_disclosure. direct_question_copy false? The public clues don't copy original question. premise_target_bundle_exposed? Maybe false? The original premise-target bundle (g conditions, integral expression, target) not exposed. But complete solution exposed true. So flags: direct_question_copy false, premise_target_bundle_exposed false, complete_solution_exposed true. missing_essential_element: \"The original integral definition of F(x) and the hypotheses on g (g(0)=0, g'(0)=1) are absent.\" But if complete solution exposed, missing essential element for question is those. However the instructions: \"At least one genuinely missing essential element is necessary for acceptance, but does not by itself prove safety.\" For REJECT, we can still note missing. But if complete solution exposed, missing question premise doesn't matter. Need explain.\n\nInference_required: \"To recover the original question, one would need to infer the exact iterated integral and g hypotheses from the leading-term clues; however, the public clues already supply the derived leading term F(x)~x^8/12 and the ratio, so the limit follows by routine sin F~F and division.\" That is not an inference for question, but for solution. The JSON field inference_required: \"Inference needed beyond copying/paraphrase/routine calculation\" maybe for missing element. We can say \"No nontrivial inference is needed to obtain the limit from the public clues; c2 and c3 plus sin F~F give 1/12.\" But the field asks inference required. We can put that.\n\nNeed ensure JSON only. Use exact quotes. Let's craft.\n\nReason: Public clues c2 and c3 state F(x) leading term x^8/12 and requested limit is sin(F(x))/x^8. Since sin(F)~F, limit is 1/12. This is a complete/nearly complete solution to the original limit, even though original integral definition and g hypotheses are not copied. Therefore REJECT.\n\nCheck if \"complete_solution_exposed\" true. Yes.\n\nFinal JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 2259,
+          "prompt_tokens": 1209,
+          "total_tokens": 3468,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1933,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0009963632
+        },
+        "elapsed_seconds": 47.762
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":true,\"public_quotes\":[\"The inner integral H(t) has leading term t^3/3 as t→0.\",\"The iterated integral F(x) has leading term x^8/12 as x→0.\",\"The requested quantity is a limit as x→0 of a ratio whose numerator is the sine of F(x) and whose denominator is x^8.\",\"\\\\dfrac{1}{12}\"],\"missing_essential_element\":\"The original integral definition of F(x) and the hypotheses on g, including g(0)=0 and g'(0)=1, are absent from the public text.\",\"inference_required\":\"No nontrivial inference is needed to obtain the limit from the public clues: c2 gives F(x)~x^8/12 and c3 gives sin(F(x))/x^8, so sin(F)~F yields 1/12. Recovering the exact original integral statement would require additional inference, but the public material already exposes the key derived leading term and the final ratio.\",\"reason\":\"The public clues supply the essential derived leading term F(x)~x^8/12 and identify the requested limit as sin(F(x))/x^8. Together with the final answer 1/12, this is a complete or nearly complete solution to the original limit problem, even though the original integral definition and g hypotheses are not copied verbatim.\"}"
+    },
+    "6:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 6,
+      "bank_key": "6:witness_boundary_z:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "bank_output_hash": "087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "source_record_hash": "e0c5f16198ec2ce40bca6acbc0f3e2f5c27e36cfdcab91ac56565822160d7770",
+      "rendered_input_hash": "842910ff12f7fc05456b86a18a31ac590d3d0ff91d7458e36214124224faab6d",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example is an infinite sequence of natural numbers that is eventually constant.",
+          "In that example, every partial sum is even.",
+          "The solution rules out perfect powers by considering the parity of a hypothetical perfect power."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference beyond paraphrase: the public clues already state an infinite natural-number sequence whose partial sums are even and rule out perfect powers, which recovers the source existence question and its Yes answer.",
+        "reason": "The public material exposes the original existence target by paraphrase: an infinite sequence of natural numbers with partial sums that are not perfect powers, together with the answer Yes. The witness/construction is not required to state the existence question, so withholding it does not prevent question disclosure."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private question: existence of infinite sequence natural numbers such that any finite partial sum is not a perfect power. Public final answer Yes. Clues: proposed example infinite sequence natural numbers eventually constant. every partial sum even. solution rules out perfect powers by considering parity of hypothetical perfect power.\n\nNeed determine if public material directly disclosed original task or complete solution. Need identify missing essential premise/target. The question asks existence. Public answer Yes. Clues mention proposed example is infinite sequence natural numbers eventually constant; every partial sum even; parity rules out perfect powers. Does this expose existence question? It seems public clues state there is proposed example with properties. The original question: Is there an infinite sequence of natural numbers such that any finite partial sum is not a perfect power? Public answer Yes plus clues: proposed example is infinite sequence natural numbers eventually constant; every partial sum even; solution rules out perfect powers by parity. This seems enough to assemble the existence question? It says proposed example is infinite sequence natural numbers eventually constant, every partial sum even, and rules out perfect powers by parity. But does it state \"any finite partial sum is not a perfect power\"? It says solution rules out perfect powers by considering parity of hypothetical perfect power. That implies the example has partial sums not perfect powers. The public text includes answer Yes and clues about example. It may expose the question: existence of infinite sequence natural numbers with partial sums not perfect powers. The clues don't explicitly state \"any finite partial sum is not a perfect power\" but c3 says rules out perfect powers by parity. That is equivalent? Need decide.\n\nThe instructions: Question versus solution: missing essential element must be needed to STATE original mathematical question, not merely solve. First check whether objects, premises and target can already be assembled from public text by paraphrase and grammar. If so, reject question disclosure even when witness/construction absent. Existence question does not require witness specified. Omitting witness withholds solution, not question premise.\n\nHere public answer Yes and clues: \"The proposed example is an infinite sequence of natural numbers that is eventually constant.\" \"In that example, every partial sum is even.\" \"The solution rules out perfect powers by considering the parity of a hypothetical perfect power.\" This seems to expose the existence question: Is there an infinite sequence of natural numbers such that partial sums are not perfect powers? The answer Yes. The clues even mention proposed example and ruling out perfect powers. The original target is existence. Public material has answer Yes and enough to infer the question? It doesn't explicitly say \"any finite partial sum\" but \"every partial sum is even\" and \"rules out perfect powers\" implies partial sums not perfect powers. The sequence natural numbers eventually constant. So yes, the public clues paraphrase the original question and answer. Thus REJECT. Need flags: direct_question_copy? Maybe false? It is not exact copy but paraphrase. The schema has direct_question_copy boolean. \"Reject copied/paraphrased questions\" so direct_question_copy maybe true? It says direct_question_copy false? We need set flags. \"premise_target_bundle_exposed\": true? The public clues expose existence target and answer. \"complete_solution_exposed\": maybe false? They don't give construction details, but c1/c2/c3 are solution outline. The question asks existence; answer Yes plus clues about example and parity rule out perfect powers. Is complete solution exposed? It doesn't give actual sequence, but for existence question, witness not required in statement. However complete solution? It says solution rules out perfect powers by parity. That is a derivation outline, not complete. But the question disclosure is enough for REJECT. Need at least one true. We can set premise_target_bundle_exposed true. direct_question_copy? The public text doesn't copy exact question, but paraphrases. The field \"direct_question_copy\" maybe if exact copied/paraphrased question. It says reject copied/paraphrased questions. So true? But \"direct_question_copy\" maybe means direct question copy. Public clues don't literally ask question. But they expose. I can set false for direct_question_copy, true for premise_target_bundle_exposed. complete_solution_exposed false. Status REJECT.\n\nNeed public_quotes exact nonempty substrings from public answer/clues only. Use exact substrings: \"Yes\", \"The proposed example is an infinite sequence of natural numbers that is eventually constant.\", \"In that example, every partial sum is even.\", \"The solution rules out perfect powers by considering the parity of a hypothetical perfect power.\" Need ensure exact. Yes.\n\nMissing essential element: none? Since question exposed. Or \"No essential source premise/target remains absent; the existence target and answer are exposed.\" But schema asks specific source element genuinely withheld, or none. Use \"none\".\n\nInference_required: \"Only paraphrase/assembly: combine 'infinite sequence of natural numbers', 'every partial sum is even', and 'rules out perfect powers' to recover the existence question; no hidden parameter needed.\" But if missing none, inference required maybe none? We can say \"No nontrivial inference beyond paraphrase; the public clues already state the existence setup and answer.\" But schema wants inference needed beyond copying/paraphrase/routine calculation. Since reject, can say \"None; public clues already paraphrase the source question and answer.\"\n\nReason: concise.\n\nNeed final JSON only. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1328,
+          "prompt_tokens": 1093,
+          "total_tokens": 2421,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1125,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0005891032
+        },
+        "elapsed_seconds": 28.845
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":false,\"public_quotes\":[\"Yes\",\"The proposed example is an infinite sequence of natural numbers that is eventually constant.\",\"In that example, every partial sum is even.\",\"The solution rules out perfect powers by considering the parity of a hypothetical perfect power.\"],\"missing_essential_element\":\"none\",\"inference_required\":\"No nontrivial inference beyond paraphrase: the public clues already state an infinite natural-number sequence whose partial sums are even and rule out perfect powers, which recovers the source existence question and its Yes answer.\",\"reason\":\"The public material exposes the original existence target by paraphrase: an infinite sequence of natural numbers with partial sums that are not perfect powers, together with the answer Yes. The witness/construction is not required to state the existence question, so withholding it does not prevent question disclosure.\"}"
+    },
+    "1:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 1,
+      "bank_key": "1:witness_boundary_z:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "bank_output_hash": "5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "source_record_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "rendered_input_hash": "901e73262e3542fc75b67d6156a7f55d56b53671dff8c4ece27f548f9db2aad1",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "For each digit d in {0,1,2,3,4,5,6}, the number of valid words of length k ending in d satisfies f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+          "For one-digit words, every allowed ending digit has count 1.",
+          "The requested quantity is the remainder modulo 2008 of the total count for a certain word length.",
+          "1392"
+        ],
+        "missing_essential_element": "The specific word length 12 required by the source question; the public clues only say 'a certain word length'.",
+        "inference_required": "Use the recurrence, initial condition, modulus 2008, and public answer 1392 to infer which word length is intended, or otherwise recover the missing length 12. This inverse inference is not stated in the public text.",
+        "reason": "The public material gives the recurrence, initial condition, modulus, and final remainder, but it does not state the essential source premise that the words have length 12. The original question cannot be assembled directly from the public clues without inferring that missing length, and no complete derivation is exposed."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. We have private source: count 12-digit words alphabet 0..6 adjacent differ exactly1, mod2008. Public answer 1392. Clues: recurrence for f_{k+1}(d)=... with boundaries. c2 one-digit counts 1. c3 requested quantity is remainder modulo 2008 of total count for a certain word length.\n\nNeed determine if public material exposes original task? Missing essential element: word length 12? Alphabet? Adjacent condition? Let's inspect clues. c1 mentions digits d in {0..6}, valid words length k ending in d, recurrence adjacent differ exactly1 implicitly? It says f_{k+1}(d)=f_k(d-1)+f_k(d+1), boundaries. This recurrence corresponds to adjacent differ exactly1 on alphabet 0..6. c2 one-digit words every allowed ending digit count 1. c3 requested quantity is remainder modulo 2008 of total count for a certain word length. It does not specify \"12-digit\" or \"certain word length\" value. Public answer 1392. Can infer length? Maybe from answer? Need see if missing essential premise is length 12. Is it inferable from public answer and recurrence? Potentially yes: compute total counts for lengths and find which length gives remainder 1392 mod2008. But is that unique? Need check. The public clues specify recurrence and modulus, answer. Missing length. Could use answer to infer length if unique among plausible? Need assess. The instructions: A genuinely absent essential premise may have to be inferred by using supplied final answer as constraint. This can be legitimate inverse task even elementary/unique. Do not reject solely because answer-conditioned inversion easy/unique. Missing essential element needed to state original question. Here length 12 is essential. Public c3 says \"a certain word length\" not value. Answer 1392. Is length recoverable uniquely? Need maybe compute sequence mod 2008 to see if 1392 occurs for length 12 and maybe other lengths. If not unique, then not routine. But even if unique, it's missing premise and inverse inference. ACCEPT? Need all flags false. But check if c1+c2+c3+answer expose complete premise-target bundle? They expose alphabet, recurrence, modulus, target total count mod 2008, but not length. The original question asks 12-digit words. Missing length. Is length inferable from answer? Need determine if public material alone can recover length 12. We can compute? Let's analyze.\n\nWe need decide status. The public clues include recurrence. c3 says \"certain word length\" not 12. The final answer 1392. If one computes total counts for lengths maybe 1392 mod2008 at length 12? Let's compute quickly to see uniqueness maybe. Alphabet 0..6 path graph P7. Number of walks length n-1? For words length k, total sum f_k(d). Starting f1 all ones. Recurrence. Need total for k=12 mod2008. Let's compute mod 2008 maybe. But for uniqueness, need see if other k yield 1392. Could be many. Let's compute sequence totals mod 2008.\n\nLet vector f_k length7. f1=[1,1,1,1,1,1,1], total7.\nf2(d)=neighbors sum: d0=1, d1=2, d2=2, d3=2, d4=2, d5=2, d6=1 total12.\nf3: d0=f2(1)=2; d1=f2(0)+f2(2)=1+2=3; d2=f2(1)+f2(3)=2+2=4; d3=2+2=4; d4=2+2=4; d5=2+1=3; d6=f2(5)=2. total22.\nf4: d0=3; d1=2+4=6; d2=3+4=7; d3=4+4=8; d4=4+3=7; d5=4+2=6; d6=3. total40.\nf5: d0=6; d1=3+7=10; d2=6+8=14; d3=7+7=14; d4=8+6=14; d5=7+3=10; d6=6. total74.\nf6: d0=10; d1=6+14=20; d2=10+14=24; d3=14+14=28; d4=14+10=24; d5=14+6=20; d6=10. total136.\nf7: d0=20; d1=10+24=34; d2=20+28=48; d3=24+24=48; d4=28+20=48; d5=24+10=34; d6=20. total252.\nf8: d0=34; d1=20+48=68; d2=34+48=82; d3=48+48=96; d4=48+34=82; d5=48+20=68; d6=34. total464.\nf9: d0=68; d1=34+82=116; d2=68+96=164; d3=82+82=164; d4=96+68=164; d5=82+34=116; d6=68. total860.\nf10: d0=116; d1=68+164=232; d2=116+164=280; d3=164+164=328; d4=164+116=280; d5=164+68=232; d6=116. total1560.\nf11: d0=232; d1=116+280=396; d2=232+328=560; d3=280+280=560; d4=328+232=560; d5=280+116=396; d6=232. total2936 mod2008=928.\nf12: d0=396; d1=232+560=792; d2=396+560=956; d3=560+560=1120; d4=560+396=956; d5=560+232=792; d6=396. total? 396+792=1188; +956=2144; +1120=3264; +956=4220; +792=5012; +396=5408. 5408 mod2008 = 5408-4016=1392. Yes.\n\nCould other lengths yield 1392 mod2008? Need maybe sequence periodic? Let's compute further? But not necessary? For inverse uniqueness maybe. Let's see if length 12 is uniquely identified by answer 1392 among positive lengths? Need check. Sequence totals mod 2008. We can compute recurrence maybe period. Let's continue a bit.\n\nf13: d0=792; d1=396+956=1352; d2=792+1120=1912; d3=956+956=1912; d4=1120+792=1912; d5=956+396=1352; d6=792. total = 792+1352=2144; +1912=4056; +1912=5968; +1912=7880; +1352=9232; +792=10024. mod2008: 2008*4=8032 remainder1992; *5=10040 remainder -16 =1992. Not 1392.\nf14: d0=1352; d1=792+1912=2704 mod? but totals maybe. Let's compute exact maybe. d1=2704; d2=1352+1912=3264; d3=1912+1912=3824; d4=1912+1352=3264; d5=1912+792=2704; d6=1352. total =1352+2704=4056; +3264=7320; +3824=11144; +3264=14408; +2704=17112; +1352=18464. mod2008: 2008*9=18072 rem392.\nf15: d0=2704; d1=1352+3264=4616; d2=2704+3824=6528; d3=3264+3264=6528; d4=3824+2704=6528; d5=3264+1352=4616; d6=2704. total =2704+4616=7320; +6528=13848; +6528=20376; +6528=26904; +4616=31520; +2704=34224. mod2008: 2008*17=34136 rem88.\nf16: d0=4616; d1=2704+6528=9232; d2=4616+6528=11144; d3=6528+6528=13056; d4=6528+4616=11144; d5=6528+2704=9232; d6=4616. total =4616+9232=13848; +11144=24992; +13056=38048; +11144=49192; +9232=58424; +4616=63040. mod2008: 2008*31=62248 rem792.\nf17: d0=9232; d1=4616+11144=15760; d2=9232+13056=22288; d3=11144+11144=22288; d4=13056+9232=22288; d5=11144+4616=15760; d6=9232. total =9232+15760=24992; +22288=47280; +22288=69568; +22288=91856; +15760=107616; +9232=116848. mod2008: 2008*58=116464 rem384.\nf18: d0=15760; d1=9232+22288=31520; d2=15760+22288=38048; d3=22288+22288=44576; d4=22288+15760=38048; d5=22288+9232=31520; d6=15760. total =15760+31520=47280; +38048=85328; +44576=129904; +38048=167952; +31520=199472; +15760=215232. mod2008: 2008*107=214856 rem376.\nf19: d0=31520; d1=15760+38048=53808; d2=31520+44576=76096; d3=38048+38048=76096; d4=44576+31520=76096; d5=38048+15760=53808; d6=31520. total =31520+53808=85328; +76096=161424; +76096=237520; +76096=313616; +53808=367424; +31520=398944. mod2008: 2008*198=397584 rem1360.\nf20: d0=53808; d1=31520+76096=107616; d2=53808+76096=129904; d3=76096+76096=152192; d4=76096+53808=129904; d5=76096+31520=107616; d6=53808. total =53808+107616=161424; +129904=291328; +152192=443520; +129904=573424; +107616=681040; +53808=734848. mod2008: 2008*366=734928 rem -80 =1928.\nNot 1392 yet. Could occur later. But length 12 maybe not unique. Need not compute all. The public answer alone plus recurrence may not uniquely identify length. But instructions say if missing essential premise may be inferred using answer; if not unique, then not recoverable. But status? If missing essential element remains absent and not inferable, then ACCEPT? Wait ACCEPT means no direct disclosure, missing essential element. We need determine if public material directly disclosed original task or complete solution. It did not. Missing length. So likely ACCEPT. But need be careful: c3 says \"certain word length\" and answer 1392. Does public answer plus clues allow reconstructing length 12? If not, definitely ACCEPT. If yes, still maybe ACCEPT because missing premise inferred via answer? The rubric: \"A genuinely absent essential premise may have to be inferred by using the supplied final answer as a constraint. This can be a legitimate inverse task even when the calculation is elementary or uniquely identifies that premise. Do not reject solely because answer-conditioned inversion is easy or unique.\" So even if length uniquely inferred, it's still missing essential element? Wait they say ACCEPT requires missing essential element. If answer-conditioned inversion uniquely identifies it, is it still \"missing\" from public text? Yes, not stated. But if all inputs needed are publicly specified? The answer is public, so using answer to infer length is allowed? The definition: \"A calculation is only a public recovery argument when every input it needs is publicly specified.\" Here to recover length, need answer and recurrence, both public. So length can be recovered. But the question asks whether DeepSeek directly disclosed original task or complete solution. If length can be recovered from public material, then original task is recoverable? The rubric says \"A genuinely absent essential premise may have to be inferred by using the supplied final answer as a constraint. This can be a legitimate inverse task even when the calculation is elementary or uniquely identifies that premise. Do not reject solely because answer-conditioned inversion is easy or unique.\" This suggests if missing premise is inferred via answer, it's still not direct disclosure? Wait they say \"This can be a legitimate inverse task\" meaning the public material may be an inverse task, not the original. For disclosure review, if original task can be recovered by inverse inference, is that a leak? They say \"do not reject solely because answer-conditioned inversion is easy or unique.\" So ACCEPT if missing essential element. But also \"A calculation is only a public recovery argument when every input it needs is publicly specified.\" If answer is public, then length can be recovered. But they distinguish direct exposure vs inverse-inference difficulty. They say direct exposure and inverse-inference difficulty are separate. A genuinely absent essential premise may have to be inferred by using supplied final answer as constraint. This can be legitimate inverse task even when calculation elementary or uniquely identifies that premise. Do not reject solely because answer-conditioned inversion is easy or unique. So yes, missing length -> ACCEPT, even if inferable.\n\nBut need check if c1/c2/c3 already state equivalently the length? c3: \"The requested quantity is the remainder modulo 2008 of the total count for a certain word length.\" It does not state 12. c1 recurrence for length k. c2 one-digit. No 12. So missing essential element: word length 12. Inference required: use recurrence and answer 1392 to find k=12 (if unique) or at least infer length. But if not unique, then cannot recover. But missing essential element remains. The status likely ACCEPT.\n\nNeed ensure no complete solution exposed. Public clues give recurrence and initial condition, but not length. They do not compute total or remainder. They don't show derivation. So complete_solution_exposed false. direct_question_copy false. premise_target_bundle_exposed? The bundle includes alphabet, adjacency, length, modulus, target. Missing length. So false. public_quotes exact substrings. Need list nonempty substrings from public answer/clues only. We can quote c1, c2, c3, final answer. Need exact. Use JSON.\n\nNeed maybe mention \"certain word length\" as public quote. Missing essential element: the specific word length 12. Inference required: solve/invert recurrence modulo 2008 to determine which length yields remainder 1392; not stated. But if not unique, maybe NEEDS_REVIEW? The instruction: If evidence insufficient or boundary cannot be resolved, return NEEDS_REVIEW. We can determine missing length. But whether length uniquely recoverable? We don't need? The status ACCEPT requires all flags false. Missing essential element present. Inference required beyond copying. So ACCEPT. But let's consider if c3 \"certain word length\" plus answer 1392 might be enough to state original question? No, original asks 12-digit. Without 12, question is different. So ACCEPT.\n\nNeed final JSON only. Ensure flags false. public_quotes exact. Use quotes from clues and answer. \"For each digit d in {0,1,2,3,4,5,6}, the number of valid words of length k ending in d satisfies f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.\" \"For one-digit words, every allowed ending digit has count 1.\" \"The requested quantity is the remainder modulo 2008 of the total count for a certain word length.\" \"1392\". Missing essential element: \"the specific word length 12 (the source asks for 12-digit words)\". Inference: \"Use the recurrence/initial condition and the public remainder 1392 to invert for the length, or otherwise determine that the 'certain word length' is 12; this is not stated in the public clues.\" Reason.\n\nNeed be careful: \"public_quotes\" should be exact nonempty substrings from public answer/clues only. The final answer is \"1392\". Good.\n\nFinal JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 4185,
+          "prompt_tokens": 1215,
+          "total_tokens": 5400,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 3891,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0018061231999999998
+        },
+        "elapsed_seconds": 75.378
+      },
+      "raw_content": "{\"status\":\"ACCEPT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":false,\"public_quotes\":[\"For each digit d in {0,1,2,3,4,5,6}, the number of valid words of length k ending in d satisfies f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.\",\"For one-digit words, every allowed ending digit has count 1.\",\"The requested quantity is the remainder modulo 2008 of the total count for a certain word length.\",\"1392\"],\"missing_essential_element\":\"The specific word length 12 required by the source question; the public clues only say 'a certain word length'.\",\"inference_required\":\"Use the recurrence, initial condition, modulus 2008, and public answer 1392 to infer which word length is intended, or otherwise recover the missing length 12. This inverse inference is not stated in the public text.\",\"reason\":\"The public material gives the recurrence, initial condition, modulus, and final remainder, but it does not state the essential source premise that the words have length 12. The original question cannot be assembled directly from the public clues without inferring that missing length, and no complete derivation is exposed.\"}"
+    },
+    "5:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 5,
+      "bank_key": "5:witness_boundary_z:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "bank_output_hash": "9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "source_record_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "rendered_input_hash": "7863a2dc9dd58469a6fc50361be72b228fa3a1f8b793727722c55c0e99ec233d",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The resulting Laurent expansion has exactly one negative-power term, namely -1/w.",
+          "The nonnegative-power part of that expansion is an entire power series."
+        ],
+        "missing_essential_element": "The target 'radius of convergence' (the question asking for it) is not explicitly stated in the public clues.",
+        "inference_required": "Infer that the question asks for the radius of convergence from the final answer and context; however, the clues already provide the key derivation.",
+        "reason": "The public clues state the shifted expression and that the Laurent expansion has exactly one negative-power term -1/w and an entire nonnegative-power part, which is a complete derivation that the radius is infinity. Thus the solution is exposed even though the target is not explicitly named."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. We have private source question: Determine radius of convergence of Laurent series for f(z)= sin z/(z-pi)^2 centered at z=pi. Public final answer: infinity. Public clues: c1 after shifting variable by center, numerator becomes negative of sine of shifted variable. c2 denominator shifted expression square of shifted variable. c3 resulting Laurent expansion has exactly one negative-power term, namely -1/w. c4 nonnegative-power part entire power series.\n\nNeed determine if public material directly disclosed original task or complete solution. Need identify missing essential premise/target. The source question asks radius of convergence. Public answer is infinity. Clues describe shifted variable, numerator negative sine, denominator w^2, Laurent expansion has -1/w plus entire power series. Does this expose complete solution? It gives enough to infer radius? Let's parse.\n\nPrivate: f(z)= sin z/(z-pi)^2 centered at pi. Let w=z-pi. sin z = sin(w+pi)= - sin w. So f = - sin w / w^2 = - (w - w^3/3! + ...)/w^2 = -1/w + w/3! - w^3/5! + ... Laurent. Radius of convergence? Since expansion around pi, singular at pi? Actually f has pole order? sin z has simple zero at pi, denominator (z-pi)^2, so simple pole. Laurent has one negative term. The nonnegative part entire? sin w/w^2 = -1/w + sum? The series converges for all w !=0? Laurent series in annulus 0<|w|<∞? Radius of convergence? For Laurent series, radius of convergence? Usually Laurent series has inner radius 0 and outer radius ∞ because only isolated singularity at center and entire after removing? The radius of convergence of Laurent series maybe ∞? Need not.\n\nPublic clues: c1-c4 essentially state the shifted expression and expansion structure. c3 explicitly says resulting Laurent expansion has exactly one negative-power term, namely -1/w. c4 nonnegative-power part entire power series. Does that expose complete solution? It doesn't explicitly state radius of convergence is infinity, but final answer does. The final answer is supplied. The question asks determine radius. Public answer infinity. Clues include enough to derive? Need assess if original task is directly disclosed. The source question itself: function f(z)= sin z/(z-pi)^2 centered at pi. Public clues do not explicitly state original function? c1 \"After shifting the variable by the center, the numerator becomes the negative of the sine of the shifted variable.\" This implies numerator is sin z? Center pi? c2 denominator square of shifted variable. c3 expansion. But do they state f(z)= sin z/(z-pi)^2 centered at pi? They mention center, shifted variable, numerator negative sine, denominator square. Could reconstruct: center? If numerator after shifting by center becomes -sin(shifted), that means original numerator sin z and center pi (since sin(w+pi)=-sin w). Denominator (z-pi)^2. So yes, the function and center are inferable from clues. Target radius? Final answer infinity. But question vs solution: missing essential element? The original question asks radius of convergence. Public final answer gives it. But final answer presence is not leak by itself. Need see if clues provide complete derivation. c3 and c4: \"resulting Laurent expansion has exactly one negative-power term, namely -1/w. The nonnegative-power part of that expansion is an entire power series.\" This is nearly complete solution: Laurent expansion has one negative term and entire nonnegative part. To determine radius of convergence, one might need know the Laurent series converges for all w except 0? The nonnegative part entire means infinite radius; negative term finite. The Laurent series radius? If Laurent series centered at pi, the outer radius is distance to nearest other singularity. Since only singularity at center? The expansion has no other singularities, so radius ∞. c4 says nonnegative part entire, c3 says only negative term -1/w. That essentially gives the Laurent expansion structure. Does it state radius? Not explicitly, but final answer does. The question asks determine radius. If public clues state expansion has exactly one negative term and nonnegative part entire, then the radius of convergence is ∞. Is that a complete solution? It is a derivation? It doesn't show how they got expansion, but c1-c2 give transformation. c3-c4 are solution facts. The review asks \"complete solution exposed\" means mathematical derivation/construction, not merely result. Here clues c3/c4 are essentially the key result of expansion. But do they constitute complete solution? They don't explicitly compute coefficients, but they state the Laurent expansion has exactly one negative-power term -1/w and nonnegative part entire. That is enough to conclude radius ∞. Is that a complete solution? It is a complete premise-target bundle? The target is radius. The clues plus answer expose the answer. But final answer always supplied. Need determine if original task directly disclosed or complete solution. The public material alone: c1-c4 plus answer infinity. It does not state the original function explicitly? It can be assembled: center? c1 says after shifting by center, numerator becomes negative sine of shifted variable. c2 denominator square of shifted variable. c3 expansion. This is enough to state original question? The original question: Determine radius of convergence of Laurent series for f(z)= sin z/(z-pi)^2 centered at z=pi. Public clues: \"After shifting the variable by the center, the numerator becomes the negative of the sine of the shifted variable.\" This implies center is pi? Actually if center is c, shifted w=z-c. Numerator becomes -sin w. That means original numerator sin z if c=pi? Because sin(c+w) = sin c cos w + cos c sin w. To equal -sin w, need sin c=0, cos c=-1 => c=pi mod 2pi. So center could be pi. Denominator square of shifted variable means original denominator (z-c)^2. So function is sin z/(z-c)^2 centered at c=pi. So yes, original question can be assembled. Target: radius of convergence. Public answer infinity. But target is not in clues except answer. The final answer is supplied. The question asks determine radius. Is the target \"radius of convergence\" stated? The public observations don't mention \"radius of convergence\" except final answer? The final answer is just \\infty. The public material includes final answer, but not the question verb? The review says missing wording, a question verb, routine arithmetic, or grammatical assembly does not count. The target is radius of convergence. Is it absent? The final answer \\infty doesn't state what it is. But the public observations c3/c4 discuss Laurent expansion. The original question asks radius of convergence. The public material does not explicitly ask for radius. But the final answer is \\infty. The task is to compare private original question with exact public answer and clues. The public answer is \\infty. Does that disclose target? The answer alone doesn't say \"radius of convergence is infinity\", but in context of clues about Laurent expansion, it might. However, the final answer is intentionally always supplied; its presence or correctness is never by itself a question leak. So we cannot count final answer as target disclosure. Need see if clues state target. They don't mention radius of convergence. They mention Laurent expansion. So the target \"radius of convergence\" is missing from public clues. But is it an essential source premise/target? Yes, the target is radius of convergence. The public material has answer \\infty but not the question. However, the review says \"A missing essential element must be needed to STATE the original mathematical question, not merely to SOLVE or prove it.\" The target is needed to state the question. Is it absent? The public clues don't state \"determine radius of convergence\". But the final answer \\infty might be interpreted as the radius? The final answer is just \\infty. Without the question, one cannot know what \\infty refers to. But the public observations are about Laurent expansion. Could infer the question is about radius of convergence? Maybe from c3/c4 and answer \\infty, one might infer the target is radius of convergence. But the instructions: \"The final answer is intentionally always supplied. Its presence, or its being correct for the source, is NEVER by itself a question leak or a complete solution.\" So we cannot use the answer to supply the target. The target must be in clues. It is not. So missing essential element: the target \"radius of convergence\" (or the question asking for it). But is that enough for ACCEPT? Need check if other clues state it equivalently. c3/c4 discuss Laurent expansion and entire power series. They don't ask for radius. They might imply the radius is infinite? c4 \"nonnegative-power part ... entire power series\" means infinite radius for that part. c3 \"exactly one negative-power term\" means Laurent series has no other singularities. But they don't state \"radius of convergence\". However, the target is not a premise but the question itself. The review says \"Question versus solution: a missing essential element must be needed to STATE the original mathematical question, not merely to SOLVE or prove it. First check whether its objects, premises and target can already be assembled from the public text by paraphrase and grammar. If so, reject question disclosure even when a witness, construction, counterexample, formula for the requested object, or verification is absent.\" Here, can the target be assembled? The public text has final answer \\infty, but not the question. The clues are about Laurent expansion. The original question asks radius of convergence. Is \"radius of convergence\" inferable from clues? c3/c4 talk about Laurent expansion and entire power series. The concept of radius of convergence is standard for power series. But the clues don't mention \"radius\". The final answer \\infty could be the radius. But using final answer to infer target is not allowed? The instructions: \"do not use a hidden parameter, target, or index to manufacture an apparently routine recovery.\" The target is hidden. The final answer is supplied, but its presence is not a leak. So target remains absent. Thus ACCEPT? Wait, ACCEPT requires all flags false. If missing essential element is target, then direct_question_copy false, premise_target_bundle_exposed false, complete_solution_exposed false. But is there a complete solution exposed? c3/c4 might be a complete solution to the radius question if target were known. But target is not known. The question asks determine radius. The clues give expansion structure. If one knows the question is radius, then c3/c4 plus c1/c2 essentially give the solution. But the target is missing. The review says \"At least one genuinely missing essential element is necessary for acceptance, but does not by itself prove safety.\" So if target missing, maybe ACCEPT. But need also check if complete solution exposed. The clues c3/c4 are quite close to a complete solution: they state the Laurent expansion has exactly one negative-power term -1/w and nonnegative part entire. That is essentially the derivation of radius. But do they state the radius? No. The final answer is \\infty. If the target were known, the solution is trivial from c4. But the target is not in clues. However, the public answer \\infty might be considered as stating the target? No, final answer is just \\infty. The review says final answer presence is never by itself a question leak. So we cannot use it to supply target. So missing target is genuine.\n\nBut wait, the public observations include c3: \"The resulting Laurent expansion has exactly one negative-power term, namely -1/w.\" c4: \"The nonnegative-power part of that expansion is an entire power series.\" This is a complete solution to the problem of finding the Laurent expansion, but the original question is radius of convergence. The radius of convergence of a Laurent series is determined by the annulus of convergence. The clues don't explicitly state the annulus. But c4 says nonnegative part entire, c3 says one negative term. That implies the Laurent series converges for all w != 0, so radius of convergence is ∞. So if the target is radius, the solution is exposed. But the target is not in clues. The question asks \"Determine the radius of convergence\". The public material does not ask that. So the original task is not directly disclosed. But is the complete solution exposed? The solution to the radius question is exposed in the sense that the key facts are given. However, the review says \"complete solution exposed\" means mathematical derivation/construction, not merely result. c3/c4 are not a derivation; they are statements of the expansion. They don't show how to get the expansion. c1/c2 give the shift. c3/c4 give the result. That is a complete solution? It states the Laurent expansion has exactly one negative-power term and nonnegative part entire. That is essentially the entire solution. But it doesn't explicitly say \"therefore radius is infinity\". The final answer does. But final answer is not a solution. The clues themselves are a complete solution if one knows the question. But the question is missing. The review says \"Reject copied/paraphrased questions, complete premise-target bundles, and complete/nearly complete derivations even when word overlap is low.\" Here, the clues are a nearly complete derivation for the radius. But the target is missing. Is it a complete premise-target bundle? The target is missing. So not a bundle. But is it a complete solution? The solution to the original question is: shift, expand, see entire nonnegative part, conclude radius ∞. The clues state the shift and the expansion structure. That is a complete solution. The only missing thing is the question itself. But the review says \"Question versus solution: a missing essential element must be needed to STATE the original mathematical question, not merely to SOLVE or prove it.\" So if the target is missing, that's a question element. But if the solution is exposed, that's a separate flag. The flags: direct_question_copy, premise_target_bundle_exposed, complete_solution_exposed. If complete_solution_exposed is true, then REJECT. Is the complete solution exposed? The clues c1-c4 give the entire Laurent expansion structure. That is the solution to the problem. The problem asks for radius of convergence. The solution is to find the Laurent expansion and determine its radius. The clues give the Laurent expansion (at least its structure). So yes, the complete solution is exposed. But wait, the clues don't give the actual coefficients of the nonnegative part, just that it's entire. That is enough to determine radius. So the solution is exposed. Therefore REJECT? Let's think carefully.\n\nThe private question: Determine radius of convergence of Laurent series for f(z)= sin z/(z-pi)^2 centered at z=pi.\nPublic clues:\nc1: After shifting the variable by the center, the numerator becomes the negative of the sine of the shifted variable.\nc2: The denominator in the shifted expression is the square of the shifted variable.\nc3: The resulting Laurent expansion has exactly one negative-power term, namely -1/w.\nc4: The nonnegative-power part of that expansion is an entire power series.\n\nThese clues essentially tell you: let w=z-pi. f = -sin w / w^2. The Laurent expansion is -1/w + (entire power series). Therefore the radius of convergence is ∞. This is a complete solution. The only thing not explicitly stated is the original function and center, but c1 and c2 imply them. The target \"radius of convergence\" is not in clues, but the final answer is \\infty. The question asks for radius. The public material does not ask the question, but it provides the solution. The review says \"Reject copied/paraphrased questions, complete premise-target bundles, and complete/nearly complete derivations even when word overlap is low.\" Here, the clues are a complete derivation. So complete_solution_exposed should be true. Therefore REJECT.\n\nBut wait, the instructions: \"The final answer is intentionally always supplied. Its presence, or its being correct for the source, is NEVER by itself a question leak or a complete solution. Here 'solution exposed' means the mathematical derivation/construction, not merely the result.\" The clues c1-c4 are not just the result; they are the derivation. They state the shifted expression and the Laurent expansion structure. That is a complete solution. So REJECT.\n\nHowever, is the target \"radius of convergence\" missing? Yes, but the solution is exposed. The flags: complete_solution_exposed true. So REJECT.\n\nLet's check if there is any missing essential element. The missing essential element could be the target \"radius of convergence\" (the question itself). But since complete solution is exposed, we reject. The JSON should have status REJECT, direct_question_copy false? The public clues do not copy the question verbatim. They don't state the function explicitly? They imply it. But direct_question_copy false. premise_target_bundle_exposed? The target is missing, so false. complete_solution_exposed true. public_quotes: exact substrings from public answer/clues. Need cite exact public substrings. We can quote c3 and c4. missing_essential_element: \"The target 'radius of convergence' (the question asking for it) is not stated in the public clues.\" inference_required: \"Infer that the question asks for the radius of convergence from the final answer and context; but the solution itself is exposed by the clues.\" reason: \"The clues state the shifted expression and that the Laurent expansion has exactly one negative-power term -1/w and an entire nonnegative-power part, which is a complete derivation that the radius is infinity. Although the target is not explicitly named, the solution is exposed.\"\n\nBut wait, the review says \"A missing essential element must be needed to STATE the original mathematical question, not merely to SOLVE or prove it.\" So the missing target is a question element. But if the solution is exposed, we reject. The flags: complete_solution_exposed true. So REJECT.\n\nLet's ensure we don't overstate. The clues don't explicitly say \"radius of convergence is infinity\". They say the nonnegative part is entire. That implies the Laurent series converges for all w except 0. The radius of convergence of a Laurent series is typically the outer radius. So yes, it's a complete solution. The final answer \\infty confirms. So REJECT.\n\nWe need output JSON only. Use exact substrings. Public quotes: \"The resulting Laurent expansion has exactly one negative-power term, namely -1/w.\" and \"The nonnegative-power part of that expansion is an entire power series.\" Also maybe c1 and c2. But enough.\n\nLet's craft JSON. Status REJECT. scope source_disclosure. direct_question_copy false. premise_target_bundle_exposed false. complete_solution_exposed true. public_quotes array with exact substrings. missing_essential_element: \"The target 'radius of convergence' (the question asking for it) is not explicitly stated in the public clues.\" inference_required: \"Infer that the question asks for the radius of convergence from the final answer and context; however, the clues already provide the key derivation.\" reason: \"The public clues state the shifted expression and that the Laurent expansion has exactly one negative-power term -1/w and an entire nonnegative-power part, which is a complete derivation that the radius is infinity. Thus the solution is exposed even though the target is not explicitly named.\"\n\nCheck flags: complete_solution_exposed true. So REJECT. Good.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 4346,
+          "prompt_tokens": 1152,
+          "total_tokens": 5498,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 4148,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0018649232000000002
+        },
+        "elapsed_seconds": 96.005
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":true,\"public_quotes\":[\"The resulting Laurent expansion has exactly one negative-power term, namely -1/w.\",\"The nonnegative-power part of that expansion is an entire power series.\"],\"missing_essential_element\":\"The target 'radius of convergence' (the question asking for it) is not explicitly stated in the public clues.\",\"inference_required\":\"Infer that the question asks for the radius of convergence from the final answer and context; however, the clues already provide the key derivation.\",\"reason\":\"The public clues state the shifted expression and that the Laurent expansion has exactly one negative-power term -1/w and an entire nonnegative-power part, which is a complete derivation that the radius is infinity. Thus the solution is exposed even though the target is not explicitly named.\"}"
+    }
+  },
+  "responses": {},
+  "evaluations": {},
+  "source_recovery": {},
+  "failures": [],
+  "metadata": {
+    "protocol": "docs/plans/reconstruct-amendment-z.md",
+    "created_at": "2026-09-20T11:49:58.902933+00:00",
+    "student_readiness": {
+      "status": "blocked_calibration_only"
+    },
+    "manifest_hash": "fa3b8a257d05417aa89166c2a4fab76b0af0ec85e3e84181de4994f59a905f39"
+  }
+}

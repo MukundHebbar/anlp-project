@@ -1,0 +1,28 @@
+{
+  "purpose": "Resolve a verifier rationale that simultaneously says the specified limit only occurs at alpha1 and denies that the specified limit implies alpha1. Frozen before this once-only call.",
+  "cases": [
+    {
+      "id": "forward_inverse",
+      "statement": "If L(alpha)=1/e, then alpha=1.",
+      "expected": true
+    },
+    {
+      "id": "false_zero_inverse",
+      "statement": "If L(alpha)=0, then alpha=1.",
+      "expected": false
+    },
+    {
+      "id": "forward_special_case",
+      "statement": "If alpha=1, then L(alpha)=1/e.",
+      "expected": true
+    },
+    {
+      "id": "false_target",
+      "statement": "If L(alpha)=1/e, then alpha=2.",
+      "expected": false
+    }
+  ],
+  "rendered_prompt": "For a fixed real alpha>0, define L(alpha)=lim as n tends to infinity of (n!)^(1/(alpha*n))/n, allowing an infinite limit. Assess each implication independently. Return JSON with checks, each containing id, valid (Boolean), and a mathematical proof or counterexample. Derive the limiting behavior from logarithms or Stirling. Do not confuse determining alpha from a specified limit with a forward problem where alpha is unspecified. Claims: [{\"id\": \"forward_inverse\", \"statement\": \"If L(alpha)=1/e, then alpha=1.\"}, {\"id\": \"false_zero_inverse\", \"statement\": \"If L(alpha)=0, then alpha=1.\"}, {\"id\": \"forward_special_case\", \"statement\": \"If alpha=1, then L(alpha)=1/e.\"}, {\"id\": \"false_target\", \"statement\": \"If L(alpha)=1/e, then alpha=2.\"}]",
+  "analytic_reference": "log ratio=(1/alpha-1)log n-1/alpha+o(1). For alpha<1 ratio diverges; alpha1 gives1/e; alpha>1 ratio tends0. Thus the first and third implications are true; alpha2 andalpha1 give counterexamples for second/fourth.",
+  "budget_usd": 0.01
+}

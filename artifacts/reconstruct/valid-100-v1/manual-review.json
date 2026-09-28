@@ -1,0 +1,37 @@
+{
+  "status": "ongoing targeted assistant review; automatic records unchanged",
+  "reviews": [
+    {
+      "source_index": 1031131,
+      "verdict": "rejection_supported",
+      "review": "The stated real system does not determine the sum. The assignments below satisfy every equation and yield different sums; the source-aware audit correctly rejected the dataset answer4.",
+      "exact_counterexamples": [
+        {
+          "assignment": [
+            "1",
+            "-2",
+            "1",
+            "1",
+            "3"
+          ],
+          "sum": "4"
+        },
+        {
+          "assignment": [
+            "2",
+            "-4",
+            "1/2",
+            "1/2",
+            "3/2"
+          ],
+          "sum": "1/2"
+        }
+      ]
+    },
+    {
+      "source_index": 1093985,
+      "verdict": "source_supported_student_underspecified",
+      "review": "For the stated ellipse, max|xy|=5*4/2=10. The chord of contact to the radius3 circle is x_P*x+y_P*y=9, so the intercept triangle area is81/(2|x_P*y_P|), minimized at81/20. Qwen omits both the ellipse equation and circle radius, so its reconstructed question does not determine that numerical answer. The source is mathematically supported while the response remains incomplete."
+    }
+  ]
+}

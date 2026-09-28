@@ -1,0 +1,32 @@
+{
+  "reviewer": "Assistant analytic review; not human gold",
+  "rows": [
+    {
+      "response_key": "0:onegap:0",
+      "response_output_hash": "31df049d6c0b793d1196e931912d3ebac0ba8a5ca2019254e5d897dee545a469",
+      "evidence_hash": "5272b3a5a49e3c6af0a3809e2aaefbf080a53b9a048fdaf7158a2c24755a0be6",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Question leaves target coefficient k unspecified. The verified moments give (alpha-beta)^2=4/3, so the answer4 requires k3, not its unjustified k1. It does not recover the original coefficient in the question."
+    },
+    {
+      "response_key": "46:onegap:0",
+      "response_output_hash": "bc545dc5af8f98a9a836705c6a287936d48d2ff5867df5bd74c0c7b152b84bdc",
+      "evidence_hash": "53ee2a4ab90e00e911f6ff8cd54e90161e3770298a0f89414028421cd3f19fe5",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Question leaves common column height h and the number of those columns unspecified. Total8 and one height2 column permit several arrangements and different counts. Claiming some configuration gives560 does not infer and state the original two height3 columns."
+    },
+    {
+      "response_key": "96:onegap:0",
+      "response_output_hash": "1a9b0411ac676876fe04cb383b46f90075cb46d177ce1093707c2437d1be9ad1",
+      "evidence_hash": "8e5917d116e2fa2df08b5efea3b54cb8621ce401f4b90f699eaa48b230a1a3d9",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Question leaves derivative a unspecified; correct outer integral leading term is a*x^8/12, giving limit a/12 and requiring a1. The claimed x^4/4-x^5/5 terms and a1/3 are wrong; no correct recovered derivative premise appears in the question."
+    }
+  ]
+}

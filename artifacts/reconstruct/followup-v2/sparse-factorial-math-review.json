@@ -1,0 +1,27 @@
+{
+  "source_index": 22,
+  "reviewer": "assistant plus exact arithmetic; not independent human",
+  "family": "factorial prime-base trailing zeros",
+  "exact_valuations": {
+    "2": 97,
+    "3": 48,
+    "5": 24,
+    "7": 16,
+    "11": 9
+  },
+  "proof": "For prime p, trailing zero count in base p is v_p(100!)=sum_j floor(100/p^j). All primes below11 are2,3,5,7 and their valuations are at leastp. At11 the valuation9 is less than11. Thus the least qualifying prime is11.",
+  "public_missing_structure": "The relation defining a qualifying prime and the minimality target are not supplied in the two non-role clues.",
+  "responses": [
+    {
+      "response_key": "22:65d2f6b70bb806d2597a6e963d9176be3b08e51cff6e2ad482ea4351a03fa22e:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "seed": 0,
+      "review": "Wrong direction: question asks for at leastp, whose least prime is2. Justification also falsely calls11 nonprime. Preserve this failure alongside the success."
+    },
+    {
+      "response_key": "22:65d2f6b70bb806d2597a6e963d9176be3b08e51cff6e2ad482ea4351a03fa22e:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "seed": 1,
+      "review": "Valid inverse construction with a complete check of all smaller primes."
+    }
+  ],
+  "claim_scope": "Existence of a substantive sparse reconstruction; one success at one of two seeds on one development source is not a robust aggregate gain."
+}

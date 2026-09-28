@@ -1,0 +1,447 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-u.md",
+  "fixtures": [
+    {
+      "id": "linear-copy",
+      "family": "linear",
+      "category": "authored_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "Every real equation ax+b=0 with a nonzero has exactly one real solution."
+      ],
+      "student_response": {
+        "question": "Does every real equation ax+b=0 with a nonzero have exactly one real solution?",
+        "justification": "Subtract b and divide by nonzero a: the unique solution is -b/a."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The complete proposition is supplied; changing it into a yes/no question adds no essential content.",
+      "reference_derivation": "Subtract b and divide by nonzero a: the unique solution is -b/a.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "linear-decorated_copy",
+      "family": "linear",
+      "category": "authored_decorated_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "Every real equation ax+b=0 with a nonzero has exactly one real solution."
+      ],
+      "student_response": {
+        "question": "A student named Mira asks on Tuesday: Does every real equation ax+b=0 with a nonzero have exactly one real solution?",
+        "justification": "Subtract b and divide by nonzero a: the unique solution is -b/a."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The name and day have no mathematical role; the proposition is still entirely supplied.",
+      "reference_derivation": "Subtract b and divide by nonzero a: the unique solution is -b/a.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "linear-substantive",
+      "family": "linear",
+      "category": "authored_substantive",
+      "final_answer": "3",
+      "clues": [
+        "Subtract the constant term before dividing by the coefficient."
+      ],
+      "student_response": {
+        "question": "Solve 2x+5=11 over the reals.",
+        "justification": "Subtract 5 to get 2x=6, then divide by 2 to get x=3."
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The candidate supplies missing numerical premises/objects/target; its displayed calculation verifies the answer and uses the clue.",
+      "reference_derivation": "Subtract 5 to get 2x=6, then divide by 2 to get x=3.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "linear-wrong",
+      "family": "linear",
+      "category": "authored_wrong",
+      "final_answer": "3",
+      "clues": [
+        "Subtract the constant term before dividing by the coefficient."
+      ],
+      "student_response": {
+        "question": "Solve 2x+5=13 over the reals.",
+        "justification": "Subtract 5 and divide by 2: x=4, which I claim matches 3."
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The explicit calculation in the response contradicts the supplied final answer.",
+      "reference_derivation": "Subtract 5 and divide by 2: x=4, which I claim matches 3.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "probability-copy",
+      "family": "probability",
+      "category": "authored_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "For disjoint events E and F, P(E union F)=P(E)+P(F)."
+      ],
+      "student_response": {
+        "question": "For disjoint events E and F, is P(E union F)=P(E)+P(F)?",
+        "justification": "The probability additivity axiom gives the displayed equality for disjoint events."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The complete proposition is supplied; changing it into a yes/no question adds no essential content.",
+      "reference_derivation": "The probability additivity axiom gives the displayed equality for disjoint events.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "probability-decorated_copy",
+      "family": "probability",
+      "category": "authored_decorated_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "For disjoint events E and F, P(E union F)=P(E)+P(F)."
+      ],
+      "student_response": {
+        "question": "A student named Mira asks on Tuesday: For disjoint events E and F, is P(E union F)=P(E)+P(F)?",
+        "justification": "The probability additivity axiom gives the displayed equality for disjoint events."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The name and day have no mathematical role; the proposition is still entirely supplied.",
+      "reference_derivation": "The probability additivity axiom gives the displayed equality for disjoint events.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "probability-substantive",
+      "family": "probability",
+      "category": "authored_substantive",
+      "final_answer": "1/2",
+      "clues": [
+        "The event is partitioned into two disjoint pieces and their probabilities are added."
+      ],
+      "student_response": {
+        "question": "Roll a fair six-sided die. What is the probability of rolling 1, 2 or 3?",
+        "justification": "The disjoint pieces {1} and {2,3} have probabilities 1/6 and 2/6; their sum is 1/2."
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The candidate supplies missing numerical premises/objects/target; its displayed calculation verifies the answer and uses the clue.",
+      "reference_derivation": "The disjoint pieces {1} and {2,3} have probabilities 1/6 and 2/6; their sum is 1/2.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "probability-wrong",
+      "family": "probability",
+      "category": "authored_wrong",
+      "final_answer": "1/2",
+      "clues": [
+        "The event is partitioned into two disjoint pieces and their probabilities are added."
+      ],
+      "student_response": {
+        "question": "Roll a fair six-sided die. What is the probability of rolling 1 or 2?",
+        "justification": "The disjoint singleton pieces have probabilities 1/6 each, totaling 1/3, which I claim matches 1/2."
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The explicit calculation in the response contradicts the supplied final answer.",
+      "reference_derivation": "The disjoint singleton pieces have probabilities 1/6 each, totaling 1/3, which I claim matches 1/2.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "graph-copy",
+      "family": "graph",
+      "category": "authored_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "In a finite simple undirected graph, the sum of vertex degrees is twice the number of edges."
+      ],
+      "student_response": {
+        "question": "In every finite simple undirected graph, is the sum of vertex degrees twice the number of edges?",
+        "justification": "Each edge has two endpoints and contributes one to each endpoint degree, hence two to the total."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The complete proposition is supplied; changing it into a yes/no question adds no essential content.",
+      "reference_derivation": "Each edge has two endpoints and contributes one to each endpoint degree, hence two to the total.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "graph-decorated_copy",
+      "family": "graph",
+      "category": "authored_decorated_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "In a finite simple undirected graph, the sum of vertex degrees is twice the number of edges."
+      ],
+      "student_response": {
+        "question": "A student named Mira asks on Tuesday: In every finite simple undirected graph, is the sum of vertex degrees twice the number of edges?",
+        "justification": "Each edge has two endpoints and contributes one to each endpoint degree, hence two to the total."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The name and day have no mathematical role; the proposition is still entirely supplied.",
+      "reference_derivation": "Each edge has two endpoints and contributes one to each endpoint degree, hence two to the total.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "graph-substantive",
+      "family": "graph",
+      "category": "authored_substantive",
+      "final_answer": "6",
+      "clues": [
+        "Each edge contributes two to the total of the vertex degrees."
+      ],
+      "student_response": {
+        "question": "A finite simple undirected graph has degree sum 12. How many edges does it have?",
+        "justification": "Each edge contributes two to the degree sum, so the number of edges is 12/2=6."
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The candidate supplies missing numerical premises/objects/target; its displayed calculation verifies the answer and uses the clue.",
+      "reference_derivation": "Each edge contributes two to the degree sum, so the number of edges is 12/2=6.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "graph-wrong",
+      "family": "graph",
+      "category": "authored_wrong",
+      "final_answer": "6",
+      "clues": [
+        "Each edge contributes two to the total of the vertex degrees."
+      ],
+      "student_response": {
+        "question": "A finite simple undirected graph has degree sum 14. How many edges does it have?",
+        "justification": "Each edge contributes two, so there are 14/2=7 edges, which I claim matches 6."
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The explicit calculation in the response contradicts the supplied final answer.",
+      "reference_derivation": "Each edge contributes two, so there are 14/2=7 edges, which I claim matches 6.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "geometric-copy",
+      "family": "geometric",
+      "category": "authored_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "For real a and r with r not equal to 1 and positive integer n, the sum a+ar+...+ar^(n-1) is a(1-r^n)/(1-r)."
+      ],
+      "student_response": {
+        "question": "For real a and r with r not equal to 1 and positive integer n, is a+ar+...+ar^(n-1)=a(1-r^n)/(1-r)?",
+        "justification": "Set S to the sum. Subtract rS from S: intermediate terms cancel, giving (1-r)S=a-ar^n. Divide by 1-r."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The complete proposition is supplied; changing it into a yes/no question adds no essential content.",
+      "reference_derivation": "Set S to the sum. Subtract rS from S: intermediate terms cancel, giving (1-r)S=a-ar^n. Divide by 1-r.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "geometric-decorated_copy",
+      "family": "geometric",
+      "category": "authored_decorated_copy",
+      "final_answer": "Yes",
+      "clues": [
+        "For real a and r with r not equal to 1 and positive integer n, the sum a+ar+...+ar^(n-1) is a(1-r^n)/(1-r)."
+      ],
+      "student_response": {
+        "question": "A student named Mira asks on Tuesday: For real a and r with r not equal to 1 and positive integer n, is a+ar+...+ar^(n-1)=a(1-r^n)/(1-r)?",
+        "justification": "Set S to the sum. Subtract rS from S: intermediate terms cancel, giving (1-r)S=a-ar^n. Divide by 1-r."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "The name and day have no mathematical role; the proposition is still entirely supplied.",
+      "reference_derivation": "Set S to the sum. Subtract rS from S: intermediate terms cancel, giving (1-r)S=a-ar^n. Divide by 1-r.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "geometric-substantive",
+      "family": "geometric",
+      "category": "authored_substantive",
+      "final_answer": "31",
+      "clues": [
+        "Multiplying the finite sum by its common ratio and subtracting cancels the intermediate terms."
+      ],
+      "student_response": {
+        "question": "Find the sum 1+2+4+8+16.",
+        "justification": "Let S be the sum. Then 2S-S=32-1, so S=31; intermediate terms cancel."
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The candidate supplies missing numerical premises/objects/target; its displayed calculation verifies the answer and uses the clue.",
+      "reference_derivation": "Let S be the sum. Then 2S-S=32-1, so S=31; intermediate terms cancel.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "geometric-wrong",
+      "family": "geometric",
+      "category": "authored_wrong",
+      "final_answer": "31",
+      "clues": [
+        "Multiplying the finite sum by its common ratio and subtracting cancels the intermediate terms."
+      ],
+      "student_response": {
+        "question": "Find the sum 1+2+4+8.",
+        "justification": "With S the sum, 2S-S=16-1=15, which I claim matches 31."
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "expected_shortcut": false,
+      "reference_reason": "The explicit calculation in the response contradicts the supplied final answer.",
+      "reference_derivation": "With S the sum, 2S-S=16-1=15, which I claim matches 31.",
+      "reference_provenance": "assistant-authored, analytically checked; not human gold"
+    },
+    {
+      "id": "qwen-33-copy",
+      "family": "production-33",
+      "category": "production_diagnostic",
+      "final_answer": "Yes",
+      "clues": [
+        "For continuous f and g on [0,1], the difference h=f-g is continuous on [0,1].",
+        "If one of the two functions is strictly larger than the other at every point of [0,1], then its maximum is strictly larger than the other's maximum."
+      ],
+      "student_response": {
+        "question": "If f and g are continuous functions on [0,1], and f(x) > g(x) for all x in [0,1], then is it true that the maximum of f is strictly greater than the maximum of g?",
+        "justification": "Let h(x) = f(x) - g(x). Since f and g are continuous on [0,1], h is continuous on [0,1]. Given that f(x) > g(x) for all x in [0,1], it follows that h(x) > 0 for all x in [0,1]. By the Extreme Value Theorem, h attains its maximum on [0,1]. Since h(x) > 0 everywhere, the maximum of h is positive. Therefore, the maximum of f is strictly greater than the maximum of g.",
+        "assumptions": [
+          "The functions f and g are continuous on [0,1].",
+          "The inequality f(x) > g(x) holds for all x in [0,1]."
+        ]
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "provenance": {
+        "artifact": "artifacts/reconstruct/d3-v2/repaired-student.json",
+        "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+        "response_hash": "d37803eaed166282b3db86d567d80f92d40acc02f3784b236fd5146ed4b97e3b"
+      },
+      "reference_reason": "Restates the supplied dominance theorem.",
+      "reference_provenance": "assistant review of saved production response"
+    },
+    {
+      "id": "stronger-33-copy",
+      "family": "production-33",
+      "category": "production_diagnostic",
+      "final_answer": "Yes",
+      "clues": [
+        "For continuous f and g on [0,1], the difference h=f-g is continuous on [0,1].",
+        "If one of the two functions is strictly larger than the other at every point of [0,1], then its maximum is strictly larger than the other's maximum."
+      ],
+      "student_response": {
+        "question": "Let f and g be continuous real-valued functions on [0,1]. If f(x) > g(x) for every x in [0,1], must the maximum value of f on [0,1] be strictly greater than the maximum value of g on [0,1]?",
+        "justification": "Since f and g are continuous on the compact interval [0,1], both attain maxima. The difference h=f-g is continuous on [0,1]. Because h(x)>0 for every x, h attains a positive minimum m>0. Let x0 be a point where g attains its maximum M. Then f(x0)=g(x0)+h(x0) ≥ M+m > M, so max f ≥ f(x0)>M=max g. Thus the answer is Yes.",
+        "assumptions": [
+          "The functions are real-valued and continuous on the closed bounded interval [0,1].",
+          "The inequality f(x)>g(x) is assumed to hold strictly for every x in [0,1].",
+          "The question asks about ordinary maxima on [0,1], which exist by compactness."
+        ]
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "provenance": {
+        "artifact": "artifacts/reconstruct/d3-v2/stronger-feasibility.json",
+        "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+        "response_hash": "232d073c5f96c8c77e14b6fa7901c6b9e8709586acac96b00eed275dc648a411"
+      },
+      "reference_reason": "Restates the supplied dominance theorem.",
+      "reference_provenance": "assistant review of saved production response"
+    },
+    {
+      "id": "stronger-112-target",
+      "family": "production-112",
+      "category": "production_diagnostic",
+      "final_answer": "-1011",
+      "clues": [
+        "The integer n under consideration lies between -9999 and -1000 inclusive.",
+        "The congruence condition on n is equivalent to writing n as 23k + 1 for some integer k."
+      ],
+      "student_response": {
+        "question": "Find the greatest integer n such that -9999 ≤ n ≤ -1000 and n ≡ 1 (mod 23).",
+        "justification": "The congruence condition means n = 23k + 1 for some integer k. Substituting into the interval gives -9999 ≤ 23k + 1 ≤ -1000, so -10000 ≤ 23k ≤ -1001. Thus k must satisfy -10000/23 ≤ k ≤ -1001/23, i.e. approximately -434.78 ≤ k ≤ -43.52. The greatest integer k in this range is -44, giving n = 23(-44) + 1 = -1011. This n lies in the required interval and satisfies the congruence.",
+        "assumptions": [
+          "I chose the interval -9999 to -1000 inclusive.",
+          "I chose the congruence n ≡ 1 (mod 23).",
+          "I interpreted the task as asking for the greatest such integer."
+        ]
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "expected_shortcut": false,
+      "provenance": {
+        "artifact": "artifacts/reconstruct/d3-v2/stronger-feasibility.json",
+        "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+        "response_hash": "1f560dd1cbd713bd6cc21935f1633e2a8ad8d26ee44b4c5a29f00488c021c975"
+      },
+      "reference_reason": "Infers the missing greatest-integer target. Largest k with 23k+1 <= -1000 is -44, giving -1011.",
+      "reference_provenance": "assistant review of saved production response"
+    },
+    {
+      "id": "scale-86-copy",
+      "family": "production-86",
+      "category": "production_diagnostic",
+      "final_answer": "a",
+      "clues": [
+        "The problem concerns a family of integrals over [0,∞) depending on a positive scale parameter a and an integer n that tends to infinity.",
+        "The integrand is bounded between 0 and 1 for all x≥0 and n>0.",
+        "The exponent n makes the scale point x=a a natural threshold for the integrand's behavior."
+      ],
+      "student_response": {
+        "question": "For a family of integrals over [0,∞) depending on a positive scale parameter and an integer n, where the exponent n makes a scale point a natural threshold for the integrand's behavior, what is that scale point?",
+        "justification": "The public clues directly state that the family depends on a positive scale parameter a and that the exponent n makes the scale point x=a a natural threshold. Asking for that scale point yields the answer a without adding new mathematical constraints."
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "expected_shortcut": true,
+      "reference_reason": "Requests the scale point x=a explicitly named in the supplied clue.",
+      "provenance": {
+        "artifact": "artifacts/reconstruct/d3-v2/repair-study.json",
+        "attack_hash": "0ba0b414ba65bff8e1cb5f2df44225e4efd29b6250f73c9a44dd3c995f725dc5"
+      },
+      "reference_provenance": "copy challenge repackaged as response diagnostic; not a student generation"
+    }
+  ],
+  "prompt_hashes": {
+    "evaluate_p2": "6e6b39c2d1d4697fecd29b1e299b8f9847f80811b89ac360651f61e9ef9de537",
+    "evaluate_p3": "a977bac8e04d698baa78f125b65b53b668711314c5f0d75289c20dd757e6eb91"
+  },
+  "planned_calls": 40,
+  "maximum_cost_usd": 0.2,
+  "interpretation": "Expected labels operationalize the proposed U criterion; p2 differences are not automatically old-spec errors.",
+  "gate": "All 16 authored controls and 4 diagnostics must meet expected scores/shortcut; p3 substantive positives require substantive inference. Report groups separately."
+}

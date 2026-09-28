@@ -1,0 +1,186 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-x.md",
+  "fixtures": [
+    {
+      "source_index": 0,
+      "family": "rectangle",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "0:authored_x:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "bank_output_hash": "6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8"
+    },
+    {
+      "source_index": 1,
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "1:authored_x:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "bank_output_hash": "3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8"
+    },
+    {
+      "source_index": 2,
+      "family": "rectangle",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The area24 is absent. Using answer6 as the longer side, infer the other side10-6=4 and then area6*4=24.",
+      "bank_key": "2:authored_x:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "bank_output_hash": "7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8"
+    },
+    {
+      "source_index": 3,
+      "family": "rectangle",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "3:authored_x:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "bank_output_hash": "c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8"
+    },
+    {
+      "source_index": 4,
+      "family": "linear",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "4:authored_x:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "bank_output_hash": "7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b"
+    },
+    {
+      "source_index": 5,
+      "family": "linear",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "5:authored_x:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "bank_output_hash": "4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b"
+    },
+    {
+      "source_index": 6,
+      "family": "linear",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The coefficient a=3 is absent. Insert the supplied solution x=4 into ax+2=14 to infer a=(14-2)/4=3.",
+      "bank_key": "6:authored_x:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "bank_output_hash": "ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b"
+    },
+    {
+      "source_index": 7,
+      "family": "linear",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "7:authored_x:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "bank_output_hash": "d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b"
+    },
+    {
+      "source_index": 8,
+      "family": "urn",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "8:authored_x:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "bank_output_hash": "571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85"
+    },
+    {
+      "source_index": 9,
+      "family": "urn",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "9:authored_x:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "bank_output_hash": "35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85"
+    },
+    {
+      "source_index": 10,
+      "family": "urn",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The color counts are absent. Supplied red probability3/5 and total10 imply6 red and4 blue by inverse proportion.",
+      "bank_key": "10:authored_x:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "bank_output_hash": "e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85"
+    },
+    {
+      "source_index": 11,
+      "family": "urn",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "11:authored_x:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "bank_output_hash": "dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85"
+    },
+    {
+      "source_index": 12,
+      "family": "motion",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "12:authored_x:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "bank_output_hash": "77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e"
+    },
+    {
+      "source_index": 13,
+      "family": "motion",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "13:authored_x:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "bank_output_hash": "761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e"
+    },
+    {
+      "source_index": 14,
+      "family": "motion",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Speed60 km/h is absent. Supplied distance120 km and duration2 h imply speed120/2=60 km/h.",
+      "bank_key": "14:authored_x:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "bank_output_hash": "74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e"
+    },
+    {
+      "source_index": 15,
+      "family": "motion",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "15:authored_x:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "bank_output_hash": "031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e"
+    }
+  ],
+  "prompts": [
+    "audit_public_p4",
+    "audit_source_disclosure_p2",
+    "audit_public_p5",
+    "audit_source_disclosure_p3"
+  ],
+  "prompt_file_hashes": {
+    "audit_public_p4": "8487e4da19676776d6f1a791f19f112338b4fdf6158a4542d4485aa8aee78577",
+    "audit_source_disclosure_p2": "dbeef4ded9b52eaa3a99c963e982f3c020a3caf269cb75f4387470f34e24d7d8",
+    "audit_public_p5": "9a4a8ee1056de18170d2e1265b838516536e53009ce941e323bae4a453f3786c",
+    "audit_source_disclosure_p3": "6c721ae6fb028ed9dc92c08d30025de942c1eb8a4fc60c373c8280a3e6a83d7b"
+  },
+  "planned_initial_calls": 64,
+  "families": 4,
+  "conditions": 4,
+  "technical_retry_max": 1,
+  "teacher_model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "reasoning_effort": "low",
+  "teacher_max_tokens": 8192,
+  "reference_scope": "Authored proposed operational definition, not independent human gold; historical disagreements not retroactively counted as errors.",
+  "prespecified_gate": "Every candidate hard negative rejected; inverse acceptances must name a genuine missing premise and correct inference; any hard-negative miss blocks adoption."
+}

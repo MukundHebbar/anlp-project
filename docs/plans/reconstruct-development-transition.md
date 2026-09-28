@@ -1,0 +1,11 @@
+# Development transition after AH/AJ
+
+The D4 cohort has been reused across many adaptive prompt and clue revisions. AH/AJ is the last prompt screen on these twelve families in the current development cycle. Preserve all earlier failures and do not describe a later D4 winner as independent evidence or a globally best task.
+
+After AH/AJ is terminal, summarize the complete evidence and run the fixed single-gap policy on a new development cohort allocated from unused contingency sources, without looking at student performance during allocation. Freeze source IDs, source/solution validity, demonstration overlap checks, converter prompt, student prompt and all gates before Qwen generation. Keep the existing C25 and R partitions untouched. Check historical artifacts for prior source exposure before calling the cohort fresh; distinct source IDs alone do not prove semantic independence.
+
+Do not select sources because direct SOLVE was correct, because a manually authored clue looks easy, or because an earlier reconstruction succeeded. Report conversion yield independently from performance on valid tasks. Continue reporting the existing preselected-source denominator and the stricter5/25 confirmation requirement; any proposal to change a denominator needs a separate prospective protocol and cannot retroactively improve existing results.
+
+Use the fresh cohort to test whether the latest policy generalizes at all before more wording changes. Output-order findings remain exploratory and need replication. If neither AH nor AJ produces grounded recoveries, retain the simpler incumbent p13 for that fresh test, rather than choosing a prompt based on arbitrary partial scores. If either does, freeze the choice using grounded semantic recovery first, semantic recovery second, then fewer missing outputs; ties retain p13. The maximum number of new candidates per fresh cohort is two prospectively registered global policies. Do not start an unbounded loop of item-specific edits.
+
+The main research claim remains controlled SOLVE/JUDGE/RECONSTRUCT training and evaluation transfer. These inference-only development studies support task construction and diagnostics; they do not establish training effects, a reasoning taxonomy, teacher near-perfect accuracy, or the best possible task version.

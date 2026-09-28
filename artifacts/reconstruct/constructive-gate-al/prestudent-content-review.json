@@ -1,0 +1,126 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "created_at": "2026-09-20T14:27:09.806103+00:00",
+  "before_student_calls": true,
+  "scope": "Input validity only; no student outcome-based inclusion",
+  "rows": [
+    {
+      "source_index": 5,
+      "bank_hash": "191982ccbc085ab25209fd743c30cccc007b76a9dbd35871fccb7767938a851e",
+      "source_hash": "cd7798c722b2c4133543396a480ecd3a5fd842f1a69251a6953cd9fd1a3c0d0f",
+      "manual_content_pass": true,
+      "reason": "Threshold t is not supplied. Counting disjoint long-cycle events and matching harmonic sums to the public answer uniquely gives51. No general count formula is public. The at-most-one-cycle observation is a useful derived hint, not an independent premise.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 10,
+      "bank_hash": "fa851fb86b2dba62a9cd0d6b7f61c822219e2ebdeaec9e6cec6a38c07dc75653",
+      "source_hash": "4a17cd5a1e9890fdeb24febfcb7153a3407d85bafb22dc287fc79564ece9a0b4",
+      "manual_content_pass": true,
+      "reason": "Factorial index n is hidden; Wilson/tail observations leave modular inversion and the finite factorial-residue search. Independent exact enumeration of0..60 gives only51 for residue27; nonzero answer excludes n>=61. c5 is a broad combination hint rather than new mathematical information; do not treat five entries as five independent constraints.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 16,
+      "bank_hash": "5484ebea34e1a3e5222a5621d52b5d7875430edc1c3a12a26023e77d6331b495",
+      "source_hash": "8cd5dacff5d3255057ea2f51be04a946c66eebf9a86f254b5af785d0fd1af95a",
+      "manual_content_pass": true,
+      "reason": "The5-adic exponent k is hidden, while the2-adic exponent and prime support remain. Public factor-pair/divisor reduction stops before factorizing N^2/4 and evaluating its divisor count as7(2k+1). These missing calculations plus answer98 yield k3,N2000. All98 resulting lattice points independently verified; this is an incomplete reduction, not a publicly evaluated parameterized answer polynomial.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 17,
+      "bank_hash": "b5d6c2738d6d1c8a26d9cc58e82936dd32a4161859c3c8c28f1bb738970add29",
+      "source_hash": "e92cbb7d0b39e72863f0d81ac006cd3d41c49173cc258da44027d48bf2ee8fd8",
+      "manual_content_pass": false,
+      "reason": "Converter NOT_SUITABLE retained. This is an observed policy abstention, not proof every possible partial reconstruction is impossible; ambiguity is allowed by the overall task.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 21,
+      "bank_hash": "cefd82590b566619312c6c92bd3e5c01c66cd49c868c4a7bd3110869f52e7d8a",
+      "source_hash": "075f73a794a7ee14c65df860cedb49e6d7211e54484aab342cf06a3c01636949",
+      "manual_content_pass": true,
+      "reason": "Primality is withheld; the prime-modulus theorem is conditional, not a premise. The answer forces prime p: for odd composite p with generators the count phi(phi(p))<=phi(p)/2<(p-1)/2; without generators it is0. For prime p the stated count follows. Independent elementary certificate avoids the converters unnecessary deep theorem.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 29,
+      "bank_hash": "74c32252f7d2c4d8eeaf04bde95e5d2a34be0c3528af5cb8b06e8fc2d148d03d",
+      "source_hash": "a188040f904b45296a22694be88ec195eccc6808bb2b90dd8ff23c7bd4a103e9",
+      "manual_content_pass": false,
+      "reason": "The private certificate establishes only equality of numerical exponent and modulus at one witness, then admits this does not recover the original variable relation k=m. It does not complete its claimed inverse inference. Public clues also state the witness exponent561 outright and misattribute the witness to the supplied answer, which is only Yes. Preserve as a failed certificate, not a valid unique reconstruction.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 35,
+      "bank_hash": "770f0b19b6dc13cb7f824543e766ff41c9ce7d8322ee3973ddc7ab7659df4582",
+      "source_hash": "392018be5553aa3aad9ba96d9f46bd28df0a10256232c29204fdf53fc7a37c9b",
+      "manual_content_pass": false,
+      "reason": "Converter NOT_SUITABLE retained. This is an observed policy abstention, not proof every possible partial reconstruction is impossible; ambiguity is allowed by the overall task.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 41,
+      "bank_hash": "1707267f42151a548ce7940016fbe68e03e01774d9d672745c037896c76229ab",
+      "source_hash": "54ae7dbbcb5e184967a9a1c08c90f0d011da1d6892c1cf727a657816936d7a2e",
+      "manual_content_pass": false,
+      "reason": "c5 publicly supplies the completed parameterized answer b(b+1)/(b-1)^3. No forward calculation is needed to obtain that relation from the clues; only its inversion remains. This fails AKs retained partial-forward-solution requirement even though the cubic inverse itself is valid.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 54,
+      "bank_hash": "4780409ba3c4fe3902f4c20f5c251aafc8efa77ae79164cbe5cb603c6aecc4c4",
+      "source_hash": "d2dc95a27ec6b8983efb055a4b0c0dc477271ff6de9dd8796adc89fe4e23c69a",
+      "manual_content_pass": true,
+      "reason": "Only modulus R10 is hidden. Circle and slope setup leave discriminant/tangency calculation unstated. A finite maximum excludes R<=1; for R>1 the maximum1/(R^2-1) yields R10. Independent domain and attainability checks fill the private certificates omitted domain case without changing public input.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 59,
+      "bank_hash": "eed35873e6f10131f2b951b9d13719fe1fb7125542223c6821dd63e760ff5538",
+      "source_hash": "c1b3ccdf754b228faad9f01e2f4761c45cbe6125e4e372243f320bb34cfacce6",
+      "manual_content_pass": false,
+      "reason": "Root separation sqrt69 together with monic quadratic coefficient11 determines c13 without using the answer. The displayed target plus these equivalent denominator constraints already form a fully specified equivalent classification problem. The hidden constant is encoded in a complete premise bundle; copying that bundle would suffice.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 67,
+      "bank_hash": "72f89919e8312e6b1d72dec2992b53715f8dbe7f9ac7451427b8721ff3cb506d",
+      "source_hash": "26759297707af08212a06398d075cd18784e45cbed9306278d0e1bb91bae68db",
+      "manual_content_pass": true,
+      "reason": "Scalar c1 is hidden. First-column relation is public, but inverse-times-ones and sum-of-entries calculation are not. Invertibility implies c!=0 and gives total1/c; answer1 forces c1. Inverse existence is the explicit presupposition already reviewed for the source.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 68,
+      "bank_hash": "42af45a5bb3fda7d76b9639d665a82bfef90ee92a9b104bbae66f27714fd0ec6",
+      "source_hash": "bebed2b43d07ec665a73fa73458c793031060a8ca0db3255a5f35251935bf0f0",
+      "manual_content_pass": false,
+      "reason": "Converter NOT_SUITABLE retained. This is an observed policy abstention, not proof every possible partial reconstruction is impossible; ambiguity is allowed by the overall task.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 113,
+      "bank_hash": "cef3c595313afc0aef49b0b8038483717e804e1475fb21f8477db6d7a63b2143",
+      "source_hash": "a5fc0c99366d2bb1812aead63a8641ac4af040b151d800a1a0e832e23b0da6e8",
+      "manual_content_pass": true,
+      "reason": "Root scale alpha1 is hidden. Public clues telescope to n! but do not provide asymptotic root growth. Stirling or log bounds yield n^(1/alpha-1)*exp(-1/alpha); finite nonzero answer forces alpha1, then verifies1/e. Source target and remaining definition are preserved.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    },
+    {
+      "source_index": 114,
+      "bank_hash": "649ada71b01e93036beec541b2c0acf4418c35166152c65fa27670dc476f0c44",
+      "source_hash": "fb44e1ab1462ac0f4c5019dd1cf3b13092fc3e4bcdf9fc7ff07200696c10855c",
+      "manual_content_pass": false,
+      "reason": "Converter NOT_SUITABLE retained. This is an observed policy abstention, not proof every possible partial reconstruction is impossible; ambiguity is allowed by the overall task.",
+      "derived_transform_review": "Exact bank and private certificate reviewed under prospective AK boundary before any AK Qwen responses."
+    }
+  ],
+  "allocation_exclusion": [
+    1
+  ],
+  "conversion_technical_failure": [
+    132
+  ]
+}

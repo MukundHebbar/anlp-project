@@ -1,0 +1,908 @@
+{
+  "updated_at_utc": "2026-09-20T19:01:23.003122+00:00",
+  "status": "information_bracket_terminal_two_verified_recoveries_with_adjudication",
+  "previous_turn_classification": "progress: reviewed fresh sources, quarantined underdetermined recurrence, fixed allocation reporting, launched15 once-only conversions",
+  "primary_target": "mean normalized rubric20\u201375/100 AND at least5/25 grounded semantic recoveries on non-leaking inputs",
+  "prompt_screen": {
+    "generated": 96,
+    "judged": 96
+  },
+  "role_full_bank": {
+    "accepted_sources": 7,
+    "attempted_sources": 12,
+    "generated": 14,
+    "judged": 14,
+    "decision": "do not promote; coverage failure"
+  },
+  "revision": {
+    "attempted": 24,
+    "parseable_and_judged": 23,
+    "unresolved": 1,
+    "decision": "do not promote; no extra grounded successes, two calls"
+  },
+  "answer_last": {
+    "generated": 24,
+    "judged": 24,
+    "mean": 23.958333333333332,
+    "grounded_successes": 0,
+    "decision": "do not promote"
+  },
+  "baseline_reaudit": {
+    "accepted_sources": 11,
+    "attempted_sources": 12,
+    "rejected": [
+      131
+    ],
+    "accepted_source_grounded_successes": 0,
+    "accepted_source_responses": 22
+  },
+  "sparse_audit_progress": {
+    "base_sparse_2": {
+      "audited": 12,
+      "accepted": 12
+    },
+    "role_sparse_2": {
+      "audited": 12,
+      "accepted": 11
+    }
+  },
+  "live_processes_last_verified": {
+    "qwen_server": 749542,
+    "paid_jobs": "AK audits only, max4"
+  },
+  "live_exec_session": null,
+  "teacher_near_perfect_accuracy_established": false,
+  "gold_development": {
+    "passed": 41,
+    "total": 41,
+    "independent_final_validation": false
+  },
+  "confirmation_split_used": false,
+  "next_actions": [
+    "Prospectively test one global conversion policy prioritizing distinct structural constraints and partial intermediate expressions instead of redundant source-context sentences; keep same source cohort and Qwen/p13 fixed",
+    "Preserve exact partial-information versus direct-disclosure definitions; do not infer exposure merely because answer-conditioned inversion succeeds",
+    "Treat verify_math_p1 as an extra provisional veto, preserve raw rubric scores, and broaden independent validation before any reliability claim",
+    "Do not rerun source137 scored adjudication for a desired label; any future policy change must be explicitly separate and mathematically supported",
+    "Continue toward25-family confirmation only after a viable development policy and conversion coverage are demonstrated"
+  ],
+  "evidence_index": "artifacts/reconstruct/followup-v2/evidence-index.md",
+  "tests": "68 reconstruction-pattern tests passed in artifacts/reconstruct/fresh-development-ak/tests.log; report allocation and quarantine regression checks included",
+  "sparse_results": {
+    "common_sources": 11,
+    "responses_per_arm": 22,
+    "all_44_judged": true,
+    "no_role_mean": 29.545454545454547,
+    "role_mean": 26.136363636363637,
+    "no_role_grounded_successes": 1,
+    "role_grounded_successes": 0,
+    "decision": "no demonstrated role benefit; do not claim optimum clue count"
+  },
+  "information_controls": {
+    "sources": [
+      11,
+      22,
+      30,
+      49
+    ],
+    "answer_only_scores": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "full_solution_raw_scores": [
+      1,
+      4,
+      4,
+      4
+    ],
+    "source11_wording_dispute": true
+  },
+  "teacher_feasibility": {
+    "cases": 4,
+    "mathematically_supported": 3,
+    "clue_violation": 1,
+    "not_independent_gold": true
+  },
+  "gold_production_development": {
+    "fixtures": 4,
+    "families": 2,
+    "resolved": 3,
+    "reference_agreements": 3,
+    "original_wording_unresolved_after_one_retry": true,
+    "do_not_retry_again_in_this_round": true
+  },
+  "D3": {
+    "artifact": "artifacts/reconstruct/d3-v1/run.json",
+    "allocated_sources": 12,
+    "eligible": 11,
+    "source20_needs_review": true,
+    "source136_option_normalized": true,
+    "banks_saved": 11,
+    "audits_saved": 21,
+    "no_student_outputs": true,
+    "protocol": "I\u2013K completed; L measurement calibration active"
+  },
+  "replication_R_used": false,
+  "semantic_calibration": {
+    "artifact": "artifacts/reconstruct/semantic-v1/comparison.json",
+    "cases": 24,
+    "families": 8,
+    "incumbent_binary_agreement": 24,
+    "candidate_binary_agreement": 24,
+    "candidate_three_way_agreement": 23,
+    "independent_final_validation": false
+  },
+  "disclosure_calibration": {
+    "artifact": "artifacts/reconstruct/disclosure-v1/comparison.json",
+    "clear_controls": 18,
+    "incumbent_agreement": 17,
+    "public_candidate_agreement": 18,
+    "source_aware_p1_agreement": 16,
+    "source_aware_p2_clear_agreement": 18,
+    "production_boundaries_pending": false
+  },
+  "copy_challenge": {
+    "artifact": "artifacts/reconstruct/disclosure-v1/copy-smoke.json",
+    "completed": 6,
+    "full_originals_recovered": 4,
+    "full_controls": 4,
+    "sparse_originals_recovered": 0,
+    "sparse_controls": 2,
+    "same_answer_different_question": 1,
+    "independent_final_validation": false
+  },
+  "old_D3_count_feasibility": {
+    "maximum_common_sources": 6,
+    "registered_minimum": 8,
+    "feasible": false,
+    "evidence": "artifacts/reconstruct/disclosure-v1/count-feasibility.json"
+  },
+  "new_converter": {
+    "prompt": "convert_p3",
+    "smoke_cases": 4,
+    "smoke_schema_valid": 4,
+    "artifact": "artifacts/reconstruct/d3-v2/run.json",
+    "remaining_conversion_active": true,
+    "audits_active": "artifacts/reconstruct/d3-v2/smoke-audits.json",
+    "candidate_not_promoted": true
+  },
+  "inverse_example_P": {
+    "attempted": 8,
+    "parseable": 7,
+    "scored": 7,
+    "semantically_judged": 7,
+    "grounded_successes": 0,
+    "same_original": 0,
+    "resolved_mean_100": 32.142857142857146,
+    "all_planned_mean_bounds": [
+      28.125,
+      40.625
+    ],
+    "decision": "do not promote",
+    "report": "artifacts/reconstruct/d3-v2/inverse-example-decision.md"
+  },
+  "converter_Q": {
+    "first_pass_banks": 8,
+    "first_pass_technical_failures": [
+      77,
+      112,
+      123
+    ],
+    "technical_retry_max": 1,
+    "retry_launched": true,
+    "initial_conversion_session56218_terminal": true,
+    "audit_log": "artifacts/reconstruct/d3-v2/p4-retry-and-audit.log",
+    "coverage_report": "artifacts/reconstruct/d3-v2/converter-p4-comparison.md",
+    "all_banks": 11,
+    "support_accepted": 11,
+    "public_accepted": 7,
+    "source_disclosure_accepted": 8,
+    "conjunctive_accepted_original": 7,
+    "original_denominator": 12,
+    "decision": "do not promote; no student screen",
+    "all_audits_terminal": true
+  },
+  "repair_R": {
+    "repairs": 3,
+    "repair_audits": 9,
+    "raw_teacher_accepted_original": 10,
+    "reviewed_eligible_original": 9,
+    "denominator": 12,
+    "known_direct_source_leak_rejected": [
+      123
+    ],
+    "report": "artifacts/reconstruct/d3-v2/repair-decision.md",
+    "release_coverage_passed": false
+  },
+  "screen_S": {
+    "indices": [
+      8,
+      27,
+      33,
+      77,
+      86,
+      112,
+      136,
+      141,
+      143
+    ],
+    "planned_local_responses": 18,
+    "seed0_parseable": 8,
+    "seed0_format_failure": 141,
+    "seed0_failure_finish_reason": "length",
+    "seed0_failure_completion_tokens": 8192,
+    "new_confirmed_semantic_successes": "not yet graded",
+    "frozen_input_review_scope": "assistant development review, not independent human release validation",
+    "parseable_total": 17,
+    "generation_terminal": true,
+    "grounding_judgments": 17,
+    "semantic_judgments": 17,
+    "semantic_resolved": 16,
+    "parsed_output_mean_100": 30.88235294117647,
+    "complete_family_mean_100": 31.25,
+    "generic_grounded_outputs": 2,
+    "confirmed_original_recoveries": 0,
+    "decision": "do not promote",
+    "report": "artifacts/reconstruct/d3-v2/repaired-student-decision.md"
+  },
+  "stronger_T": {
+    "planned_families": 9,
+    "parseable_outputs": 8,
+    "grounding_judgments": 8,
+    "semantic_judgments": 8,
+    "raw_grounded_semantic_recoveries": 6,
+    "clear_assistant_checked_first_attempt_witnesses": [
+      8,
+      27,
+      86,
+      112,
+      141
+    ],
+    "qualified_equivalence": 77,
+    "wrong_maximum_refuted": 136,
+    "no_visible_output_after_two_attempts": 143,
+    "report": "artifacts/reconstruct/d3-v2/stronger-feasibility-report.md",
+    "not_Qwen_gate": true
+  },
+  "inference_u": {
+    "controls_p2": {
+      "authored": 8,
+      "diagnostic": 2
+    },
+    "controls_p3": {
+      "authored": 16,
+      "diagnostic": 4
+    },
+    "production_scored": 24,
+    "production_planned_saved_outputs": 25,
+    "production_attempts": 27,
+    "raw_qwen_mean": 16.176470588235293,
+    "single_reference_correction_mean": 17.647058823529413,
+    "known_production_score_errors": 1,
+    "final_judge_validation": false,
+    "report": "artifacts/reconstruct/inference-u/decision.md"
+  },
+  "verified_examples_v": {
+    "D4": [
+      0,
+      13,
+      46,
+      62,
+      63,
+      80,
+      87,
+      96,
+      118,
+      120,
+      129,
+      137
+    ],
+    "demonstrations": [
+      8,
+      112,
+      141
+    ],
+    "proposed_C25_extension": 45,
+    "source_preflight": "artifacts/reconstruct/verified-examples-v/source-preflight.json",
+    "student_generation_started": true,
+    "conversion_session": null,
+    "local_draws": 32,
+    "parsed_outputs": 32,
+    "grounding_records": 30,
+    "grounding_attempts": 35,
+    "semantic_records": 32,
+    "semantic_resolved": 32,
+    "reviewed_eligible_sources": [
+      0,
+      13,
+      46,
+      87,
+      96,
+      118,
+      129,
+      137
+    ],
+    "coverage": 0.6666666666666666,
+    "primary_original_recoveries": {
+      "p10": 0,
+      "p12": 0
+    },
+    "p10_mean": 18.75,
+    "p12_resolved_mean": 28.571428571428573,
+    "p12_planned_mean_bounds": [
+      25,
+      37.5
+    ],
+    "paired_complete_families": 7,
+    "paired_mean_difference": 10.714285714285714,
+    "paired_ci95": [
+      -10.714285714285714,
+      42.857142857142854
+    ],
+    "decision": "do not promote; no original-recovery improvement",
+    "report": "artifacts/reconstruct/verified-examples-v/decision.md",
+    "valid_alternative_source_indices": [
+      0
+    ]
+  },
+  "target_example_w": {
+    "protocol": "docs/plans/reconstruct-amendment-w.md",
+    "prompt": "convert_p5",
+    "changed_factor": "positive rectangle example retains target role and withholds essential area premise; remaining text unchanged",
+    "sources": [
+      0,
+      13,
+      46,
+      62,
+      63,
+      80,
+      87,
+      96,
+      118,
+      120,
+      129,
+      137
+    ],
+    "student_prompt": "student_p10_recover_original",
+    "conversion_session": null,
+    "student_generation_started": true,
+    "conversion_records": 12,
+    "conversion_attempts": 14,
+    "audit_session": null,
+    "support_accepted": 11,
+    "support_rejected": [
+      63
+    ],
+    "prestudent_review_files": [
+      "artifacts/reconstruct/target-example-w/preaudit-content-review.json",
+      "artifacts/reconstruct/target-example-w/retry-bank-content-review.json"
+    ],
+    "audits_completed": 36,
+    "initial_joint_accepted": [
+      0,
+      13,
+      62,
+      118,
+      120,
+      129,
+      137
+    ],
+    "disclosure_disagreements": [
+      46,
+      87
+    ],
+    "initial_copy_completed": 7,
+    "initial_reviewed_eligible": 7,
+    "repair80": "Changed bank accepted by three audits, copy challenge and independent assistant review",
+    "repair96": "Both allowed attempts no-visible; exhausted",
+    "repair_retry_session": null,
+    "maximum_possible_coverage_this_round": 0.75,
+    "production_coverage_passed": false,
+    "local_draws": 16,
+    "parsed_outputs": 16,
+    "grounding_records": 16,
+    "semantic_records": 16,
+    "semantic_resolved": 16,
+    "mean_score": 12.5,
+    "primary_checked_originals": 0,
+    "checked_grounded_outputs": 0,
+    "reviewed_eligible": [
+      0,
+      13,
+      62,
+      80,
+      118,
+      120,
+      129,
+      137
+    ],
+    "coverage": 0.6666666666666666,
+    "paired_common_families": [
+      0,
+      13,
+      118,
+      129,
+      137
+    ],
+    "paired_mean_score_delta": -2.5,
+    "paired_ci95": [
+      -17.5,
+      12.5
+    ],
+    "decision": "Do not promote",
+    "report": "artifacts/reconstruct/target-example-w/decision.md"
+  },
+  "boundary_x": {
+    "protocol": "docs/plans/reconstruct-amendment-x.md",
+    "status": "terminal; advance to production-boundary review only",
+    "initial_calls": 64,
+    "technical_failures": 0,
+    "incumbent_public_matches": 13,
+    "incumbent_source_matches": 15,
+    "candidate_public_matches": 16,
+    "candidate_source_matches": 16,
+    "per_prompt_cases": 16,
+    "each_candidate_hard_negatives_rejected": 12,
+    "each_candidate_inverse_accepted": 4,
+    "report": "artifacts/reconstruct/inverse-disclosure-x/decision.md",
+    "production_adopted": false
+  },
+  "boundary_y": {
+    "protocol": "docs/plans/reconstruct-amendment-y.md",
+    "artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+    "controller_session": null,
+    "planned_calls": 14,
+    "cases": 7,
+    "families": 6,
+    "source123_missing_witness_trap_included": true,
+    "production_adopted": false,
+    "status": "terminal; adoption blocked",
+    "public_matches": 7,
+    "source_matches": 6,
+    "judgments": 14,
+    "technical_failures": 0,
+    "hard_negative_source_miss": 123,
+    "report": "artifacts/reconstruct/production-boundary-y/decision.md"
+  },
+  "boundary_z": {
+    "protocol": "docs/plans/reconstruct-amendment-z.md",
+    "root": "artifacts/reconstruct/witness-boundary-z",
+    "controller_session": 32272,
+    "planned_initial_calls": 39,
+    "authored_cases": 8,
+    "x_regression_cases": 16,
+    "y_regression_cases": 7,
+    "candidate_source_prompt": "audit_source_disclosure_p4",
+    "public_prompt_fixed": "audit_public_p5",
+    "status": "running, no adoption"
+  },
+  "latest_user_target": {
+    "semantic_equivalent_forms_correct": true,
+    "grounded_semantic_success_rate": [
+      0.2,
+      0.4
+    ],
+    "mean_rubric_target": [
+      20,
+      75
+    ],
+    "confirmation_denominator": 25
+  },
+  "active_protocol": "docs/plans/reconstruct-amendment-ah.md",
+  "current_run": "artifacts/reconstruct/one-gap-ah/run.json",
+  "Z_status": "All initial calls terminal; corrected reference retained; Z2 deferred for requested richer exposure experiment",
+  "AA": {
+    "root": "artifacts/reconstruct/richer-exposure-aa",
+    "eligible_sources": [
+      46,
+      62,
+      129
+    ],
+    "planned_local_draws": 9,
+    "local_session": null,
+    "paid_processes_running": false,
+    "conversion_failures": [
+      0,
+      13
+    ],
+    "converter_unsuitable": [
+      63,
+      80
+    ],
+    "audit_disagreements": [
+      96,
+      118,
+      137
+    ],
+    "pending": "complete; reports and exact outputs saved"
+  },
+  "latest_report": "artifacts/reconstruct/one-gap-ah/decision.md",
+  "active_processes": [
+    {
+      "session": 20850,
+      "stage": "AK cascade audits/copy, workers4"
+    }
+  ],
+  "latest_findings": {
+    "AA": "0 semantic/grounded recoveries per3 scheduled examples in each of sparse3/rich6/dense3; one sparse3 cap-hit parse failure",
+    "AB": "1/3 semantic recovery,0/3 grounded; raw mean41.67/100 includes false-positive full-mark judgment",
+    "AC": "1/3 semantic recovery,0/3 grounded; raw mean16.67/100",
+    "coverage": "3/12 source families passed all current input gates",
+    "heldout_confirmation": "not opened",
+    "tests": "63 passed"
+  },
+  "next_required_work": [
+    "Poll existing AK audit controller20850; do not rerun scored or schema-failed slots",
+    "After controller terminal, inspect copy schemas; freeze exact audit/copy/manual conjunction using complete_reconstruct_policy_inputs for convert_p8_one_gap,arm onegap",
+    "Run same original Qwen/p13 once per eligible source, then unchanged primary/semantic/math review; denominator remains16",
+    "Record method-exposure boundary clarification and cohort change as a package, not a pure dataset effect",
+    "Teacher settings documentation checked: low is model alias50; provider mapping not verified; temperature0 differs from model-card recommendation1.0. No AK changes; any sampling calibration must be separate."
+  ],
+  "AD": {
+    "root": "artifacts/reconstruct/math-verifier-ad",
+    "returned": 12,
+    "reference_matches": 12,
+    "decision": "advance_to_validation_only",
+    "student_successes_created": 0
+  },
+  "AE": {
+    "root": "artifacts/reconstruct/certificate-adjudication-ae",
+    "protocol": "docs/plans/reconstruct-amendment-ae.md",
+    "source_indices": [
+      96,
+      137
+    ],
+    "pending": "complete",
+    "adjudication": {
+      "96": "ACCEPT",
+      "137": "REJECT"
+    },
+    "new_Qwen_sources": [
+      96
+    ],
+    "grounded_recoveries": 0,
+    "semantic_recoveries": 0,
+    "math_check": "invalid"
+  },
+  "AF": {
+    "root": "artifacts/reconstruct/distinct-information-af",
+    "protocol": "docs/plans/reconstruct-amendment-af.md",
+    "sources": [
+      0,
+      13,
+      46,
+      62,
+      63,
+      80,
+      87,
+      96,
+      118,
+      120,
+      129,
+      137
+    ],
+    "conversion_cap": 16384,
+    "student_prompt": "student_p13_infer_missing",
+    "pending": "complete",
+    "eligible_sources": [
+      129
+    ],
+    "reviewed_grounded_successes": 0,
+    "mean_score_100": 25,
+    "semantic_successes": 0,
+    "grounded_successes": 0
+  },
+  "AG": {
+    "root": "artifacts/reconstruct/partial-exposure-ag",
+    "protocol": "docs/plans/reconstruct-amendment-ag.md",
+    "policy": "Exact first3 observations of every AF bank, independently audited",
+    "student_prompt": "student_p13_infer_missing",
+    "pending": "complete; three independent invalid verdicts, one no-visible-output failure",
+    "eligible_sources": [
+      0,
+      13,
+      96,
+      129,
+      137
+    ],
+    "planned_draws": 5,
+    "parsed_draws": 4,
+    "mean_available_score_100": 18.75,
+    "semantic_successes": 0,
+    "grounded_successes": 0,
+    "math_verification": {
+      "invalid": 3,
+      "technical_failure": 1
+    }
+  },
+  "AH": {
+    "root": "artifacts/reconstruct/one-gap-ah",
+    "protocol": "docs/plans/reconstruct-amendment-ah.md",
+    "prompt": "convert_p8_one_gap",
+    "sources": [
+      0,
+      13,
+      46,
+      62,
+      63,
+      80,
+      87,
+      96,
+      118,
+      120,
+      129,
+      137
+    ],
+    "pending": "complete",
+    "student_prompt": "student_p13_infer_missing",
+    "eligible_sources": [
+      0,
+      46,
+      96
+    ],
+    "planned_draws": 3,
+    "parsed_draws": 3,
+    "semantic_successes": 0,
+    "grounded_successes": 0,
+    "math_invalid": 3
+  },
+  "AI": {
+    "root": "artifacts/reconstruct/matched-solve-ai",
+    "protocol": "docs/plans/reconstruct-amendment-ai.md",
+    "pending": "complete",
+    "scheduled": 12,
+    "parsed": 12,
+    "answer_correct": 4,
+    "grounded_solve_success": 3,
+    "report": "artifacts/reconstruct/matched-solve-ai/decision.md"
+  },
+  "AJ": {
+    "root": "artifacts/reconstruct/output-order-aj",
+    "protocol": "docs/plans/reconstruct-amendment-aj.md",
+    "student_prompt": "student_p15_verification_first",
+    "pending": "complete",
+    "eligible_sources": [
+      0,
+      46,
+      96
+    ],
+    "planned_draws": 3,
+    "parsed_draws": 2,
+    "semantic_successes": 0,
+    "grounded_successes": 0,
+    "math_invalid": 2
+  },
+  "AK": {
+    "root": "artifacts/reconstruct/fresh-development-ak",
+    "protocol": "docs/plans/reconstruct-amendment-ak.md",
+    "source_indices": [
+      1,
+      5,
+      10,
+      16,
+      17,
+      21,
+      29,
+      35,
+      41,
+      54,
+      59,
+      67,
+      68,
+      113,
+      114,
+      132
+    ],
+    "pending": "Conversions terminal:10 OK,4 NOT_SUITABLE,1 transport failure132,plus preflight exclusion1. Manual input decisions frozen: pass5,10,16,21,54,67,113; reject29,41,59. Cascade audits/copy running; no Qwen calls.",
+    "student_prompt": "student_p13_infer_missing",
+    "converter": "convert_p8_one_gap",
+    "preflight_eligible": [
+      5,
+      10,
+      16,
+      17,
+      21,
+      29,
+      35,
+      41,
+      54,
+      59,
+      67,
+      68,
+      113,
+      114,
+      132
+    ],
+    "source_quarantined": [
+      1
+    ],
+    "manual_candidates": [
+      5,
+      10,
+      16,
+      21,
+      54,
+      67,
+      113
+    ]
+  },
+  "AL": {
+    "protocol": "docs/plans/reconstruct-amendment-al.md",
+    "root": "artifacts/reconstruct/constructive-gate-al",
+    "session": 41324,
+    "pending": "All stages terminal. No task version promoted; targets unmet. Next experiment must address parameter inference/final-question contract and verifier supplied-answer consistency, with prospectively frozen controls.",
+    "student_session": null,
+    "math_session": null,
+    "eligible": [
+      5,
+      10,
+      16,
+      54,
+      67,
+      113
+    ],
+    "semantic_successes": 0,
+    "grounded_successes": 0,
+    "planned": 6,
+    "scored": 5,
+    "mean_score_100": 10,
+    "math_verifier_statuses": [
+      "invalid",
+      "invalid",
+      "valid",
+      "invalid"
+    ],
+    "tests_passed": 69,
+    "math_verifier_failures": [
+      {
+        "source_index": 67,
+        "error": "AssertionError: "
+      }
+    ]
+  },
+  "AM": {
+    "root": "artifacts/reconstruct/target-preservation-am",
+    "math_session": null,
+    "semantic_successes": 0,
+    "planned": 6,
+    "readable": 6,
+    "primary_scored": 2,
+    "primary_transport_failures": 4,
+    "protocol": "docs/plans/reconstruct-amendment-am.md",
+    "terminal": true,
+    "math_valid": 1,
+    "math_invalid": 5
+  },
+  "AN": {
+    "root": "artifacts/reconstruct/missing-target-an",
+    "protocol": "docs/plans/reconstruct-amendment-an.md",
+    "status": "terminal",
+    "next": "Poll exact audit controller; after terminal complete copy checks and freeze inputs. No AN Qwen draws yet.",
+    "conversion_session": null,
+    "workers": 3,
+    "audit_session": null,
+    "manual_candidates": [
+      5,
+      16,
+      29,
+      54,
+      59,
+      67,
+      113
+    ],
+    "tests_passed": 70,
+    "eligible": [
+      54,
+      67
+    ],
+    "semantic_successes": 0,
+    "mean_score_100": 12.5,
+    "rating_counts": [
+      1,
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "AO": {
+    "root": "artifacts/reconstruct/target-example-ao",
+    "terminal": true,
+    "semantic_successes": 0,
+    "planned": 2,
+    "mean_score_100": 12.5
+  },
+  "AP": {
+    "root": "artifacts/reconstruct/target-prefix-ap",
+    "audit_session": null,
+    "status": "student_primary_semantic_terminal_math_running",
+    "manual_candidates": [
+      5,
+      10,
+      16,
+      21,
+      29,
+      35,
+      54,
+      59,
+      67,
+      68,
+      113,
+      114,
+      132
+    ],
+    "eligible": [
+      21,
+      35,
+      54,
+      68,
+      113,
+      114,
+      132
+    ],
+    "next": "Poll math78089; preserve primary standalone labels. Await user clarification about contextual question scope before any changed-endpoint promotion.",
+    "math_session": 78089,
+    "strict_semantic_successes": 0,
+    "contextual_target_recovery_diagnostic": [
+      35
+    ],
+    "mean_score_100": 28.571428571428573
+  },
+  "AQ": {
+    "root": "artifacts/reconstruct/matched-solve-aq",
+    "terminal": true,
+    "correct_answers": 7,
+    "strict_grounded": 3,
+    "planned_valid": 15,
+    "allocated": 16,
+    "incomplete_proof": [
+      68
+    ]
+  },
+  "AR": {
+    "root": "artifacts/reconstruct/elementary-controls-ar",
+    "session": null,
+    "protocol": "docs/plans/reconstruct-amendment-ar.md",
+    "diagnostic_only": true,
+    "terminal": true,
+    "solve_correct": 3,
+    "missing_premise_correct": 1,
+    "missing_target_correct": 2,
+    "denominator_per_condition": 3
+  },
+  "AS": {
+    "root": "artifacts/reconstruct/student-variance-as",
+    "local_session": 14853,
+    "seeds": [
+      1,
+      2
+    ],
+    "additional_draws": 14,
+    "source_families": 7,
+    "next": "Local draws sequential. Wait AP math terminal before paid AS judging; no best-seed selection."
+  },
+  "current_operating_protocol": "docs/design/reconstruct/CURRENT_PROTOCOL.md",
+  "current_evidence_report": "docs/research/reconstruct/current-evidence.md",
+  "latest_execution": {
+    "AU": "14 local draws, ceiling6/7 semantic and full-bank1/7 diagnostic",
+    "AV": "7 local draws, one semantic match on rejected input and incorrect proof",
+    "AW": "6 rich-input p13 draws, one semantic match on rejected input",
+    "AX": "6 rich-input p14 draws;4 semantic matches,2 strict verified recoveries; one after math adjudication",
+    "AY": "6 midpoint p14 draws;one meaningful semantic recovery",
+    "AZ": "6 zero-bridge p14 draws;two meaningful semantic matches with weak verification"
+  },
+  "active_research_processes": [],
+  "release_decision": {
+    "candidate_approved": "development only",
+    "confirmation_opened": false,
+    "remaining": [
+      "fresh confirmation",
+      "middle-heavy distribution",
+      "independent judge reliability"
+    ],
+    "raw_automatic_successes": 1,
+    "adjudicated_verified_successes": 2
+  },
+  "immediate_goal_evidence": "artifacts/reconstruct/bridge-composition-ax/completion-audit.json"
+}

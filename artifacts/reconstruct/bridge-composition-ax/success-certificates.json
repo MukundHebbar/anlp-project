@@ -1,0 +1,38 @@
+{
+  "reviewer": "Assistant analytic verification; independent teacher semantic/math results separate",
+  "cases": [
+    {
+      "source_index": 54,
+      "response_key": "54:premises_first:0",
+      "response_output_hash": "509192655e67ee73077b1db23fdb59b9fd1bf3aa7ee0ca27ed136ae7d53e4de7",
+      "evidence_hash": "ef12a663b292c0c094a84cc92f29d948001f90ad0187aa5edc44a8f355542865",
+      "question": "A complex number z has modulus 10 and a complex number omega has modulus 1. What is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z?",
+      "source_question": "Let \\( \\omega \\) and \\( z \\) be complex numbers such that \\( |\\omega| = 1 \\) and \\( |z| = 10 \\). Define \\( \\theta = \\arg\\left(\\frac{\\omega - z}{z}\\right) \\). Determine the maximum possible value of \\( \\tan^2 \\theta \\).",
+      "disclosure_record": "54:level2:0",
+      "disclosure_status": "ACCEPT",
+      "independent_analytic_certificate": "Let u=X+iY=(omega-z)/z, so (X+1)^2+Y^2=1/100. With s=Y/X, real solutions require discriminant4-4(1+s^2)*99/100>=0, giving s^2<=1/99. Equality at X=-99/100,Y=sqrt(99)/100 is attainable with z=10 and omega=10(u+1), which has modulus1. Thus the exact maximum is1/99."
+    },
+    {
+      "source_index": 67,
+      "response_key": "67:premises_first:0",
+      "response_output_hash": "c7bd46e2a0f6aeb10ff2e3fd172c42552e85c14ace5a9148251d2fe9c1746d17",
+      "evidence_hash": "26f1b8034c1dc48d3747f2ae860a2c157571353f57257f25d4df9f3c8103dd26",
+      "question": "Let V be a vector space with an ordered basis B = (v1, ..., vn). Let T be an invertible linear operator on V such that T(v1) = 1(v1 + ... + vn). Let A be the matrix of T with respect to B. What is the sum of all entries of A^{-1} with respect to B?",
+      "source_question": "Let $B = \\{ v_i \\}_{i=1}^n$ be a basis of a vector space $V$, and let $T: V \\rightarrow V$ be a linear operator such that $T(v_1) = \\sum_{i=1}^n v_i$. Find the sum of the elements of the matrix $[T^{-1}]_B$, where $[T^{-1}]_B$ is the matrix representation of the inverse of $T$ with respect to the basis $B$. Provide your answer as a single number.",
+      "disclosure_record": "67:level2:0",
+      "disclosure_status": "ACCEPT",
+      "independent_analytic_certificate": "For the reconstructed premise c=1, Ae1=ones. Invertibility gives A^-1 ones=e1. The sum of every matrix entry is ones^T A^-1 ones=ones^T e1=1. This uses no assumption about the other columns beyond invertibility."
+    },
+    {
+      "source_index": 113,
+      "response_key": "113:premises_first:0",
+      "response_output_hash": "d4acd8a5ba077bf2e211eed21683bbb32896d67d2ce93a612ddf8c8950f63d42",
+      "evidence_hash": "b6a4bdb15b22156e2e4f26b4f6bac7a4a0408e0ac04bfeb36f64115417255d22",
+      "question": "What is the limit as $n$ tends to infinity of $\\dfrac{x_n}{n}$, where $x_n$ is the $(n)$-th root of 1 plus the sum from $k=2$ to $n$ of $(k-1)(k-1)!$?",
+      "source_question": "Compute the limit \\( \\lim_{n\\rightarrow \\infty }\\frac{x_{n}}{n} \\) for the sequence \\((x_{n})_{n\\geq 2}\\) defined by \\(x_{n}=\\sqrt[n]{1+\\sum_{k=2}^{n}(k-1)(k-1)!}\\).",
+      "disclosure_record": "113:level2:0",
+      "disclosure_status": "ACCEPT",
+      "independent_analytic_certificate": "The telescoping identity (k-1)(k-1)!=k!-(k-1)! gives x_n=(n!)^(1/n). Stirling yields log(n!)=n log n-n+O(log n); dividing by n and subtracting log n gives log(x_n/n)=-1+o(1), hence limit1/e. The high clue gives general alpha asymptotics, whose logarithmic divergence vanishes only at alpha1. The student inserts alpha1 into the question."
+    }
+  ]
+}

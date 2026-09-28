@@ -1,0 +1,1245 @@
+{
+  "sources": {},
+  "partitions": {
+    "D1": []
+  },
+  "failures": [],
+  "judge_fixtures": {
+    "linear-decorated_copy:57358473cd723f39cb0528368fd860fcc52dffc92e4b87e38191e468fe55c256:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question directly restates the observation that every real equation ax+b=0 with a nonzero has exactly one real solution."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is inferred; the observation is merely turned into a yes/no question.",
+          "reason": "The student question is a verbatim restatement of the supplied observation, with only decorative names and a day added."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "Copy-only restatement of the observation as a question; no substantive reconstruction."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Observations: \"Every real equation ax+b=0 with a nonzero has exactly one real solution.\" Final answer Yes. Student question: \"A student named Mira asks on Tuesday: Does every real equation ax+b=0 with a nonzero have exactly one real solution?\" This is restatement of observation as question, with decorative story. Copy-only shortcut. Score0. Need JSON fields. well_posed? The question is well-posed? It asks yes/no, answer yes. But copy-only. status scored? likely scored. answer_correct true. clue_checks index1 compatible true grounding explicit? Observation exactly same. But copy-only. justification sufficient? It gives proof. inference status copy_only. shortcut true. score 0. Need reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 333,
+          "prompt_tokens": 795,
+          "total_tokens": 1128,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 167,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00025116
+        },
+        "elapsed_seconds": 7.269
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question directly restates the observation that every real equation ax+b=0 with a nonzero has exactly one real solution.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is inferred; the observation is merely turned into a yes/no question.\",\"reason\":\"The student question is a verbatim restatement of the supplied observation, with only decorative names and a day added.\"},\"shortcut\":true,\"score\":0,\"reason\":\"Copy-only restatement of the observation as a question; no substantive reconstruction.\"}"
+    },
+    "linear-copy:7e714005969c915b7e281aa07590f6d237c0d2d891ef9fc412dde342db402c63:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation is exactly the assertion restated as the question."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is inferred; the question merely converts the supplied observation into a yes/no question.",
+          "reason": "The student question is a direct restatement of the observation, so it is a copy-only shortcut."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The reconstruction is copy-only: it asks whether the given observation is true without adding or inferring any missing mathematical content."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess. We have final answer Yes, observation: Every real equation ax+b=0 with a nonzero has exactly one real solution. Student question: \"Does every real equation ax+b=0 with a nonzero have exactly one real solution?\" This is copy-only restatement. It turns supplied assertion into question. No missing mathematical content. Score 0. Need include fields. well_posed true? It is well-posed yes. answer_correct true. clue_checks index1 compatible true grounding explicit? Observation is exactly question. reason. justification sufficient? The proof is correct but copy-only. inference status copy_only. shortcut true? The instructions: known copy-only shortcut score0, shortcut=true? Example says copy_only, shortcut=true, score0. So shortcut true. Score 0. Need JSON only. Ensure no markdown.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 340,
+          "prompt_tokens": 787,
+          "total_tokens": 1127,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 178,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00025298000000000003
+        },
+        "elapsed_seconds": 8.074
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation is exactly the assertion restated as the question.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is inferred; the question merely converts the supplied observation into a yes/no question.\",\"reason\":\"The student question is a direct restatement of the observation, so it is a copy-only shortcut.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The reconstruction is copy-only: it asks whether the given observation is true without adding or inferring any missing mathematical content.\"}"
+    },
+    "linear-wrong:b93df24ee72858dddde4c5dfd66df29f1f1d9a59811ad6541d21fb354ed7c3f3:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The equation 2x+5=13 has a constant term 5 and coefficient 2, so subtracting 5 before dividing by 2 is a valid solving step."
+          }
+        ],
+        "justification": "incorrect",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The student inferred a specific linear equation, 2x+5=13, from the procedural clue and attempted to connect it to the final answer.",
+          "reason": "This is not a mere restatement, but the reconstructed equation does not yield the given final answer 3; it yields x=4."
+        },
+        "shortcut": false,
+        "score": 1,
+        "reason": "The question is well-posed and the procedural clue is compatible, but the proposed equation solves to x=4, not the final answer 3, so the answer is demonstrably wrong."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer 3. Observations: \"Subtract the constant term before dividing by the coefficient.\" Student response question: \"Solve 2x+5=13 over the reals.\" justification: \"Subtract 5 and divide by 2: x=4, which I claim matches 3.\"\n\nWe need judge reconstruction. We don't know source question. Final answer 3. Observations only procedural clue. Student reconstructed question solve 2x+5=13, answer x=4, claims matches 3. But final answer is 3, so answer incorrect. Also question likely not inferred from final answer? Let's analyze.\n\nWe need return JSON. Need determine status scored/needs_review. Well-posed? Solve equation is well-posed. Answer correct? No, x=4 not 3. Clue checks: index 1 observation \"Subtract constant term before dividing by coefficient.\" Is it compatible with question? For 2x+5=13, yes subtract 5 then divide by 2. Grounding explicit? The question has constant 5 and coefficient 2, so observation is compatible and explicit? It describes method. But final answer 3? The equation solution is 4, not 3. The observation doesn't mention final answer. The student claims matches 3, contradiction. Essential content? The reconstruction supplies equation 2x+5=13. Is that substantive? From final answer 3 and observation about subtract constant before divide coefficient, one could infer an equation whose solution is 3, e.g. 2x+5=11. Student chose 13 giving x=4. So wrong answer. Score likely 1: substantive attempt with demonstrated wrong answer. Need check if question itself ill-posed? No. But answer incorrect. Clue connection? Observation compatible with equation, but final answer mismatch. The justification has mathematical contradiction: x=4, claim matches 3. So score 1. Need JSON fields.\n\nNeed include clue_checks array. index 1 compatible true? The observation \"Subtract constant term before dividing by coefficient\" is compatible with solving 2x+5=13. Grounding explicit? The equation has constant term and coefficient, so yes. Reason: equation 2x+5=13 requires subtracting 5 then dividing by 2. But final answer 3 not grounded. Maybe compatible true.\n\nJustification: incorrect? The justification says x=4 matches 3, false. So \"incorrect\". Inference status: substantive? It inferred an equation from procedural clue and final answer? But final answer not used correctly. Essential content supplied: equation 2x+5=13. Is that substantive missing content? The source question unknown. The observation is procedural, final answer 3. To reconstruct, need infer equation with solution 3. Student supplied equation but wrong solution. It is substantive attempt but wrong. So inference status maybe substantive? The question itself is a constructed equation, not copy-only. But answer wrong. Score 1. Shortcut false? It is not copy-only. Well-posed true. answer_correct false. Score 1.\n\nNeed ensure JSON only. Reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 870,
+          "prompt_tokens": 781,
+          "total_tokens": 1651,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 659,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00047474
+        },
+        "elapsed_seconds": 13.926
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The equation 2x+5=13 has a constant term 5 and coefficient 2, so subtracting 5 before dividing by 2 is a valid solving step.\"}],\"justification\":\"incorrect\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The student inferred a specific linear equation, 2x+5=13, from the procedural clue and attempted to connect it to the final answer.\",\"reason\":\"This is not a mere restatement, but the reconstructed equation does not yield the given final answer 3; it yields x=4.\"},\"shortcut\":false,\"score\":1,\"reason\":\"The question is well-posed and the procedural clue is compatible, but the proposed equation solves to x=4, not the final answer 3, so the answer is demonstrably wrong.\"}"
+    },
+    "linear-substantive:e92610b573abe9d1ba9914ccaa1fce186294781bc89267df95a158de585db468:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "implicit",
+            "reason": "The observation prescribes subtracting the constant before dividing by the coefficient; the proposed equation 2x+5=11 and its solution follow exactly that procedure."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies the specific linear equation 2x+5=11 and the target of solving for x, which are not present in the observation or final answer.",
+          "reason": "The observation only gives a generic solving-order clue and the final answer is 3; the student inferred a concrete equation whose solution is 3 and whose solution method matches the clue."
+        },
+        "shortcut": false,
+        "score": 4,
+        "reason": "The question is well-posed, the answer x=3 is correct, the clue is coherently grounded, and the reconstruction adds a genuine numerical equation rather than merely restating the observation."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer 3, observations: \"Subtract the constant term before dividing by the coefficient.\" Student response question: \"Solve 2x+5=11 over the reals.\" justification subtract 5 get 2x=6 divide 2 x=3.\n\nWe need determine reconstruction. We don't know source question. Need independently verify proposed question and accept alternatives. Need distinguish reconstruction from restatement. Observations only one clue: \"Subtract the constant term before dividing by the coefficient.\" Final answer 3. Student constructs equation 2x+5=11. Is this substantive missing content? The observation is a procedural instruction, not a specific equation. The question infers coefficients/constant/right side such that answer 3 and procedure. Is that substantive? It supplies essential mathematical premise: equation 2x+5=11. The observation says subtract constant before dividing by coefficient. Final answer 3. The question is a simple linear equation. Does it infer genuine numerical premise? Yes, it chooses coefficients 2,5,11. But is it too trivial? The rubric says not minimum-difficulty. It can qualify. Need check clue grounding: observation \"Subtract constant term before dividing by coefficient\" is compatible with solving 2x+5=11. It is implicit? The question itself doesn't mention subtract constant before dividing, but solution uses it. The observation is a method clue. It is grounded by justification. Need score? It is a valid reconstruction with correct answer and substantive missing-content? Hmm essential content supplied by reconstruction: the equation 2x+5=11. The observation only gives a generic operation order, final answer 3. To reconstruct, student had to choose an equation whose solution is 3 and whose solving follows that operation. Is that substantive? It is a simple arithmetic construction. The examples: copy-only if turning supplied assertion into question. Here observation is not an assertion of equation. It is a procedural clue. The question is not restating observation. It infers numerical equation. So substantive? Maybe yes, but minimal. Score4? Need every clue substantively grounded, sufficient verification. There is one clue. The justification verifies. The question well-posed. Answer correct. Missing content: equation. Is it essential? Yes. But is it \"substantive\" enough? The rubric says inferring a genuine numerical premise or choosing a mathematical target can qualify; not minimum-difficulty. So yes. Score4 likely.\n\nBut need consider if observation \"Subtract the constant term before dividing by the coefficient\" is just a generic method, not enough to determine equation. The student chose arbitrary equation. But reconstruction can choose any valid equation satisfying final answer and clue. The clue is compatible. It is not a restatement. So score4.\n\nNeed output JSON only. Include clue_checks index 1 compatible true grounding explicit/implicit? The observation is a procedural instruction. In question, not explicit. In justification, it is applied. Grounding maybe implicit? The clue says subtract constant before dividing coefficient. The question 2x+5=11 and justification subtract 5 then divide 2. So compatible, grounding implicit? The clue itself is not in question, but the solution follows it. \"explicit\" if observation directly appears? It doesn't. \"implicit\" if entailed by solution. Use implicit. Reason.\n\nJustification sufficient? It solves fully. Yes.\n\nInference status substantive. Essential content: equation 2x+5=11 and target x. Reason: observation only generic operation order and final answer; student inferred coefficients/constant/right side.\n\nShortcut false. Score 4.\n\nNeed ensure JSON fields exactly. status scored, well_posed true, answer_correct true, clue_checks array, justification \"sufficient\", inference object, shortcut false, score 4, reason.\n\nFinal only JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1018,
+          "prompt_tokens": 783,
+          "total_tokens": 1801,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 801,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0004502679999999999
+        },
+        "elapsed_seconds": 16.985
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"implicit\",\"reason\":\"The observation prescribes subtracting the constant before dividing by the coefficient; the proposed equation 2x+5=11 and its solution follow exactly that procedure.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies the specific linear equation 2x+5=11 and the target of solving for x, which are not present in the observation or final answer.\",\"reason\":\"The observation only gives a generic solving-order clue and the final answer is 3; the student inferred a concrete equation whose solution is 3 and whose solution method matches the clue.\"},\"shortcut\":false,\"score\":4,\"reason\":\"The question is well-posed, the answer x=3 is correct, the clue is coherently grounded, and the reconstruction adds a genuine numerical equation rather than merely restating the observation.\"}"
+    },
+    "probability-copy:4603070c6db4ad6a271dcf6723fb0c68bc68c6cf61f1e09866954fdc87a0a3e8:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation directly states the additivity property for disjoint events, and the question asks whether that same statement holds."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is inferred; the question merely converts the supplied observation into a yes/no question.",
+          "reason": "The observation already asserts exactly P(E union F)=P(E)+P(F) for disjoint events, and the student question restates it without adding missing content."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "Copy-only restatement of the supplied observation as a yes/no question; no substantive reconstruction."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate. We have final answer Yes, observation: For disjoint events E and F, P(E union F)=P(E)+P(F). Student question: \"For disjoint events E and F, is P(E union F)=P(E)+P(F)?\" justification axiom. This is copy-only restatement: observation is assertion, question turns it into yes/no. No missing content. Score0 shortcut true. Need JSON fields. well_posed? It is well-posed yes? But score0. answer_correct true. clue_checks index1 compatible true grounding explicit reason. justification? sufficient? It is correct but copy-only. The schema justification maybe sufficient? Since proof is just axiom. But overall score0. inference status copy_only, essential_content none missing. shortcut true. score 0. Need ensure \"status\":\"scored\". reason.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 357,
+          "prompt_tokens": 787,
+          "total_tokens": 1144,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 179,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00026011999999999997
+        },
+        "elapsed_seconds": 14.27
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation directly states the additivity property for disjoint events, and the question asks whether that same statement holds.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is inferred; the question merely converts the supplied observation into a yes/no question.\",\"reason\":\"The observation already asserts exactly P(E union F)=P(E)+P(F) for disjoint events, and the student question restates it without adding missing content.\"},\"shortcut\":true,\"score\":0,\"reason\":\"Copy-only restatement of the supplied observation as a yes/no question; no substantive reconstruction.\"}"
+    },
+    "probability-decorated_copy:31fab88beafa5d75aa2181dbc3dbce84550308fccf4c86313a91b5c9f8f1eb8e:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation directly states the additivity formula for disjoint events, and the question asks exactly whether that same formula holds."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is supplied by reconstruction; the question merely converts the given observation into a yes/no question.",
+          "reason": "The student question restates the displayed observation with decorative names and a day, adding no missing mathematical content."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "Copy-only restatement of the supplied assertion as a question; the correct answer and proof do not constitute reconstruction work."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Observations: For disjoint events E and F, P(E union F)=P(E)+P(F). Final answer Yes. Student question: \"A student named Mira asks on Tuesday: For disjoint events E and F, is P(E union F)=P(E)+P(F)?\" This is copy-only restatement, decorative story. No missing content. Score0 shortcut true? The schema shortcut false? Need set shortcut true? In example copy-only shortcut=true score0. Here question turns supplied assertion into question. Essential content none. well_posed? It is well-posed yes? But score0. answer_correct true. clue_checks index1 compatible true grounding explicit. justification? sufficient? It is correct but copy-only. Need JSON.\n\nNeed include status scored, well_posed true, answer_correct true, clue_checks. inference status copy_only, essential_content none missing, reason. shortcut true, score 0. reason.\n\nEnsure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 382,
+          "prompt_tokens": 795,
+          "total_tokens": 1177,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 207,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000184828
+        },
+        "elapsed_seconds": 14.232
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation directly states the additivity formula for disjoint events, and the question asks exactly whether that same formula holds.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is supplied by reconstruction; the question merely converts the given observation into a yes/no question.\",\"reason\":\"The student question restates the displayed observation with decorative names and a day, adding no missing mathematical content.\"},\"shortcut\":true,\"score\":0,\"reason\":\"Copy-only restatement of the supplied assertion as a question; the correct answer and proof do not constitute reconstruction work.\"}"
+    },
+    "graph-copy:c2d3e85c8af8a8433129d9627166bb1d5ce75dfb0d8e0ee49edf0500600034c2:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question directly restates the observation as a yes/no question about the same graph-degree sum identity."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is inferred or constructed; the observation is merely converted into a question.",
+          "reason": "The supplied observation already states the full theorem, and the question asks whether that same statement is true."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The reconstruction is a copy-only restatement of the observation, so despite a correct answer and proof, it earns score 0."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Observations: handshaking lemma. Student question: \"In every finite simple undirected graph, is the sum of vertex degrees twice the number of edges?\" This is restatement of observation as yes/no. Final answer Yes. Copy-only shortcut. Score0. Need include fields. well_posed true? It is well-posed. answer_correct true. clue_checks index1 compatible true grounding explicit? Observation exactly. justification sufficient? The student justification is correct but copy-only. inference status copy_only. essential_content none missing. shortcut true. score 0. Need reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 304,
+          "prompt_tokens": 796,
+          "total_tokens": 1100,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 134,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00015220799999999998
+        },
+        "elapsed_seconds": 4.826
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question directly restates the observation as a yes/no question about the same graph-degree sum identity.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is inferred or constructed; the observation is merely converted into a question.\",\"reason\":\"The supplied observation already states the full theorem, and the question asks whether that same statement is true.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The reconstruction is a copy-only restatement of the observation, so despite a correct answer and proof, it earns score 0.\"}"
+    },
+    "probability-substantive:2ac1cba8bf5d2ac18f7b6c163c00ce3f4bc089c3fc3dc5ece96afb3adc70b336:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The solution partitions the event {1,2,3} into disjoint pieces {1} and {2,3}, then adds their probabilities 1/6 and 2/6."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies a concrete fair-die experiment and event whose probability is 1/2, with a valid disjoint partition for applying the addition rule.",
+          "reason": "The observation is a general probability method; the student constructs a specific well-posed problem and target probability rather than merely restating the observation."
+        },
+        "shortcut": false,
+        "score": 4,
+        "reason": "The question is well-posed, the answer 1/2 is correct, and the observation is explicitly and correctly used in a substantive reconstruction."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Final answer 1/2. Observations: event partitioned into two disjoint pieces and probabilities added. Student question: roll fair die probability rolling 1,2,3. Justification disjoint {1} and {2,3} probs 1/6 and 2/6 sum 1/2.\n\nWe need determine if reconstruction substantive or copy-only. Public input: final answer 1/2, observation about partition into two disjoint pieces and add probabilities. Student constructs a specific probability question with fair die and event {1,2,3}. Is this substantive? It infers a concrete scenario and target probability. Observation is generic method. The question is not restatement of observation? It supplies die, event, fair six-sided. Essential content: specific random experiment and event whose probability is 1/2, partition into {1} and {2,3}. This seems substantive missing content. Well-posed, answer correct. Clue check: observation says event partitioned into two disjoint pieces and probabilities added. In solution, event {1,2,3} partitioned into {1} and {2,3}; probabilities added. Compatible explicit? The observation is generic, student's justification grounds it. Need score? It has correct answer, substantive reconstruction, every clue connected, sufficient verification? It computes probabilities and sum. No omitted step? It is complete. Score 4 likely.\n\nNeed ensure no issue: The final answer 1/2 could be many. The question is simple but valid. The observation is not a supplied assertion turned into question? It is method. The question infers numerical premise? It chooses fair die and event. This is substantive? The examples: Answer 6; observations side lengths sum to 10 and area formula; question rectangle perimeter 20 area 24 find longer side. Here answer 1/2; observation partition and add probabilities. Student question: fair die probability 1,2,3. It infers a concrete event with probability 1/2 and partition. Is that enough? It is not merely restating \"event partitioned...\" It constructs a probability problem. Yes.\n\nNeed output JSON with fields. clue_checks index 1 compatible true grounding explicit? The observation is \"The event is partitioned into two disjoint pieces and their probabilities are added.\" In student response, justification explicitly partitions {1} and {2,3} and adds. So grounding explicit. Justification sufficient. inference status substantive. shortcut false. score 4. Reason concise.\n\nNeed final JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 730,
+          "prompt_tokens": 808,
+          "total_tokens": 1538,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 526,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000332808
+        },
+        "elapsed_seconds": 13.395
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The solution partitions the event {1,2,3} into disjoint pieces {1} and {2,3}, then adds their probabilities 1/6 and 2/6.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies a concrete fair-die experiment and event whose probability is 1/2, with a valid disjoint partition for applying the addition rule.\",\"reason\":\"The observation is a general probability method; the student constructs a specific well-posed problem and target probability rather than merely restating the observation.\"},\"shortcut\":false,\"score\":4,\"reason\":\"The question is well-posed, the answer 1/2 is correct, and the observation is explicitly and correctly used in a substantive reconstruction.\"}"
+    },
+    "graph-decorated_copy:a5e35679e76f27b28bdcb12cf85fc5bbbc28e00aaccd6c1a97eecc2ce1235939:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation states the handshaking lemma, and the proposed question asks exactly whether that same statement holds."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is inferred; the observation is merely converted into a yes/no question.",
+          "reason": "The question restates the supplied graph-degree sum fact without adding or reconstructing any missing mathematical content."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The proposed question is a copy-only restatement of the observation, even though the answer and proof are correct."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Observations: handshaking lemma. Student question: \"A student named Mira asks on Tuesday: In every finite simple undirected graph, is the sum of vertex degrees twice the number of edges?\" This is essentially restatement of observation as yes/no question. No missing mathematical premise/target? It turns supplied assertion into question. Copy-only shortcut. Score0. Need include clue_checks index1 compatible true grounding explicit? Observation is exactly theorem. Question restates. well_posed true? It is well-posed yes. answer_correct true. inference copy_only. shortcut true. score 0. Justification sufficient? The proof is correct but copy-only. Need JSON.\n\nEnsure fields. clue_checks: index 1 compatible true, grounding explicit, reason. justification maybe sufficient? The student's justification is sufficient for the assertion, but reconstruction not substantive. The schema justification: sufficient|minor_omission|insufficient|incorrect|absent|uncertain. Since proof is correct, sufficient. But score0 due copy_only. reason.\n\nFinal JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 395,
+          "prompt_tokens": 804,
+          "total_tokens": 1199,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 228,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000191548
+        },
+        "elapsed_seconds": 6.611
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation states the handshaking lemma, and the proposed question asks exactly whether that same statement holds.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is inferred; the observation is merely converted into a yes/no question.\",\"reason\":\"The question restates the supplied graph-degree sum fact without adding or reconstructing any missing mathematical content.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The proposed question is a copy-only restatement of the observation, even though the answer and proof are correct.\"}"
+    },
+    "probability-wrong:50b57a1d5ef3b1070ce7e67a8d3bd6f1695a0eef75595b348f66d9df53d57c3c:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "implicit",
+            "reason": "The constructed event {1,2} is partitioned into two disjoint singleton events, and their probabilities are added in the justification."
+          }
+        ],
+        "justification": "incorrect",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies a concrete fair six-sided die, the event of rolling 1 or 2, and the target probability.",
+          "reason": "This is more than restating the observation, but the resulting probability is 1/3, not the required final answer 1/2."
+        },
+        "shortcut": false,
+        "score": 1,
+        "reason": "The question is well-posed and uses the partition-and-add idea, but its correct answer is 1/3, contradicting the given final answer 1/2; the justification falsely claims 1/3 matches 1/2."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Final answer 1/2. Observations: event partitioned into two disjoint pieces and probabilities added. Student question: fair die probability rolling 1 or 2. Justification says probabilities 1/6 each totaling 1/3, claim matches 1/2. This is wrong answer relative final? Final answer 1/2, but their question answer is 1/3. Also observation about partition/add is used, but question is copy? Need determine. The final answer 1/2. Observations only general method. Student constructs a question with answer 1/3, not 1/2. So answer_correct false. Well-posed? Question well-posed, but answer incorrect. Score likely 1? It is substantive attempt? It has wrong answer demonstrated? The question itself is well-posed but answer doesn't match final. Also justification contradiction: 1/3 matches 1/2 false. Clue compatible? Observation says event partitioned into two disjoint pieces and probabilities added. In question rolling 1 or 2, yes two disjoint singleton events, add probabilities. Grounding explicit? The question doesn't mention partition but solution uses. It is compatible. But final answer mismatch. Inference: Did reconstruction infer essential content? The observation is generic method, question supplies die, fair, six-sided, event 1 or 2, target probability. That is substantive? It constructs a concrete probability problem from a generic observation. But final answer 1/2 not achieved. Score1 due wrong answer/contradiction. Need JSON fields.\n\nNeed include clue_checks index 1 compatible true? The observation is compatible with question? It says event partitioned into two disjoint pieces and probabilities added. For rolling 1 or 2, yes. Grounding explicit? The question doesn't explicitly state partition, but the solution/justification uses it. The observation is a method, not a clue? We can mark compatible true, grounding implicit? It is grounded by the constructed event. Reason.\n\nwell_posed true. answer_correct false. justification? The justification is incorrect because 1/3 != 1/2. It also says \"claim matches 1/2\" contradiction. So justification incorrect. inference status substantive? It inferred a concrete question from generic observation. Essential content: fair die, six sides, event {1,2}, target probability. But answer wrong. Shortcut false. Score 1. Need reason.\n\nEnsure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 721,
+          "prompt_tokens": 800,
+          "total_tokens": 1521,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 514,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000327908
+        },
+        "elapsed_seconds": 13.71
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"implicit\",\"reason\":\"The constructed event {1,2} is partitioned into two disjoint singleton events, and their probabilities are added in the justification.\"}],\"justification\":\"incorrect\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies a concrete fair six-sided die, the event of rolling 1 or 2, and the target probability.\",\"reason\":\"This is more than restating the observation, but the resulting probability is 1/3, not the required final answer 1/2.\"},\"shortcut\":false,\"score\":1,\"reason\":\"The question is well-posed and uses the partition-and-add idea, but its correct answer is 1/3, contradicting the given final answer 1/2; the justification falsely claims 1/3 matches 1/2.\"}"
+    },
+    "geometric-copy:3b7a3fbeeacb9728b3aa01b230c62619fa3ea8d42ccc37f358282988f2c99d49:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation directly states the geometric-series formula that the question asks to confirm."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is inferred; the question merely turns the supplied formula into a yes/no question.",
+          "reason": "The question is a direct restatement of the observation, so it does not involve substantive reconstruction."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The reconstructed question is copy-only: it asks whether the exact formula given in the observation is true, with no missing mathematical content supplied by reconstruction."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Observations: formula for geometric sum. Student question: asks is formula true. This is copy-only restatement of observation. Answer Yes. No missing content. Score0 shortcut true. Need include clue_checks index1 compatible true grounding explicit reason. well_posed true? It is well-posed. answer_correct true. inference copy_only. shortcut true. score0. justification? The student provides proof, but question is restatement. Justification sufficient? It verifies formula. But scoring copy-only. Need JSON fields. Ensure \"status\":\"scored\". reason.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 297,
+          "prompt_tokens": 846,
+          "total_tokens": 1143,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 128,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000156268
+        },
+        "elapsed_seconds": 5.276
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation directly states the geometric-series formula that the question asks to confirm.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is inferred; the question merely turns the supplied formula into a yes/no question.\",\"reason\":\"The question is a direct restatement of the observation, so it does not involve substantive reconstruction.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The reconstructed question is copy-only: it asks whether the exact formula given in the observation is true, with no missing mathematical content supplied by reconstruction.\"}"
+    },
+    "graph-substantive:820f681ae2274860365ea1edd87c576b493807fdd4c3386cf333bec85e386fe7:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question asks for the number of edges given degree sum 12, and the justification explicitly uses the fact that each edge contributes two to the degree sum."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies the numerical degree sum 12 and the target of finding the number of edges, which are not present in the observation alone.",
+          "reason": "The observation is a general handshaking relation; the student turns it into a concrete problem by adding a degree-sum value and asking for the edge count."
+        },
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the answer 6 is correct, and the observation is directly and sufficiently used to derive the edge count from the supplied degree sum."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Final answer 6. Observations: handshaking lemma. Student question: graph degree sum 12, how many edges? Uses observation. Is this substantive reconstruction? Source likely observation only? They infer numerical premise degree sum 12 and target edges. The final answer 6. Need determine score. The observation is \"Each edge contributes two to total vertex degrees.\" Student constructs question with degree sum 12, asks edges. This is essentially applying handshaking lemma. Missing content: numerical degree sum 12 and target number edges. Is that substantive? According to rubric, inferring genuine numerical premise or choosing target can qualify. Here they chose degree sum 12 and target edges. It is a simple direct application, but not copy-only? The observation is theorem; question turns it into a problem with parameter. It infers numerical premise 12 and target edges. That seems substantive? Need check \"Merely turning a supplied assertion into a question is copy-only shortcut\" Example prime >2 odd. Here observation is general relation, not assertion about specific graph. They add degree sum 12 and ask edges. That is missing numerical premise and target. So substantive. Well-posed? finite simple undirected graph degree sum 12, edges = 6. Correct. Clue checks: index 1 compatible true, grounding explicit? The question uses degree sum and edge count; observation grounds relation. It is explicit in justification. Verification sufficient? They state each edge contributes two, so edges=12/2=6. That's sufficient for this simple. Score 4 likely. Need output JSON with fields. Ensure \"clue_checks\" index 1. \"inference\": status substantive, essential_content: numerical degree sum 12 and target number of edges. reason. shortcut false. score 4. Need maybe \"well_posed\": true, \"answer_correct\": true. justification sufficient. reason concise.\n\nNeed final JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 608,
+          "prompt_tokens": 791,
+          "total_tokens": 1399,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 405,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000279188
+        },
+        "elapsed_seconds": 9.488
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question asks for the number of edges given degree sum 12, and the justification explicitly uses the fact that each edge contributes two to the degree sum.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies the numerical degree sum 12 and the target of finding the number of edges, which are not present in the observation alone.\",\"reason\":\"The observation is a general handshaking relation; the student turns it into a concrete problem by adding a degree-sum value and asking for the edge count.\"},\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the answer 6 is correct, and the observation is directly and sufficiently used to derive the edge count from the supplied degree sum.\"}"
+    },
+    "geometric-decorated_copy:c312c1bd54d267ca96b57a5495932f386274acec5bf574b6f2366af93fc37faa:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation explicitly states the geometric sum formula, and the reconstructed question asks whether that same formula holds under the same conditions."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical premise, parameter, target, or relation is supplied by reconstruction; the question merely turns the given formula into a yes/no question.",
+          "reason": "The observation already contains the full statement a+ar+...+ar^(n-1)=a(1-r^n)/(1-r) for real a and r with r≠1 and positive integer n. The student question restates this assertion without adding or inferring any missing mathematical content."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The reconstruction is a copy-only restatement of the supplied observation as a question. Although the answer and proof are correct, no substantive missing-content reconstruction occurs, so it earns score 0."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Observations: formula for geometric sum. Final answer Yes. Student question: \"For real a and r with r not equal to 1 and positive integer n, is a+...+ar^(n-1)=a(1-r^n)/(1-r)?\" This is exactly restating observation as question. Copy-only shortcut. Score0. Need include clue_checks index1 compatible true grounding explicit reason. well_posed true? It is well-posed. answer_correct true. inference copy_only. shortcut true. score0. justification? Student justification sufficient? It gives proof sketch. But primary issue copy-only. Need JSON.\n\nEnsure fields. clue_checks array. status scored. well_posed true. answer_correct true. justification \"sufficient\" maybe proof is sufficient? It says subtract rS, cancel, divide. That's sufficient. But score0 due copy-only. inference essential_content: none missing; observation already states formula. reason. shortcut true. score 0.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 441,
+          "prompt_tokens": 854,
+          "total_tokens": 1295,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 213,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000217868
+        },
+        "elapsed_seconds": 8.902
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation explicitly states the geometric sum formula, and the reconstructed question asks whether that same formula holds under the same conditions.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical premise, parameter, target, or relation is supplied by reconstruction; the question merely turns the given formula into a yes/no question.\",\"reason\":\"The observation already contains the full statement a+ar+...+ar^(n-1)=a(1-r^n)/(1-r) for real a and r with r≠1 and positive integer n. The student question restates this assertion without adding or inferring any missing mathematical content.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The reconstruction is a copy-only restatement of the supplied observation as a question. Although the answer and proof are correct, no substantive missing-content reconstruction occurs, so it earns score 0.\"}"
+    },
+    "graph-wrong:7690d0095cc32fb4820dc9b97134f41e0dca70abff8322133419a83549cd5f4d:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation is the handshaking relation: each edge contributes 2 to the degree sum, so degree sum 14 implies 7 edges."
+          }
+        ],
+        "justification": "incorrect",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies the numerical degree sum 14 and asks for the number of edges, using the handshaking relation to infer the target.",
+          "reason": "The question is not a mere restatement; it adds a concrete degree-sum premise and an edge-count target."
+        },
+        "shortcut": false,
+        "score": 1,
+        "reason": "The question is well-posed and the reconstruction is substantive, but the correct edge count is 14/2=7, not the final answer 6. The student's own justification also computes 7 while claiming it matches 6, so the answer is demonstrably wrong."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Final answer 6. Observations: Each edge contributes two to total vertex degrees. Student question: graph degree sum 14, how many edges? Justification: 14/2=7, claim matches 6. This is contradictory: answer should 7, final answer 6. Also reconstruction? Observation is handshaking lemma. Question infers numerical premise degree sum 14 and target edges. But answer incorrect. Need score? Well-posed yes? Question well-posed, answer correct false. Clue compatible? Observation supports formula, but student's answer 7 not final 6. The final answer is 6, so wrong. Score1? \"substantive attempt with demonstrated wrong answer\" yes. Need check if reconstruction substantive? It infers degree sum 14 and target edges. Essential content: numerical degree sum and target edges. Not copy-only. Shortcut false. But answer_correct false. Score 1. Need JSON fields.\n\nNeed include clue_checks index 1 compatible? The observation \"Each edge contributes two to total vertex degrees\" is compatible with question? Yes, it grounds relation sum=2E. But if final answer 6, question with sum14 gives 7, contradiction with final answer. The clue itself compatible. Grounding explicit? The question doesn't mention handshaking but observation is used. It is explicit in observation. For clue check, compatible true, grounding explicit? It is the observation itself. Reason: supports E=sum/2, but yields 7 not final 6. Justification: incorrect? Student justification says 14/2=7, claim matches 6. This is mathematically contradictory. So justification incorrect. Inference substantive. Score 1.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 582,
+          "prompt_tokens": 792,
+          "total_tokens": 1374,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 367,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00026840800000000004
+        },
+        "elapsed_seconds": 12.9
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation is the handshaking relation: each edge contributes 2 to the degree sum, so degree sum 14 implies 7 edges.\"}],\"justification\":\"incorrect\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies the numerical degree sum 14 and asks for the number of edges, using the handshaking relation to infer the target.\",\"reason\":\"The question is not a mere restatement; it adds a concrete degree-sum premise and an edge-count target.\"},\"shortcut\":false,\"score\":1,\"reason\":\"The question is well-posed and the reconstruction is substantive, but the correct edge count is 14/2=7, not the final answer 6. The student's own justification also computes 7 while claiming it matches 6, so the answer is demonstrably wrong.\"}"
+    },
+    "stronger-33-copy:fe5137f7c2763fd4e07d94fc98011b76d2f68acc16ee9a2add6cc5eef135b3f3:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "stronger-33-copy",
+      "category": "production_diagnostic",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "implicit",
+            "reason": "The question assumes f and g are continuous on [0,1], so h=f-g is continuous; this observation is used in the proof but is not an independently inferred premise."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question directly asks whether pointwise strict dominance f>g implies strict dominance of the maxima, which is essentially the supplied observation restated as a yes/no question."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical content is supplied by reconstruction; the question merely converts the given observation about strict pointwise dominance and maxima into a question.",
+          "reason": "The observation already states that if one function is strictly larger at every point, then its maximum is strictly larger. The proposed question asks exactly this for continuous functions on [0,1], so it is a restatement rather than a substantive reconstruction."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The question is well-posed and the answer/proof are correct, but the reconstruction is copy-only: it turns the supplied observation into a question without inferring a missing premise, parameter, target, or relation."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate reconstruction. Need output JSON only. Need assess. We have final answer Yes. Observations: h continuous; if one strictly larger at every point then its maximum strictly larger. Student question: Let f,g continuous on [0,1]. If f>g pointwise, must max f > max g? This is essentially restating observation 2? Need distinguish reconstruction. Observations include general fact: If one of two functions strictly larger at every point, then its maximum strictly larger than other's maximum. The question asks exactly that for continuous functions on [0,1] with f>g. It turns supplied assertion into question. Is there missing mathematical content? It adds domain [0,1], continuous real-valued, maxima. Observation 1 h continuous. Observation 2 is general assertion. The question is basically \"If f>g pointwise, must max f > max g?\" This is copy-only? The final answer Yes. The observations already state the theorem. The question is a direct instance/restatement of observation 2. It doesn't infer essential premise absent? It chooses f,g continuous on [0,1], but observation 2 already says if one function strictly larger at every point then max larger. It doesn't mention continuity? It says \"For continuous f and g on [0,1], h continuous\" and \"If one of the two functions...\" likely refers to continuous f,g? The question is essentially asking whether the observation is true. Copy-only shortcut. Score 0. Need JSON. Need clue_checks for observations. Index 1 compatible? Observation h continuous. In question f,g continuous, h=f-g continuous. It is used in justification. compatible true, grounding explicit? The question explicitly says continuous, so h continuous follows. But observation itself is a mathematical fact. It is compatible and grounded explicit/implicit? The observation is not a clue? We need check each observation. Index 1: For continuous f,g on [0,1], h continuous. The question includes continuous f,g on [0,1], so compatible. Grounding: explicit? The observation is not stated in question but follows from continuity. It is used. Maybe \"implicit\" because h continuity not in question but follows. Index 2: If one strictly larger at every point, max strictly larger. This is exactly the question's target. compatible true, grounding explicit? The question states f>g and asks max f > max g. It is the assertion. But for reconstruction, this is copy-only. Need status scored, well_posed true, answer_correct true, clue_checks. justification sufficient? The student's proof is correct. But reconstruction copy_only. Score 0. Need reason.\n\nNeed ensure JSON fields. \"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[...],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"None; the question merely turns the supplied observation that pointwise strict dominance implies strict maximum dominance into a yes/no question.\",\"reason\":\"...\"},\"shortcut\":true? The instructions: known copy-only shortcut is score0, not needs_review. In schema shortcut false? We set true. Score 0. Reason.\n\nNeed maybe \"well_posed\": true. \"answer_correct\": true. \"justification\":\"sufficient\" because proof correct. But if copy-only, score 0. Clue checks: index1 compatible true grounding implicit? Let's craft.\n\nNeed final JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1010,
+          "prompt_tokens": 1030,
+          "total_tokens": 2040,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 725,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 768,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0004641055999999999
+        },
+        "elapsed_seconds": 14.57
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"implicit\",\"reason\":\"The question assumes f and g are continuous on [0,1], so h=f-g is continuous; this observation is used in the proof but is not an independently inferred premise.\"},{\"index\":2,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question directly asks whether pointwise strict dominance f>g implies strict dominance of the maxima, which is essentially the supplied observation restated as a yes/no question.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical content is supplied by reconstruction; the question merely converts the given observation about strict pointwise dominance and maxima into a question.\",\"reason\":\"The observation already states that if one function is strictly larger at every point, then its maximum is strictly larger. The proposed question asks exactly this for continuous functions on [0,1], so it is a restatement rather than a substantive reconstruction.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The question is well-posed and the answer/proof are correct, but the reconstruction is copy-only: it turns the supplied observation into a question without inferring a missing premise, parameter, target, or relation.\"}"
+    },
+    "geometric-wrong:896e64fda13b4df7bfccfb3962fd540bd5e3336c60adc7c459696ad98d6beef5:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The justification uses the common-ratio subtraction method: for S=1+2+4+8, 2S-S=16-1=15, which is consistent with the observation about cancellation."
+          }
+        ],
+        "justification": "incorrect",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies a concrete finite geometric sum and asks for its value, using the observed cancellation method.",
+          "reason": "It constructs a specific sum rather than merely restating the observation, but the chosen sum does not match the final answer."
+        },
+        "shortcut": false,
+        "score": 1,
+        "reason": "The question is well-posed, but its correct sum is 15, not the stated final answer 31. The justification even computes 15 and then contradicts itself by claiming it matches 31."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer 31. Observations: Multiplying finite sum by common ratio and subtracting cancels intermediate terms. Student response question: \"Find the sum 1+2+4+8.\" justification: With S sum, 2S-S=16-1=15, which I claim matches 31.\n\nNeed evaluate reconstruction using only final answer, observations, student response. Need determine if question inferred essential premise? Final answer 31. Observation about geometric series cancellation. Student question asks sum 1+2+4+8 = 15, not 31. Justification says 2S-S=16-1=15, claim matches 31. Contradiction. So score? likely 1: substantive attempt with demonstrated wrong answer, mathematical contradiction. Need JSON.\n\nNeed check well_posed? Question \"Find sum 1+2+4+8\" is well-posed, answer 15. But final answer 31 incorrect. Clue observation compatible? It is about multiplying finite sum by common ratio and subtracting cancels intermediate terms. For sum 1+2+4+8, common ratio 2, 2S-S = 16-1 =15. Compatible with observation. But final answer 31 not. Student response has contradiction: says 15 matches 31. So answer_correct false. clue_checks index 1 compatible true? Grounding explicit? Observation is general method, used in justification. It is compatible. But final answer mismatch. Need status scored. well_posed true? The reconstructed question is well-posed. answer_correct false. inference? Did reconstruction infer essential content? The question is just sum 1+2+4+8. Observations only method. Final answer 31. Missing content? The question supplies terms; observation supplies method. Is this substantive? It constructs a concrete finite geometric sum from observation? But final answer 31 doesn't match. Need score 1. Shortcut? Maybe not copy-only? It is a question, but answer wrong. Score1.\n\nNeed include clue_checks. Index 1 compatible true, grounding explicit? The observation \"Multiplying finite sum by common ratio and subtracting cancels intermediate terms\" is explicitly used in justification. Reason: For S=1+2+4+8, 2S-S=16-1=15, consistent with cancellation. But final answer 31 contradicts computed sum. Maybe grounding explicit.\n\nJustification: incorrect? The justification contains mathematical contradiction: 15 matches 31. It is not sufficient. Could be \"incorrect\". Need field justification: sufficient|minor_omission|insufficient|incorrect|absent|uncertain. Since contradiction, incorrect.\n\nInference status: substantive? It inferred a concrete sum? But final answer 31 not. Essential content supplied by reconstruction: concrete geometric series 1+2+4+8 and target sum. Observation method. Is that substantive? It is a valid reconstruction? But answer wrong. The question itself is not copy-only? The observation is general method, question is specific sum. It infers terms? Hmm final answer 31 maybe intended sum 1+2+4+8+16? Actually 1+2+4+8+16=31. Student question omitted 16. Observation about finite sum. If final answer 31, correct question should be sum 1+2+4+8+16. Student question is wrong. So reconstruction has wrong target/parameter. Inference maybe substantive but incorrect. Score1.\n\nNeed reason concise. JSON only.\n\nEnsure no markdown.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 945,
+          "prompt_tokens": 788,
+          "total_tokens": 1733,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 741,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000420308
+        },
+        "elapsed_seconds": 20.016
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The justification uses the common-ratio subtraction method: for S=1+2+4+8, 2S-S=16-1=15, which is consistent with the observation about cancellation.\"}],\"justification\":\"incorrect\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies a concrete finite geometric sum and asks for its value, using the observed cancellation method.\",\"reason\":\"It constructs a specific sum rather than merely restating the observation, but the chosen sum does not match the final answer.\"},\"shortcut\":false,\"score\":1,\"reason\":\"The question is well-posed, but its correct sum is 15, not the stated final answer 31. The justification even computes 15 and then contradicts itself by claiming it matches 31.\"}"
+    },
+    "geometric-substantive:12aadbb190ff9653717bb7e97da004d4d05c7a627ae0b2d6d1d0d8f214a41ca0:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The student's justification uses the common-ratio multiplication and subtraction method, with intermediate terms cancelling, matching the observation."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies the specific finite geometric series 1+2+4+8+16 and the target of finding its sum, which are not present in the observation or final answer alone.",
+          "reason": "The observation only states the cancellation method for a finite geometric sum; the student constructs a concrete series and target whose sum is 31."
+        },
+        "shortcut": false,
+        "score": 4,
+        "reason": "The question is well-posed, the answer 31 is correct, the observation is explicitly used, and the reconstruction substantively supplies a concrete finite geometric series and target."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Final answer 31. Observations: Multiplying finite sum by common ratio and subtracting cancels intermediate terms. Student question: Find sum 1+2+4+8+16. Justification uses S, 2S-S=32-1. Need determine if reconstruction substantive? Public input includes final answer 31 and observation about finite geometric sum method. Student constructs specific finite geometric series 1+2+4+8+16, target sum. Is that inferred? The observation is generic method. The final answer 31. They choose a series whose sum is 31. Is this copy-only? Need infer essential mathematical premise/parameter/target absent. The source question unknown. Observations only method. Final answer 31. Student question asks sum of specific powers. The specific terms are not in observations except answer 31. Is choosing a series summing to 31 substantive? It infers a concrete sequence and target. But maybe it's reverse-engineered from answer. Need evaluate.\n\nWe need independently verify proposed question and accept valid alternatives. The question: sum 1+2+4+8+16 = 31. Correct. Observation: multiplying finite sum by common ratio and subtracting cancels intermediate terms. This is exactly method. The question uses common ratio 2. It is well-posed. Clue check: observation compatible, grounding explicit? The observation is generic; student's justification applies it. It is grounded. Inference: essential content supplied by reconstruction: specific geometric series and target sum. Is that substantive? It chooses a mathematical target and parameters. The final answer 31 is given, but the question's terms are inferred. However, is it too trivial? The scoring says not minimum-difficulty. Inferring genuine numerical premise or choosing target can qualify. Here they infer terms 1,2,4,8,16 from answer 31? Actually answer 31 plus method. The question is a concrete instance. It is not merely turning supplied assertion into question? The observation is \"Multiplying finite sum by common ratio and subtracting cancels intermediate terms.\" The question \"Find sum 1+2+4+8+16\" is not restating that observation. It constructs a specific finite geometric series. So substantive? Maybe yes. But is there a shortcut? It might be reverse-engineered from final answer: choose powers of 2 summing to 31. But that's allowed? Need decide score.\n\nNeed check if every clue substantively grounded. Observation about cancellation is used in justification. Final answer 31 matches. Justification: Let S be sum. Then 2S-S=32-1, so S=31; intermediate terms cancel. This is sufficient? It omits explicit expansion but okay. It verifies. The question is well-posed. Answer correct. Missing content: specific series and target. Is that essential? The observation alone doesn't specify common ratio, number of terms, or sum. The final answer 31 constrains. The student inferred a valid instance. This seems substantive. Score 4? Need consider if \"Find sum 1+2+4+8+16\" is too directly derived from answer 31? The final answer is 31, and the question's answer is 31. But the question itself is not \"Is 1+2+4+8+16=31?\" It asks find sum. The terms are not in observations. The method is generic. I'd lean score 4.\n\nBut let's scrutinize instructions: \"To earn 3 or 4, the question must infer or construct an essential mathematical premise, parameter, target or relation absent from combined public input. Merely turning a supplied assertion into a question is a copy-only shortcut, even if student proves that assertion correctly. Renaming, irrelevant extra conditions or decorative stories do not create missing mathematical content. Inferring a genuine numerical premise or choosing a mathematical target can qualify; this is not a minimum-difficulty requirement.\"\n\nHere combined public input: final answer 31, observation about multiplying finite sum by common ratio and subtracting cancels intermediate terms. The question constructs a specific finite sum. The specific terms are absent. The target \"Find the sum\" is absent? The final answer is 31, so target answer is present. But the question target is to find sum of that series. The series is constructed. Is that essential content? Yes, the actual series. But is it \"genuine numerical premise\"? Yes, terms 1,2,4,8,16. It is a valid reconstruction. The observation is used. So score 4.\n\nNeed output JSON with fields. status scored, well_posed true, answer_correct true, clue_checks index 1 compatible true grounding explicit? The observation is generic; in justification, \"2S-S=32-1\" uses multiplying by common ratio and subtracting. It is explicit? The observation itself is not a clue with index? We have one observation. It is compatible and grounded explicit? The student's justification explicitly mentions intermediate terms cancel. So grounding explicit. Justification sufficient. Inference status substantive. essential_content: specific finite geometric series 1+2+4+8+16 and target sum. reason. shortcut false. score 4. reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1293,
+          "prompt_tokens": 792,
+          "total_tokens": 2085,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1091,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0005670279999999999
+        },
+        "elapsed_seconds": 24.363
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The student's justification uses the common-ratio multiplication and subtraction method, with intermediate terms cancelling, matching the observation.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies the specific finite geometric series 1+2+4+8+16 and the target of finding its sum, which are not present in the observation or final answer alone.\",\"reason\":\"The observation only states the cancellation method for a finite geometric sum; the student constructs a concrete series and target whose sum is 31.\"},\"shortcut\":false,\"score\":4,\"reason\":\"The question is well-posed, the answer 31 is correct, the observation is explicitly used, and the reconstruction substantively supplies a concrete finite geometric series and target.\"}"
+    },
+    "qwen-33-copy:32e1bcf2be919e832c25799c72988ffd65dde771238e72f29d775630b434f56a:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "qwen-33-copy",
+      "category": "production_diagnostic",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The student uses continuity of f and g to define h=f-g and apply continuity of h."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question directly restates the observation that if one function is strictly larger pointwise, its maximum is strictly larger."
+          }
+        ],
+        "justification": "minor_omission",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "None. The reconstructed question is essentially a direct restatement of the supplied observation about pointwise larger functions having a larger maximum.",
+          "reason": "The student did not infer a missing premise, parameter, target, or relation; they turned the given assertion into a yes/no question."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The question is a copy-only restatement of the provided observation, so despite being well-posed and having the correct answer, it earns score 0."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate reconstruction. Need JSON only. Need assess. We have final answer Yes. Observations: h continuous; if one function strictly larger at every point then its maximum strictly larger than other's maximum. Student question: If f,g continuous on [0,1], f>g all x, is max f > max g? This is essentially restatement of second observation? Let's parse.\n\nObservation 2: \"If one of the two functions is strictly larger than the other at every point of [0,1], then its maximum is strictly larger than the other's maximum.\" That is exactly the question, with f/g. Observation 1 h continuous. The question asks theorem. It is copy-only? The final answer Yes. The observations include the theorem itself. The student just turns supplied assertion into question. No missing mathematical premise? It restates observation 2. It uses h continuity from obs1. The question is essentially \"is it true that if f>g pointwise then max f > max g?\" This is exactly observation 2. So copy_only shortcut true score0. Need check if any inferred content? They specify continuous functions on [0,1], f>g all x. Observation 2 already says for continuous f,g on [0,1]? Actually first observation says for continuous f and g on [0,1], h continuous. Second says \"If one of the two functions is strictly larger than the other at every point of [0,1], then its maximum is strictly larger than the other's maximum.\" It doesn't explicitly say continuous? Context from first likely continuous. The question is direct restatement. So score0.\n\nNeed output JSON with fields. well_posed true? It is well-posed. answer_correct true. clue_checks index 1 compatible true grounding explicit? Observation 1 used in justification. index 2 compatible true grounding explicit? It is the theorem. But for copy-only, score0. Need justification sufficient? The student's proof has a gap? Let's inspect: h continuous, h>0, max h positive. Therefore max f > max g. Is that valid? Need show max f - max g? h max positive doesn't directly imply max f > max g? Actually if h=f-g, max h >0. Does that imply max f > max g? Let's verify. Let M_f = max f, M_g=max g. Since f(x)>g(x) for all x, at x_f where f max, f(x_f)>g(x_f), so M_f > g(x_f). But g(x_f) <= M_g, so M_f > g(x_f) doesn't imply M_f > M_g? Wait if M_f > g(x_f) and M_g >= g(x_f), could M_f <= M_g? Example f(x)=x, g(x)=x-0.1? f>g, max f=1, max g=0.9, yes. Need proof: Let x_g where g max. f(x_g)>g(x_g)=M_g, so M_f >= f(x_g)>M_g. So yes. Student's h max positive: max(f-g)>0. Does max(f-g)>0 imply max f > max g? Yes? Need check: max(f-g) <= max f - min g? Not directly. But if max(f-g)>0, there exists x with f(x)>g(x). But pointwise f>g already. Does max h positive imply max f > max g? Suppose f max=10, g max=10? But f>g all x, can max equal? If g max at x0=10, f(x0)>10, so max f>10. So yes. But from max h positive alone not enough? If h max positive, there is x with f(x)>g(x). But max f could equal max g? Example f(x)=x, g(x)=x-1? h=1 positive, max f=1, max g=0. okay. Could max f = max g if f>g? No. But max h positive alone doesn't prove max f > max g? Let's find f,g arbitrary: f(x)=0, g(x)=-1, h=1, max f=0, max g=-1. yes. If max h positive, there exists x with f(x)>g(x). But max f >= f(x) > g(x). max g >= g(x). Could max f <= max g? If max g occurs elsewhere with larger value. Example f values: at x1 f=1,g=0; at x2 f=0,g=2. h max=1 positive, max f=1, max g=2. So max h positive does not imply max f > max g. But in our setting f>g all x, so at x2 f>g=2, so max f>2. Student's proof only uses h max positive, not pointwise f>g? They did state h>0 everywhere, max h positive. But to conclude max f > max g, need use pointwise inequality at maximizer of g, not just max h positive. However the conclusion is true. The proof as written: \"Since h(x)>0 everywhere, the maximum of h is positive. Therefore, the maximum of f is strictly greater than the maximum of g.\" This is a non sequitur unless one knows max h =? Actually max h positive does not imply max f > max g generally, but with h>0 everywhere maybe? Wait h>0 everywhere is stronger than max h positive. Does h>0 everywhere imply max f > max g? Yes, as argued. But the sentence \"maximum of h is positive. Therefore...\" doesn't explicitly use everywhere except to get max positive. But h>0 everywhere is already in premises. The implication from h>0 everywhere to max f > max g is true, but the proof doesn't articulate the maximizer of g. Is that a minor omission? For scoring, if copy-only, score0 regardless. Need maybe mention proof gap? But final score0 due copy_only. The instructions: \"To earn 3 or 4, question must infer or construct essential mathematical premise... absent...\" Here none. So score0. Need JSON.\n\nNeed include clue_checks. Index 1: compatible true, grounding explicit? Observation 1 used. Index 2: compatible true, grounding explicit? It is restated. But maybe \"grounding\": explicit. Reason.\n\nJustification: sufficient? The proof has minor omission? But since copy-only, maybe justification \"minor_omission\" or \"sufficient\"? The student's justification is mostly correct but missing explicit step. The question is copy-only. The field justification should assess verification. It says \"The justification must make observations substantive parts...\" Here it does connect h continuity and pointwise inequality. But the final inference from max h positive to max f > max g is not fully grounded; however with h>0 everywhere it's true. It omits choosing x where g attains max. That is a minor omission. But if score0, reason can mention copy-only. Need decide justification field. The options: sufficient|minor_omission|insufficient|incorrect|absent|uncertain. I'd say minor_omission because proof omits explicit step. But maybe sufficient? It says \"Since h(x)>0 everywhere, max h positive. Therefore max f > max g.\" This is a bit handwavy but acceptable? It doesn't show max h positive implies max f > max g. But because h>0 everywhere, one can infer. I'd mark minor_omission. However if we mark minor_omission, score0 still due copy_only. The instructions: Score0 for copy-only restatement. So okay.\n\nNeed well_posed true, answer_correct true. inference status copy_only. essential_content: \"None; the question restates observation 2...\" reason. shortcut true. score 0.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1893,
+          "prompt_tokens": 1006,
+          "total_tokens": 2899,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1669,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000848988
+        },
+        "elapsed_seconds": 26.702
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The student uses continuity of f and g to define h=f-g and apply continuity of h.\"},{\"index\":2,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question directly restates the observation that if one function is strictly larger pointwise, its maximum is strictly larger.\"}],\"justification\":\"minor_omission\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"None. The reconstructed question is essentially a direct restatement of the supplied observation about pointwise larger functions having a larger maximum.\",\"reason\":\"The student did not infer a missing premise, parameter, target, or relation; they turned the given assertion into a yes/no question.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The question is a copy-only restatement of the provided observation, so despite being well-posed and having the correct answer, it earns score 0.\"}"
+    },
+    "scale-86-copy:fb7b546e7292394d9e50e8393aa47ae455ef3b7533ffce3adf8fdeb5fced5f88:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "scale-86-copy",
+      "category": "production_diagnostic",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question explicitly refers to a family of integrals over [0,∞) depending on a positive scale parameter and an integer n."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "unsupported",
+            "reason": "The boundedness of the integrand between 0 and 1 is not used or needed to identify the scale point."
+          },
+          {
+            "index": 3,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question directly restates that the exponent n makes the scale point a natural threshold and asks for that scale point."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "copy_only",
+          "essential_content": "No essential mathematical content is supplied by reconstruction; the answer a is already stated in the observations as the scale point x=a.",
+          "reason": "The proposed question merely turns the supplied observation that x=a is the natural threshold into a direct question asking for that same point."
+        },
+        "shortcut": true,
+        "score": 0,
+        "reason": "The reconstruction is a copy-only restatement of the observation that the scale point is a, with no inferred premise, parameter, target, or relation beyond what was already given."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Final answer a. Observations mention positive scale parameter a, threshold x=a. Student question asks what is scale point? It directly restates observation. Copy-only. Score0. Need include fields. well_posed? It is well-posed maybe yes? But copy-only shortcut. answer_correct true. clue_checks index 1? Observations are three. Need check each compatible/grounding. The question uses obs1 and obs3. Obs2 not used? Need evaluate every clue substantively grounded? Since copy-only, score0. We can mark clue checks. Need JSON.\n\nNeed be careful: \"Evaluate reconstruction using only final answer, displayed observations, and student response. You do not know source question. Independently verify proposed question and accept valid alternatives.\"\n\nQuestion: \"For a family of integrals over [0,∞) depending on a positive scale parameter and an integer n, where the exponent n makes a scale point a natural threshold for the integrand's behavior, what is that scale point?\" Answer a. This is essentially asking to identify a from observation. No missing content. It turns supplied assertion into question. Copy-only. Score0.\n\nNeed clue_checks: index 1 observation: family integrals over [0,∞) depending on positive scale parameter a and integer n tends infinity. Question mentions family integrals over [0,∞) depending on positive scale parameter and integer n? It omits tends infinity but okay. compatible true, grounding explicit? It uses. index2 integrand bounded between 0 and1 for all x≥0 and n>0. Question doesn't mention boundedness. Is that a clue? It is not used. For scoring, every clue substantively grounded? Since copy-only, maybe not relevant. But clue_checks should indicate compatible? The question doesn't contradict. Grounding unsupported? It doesn't use. Need reason. index3 exponent n makes scale point x=a natural threshold. Question directly restates. compatible true, explicit.\n\nJustification: \"The public clues directly state...\" It is copy-only. justification sufficient? It grounds answer but no reconstruction. Maybe \"sufficient\" for answer? But overall score0. The field justification: sufficient|minor_omission|insufficient|incorrect|absent|uncertain. Since it directly states, sufficient? But no substantive solution. I'd say sufficient? It is coherent but copy-only. However \"justification must make observations substantive parts of one coherent solution\" It does, but trivial. Maybe \"sufficient\" because answer follows. But score0 due shortcut. Could be \"sufficient\" or \"minor_omission\". I'll use sufficient? Hmm.\n\nInference status: copy_only. essential_content: none missing; question merely asks for scale point already given in observations. reason.\n\nshortcut true. score 0.\n\nNeed final JSON only. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 871,
+          "prompt_tokens": 899,
+          "total_tokens": 1770,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 598,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000404768
+        },
+        "elapsed_seconds": 12.851
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question explicitly refers to a family of integrals over [0,∞) depending on a positive scale parameter and an integer n.\"},{\"index\":2,\"compatible\":true,\"grounding\":\"unsupported\",\"reason\":\"The boundedness of the integrand between 0 and 1 is not used or needed to identify the scale point.\"},{\"index\":3,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question directly restates that the exponent n makes the scale point a natural threshold and asks for that scale point.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"copy_only\",\"essential_content\":\"No essential mathematical content is supplied by reconstruction; the answer a is already stated in the observations as the scale point x=a.\",\"reason\":\"The proposed question merely turns the supplied observation that x=a is the natural threshold into a direct question asking for that same point.\"},\"shortcut\":true,\"score\":0,\"reason\":\"The reconstruction is a copy-only restatement of the observation that the scale point is a, with no inferred premise, parameter, target, or relation beyond what was already given.\"}"
+    },
+    "stronger-112-target:dcc8db489d78e292e23c909b00d10577c4499033377abd16a878a9c6110de666:98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "stronger-112-target",
+      "category": "production_diagnostic",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p3",
+      "prompt_hash": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question uses the same inclusive interval -9999 ≤ n ≤ -1000 stated in the observation."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question uses n ≡ 1 (mod 23), matching the observation that n can be written as 23k + 1."
+          }
+        ],
+        "justification": "sufficient",
+        "inference": {
+          "status": "substantive",
+          "essential_content": "The reconstruction supplies the optimization target: finding the greatest integer satisfying the given interval and congruence constraints.",
+          "reason": "The observations provide the interval and congruence condition, but not the target of maximizing n over that constrained set; the question adds this essential target and the answer is not directly restated."
+        },
+        "shortcut": false,
+        "score": 4,
+        "reason": "The question is well-posed, the answer -1011 is correct, both observations are explicitly used, and the verification correctly derives k ≤ -44 and n = -1011. The reconstruction adds the essential target of finding the greatest such integer."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. Observations: n between -9999 and -1000 inclusive. congruence equivalent n=23k+1. Final answer -1011. Student question: Find greatest integer n such that interval and n ≡1 mod23. This is essentially restating observations? Observations already state interval and congruence. Target \"greatest integer\" is inferred? The final answer -1011. Need determine if substantive missing content. Observations include interval and congruence condition. Question asks find greatest n satisfying both. The target greatest is not in observations? It is a mathematical target chosen. Is that substantive? According to rubric: Inferring genuine numerical premise or choosing mathematical target can qualify. Here observations supply both constraints; question chooses target greatest integer. Is that enough? It may be copy-only? It turns supplied assertions into question: \"n lies between... congruence...\" -> \"Find greatest n such that...\" The only missing content is target \"greatest\". Is choosing target substantive? The examples: Answer6; observations side lengths sum10 and area in terms side x is x(10-x); question rectangle perimeter20 area24 find longer side. There area24 premise and longer-side target inferred. Here no new numerical premise; both constraints are in observations. Target greatest is inferred. Is that substantive? Need decide. The prompt says \"Inferring a genuine numerical premise or choosing a mathematical target can qualify; this is not a minimum-difficulty requirement.\" So choosing target can qualify. But \"Merely turning a supplied assertion into a question is copy-only shortcut, even if student proves assertion correctly.\" Here observations are two assertions about n. Question asks find greatest n satisfying them. It is essentially turning supplied assertions into a question, with target greatest. Is target \"greatest\" absent? Yes. But is it essential mathematical premise/parameter/target? It is target. Could be substantive? Need evaluate.\n\nNeed verify answer. Interval -9999 ≤ n ≤ -1000, n ≡1 mod23. Need greatest n (closest to -1000). Solve n=23k+1. Need n ≤ -1000 => 23k ≤ -1001 => k ≤ -1001/23 = -43.5217, so k ≤ -44. n=23(-44)+1=-1012+1=-1011. Check ≥ -9999 yes. Is there greater? k=-43 gives n=-989? 23*-43=-989 +1=-988? Wait -989+1=-988, which is > -1000, outside. So greatest is -1011. Correct.\n\nClue checks: index1 interval compatible explicit? Observation says n between -9999 and -1000 inclusive. Question uses same. Grounding explicit. index2 congruence equivalent n=23k+1. Question uses n≡1 mod23. Grounding explicit. Justification uses substitution and k range. Sufficient? It computes. No omissions. Well-posed yes.\n\nInference status: Is reconstruction substantive or copy_only? Need decide score. The question is almost exactly observations plus \"Find greatest\". Observations: \"The integer n under consideration lies between ...\"; \"The congruence condition on n is equivalent to writing n as 23k+1...\" The question: \"Find greatest integer n such that interval and n≡1 mod23.\" It doesn't use the equivalence n=23k+1 in question, but justification does. The observations are constraints. The target greatest is inferred. Is that enough for score4? The rubric says choosing a mathematical target can qualify. But also \"Merely turning a supplied assertion into a question is a copy-only shortcut\". This is borderline. The observations don't state \"find greatest\"; they state n lies in interval and congruence. The question asks find greatest satisfying both. That is a natural target. Is it \"essential content supplied by reconstruction\"? The target \"greatest\" is essential. But is it substantive? It is a single word. The prompt says \"Inferring a genuine numerical premise or choosing a mathematical target can qualify; this is not a minimum-difficulty requirement.\" So yes, choosing target can qualify. But if all premises are supplied, only target chosen, maybe still substantive? The example of copy-only: observation \"Every prime greater than2 is odd\"; question \"Is every prime greater than2 odd?\" with proof. That's turning assertion into yes/no question, no new target? Actually target is truth value, but tautological. Here target is optimization over supplied set. It requires computation. The observations already imply there is a set; asking greatest is a new target. I'd lean substantive? Need be careful.\n\nThe final answer -1011. The student's question exactly asks find greatest n. The observations include interval and congruence. The target \"greatest\" is not in observations. The answer is not directly stated. So not copy-only? It is a valid reconstruction. Score4 likely.\n\nNeed output JSON with fields. \"well_posed\": true, \"answer_correct\": true, clue_checks array. \"justification\": sufficient. \"inference\": status substantive, essential_content: target greatest integer satisfying interval and congruence. reason. \"shortcut\": false. score 4. Need ensure JSON only.\n\nLet's craft concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1338,
+          "prompt_tokens": 981,
+          "total_tokens": 2319,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1087,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0006123880000000001
+        },
+        "elapsed_seconds": 23.015
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question uses the same inclusive interval -9999 ≤ n ≤ -1000 stated in the observation.\"},{\"index\":2,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question uses n ≡ 1 (mod 23), matching the observation that n can be written as 23k + 1.\"}],\"justification\":\"sufficient\",\"inference\":{\"status\":\"substantive\",\"essential_content\":\"The reconstruction supplies the optimization target: finding the greatest integer satisfying the given interval and congruence constraints.\",\"reason\":\"The observations provide the interval and congruence condition, but not the target of maximizing n over that constrained set; the question adds this essential target and the answer is not directly restated.\"},\"shortcut\":false,\"score\":4,\"reason\":\"The question is well-posed, the answer -1011 is correct, both observations are explicitly used, and the verification correctly derives k ≤ -44 and n = -1011. The reconstruction adds the essential target of finding the greatest such integer.\"}"
+    }
+  },
+  "metadata": {
+    "fixtures_hash": "a96bed77b3fabe611c5d05d56e08f470fea4324407e6a7de680e446a66f5368a",
+    "prompt_hash": "a977bac8e04d698baa78f125b65b53b668711314c5f0d75289c20dd757e6eb91",
+    "planned_calls": 20
+  },
+  "banks": {}
+}

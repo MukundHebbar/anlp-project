@@ -1,0 +1,128 @@
+{
+  "audit_public_p4": {
+    "returned": 16,
+    "planned": 16,
+    "reference_matches": 13,
+    "hard_negative_rejects": 12,
+    "hard_negative_count": 12,
+    "hard_negative_gate_passed": true,
+    "inverse_accepts": 1,
+    "inverse_count": 4,
+    "all_authored_references_matched": false,
+    "by_condition": {
+      "full": {
+        "REJECT": 4
+      },
+      "cosmetic": {
+        "REJECT": 4
+      },
+      "inverse": {
+        "ACCEPT": 1,
+        "REJECT": 3
+      },
+      "proof": {
+        "REJECT": 4
+      }
+    },
+    "by_family": {
+      "rectangle": 4,
+      "linear": 3,
+      "urn": 3,
+      "motion": 3
+    }
+  },
+  "audit_source_disclosure_p2": {
+    "returned": 16,
+    "planned": 16,
+    "reference_matches": 15,
+    "hard_negative_rejects": 12,
+    "hard_negative_count": 12,
+    "hard_negative_gate_passed": true,
+    "inverse_accepts": 3,
+    "inverse_count": 4,
+    "all_authored_references_matched": false,
+    "by_condition": {
+      "full": {
+        "REJECT": 4
+      },
+      "cosmetic": {
+        "REJECT": 4
+      },
+      "inverse": {
+        "ACCEPT": 3,
+        "REJECT": 1
+      },
+      "proof": {
+        "REJECT": 4
+      }
+    },
+    "by_family": {
+      "rectangle": 4,
+      "linear": 4,
+      "urn": 4,
+      "motion": 3
+    }
+  },
+  "audit_public_p5": {
+    "returned": 16,
+    "planned": 16,
+    "reference_matches": 16,
+    "hard_negative_rejects": 12,
+    "hard_negative_count": 12,
+    "hard_negative_gate_passed": true,
+    "inverse_accepts": 4,
+    "inverse_count": 4,
+    "all_authored_references_matched": true,
+    "by_condition": {
+      "full": {
+        "REJECT": 4
+      },
+      "cosmetic": {
+        "REJECT": 4
+      },
+      "inverse": {
+        "ACCEPT": 4
+      },
+      "proof": {
+        "REJECT": 4
+      }
+    },
+    "by_family": {
+      "rectangle": 4,
+      "linear": 4,
+      "urn": 4,
+      "motion": 4
+    }
+  },
+  "audit_source_disclosure_p3": {
+    "returned": 16,
+    "planned": 16,
+    "reference_matches": 16,
+    "hard_negative_rejects": 12,
+    "hard_negative_count": 12,
+    "hard_negative_gate_passed": true,
+    "inverse_accepts": 4,
+    "inverse_count": 4,
+    "all_authored_references_matched": true,
+    "by_condition": {
+      "full": {
+        "REJECT": 4
+      },
+      "cosmetic": {
+        "REJECT": 4
+      },
+      "inverse": {
+        "ACCEPT": 4
+      },
+      "proof": {
+        "REJECT": 4
+      }
+    },
+    "by_family": {
+      "rectangle": 4,
+      "linear": 4,
+      "urn": 4,
+      "motion": 4
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-09-20T13:56:30.336035+00:00",
+  "parent_prompt_hash": "7ffe5449d72a6a98858c779b29a453267638443789c606a9780a8f6ecfb6eaca",
+  "new_prompt_hash": "9dd67da56821e12e3bdbb2252096630ed64561e78041d5185dace3713da62e8a",
+  "changed_json_blocks": [
+    {
+      "original": {
+        "question": "A rectangle has perimeter20 and area24. What is its longer side length?",
+        "justification": "The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.",
+        "assumptions": [
+          "I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified."
+        ]
+      },
+      "reordered": {
+        "justification": "The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.",
+        "question": "A rectangle has perimeter20 and area24. What is its longer side length?",
+        "assumptions": [
+          "I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified."
+        ]
+      },
+      "values_unchanged": true
+    },
+    {
+      "original": {
+        "question": "...",
+        "justification": "...",
+        "assumptions": [
+          "..."
+        ]
+      },
+      "reordered": {
+        "justification": "...",
+        "question": "...",
+        "assumptions": [
+          "..."
+        ]
+      },
+      "values_unchanged": true
+    }
+  ],
+  "all_other_lines_unchanged": true,
+  "protocol": "docs/plans/reconstruct-amendment-aj.md",
+  "parent_file_hash": "f2f92a47769f28f61220a822883fff60fbe4cb3ff287f0126368ca36f1d81d01",
+  "new_file_hash": "a183205e0de7a0c6e41c38830af80139f1802a757ed1952dcda12cb35062d4a2",
+  "hash_normalization_note": "Initial equivalence manifest hashed raw file text including trailing newline. Runtime load_prompt strips whitespace. Retain raw file hashes and store runtime hashes separately before any AH/AJ local calls. No prompt content changed."
+}

@@ -1,0 +1,11 @@
+# AJ: paired output-order control on AH inputs
+
+Registered while AH disclosure audits are running, before any AH reconstruction outputs. AF/AG repeatedly committed to an invented question and then asserted rather than checked consistency. Test whether emitting the verification before the question changes recovery on the new, independently audited single-gap inputs.
+
+The only prompt change from student_p13_infer_missing is reordering the JSON fields in its existing example and final output schema: justification, question, assumptions. Preserve all decoded example values and all prose instructions. No added examples, domain-specific hints, clue changes, missing-value disclosure or model changes. This is a generation-order intervention, not proof of accessing internal reasoning. Earlier p6/p7 verification-first and p14 assumptions-first experiments failed on other prompt/input packages; do not present this as an untried general idea or suppress those negative results.
+
+Use EVERY AH-eligible input, including AH failures and successes, with identical evidence, original Qwen3-4B Q4_K_M/nonthinking settings, seed0, temperature0.7/top_p0.8/top_k20 and8192 cap. Freeze the AJ prompt now and all exact requests after AH eligibility is final. No item selection using AH outputs; do not expose those outputs to AJ. Run one local draw per family, never concurrently with another local runner. This control does not alter AH's own once-only candidate.
+
+Reuse exact input audit/copy/manual evidence by hash; do not rerun input judgments. Evaluate with unchanged evaluate_p3/source_recovery_p2 and independent math/analytic review. Keep raw rubric, semantic equivalence and grounded semantic success separate. Report paired per-family transitions, technical missingness, and both eligible-input and all12-source denominators. Do not pool repeated draws as independent families or infer a reliable population effect from a tiny cohort.
+
+At most12 local draws,24 primary/semantic judge calls and12 math checks; additional cap$.25 recorded within global$5 and4 simultaneous paid calls. No scored retries. Save prompt diff/value-equivalence check, exact inputs/raw outputs/judgments, and a decision even if null or worse. A favorable exploratory result permits further development only; it is not a best-version or confirmation claim.

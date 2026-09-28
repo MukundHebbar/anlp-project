@@ -1,0 +1,1307 @@
+{
+  "split": "D2",
+  "source_ids": [
+    11,
+    22,
+    30,
+    49,
+    50,
+    73,
+    95,
+    105,
+    131,
+    134,
+    144
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "judge": "evaluate_p2",
+  "arms": {
+    "student_p1@base_sparse_2": {
+      "planned": 22,
+      "generated": 22,
+      "resolved": 22,
+      "successes": 1,
+      "success_rate_lower_upper": [
+        0.045454545454545456,
+        0.045454545454545456
+      ],
+      "mean_score_resolved": 1.1818181818181819,
+      "mean_normalized_score_resolved": 29.545454545454547,
+      "mean_normalized_score_all_planned_bounds": [
+        29.545454545454547,
+        29.545454545454547
+      ],
+      "normalized_score_complete_sources": {
+        "sources": 11,
+        "mean": 29.545454545454547,
+        "source_bootstrap_95_interval": [
+          25,
+          37.5
+        ]
+      },
+      "score_histogram_0_to_4": [
+        0,
+        20,
+        1,
+        0,
+        1
+      ],
+      "answer_correct_count": 4,
+      "well_posed_and_answer_correct_count": 4,
+      "score4_count": 1,
+      "mean_completion_tokens": 205.9090909090909,
+      "mean_pipeline_completion_tokens": 205.9090909090909,
+      "pipeline_calls_per_response": [
+        1
+      ],
+      "format_errors": 0,
+      "length_stops": 0,
+      "by_seed": {
+        "0": {
+          "resolved": 11,
+          "successes": 0,
+          "wilson_95_resolved": [
+            0,
+            0.2588329669680317
+          ]
+        },
+        "1": {
+          "resolved": 11,
+          "successes": 1,
+          "wilson_95_resolved": [
+            0.016232172885884855,
+            0.37735843645159567
+          ]
+        }
+      }
+    },
+    "student_p1@role_sparse_2": {
+      "planned": 22,
+      "generated": 22,
+      "resolved": 22,
+      "successes": 0,
+      "success_rate_lower_upper": [
+        0.0,
+        0.0
+      ],
+      "mean_score_resolved": 1.0454545454545454,
+      "mean_normalized_score_resolved": 26.136363636363637,
+      "mean_normalized_score_all_planned_bounds": [
+        26.136363636363637,
+        26.136363636363637
+      ],
+      "normalized_score_complete_sources": {
+        "sources": 11,
+        "mean": 26.136363636363637,
+        "source_bootstrap_95_interval": [
+          25,
+          28.40909090909091
+        ]
+      },
+      "score_histogram_0_to_4": [
+        0,
+        21,
+        1,
+        0,
+        0
+      ],
+      "answer_correct_count": 4,
+      "well_posed_and_answer_correct_count": 3,
+      "score4_count": 0,
+      "mean_completion_tokens": 193.1818181818182,
+      "mean_pipeline_completion_tokens": 193.1818181818182,
+      "pipeline_calls_per_response": [
+        1
+      ],
+      "format_errors": 0,
+      "length_stops": 0,
+      "by_seed": {
+        "0": {
+          "resolved": 11,
+          "successes": 0,
+          "wilson_95_resolved": [
+            0,
+            0.2588329669680317
+          ]
+        },
+        "1": {
+          "resolved": 11,
+          "successes": 0,
+          "wilson_95_resolved": [
+            0,
+            0.2588329669680317
+          ]
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "student_p1@role_sparse_2": {
+      "versus": "student_p1@base_sparse_2",
+      "source_averaged": {
+        "sources": 11,
+        "mean_difference": -0.045454545454545456,
+        "source_bootstrap_95_interval": [
+          -0.13636363636363635,
+          0
+        ]
+      },
+      "normalized_score_source_averaged": {
+        "sources": 11,
+        "mean_difference": -3.409090909090909,
+        "source_bootstrap_95_interval": [
+          -11.363636363636363,
+          2.272727272727273
+        ]
+      },
+      "first_seed": {
+        "paired_sources": 11,
+        "wins": 0,
+        "losses": 0,
+        "exact_mcnemar_two_sided": 1.0
+      }
+    }
+  },
+  "cases": [
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 11,
+      "seed": 0,
+      "response_key": "11:5df531863a48e6f928f20bb6f29628c8686d50dfcb8b229160d3bc4907d52434:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "5df531863a48e6f928f20bb6f29628c8686d50dfcb8b229160d3bc4907d52434",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Since d_{k-1} divides n, the final gap d_k - d_{k-1} is at least d_{k-1}; substituting the last gap and d_{k-1} gives 1 <= (p - 1)(k - 1)(4 - k)/2, forcing k < 4.",
+        "The first gap is p - 1, where p is the smallest prime divisor of n, so the proportionality constant c equals p - 1."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 173,
+      "pipeline_completion_tokens": 173,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.646,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 11,
+      "seed": 1,
+      "response_key": "11:5df531863a48e6f928f20bb6f29628c8686d50dfcb8b229160d3bc4907d52434:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "5df531863a48e6f928f20bb6f29628c8686d50dfcb8b229160d3bc4907d52434",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Since d_{k-1} divides n, the final gap d_k - d_{k-1} is at least d_{k-1}; substituting the last gap and d_{k-1} gives 1 <= (p - 1)(k - 1)(4 - k)/2, forcing k < 4.",
+        "The first gap is p - 1, where p is the smallest prime divisor of n, so the proportionality constant c equals p - 1."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 196,
+      "pipeline_completion_tokens": 196,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.323,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 22,
+      "seed": 0,
+      "response_key": "22:65d2f6b70bb806d2597a6e963d9176be3b08e51cff6e2ad482ea4351a03fa22e:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "65d2f6b70bb806d2597a6e963d9176be3b08e51cff6e2ad482ea4351a03fa22e",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "For p=2,3,5,7, the values v_p(100!) are 97, 48, 24, and 16, respectively, so each is at least p.",
+        "In base p, the number of trailing zeros of 100! equals v_p(100!), the exponent of p in the prime factorization of 100!."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 325,
+      "pipeline_completion_tokens": 325,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 6.369,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 22,
+      "seed": 1,
+      "response_key": "22:65d2f6b70bb806d2597a6e963d9176be3b08e51cff6e2ad482ea4351a03fa22e:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "65d2f6b70bb806d2597a6e963d9176be3b08e51cff6e2ad482ea4351a03fa22e",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "For p=2,3,5,7, the values v_p(100!) are 97, 48, 24, and 16, respectively, so each is at least p.",
+        "In base p, the number of trailing zeros of 100! equals v_p(100!), the exponent of p in the prime factorization of 100!."
+      ],
+      "resolved": true,
+      "success": 1,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 4,
+      "source_recovery": null,
+      "completion_tokens": 222,
+      "pipeline_completion_tokens": 222,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.411,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 30,
+      "seed": 0,
+      "response_key": "30:16df529ba1b0df2c6277a325fb1da2d8be817cd0c1ca3482b1bbea177463dc66:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "16df529ba1b0df2c6277a325fb1da2d8be817cd0c1ca3482b1bbea177463dc66",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "The principal logarithm is analytic in a neighborhood of z=1 and satisfies Log(1)=0.",
+        "Setting w=z-1 translates the local behavior at z=1 to a series about w=0."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 119,
+      "pipeline_completion_tokens": 119,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.341,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 30,
+      "seed": 1,
+      "response_key": "30:16df529ba1b0df2c6277a325fb1da2d8be817cd0c1ca3482b1bbea177463dc66:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "16df529ba1b0df2c6277a325fb1da2d8be817cd0c1ca3482b1bbea177463dc66",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "The principal logarithm is analytic in a neighborhood of z=1 and satisfies Log(1)=0.",
+        "Setting w=z-1 translates the local behavior at z=1 to a series about w=0."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 172,
+      "pipeline_completion_tokens": 172,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.424,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 49,
+      "seed": 0,
+      "response_key": "49:b55a247ddba6aee1fdfb703d339ac9603d59ff73d4c09ebeb24690694a182e13:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "b55a247ddba6aee1fdfb703d339ac9603d59ff73d4c09ebeb24690694a182e13",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "For F(x)=r x(1-x), the difference F(x)-x equals r x(p-x), so the sign of F(x)-x changes at the fixed point p.",
+        "The fixed points of F(x)=r x(1-x) are 0 and p=1-1/r=t/(1+t), and this p satisfies p\u2264r/4."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 144,
+      "pipeline_completion_tokens": 144,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.819,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 49,
+      "seed": 1,
+      "response_key": "49:b55a247ddba6aee1fdfb703d339ac9603d59ff73d4c09ebeb24690694a182e13:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "b55a247ddba6aee1fdfb703d339ac9603d59ff73d4c09ebeb24690694a182e13",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "For F(x)=r x(1-x), the difference F(x)-x equals r x(p-x), so the sign of F(x)-x changes at the fixed point p.",
+        "The fixed points of F(x)=r x(1-x) are 0 and p=1-1/r=t/(1+t), and this p satisfies p\u2264r/4."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 136,
+      "pipeline_completion_tokens": 136,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.693,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 50,
+      "seed": 0,
+      "response_key": "50:2b732df7cf0e8818d604d4b6b7bfb67b1ce65bf6deec02dbc07fb4c3a5022822:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "2b732df7cf0e8818d604d4b6b7bfb67b1ce65bf6deec02dbc07fb4c3a5022822",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Set x=ab/c, y=bc/a, and z=ca/b; then the target expression is x+y+z.",
+        "Adding those pairwise products yields xy+xz+yz=a^2+b^2+c^2."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 412,
+      "pipeline_completion_tokens": 412,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 8.744,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 50,
+      "seed": 1,
+      "response_key": "50:2b732df7cf0e8818d604d4b6b7bfb67b1ce65bf6deec02dbc07fb4c3a5022822:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "2b732df7cf0e8818d604d4b6b7bfb67b1ce65bf6deec02dbc07fb4c3a5022822",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Set x=ab/c, y=bc/a, and z=ca/b; then the target expression is x+y+z.",
+        "Adding those pairwise products yields xy+xz+yz=a^2+b^2+c^2."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 411,
+      "pipeline_completion_tokens": 411,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 8.099,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 73,
+      "seed": 0,
+      "response_key": "73:1812776db2549533094c6c7b12331bd16115919b259e057ecdbc712b22ef4f1f:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "1812776db2549533094c6c7b12331bd16115919b259e057ecdbc712b22ef4f1f",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "In the expanded sum, each term a_i with 1\u2264i\u2264n\u22121 appears once with a plus sign and once with a minus sign.",
+        "The empty power tower x_0 is assigned the value 1 by the standard convention."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 170,
+      "pipeline_completion_tokens": 170,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.446,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 73,
+      "seed": 1,
+      "response_key": "73:1812776db2549533094c6c7b12331bd16115919b259e057ecdbc712b22ef4f1f:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "1812776db2549533094c6c7b12331bd16115919b259e057ecdbc712b22ef4f1f",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "In the expanded sum, each term a_i with 1\u2264i\u2264n\u22121 appears once with a plus sign and once with a minus sign.",
+        "The empty power tower x_0 is assigned the value 1 by the standard convention."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 190,
+      "pipeline_completion_tokens": 190,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.776,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 95,
+      "seed": 0,
+      "response_key": "95:80e54adefff36fbecabb869074cb9aa74fa955b315d279aa0da885f545138f5b:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "80e54adefff36fbecabb869074cb9aa74fa955b315d279aa0da885f545138f5b",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "For sufficiently large x, x is positive, so ln x is defined.",
+        "Rationalizing the difference of square roots gives \u221a(x+1)-\u221ax = 1/(\u221a(x+1)+\u221ax)."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 287,
+      "pipeline_completion_tokens": 287,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.69,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 95,
+      "seed": 1,
+      "response_key": "95:80e54adefff36fbecabb869074cb9aa74fa955b315d279aa0da885f545138f5b:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "80e54adefff36fbecabb869074cb9aa74fa955b315d279aa0da885f545138f5b",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "For sufficiently large x, x is positive, so ln x is defined.",
+        "Rationalizing the difference of square roots gives \u221a(x+1)-\u221ax = 1/(\u221a(x+1)+\u221ax)."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 191,
+      "pipeline_completion_tokens": 191,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.808,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 105,
+      "seed": 0,
+      "response_key": "105:5fb0baa8f23554aaf8f96728ac0b39d6ac66d099bb61bdd9697f11114b525808:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "5fb0baa8f23554aaf8f96728ac0b39d6ac66d099bb61bdd9697f11114b525808",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Reducing 9a^2 + 14b^2 = 9abn modulo a and using gcd(a,b)=1 forces a to divide 14.",
+        "Because 9abn is divisible by 9, the equation implies 9 divides 14b^2, so 3 divides b."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 202,
+      "pipeline_completion_tokens": 202,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.064,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 105,
+      "seed": 1,
+      "response_key": "105:5fb0baa8f23554aaf8f96728ac0b39d6ac66d099bb61bdd9697f11114b525808:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "5fb0baa8f23554aaf8f96728ac0b39d6ac66d099bb61bdd9697f11114b525808",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Reducing 9a^2 + 14b^2 = 9abn modulo a and using gcd(a,b)=1 forces a to divide 14.",
+        "Because 9abn is divisible by 9, the equation implies 9 divides 14b^2, so 3 divides b."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 183,
+      "pipeline_completion_tokens": 183,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.666,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 131,
+      "seed": 0,
+      "response_key": "131:c5325ac1a2f04db2c2f6c786dba07fc960fc761522a56999f833c1cb8773f884:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "c5325ac1a2f04db2c2f6c786dba07fc960fc761522a56999f833c1cb8773f884",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "A binary sequence contains the subsequence \"10\" exactly when there are indices i<j such that x_i=1 and x_j=0.",
+        "In a sequence avoiding \"10\", no 1 can appear before a later 0, so after the first 1 every later term must be 1."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 175,
+      "pipeline_completion_tokens": 175,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.501,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 131,
+      "seed": 1,
+      "response_key": "131:c5325ac1a2f04db2c2f6c786dba07fc960fc761522a56999f833c1cb8773f884:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "c5325ac1a2f04db2c2f6c786dba07fc960fc761522a56999f833c1cb8773f884",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "A binary sequence contains the subsequence \"10\" exactly when there are indices i<j such that x_i=1 and x_j=0.",
+        "In a sequence avoiding \"10\", no 1 can appear before a later 0, so after the first 1 every later term must be 1."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 216,
+      "pipeline_completion_tokens": 216,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.35,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 134,
+      "seed": 0,
+      "response_key": "134:848642461ead6755784953f2d4cd73daac54f30288c692969b7e1e53da491518:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "848642461ead6755784953f2d4cd73daac54f30288c692969b7e1e53da491518",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Because |A_i|=i and all elements are eventually removed, two sets A_i and A_j cannot be chosen in exactly the same collection of steps unless i=j.",
+        "For each i, the total number of elements removed from A_i is the sum of the step sizes c_k over exactly those steps k in which A_i is chosen."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 183,
+      "pipeline_completion_tokens": 183,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.633,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 134,
+      "seed": 1,
+      "response_key": "134:848642461ead6755784953f2d4cd73daac54f30288c692969b7e1e53da491518:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "848642461ead6755784953f2d4cd73daac54f30288c692969b7e1e53da491518",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Because |A_i|=i and all elements are eventually removed, two sets A_i and A_j cannot be chosen in exactly the same collection of steps unless i=j.",
+        "For each i, the total number of elements removed from A_i is the sum of the step sizes c_k over exactly those steps k in which A_i is chosen."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 2,
+      "source_recovery": null,
+      "completion_tokens": 148,
+      "pipeline_completion_tokens": 148,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.005,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 144,
+      "seed": 0,
+      "response_key": "144:13c304df03ceed1d71e66704e6135ef6d8ac80740c02abfec746e8c32d4052fe:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "13c304df03ceed1d71e66704e6135ef6d8ac80740c02abfec746e8c32d4052fe",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Once a\u2192b is fixed, every element x outside {a,b} must satisfy x\u2192a and b\u2192x.",
+        "A three-element directed cycle such as 1\u21922, 2\u21923, 3\u21921 satisfies the triple condition because each triple is a cycle."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 157,
+      "pipeline_completion_tokens": 157,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.123,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@base_sparse_2",
+      "source_index": 144,
+      "seed": 1,
+      "response_key": "144:13c304df03ceed1d71e66704e6135ef6d8ac80740c02abfec746e8c32d4052fe:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "13c304df03ceed1d71e66704e6135ef6d8ac80740c02abfec746e8c32d4052fe",
+      "bank_prompt": "base_sparse_2",
+      "clues": [
+        "Once a\u2192b is fixed, every element x outside {a,b} must satisfy x\u2192a and b\u2192x.",
+        "A three-element directed cycle such as 1\u21922, 2\u21923, 3\u21921 satisfies the triple condition because each triple is a cycle."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 118,
+      "pipeline_completion_tokens": 118,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.455,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 11,
+      "seed": 0,
+      "response_key": "11:44c5e72d1bf23035d150f2e4405e320ffb06c9626fd465fca086f47272f18fad:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "44c5e72d1bf23035d150f2e4405e320ffb06c9626fd465fca086f47272f18fad",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Since d_{k-1} divides n, the final gap d_k - d_{k-1} is at least d_{k-1}; substituting the last gap and d_{k-1} gives 1 <= (p - 1)(k - 1)(4 - k)/2, forcing k < 4.",
+        "The first gap is p - 1, where p is the smallest prime divisor of n, so the proportionality constant c equals p - 1.",
+        "The answer is the unique composite integer satisfying the divisor-gap condition."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 155,
+      "pipeline_completion_tokens": 155,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.307,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 11,
+      "seed": 1,
+      "response_key": "11:44c5e72d1bf23035d150f2e4405e320ffb06c9626fd465fca086f47272f18fad:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "44c5e72d1bf23035d150f2e4405e320ffb06c9626fd465fca086f47272f18fad",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Since d_{k-1} divides n, the final gap d_k - d_{k-1} is at least d_{k-1}; substituting the last gap and d_{k-1} gives 1 <= (p - 1)(k - 1)(4 - k)/2, forcing k < 4.",
+        "The first gap is p - 1, where p is the smallest prime divisor of n, so the proportionality constant c equals p - 1.",
+        "The answer is the unique composite integer satisfying the divisor-gap condition."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 203,
+      "pipeline_completion_tokens": 203,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.524,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 22,
+      "seed": 0,
+      "response_key": "22:33adfdf6f260f4c0f06ce74727142cd8c27eb70e5fffce5b2c1d24ed11f43566:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "33adfdf6f260f4c0f06ce74727142cd8c27eb70e5fffce5b2c1d24ed11f43566",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "For p=2,3,5,7, the values v_p(100!) are 97, 48, 24, and 16, respectively, so each is at least p.",
+        "In base p, the number of trailing zeros of 100! equals v_p(100!), the exponent of p in the prime factorization of 100!.",
+        "The answer identifies the least prime base satisfying a factorial trailing-zero condition."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 162,
+      "pipeline_completion_tokens": 162,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.193,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 22,
+      "seed": 1,
+      "response_key": "22:33adfdf6f260f4c0f06ce74727142cd8c27eb70e5fffce5b2c1d24ed11f43566:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "33adfdf6f260f4c0f06ce74727142cd8c27eb70e5fffce5b2c1d24ed11f43566",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "For p=2,3,5,7, the values v_p(100!) are 97, 48, 24, and 16, respectively, so each is at least p.",
+        "In base p, the number of trailing zeros of 100! equals v_p(100!), the exponent of p in the prime factorization of 100!.",
+        "The answer identifies the least prime base satisfying a factorial trailing-zero condition."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 187,
+      "pipeline_completion_tokens": 187,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.899,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 30,
+      "seed": 0,
+      "response_key": "30:96b5b324f3fc0b98df538d4b0d3bb0a84284848d04abbd4b7cb3a14c14db95bb:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "96b5b324f3fc0b98df538d4b0d3bb0a84284848d04abbd4b7cb3a14c14db95bb",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "The principal logarithm is analytic in a neighborhood of z=1 and satisfies Log(1)=0.",
+        "Setting w=z-1 translates the local behavior at z=1 to a series about w=0.",
+        "The answer gives the order of a pole at a specified point."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 101,
+      "pipeline_completion_tokens": 101,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.007,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 30,
+      "seed": 1,
+      "response_key": "30:96b5b324f3fc0b98df538d4b0d3bb0a84284848d04abbd4b7cb3a14c14db95bb:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "96b5b324f3fc0b98df538d4b0d3bb0a84284848d04abbd4b7cb3a14c14db95bb",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "The principal logarithm is analytic in a neighborhood of z=1 and satisfies Log(1)=0.",
+        "Setting w=z-1 translates the local behavior at z=1 to a series about w=0.",
+        "The answer gives the order of a pole at a specified point."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 101,
+      "pipeline_completion_tokens": 101,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.134,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 49,
+      "seed": 0,
+      "response_key": "49:f5189e55f68c6f3aa9e1b441e9ebce37de4169a4cbacd3edcc1f71155e5ce9a1:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "f5189e55f68c6f3aa9e1b441e9ebce37de4169a4cbacd3edcc1f71155e5ce9a1",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "For F(x)=r x(1-x), the difference F(x)-x equals r x(p-x), so the sign of F(x)-x changes at the fixed point p.",
+        "The fixed points of F(x)=r x(1-x) are 0 and p=1-1/r=t/(1+t), and this p satisfies p\u2264r/4.",
+        "The answer is the limiting value of the recursively defined sequence."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 208,
+      "pipeline_completion_tokens": 208,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.077,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 49,
+      "seed": 1,
+      "response_key": "49:f5189e55f68c6f3aa9e1b441e9ebce37de4169a4cbacd3edcc1f71155e5ce9a1:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "f5189e55f68c6f3aa9e1b441e9ebce37de4169a4cbacd3edcc1f71155e5ce9a1",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "For F(x)=r x(1-x), the difference F(x)-x equals r x(p-x), so the sign of F(x)-x changes at the fixed point p.",
+        "The fixed points of F(x)=r x(1-x) are 0 and p=1-1/r=t/(1+t), and this p satisfies p\u2264r/4.",
+        "The answer is the limiting value of the recursively defined sequence."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 187,
+      "pipeline_completion_tokens": 187,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.895,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 50,
+      "seed": 0,
+      "response_key": "50:1f8e800451772b621253e4266a06a679f6104a1c79db182045cb7c2bee521bc8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "1f8e800451772b621253e4266a06a679f6104a1c79db182045cb7c2bee521bc8",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Set x=ab/c, y=bc/a, and z=ca/b; then the target expression is x+y+z.",
+        "Adding those pairwise products yields xy+xz+yz=a^2+b^2+c^2.",
+        "The answer is the minimum attainable value of a constrained algebraic expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 245,
+      "pipeline_completion_tokens": 245,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.35,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 50,
+      "seed": 1,
+      "response_key": "50:1f8e800451772b621253e4266a06a679f6104a1c79db182045cb7c2bee521bc8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "1f8e800451772b621253e4266a06a679f6104a1c79db182045cb7c2bee521bc8",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Set x=ab/c, y=bc/a, and z=ca/b; then the target expression is x+y+z.",
+        "Adding those pairwise products yields xy+xz+yz=a^2+b^2+c^2.",
+        "The answer is the minimum attainable value of a constrained algebraic expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 194,
+      "pipeline_completion_tokens": 194,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.006,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 73,
+      "seed": 0,
+      "response_key": "73:265be30daf544380664fca199b7a52379fe93771488c0af72e0b34bd53627e05:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "265be30daf544380664fca199b7a52379fe93771488c0af72e0b34bd53627e05",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "In the expanded sum, each term a_i with 1\u2264i\u2264n\u22121 appears once with a plus sign and once with a minus sign.",
+        "The empty power tower x_0 is assigned the value 1 by the standard convention.",
+        "The answer expresses a telescoping sum as the final term minus an initial baseline."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 273,
+      "pipeline_completion_tokens": 273,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.639,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 73,
+      "seed": 1,
+      "response_key": "73:265be30daf544380664fca199b7a52379fe93771488c0af72e0b34bd53627e05:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "265be30daf544380664fca199b7a52379fe93771488c0af72e0b34bd53627e05",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "In the expanded sum, each term a_i with 1\u2264i\u2264n\u22121 appears once with a plus sign and once with a minus sign.",
+        "The empty power tower x_0 is assigned the value 1 by the standard convention.",
+        "The answer expresses a telescoping sum as the final term minus an initial baseline."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 205,
+      "pipeline_completion_tokens": 205,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.241,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 95,
+      "seed": 0,
+      "response_key": "95:4a63b5f636ea91c1b241b43054f2ad1e4cbc81ff0d13073927d2fbf49ff6b3f5:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "4a63b5f636ea91c1b241b43054f2ad1e4cbc81ff0d13073927d2fbf49ff6b3f5",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "For sufficiently large x, x is positive, so ln x is defined.",
+        "Rationalizing the difference of square roots gives \u221a(x+1)-\u221ax = 1/(\u221a(x+1)+\u221ax).",
+        "The answer is the limiting value of a parameter-dependent integral expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 252,
+      "pipeline_completion_tokens": 252,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.233,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 95,
+      "seed": 1,
+      "response_key": "95:4a63b5f636ea91c1b241b43054f2ad1e4cbc81ff0d13073927d2fbf49ff6b3f5:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "4a63b5f636ea91c1b241b43054f2ad1e4cbc81ff0d13073927d2fbf49ff6b3f5",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "For sufficiently large x, x is positive, so ln x is defined.",
+        "Rationalizing the difference of square roots gives \u221a(x+1)-\u221ax = 1/(\u221a(x+1)+\u221ax).",
+        "The answer is the limiting value of a parameter-dependent integral expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 222,
+      "pipeline_completion_tokens": 222,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.58,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 105,
+      "seed": 0,
+      "response_key": "105:084b6a43605f4a580d72bb9949a0b04d1735e76852e101bb72d0ab1a29a8bee6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "084b6a43605f4a580d72bb9949a0b04d1735e76852e101bb72d0ab1a29a8bee6",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Reducing 9a^2 + 14b^2 = 9abn modulo a and using gcd(a,b)=1 forces a to divide 14.",
+        "Because 9abn is divisible by 9, the equation implies 9 divides 14b^2, so 3 divides b.",
+        "The answer counts the ordered pairs satisfying the given integrality condition."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 157,
+      "pipeline_completion_tokens": 157,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.276,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 105,
+      "seed": 1,
+      "response_key": "105:084b6a43605f4a580d72bb9949a0b04d1735e76852e101bb72d0ab1a29a8bee6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "084b6a43605f4a580d72bb9949a0b04d1735e76852e101bb72d0ab1a29a8bee6",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Reducing 9a^2 + 14b^2 = 9abn modulo a and using gcd(a,b)=1 forces a to divide 14.",
+        "Because 9abn is divisible by 9, the equation implies 9 divides 14b^2, so 3 divides b.",
+        "The answer counts the ordered pairs satisfying the given integrality condition."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 324,
+      "pipeline_completion_tokens": 324,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 6.77,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 131,
+      "seed": 0,
+      "response_key": "131:e13bcd208b620e14b34374e5b942f740bed261307b1334e6d4fe2849023d2755:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "e13bcd208b620e14b34374e5b942f740bed261307b1334e6d4fe2849023d2755",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "A binary sequence contains the subsequence \"10\" exactly when there are indices i<j such that x_i=1 and x_j=0.",
+        "In a sequence avoiding \"10\", no 1 can appear before a later 0, so after the first 1 every later term must be 1.",
+        "The answer is the size of a collection of sequences that avoid a forbidden pattern."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 166,
+      "pipeline_completion_tokens": 166,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.472,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 131,
+      "seed": 1,
+      "response_key": "131:e13bcd208b620e14b34374e5b942f740bed261307b1334e6d4fe2849023d2755:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "e13bcd208b620e14b34374e5b942f740bed261307b1334e6d4fe2849023d2755",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "A binary sequence contains the subsequence \"10\" exactly when there are indices i<j such that x_i=1 and x_j=0.",
+        "In a sequence avoiding \"10\", no 1 can appear before a later 0, so after the first 1 every later term must be 1.",
+        "The answer is the size of a collection of sequences that avoid a forbidden pattern."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 146,
+      "pipeline_completion_tokens": 146,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.032,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 134,
+      "seed": 0,
+      "response_key": "134:bbb6e22b293443d7791833a7b3e139763ca4ff6171f184f4ad1ead6c1e3e1419:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "bbb6e22b293443d7791833a7b3e139763ca4ff6171f184f4ad1ead6c1e3e1419",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Because |A_i|=i and all elements are eventually removed, two sets A_i and A_j cannot be chosen in exactly the same collection of steps unless i=j.",
+        "For each i, the total number of elements removed from A_i is the sum of the step sizes c_k over exactly those steps k in which A_i is chosen.",
+        "The answer is the least number of steps needed to distinguish all required removal totals."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 246,
+      "pipeline_completion_tokens": 246,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.177,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 134,
+      "seed": 1,
+      "response_key": "134:bbb6e22b293443d7791833a7b3e139763ca4ff6171f184f4ad1ead6c1e3e1419:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "bbb6e22b293443d7791833a7b3e139763ca4ff6171f184f4ad1ead6c1e3e1419",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Because |A_i|=i and all elements are eventually removed, two sets A_i and A_j cannot be chosen in exactly the same collection of steps unless i=j.",
+        "For each i, the total number of elements removed from A_i is the sum of the step sizes c_k over exactly those steps k in which A_i is chosen.",
+        "The answer is the least number of steps needed to distinguish all required removal totals."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 204,
+      "pipeline_completion_tokens": 204,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.424,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 144,
+      "seed": 0,
+      "response_key": "144:5424adebf47dfb9dade5d4090b3a9c190d2757d6ddb0ee504c47b376c45354ff:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "5424adebf47dfb9dade5d4090b3a9c190d2757d6ddb0ee504c47b376c45354ff",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Once a\u2192b is fixed, every element x outside {a,b} must satisfy x\u2192a and b\u2192x.",
+        "A three-element directed cycle such as 1\u21922, 2\u21923, 3\u21921 satisfies the triple condition because each triple is a cycle.",
+        "The answer is the largest possible size of a set under a pairwise relation."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": false,
+      "score": 2,
+      "source_recovery": null,
+      "completion_tokens": 171,
+      "pipeline_completion_tokens": 171,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.566,
+      "format_error": false,
+      "length_stop": false
+    },
+    {
+      "arm": "student_p1@role_sparse_2",
+      "source_index": 144,
+      "seed": 1,
+      "response_key": "144:5424adebf47dfb9dade5d4090b3a9c190d2757d6ddb0ee504c47b376c45354ff:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "5424adebf47dfb9dade5d4090b3a9c190d2757d6ddb0ee504c47b376c45354ff",
+      "bank_prompt": "role_sparse_2",
+      "clues": [
+        "Once a\u2192b is fixed, every element x outside {a,b} must satisfy x\u2192a and b\u2192x.",
+        "A three-element directed cycle such as 1\u21922, 2\u21923, 3\u21921 satisfies the triple condition because each triple is a cycle.",
+        "The answer is the largest possible size of a set under a pairwise relation."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": null,
+      "completion_tokens": 141,
+      "pipeline_completion_tokens": 141,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.989,
+      "format_error": false,
+      "length_stop": false
+    }
+  ],
+  "eligibility_manifest": "artifacts/reconstruct/followup-v2/sparse-eligibility.json",
+  "eligibility_record": {
+    "registered_amendment": "F",
+    "created_at_utc": "2026-09-20T06:17:53.256470+00:00",
+    "audited": {
+      "base_sparse_2": 12,
+      "role_sparse_2": 12
+    },
+    "accepted": {
+      "base_sparse_2": [
+        11,
+        22,
+        30,
+        40,
+        49,
+        50,
+        73,
+        95,
+        105,
+        131,
+        134,
+        144
+      ],
+      "role_sparse_2": [
+        11,
+        22,
+        30,
+        49,
+        50,
+        73,
+        95,
+        105,
+        131,
+        134,
+        144
+      ]
+    },
+    "common_sources": [
+      11,
+      22,
+      30,
+      49,
+      50,
+      73,
+      95,
+      105,
+      131,
+      134,
+      144
+    ],
+    "coverage_gate_passed": true,
+    "smoke_sources": [
+      11,
+      22,
+      30,
+      49
+    ]
+  },
+  "scope": "Matched pre-inference eligible sources; report all-source conversion coverage separately"
+}

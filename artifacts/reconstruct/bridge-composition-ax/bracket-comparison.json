@@ -1,0 +1,405 @@
+{
+  "independent_families": 6,
+  "original_allocation": 16,
+  "arms": {
+    "p13_zero": {
+      "root": "artifacts/reconstruct/constructive-gate-al",
+      "planned": 6,
+      "readable": 5,
+      "manual_meaningful_semantic": 0,
+      "disclosure_accepted_meaningful_semantic": 0,
+      "manual_grounded_on_accepted_inputs": 0,
+      "teacher_semantic_matches": 0,
+      "teacher_semantic_missing": 1,
+      "rows": [
+        {
+          "source_index": 5,
+          "response_key": "5:onegap:0",
+          "clue_count": 4,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": 25
+        },
+        {
+          "source_index": 10,
+          "response_key": "10:onegap:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 0,
+          "score_100": 0
+        },
+        {
+          "source_index": 16,
+          "response_key": "16:onegap:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": 25
+        },
+        {
+          "source_index": 54,
+          "response_key": "54:onegap:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": 0
+        },
+        {
+          "source_index": 67,
+          "response_key": "67:onegap:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": 0
+        },
+        {
+          "source_index": 113,
+          "response_key": "113:onegap:0",
+          "clue_count": 4,
+          "readable": false,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": null,
+          "score_100": null
+        }
+      ]
+    },
+    "p13_two": {
+      "root": "artifacts/reconstruct/inverse-bridges-aw/level2",
+      "planned": 6,
+      "readable": 6,
+      "manual_meaningful_semantic": 1,
+      "disclosure_accepted_meaningful_semantic": 0,
+      "manual_grounded_on_accepted_inputs": 0,
+      "teacher_semantic_matches": 0,
+      "teacher_semantic_missing": 6,
+      "rows": [
+        {
+          "source_index": 5,
+          "response_key": "5:level2:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": false,
+          "disclosure": "REJECT",
+          "teacher_semantic": null,
+          "score_100": null
+        },
+        {
+          "source_index": 10,
+          "response_key": "10:level2:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": null,
+          "score_100": null
+        },
+        {
+          "source_index": 16,
+          "response_key": "16:level2:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "REJECT",
+          "teacher_semantic": null,
+          "score_100": null
+        },
+        {
+          "source_index": 54,
+          "response_key": "54:level2:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": null,
+          "score_100": null
+        },
+        {
+          "source_index": 67,
+          "response_key": "67:level2:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": null,
+          "score_100": null
+        },
+        {
+          "source_index": 113,
+          "response_key": "113:level2:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": null,
+          "score_100": null
+        }
+      ]
+    },
+    "p14_zero": {
+      "root": "artifacts/reconstruct/bridge-low-az",
+      "planned": 6,
+      "readable": 6,
+      "manual_meaningful_semantic": 2,
+      "disclosure_accepted_meaningful_semantic": 2,
+      "manual_grounded_on_accepted_inputs": 0,
+      "teacher_semantic_matches": 1,
+      "teacher_semantic_missing": 1,
+      "rows": [
+        {
+          "source_index": 5,
+          "response_key": "5:zero_bridge:0",
+          "clue_count": 4,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": null,
+          "score_100": null
+        },
+        {
+          "source_index": 10,
+          "response_key": "10:zero_bridge:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 0,
+          "score_100": null
+        },
+        {
+          "source_index": 16,
+          "response_key": "16:zero_bridge:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": null
+        },
+        {
+          "source_index": 54,
+          "response_key": "54:zero_bridge:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": null
+        },
+        {
+          "source_index": 67,
+          "response_key": "67:zero_bridge:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 2,
+          "score_100": null
+        },
+        {
+          "source_index": 113,
+          "response_key": "113:zero_bridge:0",
+          "clue_count": 4,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": null
+        }
+      ]
+    },
+    "p14_one": {
+      "root": "artifacts/reconstruct/bridge-midpoint-ay",
+      "planned": 6,
+      "readable": 6,
+      "manual_meaningful_semantic": 1,
+      "disclosure_accepted_meaningful_semantic": 1,
+      "manual_grounded_on_accepted_inputs": 1,
+      "teacher_semantic_matches": 1,
+      "teacher_semantic_missing": 0,
+      "rows": [
+        {
+          "source_index": 5,
+          "response_key": "5:midpoint:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": null
+        },
+        {
+          "source_index": 10,
+          "response_key": "10:midpoint:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": null
+        },
+        {
+          "source_index": 16,
+          "response_key": "16:midpoint:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": null
+        },
+        {
+          "source_index": 54,
+          "response_key": "54:midpoint:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": true,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 2,
+          "score_100": null
+        },
+        {
+          "source_index": 67,
+          "response_key": "67:midpoint:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 1,
+          "score_100": null
+        },
+        {
+          "source_index": 113,
+          "response_key": "113:midpoint:0",
+          "clue_count": 5,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "missing",
+          "teacher_semantic": 1,
+          "score_100": null
+        }
+      ]
+    },
+    "p14_two": {
+      "root": "artifacts/reconstruct/bridge-composition-ax",
+      "planned": 6,
+      "readable": 6,
+      "manual_meaningful_semantic": 4,
+      "disclosure_accepted_meaningful_semantic": 3,
+      "manual_grounded_on_accepted_inputs": 3,
+      "teacher_semantic_matches": 4,
+      "teacher_semantic_missing": 1,
+      "rows": [
+        {
+          "source_index": 5,
+          "response_key": "5:premises_first:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": false,
+          "disclosure": "REJECT",
+          "teacher_semantic": 2,
+          "score_100": 100
+        },
+        {
+          "source_index": 10,
+          "response_key": "10:premises_first:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": null,
+          "score_100": 0
+        },
+        {
+          "source_index": 16,
+          "response_key": "16:premises_first:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": false,
+          "manual_grounded_semantic": false,
+          "disclosure": "REJECT",
+          "teacher_semantic": 1,
+          "score_100": 0
+        },
+        {
+          "source_index": 54,
+          "response_key": "54:premises_first:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": true,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 2,
+          "score_100": 100
+        },
+        {
+          "source_index": 67,
+          "response_key": "67:premises_first:0",
+          "clue_count": 7,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": true,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 2,
+          "score_100": 100
+        },
+        {
+          "source_index": 113,
+          "response_key": "113:premises_first:0",
+          "clue_count": 6,
+          "readable": true,
+          "manual_meaningful_semantic": true,
+          "manual_grounded_semantic": true,
+          "disclosure": "ACCEPT",
+          "teacher_semantic": 2,
+          "score_100": 100
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Adaptive development on six fixed eligible families from a sixteen-source allocation; not fresh confirmation.",
+    "Raw semantic matches, non-tautological recovery, mathematical grounding and disclosure eligibility remain separate.",
+    "P14 changes instructions/example/output order together; do not attribute its effect to order alone.",
+    "The curve is not assumed monotonic; no best-of response selection or per-source exposure policy.",
+    "Teacher missing outputs remain missing; manual review is assistant analysis, not independent human gold.",
+    "Accepted columns use source disclosure; the final copying gate excludes high-arm67, leaving two verified successes (completion-audit.json).",
+    "P13/two teacher semantic checks were not run; its six unavailable labels are not API failures."
+  ]
+}

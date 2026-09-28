@@ -1,0 +1,16 @@
+{
+  "mechanical_checks_passed": true,
+  "responses": 8,
+  "sources": [
+    11,
+    22,
+    30,
+    49
+  ],
+  "no_truncation": true,
+  "no_thinking_channel": true,
+  "matched_base_clue_order": true,
+  "decision": "Complete registered comparison regardless of smoke correctness. Raw errors preserved; no prompt or clue edits.",
+  "input_order_seed": 20260920,
+  "base_subset_selection_seed": 0
+}

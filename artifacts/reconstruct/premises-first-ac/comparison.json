@@ -1,0 +1,78 @@
+{
+  "arms": {
+    "rich6": {
+      "planned": 3,
+      "scores_returned": 3,
+      "mean_score_100": 16.666666666666668,
+      "raw_grounded": 0,
+      "raw_semantic": 1,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 3,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.561497031755032
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 1,
+      "planned_score_bounds": [
+        16.666666666666668,
+        16.666666666666668
+      ]
+    }
+  },
+  "rows": [
+    {
+      "response_key": "46:rich6:0",
+      "source_index": 46,
+      "arm": "rich6",
+      "score_100": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 116,
+      "clue_count": 6,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "62:rich6:0",
+      "source_index": 62,
+      "arm": "rich6",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 2,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": true,
+      "word_count": 74,
+      "clue_count": 6,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "129:rich6:0",
+      "source_index": 129,
+      "arm": "rich6",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 94,
+      "clue_count": 6,
+      "finish_reason": "stop"
+    }
+  ],
+  "limitations": [
+    "Development screen on reused families, one seed; not an independent confirmation.",
+    "Wilson intervals are descriptive and do not correct for adaptive development or policy selection.",
+    "Auditors and assistant review are fallible; raw and reviewed outcomes retained separately."
+  ]
+}

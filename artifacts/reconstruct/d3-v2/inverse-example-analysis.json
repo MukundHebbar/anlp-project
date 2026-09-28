@@ -1,0 +1,600 @@
+{
+  "split": "reserve",
+  "source_ids": [
+    8,
+    27,
+    33,
+    77
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "selection_policy": "bank_order",
+  "judge": "evaluate_p2",
+  "arms": {
+    "student_p10_recover_original@convert_p3": {
+      "planned": 8,
+      "generated": 8,
+      "resolved": 8,
+      "successes": 1,
+      "success_rate_lower_upper": [
+        0.125,
+        0.125
+      ],
+      "mean_score_resolved": 1.125,
+      "mean_normalized_score_resolved": 28.125,
+      "mean_normalized_score_all_planned_bounds": [
+        28.125,
+        28.125
+      ],
+      "normalized_score_complete_sources": {
+        "sources": 4,
+        "mean": 28.125,
+        "source_bootstrap_95_interval": [
+          15.625,
+          43.75
+        ]
+      },
+      "score_histogram_0_to_4": [
+        1,
+        6,
+        0,
+        1,
+        0
+      ],
+      "answer_correct_count": 1,
+      "well_posed_and_answer_correct_count": 1,
+      "score4_count": 0,
+      "mean_completion_tokens": 199.25,
+      "mean_pipeline_completion_tokens": 199.25,
+      "pipeline_calls_per_response": [
+        1
+      ],
+      "format_errors": 0,
+      "length_stops": 0,
+      "by_seed": {
+        "0": {
+          "resolved": 4,
+          "successes": 1,
+          "wilson_95_resolved": [
+            0.04558726080970055,
+            0.6993581574175981
+          ]
+        },
+        "1": {
+          "resolved": 4,
+          "successes": 0,
+          "wilson_95_resolved": [
+            0,
+            0.4898908364545973
+          ]
+        }
+      },
+      "same_source_questions": 0,
+      "provisional_grounded_semantic_successes": 0,
+      "semantic_judgments_resolved": 8
+    },
+    "student_p11_inverse_example@convert_p3": {
+      "planned": 8,
+      "generated": 7,
+      "resolved": 7,
+      "successes": 0,
+      "success_rate_lower_upper": [
+        0.0,
+        0.125
+      ],
+      "mean_score_resolved": 1.2857142857142858,
+      "mean_normalized_score_resolved": 32.142857142857146,
+      "mean_normalized_score_all_planned_bounds": [
+        28.125,
+        40.625
+      ],
+      "normalized_score_complete_sources": {
+        "sources": 3,
+        "mean": 33.333333333333336,
+        "source_bootstrap_95_interval": [
+          25,
+          50
+        ]
+      },
+      "score_histogram_0_to_4": [
+        0,
+        5,
+        2,
+        0,
+        0
+      ],
+      "answer_correct_count": 2,
+      "well_posed_and_answer_correct_count": 2,
+      "score4_count": 0,
+      "mean_completion_tokens": 227.28571428571428,
+      "mean_pipeline_completion_tokens": 227.28571428571428,
+      "pipeline_calls_per_response": [
+        1
+      ],
+      "format_errors": 0,
+      "length_stops": 0,
+      "by_seed": {
+        "0": {
+          "resolved": 4,
+          "successes": 0,
+          "wilson_95_resolved": [
+            0,
+            0.4898908364545973
+          ]
+        },
+        "1": {
+          "resolved": 3,
+          "successes": 0,
+          "wilson_95_resolved": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        }
+      },
+      "same_source_questions": 0,
+      "provisional_grounded_semantic_successes": 0,
+      "semantic_judgments_resolved": 7
+    }
+  },
+  "comparisons": {
+    "student_p11_inverse_example@convert_p3": {
+      "versus": "student_p10_recover_original@convert_p3",
+      "source_averaged": {
+        "sources": 3,
+        "mean_difference": -0.16666666666666666,
+        "source_bootstrap_95_interval": [
+          -0.5,
+          0
+        ]
+      },
+      "normalized_score_source_averaged": {
+        "sources": 3,
+        "mean_difference": 0,
+        "source_bootstrap_95_interval": [
+          0,
+          0
+        ]
+      },
+      "first_seed": {
+        "paired_sources": 4,
+        "wins": 0,
+        "losses": 1,
+        "exact_mcnemar_two_sided": 1.0
+      }
+    }
+  },
+  "cases": [
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 8,
+      "seed": 0,
+      "response_key": "8:ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "8:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The three quantities 2a^2+bc, 2b^2+ca, and 2c^2+ab factor respectively as (a-b)(a-c), (b-c)(b-a), and (c-a)(c-b).",
+        "The product D=(a-b)(a-c)(b-c) is used as a common denominator for the three fractions."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": 0,
+      "completion_tokens": 274,
+      "pipeline_completion_tokens": 274,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.817,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 8,
+      "seed": 1,
+      "response_key": "8:ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "8:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The three quantities 2a^2+bc, 2b^2+ca, and 2c^2+ab factor respectively as (a-b)(a-c), (b-c)(b-a), and (c-a)(c-b).",
+        "The product D=(a-b)(a-c)(b-c) is used as a common denominator for the three fractions."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": 0,
+      "completion_tokens": 175,
+      "pipeline_completion_tokens": 175,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.678,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 27,
+      "seed": 0,
+      "response_key": "27:c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "bank_prompt": "convert_p3",
+      "clue_count": 3,
+      "lineage_key": "27:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "If n=s^2m with m squarefree, then sqrt n equals s times sqrt m.",
+        "In the sum from n=1 to 100, terms whose radicands have the same squarefree part m combine by adding the multipliers s with s^2m\u2264100.",
+        "The squarefree part m=1 contributes only an integer constant to the combined expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": 1,
+      "completion_tokens": 146,
+      "pipeline_completion_tokens": 146,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.931,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 27,
+      "seed": 1,
+      "response_key": "27:c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "bank_prompt": "convert_p3",
+      "clue_count": 3,
+      "lineage_key": "27:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "If n=s^2m with m squarefree, then sqrt n equals s times sqrt m.",
+        "In the sum from n=1 to 100, terms whose radicands have the same squarefree part m combine by adding the multipliers s with s^2m\u2264100.",
+        "The squarefree part m=1 contributes only an integer constant to the combined expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": 1,
+      "completion_tokens": 215,
+      "pipeline_completion_tokens": 215,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.256,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 33,
+      "seed": 0,
+      "response_key": "33:901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "33:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The difference of two continuous real-valued functions on [0,1] is continuous on [0,1].",
+        "A continuous real-valued function on [0,1] that is never zero cannot take both positive and negative values."
+      ],
+      "resolved": true,
+      "success": 1,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 3,
+      "source_recovery": 0,
+      "completion_tokens": 156,
+      "pipeline_completion_tokens": 156,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.055,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 33,
+      "seed": 1,
+      "response_key": "33:901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "33:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The difference of two continuous real-valued functions on [0,1] is continuous on [0,1].",
+        "A continuous real-valued function on [0,1] that is never zero cannot take both positive and negative values."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": 0,
+      "completion_tokens": 117,
+      "pipeline_completion_tokens": 117,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 2.335,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 77,
+      "seed": 0,
+      "response_key": "77:722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6",
+      "bank_prompt": "convert_p3",
+      "clue_count": 3,
+      "lineage_key": "77:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The two curves are horizontal translates of the same cubic function.",
+        "The two distinct intersection x-coordinates are roots of a quadratic whose discriminant is positive exactly when the shift parameter has absolute value between 0 and 2.",
+        "The area between the curves equals half the absolute shift parameter times the cube of the distance between the two intersection x-coordinates."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 0,
+      "source_recovery": 0,
+      "completion_tokens": 250,
+      "pipeline_completion_tokens": 250,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.945,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p10_recover_original@convert_p3",
+      "source_index": 77,
+      "seed": 1,
+      "response_key": "77:722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6",
+      "bank_prompt": "convert_p3",
+      "clue_count": 3,
+      "lineage_key": "77:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The two curves are horizontal translates of the same cubic function.",
+        "The two distinct intersection x-coordinates are roots of a quadratic whose discriminant is positive exactly when the shift parameter has absolute value between 0 and 2.",
+        "The area between the curves equals half the absolute shift parameter times the cube of the distance between the two intersection x-coordinates."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": 0,
+      "completion_tokens": 261,
+      "pipeline_completion_tokens": 261,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.171,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p11_inverse_example@convert_p3",
+      "source_index": 8,
+      "seed": 0,
+      "response_key": "8:ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "8:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The three quantities 2a^2+bc, 2b^2+ca, and 2c^2+ab factor respectively as (a-b)(a-c), (b-c)(b-a), and (c-a)(c-b).",
+        "The product D=(a-b)(a-c)(b-c) is used as a common denominator for the three fractions."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": 0,
+      "completion_tokens": 272,
+      "pipeline_completion_tokens": 272,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 6.005,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p11_inverse_example@convert_p3",
+      "source_index": 8,
+      "seed": 1,
+      "response_key": "8:ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "8:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The three quantities 2a^2+bc, 2b^2+ca, and 2c^2+ab factor respectively as (a-b)(a-c), (b-c)(b-a), and (c-a)(c-b).",
+        "The product D=(a-b)(a-c)(b-c) is used as a common denominator for the three fractions."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": 1,
+      "completion_tokens": 307,
+      "pipeline_completion_tokens": 307,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 6.267,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p11_inverse_example@convert_p3",
+      "source_index": 27,
+      "seed": 0,
+      "response_key": "27:c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "bank_prompt": "convert_p3",
+      "clue_count": 3,
+      "lineage_key": "27:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "If n=s^2m with m squarefree, then sqrt n equals s times sqrt m.",
+        "In the sum from n=1 to 100, terms whose radicands have the same squarefree part m combine by adding the multipliers s with s^2m\u2264100.",
+        "The squarefree part m=1 contributes only an integer constant to the combined expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": true,
+      "score": 1,
+      "source_recovery": 0,
+      "completion_tokens": 194,
+      "pipeline_completion_tokens": 194,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.875,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p11_inverse_example@convert_p3",
+      "source_index": 27,
+      "seed": 1,
+      "response_key": "27:c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "bank_prompt": "convert_p3",
+      "clue_count": 3,
+      "lineage_key": "27:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "If n=s^2m with m squarefree, then sqrt n equals s times sqrt m.",
+        "In the sum from n=1 to 100, terms whose radicands have the same squarefree part m combine by adding the multipliers s with s^2m\u2264100.",
+        "The squarefree part m=1 contributes only an integer constant to the combined expression."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": 1,
+      "completion_tokens": 167,
+      "pipeline_completion_tokens": 167,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.334,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p11_inverse_example@convert_p3",
+      "source_index": 33,
+      "seed": 0,
+      "response_key": "33:901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "33:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The difference of two continuous real-valued functions on [0,1] is continuous on [0,1].",
+        "A continuous real-valued function on [0,1] that is never zero cannot take both positive and negative values."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 2,
+      "source_recovery": 0,
+      "completion_tokens": 216,
+      "pipeline_completion_tokens": 216,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 4.259,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p11_inverse_example@convert_p3",
+      "source_index": 33,
+      "seed": 1,
+      "response_key": "33:901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "bank_prompt": "convert_p3",
+      "clue_count": 2,
+      "lineage_key": "33:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The difference of two continuous real-valued functions on [0,1] is continuous on [0,1].",
+        "A continuous real-valued function on [0,1] that is never zero cannot take both positive and negative values."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": true,
+      "well_posed": true,
+      "score": 2,
+      "source_recovery": 0,
+      "completion_tokens": 176,
+      "pipeline_completion_tokens": 176,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 3.462,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    },
+    {
+      "arm": "student_p11_inverse_example@convert_p3",
+      "source_index": 77,
+      "seed": 0,
+      "response_key": "77:722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6",
+      "bank_prompt": "convert_p3",
+      "clue_count": 3,
+      "lineage_key": "77:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "clues": [
+        "The two curves are horizontal translates of the same cubic function.",
+        "The two distinct intersection x-coordinates are roots of a quadratic whose discriminant is positive exactly when the shift parameter has absolute value between 0 and 2.",
+        "The area between the curves equals half the absolute shift parameter times the cube of the distance between the two intersection x-coordinates."
+      ],
+      "resolved": true,
+      "success": 0,
+      "answer_correct": false,
+      "well_posed": false,
+      "score": 1,
+      "source_recovery": 0,
+      "completion_tokens": 259,
+      "pipeline_completion_tokens": 259,
+      "pipeline_calls": 1,
+      "elapsed_seconds": 5.127,
+      "format_error": false,
+      "length_stop": false,
+      "judgment_bindings_verified": true,
+      "provisional_grounded_semantic_success": false
+    }
+  ],
+  "unique_student_responses_in_analysis": 15,
+  "response_reuse_across_arms": {},
+  "scope": "Amendment P: four fixed development families; eight planned responses per arm"
+}

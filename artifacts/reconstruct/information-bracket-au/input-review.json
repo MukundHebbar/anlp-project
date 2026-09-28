@@ -1,0 +1,48 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-au.md",
+  "diagnostic_only": true,
+  "rows": [
+    {
+      "source_index": 21,
+      "diagnostic_only": true,
+      "full_bank_audit_in": "artifacts/reconstruct/missing-target-an/run.json",
+      "ceiling_leaks_original": true
+    },
+    {
+      "source_index": 35,
+      "diagnostic_only": true,
+      "full_bank_audit_in": "artifacts/reconstruct/missing-target-an/run.json",
+      "ceiling_leaks_original": true
+    },
+    {
+      "source_index": 54,
+      "diagnostic_only": true,
+      "full_bank_audit_in": "artifacts/reconstruct/missing-target-an/run.json",
+      "ceiling_leaks_original": true
+    },
+    {
+      "source_index": 68,
+      "diagnostic_only": true,
+      "full_bank_audit_in": "artifacts/reconstruct/missing-target-an/run.json",
+      "ceiling_leaks_original": true
+    },
+    {
+      "source_index": 113,
+      "diagnostic_only": true,
+      "full_bank_audit_in": "artifacts/reconstruct/missing-target-an/run.json",
+      "ceiling_leaks_original": true
+    },
+    {
+      "source_index": 114,
+      "diagnostic_only": true,
+      "full_bank_audit_in": "artifacts/reconstruct/missing-target-an/run.json",
+      "ceiling_leaks_original": true
+    },
+    {
+      "source_index": 132,
+      "diagnostic_only": true,
+      "full_bank_audit_in": "artifacts/reconstruct/missing-target-an/run.json",
+      "ceiling_leaks_original": true
+    }
+  ]
+}

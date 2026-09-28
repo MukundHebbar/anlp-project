@@ -1,0 +1,175 @@
+{
+  "provenance": "Assistant mathematical review with exact symbolic/integer checks; not independent human judge calibration",
+  "scope": "All17 parseable responses, plus separate diagnosis of the primary coefficient truncation. This does not assign or overwrite teacher rubric scores.",
+  "exact_checks": {
+    "reciprocal_sum": "-1/20",
+    "radical_sum": "28*sqrt(2)",
+    "radical_cube": "6*sqrt(30) + 6*sqrt(42) + 6*sqrt(70) + 6*sqrt(105) + 47*sqrt(2) + 45*sqrt(3) + 41*sqrt(5) + 37*sqrt(7)",
+    "radical_cube_distinct_terms": 8,
+    "parabola_line_area": "sqrt(3)/(2*t**2)",
+    "coefficient_x17": 56,
+    "generously_completed_binomial_count": 156
+  },
+  "cases": [
+    {
+      "response_key": "8:b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 8,
+      "seed": 0,
+      "response_output_hash": "6131876503e644aa1f165fd13271c50d190b65508a813f81002b6b6bdaa6689e",
+      "evidence_hash": "b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441",
+      "review": "Both questions replace the original three fractions with a two-term reciprocal sum. For distinct a=1,b=2,c=-3 satisfying sum0, that sum equals-1/20, not1. The question does not recover the original squared numerators or third term; its answer is independently false.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "27:71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 27,
+      "seed": 0,
+      "response_output_hash": "bbe2ba90a1ac742bf5df0d78d562b4edd242a1dc41804153d2817b301bc3b8ad",
+      "evidence_hash": "71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6",
+      "review": "Seed0 radical sum simplifies to28sqrt(2), not60. Seed1 expansion has exactly8 distinct simplified radical terms, not60 (or the16 claimed during its justification). The latter repeats the same question after recognizing a mismatch instead of fixing it. Both change the original range/minimal-count question.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 33,
+      "seed": 0,
+      "response_output_hash": "5fb0ba2c14ef18a77b08589aadb7962db21bb82aaa88a1406a7f2ddb3248d88f",
+      "evidence_hash": "cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847",
+      "review": "Both ask the pointwise-dominance/maxima lemma, not the original equal-maxima/meeting theorem. The lemma is true: evaluate f at a maximizer ofg. Premises differ: f=g=0 meets the original equal-maxima premise but not strict dominance, while f=1,g=0 meets the copied premise but not equal maxima. Retain any generic rubric credit separately; this is not original recovery.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "77:9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 77,
+      "seed": 0,
+      "response_output_hash": "7fc75ba72fb5a69621efb97dc2dae8e358cbe46769cd23978b68feb1d19b05f5",
+      "evidence_hash": "9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd",
+      "review": "For a>0, the proposed parabola and line intersect at0 andsqrt(3)/a. Their area is sqrt(3)/(2a^2), unbounded as a\u21920+, and their separation is not the displayed sqrt(4-a^2)/sqrt(3). At a=1 the area already exceeds1/2. The curves and task differ from the fixed-cubic source.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "86:a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 86,
+      "seed": 0,
+      "response_output_hash": "9e8205c4dd8536666a0f4c995d4c7e1443df6af8582b99853b744e3de0ebf34c",
+      "evidence_hash": "a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d",
+      "review": "Seed0 leaves the integrand unspecified. The families gamma/(1+(x/a)^n), with gamma=1 or1/2, obey the qualitative bounds/threshold but have limits gamma*a. For n>1 the tail is at most gamma*a/(n-1); on[0,(1-epsilon)a] the integrand is at least gamma/(1+(1-epsilon)^n), proving the limit by squeezing. Seed1 uses f(x/a^n): taking f(u)=exp(-u) gives integral a^n, divergent at a=2, not2. Neither recovers the specified source integrand.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 112,
+      "seed": 0,
+      "response_output_hash": "81d7e2ecf08df4e5ee8d643eeebeff410680dc46e3738fb4d383b720122bfff4",
+      "evidence_hash": "29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428",
+      "review": "Seed0 omits an extremal target: both-1011 and-1034 satisfy its conditions, so they do not determine a unique integer. Seed1 explicitly asks for the smallest, whose value is-9981, not-1011. The original asks for the largest. These are different task specifications even though the supplied answer satisfies the shared congruence.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 136,
+      "seed": 0,
+      "response_output_hash": "0a3d3e4c68a56a38b83b7dd45a92c60692525bc39ca29d0fa3f3751f6d2794d4",
+      "evidence_hash": "bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8",
+      "review": "Without a fixed set size there is no finite maximum number of sets. For any N>=3, let S_i be the set of edges incident to vertexi in the complete graph K_N. Any two sets share exactly their connecting edge, no edge is common to all sets, and each d_x=1<=44. All displayed counting observations can hold with arbitrarily largeN. The source instead fixes1987 sets of size45 and asks for union size.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "143:721a7c2e305ecacdb9b24c57e68a0a2df6d0c4b61c0ff28a98187b2f764b785c:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 143,
+      "seed": 0,
+      "response_output_hash": "1c7fdcfbf038c974c089303d2b19c936133a9bc84ceafca99e3111c6222e54ca",
+      "evidence_hash": "721a7c2e305ecacdb9b24c57e68a0a2df6d0c4b61c0ff28a98187b2f764b785c",
+      "review": "The original outer equation and essential domain/distinctness restrictions are not supplied as a self-contained question. Even a generous completion requiring distinct positive variables, X in{7,21}, 1<Y<=X gives156 quadruples, not13. For example(7,1,4,2) has X=7,Y=6 and satisfies those displayed constraints, but its outer binomial is7 rather than21. Without an outer-domain bound the specified conditions may admit infinitely many quadruples. Neither candidate states the original task.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "8:b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 8,
+      "seed": 1,
+      "response_output_hash": "6de01b5d2e61fe751fbdff61edf696fdb979e6036d247320d2c6e4d9375cbd22",
+      "evidence_hash": "b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441",
+      "review": "Both questions replace the original three fractions with a two-term reciprocal sum. For distinct a=1,b=2,c=-3 satisfying sum0, that sum equals-1/20, not1. The question does not recover the original squared numerators or third term; its answer is independently false.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "27:71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 27,
+      "seed": 1,
+      "response_output_hash": "78a641607ff853aed84ef846583f092620614f1372f8969c7f33bc9a2a0f9a62",
+      "evidence_hash": "71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6",
+      "review": "Seed0 radical sum simplifies to28sqrt(2), not60. Seed1 expansion has exactly8 distinct simplified radical terms, not60 (or the16 claimed during its justification). The latter repeats the same question after recognizing a mismatch instead of fixing it. Both change the original range/minimal-count question.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 33,
+      "seed": 1,
+      "response_output_hash": "14fdb2fe97cd6431fb5e40dec73eaa1afaaca7a5d99fa294e7bdaaa753a4def4",
+      "evidence_hash": "cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847",
+      "review": "Both ask the pointwise-dominance/maxima lemma, not the original equal-maxima/meeting theorem. The lemma is true: evaluate f at a maximizer ofg. Premises differ: f=g=0 meets the original equal-maxima premise but not strict dominance, while f=1,g=0 meets the copied premise but not equal maxima. Retain any generic rubric credit separately; this is not original recovery.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "77:9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 77,
+      "seed": 1,
+      "response_output_hash": "c1099a44735077a367c4ccdb961df13d062977e7048c9e6d92eac40639b04d26",
+      "evidence_hash": "9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd",
+      "review": "For a>0, the proposed parabola and line intersect at0 andsqrt(3)/a. Their area is sqrt(3)/(2a^2), unbounded as a\u21920+, and their separation is not the displayed sqrt(4-a^2)/sqrt(3). At a=1 the area already exceeds1/2. The curves and task differ from the fixed-cubic source.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "86:a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 86,
+      "seed": 1,
+      "response_output_hash": "db2848056e40b9f52fec63baaf2a770f81ee742b1083a289ca2d674b10af6d63",
+      "evidence_hash": "a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d",
+      "review": "Seed0 leaves the integrand unspecified. The families gamma/(1+(x/a)^n), with gamma=1 or1/2, obey the qualitative bounds/threshold but have limits gamma*a. For n>1 the tail is at most gamma*a/(n-1); on[0,(1-epsilon)a] the integrand is at least gamma/(1+(1-epsilon)^n), proving the limit by squeezing. Seed1 uses f(x/a^n): taking f(u)=exp(-u) gives integral a^n, divergent at a=2, not2. Neither recovers the specified source integrand.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 112,
+      "seed": 1,
+      "response_output_hash": "8524bf111c9e5d7d091758cdc266a6354a0995842cdba2e1144e537bbe435d29",
+      "evidence_hash": "29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428",
+      "review": "Seed0 omits an extremal target: both-1011 and-1034 satisfy its conditions, so they do not determine a unique integer. Seed1 explicitly asks for the smallest, whose value is-9981, not-1011. The original asks for the largest. These are different task specifications even though the supplied answer satisfies the shared congruence.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 136,
+      "seed": 1,
+      "response_output_hash": "ecc220e6b3f210979869bf2fb5ce1f6e70a611087aadf5164019879690e1621e",
+      "evidence_hash": "bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8",
+      "review": "Without a fixed set size there is no finite maximum number of sets. For any N>=3, let S_i be the set of edges incident to vertexi in the complete graph K_N. Any two sets share exactly their connecting edge, no edge is common to all sets, and each d_x=1<=44. All displayed counting observations can hold with arbitrarily largeN. The source instead fixes1987 sets of size45 and asks for union size.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "141:73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 141,
+      "seed": 1,
+      "response_output_hash": "9dc26c124a01a279526eca100ab1c47808e77ec037bccb2454393b32dae83727",
+      "evidence_hash": "73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87",
+      "review": "The generated coefficient target is x^17 instead of x^21. After factoring x^12, the required sum is5; the upper bound7 is inactive and the coefficient is C(8,3)=56, not204. Seed0 reaches the8192-token cap while repeating that mismatch; no primary format recovery is performed. Seed1 is parseable but retains the wrong exponent.",
+      "assistant_semantic_equivalence_to_original": false
+    },
+    {
+      "response_key": "143:721a7c2e305ecacdb9b24c57e68a0a2df6d0c4b61c0ff28a98187b2f764b785c:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 143,
+      "seed": 1,
+      "response_output_hash": "48ea34c35d6894e8331dffa6cbd3e4ea7e4024be3824ffcfa68c544b39f50b7c",
+      "evidence_hash": "721a7c2e305ecacdb9b24c57e68a0a2df6d0c4b61c0ff28a98187b2f764b785c",
+      "review": "The original outer equation and essential domain/distinctness restrictions are not supplied as a self-contained question. Even a generous completion requiring distinct positive variables, X in{7,21}, 1<Y<=X gives156 quadruples, not13. For example(7,1,4,2) has X=7,Y=6 and satisfies those displayed constraints, but its outer binomial is7 rather than21. Without an outer-domain bound the specified conditions may admit infinitely many quadruples. Neither candidate states the original task.",
+      "assistant_semantic_equivalence_to_original": false
+    }
+  ],
+  "source141_primary_failure": [
+    {
+      "key": "141:73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "raw_content_hash": "942b4df3d9447d6cc073098abe894e49c6b88e33df31a006f44a9e0115b5418c",
+      "diagnosis": "The generated coefficient target is x^17 instead of x^21. After factoring x^12, the required sum is5; the upper bound7 is inactive and the coefficient is C(8,3)=56, not204. Seed0 reaches the8192-token cap while repeating that mismatch; no primary format recovery is performed. Seed1 is parseable but retains the wrong exponent."
+    }
+  ]
+}

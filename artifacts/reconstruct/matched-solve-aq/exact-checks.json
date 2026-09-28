@@ -1,0 +1,93 @@
+{
+  "factorial_remainder": {
+    "factorial_n": 51,
+    "modulus": 61,
+    "actual": 27,
+    "student": 58
+  },
+  "hyperbola": {
+    "N": 2000,
+    "N_squared_over4": 1000000,
+    "positive_divisors": 49,
+    "signed_ordered_pairs": 98,
+    "student": 32
+  },
+  "series_formula_at_one_third": {
+    "actual": "3/2",
+    "student": "9/2"
+  },
+  "geometry_attained_counterexample_to_one_hundredth": {
+    "circle_radius_squared": "1/100",
+    "attained_tan_squared": "1/99",
+    "greater_than_student": true,
+    "global_upper_bound_proof": "See fresh-development-ak/analytic-inverse-certificates.json"
+  },
+  "matrix_square_negative_identity": {
+    "enumerated": 81,
+    "valid": [
+      {
+        "matrix": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "determinant": 1
+      },
+      {
+        "matrix": [
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "determinant": 1
+      }
+    ],
+    "probability_det_minus_one": 0.0
+  },
+  "false_factorial_identity_at_k2": {
+    "student_left": 1,
+    "student_right": 2
+  },
+  "polynomial_option_A_counterexample": {
+    "objects": 1,
+    "colors": 1,
+    "polynomial": "x+1",
+    "a0": 1,
+    "k_greater_a0": false
+  },
+  "inverse_matrix_counterexample_to_only_n1": {
+    "A": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "inverse": [
+      [
+        1,
+        0
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "determinant": 1,
+    "inverse_entry_sum": 1
+  },
+  "scope": "These exact finite calculations substantiate specific observed errors; general analytical claims are in analytic-review.json and linked source certificates."
+}

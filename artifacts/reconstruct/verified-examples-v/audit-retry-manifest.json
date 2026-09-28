@@ -1,0 +1,10 @@
+{
+  "requests": [
+    {
+      "source_index": 62,
+      "prompt": "audit_public_p4",
+      "audit_key": "62:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2:d7a9c76193ba9c222a2b2eb0e49841c13ef3aa155a617e9f007812ba3e8bb774:deepseek-ai/DeepSeek-V4.1-Flash:low"
+    }
+  ],
+  "rule": "One identical technical retry; no retry of an accepted/rejected judgment"
+}

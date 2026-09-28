@@ -1,0 +1,7 @@
+# Amendment N: restricted-copy challenge smoke validation
+
+Registered before calls. Implement the previously specified source-blind copying challenge, using only answer and exact public observation sentences. The runner never passes the source question, hidden support, expected label, or reference reason. It records proposed question, exact public-to-question span alignments, permitted transformation labels, raw request/response, and cost. Schema validation checks quoted spans but cannot prove that alignments cover all premises; direct review is mandatory.
+
+Smoke set: disclosure-development fixtures0–5 (dice and derivative families; each sparse, full, and full-plus-extra). These are development controls, not independent validation. On the four full inputs, a correct restricted copier should be able to produce a source-equivalent question without inventing premises. On the two sparse inputs, it should not recover the original by copying alone. A different question is not automatically a source leak; compare mathematical semantics and inspect whether its construction obeys the restrictions. A failed copy attempt is not proof of safety.
+
+Use copy_challenge_p1, existing DeepSeek V4.1 Flash, low reasoning,8192 cap,180s timeout, two workers, $.10 allocation. Conversion may use two other workers concurrently; global paid calls remain<=4. No retries or selective draws. Inspect all six outputs and their alignments before expanding to the remaining controls or generated banks. Any semantic comparison must remain separate from source-blind copying.

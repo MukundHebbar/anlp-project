@@ -1,0 +1,332 @@
+[
+  {
+    "source_index": 8,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "8:nested_k1:6ec9bdd4ea05d447d567b9f07fd497eaec51e61fa5254b8e1188ccd46a9756a1",
+    "selected_clue_ids": [
+      "c3"
+    ]
+  },
+  {
+    "source_index": 8,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "8:nested_k2:b1ee316987c70b8dde5eeb6a4efdf9126786ced2a642ef7bf2b2507cdd337856",
+    "selected_clue_ids": [
+      "c3",
+      "c1"
+    ]
+  },
+  {
+    "source_index": 8,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "8:nested_k3:8dd05e81568a8c58e7b0305214cf1a763090a88e6525f4270f665fa9dae5d071",
+    "selected_clue_ids": [
+      "c3",
+      "c1",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 27,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "27:nested_k1:9af7a6eb3f39444e6b0e178b95e143c6ff512f062758f4f53f9dd111b13a6d09",
+    "selected_clue_ids": [
+      "c1"
+    ]
+  },
+  {
+    "source_index": 27,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "27:nested_k2:3ab05bbf260fd125d52b26b233452494ab1b297bd62ecef178913712cbfdbdcf",
+    "selected_clue_ids": [
+      "c1",
+      "c3"
+    ]
+  },
+  {
+    "source_index": 27,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "27:nested_k3:63b25f37615af28b70dda2d73e68f3a0ac12bfafeefe470d642524e7496ec1c1",
+    "selected_clue_ids": [
+      "c1",
+      "c3",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 33,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "33:nested_k1:d2edc7301630ccf29246a6eb4cde3b3f402be738a786c4bd47b30e604dfc772a",
+    "selected_clue_ids": [
+      "c4"
+    ]
+  },
+  {
+    "source_index": 33,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "33:nested_k2:578e3ff2fac1d11086060f3579b965f0122094bf0b5ab2ce9daa8bb55bc623ab",
+    "selected_clue_ids": [
+      "c4",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 33,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "33:nested_k3:ff08404e08d34c7eea639c5ca80793219cf3b5a340a98b01ca7ac6601c1a7b7f",
+    "selected_clue_ids": [
+      "c4",
+      "c2",
+      "c1"
+    ]
+  },
+  {
+    "source_index": 77,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "77:nested_k1:212f12feadb5e6b9387862a1d75af8748eba93e203c1f42cf51a17d467fac979",
+    "selected_clue_ids": [
+      "c1"
+    ]
+  },
+  {
+    "source_index": 77,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "77:nested_k2:e810bfc385f58315b87534c81e328ef9c4ac6026e32c538b4e658d17b010a578",
+    "selected_clue_ids": [
+      "c1",
+      "c4"
+    ]
+  },
+  {
+    "source_index": 77,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "77:nested_k3:88bc9a67078e0611c7acc1c79f2ca8f723ec38e56284227a803f937f8494d05b",
+    "selected_clue_ids": [
+      "c1",
+      "c4",
+      "c3"
+    ]
+  },
+  {
+    "source_index": 86,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "86:nested_k1:4ed15f4e1d803822cb2d677ffa8f4b2c095efff9b59a4ef4923fc568f7a54d95",
+    "selected_clue_ids": [
+      "c3"
+    ]
+  },
+  {
+    "source_index": 86,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "86:nested_k2:b74230a07a1821b053fb5e2332e4dc76b9fce0421c72a74a08b9224d4a26a036",
+    "selected_clue_ids": [
+      "c3",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 86,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "86:nested_k3:b05bf32131a889f113898a8a773e17e9c54f98cb5f4bbb4b3a2feea33370e1f3",
+    "selected_clue_ids": [
+      "c3",
+      "c2",
+      "c4"
+    ]
+  },
+  {
+    "source_index": 112,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "112:nested_k1:d81522544796c3fdff6262da285e57c85f0bc75c5695364c70461a7f7852061e",
+    "selected_clue_ids": [
+      "c4"
+    ]
+  },
+  {
+    "source_index": 112,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "112:nested_k2:eefca2d644acf6a6fa0d6e7bff068366aec0b37668b428b39e75639ecf0e6ecf",
+    "selected_clue_ids": [
+      "c4",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 112,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "112:nested_k3:112a5883bf9a9a5d86f71a2af3823896d1bb10d9bb76127fadb0d6c37f799c26",
+    "selected_clue_ids": [
+      "c4",
+      "c2",
+      "c1"
+    ]
+  },
+  {
+    "source_index": 122,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "122:nested_k1:52892ef3e234ba4f2e01036ef198a2ecb4245ee9c94a4c12a3f74803758d6ffb",
+    "selected_clue_ids": [
+      "c4"
+    ]
+  },
+  {
+    "source_index": 122,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "122:nested_k2:552331007fbb5d3f56cec505d826a88dc43ecf55c516740235946bd1943961a0",
+    "selected_clue_ids": [
+      "c4",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 122,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "122:nested_k3:cb2bc2ffc67457e85b62c2b661a2e9e591162d878d4127d636e0bb2e56bc36ac",
+    "selected_clue_ids": [
+      "c4",
+      "c2",
+      "c3"
+    ]
+  },
+  {
+    "source_index": 123,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "123:nested_k1:90c183df542635b1294410fbba4149a50109be6f81b85e6735d78904543d79a3",
+    "selected_clue_ids": [
+      "c2"
+    ]
+  },
+  {
+    "source_index": 123,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "123:nested_k2:0892147b505c294074b22ec59a86ef0a68cf35b2e51f5cb84f2d744aeb42293d",
+    "selected_clue_ids": [
+      "c2",
+      "c3"
+    ]
+  },
+  {
+    "source_index": 123,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "123:nested_k3:f5ecd2a85951b8bc5e7b6e00fd4089a8f938cccdac30b0c74e952d3f5e242d7d",
+    "selected_clue_ids": [
+      "c2",
+      "c3",
+      "c1"
+    ]
+  },
+  {
+    "source_index": 136,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "136:nested_k1:31bcddeb1dd1ecdacf3eb9932d61401fd86e1699e9d66c38175abfd1b8b978b9",
+    "selected_clue_ids": [
+      "c1"
+    ]
+  },
+  {
+    "source_index": 136,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "136:nested_k2:801ffe753d43110f331d08423b1827ee569ad264d5c9f6d792158d3c430d6eeb",
+    "selected_clue_ids": [
+      "c1",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 136,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "136:nested_k3:4e3eb5c4e39b8d8987b57b0ac430097f0b13038b4f9af94be6ce23f8759ca9a5",
+    "selected_clue_ids": [
+      "c1",
+      "c2",
+      "c3"
+    ]
+  },
+  {
+    "source_index": 141,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "141:nested_k1:9a6933d1cb03110a7d488bc518d242cc9a8c598d186a9e7a88e8cddd595fc0eb",
+    "selected_clue_ids": [
+      "c2"
+    ]
+  },
+  {
+    "source_index": 141,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "141:nested_k2:123a4eb08cfb195c5e4d315c50123a32a44bf1ef0931ca36fa324fca6bf5dee5",
+    "selected_clue_ids": [
+      "c2",
+      "c3"
+    ]
+  },
+  {
+    "source_index": 141,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "141:nested_k3:153dfb609782df013c03cb65f2fd20df3befac501221b60df79a95f6b165344f",
+    "selected_clue_ids": [
+      "c2",
+      "c3",
+      "c4"
+    ]
+  },
+  {
+    "source_index": 143,
+    "clue_count": 1,
+    "status": "awaiting_public_audit",
+    "bank_key": "143:nested_k1:bec41cd77e0cc10457d2a2e4c7224eb160b8d05916d3a752bec77dacdc33dc54",
+    "selected_clue_ids": [
+      "c3"
+    ]
+  },
+  {
+    "source_index": 143,
+    "clue_count": 2,
+    "status": "awaiting_public_audit",
+    "bank_key": "143:nested_k2:481950f2cfe9a32eaa97780cf846af4c7b73ee95fc7ce894c509b8e1f31f0018",
+    "selected_clue_ids": [
+      "c3",
+      "c2"
+    ]
+  },
+  {
+    "source_index": 143,
+    "clue_count": 3,
+    "status": "awaiting_public_audit",
+    "bank_key": "143:nested_k3:ca019a50a254c6e616cbfad53456903e10fe82083f30d7b1d9804dd07800990d",
+    "selected_clue_ids": [
+      "c3",
+      "c2",
+      "c1"
+    ]
+  }
+]

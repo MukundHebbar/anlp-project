@@ -1,0 +1,546 @@
+{
+  "terminal": true,
+  "pending": 0,
+  "planned": 19,
+  "returned": 19,
+  "failed": 0,
+  "passed": 18,
+  "rows": [
+    {
+      "id": "long_cycles_equivalent",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "premise_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "target_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "semantic_equivalent",
+          "expected": true,
+          "actual": true,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "long_cycles_not_equivalent",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "premise_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "target_fidelity.score",
+          "expected": [
+            2,
+            3
+          ],
+          "actual": 2,
+          "match": true
+        },
+        {
+          "field": "semantic_equivalent",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "missing_parameter_same_target",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "premise_fidelity.score",
+          "expected": 2,
+          "actual": 2,
+          "match": true
+        },
+        {
+          "field": "target_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "semantic_equivalent",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "wrong_parameter_same_target",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "premise_fidelity.score",
+          "expected": [
+            2,
+            3
+          ],
+          "actual": 3,
+          "match": true
+        },
+        {
+          "field": "target_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "semantic_equivalent",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "equivalent_algebra",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "premise_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "target_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "semantic_equivalent",
+          "expected": true,
+          "actual": true,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "different_target",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "premise_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "target_fidelity.score",
+          "expected": 2,
+          "actual": 2,
+          "match": true
+        },
+        {
+          "field": "semantic_equivalent",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "correct_short_proof",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "false_proof_correct_answer",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 1,
+          "actual": 1,
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "circular_proof_not_tautological_question",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 0,
+          "actual": 0,
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "missing_premise_not_tautology",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 1,
+          "actual": 1,
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "inverse_target_not_tautology",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 1,
+          "actual": 1,
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "actual_tautology",
+      "returned": true,
+      "passed": false,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": [
+            0,
+            1
+          ],
+          "actual": 4,
+          "match": false
+        },
+        {
+          "field": "shortcut.present",
+          "expected": true,
+          "actual": true,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "valid_inverse_inference",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "wrong_answer_sound_calculation",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 1,
+          "actual": 1,
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "regression:zero:5:fidelity",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "premise_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "target_fidelity.score",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "semantic_equivalent",
+          "expected": true,
+          "actual": true,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "regression:zero:16:validity",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": 1,
+          "actual": 1,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "regression:one:10:validity",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": [
+            0,
+            1
+          ],
+          "actual": 0,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "regression:two:54:validity",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": [
+            3,
+            4
+          ],
+          "actual": 4,
+          "match": true
+        }
+      ]
+    },
+    {
+      "id": "regression:two:113:validity",
+      "returned": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "status",
+          "expected": "scored",
+          "actual": "scored",
+          "match": true
+        },
+        {
+          "field": "shortcut.present",
+          "expected": false,
+          "actual": false,
+          "match": true
+        },
+        {
+          "field": "mathematical_validity.score",
+          "expected": [
+            3,
+            4
+          ],
+          "actual": 3,
+          "match": true
+        }
+      ]
+    }
+  ],
+  "limitation": "Authored development and transfer controls plus known real regressions; not independent human gold or held-out benchmark."
+}

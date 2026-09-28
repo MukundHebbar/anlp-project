@@ -1,0 +1,9 @@
+{
+  "provenance": "assistant direct review of local-arithmetic-probes.json",
+  "findings": [
+    "floor(100/11) and the exponent of 11 in 100! are both correctly computed as 9 in direct probes, unlike some reconstruction outputs.",
+    "The 2+2 and rational-simplification outputs contain the correct mathematical expressions but literally copy the word 'answer' into the requested tag; their automated final-answer statuses remain unverified.",
+    "The logarithm derivative probe ends with the correct value 1 but contains false claims about complex derivatives of real/imaginary components. Correct final-answer extraction does not certify its derivation."
+  ],
+  "conclusion": "No gross arithmetic/runtime failure is demonstrated. These five convenience probes are not a matched SOLVE benchmark or evidence that all derivations are valid."
+}

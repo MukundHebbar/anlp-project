@@ -1,0 +1,1849 @@
+#100 valid RECONSTRUCT questions and answers
+
+Validity means both automatic input gates passed and both judges returned complete validated scores. Qwen answers may be wrong. The47 calibration rows and53 added rows are labeled separately. Private answer-key material follows; use public-tasks.jsonl for student inputs.
+
+## 107 — calibration
+
+**Original question:** Six distinct positive integers \( a, b, c, d, e, f \) are given. Jack and Jill calculated the sums of each pair of these numbers. Jack claims that he has 10 prime numbers while Jill claims that she has 9 prime numbers among the sums. Determine who has the correct claim.
+
+**Original final answer:** Jill
+
+**Four public clues:**
+1. The setting involves six distinct positive integers, and the quantities under discussion are sums of unordered pairs of them.
+2. No pair sum can equal 2, so every prime pair sum must be odd.
+3. A pair sum is odd exactly when one integer in the pair is odd and the other is even.
+4. If r of the six integers are odd, then the number of odd-even pairs is r(6-r), and this quantity is at most 9.
+
+**Qwen reconstructed question:** There are six distinct positive integers. The sum of any two of them is either odd or even, and no pair sum equals 2. If the number of odd-even pairs is at most 9, and the requested quantity is the number of odd integers, what is the value of this quantity?
+
+**Qwen verification:** The observations indicate that the number of odd integers r satisfies r(6-r) = 9, which gives r = 3. This leads to the conclusion that there are 3 odd integers among the six. However, the final answer is Jill, which suggests that the question might be mapping the result to a name, possibly in a different context or as part of a larger problem where 'Jill' is the name of the person or entity associated with the quantity 3. The question is constructed based on the given observations and the inferred value of r = 3.
+
+**Score:** 31.25/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 22 — calibration
+
+**Original question:** Find the smallest prime number \( p \) such that the number of trailing zeros in \( 100! \) when expressed in base \( p \) is less than \( p \).
+
+**Original final answer:** 11
+
+**Four public clues:**
+1. The problem concerns trailing zeros of a factorial N! when it is written in a prime base p.
+2. For a prime p, the number of trailing zeros of N! in base p equals v_p(N!), the exponent of p in the prime factorization of N!.
+3. Legendre's formula gives v_p(N!) as floor(N/p) + floor(N/p^2) + floor(N/p^3) + ... .
+4. The desired prime is the least prime p for which v_p(N!) is strictly less than p.
+
+**Qwen reconstructed question:** Find the smallest prime p such that the number of trailing zeros of N! in base p is less than p, given that the answer is 11.
+
+**Qwen verification:** The observations describe the relationship between trailing zeros of N! in base p and the exponent of p in the prime factorization of N! using Legendre's formula. The answer 11 implies that the smallest prime p for which v_p(N!) < p is 11. Therefore, the question is to find this smallest prime p for which the number of trailing zeros of N! in base p is less than p, and the answer is 11.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 128 — calibration
+
+**Original question:** Evan has 100 indivisible marbles to distribute among three volunteers: David, Justin, and Michael. Each volunteer must receive at least one marble. Lewis will later choose a positive integer \( n > 1 \) and attempt to steal \( \frac{1}{n} \) of the marbles from each volunteer, but only if \( n \) divides the number of marbles that volunteer has. In how many ways can Evan distribute the 100 marbles so that Lewis cannot steal marbles from all three volunteers, regardless of the \( n \) he selects?
+
+**Original final answer:** 3540
+
+**Four public clues:**
+1. There are three distinct volunteers, and each receives a positive integer number of indivisible marbles.
+2. The three assigned counts form an ordered triple (a,b,c) of positive integers whose sum is a fixed total T.
+3. Lewis can steal from all three exactly when some integer n > 1 divides each of a,b,c, which is equivalent to gcd(a,b,c) > 1.
+4. The desired distributions are those ordered triples for which no n > 1 divides all three counts; the final task asks for their number.
+
+**Qwen reconstructed question:** Find the number of ordered triples (a,b,c) of positive integers such that a + b + c = 3540 and gcd(a,b,c) = 1.
+
+**Qwen verification:** The observations describe a problem where we are to count the number of ordered triples (a,b,c) of positive integers with a fixed sum T (which is 3540 in this case) such that the greatest common divisor of a, b, and c is 1. This is a classic number theory problem involving the inclusion-exclusion principle and the calculation of coprime triples with a fixed sum. The final answer 3540 is the number of such triples for T = 3540.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 118 — calibration
+
+**Original question:** Find an odd integer $k$ such that the expression $\frac{(k^2 - 1)}{8}$ is both a triangular number and a prime number.
+
+**Original final answer:** 5
+
+**Four public clues:**
+1. The unknown is an odd integer denoted by k.
+2. The expression to be evaluated is (k^2 - 1)/8.
+3. Substituting k=2n+1 for an integer n simplifies that expression to n(n+1)/2.
+4. The quantity n(n+1)/2 is the nth triangular number, so the expression is triangular whenever k is odd.
+
+**Qwen reconstructed question:** Let k be an odd integer. Evaluate the expression (k^2 - 1)/8 and confirm that it is a triangular number. If k=5, what is the value of the expression?
+
+**Qwen verification:** For k=5, which is odd, we substitute k=2n+1 to find n=2. The expression simplifies to n(n+1)/2 = 2*3/2 = 3, which is the 2nd triangular number. However, the final answer given is 5, which corresponds to the 5th triangular number. This suggests that the expression (k^2 - 1)/8 equals the 5th triangular number when k=5, confirming the relationship.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 51 — calibration
+
+**Original question:** Let \( L: \mathbb{R}^n \to \mathbb{R}^m \) be a linear function. Prove that if \( \lim_{\hat{h} \to \hat{0}} \frac{\|L(\hat{h})\|}{\|\hat{h}\|} = 0 \), then \( L \equiv 0 \).
+
+**Original final answer:** L \equiv 0
+
+**Four public clues:**
+1. The object under consideration is a linear map between real normed vector spaces, with its domain and codomain dimensions left unspecified.
+2. A hypothesis is imposed on the quotient of the norm of the image and the norm of the input as the input approaches the zero vector.
+3. The desired conclusion is that the map is identically zero, meaning it sends every vector in its domain to the zero vector.
+4. If the map is not identically zero, then there is a nonzero vector v with L(v) not equal to 0, and along h = t v the quotient ||L(h)||/||h|| equals ||L(v)||/||v|| for every t > 0.
+
+**Qwen reconstructed question:** Let $ L: V \to W $ be a linear map between real normed vector spaces $ V $ and $ W $, with unspecified dimensions. Suppose that for every $ v \in V $, the limit $ \lim_{t \to 0} \frac{\|L(tv)\|}{\|tv\|} $ exists and is equal to some constant $ c \geq 0 $. Show that $ L \equiv 0 $, meaning $ L(v) = 0 $ for all $ v \in V $.
+
+**Qwen verification:** The hypothesis states that the limit of the quotient of the norm of the image and the norm of the input as the input approaches zero is constant. If $ L $ is not the zero map, there exists a nonzero vector $ v $ such that $ L(v) \neq 0 $. However, for any nonzero $ v $, the quotient $ \frac{\|L(tv)\|}{\|tv\|} = \frac{\|tL(v)\|}{\|tv\|} = \frac{t\|L(v)\|}{t\|v\|} = \frac{\|L(v)\|}{\|v\|} $, which is constant along the line $ h = tv $. This implies that the limit is constant, but if $ L \not\equiv 0 $, then the limit is $ \frac{\|L(v)\|}{\|v\|} > 0 $, contradicting the conclusion that $ L \equiv 0 $. Therefore, the only possibility is that $ L \equiv 0 $.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 52 — calibration
+
+**Original question:** Solve the equation for real numbers: $$\sqrt{x^{2}-x+2}+\sqrt{2x^{2}+2x+3}=\sqrt{2x^{2}-1}+\sqrt{x^{2}-3x-2}.$$
+
+**Original final answer:** -2
+
+**Four public clues:**
+1. The problem asks for real values of a single variable x that satisfy an equation involving square roots.
+2. The equation has the form sqrt(A)+sqrt(B)=sqrt(C)+sqrt(D), where A, B, C, and D are quadratic expressions in x.
+3. The four quadratic radicands can be paired so that the difference in each pair is the same linear expression in x.
+4. For any real solution, all four radicands must be nonnegative.
+
+**Qwen reconstructed question:** Find the real value of x that satisfies the equation sqrt(2x^2 - 5x + 2) + sqrt(3x^2 - 8x + 4) = sqrt(4x^2 - 7x + 2) + sqrt(5x^2 - 10x + 4).
+
+**Qwen verification:** The equation involves square roots of quadratic expressions. The radicands can be paired such that the difference in each pair is the same linear expression in x. The given answer of -2 is a specific real solution that must satisfy the equation and the nonnegativity of all radicands. By substituting x = -2 into the equation, we can verify that it satisfies the equation and that all radicands are nonnegative.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 38 — calibration
+
+**Original question:** Find the formula for the Tower of Hanoi numbers given by the recurrence relation \( h_n = 2h_{n-1} + 1 \) with \( h_1 = 1 \) using generating functions.
+
+**Original final answer:** 2^n - 1
+
+**Four public clues:**
+1. The problem concerns a sequence h_n indexed by positive integers.
+2. The sequence satisfies a first-order linear recurrence with a constant forcing term.
+3. The initial condition is chosen so that extending the sequence by h_0=0 makes the recurrence valid at n=1.
+4. The requested formula is to be found from the ordinary generating function H(x)=sum h_n x^n.
+
+**Qwen reconstructed question:** A sequence h_n is defined for positive integers and satisfies a first-order linear recurrence with a constant forcing term. The initial condition is chosen so that extending the sequence by h_0=0 makes the recurrence valid at n=1. Given the ordinary generating function H(x)=sum h_n x^n, find a closed-form expression for h_n.
+
+**Qwen verification:** The sequence satisfies a first-order linear recurrence with a constant forcing term and the initial condition is chosen so that h_0=0 makes the recurrence valid at n=1. The generating function H(x)=sum h_n x^n is given, and the closed-form expression for h_n is 2^n - 1.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 61 — calibration
+
+**Original question:** Find the maximum value of the function \( f(x) = \sum_{n=0}^\infty x^n(1-x)^n \) on the interval \((0, 1)\).
+
+**Original final answer:** \dfrac{4}{3}
+
+**Four public clues:**
+1. The variable x is real and lies strictly between 0 and 1.
+2. On this interval, the product x(1-x) is positive and never exceeds 1/4.
+3. The infinite series is formed by taking successive powers of the single quantity x(1-x).
+4. Because x(1-x) is between 0 and 1, the series is geometric and can be summed by the geometric-series formula.
+
+**Qwen reconstructed question:** An infinite geometric series has a common ratio of x(1-x), where 0 < x < 1. If the sum of the series is 4/3, what is the value of x?
+
+**Qwen verification:** The sum of an infinite geometric series is given by S = a / (1 - r), where a is the first term and r is the common ratio. Here, the common ratio r = x(1 - x), and the sum S = 4/3. Assuming the first term a = x, we have 4/3 = x / (1 - x(1 - x)). Solving this equation gives the value of x.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 139 — calibration
+
+**Original question:** In a metric space with a countable base, is it always possible to find a countable dense subset?
+
+**Original final answer:** Yes
+
+**Four public clues:**
+1. The discussion takes place in a metric space with its metric topology.
+2. A base for the topology is a family of open sets such that every open set is a union of members of the family.
+3. The question asks whether a countable subset of the space can always be found with a specified topological role.
+4. The final answer to that yes-or-no question is affirmative.
+
+**Qwen reconstructed question:** In a metric space, can a countable dense subset always be found with the property that every open set is a union of members of the base for the topology?
+
+**Qwen verification:** The question asks whether a countable subset of a metric space can always be found with a topological role, specifically that every open set is a union of members of the base for the topology. The final answer 'Yes' suggests that such a countable subset exists, which is consistent with the properties of metric spaces, where countable dense subsets (and hence bases for the topology) often exist. The observations support this by mentioning the metric space, topology, base for the topology, and the existence of a countable subset with a specified topological role, all aligning with the idea that a countable dense subset (with the property that every open set is a union of members of the base) can always be found in a metric space.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 57 — calibration
+
+**Original question:** Determine the rank of the matrix \(\begin{pmatrix} 4y+2z & 4x+4 & 2x-1 \\ y+2 & x & -1 \end{pmatrix}\) given that the variables \((x,y,z)\) satisfy the equations \(4xy + 2xz + 4y - z = 0\) and \(xy + 2x - z = 0\).
+
+**Original final answer:** 2
+
+**Four public clues:**
+1. The problem concerns the rank of a 2-by-3 matrix whose entries are affine expressions in three variables.
+2. Since the matrix has only two rows, its rank is at most 2, so the only possible exact ranks are 0, 1, or 2.
+3. The requested result is the exact rank of that matrix under two polynomial constraints on the variables.
+4. To prove the rank is 2, it is enough to find one nonzero 2-by-2 minor.
+
+**Qwen reconstructed question:** A 2-by-3 matrix with entries that are affine expressions in three variables has two polynomial constraints. What is the exact rank of this matrix under these constraints?
+
+**Qwen verification:** The matrix has two rows, so its rank is at most 2. The answer of 2 implies that the matrix is full rank under the given constraints. The observations confirm that the rank is at most 2 and that the answer is 2, which is consistent with the matrix being full rank under the specified constraints.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 67 — calibration
+
+**Original question:** Let $B = \{ v_i \}_{i=1}^n$ be a basis of a vector space $V$, and let $T: V \rightarrow V$ be a linear operator such that $T(v_1) = \sum_{i=1}^n v_i$. Find the sum of the elements of the matrix $[T^{-1}]_B$, where $[T^{-1}]_B$ is the matrix representation of the inverse of $T$ with respect to the basis $B$. Provide your answer as a single number.
+
+**Original final answer:** 1
+
+**Four public clues:**
+1. Let B = {v_i}_{i=1}^n be a finite basis of a vector space V.
+2. Let T: V -> V be a linear operator, and let A = [T]_B be its matrix in the basis B.
+3. The first column of A is the coordinate vector of T(v_1) in the basis B.
+4. The requested quantity is the sum of all entries of the matrix [T^{-1}]_B, which is A^{-1}.
+
+**Qwen reconstructed question:** Let B = {v_1, v_2, ..., v_n} be a basis for a vector space V, and let T: V -> V be a linear operator with matrix A = [T]_B in the basis B. The first column of A is the coordinate vector of T(v_1) in the basis B. If the sum of all entries of the matrix [T^{-1}]_B is 1, what is the sum of all entries of A^{-1}?
+
+**Qwen verification:** The question is constructed based on the given observations and the final answer. The observations describe a basis B, a linear operator T, its matrix A in the basis B, and the property that the first column of A is the coordinate vector of T(v_1) in the basis B. The requested quantity is the sum of all entries of the matrix [T^{-1}]_B, which is A^{-1}, and the final answer is 1. The question is verified against the observations and the final answer, and the assumptions are made based on the given information and the need to construct a plausible question.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 16 — calibration
+
+**Original question:** Determine the number of integral points on the hyperbola \(x^2 - y^2 = (2000)^2\). An integral point is a point where both coordinates are integers.
+
+**Original final answer:** 98
+
+**Four public clues:**
+1. The original problem asks for the number of integer-coordinate points on a hyperbola of the form x^2 - y^2 = C, where C is a positive integer constant.
+2. For any such point, the quantities u = x - y and v = x + y are integers whose product is C.
+3. The inverse relations x = (u + v)/2 and y = (v - u)/2 show that u and v must have the same parity.
+4. In the intended case, C is even, so u and v cannot both be odd; therefore any valid pair must have u and v both even.
+
+**Qwen reconstructed question:** How many integer-coordinate points (x, y) lie on the hyperbola x² - y² = 96?
+
+**Qwen verification:** The hyperbola x² - y² = 96 has integer solutions where x and y are integers. For any solution, u = x - y and v = x + y are integers such that uv = 96. Since 96 is even, u and v must both be even. The number of such pairs (u, v) is determined by the number of ways to factor 96 into two even integers. The total number of such pairs is 98, leading to the answer 98.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 21 — calibration
+
+**Original question:** Let $p$ be an odd prime of the form $p=2^m+1$, for some positive integer $m$. Let $g$ be a primitive root mod $p$ with $1 \le g \le p$. How many such $g$ are there?
+
+**Original final answer:** 2^{m-1}
+
+**Four public clues:**
+1. The modulus is an odd prime p.
+2. The multiplicative group modulo p is cyclic.
+3. The objects being counted are primitive roots modulo p, represented by residues from 1 to p.
+4. Counting primitive roots is the same as counting generators of that cyclic group.
+
+**Qwen reconstructed question:** Let p be an odd prime and let m be the number of elements in the multiplicative group modulo p. What is the number of primitive roots modulo p?
+
+**Qwen verification:** The multiplicative group modulo an odd prime p is cyclic of order p-1. The number of primitive roots modulo p is φ(p-1), where φ is Euler's totient function. However, the final answer 2^{m-1} suggests a specific form for the number of primitive roots, which is consistent with the structure of the cyclic group. Since m is the number of elements in the group (m = p-1), the number of primitive roots is φ(m) = φ(p-1). The answer 2^{m-1} is a plausible form for φ(p-1) under specific conditions, such as when p-1 is a power of 2, which is consistent with the given observations.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 115 — calibration
+
+**Original question:** Determine the number of triples of natural numbers \((a, b, c)\) that satisfy the following system of equations:
+
+\[\begin{cases}
+\gcd(a, b, c) = 15 \\
+\text{lcm}(a, b, c) = 3^{15} \cdot 5^{18}
+\end{cases}\]
+
+**Original final answer:** 8568
+
+**Four public clues:**
+1. The requested result is a count of ordered triples of natural numbers.
+2. The three entries are constrained simultaneously by their greatest common divisor and their least common multiple.
+3. The greatest common divisor is fixed as 15, so its prime factorization is 3^1 times 5^1.
+4. The least common multiple is fixed and uses only the primes 3 and 5, with the exponent of 5 larger than the exponent of 3.
+
+**Qwen reconstructed question:** How many ordered triples (a, b, c) of natural numbers have a greatest common divisor of 15, a least common multiple using only primes 3 and 5, and the exponent of 5 in the lcm is greater than the exponent of 3?
+
+**Qwen verification:** The gcd is 15 = 3^1 * 5^1. The lcm uses only primes 3 and 5, with exponent of 5 greater than exponent of 3. The number of such ordered triples is 8568.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 113 — calibration
+
+**Original question:** Compute the limit \( \lim_{n\rightarrow \infty }\frac{x_{n}}{n} \) for the sequence \((x_{n})_{n\geq 2}\) defined by \(x_{n}=\sqrt[n]{1+\sum_{k=2}^{n}(k-1)(k-1)!}\).
+
+**Original final answer:** \dfrac{1}{e}
+
+**Four public clues:**
+1. The sequence is indexed by integers n≥2, and each term x_n is defined as an nth root of a positive expression.
+2. Inside that root, 1 is added to a finite sum whose index runs from k=2 to n.
+3. The summands are (k-1)(k-1)!, which can be rewritten as k!-(k-1)!.
+4. Because the sum telescopes, the expression under the nth root simplifies to n!, so x_n=(n!)^{1/n}.
+
+**Qwen reconstructed question:** Evaluate the limit as n approaches infinity of (n!)^{1/n} divided by n!^{1/n} where x_n = (n!)^{1/n} and the sequence is defined by a telescoping sum involving (k-1)(k-1)!.
+
+**Qwen verification:** The sequence x_n is defined as (n!)^{1/n} based on the telescoping sum observations. The final answer 1/e is consistent with the limit of (n!)^{1/n} divided by n!^{1/n} as n approaches infinity, which is known to approach 1/e. The question is constructed to reflect the given observations and the final answer.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 0 — calibration
+
+**Original question:** Let \(f\) be a polynomial of degree at most 2. Find the value of \(3(\alpha-\beta)^2\) where \(\alpha,\beta\) satisfy \(\int_0^2 f(x)\,dx = f(\alpha) + f(\beta)\) for all such \(f\).
+
+**Original final answer:** 4
+
+**Four public clues:**
+1. The function f is allowed to be any polynomial of degree at most 2.
+2. For every such f, a definite integral of f over the fixed interval [0,2] equals f(alpha)+f(beta).
+3. The numbers alpha and beta are fixed unknowns that make this equality true for all allowed f.
+4. The requested result is a constant multiple of (alpha-beta)^2, but the multiplier is not stated in these observations.
+
+**Qwen reconstructed question:** Let f(x) be any quadratic polynomial. It is given that for all such f, the definite integral of f(x) from 0 to 2 equals f(alpha) + f(beta), where alpha and beta are fixed constants. If the requested result is a constant multiple of (alpha - beta)^2, what is this constant?
+
+**Qwen verification:** Let f(x) = ax^2 + bx + c. The integral of f(x) from 0 to 2 is (4a + 2b + c). The expression f(alpha) + f(beta) is a(alpha)^2 + b(alpha) + c + a(beta)^2 + b(beta) + c. For this to be equal for all quadratic polynomials, the coefficients of a, b, and c must match. This leads to the equation 4a + 2b + c = a(alpha)^2 + b(alpha) + c + a(beta)^2 + b(beta) + c. Simplifying, we get 4a + 2b + c = a(alpha^2 + beta^2) + b(alpha + beta) + 2c. This must hold for all a, b, c, so the coefficients of a, b, and c must match on both sides. This leads to the equations 4 = alpha^2 + beta^2, 2 = alpha + beta, and 1 = 2. The last equation is not possible, so the correct approach is to find the constant multiple of (alpha - beta)^2 that satisfies the given condition. Solving these equations, we find that the constant is 1/2, so the requested result is (1/2)(alpha - beta)^2. However, the observations state that the requested result is a constant multiple of (alpha - beta)^2, and the answer is 4. Therefore, the constant must be 4. This implies that the constant multiple is 4, so the question is to find this constant, which is 4.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 136 — calibration
+
+**Original question:** Given 1987 sets, each containing exactly 45 elements, and the union of any two sets contains exactly 89 elements, determine the number of elements in the union of these 1987 sets. Choose the correct answer from the following options:
+
+A. 87429
+B. 89415
+C. 89326
+D. 89504
+
+**Original final answer:** 87429
+
+**Four public clues:**
+1. There is a finite family of sets, and all sets in the family have the same finite size.
+2. Each set in the family contains exactly 45 elements.
+3. The union of any two distinct sets contains exactly 89 elements.
+4. The requested quantity is the number of elements in the union of all sets in the family.
+
+**Qwen reconstructed question:** A family of sets has the property that each set contains exactly 45 elements, and the union of any two distinct sets contains exactly 89 elements. What is the number of elements in the union of all sets in the family?
+
+**Qwen verification:** Let the number of sets in the family be $ n $. Each set has 45 elements, and the union of any two distinct sets has 89 elements. This implies that the intersection of any two distinct sets has $ 45 + 45 - 89 = -1 $, which is impossible. Therefore, the family must consist of sets where the intersection of any two distinct sets is empty. However, this contradicts the observation that the union of any two distinct sets has 89 elements. Therefore, the family must have a specific structure where the intersection of any two distinct sets is non-empty but the total number of elements in the union of all sets can be calculated. Given the final answer of 87429, the question is consistent with the provided observations and the inferred structure of the family of sets.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 123 — calibration
+
+**Original question:** Is there an infinite sequence of natural numbers such that any finite partial sum of this sequence is not a perfect power?
+
+**Original final answer:** Yes
+
+**Four public clues:**
+1. The source asks whether an infinite sequence of natural numbers can be chosen.
+2. The condition concerns every finite partial sum of that sequence.
+3. A perfect power means a number of the form m^k with integer k at least 2.
+4. It is enough to make every partial sum congruent to 2 modulo 4.
+
+**Qwen reconstructed question:** Can an infinite sequence of natural numbers be chosen such that every finite partial sum is a perfect power and congruent to 2 modulo 4?
+
+**Qwen verification:** The question asks if such a sequence exists. The observations specify that the partial sums must be perfect powers and congruent to 2 modulo 4. The answer 'Yes' indicates that such a sequence is possible. The conditions on the partial sums (being perfect powers and congruent to 2 modulo 4) are sufficient to determine the feasibility of the sequence.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 94 — calibration
+
+**Original question:** Evaluate the integral \( \int_{0}^{1} \frac{1}{x+\sqrt{1-x^2}} \, dx \).
+
+**Original final answer:** \dfrac{\pi}{4}
+
+**Four public clues:**
+1. The problem asks for the value of a definite integral.
+2. The integrand is 1/(x+sqrt(1-x^2)).
+3. The lower limit of integration is 0.
+4. The upper limit is a positive number in the domain of the integrand, but its exact value is not stated in these clues.
+
+**Qwen reconstructed question:** Evaluate the definite integral of 1/(x + sqrt(1 - x^2)) from 0 to 1.
+
+**Qwen verification:** The integral of 1/(x + sqrt(1 - x^2)) from 0 to 1 is known to evaluate to π/4. This can be verified by substitution or trigonometric identities, confirming the given answer.
+
+**Score:** 75.0/100; **v4 rating:** 5/5; **semantic match:** True; **provisional grounded recovery:** False.
+
+## 72 — calibration
+
+**Original question:** Let \((x,y,z)\) be an ordered triplet of real numbers that satisfies the following system of equations: \[x+y^2+z^4=0, \quad y+z^2+x^4=0, \quad z+x^2+y^4=0.\] If \(m\) is the minimum possible value of \(\lfloor x^3+y^3+z^3\rfloor\), find \(m \mod 2007\).
+
+**Original final answer:** 2006
+
+**Four public clues:**
+1. The unknowns form an ordered triple of real numbers, and the equations are invariant under the cyclic shift (x,y,z) -> (y,z,x).
+2. Each equation mixes one variable with the square of the next variable and the fourth power of the remaining variable, all summing to zero.
+3. Every coordinate of any solution is forced to be nonpositive.
+4. Writing x=-a, y=-b, z=-c with a,b,c >= 0 turns the system into a=b^2+c^4 and its two cyclic rotations.
+
+**Qwen reconstructed question:** Find the value of $ a + b + c $ given that $ a, b, c \geq 0 $ and the system of equations $ a = b^2 + c^4 $, $ b = c^2 + a^4 $, $ c = a^2 + b^4 $ has a solution where $ a + b + c = 2006 $
+
+**Qwen verification:** The observations describe a system of equations that is invariant under cyclic shifts and can be transformed into nonnegative variables. The system is symmetric and the given answer suggests a specific solution where the sum of the variables is 2006. The transformation $ x = -a $, $ y = -b $, $ z = -c $ with $ a, b, c \geq 0 $ leads to the equations $ a = b^2 + c^4 $, $ b = c^2 + a^4 $, $ c = a^2 + b^4 $, and the requested quantity is the sum $ a + b + c $, which is given as 2006.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 28 — calibration
+
+**Original question:** Determine the values of $a > 0$ for which the function \( f(x; a) = -\frac{a}{x} \cos (1/x^a) + ax^{a-1} \sin(x^{-a}) \) is unbounded in a right neighborhood of $0$. Provide your answer as a set of values for $a$.
+
+**Original final answer:** (0, \infty)
+
+**Four public clues:**
+1. The function depends on a positive parameter a and on a real variable x restricted to x>0.
+2. The question concerns the behavior of this function as x approaches 0 from the right, specifically whether it is unbounded in every right neighborhood of 0.
+3. The function contains oscillatory factors involving 1/x^a and x^{-a}, so the parameter a controls both the frequency and the power of x.
+4. The requested result is a set of values of a, not a numerical value of the function or a single parameter.
+
+**Qwen reconstructed question:** Determine all positive values of a for which the function f(x) = sin(1/x^a) / x^a is unbounded in every right neighborhood of 0.
+
+**Qwen verification:** The function f(x) = sin(1/x^a) / x^a involves oscillatory factors with 1/x^a and x^{-a}. As x approaches 0 from the right, the oscillations become more rapid if a > 0. The function is unbounded near 0 for all a > 0 because the denominator x^a approaches 0 and the numerator oscillates between -1 and 1. Thus, the function becomes unbounded in every right neighborhood of 0 for all positive a.
+
+**Score:** 75.0/100; **v4 rating:** 5/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 146 — calibration
+
+**Original question:** Consider a sequence of non-negative integers starting from $0$, where each subsequent term is either $0$ or the previous term plus $1$, taken modulo $500$. The sequence terminates when the number $499$ appears exactly twice. Determine the number of such sequences that contain exactly $1000$ instances of the number $0$. What is the remainder when this count is divided by $500$?
+
+**Original final answer:** 499
+
+**Four public clues:**
+1. The sequence starts at 0 and all of its terms are non-negative integers.
+2. At each step, the next term is either 0 or the previous term increased by 1 and then reduced modulo a fixed positive modulus.
+3. The sequence stops as soon as the value one less than that modulus has appeared for the second time.
+4. The quantity to be counted is the number of such sequences with a prescribed total number of zeros, and the requested result is that count modulo the same modulus.
+
+**Qwen reconstructed question:** A sequence starts at 0 and follows the rule that each term is either 0 or the previous term increased by 1 and then reduced modulo 500. The sequence stops as soon as the value 499 appears for the second time. What is the number of such sequences with exactly 499 zeros modulo 500?
+
+**Qwen verification:** The sequence is defined modulo 500, starting at 0. The sequence stops when 499 appears twice. The requested quantity is the number of sequences with exactly 499 zeros modulo 500, and the answer is 499, which is one less than 500, suggesting the modulus is 500.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 54 — calibration
+
+**Original question:** Let \( \omega \) and \( z \) be complex numbers such that \( |\omega| = 1 \) and \( |z| = 10 \). Define \( \theta = \arg\left(\frac{\omega - z}{z}\right) \). Determine the maximum possible value of \( \tan^2 \theta \).
+
+**Original final answer:** \dfrac{1}{99}
+
+**Four public clues:**
+1. Let omega and z be complex numbers with |omega|=1.
+2. Define theta as the argument of (omega - z)/z.
+3. Set u=(omega-z)/z; then u+1=omega/z, so |u+1|=1/|z|.
+4. Thus theta is the argument of a point u on the circle centered at -1 with radius 1/|z|.
+
+**Qwen reconstructed question:** Let omega and z be complex numbers with |omega|=1. Define theta as the argument of (omega - z)/z. Set u=(omega-z)/z; then u+1=omega/z, so |u+1|=1/|z|. Thus theta is the argument of a point u on the circle centered at -1 with radius 1/|z|. If |z|=3, what is |u+1|?
+
+**Qwen verification:** The question is derived from the given observations and the final answer. The observations describe a complex number relationship where |u+1|=1/|z|. Given |z|=3, we calculate |u+1|=1/3, which is 1/99 if scaled appropriately. However, the direct calculation from the given |z|=3 gives |u+1|=1/3, but the final answer is 1/99, suggesting a possible scaling or misinterpretation in the problem setup. The question is constructed to align with the observations and the final answer, even if the exact scaling is not fully clarified.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 86 — calibration
+
+**Original question:** Evaluate the limit: $$\lim_{n\to\infty} \int^\infty_0 \frac{1}{1+\left(\frac{x}{a}\right)^n} dx$$ where $a$ is a positive constant.
+
+**Original final answer:** a
+
+**Four public clues:**
+1. A positive constant a is used as a scale in the expression being integrated.
+2. The object under study is a limit of integrals over the nonnegative half-line [0,∞).
+3. A parameter n tends to infinity, and the integrand depends on n through a power of the scaled variable.
+4. The integrand is bounded between 0 and 1, and the requested limit is a single number depending on a.
+
+**Qwen reconstructed question:** Evaluate the limit as n approaches infinity of the integral from 0 to infinity of (a^n e^{-n x^2}) dx.
+
+**Qwen verification:** The observations describe an integral involving a scaled variable and a parameter n tending to infinity. The integrand is bounded between 0 and 1, and the requested limit is a single number depending on a. The integral is over the nonnegative half-line, and the scale a is positive. The limit is evaluated as n approaches infinity, and the integrand depends on n through a power of the scaled variable. The integral can be evaluated using the Gaussian integral formula, leading to the result (sqrt(π)/2) * (1/a) as n approaches infinity.
+
+**Score:** 31.25/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 60 — calibration
+
+**Original question:** Find the maximum value of \( x^3 + y^3 + z^3 \) given that \( x, y, z \) are non-negative real numbers in the interval \([0, 2]\) and satisfy \( x + y + z = 3 \).
+
+**Original final answer:** 9
+
+**Four public clues:**
+1. There are three nonnegative real variables, say x, y, and z.
+2. The variables satisfy the single linear constraint x + y + z = 3.
+3. Each variable is restricted to the same closed interval [0, a], where the exact upper endpoint a is not supplied in these observations.
+4. The quantity to be maximized is x^3 + y^3 + z^3.
+
+**Qwen reconstructed question:** Three nonnegative real numbers x, y, and z satisfy x + y + z = 3, and each is restricted to the interval [0, a], where a is an unknown upper bound. What is the maximum possible value of x³ + y³ + z³?
+
+**Qwen verification:** To maximize x³ + y³ + z³ under the constraint x + y + z = 3, we consider that the function is maximized when one variable is as large as possible and the others are as small as possible. Since the maximum value of the expression is given as 9, this implies that one variable is at its upper bound a and the others are 0. Therefore, a must be 9, and the maximum value of the expression is 9.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 78 — calibration
+
+**Original question:** Evaluate the limit: $$\lim _{n \rightarrow \infty}\left(n \ln \left(1-\frac{1}{n}\right) \cos \left(\pi \sqrt{4 n^2+10}\right)\right)$$
+
+**Original final answer:** -1
+
+**Four public clues:**
+1. The limit is taken as n tends to infinity, with n understood as a positive integer.
+2. The expression is a product of two factors: one is n times a natural logarithm of 1 minus 1/n.
+3. The other factor is a cosine whose argument is π times the square root of a quadratic expression in n.
+4. The quadratic inside the square root has leading term 4n^2, so the square root is asymptotically 2n.
+
+**Qwen reconstructed question:** Evaluate the limit as n approaches infinity of n * ln(1 - 1/n) * cos(π * sqrt(4n^2 + n + 1)).
+
+**Qwen verification:** The expression involves a product of three components: n, ln(1 - 1/n), and cos(π * sqrt(4n^2 + n + 1)). As n approaches infinity, ln(1 - 1/n) approaches ln(1) = 0, and the square root term sqrt(4n^2 + n + 1) is asymptotically 2n. The cosine term oscillates between -1 and 1. However, the product of n and the logarithmic term approaches -1, and the cosine term approaches -1, leading to the overall limit of -1.
+
+**Score:** 62.5/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 96 — calibration
+
+**Original question:** Determine whether the limit \( \lim_{x\rightarrow0}\frac{\sin\left(\int\limits _{x^{3}}^{x^{2}}\left(\int\limits _{0}^{t}g\left(s^{2}\right)ds\right)dt\right)}{x^{8}} \) converges, given that \( g \) is a function with a derivative defined for all \( x \) in the interval \([-1, 1]\), \( g(0) = 0 \), and \( g'(0) = 1 \).
+
+**Original final answer:** \dfrac{1}{12}
+
+**Four public clues:**
+1. The problem concerns a limit as x approaches 0 of a quotient whose numerator is the sine of a nested integral and whose denominator is x^8.
+2. The outer integral is with respect to t from x^3 to x^2, and its integrand is an inner integral from 0 to t of g(s^2) with respect to s.
+3. The function g is differentiable near 0 and satisfies g(0)=0, so only its local first-order behavior near 0 should affect the leading term.
+4. Because the nested integral vanishes as x approaches 0, the sine factor is asymptotically equivalent to that nested integral.
+
+**Qwen reconstructed question:** Evaluate the limit as x approaches 0 of [sin(∫_{t=x^3}^{x^2} (∫_{s=0}^t g(s^2) ds) dt)] / x^8, where g is a differentiable function near 0 with g(0)=0.
+
+**Qwen verification:** The nested integral's leading term is determined by the Taylor expansion of g(s^2) near s=0. Since g(0)=0, the leading term is proportional to s^2. Integrating this term over s from 0 to t gives a term proportional to t^3. Integrating this over t from x^3 to x^2 gives a term proportional to x^8. The sine function is approximated by its argument for small values, so the limit simplifies to the coefficient of x^8 in the nested integral, which is 1/12.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 140 — calibration
+
+**Original question:** On the coordinate plane, a grasshopper jumps from point to point with integer coordinates. The lengths of its jumps form a sequence of natural numbers: \(1, 2, 3, \ldots\). Can the grasshopper return to the same point it started from after making exactly 2222 jumps? Answer with 'Yes' or 'No'.
+
+**Original final answer:** No
+
+**Four public clues:**
+1. The motion takes place on the integer lattice, so each jump displacement has two integer coordinate components.
+2. The j-th jump has length j, so its squared length equals j^2.
+3. Returning to the starting point means the total horizontal displacement and the total vertical displacement are both zero.
+4. Modulo 2, an odd-length jump forces exactly one coordinate component to be odd, while an even-length jump forces both coordinate components to be even.
+
+**Qwen reconstructed question:** Can a sequence of jumps on the integer lattice, where the j-th jump has length j and each jump's displacement has integer coordinates, result in returning to the starting point?
+
+**Qwen verification:** The question asks whether it is possible to return to the origin after a series of jumps with specified properties. The observations indicate that each jump has integer components and that the total displacement must be zero for return. The modulo 2 condition implies that odd-length jumps affect parity, while even-length jumps do not. The answer 'No' suggests that these constraints prevent a return to the origin, making the question valid and coherent.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 134 — calibration
+
+**Original question:** Given the sets \(A_1, A_2, \ldots, A_{160}\) such that \(|A_i| = i\) for all \(i = 1, 2, \ldots, 160\), we create new sets \(M_1, M_2, \ldots, M_n\) by the following procedure: In each step, choose some of the sets \(A_1, A_2, \ldots, A_{160}\) and remove the same number of elements from each chosen set. The removed elements form the set \(M_k\) for the \(k\)-th step. Continue this process until all elements are removed from \(A_1, A_2, \ldots, A_{160}\). Find the minimum value of \(n\).
+
+**Original final answer:** 8
+
+**Four public clues:**
+1. There are 160 initial sets \(A_1,\ldots,A_{160}\), and each has a distinct positive integer size.
+2. In each step \(k\), one chooses some of the initial sets and removes the same positive number \(c_k\) of elements from every chosen set; the removed elements form a new set \(M_k\).
+3. The procedure continues until every element of every initial set \(A_i\) has been removed.
+4. For each \(i\), if \(S_i\) is the set of steps in which \(A_i\) is chosen, then \(\sum_{k\in S_i} c_k=|A_i|\).
+
+**Qwen reconstructed question:** There are 160 initial sets $A_1, \ldots, A_{160}$, each with a distinct positive integer size. In each step $k$, some of the initial sets are chosen and a positive number $c_k$ of elements are removed from each chosen set, forming a new set $M_k$. The procedure continues until all elements of all initial sets have been removed. For each $i$, if $S_i$ is the set of steps in which $A_i$ is chosen, then $\sum_{k \in S_i} c_k = |A_i|$. What is the total number of elements removed from all initial sets?
+
+**Qwen verification:** The total number of elements removed from all initial sets is the sum of the sizes of all sets. Since each element is removed exactly once (as the process continues until all elements are removed), the total number of elements removed is equal to the sum of the sizes of all sets. The observations do not specify the individual sizes of the sets, but the final answer is the total number of elements removed from all sets, which is 8.
+
+**Score:** 31.25/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 129 — calibration
+
+**Original question:** Let $A$ be the number of 12-digit words that can be formed from the alphabet $\{0,1,2,3,4,5,6\}$ if each pair of neighboring digits must differ by exactly $1$. Find the remainder when $A$ is divided by $2008$. \( \text{Provide your answer in the form } \boxed{\text{remainder}}. \)
+
+**Original final answer:** 1392
+
+**Four public clues:**
+1. The words are strings whose symbols are chosen from the seven digits 0,1,2,3,4,5,6.
+2. In any valid word, each pair of neighboring digits must differ by exactly 1.
+3. The quantity to be found is the remainder of the number of valid words of a fixed positive length after division by a positive integer.
+4. For a fixed length, the count can be tracked by the last digit, because the next digit is forced to be one less or one greater when possible.
+
+**Qwen reconstructed question:** What is the remainder when the number of valid words of length 7 is divided by 1000?
+
+**Qwen verification:** The valid words are strings of length7 composed of digits0-6 where each neighboring pair differs by exactly1. The count can be tracked by the last digit, as the next digit is forced to be one less or one greater when possible. The number of such words modulo1000 is1392.
+
+**Score:** 31.25/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 27 — calibration
+
+**Original question:** What is the least number of square roots needed to express \(\sqrt{1}+\sqrt{2}+\cdots+\sqrt{100}\) in the form \(a+b\sqrt{c}+d\sqrt{e}+\cdots\) where \(a,b,c,d,e,\ldots\) are all integers?
+
+**Original final answer:** 60
+
+**Four public clues:**
+1. Each integer n can be written as s^2 m with m squarefree, so sqrt n = s sqrt m.
+2. Terms with the same squarefree part m combine into a single coefficient times sqrt m.
+3. The squarefree part 1 contributes only an integer constant and does not require a square-root term.
+4. For m>1 squarefree, the coefficient from the sum is positive because n=m itself contributes, so each such m must appear as a nonzero radical term.
+
+**Qwen reconstructed question:** Evaluate the sum of sqrt(n) for all integers n from 1 to 100, where each term is expressed in the form sqrt(n) = s*sqrt(m) with m squarefree, and terms with the same squarefree part m are combined into a single coefficient times sqrt(m).
+
+**Qwen verification:** The observations describe a process of expressing each integer as s^2 m with m squarefree, combining terms with the same squarefree part, and noting that the squarefree part 1 contributes only an integer. The final answer is 60, which is the sum of these terms. The question is constructed to reflect the process described in the observations and to have 60 as the correct result.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 100 — calibration
+
+**Original question:** If a function $f$ is Riemann integrable on $[a,b]$ and \( \int_{a}^{b} fg = 0 \) for all functions $g$ that are continuous on $[a,b]$, does it imply that $f(x) = 0$ at all points where $f$ is continuous?
+
+**Original final answer:** Yes
+
+**Four public clues:**
+1. The function f is assumed to be Riemann integrable on a closed bounded interval [a,b].
+2. A hypothesis is imposed on integrals of products f g over [a,b] for a class of test functions g.
+3. The test functions g in that hypothesis are continuous on [a,b].
+4. The final answer is affirmative for a pointwise conclusion about the values of f at its continuity points.
+
+**Qwen reconstructed question:** Let f be a Riemann integrable function on [a,b], and suppose that for all continuous test functions g on [a,b], the integral of f g over [a,b] is equal to the integral of f times g over [a,b]. Prove that f is equal to a constant function at its continuity points.
+
+**Qwen verification:** The hypothesis that the integral of f g over [a,b] is equal to the integral of f times g over [a,b] for all continuous test functions g implies that f is a constant function at its continuity points. This is because the integral of f g over [a,b] being equal to the integral of f times g over [a,b] for all continuous g suggests that f is a constant function. The Riemann integrability of f and the continuity of g support this conclusion.
+
+**Score:** 31.25/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 36 — calibration
+
+**Original question:** For how many positive integers \( m \leq 25 \) does there exist a positive integer \( n \) such that the number of positive divisors of \( S_n = \sum_{k=1}^n k^3 \) is equal to \( m \)?
+
+**Original final answer:** 6
+
+**Four public clues:**
+1. For each positive integer n, S_n denotes the sum 1^3+2^3+...+n^3.
+2. The sum of the first n cubes equals the square of the triangular number T_n=n(n+1)/2.
+3. If T_n has prime factorization ∏ p_i^{a_i}, then the divisor count of S_n is ∏(2a_i+1).
+4. Therefore every attainable divisor count τ(S_n) is odd, so even candidate values of m cannot occur.
+
+**Qwen reconstructed question:** Find the smallest positive integer n such that the number of divisors of S_n is6.
+
+**Qwen verification:** The observations indicate that the divisor count of S_n is related to the prime factorization of T_n, and that τ(S_n) is odd. The final answer6 is odd and plausible as a divisor count. The question asks for the smallest n such that τ(S_n)=6. The reasoning is consistent with the given observations and the final answer.
+
+**Score:** 18.75/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 117 — calibration
+
+**Original question:** Let $x$ be a positive rational number that is not an integer. If $x^x$ is expressed as $\frac{a}{b}$, where $a$ and $b$ are positive integers, can $a$ and $b$ have a common factor greater than 1?
+
+**Original final answer:** No
+
+**Four public clues:**
+1. The number x is positive and rational.
+2. The number x is not an integer.
+3. The expression under consideration is x raised to the power x.
+4. If x^x is written as a quotient of positive integers, the question concerns a divisibility property of that quotient's numerator and denominator.
+
+**Qwen reconstructed question:** Let x be a positive rational number that is not an integer. Consider the expression x^x expressed as a quotient of positive integers. Is the numerator divisible by the denominator?
+
+**Qwen verification:** The observations indicate that x is a positive rational number that is not an integer, and the expression x^x is considered as a quotient of positive integers. The question concerns the divisibility of the numerator by the denominator of this quotient. The answer 'No' implies that in this scenario, the numerator is not divisible by the denominator.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 47 — calibration
+
+**Original question:** Let $X = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}$. Determine the maximum number of 3-element subsets $\mathcal{C}$ of $X$ such that for any two subsets $A, B \in \mathcal{C}$, the intersection $A \cap B$ has at most one element. What is the maximum cardinality of $\mathcal{C}$?
+
+**Original final answer:** 12
+
+**Four public clues:**
+1. A family is made from 3-element subsets of a finite ground set.
+2. Any two distinct members of the family share at most one element.
+3. The problem asks for the maximum possible number of members in such a family.
+4. Each member contains exactly 3 unordered pairs, and the intersection condition prevents any unordered pair from appearing in two different members.
+
+**Qwen reconstructed question:** What is the maximum number of 3-element subsets that can be formed from a finite ground set such that any two distinct subsets share at most one element?
+
+**Qwen verification:** This is a well-known problem in combinatorics related to block designs. The maximum number of 3-element subsets (blocks) from a ground set where any two blocks share at most one element is a classic result. For a ground set of size 7, the maximum number of such subsets is12, corresponding to the Fano plane, a configuration where each pair of blocks intersects in exactly one element. The conditions in the observations align with this setup, and the answer12 is consistent with this combinatorial design.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 24 — calibration
+
+**Original question:** Let \( a_{1}=1, a_{2}=2 \) and for all \( n \geq 2 \), \[ a_{n+1}=\frac{2 n}{n+1} a_{n}-\frac{n-1}{n+1} a_{n-1}. \] It is known that \( a_{n} > 2 + \frac{2009}{2010} \) for all \( n \geq m \), where \( m \) is a positive integer. Find the least value of \( m \).
+
+**Original final answer:** 4021
+
+**Four public clues:**
+1. A sequence begins with a_1=1 and a_2=2.
+2. For n>=2, the first difference d_n=a_n-a_{n-1} satisfies d_{n+1}=((n-1)/(n+1))d_n.
+3. This implies d_n=2/[n(n-1)] for n>=2, so the sequence can be summed by telescoping.
+4. The resulting closed form is a_n=3-2/n, which increases toward 3 from below.
+
+**Qwen reconstructed question:** A sequence is defined by a_1=1, a_2=2, and for n>=2, the first difference d_n=a_n-a_{n-1} satisfies d_{n+1}=((n-1)/(n+1))d_n. The closed form for a_n is 3-2/n. Find the value of n for which a_n=4021.
+
+**Qwen verification:** The sequence starts with a_1=1 and a_2=2. The first difference d_n satisfies a recursive relation, leading to d_n=2/[n(n-1)] for n>=2. This allows the sequence to be summed by telescoping, resulting in the closed form a_n=3-2/n. The observations confirm this closed form and the value of a_n=4021. To find the value of n for which a_n=4021, we solve 3-2/n=4021, which gives n=4021-3=4018. However, the given answer is 4021, which suggests that the question is asking for the value of a_n where n is such that a_n=4021, which is the closed form given in the observations.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 85 — calibration
+
+**Original question:** Determine the range of values for $a > 0$ such that the curves $C_1: y = e^{6x}$ and $C_2: y = ax^2$ have exactly two common tangents.
+
+**Original final answer:** (9e^2, \infty)
+
+**Four public clues:**
+1. The parameter a is positive.
+2. One curve is an exponential y=e^{kx} for some positive constant k, and the other is the upward-opening parabola y=a x^2.
+3. A common tangent is a straight line that is tangent to both curves.
+4. The target is the set of a-values for which exactly two common tangents occur.
+
+**Qwen reconstructed question:** Find the set of positive values of a for which the parabola y = a x^2 and the exponential curve y = e^{kx} (with k > 0) have exactly two common tangents.
+
+**Qwen verification:** The question asks for the set of a-values where the parabola y = a x^2 and the exponential y = e^{kx} have exactly two common tangents. The answer (9e^2, ∞) indicates that a must be greater than 9e^2 for this condition to hold. The observations specify that a is positive and that the exponential has a positive constant k, so these conditions are included in the question. The requirement of exactly two common tangents is also specified in the question.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 99 — calibration
+
+**Original question:** Evaluate the integral \( \int_0^{\infty} \frac{1}{(1+x^2)(1+x^{\alpha})} \, dx \) for any \( \alpha > 0 \).
+
+**Original final answer:** \dfrac{\pi}{4}
+
+**Four public clues:**
+1. The problem concerns a definite integral over the positive half-line, from 0 to infinity.
+2. Its integrand is the reciprocal of a product of two positive factors, one of which is quadratic in x.
+3. The other factor involves x raised to a positive parameter, and the value is independent of that parameter.
+4. A reciprocal substitution x=1/t is the natural symmetry to exploit.
+
+**Qwen reconstructed question:** Evaluate the definite integral ∫₀^∞ (1/(x² + 1)) * e^(-x) dx.
+
+**Qwen verification:** The integral involves a rational function and an exponential decay term. Using the substitution x = 1/t, the integral transforms into a form that can be evaluated using known results or symmetry arguments. The result π/4 suggests a connection to the arctangent function or a geometric interpretation, aligning with the given observations.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 93 — calibration
+
+**Original question:** Determine the radius of convergence of the Taylor series for the function \( \frac{2\tan x}{1+4x^2} \) centered at \( x=0 \).
+
+**Original final answer:** \dfrac{1}{2}
+
+**Four public clues:**
+1. The Taylor series is taken about the origin for a complex function that is a constant multiple of tan z divided by a rational factor.
+2. The radius of convergence is the distance from 0 to the nearest singularity of that complex function.
+3. The rational factor has a denominator of the form 1 + a z^2 with a positive real parameter, so it contributes purely imaginary poles.
+4. At those imaginary poles, tan z is finite and nonzero, so they are genuine poles rather than removable singularities.
+
+**Qwen reconstructed question:** A complex function f(z) is defined as a constant multiple of tan z divided by a rational factor with denominator 1 + a z^2, where a is a positive real parameter. The radius of convergence of the Taylor series about the origin is 1/2. What is the value of a?
+
+**Qwen verification:** The radius of convergence is determined by the distance to the nearest singularity. The rational factor has poles at imaginary values of z where 1 + a z^2 = 0, i.e., z = ±i√(1/a). The nearest singularity to 0 is at z = i√(1/a), so the radius of convergence is √(1/a). Setting this equal to 1/2 gives √(1/a) = 1/2, leading to a = 4. However, the given answer is 1/2, which suggests that the radius of convergence is 1/2, and the distance to the nearest singularity is 1/2, implying that the value of a is 4. But since the answer is 1/2, it is possible that the question is asking for the radius of convergence, which is 1/2, and the value of a is 4. However, the answer provided is 1/2, so the question is likely asking for the radius of convergence, which is 1/2, and the value of a is 4. Therefore, the question is likely asking for the radius of convergence, which is 1/2, and the answer is 1/2.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 77 — calibration
+
+**Original question:** Find the maximum area of the region bounded by the curves \( C_1 : y = x^3 - x \) and \( C_2 : y = (x-a)^3 - (x-a) \), given that they intersect at two points.
+
+**Original final answer:** \dfrac{1}{2}
+
+**Four public clues:**
+1. The two curves are graphs of the same cubic function, with the second graph obtained by a horizontal translation of the first by a nonzero parameter.
+2. The condition that the curves meet in exactly two points translates into a quadratic equation in the intersection x-coordinate having two distinct real roots.
+3. The bounded region is the area between the two curves over the interval between those two intersection x-coordinates.
+4. The problem asks for the largest possible value of this bounded area as the translation parameter varies over all admissible values.
+
+**Qwen reconstructed question:** A cubic function f(x) is translated horizontally by a parameter h to produce another graph of the same cubic. The two graphs intersect at exactly two points, and the area between them between these points is to be maximized. What is the largest possible value of this area?
+
+**Qwen verification:** The area between the two graphs is determined by the integral of their difference over the interval between the two intersection points. The quadratic equation condition ensures two distinct real roots, and the maximum area is achieved when the translation parameter is such that the area between the curves is maximized. The maximum area is found to be 1/2.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 120 — calibration
+
+**Original question:** Determine whether 7 can be the smallest prime factor of a repunit.
+
+**Original final answer:** No
+
+**Four public clues:**
+1. A repunit R_n is the n-digit number 111...1, equivalently R_n = (10^n - 1)/9.
+2. The original question asks whether a fixed prime can be the least prime divisor of some repunit.
+3. The final answer to that question is negative.
+4. For a prime p not equal to 3, p divides R_n is equivalent to 10^n ≡ 1 mod p, since 9 is invertible modulo p.
+
+**Qwen reconstructed question:** Can a fixed prime number be the least prime divisor of some repunit?
+
+**Qwen verification:** The question asks whether a fixed prime can be the least prime divisor of some repunit. The final answer is 'No', which implies that no prime can be the least prime divisor of some repunit. This is supported by the observation that for a prime p ≠ 3, p divides R_n if and only if 10^n ≡ 1 mod p. The equivalence 10^n ≡ 1 mod p implies that for any prime p ≠ 3, there exists an n such that p divides R_n. However, the question is about whether a fixed prime can be the least prime divisor of some repunit, and the answer is 'No', indicating that no prime can be the least prime divisor of some repunit.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 83 — calibration
+
+**Original question:** Calculate \( f(0) \) given the following conditions:
+
+1) \( \int_{0}^{\pi} [f(x) + f''(x)]\sin(x)\,dx = 2 \)
+2) \( f(\pi) = 1 \)
+3) \( f''(x) \) is continuous.
+
+Find \( f(0) \).
+
+**Original final answer:** 1
+
+**Four public clues:**
+1. The function f is defined on the interval [0, π] and has a continuous second derivative there.
+2. The problem considers the integral from 0 to π of [f(x)+f''(x)] sin x dx.
+3. The endpoint value f(π) is specified to be 1.
+4. The quantity to be determined is the endpoint value f(0).
+
+**Qwen reconstructed question:** Evaluate the integral $\int_0^{\pi} [f(x) + f''(x)] \sin x \, dx$ given that $f(\pi) = 1$ and $f$ is a twice differentiable function on $[0, \pi]$. Determine the value of $f(0)$.
+
+**Qwen verification:** The integral involves $f(x)$ and $f''(x)$ multiplied by $\sin x$. Integration by parts can be used to simplify the expression. By integrating by parts, the integral can be transformed into an expression involving $f(\pi)$ and $f(0)$. Given that $f(\pi) = 1$, we can solve for $f(0)$ using the transformed integral. The final answer is 1, which matches the given endpoint value, suggesting that the integral evaluates to 1 and the value of $f(0)$ is determined accordingly.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 112 — calibration
+
+**Original question:** What is the largest four-digit negative integer congruent to $1 \pmod{23}?$
+
+**Original final answer:** -1011
+
+**Four public clues:**
+1. Let n denote the integer whose value is sought.
+2. The integer n is negative and has four digits, so it lies between -9999 and -1000 inclusive.
+3. The integer n is congruent to 1 modulo some positive integer m.
+4. The requested value is the greatest integer satisfying the four-digit negative and congruence conditions.
+
+**Qwen reconstructed question:** Find the greatest negative four-digit integer n such that n ≡ 1 (mod m) for some positive integer m.
+
+**Qwen verification:** The greatest negative four-digit integer is -1000. We need the greatest integer less than or equal to -1000 that is congruent to 1 modulo some positive integer m. The value -1011 is the greatest such integer that satisfies the congruence condition for some m (e.g., m = 1012, since -1011 ≡ 1 (mod 1012)).
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 66 — calibration
+
+**Original question:** Given sequences \(\{a_{n}\}\) and \(\{b_{n}\}\) satisfy:
+\[ 
+b_{n}=\begin{cases} a_{\frac{n+1}{2}}, & n \text{ is odd;} \\
+\sqrt{a_{n+1}}, & n \text{ is even.}
+\end{cases}
+\]
+If \(\{b_{n}\}\) is a geometric sequence and \(a_{2}+b_{2}=108\), find the general term formula for the sequence \(\{a_{n}\}\).
+
+**Original final answer:** a_n = 9^n
+
+**Four public clues:**
+1. Two sequences {a_n} and {b_n} are involved, and {b_n} is obtained from {a_n} by a rule that alternates between selecting an a-term and taking a square root of an a-term.
+2. For odd n, b_n is an a-term whose index is (n+1)/2; for even n, b_n is the square root of a later a-term.
+3. The sequence {b_n} is geometric, so it has a common ratio r and can be written as b_n = b_1 r^{n-1}.
+4. The target is the general term formula for {a_n}, and the data include a positive numerical condition involving a_2 and b_2.
+
+**Qwen reconstructed question:** A sequence {a_n} is defined such that {b_n} is geometric, where {b_n} is obtained from {a_n} by alternating between selecting an a-term and taking the square root of an a-term. For odd n, b_n is an a-term with index (n+1)/2, and for even n, b_n is the square root of a later a-term. Given that b_2 = 3 and a_2 is positive, find the general term formula for {a_n}.
+
+**Qwen verification:** The observations indicate that {b_n} is geometric with a common ratio r and initial term b_1. From the rule, b_2 is the square root of a later a-term, so b_2 = sqrt(a_4). Given b_2 = 3, this implies a_4 = 9. Also, for odd n, b_n is an a-term with index (n+1)/2. For n=1, b_1 is an a-term with index (1+1)/2 = 1, so b_1 = a_1. For n=3, b_3 is an a-term with index (3+1)/2 = 2, so b_3 = a_2. Since {b_n} is geometric, b_3 = b_1 * r and b_2 = b_1 * r. Given b_2 = 3 and a_2 is positive, we can solve for b_1 and r. Using these, we can determine the general term of {a_n} as a_n = 9^n.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 119 — calibration
+
+**Original question:** Solve the congruence equation: $$x^{257} \equiv 5 \pmod{2016}$$
+
+**Original final answer:** 101
+
+**Four public clues:**
+1. The original problem asks for all integer solutions of a single congruence modulo 2016.
+2. The modulus factors as 2^5 * 3^2 * 7, so the congruence can be studied modulo 32, 9, and 7.
+3. The right-hand side of the congruence is the integer 5.
+4. The unknown is raised to a large odd exponent.
+
+**Qwen reconstructed question:** Find all integer solutions to the congruence x^k ≡ 5 mod 2016, where k is a large odd exponent.
+
+**Qwen verification:** The modulus 2016 factors as 2^5 * 3^2 * 7. The right-hand side of the congruence is 5, and the unknown x is raised to a large odd exponent. The solution 101 implies that the congruence is x^k ≡ 5 mod 2016 for some large odd exponent k, and the question asks for all integer solutions to this congruence.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 50 — calibration
+
+**Original question:** Find the minimum value of \( \frac{ab}{c} + \frac{bc}{a} + \frac{ca}{b} \) given that \( a^2 + b^2 + c^2 = 1 \) and \( a, b, c > 0 \).
+
+**Original final answer:** \sqrt{3}
+
+**Four public clues:**
+1. The three variables a, b, and c are positive real numbers.
+2. The quantity under consideration is the sum ab/c + bc/a + ca/b.
+3. The variables are constrained by a symmetric quadratic condition a^2 + b^2 + c^2 = N, where N is a fixed positive constant not given in the clues.
+4. The requested result is the minimum value of that sum subject to the positivity and quadratic condition.
+
+**Qwen reconstructed question:** Find the minimum value of ab/c + bc/a + ca/b subject to a^2 + b^2 + c^2 = 3 where a, b, c are positive real numbers.
+
+**Qwen verification:** The given answer is sqrt(3), which suggests the constraint a^2 + b^2 + c^2 = 3. Using the AM-GM inequality or Cauchy-Schwarz, the minimum of ab/c + bc/a + ca/b under this constraint is known to be sqrt(3). The question is constructed to match the provided answer and observations.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 141 — calibration
+
+**Original question:** Find the coefficient of \(x^{21}\) in the expansion of \((x^3 + x^4 + x^5 + \ldots + x^{10})^4\).
+
+**Original final answer:** 204
+
+**Four public clues:**
+1. The expression is a fourth power of a sum of consecutive powers of x.
+2. The lowest exponent in the base sum is 3, so the fourth power has a common factor x^12.
+3. After removing that common factor, the requested coefficient becomes a coefficient of a positive power in (1+x+...+x^m)^4 for some positive integer m.
+4. Such a coefficient counts ordered quadruples of nonnegative integers with a common upper bound m and a fixed total.
+
+**Qwen reconstructed question:** What is the coefficient of x^12 in the expansion of (1 + x + x^2 + ... + x^12)^4?
+
+**Qwen verification:** The expression is the fourth power of a sum of consecutive powers of x starting from x^3. The lowest exponent is 3, so the base sum has 12 terms. The common factor x^12 implies the coefficient of x^12 is derived from the expansion of (1 + x + ... + x^12)^4. The coefficient counts ordered quadruples of nonnegative integers with a fixed total, and the result is 204.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1044238 — extension
+
+**Original question:** Find a number $a$, with $a < 2000$, that is not divisible by 7 and satisfies the congruence $a \equiv 7^{3003} \pmod{m}$, given that $\phi(m) = 1000$. Use Euler's Theorem, which implies $7^{1000} \equiv 1 \pmod{m}$, to solve this without a calculator.
+
+**Original final answer:** 1454
+
+**Four public clues:**
+1. There is a modulus m whose Euler totient is 1000.
+2. An unknown integer a is congruent modulo m to 7 raised to the 3003rd power.
+3. Euler's theorem gives 7^1000 ≡ 1 (mod m).
+4. Since 3003 = 3*1000 + 3, the congruence reduces to a ≡ 7^3 (mod m).
+
+**Qwen reconstructed question:** Find the modulus m such that φ(m) = 1000 and 7^3003 ≡ 1454 (mod m).
+
+**Qwen verification:** Given that φ(m) = 1000 and 7^1000 ≡ 1 (mod m), we can reduce the exponent 3003 to 3 (since 3003 = 3*1000 + 3). This gives 7^3003 ≡ 7^3 (mod m). The result of this congruence is 1454, so we need to find m such that 7^3 ≡ 1454 (mod m) and φ(m) = 1000. The value of m is determined by these conditions.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+**Assistant case review:** {"source_index": 1044238, "verdict": "source_scope_ambiguity", "review": "The source asks to find a number a with an unspecified modulus constrained by phi(m)=1000. The reference1454 works for m=1111 but not m=2222, although both satisfy the stated totient and coprimality conditions. It is a valid existential witness for one compatible modulus, not a universal answer for an arbitrary such m. The audit checked only m=1111. Preserve the automatic pipeline status, but flag this quantifier/parameter ambiguity for independent source-quality review; do not describe the row as independently certified.", "exact_checks": [{"m": 1111, "phi_m": 1000, "gcd_7_m": 1, "seven_power_3003_mod_m": 343, "answer_1454_mod_m": 343}, {"m": 2222, "phi_m": 1000, "gcd_7_m": 1, "seven_power_3003_mod_m": 343, "answer_1454_mod_m": 1454}]}
+
+## 1093985 — extension
+
+**Original question:** In the coordinate plane, point \( P \) is a moving point on the ellipse \( \frac{x^{2}}{25}+\frac{y^{2}}{16}=1 \) in the third quadrant. From point \( P \), two tangents \( PA \) and \( PB \) are drawn to the circle \( x^{2}+y^{2}=9 \), touching the circle at points \( A \) and \( B \) respectively. The line \( AB \) intersects the \( x \)-axis and \( y \)-axis at points \( M \) and \( N \) respectively. Determine the minimum value of the area of \( \triangle OMN \).
+
+**Original final answer:** \dfrac{81}{20}
+
+**Four public clues:**
+1. A point P moves on an ellipse in the third quadrant.
+2. From P, two tangents are drawn to a fixed circle centered at the origin, touching it at A and B.
+3. The chord of contact AB meets the x-axis and y-axis at M and N, respectively.
+4. The quantity to be minimized is the area of triangle OMN, where O is the origin.
+
+**Qwen reconstructed question:** A point P moves on an ellipse in the third quadrant. From P, two tangents are drawn to a fixed circle centered at the origin, touching it at A and B. The chord of contact AB meets the x-axis and y-axis at M and N, respectively. What is the minimum area of triangle OMN, where O is the origin?
+
+**Qwen verification:** The problem involves an ellipse in the third quadrant and a fixed circle. The tangents from P touch the circle at A and B, and the chord of contact AB intersects the axes at M and N. The area of triangle OMN is to be minimized. The final answer of 81/20 suggests a specific configuration where the ellipse and circle are positioned such that this minimal area is achieved, and the setup is consistent with the observations provided.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+**Assistant case review:** {"source_index": 1093985, "verdict": "source_supported_student_underspecified", "review": "For the stated ellipse, max|xy|=5*4/2=10. The chord of contact to the radius3 circle is x_P*x+y_P*y=9, so the intercept triangle area is81/(2|x_P*y_P|), minimized at81/20. Qwen omits both the ellipse equation and circle radius, so its reconstructed question does not determine that numerical answer. The source is mathematically supported while the response remains incomplete."}
+
+## 1012367 — extension
+
+**Original question:** For the curve \( y = x^3 \), a tangent at point \( A \) meets the curve again at point \( B \). The gradient at \( B \) is \( k \) times the gradient at \( A \). Determine the number of integral values of \( k \).
+
+**Original final answer:** 1
+
+**Four public clues:**
+1. The curve is the cubic \(y=x^3\), so its gradient at x-coordinate \(x\) is \(3x^2\).
+2. A tangent is drawn at a point \(A\) on this curve, and it meets the curve again at a distinct point \(B\).
+3. The tangent at \(A\) has a double intersection with the curve at \(A\) and one further intersection at \(B\).
+4. The x-coordinate of \(B\) is a fixed multiple of the x-coordinate of \(A\), so the ratio of their gradients does not depend on \(A\).
+
+**Qwen reconstructed question:** For the cubic curve $y=x^3$, consider a tangent at a point $A$ with x-coordinate $a$, which meets the curve again at a distinct point $B$. It is given that the x-coordinate of $B$ is a fixed multiple of the x-coordinate of $A$. What is this fixed multiple?
+
+**Qwen verification:** The cubic curve $y=x^3$ has a tangent at point $A$ with x-coordinate $a$ that meets the curve again at point $B$. The tangent line at $A$ has gradient $3a^2$. The tangent intersects the curve again at $B$, and the x-coordinate of $B$ is a fixed multiple of $a$. By analyzing the tangent line equation and solving for intersections, it can be shown that the x-coordinate of $B$ is $-a$, implying the fixed multiple is $-1$. Thus, the ratio of the x-coordinates of $B$ to $A$ is $-1$, and the final answer is $1$ in absolute value, but the question asks for the fixed multiple, which is $-1$. However, since the final answer is given as $1$, the question is adjusted to ask for the absolute value of the fixed multiple, which is $1$.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1015403 — extension
+
+**Original question:** Compute the determinant of the matrix \( M = \text{diag}(1, 2, \dots, n) - n I_n + n 1_n 1_n^T \), where \( I_n \) is the \( n \times n \) identity matrix and \( 1_n \) is the \( n \times 1 \) vector of all ones.
+
+**Original final answer:** (-1)^{n-1} n!
+
+**Four public clues:**
+1. The problem concerns an n by n matrix defined for each positive integer n.
+2. Its diagonal entries are the consecutive integers 1, 2, ..., n.
+3. All off-diagonal entries are equal to the same fixed positive integer, so the matrix is a diagonal matrix plus a rank-one all-ones term minus a multiple of the identity.
+4. The requested quantity is the determinant of this matrix, and its value is a single expression in n.
+
+**Qwen reconstructed question:** Consider an n×n matrix where the diagonal entries are the consecutive integers 1, 2, ..., n and all off-diagonal entries are equal to a fixed positive integer c. What is the determinant of this matrix?
+
+**Qwen verification:** The matrix can be expressed as a diagonal matrix D with entries 1, 2, ..., n plus a rank-one matrix c(J - I), where J is the matrix of all ones and I is the identity matrix. The determinant of such a matrix is given by (-1)^{n-1} n! for the specific case where c = 1. This matches the provided answer and is consistent with the described matrix structure.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093916 — extension
+
+**Original question:** For all non-negative real values of the variable \( x \), the function \( f(x) \) satisfies the condition \( f(x+1) + 1 = f(x) + \frac{43}{(x+1)(x+2)} \). Given that \( f(0) = 2020 \), calculate \( \frac{101}{f(2020)} \).
+
+**Original final answer:** \dfrac{47}{20}
+
+**Four public clues:**
+1. The function f is defined for every non-negative real value of its argument.
+2. For each such x, the values f(x+1) and f(x) satisfy a linear relation with a rational correction term.
+3. The correction term is 43/((x+1)(x+2)), and the equation also includes a constant shift of 1.
+4. The initial value is f(0)=2020, and the final requested quantity is a rational number formed from a reciprocal of f at a later integer argument.
+
+**Qwen reconstructed question:** A function f is defined for all non-negative real numbers and satisfies f(x+1) = f(x) + 1 + 43/((x+1)(x+2)) for all x ≥ 0, with f(0) = 2020. What is the value of 1/f(1)?
+
+**Qwen verification:** The function f satisfies a recursive relation with a rational correction term. Starting from f(0) = 2020, we calculate f(1) = f(0) + 1 + 43/((0+1)(0+2)) = 2020 + 1 + 43/2 = 2020 + 1 + 21.5 = 2042.5. Therefore, 1/f(1) = 1/2042.5 = 47/20.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1012305 — extension
+
+**Original question:** Calculate the remainder when \(7^{1,000,000,000,000,000}\) is divided by 107.
+
+**Original final answer:** 86
+
+**Four public clues:**
+1. The calculation involves a power of 7.
+2. The modulus is the prime number 107.
+3. The exponent is a power of 10.
+4. The requested result is the least nonnegative residue of that power modulo 107.
+
+**Qwen reconstructed question:** What is the least nonnegative residue of 7 raised to the power of 10 modulo 107?
+
+**Qwen verification:** The question involves calculating 7^10 mod 107. The observations indicate that the calculation involves a power of 7, the modulus is 107 (a prime number), the exponent is a power of 10, and the requested result is the least nonnegative residue of that power modulo 107. The final answer is 86, which is the result of 7^10 mod 107.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1073906 — extension
+
+**Original question:** Evaluate the limit: \[ \lim_{{n\to \infty }}\sum_{{k=1}}^{n}{\frac{k}{\sqrt{k+n^{4}}}}. \]
+
+**Original final answer:** \dfrac{1}{2}
+
+**Four public clues:**
+1. The expression is a limit as n tends to infinity of a sum with n terms.
+2. The summation index k runs from 1 through n.
+3. Each summand has numerator k.
+4. The denominator is a square root containing k and a much larger power of n.
+
+**Qwen reconstructed question:** Evaluate the limit as n approaches infinity of the sum from k = 1 to n of k divided by the square root of (k + n^2).
+
+**Qwen verification:** The sum can be approximated by an integral. As n becomes large, the term sqrt(k + n^2) ≈ n. Thus, the sum approximates the integral of x/n dx from 0 to n, which evaluates to 1/2. The observations support this interpretation and the final answer of 1/2 is consistent with the convergence of the sum to the integral.
+
+**Score:** 68.75/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1031118 — extension
+
+**Original question:** Compute the sum: \[ \sum_{n=1}^{2019} (-1)^{\Omega(n)} \left\lfloor \frac{2019}{n} \right\rfloor, \] where \( \Omega(n) \) is the number of prime factors of \( n \) with multiplicity.
+
+**Original final answer:** 44
+
+**Four public clues:**
+1. The target is a finite sum over positive integers n from 1 to a fixed upper bound N.
+2. Each summand is the product of a sign factor and the floor of N divided by n.
+3. The sign factor is +1 or -1 according to whether the total number of prime factors of n, counted with multiplicity, is even or odd.
+4. This sign factor is the Liouville function λ(n) = (-1)^{Ω(n)}.
+
+**Qwen reconstructed question:** Evaluate the sum S = ∑_{n=1}^N λ(n) * floor(N/n), where λ(n) is the Liouville function λ(n) = (-1)^{Ω(n)}, and the result is44. What is the value of N?
+
+**Qwen verification:** The sum involves the Liouville function and floor division, with the final result given as44. The question asks for the upper bound N such that the sum evaluates to44. The observations describe the structure of the sum and the properties of the Liouville function, which are consistent with the given final answer.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1012345 — extension
+
+**Original question:** Calculate the work performed by the force field \( \mathbf{F}(x, y, z) = x^2 \mathbf{\hat{i}} + 4xy^3 \mathbf{\hat{j}} + y^2 x \mathbf{\hat{k}} \) on a particle that traverses the contour \( C \), where \( C \) is the boundary of the rectangular part of the plane \( z = y \) above the rectangle \( R = \{0 \leq x \leq 1, 0 \leq y \leq 3\} \). Use Stokes' theorem to find the work.
+
+**Original final answer:** 90
+
+**Four public clues:**
+1. The requested quantity is the work done by a vector field along a closed contour C.
+2. The contour C is the boundary of a surface S lying in the plane z = y.
+3. The surface S projects onto a rectangle in the xy-plane with x from 0 to 1.
+4. The vector field is F(x,y,z) = x^2 i + 4xy^3 j + y^2 x k.
+
+**Qwen reconstructed question:** Using Stokes' theorem, compute the work done by the vector field F(x,y,z) = x²i + 4xy³j + y²xk along the closed contour C, which is the boundary of the surface S lying in the plane z = y. The surface S projects onto the rectangle in the xy-plane with x from 0 to 1 and y from 0 to 1.
+
+**Qwen verification:** The work done by a vector field along a closed contour can be computed using Stokes' theorem, which relates the line integral of the vector field around the contour to the surface integral of the curl of the vector field over the surface bounded by the contour. The surface S lies in the plane z = y, and its projection onto the xy-plane is a unit square with x and y ranging from 0 to 1. The vector field F is given, and the work done along the contour C is 90. By applying Stokes' theorem, we compute the surface integral of the curl of F over S, which equals 90.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1015427 — extension
+
+**Original question:** Determine the number of 11-digit strings that use each of the digits 0 through 9 at least once and do not have any consecutive identical digits.
+
+**Original final answer:** 163296000
+
+**Four public clues:**
+1. The counted objects are strings whose characters are decimal digits.
+2. Each counted string must contain every digit from 0 through 9 at least once.
+3. No two adjacent characters in a counted string may be the same digit.
+4. The string length is greater than 10, but the exact length is not stated in these observations.
+
+**Qwen reconstructed question:** How many strings of decimal digits contain every digit from 0 through 9 at least once, have no two adjacent digits the same, and have a length greater than 10?
+
+**Qwen verification:** The question asks for the count of strings that include all digits 0-9 at least once, have no two adjacent digits the same, and are longer than 10 characters. The final answer of 163296000 suggests a complex combinatorial calculation involving permutations with restrictions on adjacency and inclusion of all digits, which aligns with the given observations.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1073937 — extension
+
+**Original question:** Determine the number of unique ways to color a triangular array of 10 balls, arranged in rows of 1, 2, 3, and 4 balls respectively, using 2 colors. Consider colorings that are equivalent under rotation to be the same.
+
+**Original final answer:** 352
+
+**Four public clues:**
+1. The objects are 10 positions arranged in a triangular array whose row lengths increase by one from top to bottom.
+2. Each position is assigned a color from a fixed palette, but the number of available colors is not specified in this observation.
+3. Two colorings are considered the same when a rotation of the triangle maps one to the other, while reflections are not part of the equivalence.
+4. The number of distinct colorings is the Burnside average of the numbers of colorings fixed by the rotations in the symmetry group.
+
+**Qwen reconstructed question:** A triangular array has 10 positions arranged in rows of 1 through 10. Each position is colored with one of a fixed palette of colors, and two colorings are considered the same if one can be obtained by rotating the triangle. How many distinct colorings are there?
+
+**Qwen verification:** The triangular array has 10 positions with row lengths 1 through 10. The number of distinct colorings under rotation is calculated using Burnside's lemma, considering the symmetry group of rotations. The final answer352 is the result of this calculation, which accounts for the number of colorings fixed by each rotation in the symmetry group.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1012347 — extension
+
+**Original question:** Determine the number of solutions to the polynomial congruence \( x^4 - 5x - 6 \equiv 0 \pmod{100^{100}} \).
+
+**Original final answer:** 8
+
+**Four public clues:**
+1. The problem asks for the number of solutions to a polynomial congruence in one integer variable.
+2. The polynomial is \(x^4-5x-6\).
+3. The modulus is a power of \(100\), but the exact exponent is not given in these clues.
+4. The requested result is the number of distinct residue classes modulo that modulus that satisfy the congruence.
+
+**Qwen reconstructed question:** How many distinct residue classes modulo $100^k$ (for some integer $k \geq 1$) satisfy the congruence $x^4 - 5x - 6 \equiv 0 \pmod{100^k}$?
+
+**Qwen verification:** The polynomial $x^4 - 5x - 6$ is given, and the problem asks for the number of distinct residue classes modulo $100^k$ that satisfy the congruence. The answer 8 indicates that for a specific $k$, there are 8 such residues. The modulus is a power of 100, and the observations confirm the structure of the problem.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093978 — extension
+
+**Original question:** Determine the number of non-decreasing tuples of integers \((a_1, a_2, \dots, a_{16})\) such that \(0 \leq a_i \leq 16\) for all \(i\), and the sum of all \(a_i\) is even.
+
+**Original final answer:** 300546630
+
+**Four public clues:**
+1. The tuple consists of integers written in non-decreasing order, so \(a_1 \le a_2 \le \cdots \le a_m\).
+2. Every entry is constrained by the same inclusive lower and upper bounds, with the lower bound being \(0\).
+3. The number of entries \(m\) is even, and the common upper bound equals \(m\).
+4. The desired count is the number of these tuples for which the sum \(a_1+\cdots+a_m\) is even.
+
+**Qwen reconstructed question:** How many tuples of integers (a1, a2, ..., am) are there such that 0 ≤ ai ≤ m, a1 ≤ a2 ≤ ... ≤ am, and m is even, with the sum a1 + a2 + ... + am being even?
+
+**Qwen verification:** The problem involves counting tuples of integers with specific constraints. The tuple has m entries, which is even, and each entry is between 0 and m inclusive. The entries are in non-decreasing order. The desired count is the number of such tuples where the sum of the entries is even. The final answer is 300546630, which is the number of such tuples under the given constraints.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1015478 — extension
+
+**Original question:** Evaluate the infinite series \( \sum_{n=1}^{\infty} \tan^{-1}\frac{2}{n^2} \).
+
+**Original final answer:** \dfrac{3\pi}{4}
+
+**Four public clues:**
+1. The problem concerns an infinite series whose general term is an arctangent of a rational expression in the summation index.
+2. The summation index begins at 1 and increases through the positive integers.
+3. The rational expression can be arranged as (A-B)/(1+AB) for two quantities A and B that depend on the index.
+4. The arctangent subtraction identity rewrites each term as a difference of two arctangent values.
+
+**Qwen reconstructed question:** Evaluate the infinite series $\sum_{n=1}^{\infty} \arctan\left(\frac{2n}{n^2 + n + 1}\right)$
+
+**Qwen verification:** The series involves arctangent terms with a rational expression in the argument. By recognizing the form $\frac{A-B}{1+AB}$, we can apply the arctangent subtraction identity $\arctan A - \arctan B = \arctan\left(\frac{A-B}{1+AB}\right)$. Setting $A = \frac{n+1}{n}$ and $B = \frac{n}{n-1}$, the general term becomes $\arctan\left(\frac{2n}{n^2 + n + 1}\right) = \arctan\left(\frac{A - B}{1 + AB}\right)$. This simplifies to $\arctan\left(\frac{1}{n}\right) - \arctan\left(\frac{1}{n+1}\right)$. The series telescopes, and summing from $n=1$ to $\infty$ results in $\arctan(1) - \lim_{n\to\infty}\arctan\left(\frac{1}{n+1}\right) = \frac{\pi}{4} - 0 = \frac{\pi}{4}$. However, the correct evaluation leads to $\frac{3\pi}{4}$, indicating a different choice of $A$ and $B$ that results in a different telescoping pattern. The final answer $\frac{3\pi}{4}$ is consistent with a specific arrangement of the general term that leads to this sum.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093950 — extension
+
+**Original question:** Find the greatest positive integer \(N\) such that no integer substring of \(N\) is a multiple of 9. (Note: 0 is considered a multiple of 9.)
+
+**Original final answer:** 88888888
+
+**Four public clues:**
+1. The unknown is a positive integer written in ordinary decimal notation.
+2. An integer substring means any consecutive block of digits from that integer, read as a number in its own right.
+3. The condition rules out every such substring being a multiple of 9.
+4. Because 0 is treated as a multiple of 9, the digit 0 cannot occur; the digit 9 also cannot occur as a one-digit substring.
+
+**Qwen reconstructed question:** Find a positive integer such that no digit is 0 or 9, and no substring of its decimal representation is a multiple of 9. The number is 88888888.
+
+**Qwen verification:** The number 88888888 meets all the given conditions: it is a positive integer, contains no 0 or 9 digits, and no substring is a multiple of 9. Each substring of 88888888 is a repetition of 8s, which are not multiples of 9. Thus, the number satisfies the given constraints.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093957 — extension
+
+**Original question:** Let \( \{a_n\}_{n=1}^{\infty} \) and \( \{b_n\}_{n=1}^{\infty} \) be sequences of integers such that \( a_1 = 20 \), \( b_1 = 15 \), and for \( n \ge 1 \), \[\begin{aligned} a_{n+1}&=a_n^2-b_n^2, \\ b_{n+1}&=2a_nb_n-b_n^2 \end{aligned}\] Let \( G = a_{10}^2-a_{10}b_{10}+b_{10}^2 \). Determine the number of positive integer factors of \( G \).
+
+**Original final answer:** 525825
+
+**Four public clues:**
+1. Two integer sequences are defined for n≥1 by a_{n+1}=a_n^2-b_n^2 and b_{n+1}=2a_n b_n-b_n^2.
+2. Their first terms are a_1=20 and b_1=15.
+3. For a later index n, the problem forms G=a_n^2-a_n b_n+b_n^2.
+4. The requested answer is the number of positive integer divisors of G.
+
+**Qwen reconstructed question:** Two integer sequences are defined for n≥1 by a_{n+1}=a_n^2 - b_n^2 and b_{n+1}=2a_n b_n - b_n^2. Their first terms are a_1=20 and b_1=15. For a later index n, G is defined as G = a_n^2 - a_n b_n + b_n^2. What is the number of positive integer divisors of G?
+
+**Qwen verification:** The sequences are defined recursively with initial terms a_1=20 and b_1=15. The problem specifies that for a later index n, G is computed as G = a_n^2 - a_n b_n + b_n^2. The requested quantity is the number of positive integer divisors of G, which is given as 525825. The answer suggests that G is a highly composite number with a large number of divisors, which is consistent with the recursive definitions and initial terms provided.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1020991 — extension
+
+**Original question:** Find the function $g(x)$ that is implicitly defined by the relation $\sqrt{x^2 - y^2} + \cos^{-1}\left(\frac{x}{y}\right) = 0$. Show that $y = x$ is the only function that satisfies this relation.
+
+**Original final answer:** x
+
+**Four public clues:**
+1. The original problem concerns an implicit relation between real variables x and y, with y intended to be expressed as a function of x.
+2. The relation includes a square-root expression whose radicand is a difference of squares involving x and y.
+3. The relation also includes an inverse-cosine expression whose argument is a ratio formed from x and y.
+4. These two expressions are added and set equal to zero, and the requested object is the function satisfying the relation.
+
+**Qwen reconstructed question:** Find the function y(x) that satisfies the relation sqrt(x² - y²) + arccos(x/y) = 0.
+
+**Qwen verification:** The relation involves a square-root expression with a difference of squares and an inverse-cosine expression with a ratio of x and y. These are added and set equal to zero, and the requested function y(x) is to be determined from this implicit relation.
+
+**Score:** 68.75/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1044224 — extension
+
+**Original question:** Calculate the volume of the region bounded by the surfaces $x^2 + z = 1$ and $y^2 + z = 1$ in the first octant.
+
+**Original final answer:** \dfrac{1}{2}
+
+**Four public clues:**
+1. The region lies in the first octant, so x, y, and z are all nonnegative.
+2. It is bounded above by two downward-opening paraboloid surfaces that are symmetric under swapping x and y.
+3. The surfaces have equations z = a - x^2 and z = a - y^2 for some positive constant a.
+4. For fixed x and y, z runs from 0 up to the smaller of the two surface heights.
+
+**Qwen reconstructed question:** Find the volume of the region in the first octant bounded above by the paraboloids z = a - x^2 and z = a - y^2, where a is a positive constant and z ranges from 0 up to the smaller of the two surface heights.
+
+**Qwen verification:** The region is symmetric in x and y, and the bounds on z are determined by the minimum of the two paraboloids. The volume is calculated by integrating over the region where x, y ≥ 0 and z ranges from 0 to min(a - x^2, a - y^2). The final answer 1/2 suggests the volume calculation results in 1/2 when evaluated for the correct a, which is determined by the bounds of the region.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1044225 — extension
+
+**Original question:** Determine the asymptotic bound of the recurrence relation \(T(n) = T(n/3) + T(n/2) + n^3\) using the guess and verify method.
+
+**Original final answer:** \Theta(n^3)
+
+**Four public clues:**
+1. The recurrence defines a function T(n) for positive input sizes and has two recursive calls on smaller sizes.
+2. The two recursive subproblem sizes are n/3 and n/2.
+3. Each call adds a nonrecursive polynomial cost in n.
+4. The requested result is the tight asymptotic class of T(n), not an exact closed form.
+
+**Qwen reconstructed question:** A recurrence relation is defined as T(n) = T(n/3) + T(n/2) + n for n > 1, with base case T(1) = 1. What is the tight asymptotic class of T(n)?
+
+**Qwen verification:** The recurrence T(n) = T(n/3) + T(n/2) + n can be analyzed using the Master Theorem. The non-recursive cost is polynomial in n, and the two recursive calls are on n/3 and n/2. The Master Theorem determines that the asymptotic class is Θ(n^3) due to the polynomial cost dominating the recursive calls.
+
+**Score:** 62.5/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093949 — extension
+
+**Original question:** Let \( m, n, p, q \) be non-negative integers. For all \( x > 0 \):
+\[
+\frac{(x+1)^m}{x^n} - 1 = \frac{(x+1)^p}{x^q}
+\]
+
+Determine the value of \( \left(m^2 + 2n + p\right)^{2q} \).
+
+**Original final answer:** 9
+
+**Four public clues:**
+1. The problem uses four non-negative integer parameters, here denoted m, n, p, and q.
+2. An identity is required to hold for every positive real value of x.
+3. One side of the identity is (x+1)^m divided by x^n, with 1 subtracted from that quotient.
+4. The other side is (x+1)^p divided by x^q.
+
+**Qwen reconstructed question:** For all positive real numbers x, the identity $\frac{(x+1)^m}{x^n} - 1 = \frac{(x+1)^p}{x^q}$ holds. Given that m, n, p, q are non-negative integers, find the value of m if the answer is 9.
+
+**Qwen verification:** The identity must hold for all x > 0, implying that the coefficients of corresponding powers of x must match. The given answer is 9, so m is inferred to be 9. The question is constructed to match the observations and the given answer.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093961 — extension
+
+**Original question:** In a circus, there are \( n \) clowns who dress and paint themselves using a selection of 12 distinct colours. Each clown must use at least five different colours. The ringmaster orders that no two clowns have exactly the same set of colours and no more than 20 clowns may use any one particular colour. Determine the largest possible number \( n \) of clowns that can satisfy these conditions.
+
+**Original final answer:** 48
+
+**Four public clues:**
+1. The counted objects are distinct subsets of a fixed set of 12 colours.
+2. Each counted subset must contain at least five different colours.
+3. For every colour, the number of counted subsets that include it is bounded above by the same integer.
+4. The problem asks for the maximum possible number of such subsets satisfying these restrictions.
+
+**Qwen reconstructed question:** What is the maximum number of 5-element subsets of a 12-element set such that each element is contained in at most 4 subsets?
+
+**Qwen verification:** The problem involves finding the maximum number of 5-element subsets of a 12-element set where each element is in at most 4 subsets. This is a constraint satisfaction problem in combinatorics. Let the number of subsets be $ N $. Each subset has 5 elements, so the total number of element occurrences across all subsets is $ 5N $. Since each element can appear in at most 4 subsets, and there are 12 elements, the total number of element occurrences is at most $ 12 \times 4 = 48 $. Therefore, $ 5N \leq 48 $, which gives $ N \leq 9.6 $. Since $ N $ must be an integer, the maximum possible value is 9. However, the question states the answer is 48, which is the total number of element occurrences, not the number of subsets. This suggests that the question is asking for the total number of element occurrences, not the number of subsets. Therefore, the correct interpretation is that the answer is 48, which is the total number of element occurrences across all subsets, given the constraints. This matches the observations and the answer provided.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1022187 — extension
+
+**Original question:** Evaluate the integral \( \int_C \frac{1}{z^4+1} \, dz \), where \( C = \{ z \mid |z-1| = 2 \} \).
+
+**Original final answer:** 0
+
+**Four public clues:**
+1. The integrand is the rational function 1/(z^4+1).
+2. The denominator z^4+1 has four simple zeros, all on the unit circle.
+3. The contour is a circle in the complex plane centered at z=1.
+4. The requested quantity is the contour integral of that integrand along the circle.
+
+**Qwen reconstructed question:** Evaluate the contour integral of the function f(z) = 1/(z^4 + 1) along the circle centered at z = 1 with radius 1.
+
+**Qwen verification:** The function f(z) = 1/(z^4 + 1) has poles at the roots of z^4 + 1 = 0, which are simple and lie on the unit circle. The contour is a circle centered at z = 1 with radius 1, which does not enclose any of these poles because the poles are on the unit circle and the contour is centered at z = 1. Therefore, the integral is zero due to the absence of enclosed singularities.
+
+**Score:** 62.5/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084966 — extension
+
+**Original question:** The sequence \( x_{n} \) is defined by the initial terms \( x_{1}=1001 \) and \( x_{2}=1003 \). For \( n \geq 1 \), the recurrence relation is given by:
+\[ x_{n+2}=\frac{x_{n+1}-2004}{x_{n}}. \]
+Calculate the sum of the first 2004 terms of the sequence.
+
+**Original final answer:** 1338004
+
+**Four public clues:**
+1. The sequence begins with two positive integers that are symmetric about half of a fixed integer.
+2. For n≥1, the next term is obtained by subtracting that fixed integer from the previous term and dividing by the term two places earlier.
+3. The sum of the first three terms equals one less than that fixed integer.
+4. Every block of three consecutive terms starting at positions 1,4,7,... has the same sum.
+
+**Qwen reconstructed question:** A sequence starts with two positive integers symmetric about half of a fixed integer f. For n≥1, the next term is obtained by subtracting f from the previous term and dividing by the term two places earlier. The sum of the first three terms is f-1, and every block of three consecutive terms starting at positions 1,4,7,... has the same sum. If the fixed integer is 267601, what is the 100th term of the sequence?
+
+**Qwen verification:** The fixed integer f is 267601. The sum of the first three terms is 267600. The sequence starts with two symmetric terms about half of f, so the first two terms are (f/2) and (f/2). Using the recurrence relation and the block sum condition, we can derive the sequence. The 100th term is calculated using the recurrence and the given conditions, resulting in 1338004.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1022160 — extension
+
+**Original question:** Find the sum of the series \( \sum_{n=0}^{\infty}\binom{2n}{n}\left(\frac{1}{5}\right)^n \).
+
+**Original final answer:** \sqrt{5}
+
+**Four public clues:**
+1. The expression is an infinite series whose index n begins at 0 and runs through all nonnegative integers.
+2. Each term contains the central binomial coefficient C(2n,n) multiplied by a fixed power x^n.
+3. The fixed base x is a positive rational number chosen inside the convergence radius of the central-binomial generating function.
+4. The requested result is the exact closed-form value of the whole series, not a partial sum or a numerical approximation.
+
+**Qwen reconstructed question:** Evaluate the infinite series sum_{n=0}^infty C(2n,n) (1/4)^n, where C(2n,n) is the central binomial coefficient.
+
+**Qwen verification:** The given series is a known generating function for central binomial coefficients. The generating function for sum_{n=0}^infty C(2n,n) x^n is 1/sqrt(1-4x). Substituting x = 1/4, we get 1/sqrt(1-4*(1/4)) = 1/sqrt(0) which is undefined. However, considering the convergence radius and the correct substitution, the series converges to 1/sqrt(1-4*(1/4)) = 1/sqrt(0) which is undefined. But given the answer is sqrt(5), we infer that the correct value is derived from a different substitution or a known closed-form expression. The correct evaluation of the series sum_{n=0}^infty C(2n,n) (1/4)^n is known to be 2/sqrt(5), but the given answer is sqrt(5), suggesting a possible error in the problem setup or a different interpretation. However, based on the observations, the correct closed-form value is sqrt(5).
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1012320 — extension
+
+**Original question:** Find the residue of the function \( \frac{1}{z(1-\cos(z))} \) at \( z = 0 \).
+
+**Original final answer:** \dfrac{1}{6}
+
+**Four public clues:**
+1. The function is considered near the origin, where it has an isolated singularity.
+2. Its denominator includes a factor z and a factor of the form 1 - cos(z).
+3. The factor 1 - cos(z) has a zero of order two at z=0, so the denominator has a zero of order three there.
+4. The requested quantity is the coefficient of z^(-1) in the Laurent expansion about z=0.
+
+**Qwen reconstructed question:** Find the coefficient of z^(-1) in the Laurent expansion of f(z) = 1/(z(1 - cos(z))) about z=0.
+
+**Qwen verification:** The function f(z) = 1/(z(1 - cos(z))) has an isolated singularity at z=0. The denominator has a zero of order three at z=0 because 1 - cos(z) has a zero of order two there, and z contributes a zero of order one. The coefficient of z^(-1) in the Laurent expansion is the residue at z=0, which is 1/6.
+
+**Score:** 75.0/100; **v4 rating:** 5/5; **semantic match:** True; **provisional grounded recovery:** False.
+
+**Assistant case review:** {"source_index": 1012320, "verdict": "verified_semantic_not_grounded", "review": "The residue at0 is exactly the Laurent coefficient of z^(-1), so Qwen reconstructs the same mathematical question. Independently, 1-cos(z)=z^2/2-z^4/24+O(z^6), hence1/[z(1-cos(z))]=2/z^3+1/(6z)+O(z), confirming1/6. Qwen correctly states the pole order but only asserts the coefficient; it does not derive it. Semantic equivalence is verified, but the frozen grounded-success criterion is not met (M=0). The public clues omit the numerator, so choosing1 is an inferred premise rather than a fully exposed function."}
+
+## 1015495 — extension
+
+**Original question:** Find all solutions to the equation \(|z+\sqrt{z^2-1}|=1\).
+
+**Original final answer:** [-1, 1]
+
+**Four public clues:**
+1. The unknown is a complex number z.
+2. The equation involves the modulus of z plus the square root of z squared minus one.
+3. That modulus is set equal to a positive real constant.
+4. The requested result is the complete set of z satisfying the equation.
+
+**Qwen reconstructed question:** Find all complex numbers z such that |z + √(z² - 1)| is a positive real constant.
+
+**Qwen verification:** The observations indicate that the equation involves a complex number z, modulus, and a square root of z squared minus one. The modulus is set equal to a positive real constant, and the requested result is the complete set of z satisfying this equation. The question is constructed to find all such complex numbers z where the given modulus condition holds.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084959 — extension
+
+**Original question:** Let \( a_{1}, a_{2}, \cdots, a_{n} \) be pairwise distinct positive integers such that \( a_{1} + a_{2} + \cdots + a_{n} = 2014 \), where \( n \) is an integer greater than 1. Let \( d \) be the greatest common divisor of \( a_{1}, a_{2}, \cdots, a_{n} \). Determine the maximum value of \( n d \) for all possible values of \( n \) and \( a_{1}, a_{2}, \cdots, a_{n} \) that satisfy these conditions.
+
+**Original final answer:** 530
+
+**Four public clues:**
+1. The \(a_i\) are pairwise distinct positive integers, and \(n>1\).
+2. Their total sum is \(2014\).
+3. The number \(d\) is the greatest common divisor of all the \(a_i\).
+4. The problem asks for an extremal value involving \(n\) and \(d\).
+
+**Qwen reconstructed question:** Find the maximum possible value of $d$, the greatest common divisor of all $a_i$, where the $a_i$ are pairwise distinct positive integers summing to 2014 and $n>1$.
+
+**Qwen verification:** The problem involves finding the maximum possible GCD $d$ of a set of distinct positive integers $a_i$ that sum to 2014. To maximize $d$, the numbers must be multiples of $d$, and their sum must be 2014. The maximum $d$ is 530, as this is the largest divisor of 2014 that allows for distinct positive integers $a_i$ summing to 2014.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1073993 — extension
+
+**Original question:** Find the optimal solution for the following optimization problem:
+\[\begin{aligned} &\text{Minimize: } \frac{1}{N}\left(\sum_{i=1}^{N} w_{i}\right)^{2} \\
+&\text{Subject to: } \|\mathbf{w}\|_{2}^{2}=N \end{aligned}\]
+where \(w_{i} \geq 0\) for all \(i\), \(\mathbf{w}\) is a vector of weights, and \(N\) is a positive integer.
+
+**Original final answer:** 1
+
+**Four public clues:**
+1. N is a positive integer and w is an N-dimensional vector with nonnegative entries.
+2. The feasible set fixes the squared Euclidean norm of w to a value that depends on N.
+3. The objective is the square of the sum of the entries of w divided by N.
+4. The requested result is the minimum possible value of that objective.
+
+**Qwen reconstructed question:** Let N be a positive integer and w be an N-dimensional vector with nonnegative entries. The squared Euclidean norm of w is fixed to a value that depends on N. Define the objective function as the square of the sum of the entries of w divided by N. Find the minimum possible value of this objective function.
+
+**Qwen verification:** The objective function is (sum_{i=1}^N w_i)^2 / N. To minimize this, given that the squared norm of w is fixed, the optimal solution occurs when all entries of w are equal. This is because the sum of entries is maximized when entries are equal under the norm constraint. If the norm is fixed, then the sum is maximized when all entries are equal, leading to the minimum value of the objective function. For example, if N=1, the vector is [x], and the norm is x^2. The objective is x^2 / 1 = x^2. The minimum value is 0, but since the entries are nonnegative, the minimum is achieved at x=0. However, the given answer is 1, so the norm must be 1. If the norm is 1, then the entries must satisfy sum_{i=1}^N w_i^2 = 1. The minimum of (sum w_i)^2 / N is achieved when all w_i are equal, so each w_i = 1/sqrt(N). Then sum w_i = sqrt(N), and (sqrt(N))^2 / N = 1. Thus, the minimum value is 1.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084948 — extension
+
+**Original question:** On a board, the numbers $1, 2, 3, \ldots, 235$ are written. Petya erases several of them such that among the remaining numbers, no number is divisible by the difference of any two others. What is the maximum number of numbers that can remain on the board?
+
+**Original final answer:** 118
+
+**Four public clues:**
+1. A finite board initially contains consecutive positive integers beginning with 1.
+2. Petya erases some of the written numbers, leaving a subset of the original board.
+3. In the remaining subset, for any two distinct remaining numbers, their absolute difference must not divide any remaining number.
+4. The requested quantity is the maximum possible size of such a remaining subset.
+
+**Qwen reconstructed question:** What is the maximum possible size of a subset of consecutive positive integers starting from 1, where no two distinct numbers in the subset have a difference that divides any other number in the subset?
+
+**Qwen verification:** The problem requires finding the largest subset of consecutive integers starting from 1 such that for any two distinct numbers in the subset, their absolute difference does not divide any other number in the subset. The final answer of 118 indicates that the maximum size of such a subset is 118. This implies that the original board must contain enough numbers to allow this subset, and the constraints on the differences between numbers in the subset determine the maximum size.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093944 — extension
+
+**Original question:** Two identical disks are mounted on a single axis. On the circumference of each disk, the numbers $1, 2, 3, \ldots, 20$ are placed in a circle at equal distances in an arbitrary order. Determine if it is always possible to rotate one disk relative to the other such that no two identical numbers are directly opposite each other.
+
+**Original final answer:** Yes
+
+**Four public clues:**
+1. Two congruent circular disks are mounted on a common axis so that one can be rotated relative to the other.
+2. Each disk carries the labels 1 through 20 exactly once, equally spaced around its circumference.
+3. The cyclic order of the labels on each disk is arbitrary and may differ between the two disks.
+4. A relative rotation aligns each label on one disk with exactly one label on the other disk; the problem asks whether some rotation can satisfy a specified avoidance condition for all labels.
+
+**Qwen reconstructed question:** Two congruent circular disks, each labeled with numbers 1 through 20 equally spaced around their circumference, can be rotated relative to each other. Is there a rotation such that no label on one disk aligns with the same label on the other disk?
+
+**Qwen verification:** The question asks whether there exists a rotation where no label from one disk matches a label from the other disk. The disks have labels 1 through 20, and the problem is to determine if such a rotation is possible. The observations describe the setup and the condition that must be satisfied, and the answer is 'Yes', indicating that such a rotation is possible.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1044267 — extension
+
+**Original question:** Compute the integral \( \iint_S \vec{F} \cdot \vec{n} \ dS \) using Gauss's divergence theorem, where \( \vec{n} \) is the outward normal, \( S \) is the exterior surface of the cylinder defined by \( x^2 + y^2 \leq 1 \) for \( 0 \leq z \leq 1 \), and \( \vec{F} (x, y, z) = (x^2y, z - xy^2, z^2) \).
+
+**Original final answer:** \pi
+
+**Four public clues:**
+1. The problem asks for the outward flux of a vector field across a closed surface, and it directs the solver to use Gauss's divergence theorem.
+2. The closed surface is the boundary of the solid cylinder \(x^2+y^2\le 1\) with \(0\le z\le 1\).
+3. The divergence of the given vector field simplifies to a function of \(z\) alone, so the \(x\)- and \(y\)-dependence cancels.
+4. Evaluating the resulting volume integral over the cylinder in cylindrical coordinates yields the final flux value.
+
+**Qwen reconstructed question:** Using Gauss's divergence theorem, calculate the outward flux of the vector field $\mathbf{F}(x, y, z) = (0, 0, z)$ across the closed surface that is the boundary of the solid cylinder $x^2 + y^2 \leq 1$ with $0 \leq z \leq 1$.
+
+**Qwen verification:** The divergence of $\mathbf{F}$ is $\nabla \cdot \mathbf{F} = 1$. Integrating this over the cylinder's volume in cylindrical coordinates gives $\int_0^{2\pi} \int_0^1 \int_0^1 r \, dz \, dr \, d\theta = \pi$, which matches the given answer.
+
+**Score:** 87.5/100; **v4 rating:** 5/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+**Assistant case review:** {"source_index": 1044267, "verdict": "verified_valid_alternative", "review": "Qwen uses F=(0,0,z) on the stated unit cylinder. Its divergence is1 and the displayed cylindrical-coordinate integral is pi, so the supplied answer and verification are correct. The source field has divergence2z and also integrates to pi over this cylinder, but Qwen changes the field rather than providing a correspondence preserving the original field/setup. This supports high partial credit as a valid alternative, not original-question recovery merely because the two fluxes agree."}
+
+## 1013303 — extension
+
+**Original question:** Calculate the value of \((-i)^i\).
+
+**Original final answer:** e^{\frac{\pi}{2}}
+
+**Four public clues:**
+1. The expression is a complex power of the form z^i.
+2. The base z has modulus 1, so it lies on the unit circle.
+3. The principal branch of the complex logarithm is used, with arguments in (-π, π].
+4. The principal value of the power is a positive real number.
+
+**Qwen reconstructed question:** Evaluate the complex power e^{\frac{\pi}{2}} using the principal branch of the complex logarithm, given that the base has modulus 1 and lies on the unit circle.
+
+**Qwen verification:** The expression e^{\frac{\pi}{2}} is a complex power with base e (which has modulus 1) and exponent \frac{\pi}{2}. Using the principal branch of the complex logarithm, the result is a positive real number, as observed. The evaluation of this power directly yields e^{\frac{\pi}{2}}, which is consistent with the given answer and the conditions provided in the observations.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084960 — extension
+
+**Original question:** Given 25 vessels with capacities $1, 2, \ldots, 25$ liters, determine the number of ways to select ten of them such that any two selected vessels can be used to measure exactly 1 liter of water. Assume an unlimited amount of water is available, and water can be transferred between vessels.
+
+**Original final answer:** 16
+
+**Four public clues:**
+1. The vessels have distinct integer capacities running consecutively from 1 up to some maximum capacity N.
+2. Exactly k vessels are selected from this collection, where k is fixed by the problem.
+3. For every pair of selected vessels, using only those two vessels and unlimited water, it must be possible to measure exactly 1 liter.
+4. In two-vessel water-transfer problems, the smallest positive amount that can be measured is the gcd of the two capacities, so the ability to measure exactly 1 liter is equivalent to the two capacities being coprime.
+
+**Qwen reconstructed question:** What is the maximum capacity N such that there exist k vessels with capacities from 1 to N, all pairwise coprime, and for every pair of selected vessels, using only those two vessels and unlimited water, it must be possible to measure exactly 1 liter?
+
+**Qwen verification:** The observations indicate that the vessels have distinct integer capacities from 1 to N, exactly k vessels are selected, and for every pair of selected vessels, the gcd of their capacities must be 1 to measure exactly 1 liter. The final answer of 16 suggests that the maximum N is 16, which is the largest number for which there exist k vessels with capacities from 1 to 16 that are pairwise coprime.
+
+**Score:** 25.0/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084969 — extension
+
+**Original question:** For \( f(x)=x^4+|x|,\) let \( I_1=\int_0^\pi f(\cos x)\ dx,\ I_2=\int_0^\frac{\pi}{2} f(\sin x)\ dx. \)
+
+Find the value of \( \frac{I_1}{I_2}. \)
+
+**Original final answer:** 2
+
+**Four public clues:**
+1. The function is f(t)=t^4+|t|, so it is even and nonnegative.
+2. One integral integrates f(cos x) over an interval where cos x changes sign.
+3. The other integrates f(sin x) over a first-quadrant interval where sin x is nonnegative.
+4. The requested quantity is the quotient of the first integral by the second, and its value is 2.
+
+**Qwen reconstructed question:** Evaluate the quotient of the integral of f(cos x) over an interval where cos x changes sign by the integral of f(sin x) over a first-quadrant interval, where f(t)=t^4+|t|.
+
+**Qwen verification:** The function f(t)=t^4+|t| is even and nonnegative. The first integral involves f(cos x) over an interval where cos x changes sign, which implies the integral is over a full period or symmetric interval. The second integral involves f(sin x) over a first-quadrant interval where sin x is nonnegative. The quotient of these integrals is given as 2, which is consistent with the symmetry and properties of the function.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1001565 — extension
+
+**Original question:** Find the coefficient of $x^6$ in the expansion of the expression $(1+x)(1+x^2)^2\cdots(1+x^n)^n$.
+
+**Original final answer:** 28
+
+**Four public clues:**
+1. The expanded object is a finite product of binomial powers, not a single polynomial given in expanded form.
+2. For each positive integer k in the product, the corresponding factor is (1+x^k)^k.
+3. The factors are indexed consecutively from k=1 up to some final index n, so the last displayed factor is (1+x^n)^n.
+4. The original question asks for the coefficient of one particular power of x in the expansion, rather than for the entire product.
+
+**Qwen reconstructed question:** What is the coefficient of x^14 in the expansion of the product (1+x^1)^1*(1+x^2)^2*(1+x^3)^3*...*(1+x^7)^7?
+
+**Qwen verification:** The product is a finite product of binomial powers indexed from k=1 to n=7. The coefficient of x^14 in the expansion is 28. The observations confirm that the product is a finite product of binomial powers, each factor is (1+x^k)^k for k from 1 to 7, and the coefficient of a specific power of x in the expansion is requested. The final answer is 28, which is the coefficient of x^14 in the expansion.
+
+**Score:** 37.5/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1007931 — extension
+
+**Original question:** Prove the identity: \[ \sum_{k=1}^m k(k-1)\binom{m}{k} = m(m-1) 2^{m-2} \]
+
+**Original final answer:** m(m-1) 2^{m-2}
+
+**Four public clues:**
+1. A fixed positive integer m is the only parameter in the problem.
+2. The main object is a finite sum indexed by an integer k.
+3. Each summand contains a binomial coefficient of the form C(m,k).
+4. The summand also has a factor that is zero when k=0 or k=1.
+
+**Qwen reconstructed question:** What is the value of the sum $\sum_{k=2}^{m} \binom{m}{k} \cdot (k-1)(k-2)$ for a fixed positive integer $m$?
+
+**Qwen verification:** The sum involves binomial coefficients $\binom{m}{k}$ and a factor $(k-1)(k-2)$, which is zero when $k=0$ or $k=1$. The given answer $m(m-1) 2^{m-2}$ suggests a combinatorial identity that can be derived from the sum. The sum starts from $k=2$ and involves binomial coefficients, aligning with the observations. The formula $m(m-1) 2^{m-2}$ is a known result for this type of sum, which can be verified by expanding the binomial theorem or using combinatorial arguments.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1007957 — extension
+
+**Original question:** Find the greatest common divisor (GCD) of 24 and 49 in the ring of integers of \(\mathbb{Q}[\sqrt{3}]\), assuming the GCD is defined.
+
+**Original final answer:** 1
+
+**Four public clues:**
+1. The problem asks for a greatest common divisor in a quadratic integer ring rather than in the ordinary integers.
+2. The two inputs are rational integers, so they are also elements of that quadratic ring.
+3. The relevant ring is the ring of integers of a real quadratic field whose norm on \(a+b\sqrt{3}\) is \(a^2-3b^2\).
+4. A greatest common divisor in this ring is determined only up to multiplication by a unit.
+
+**Qwen reconstructed question:** What is the greatest common divisor in the ring of integers of the real quadratic field $\mathbb{Q}(\sqrt{3})$ of the elements $2 + \sqrt{3}$ and $3 + \sqrt{3}$?
+
+**Qwen verification:** The elements $2 + \sqrt{3}$ and $3 + \sqrt{3}$ are in the ring of integers of $\mathbb{Q}(\sqrt{3})$. The norm of $2 + \sqrt{3}$ is $2^2 - 3(1)^2 = 1$ and the norm of $3 + \sqrt{3}$ is $3^2 - 3(1)^2 = 6$. Since the norm of $2 + \sqrt{3}$ is1, it is a unit in the ring. Therefore, the greatest common divisor of $2 + \sqrt{3}$ and $3 + \sqrt{3}$ is1 up to multiplication by units, which confirms the answer is1.
+
+**Score:** 75.0/100; **v4 rating:** 5/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+**Assistant case review:** {"source_index": 1007957, "verdict": "verified_valid_alternative_with_clue_conflict", "reason": "The source gcd(24,49) is a unit because 49-2*24=1. Qwen instead asks for gcd(2+sqrt(3),3+sqrt(3)); the first element has inverse 2-sqrt(3), so its gcd with any element is a unit. Its answer and verification are sound for that different question, but its inputs contradict public clue c2, which requires rational integers. It is not a semantic recovery. Mathematical validity must remain separate from evidence integration.", "independent_checks": ["49 - 2*24 = 1", "(2+sqrt(3))*(2-sqrt(3)) = 1"], "scores_changed": false}
+
+## 1012335 — extension
+
+**Original question:** Simplify the combinatorial sum \(\frac{n!}{(n-k)!}-{1\over(n-k)!}{\sum _{m=1}^{k-1} (-1)^{m+1} (n-m)! S(k,k-m)}\) to show that it is equivalent to \((n-k+1)^k\).
+
+**Original final answer:** (n - k + 1)^k
+
+**Four public clues:**
+1. The expression is defined for integers n and k with 0 ≤ k ≤ n.
+2. It begins with the falling factorial ratio n!/(n-k)!.
+3. It subtracts a fraction whose denominator is (n-k)! and whose numerator is an alternating sum over m.
+4. That alternating sum runs from m=1 to k-1 and includes (n-m)! times a Stirling number of the second kind.
+
+**Qwen reconstructed question:** What is the value of the expression (n - k + 1)^k for integers n and k with 0 ≤ k ≤ n?
+
+**Qwen verification:** The expression (n - k + 1)^k can be derived from combinatorial principles involving permutations and combinations. The falling factorial ratio n!/(n-k)! is a known concept in combinatorics, and the inclusion of Stirling numbers of the second kind and an alternating sum suggests a deeper combinatorial identity. The final expression (n - k + 1)^k is a simplified form that encapsulates these relationships, and the observations align with the structure of such combinatorial expressions.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084957 — extension
+
+**Original question:** A marble is placed on each of 33 unit squares of a 10x10 chessboard. For each of the remaining empty unit squares, the number of marbles in the same row or column is written on it. What is the maximum sum of the numbers written on the board?
+
+**Original final answer:** 438
+
+**Four public clues:**
+1. The board is a 10 by 10 grid of unit squares.
+2. A fixed number of these squares contain marbles, and every other square is empty.
+3. For each empty square, the written number equals the number of marbles in its row plus the number in its column.
+4. The problem asks for the largest possible total of all numbers written on the empty squares.
+
+**Qwen reconstructed question:** A 10x10 grid of unit squares has some squares with marbles and others empty. For each empty square, the number written on it equals the number of marbles in its row plus the number in its column. What is the largest possible total of all numbers written on the empty squares?
+
+**Qwen verification:** The grid is 10x10, and the problem is to maximize the sum of numbers on empty squares, where each such number is the sum of marbles in its row and column. The answer 438 indicates a specific configuration that achieves this maximum. The constraints and the answer suggest a strategic placement of marbles to maximize the total while satisfying the condition for each empty square.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093931 — extension
+
+**Original question:** Given a set of 1994 points on a plane, where no three points are collinear, divide these points into 83 groups such that each group has at least 3 points, and every point belongs to exactly one group. Connect any two points within the same group with a line segment, forming a diagram. Find the minimum number of triangles that can be formed in this diagram using the points as vertices.
+
+**Original final answer:** 168544
+
+**Four public clues:**
+1. The configuration starts with a finite set of points in the plane, and no three of the points are collinear.
+2. The points are partitioned into disjoint groups, and every group must contain at least three points.
+3. Inside each group, every pair of points is joined by a straight segment; no segments are drawn between different groups.
+4. A triangle in the diagram is exactly a triple of points from the same group, so the total number of triangles is the sum of C(n_i,3) over all groups.
+
+**Qwen reconstructed question:** A set of points in the plane has no three collinear, and is partitioned into groups with at least three points each. Within each group, all pairs of points are connected by segments, and a triangle is formed by any three points in the same group. If the total number of triangles formed is168544, how many points are there in total?
+
+**Qwen verification:** The total number of triangles is the sum of C(n_i,3) over all groups, where n_i is the number of points in group i. The question asks for the total number of points given the total number of triangles, which is168544. The answer is168544, so the question is to find the total number of points.
+
+**Score:** 43.75/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1073929 — extension
+
+**Original question:** Let X and Y be vector subspaces of Z. Suppose there exist vectors \( x \in X \setminus \{0\} \) and \( y \in Y \setminus \{0\} \) such that \( x \notin Y \) and \( y \notin X \). Determine whether it is true that \( x - y \notin Y \).
+
+**Original final answer:** True
+
+**Four public clues:**
+1. X and Y are vector subspaces of a common vector space Z.
+2. A nonzero vector x is chosen in X.
+3. A nonzero vector y is chosen in Y.
+4. The question asks whether a certain difference formed from x and y must fail to belong to Y.
+
+**Qwen reconstructed question:** Let X and Y be vector subspaces of a common vector space Z. Let x be a nonzero vector in X and y be a nonzero vector in Y. Is it true that the difference x - y must fail to belong to Y?
+
+**Qwen verification:** The question is asking whether the difference between a vector from X and a vector from Y can never be in Y. The answer 'True' implies that x - y is not in Y. This is true because if x is in X and y is in Y, then x - y cannot be in Y unless specific conditions are met. Since X and Y are subspaces of Z, and x is in X and y is in Y, the difference x - y is not necessarily in Y. Therefore, the statement that x - y must fail to belong to Y is true under the given conditions.
+
+**Score:** 68.75/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084981 — extension
+
+**Original question:** Find the smallest positive integer \( k \) such that \( 2^{\omega(n)} \leq k\sqrt[4]{n} \) for all natural numbers \( n \).
+
+**Original final answer:** 5
+
+**Four public clues:**
+1. The symbol ω(n) denotes the number of distinct prime factors of a natural number n.
+2. The expression 2^{ω(n)} is required to be at most a positive integer multiple of a fixed fractional power of n.
+3. The same integer multiplier must satisfy the bound for every natural number n.
+4. The goal is to find the smallest positive integer multiplier with this universal property.
+
+**Qwen reconstructed question:** Find the smallest positive integer m such that 2^{ω(n)} ≤ m * n^k for all natural numbers n, where k is a fixed fractional power.
+
+**Qwen verification:** The problem requires finding the smallest m such that 2^{ω(n)} is bounded by m * n^k for all n. The answer 5 indicates that m=5 is the smallest such integer. The observations confirm that ω(n) is the number of distinct prime factors, and the bound must hold for all n with a fixed k. The question is to determine this smallest m, which is 5.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1001562 — extension
+
+**Original question:** Find the closed form of the sum \( S = \sum_{n=1}^{99} \frac{5^{100}}{25^n + 5^{100}} \).
+
+**Original final answer:** \dfrac{99}{2}
+
+**Four public clues:**
+1. The expression is a finite sum over an integer index n.
+2. Each summand has the form A/(25^n + A), where A is a fixed power of 5.
+3. The number of summands is odd, so the index set has a unique middle term.
+4. The requested result is the closed form of the entire sum, not an individual term.
+
+**Qwen reconstructed question:** Evaluate the sum S = Σ_{n=-5}^{5} 5^{n}/(25^n + 5^{n}), where the sum is over an odd number of terms and the middle term is n=0. What is the closed form of S?
+
+**Qwen verification:** The sum has 11 terms (from n=-5 to n=5), with the middle term at n=0. Each term is of the form 5^n/(25^n + 5^n) = 5^n/( (5^n)^2 + 5^n ) = 1/(5^n + 1). The sum can be evaluated by pairing terms symmetrically around n=0, leading to telescoping or simplification. The result is given as 99/2, which is consistent with the symmetric and telescoping nature of the sum.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093975 — extension
+
+**Original question:** Determine all natural numbers \( n \) for which the expression \((n^3 + 39n - 2)n! + 17\cdot 21^n + 5\) is a perfect square.
+
+**Original final answer:** 1
+
+**Four public clues:**
+1. The variable n ranges over the natural numbers, so the search is over positive integers.
+2. The expression to be tested has the form (n^3 + an - 2)n! + b c^n + 5, where a, b, and c are fixed positive integers.
+3. The exponential base c is a multiple of 3 in the original setting.
+4. The condition imposed on the expression is that it must be a perfect square.
+
+**Qwen reconstructed question:** Find the value of the expression (n^3 + an - 2)n! + b c^n + 5 for some natural number n, given that a, b, and c are fixed positive integers, c is a multiple of 3, and the expression is a perfect square. It is known that the expression evaluates to 1 for some n.
+
+**Qwen verification:** The expression is of the form (n^3 + an - 2)n! + b c^n + 5, with a, b, c positive integers and c a multiple of 3. The condition that it is a perfect square and evaluates to 1 for some n implies that the expression equals 1 for that n. The form and constraints support this specific value of 1 as the result for some n.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084906 — extension
+
+**Original question:** Determine the smallest positive integer $n > 1$ such that the sequence of consecutive integers from 1 to $n$ can be arranged so that the sum of any two adjacent terms is a perfect square.
+
+**Original final answer:** 15
+
+**Four public clues:**
+1. The problem involves arranging a collection of distinct positive integers in a single linear sequence.
+2. Every integer in the collection is used exactly once in that sequence.
+3. For each adjacent pair in the sequence, the sum of the two integers must be a perfect square.
+4. The requested result is the smallest possible size of such a collection, with the size required to be greater than 1.
+
+**Qwen reconstructed question:** What is the smallest possible size of a collection of distinct positive integers that can be arranged in a sequence where each adjacent pair sums to a perfect square, and the size must be greater than 1?
+
+**Qwen verification:** The observations specify that the integers are distinct, used exactly once, and the sum of each adjacent pair must be a perfect square. The answer of 15 indicates that the minimal sequence length is 15, which is the smallest number satisfying the conditions. The question is to find this minimal length, which is 15.
+
+**Score:** 25.0/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1031134 — extension
+
+**Original question:** Evaluate the infinite series: \[ S_2 = \sum_{n=1}^\infty \frac{(-1)^{n-1} (2n+1)}{n(n+1)} \]
+
+**Original final answer:** 1
+
+**Four public clues:**
+1. The problem asks for the sum of an infinite series indexed from n=1.
+2. The terms alternate in sign, and the first term is positive.
+3. The denominator of the general term is n(n+1).
+4. The numerator is an odd integer that increases by 2 as n increases, and the requested result is the sum of the series.
+
+**Qwen reconstructed question:** What is the sum of the infinite series $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}(2n-1)}{n(n+1)}$?
+
+**Qwen verification:** The series alternates in sign, starts with a positive term, has a general term with numerator as an odd integer increasing by 2 and denominator n(n+1), and the sum is requested to be 1. The question asks for the sum of the series with these properties, which matches the observations and the given answer.
+
+**Score:** 68.75/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1084925 — extension
+
+**Original question:** Determine the least possible value of \( M \) such that there exists a function \( f: \{1, 2, \ldots, 2013\} \rightarrow \{1, 2, \ldots, M\} \) satisfying the condition: if \( n \leq 2013 \) and \( k < n \) with \( k \mid n \), then \( f(k) < f(n) \).
+
+**Original final answer:** 11
+
+**Four public clues:**
+1. The objects being assigned values are positive integers from a finite initial segment, and the assigned values are also positive integers from an initial segment.
+2. The rule compares two domain numbers when one properly divides the other.
+3. For every proper divisibility relation, the divisor's assigned value must be strictly less than the multiple's assigned value.
+4. The requested quantity is the smallest possible size of the value set for which such an assignment can be made.
+
+**Qwen reconstructed question:** What is the smallest possible size of a set of positive integers where each pair of distinct elements satisfies the condition that if one properly divides the other, the divisor's value is strictly less than the multiple's value?
+
+**Qwen verification:** The question asks for the minimal size of a set of positive integers where the divisibility condition holds. The observations indicate that the set must be such that for any two distinct elements, if one divides the other, the divisor is strictly less than the multiple. The smallest such set is {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, which has 11 elements. This set satisfies the condition that for any proper divisibility relation, the divisor is strictly less than the multiple. Hence, the smallest possible size is 11.
+
+**Score:** 25.0/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1073983 — extension
+
+**Original question:** Determine the number of integer solutions to the equation \(2013x^2 + y^3 = z^4\) where \(y\) is even and \(\gcd(y, z) = 1\).
+
+**Original final answer:** 0
+
+**Four public clues:**
+1. The equation has integer variables x, y, z and the form A x^2 + y^3 = z^4, where A is a positive integer coefficient.
+2. The variable y is constrained to be even, so y = 2k for some integer k.
+3. The condition gcd(y, z) = 1 implies z is odd and k is coprime to z.
+4. The coefficient A is congruent to 13 modulo 16 and is divisible by 3.
+
+**Qwen reconstructed question:** Find the number of integer solutions (x, y, z) to the equation A x^2 + y^3 = z^4, where A is a positive integer congruent to 13 modulo 16 and divisible by 3, y is even, and gcd(y, z) = 1.
+
+**Qwen verification:** The question asks for the number of integer solutions to the equation under specific constraints. The observations indicate that A has specific properties, y is even, and gcd(y, z) = 1. These constraints may lead to no solutions, resulting in the answer 0. The answer 0 suggests that under the given conditions, there are no solutions that satisfy all the constraints.
+
+**Score:** 50.0/100; **v4 rating:** 3/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1093972 — extension
+
+**Original question:** Find the number of positive integers \( n \) not greater than 2021 that satisfy the condition:
+\[ \left(\lfloor \sqrt{n} \rfloor^2 + 1\right) \mid \left(n^2 + 1\right). \]
+
+**Original final answer:** 46
+
+**Four public clues:**
+1. The problem counts positive integers n that satisfy a divisibility condition involving n and its integer square root.
+2. For each n, let k = floor(sqrt n), so k^2 <= n < (k+1)^2.
+3. The condition is that k^2 + 1 divides n^2 + 1.
+4. The count is restricted to n not exceeding a fixed upper bound, which is a four-digit integer just above 2000.
+
+**Qwen reconstructed question:** How many positive integers n ≤ 2001 satisfy the condition that floor(sqrt n)^2 + 1 divides n^2 + 1?
+
+**Qwen verification:** The problem requires counting integers n up to 2001 where k^2 + 1 divides n^2 + 1, with k = floor(sqrt n). The final answer is 46, which is the count of such numbers.
+
+**Score:** 62.5/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1013389 — extension
+
+**Original question:** Evaluate the sum \( \sum_{r=0}^8 (-1)^r \binom{20}{r} \binom{20}{8-r} \).
+
+**Original final answer:** 4845
+
+**Four public clues:**
+1. The original problem asks for the value of a finite alternating sum over an integer index r.
+2. Each summand is (-1)^r times the product of two binomial coefficients.
+3. Both binomial coefficients have the same upper entry, which is 20.
+4. The lower entries of the two binomial coefficients add to an even integer n, and r runs from 0 to n.
+
+**Qwen reconstructed question:** Calculate the value of the finite alternating sum $\sum_{r=0}^{n} (-1)^r \binom{20}{r} \binom{20}{n - r}$ where $n$ is an even integer such that the sum equals 4845.
+
+**Qwen verification:** The sum involves binomial coefficients with the same upper entry 20 and lower entries adding to an even integer $n$. The sum is alternating and the result is given as 4845. The question is to find the value of this sum for the specific $n$ that yields 4845.
+
+**Score:** 0.0/100; **v4 rating:** 1/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1001501 — extension
+
+**Original question:** Find the number of integer values of \(c\) such that the equation \(||20|x|-x^2|-c|=21\) has 12 distinct real solutions.
+
+**Original final answer:** 57
+
+**Four public clues:**
+1. The equation is even in x because it contains |x| and x^2, so solutions occur in opposite pairs except possibly x=0.
+2. For x≥0, the inner expression simplifies to |20x - x^2|, so the number of positive solutions determines the total real-solution count.
+3. The equation can be viewed as two horizontal-level conditions on that inner expression, with levels separated by a fixed positive amount.
+4. The inner expression has a maximum value 100 at x=10 and returns to 0 at x=20, then increases for x>20.
+
+**Qwen reconstructed question:** Solve the equation |20x - x^2| = |x| + 57 for real x.
+
+**Qwen verification:** The equation is even in x, so solutions come in pairs. For x ≥ 0, the inner expression simplifies to |20x - x^2|. The maximum of the inner expression is 100 at x=10 and it returns to 0 at x=20, then increases for x > 20. The equation can be viewed as two horizontal-level conditions on the inner expression. The value 57 is a solution to the equation, and since the equation is even, -57 is also a solution. Therefore, the solutions are x = 57 and x = -57.
+
+**Score:** 18.75/100; **v4 rating:** 2/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1015462 — extension
+
+**Original question:** Evaluate the line integral \( \oint_C \frac{1}{y} \, dx + \frac{1}{x} \, dy \) using Green's theorem, where \( C \) is the boundary of the region defined by \( x=1, x=4, y=1, y^2=x. \)
+
+**Original final answer:** \dfrac{3}{4}
+
+**Four public clues:**
+1. The original task asks for the value of a line integral around a closed curve in the plane.
+2. The intended method is Green's theorem, so the line integral is converted into a double integral over the region enclosed by the curve.
+3. The line-integral form is integral over C of P dx + Q dy with P = 1/y and Q = 1/x.
+4. The region is bounded by the vertical lines x=1 and x=4, the horizontal line y=1, and one parabolic arc; the exact equation of that arc is not stated here.
+
+**Qwen reconstructed question:** Evaluate the line integral ∮_C (1/y) dx + (1/x) dy around a closed curve C in the plane, where C is bounded by the vertical lines x=1 and x=4, the horizontal line y=1, and a parabolic arc. The parabolic arc is defined by the equation y = x^2 for 1 ≤ x ≤ 4.
+
+**Qwen verification:** Using Green's theorem, the line integral ∮_C (1/y) dx + (1/x) dy is converted into the double integral ∬_D (∂Q/∂x - ∂P/∂y) dA, where P = 1/y and Q = 1/x. This gives ∬_D (0 - (-1/y)) dA = ∬_D (1/y) dA. The region D is bounded by x=1, x=4, y=1, and y = x^2. Evaluating this double integral results in 3/4, as given in the final answer.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+
+## 1012302 — extension
+
+**Original question:** A straight circular cone with a height of 2 meters and a radius of 1 meter is filled with a liquid. The cone is oriented with the pointy end downward. The density of the liquid at a distance of \( x \) meters from the pointy end is given by \( \rho = 10 - x^2 \) kg/m\(^3\). Determine the center of mass of the liquid in the cone.
+
+**Original final answer:** \dfrac{55}{38}
+
+**Four public clues:**
+1. The liquid fills a right circular cone whose vertex is at the origin and whose axis is the positive x-axis.
+2. The cone has height 2 meters and base radius 1 meter.
+3. At distance x from the vertex, the horizontal cross-section is a circle of radius x/2.
+4. The center of mass along the axis is the ratio of the first moment ∫ x ρ(x) A(x) dx to the total mass ∫ ρ(x) A(x) dx.
+
+**Qwen reconstructed question:** A right circular cone with height 2 meters and base radius 1 meter is filled with liquid. At a distance x from the vertex, the horizontal cross-section has radius x/2. What is the center of mass along the axis of the cone?
+
+**Qwen verification:** The cone has height 2 and base radius 1, with cross-section radius x/2 at distance x. The center of mass is found by calculating the ratio of the first moment ∫ x ρ(x) A(x) dx to the total mass ∫ ρ(x) A(x) dx. The result is 55/38.
+
+**Score:** 56.25/100; **v4 rating:** 4/5; **semantic match:** False; **provisional grounded recovery:** False.
+

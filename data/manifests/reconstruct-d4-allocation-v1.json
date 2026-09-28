@@ -1,0 +1,186 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-v.md",
+  "allocation_seed": 20260923,
+  "parent_manifest": "data/manifests/reconstruct-reserve-allocation-v1.json",
+  "parent_hash": "0a89ddff62c63d94c0923a688c0944a6e5ff5689d77c733e63bf765ee34e4fcb",
+  "rule": "Choose one C25 extension ID from sorted contingency, then shuffle remaining IDs per sorted broad topic and take three per topic.",
+  "partitions": {
+    "D4": [
+      0,
+      13,
+      46,
+      62,
+      63,
+      80,
+      87,
+      96,
+      118,
+      120,
+      129,
+      137
+    ],
+    "C25_proposed": [
+      12,
+      32,
+      36,
+      38,
+      39,
+      42,
+      51,
+      53,
+      56,
+      57,
+      60,
+      61,
+      78,
+      79,
+      82,
+      85,
+      93,
+      103,
+      107,
+      109,
+      115,
+      128,
+      130,
+      146,
+      45
+    ],
+    "R": [
+      3,
+      7,
+      18,
+      24,
+      28,
+      52,
+      55,
+      65,
+      69,
+      72,
+      76,
+      94,
+      97,
+      99,
+      101,
+      110,
+      111,
+      117,
+      121,
+      124,
+      126,
+      135,
+      139,
+      145
+    ],
+    "contingency_remaining": [
+      1,
+      5,
+      10,
+      16,
+      17,
+      21,
+      29,
+      35,
+      41,
+      54,
+      59,
+      67,
+      68,
+      113,
+      114,
+      132
+    ]
+  },
+  "proposed_C25_extension": 45,
+  "semantic_family_review": "pending; metadata-only allocation does not prove independence",
+  "D4_metadata": {
+    "0": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 5.5
+    },
+    "13": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    "46": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    "62": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 5.0
+    },
+    "63": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions",
+      "difficulty": 6.0
+    },
+    "80": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 5.0
+    },
+    "87": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 6.0
+    },
+    "96": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 8.0
+    },
+    "118": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    "120": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    "129": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.5
+    },
+    "137": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Graph Theory",
+      "difficulty": 5.0
+    }
+  },
+  "demonstrations": [
+    {
+      "source_index": 8,
+      "artifact": "artifacts/reconstruct/d3-v2/stronger-feasibility.json",
+      "response_key": "8:b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "response_hash": "54bc4a48411ce13754dd963c81c38834d8dd74c434abc3c6ec93e8cbbd3f4a9f",
+      "evidence_hash": "b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441"
+    },
+    {
+      "source_index": 112,
+      "artifact": "artifacts/reconstruct/d3-v2/stronger-feasibility.json",
+      "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "response_hash": "1f560dd1cbd713bd6cc21935f1633e2a8ad8d26ee44b4c5a29f00488c021c975",
+      "evidence_hash": "29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428"
+    },
+    {
+      "source_index": 141,
+      "artifact": "artifacts/reconstruct/d3-v2/stronger-feasibility.json",
+      "response_key": "141:73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "response_hash": "f179f4a543309a4b504101d014c8a18e5b86d4a530ab2150c2050bacee5afcee",
+      "evidence_hash": "73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87"
+    }
+  ],
+  "prompt_file_hashes": {
+    "student_p10_recover_original": "af9778f07c15c972d36d2e29edcb445be3907de61ff4d630c483695e52d8591a",
+    "student_p12_verified_examples": "201700992086885f03088e5fb4c06b0f7fd33ea25587d5512bdacb1efc1c625c"
+  },
+  "interpretation": "Demonstration package changes count, content, and prompt length together; no isolated optimal-count claim."
+}

@@ -1,0 +1,30 @@
+{
+  "version": "RECONSTRUCT-RATING-v2",
+  "source_path": "artifacts/reconstruct/final-100-v1/questions-answers.jsonl",
+  "source_sha256": "d6b75d28983755cc8e0f2740b427f6e7e66429e0b36a78478aec5ad64681589c",
+  "new_boundaries": [
+    20,
+    40,
+    50,
+    70
+  ],
+  "allocated": 100,
+  "scored": 47,
+  "old_histogram": {
+    "1": 4,
+    "2": 11,
+    "3": 29,
+    "4": 3,
+    "5": 0
+  },
+  "new_histogram": {
+    "1": 4,
+    "2": 11,
+    "3": 7,
+    "4": 23,
+    "5": 2
+  },
+  "changed_ratings": 24,
+  "new_model_calls": 0,
+  "interpretation": "Post-hoc display-policy comparison on the same responses. Scores, judgments, gates and success labels unchanged. Not a performance improvement or independent validation."
+}

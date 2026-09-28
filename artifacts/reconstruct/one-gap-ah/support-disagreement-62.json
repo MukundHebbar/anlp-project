@@ -1,0 +1,10 @@
+{
+  "source_index": 62,
+  "bank_hash": "20ff54a10db969a526cdf36d0e2bee113715a3eb19f9407e49202d19b1078f79",
+  "audit_output_hash": "18e6dd556e67d0bdcec7c59a1050d4905c5515432f00db8315a9583242e5b656",
+  "raw_verdict": "ACCEPT",
+  "disputed_clue": "c4",
+  "issue": "The claimed radius for c != pi assumes the interior Taylor region, but an exterior Laurent annulus has infinite outer radius too. The public question does not specify the annulus, so the certificate cannot uniquely recover pi as claimed.",
+  "counterexample": "Take c0. G(z)=[sin(z)+(z-pi)]/(z-pi)^2 is entire after removing its zero at pi. Then f(z)=G(z)-1/(z-pi). Expand the pole as -sum_{j>=0} pi^j/z^(j+1) for |z|>pi, giving an exterior Laurent expansion about0 with infinite outer radius.",
+  "decision": "Keep pre-student exclusion; no re-judging for a preferred verdict. This is a production disagreement, not an independent estimate of teacher accuracy."
+}

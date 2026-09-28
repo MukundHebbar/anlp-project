@@ -1,0 +1,131 @@
+{
+  "reviewer": "Assistant mathematical and semantic-family review; not independent human gold",
+  "source_records_hash": "be3927d2633b5644c66ad3213209fdc1bbafb0f794b32024138cf77e1a04e3f5",
+  "original_source_records_hash": "489ae664bfcec884a7a72f77124c29b4faaa30fd53d6bf710440005956d475ea",
+  "rows": [
+    {
+      "source_index": 1,
+      "source_hash": "d3b9413a0896842b3f62ef88d65ca0884ded03ce20329a707891c33db01ad863",
+      "original_source_hash": "d3b9413a0896842b3f62ef88d65ca0884ded03ce20329a707891c33db01ad863",
+      "status": "quarantine",
+      "reason": "Quarantine: recurrence applies only for k>1 and leaves a2 unspecified. Given a1=2^2009, a2011=[2^2008*(2^-2009+1/a2)]^-1. Choosing a2=2^2009 gives1, but a2=2^2010 gives4/3. The supplied solution silently assumes the missing k1 step."
+    },
+    {
+      "source_index": 5,
+      "source_hash": "cd7798c722b2c4133543396a480ecd3a5fd842f1a69251a6953cd9fd1a3c0d0f",
+      "original_source_hash": "cd7798c722b2c4133543396a480ecd3a5fd842f1a69251a6953cd9fd1a3c0d0f",
+      "status": "accept",
+      "reason": "Disjoint long-cycle cases k51..100; choose cycle members, cyclic order and arbitrary remainder to obtain100!/k per case. Sum gives stated harmonic expression."
+    },
+    {
+      "source_index": 10,
+      "source_hash": "4a17cd5a1e9890fdeb24febfcb7153a3407d85bafb22dc287fc79564ece9a0b4",
+      "original_source_hash": "4a17cd5a1e9890fdeb24febfcb7153a3407d85bafb22dc287fc79564ece9a0b4",
+      "status": "accept",
+      "reason": "Wilson reduction51!*9!=1 mod61; exact factorial remainder27 verified."
+    },
+    {
+      "source_index": 16,
+      "source_hash": "8cd5dacff5d3255057ea2f51be04a946c66eebf9a86f254b5af785d0fd1af95a",
+      "original_source_hash": "8cd5dacff5d3255057ea2f51be04a946c66eebf9a86f254b5af785d0fd1af95a",
+      "status": "accept",
+      "reason": "Integer coordinate bijection x=a+b,y=b-a with ab=10^6. Ordered signed factor pairs give2*(6+1)^2=98."
+    },
+    {
+      "source_index": 17,
+      "source_hash": "e92cbb7d0b39e72863f0d81ac006cd3d41c49173cc258da44027d48bf2ee8fd8",
+      "original_source_hash": "171b0d271024c653b7075edb46149387dc00adddcadaf44579d102018b0316db",
+      "status": "accept",
+      "reason": "For color sizes m_j, each factor(x+m_j)^m_j has linear coefficient equal to its constant coefficient. Product therefore has a1=k*a0. Explicit B answer normalized to its equation; original question and label preserved."
+    },
+    {
+      "source_index": 21,
+      "source_hash": "075f73a794a7ee14c65df860cedb49e6d7211e54484aab342cf06a3c01636949",
+      "original_source_hash": "075f73a794a7ee14c65df860cedb49e6d7211e54484aab342cf06a3c01636949",
+      "status": "accept",
+      "reason": "Prime modulus multiplicative group cyclic of order2^m; number of generators phi(2^m)=2^(m-1)."
+    },
+    {
+      "source_index": 29,
+      "source_hash": "a188040f904b45296a22694be88ec195eccc6808bb2b90dd8ff23c7bd4a103e9",
+      "original_source_hash": "a188040f904b45296a22694be88ec195eccc6808bb2b90dd8ff23c7bd4a103e9",
+      "status": "accept",
+      "reason": "Composite561 is squarefree3*11*17; each prime predecessor divides560. Fermat and CRT verify all integer n, including nonunits."
+    },
+    {
+      "source_index": 35,
+      "source_hash": "392018be5553aa3aad9ba96d9f46bd28df0a10256232c29204fdf53fc7a37c9b",
+      "original_source_hash": "392018be5553aa3aad9ba96d9f46bd28df0a10256232c29204fdf53fc7a37c9b",
+      "status": "accept",
+      "reason": "Bounded derivative and the mean value theorem imply a global Lipschitz bound, hence uniform continuity."
+    },
+    {
+      "source_index": 41,
+      "source_hash": "54ae7dbbcb5e184967a9a1c08c90f0d011da1d6892c1cf727a657816936d7a2e",
+      "original_source_hash": "54ae7dbbcb5e184967a9a1c08c90f0d011da1d6892c1cf727a657816936d7a2e",
+      "status": "accept",
+      "reason": "Two differentiated geometric-series identities yield x(1+x)/(1-x)^3 at x1/3, namely3/2. Termwise differentiation is valid inside radius1."
+    },
+    {
+      "source_index": 54,
+      "source_hash": "d2dc95a27ec6b8983efb055a4b0c0dc477271ff6de9dd8796adc89fe4e23c69a",
+      "original_source_hash": "d2dc95a27ec6b8983efb055a4b0c0dc477271ff6de9dd8796adc89fe4e23c69a",
+      "status": "accept",
+      "reason": "u=(omega-z)/z lies on circle |u+1|=1/10. Tangency/discriminant gives maximum slope squared1/99 and is attainable."
+    },
+    {
+      "source_index": 59,
+      "source_hash": "c1b3ccdf754b228faad9f01e2f4761c45cbe6125e4e372243f320bb34cfacce6",
+      "original_source_hash": "e9c9087696f3ecc6c6d691265b85e60803835b1ed64dd656f04fffc238e28f87",
+      "status": "accept",
+      "reason": "Two distinct nonzero real denominator roots have modulus>1, so numerator is nonzero there and both are simple poles. At0 multiplication by analytic nonzero reciprocal denominator preserves the essential singularity. Explicit D normalized to its option text."
+    },
+    {
+      "source_index": 67,
+      "source_hash": "26759297707af08212a06398d075cd18784e45cbed9306278d0e1bb91bae68db",
+      "original_source_hash": "26759297707af08212a06398d075cd18784e45cbed9306278d0e1bb91bae68db",
+      "status": "accept",
+      "reason": "Use the inverse explicitly presupposed by the question. Ae1=ones implies ones^T*A^-1*ones=1. This assumes T inverse exists as stated by its use; T(v1)=sum alone would not establish invertibility. Preserve wording, do not silently add a premise."
+    },
+    {
+      "source_index": 68,
+      "source_hash": "bebed2b43d07ec665a73fa73458c793031060a8ca0db3255a5f35251935bf0f0",
+      "original_source_hash": "bebed2b43d07ec665a73fa73458c793031060a8ca0db3255a5f35251935bf0f0",
+      "status": "accept",
+      "reason": "Exhaustive enumeration of81 entry matrices leaves two with A^2=-I, both determinant1. Event determinant-1 is impossible under any distribution on eligible matrices, so missing uniformity does not affect zero answer."
+    },
+    {
+      "source_index": 113,
+      "source_hash": "a5fc0c99366d2bb1812aead63a8641ac4af040b151d800a1a0e832e23b0da6e8",
+      "original_source_hash": "a5fc0c99366d2bb1812aead63a8641ac4af040b151d800a1a0e832e23b0da6e8",
+      "status": "accept",
+      "reason": "Factorial difference telescopes to n!, then integral bounds for log(n!) give nth-root/n limit1/e."
+    },
+    {
+      "source_index": 114,
+      "source_hash": "fb44e1ab1462ac0f4c5019dd1cf3b13092fc3e4bcdf9fc7ff07200696c10855c",
+      "original_source_hash": "fb44e1ab1462ac0f4c5019dd1cf3b13092fc3e4bcdf9fc7ff07200696c10855c",
+      "status": "accept",
+      "reason": "1<=tau(n^50)<=2*n^25 implies nth-root limit1, hence radius1."
+    },
+    {
+      "source_index": 132,
+      "source_hash": "b1dd6d7ac9608ef9e92930a971f3cd2405dea43ebd4d867b3d3665eef5692e55",
+      "original_source_hash": "b1dd6d7ac9608ef9e92930a971f3cd2405dea43ebd4d867b3d3665eef5692e55",
+      "status": "accept",
+      "reason": "Worst-case guarantee over arrangements satisfying the stated counts: undrawn cards cover24 triples with4 incidences each, requiring at least6 omitted cards for a combination-free hand. Supplied construction certifies tightness at12. This is a universal guarantee from available data, not a claim every individual arrangement has identical minimum."
+    }
+  ],
+  "semantic_family_review": {
+    "scope": "Read all16 new questions/solutions and all48 earlier D1/D2/D3/D4 questions, plus current converter/student demonstrations. No parameter-renamed duplicate identified.",
+    "exclusions": [],
+    "shared_concepts": [
+      "source59 overlaps complex-singularity techniques with30/62, but changes function and classification target",
+      "source114 and63 both concern convergence radii; divisor-count versus lacunary-exponent families differ",
+      "source132 and47 concern triple-set systems with different incidence constraints and cover versus packing targets",
+      "source113 shares telescoping with73 and asymptotics with other limits; no same parameterized question",
+      "source17 polynomial coefficients and source41 generating series share techniques with8/34/141, not the original objects or constraints"
+    ],
+    "limitation": "Assistant review cannot establish concept-independent generalization; historical SOLVE outputs were not used for selection."
+  }
+}

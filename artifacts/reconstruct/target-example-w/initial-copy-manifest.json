@@ -1,0 +1,71 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-w.md",
+  "base_bank_prompt": "convert_p5",
+  "rows": [
+    {
+      "source_index": 0,
+      "bank_key": "0:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p5",
+      "bank_output_hash": "44b96fbda8c2d81d6c548e3a34da769bcb87b46aeb30a001325ab30335766d18",
+      "source_record_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank"
+    },
+    {
+      "source_index": 13,
+      "bank_key": "13:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p5",
+      "bank_output_hash": "f231e730984a4f8e9adcb275700f2986c740b8e1c74df44324c00a9945142bfe",
+      "source_record_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank"
+    },
+    {
+      "source_index": 62,
+      "bank_key": "62:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p5",
+      "bank_output_hash": "e58355b3bb3c72fd226d8dbbf9b565f89906792ad407cb3a52d37bf26c898ec2",
+      "source_record_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank"
+    },
+    {
+      "source_index": 118,
+      "bank_key": "118:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p5",
+      "bank_output_hash": "3298e9f867826feaacbadfaefa0a5bccb3ca0f8c37853d7fbc3d6dc464610e13",
+      "source_record_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank"
+    },
+    {
+      "source_index": 120,
+      "bank_key": "120:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p5",
+      "bank_output_hash": "4bbb5c09c45ac7d94716381429cfd3e4692dcc848bcfdc88fa287964b27bd620",
+      "source_record_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank"
+    },
+    {
+      "source_index": 129,
+      "bank_key": "129:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p5",
+      "bank_output_hash": "5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "source_record_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank"
+    },
+    {
+      "source_index": 137,
+      "bank_key": "137:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p5",
+      "bank_output_hash": "7ee17811c438aebc496f0c3357683c5c765077d0205eae1c022022c7904978be",
+      "source_record_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank"
+    }
+  ],
+  "private_fields_in_challenge": false,
+  "student_readiness": "pending independent reviews"
+}

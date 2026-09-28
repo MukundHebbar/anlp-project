@@ -1,0 +1,212 @@
+{
+  "provenance": "Assistant mathematical review plus exact symbolic/integer checks, not independent human gold",
+  "private_review_only": true,
+  "student_readiness": "not granted by this review",
+  "source143_enumeration": {
+    "a_upper_bound": 21,
+    "c_upper_bound": 20,
+    "count": 13,
+    "quadruples": [
+      [
+        7,
+        1,
+        5,
+        4
+      ],
+      [
+        7,
+        2,
+        6,
+        3
+      ],
+      [
+        7,
+        2,
+        20,
+        1
+      ],
+      [
+        7,
+        2,
+        20,
+        19
+      ],
+      [
+        7,
+        5,
+        6,
+        3
+      ],
+      [
+        7,
+        5,
+        20,
+        1
+      ],
+      [
+        7,
+        5,
+        20,
+        19
+      ],
+      [
+        7,
+        6,
+        2,
+        1
+      ],
+      [
+        7,
+        6,
+        5,
+        1
+      ],
+      [
+        7,
+        6,
+        5,
+        4
+      ],
+      [
+        21,
+        1,
+        6,
+        3
+      ],
+      [
+        21,
+        1,
+        20,
+        19
+      ],
+      [
+        21,
+        20,
+        6,
+        3
+      ]
+    ]
+  },
+  "rows": [
+    {
+      "source_index": 8,
+      "bank_key": "8:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "repair_disclosure_p1",
+      "bank_output_hash": "6ae58d1488c453e3b865f19dafb73d8635ae4b2e34fa5895664c8ff4c72b39d9",
+      "source_record_hash": "b130642a7173984da95494d54c6b4a2606222db63e7d890ef9ceb4c5f109635d",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "Factorization checked symbolically under a+b+c=0. The other denominator is copied correctly. These are local source observations, not unconditional identities for arbitrary real a,b,c; the reconstructed question must supply suitable constraints and defined fractions.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 27,
+      "bank_key": "27:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p4",
+      "bank_output_hash": "521805e583bdaddf454db46c7b747d890b7c7d4babf126e365fa37ea2c458005",
+      "source_record_hash": "5b67abd6a02754365bc9f171b6ef04bf4a17bb9c764ff7845a74f3a7d9f11504",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "For positive integers n=s^2 m with positive s and squarefree m, sqrt(n)=s sqrt(m). Grouping identical squarefree parts adds positive integer multipliers; a direct m term contributes1. These clues do not state the original range or minimal radical-count target. Domain is interpreted as the source positive-integer radical setting.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 33,
+      "bank_key": "33:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p4",
+      "bank_output_hash": "f05b80304c02d4df42c3bfd97bc41530036c87ef7b71535823815a722cd8cceb",
+      "source_record_hash": "ca38129870d95be98ee9f22b0dcb5348cc5ceb8bdd482817839855cfa65f4779",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "Differences of continuous functions are continuous. If f>g pointwise on compact[0,1], take a maximizer x0 of g: max f>=f(x0)>g(x0)=max g. Symmetric dominance follows similarly. The equal-maxima premise and universal meeting target remain absent.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 77,
+      "bank_key": "77:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p4",
+      "bank_output_hash": "a9de7a51d630f0fad64bf17322a2205936698f1f921e87a0d484aa2143b2c8d3",
+      "source_record_hash": "284f95cf822de7a5a1925434779e3d7c1a92360983d615660d92a62b5bdeb463",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "Exact difference and quadratic discriminant verified symbolically for f=x^3-x. For a nonzero shift with two distinct intersections,0<|a|<2 and root separation sqrt(4-a^2)/sqrt(3). Area is indeed the source target; the curves and integrand remain absent. Nonzero shift follows from two distinct isolated intersections, not from the discriminant alone.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 86,
+      "bank_key": "86:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "repair_disclosure_p1",
+      "bank_output_hash": "0de8134cfb37d147c17189e1b6af0da0b2548e7a058b44b2fe15b5eae515fb6b",
+      "source_record_hash": "39d0a6e6d7b816094cc05e1eb73317230a78f1bda4bba5e82d0d1040e850e346",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "For a>0, x>=0 and n>0,1/(1+(x/a)^n) lies in(0,1]. At x<a the powered ratio tends to0; at x>a it diverges, explaining thresholda. The integral family is considered for sufficiently large integers n>1; convergence of the n=1 integral is not claimed. Exact integrand and convergence contributions are not displayed.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 112,
+      "bank_key": "112:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p4",
+      "bank_output_hash": "26456817a08e52caeb5430b399e3149d36650ee405c044b4b67d494c692f08fe",
+      "source_record_hash": "e7d703c8f10d879cf8ff7c3b603adbe23c2451fbd308c4224583b3c62560cb2b",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "The interval is exactly the four-digit negative range, and n=23k+1 is equivalent to congruence1. The upper endpoint gives k<=floor(-1001/23)=-44, hence maximum-1011. The maximizing target is not supplied by the public observations; it must not be mistaken for a merely missing asking verb.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 123,
+      "bank_key": "123:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "repair_disclosure_p1",
+      "bank_output_hash": "087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "source_record_hash": "e0c5f16198ec2ce40bca6acbc0f3e2f5c27e36cfdcab91ac56565822160d7770",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "The source example(2,4,4,...) is eventually constant and has even partial sums4n-2. For a putative perfect power m^k with k>=2, oddm gives odd values and evenm gives multiples of4. All three repaired observations are supported. Separate direct-question disclosure concern remains open; missing construction is not necessarily a missing question element.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 136,
+      "bank_key": "136:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p4",
+      "bank_output_hash": "81698809f70e60110978ea6fb6f961c29f208dae8859ece7f83a23c408112295",
+      "source_record_hash": "3351c156d8fbbaa7e6c17c9a80f36e2ea2c9af0c3c5008a793cfcf18368f1568",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "Pairwise intersection size is45+45-89=1. Each other set meets fixedS once, giving sum d_x=N-1. Under no common element, for any x inS choose a setB not containingx. All d_x+1 sets containingx must meetB at distinct points (otherwise two intersections), so d_x+1<=45 and d_x<=44. N=1987 then contradicts sum d_x<=45*44=1980 versus1986, forcing a common point. The union is1+1987*44=87429. Public clues omit N and the explicit size/union target; the complete proof above is private review material only.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 141,
+      "bank_key": "141:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p4",
+      "bank_output_hash": "447b70c5ed5224a9429ae10cbc3135f550e3556ce24e991e216cfa809625c5ea",
+      "source_record_hash": "8eb0f7a693de1492974ec3c317f146a7b4534fccf69412b8d7bf3d8418824497",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "Factoring x^3 from each of four factors yields x^12(1+x+...+x^7)^4. Coefficients count bounded ordered quadruples. Exact convolution in p4-coefficient-check.json verifies204 at shifted exponents9 and19; the answer does not uniquely specify an exponent, though complementing all four coordinates supplies a valid counting correspondence.",
+      "disclosure_approval": "pending copying and semantic review"
+    },
+    {
+      "source_index": 143,
+      "bank_key": "143:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_prompt": "convert_p4",
+      "bank_output_hash": "66dec2869d363e106ea40aa79885c1d51f2cb7cd57cbd4d38612809d5b14136c",
+      "source_record_hash": "60bdbd4dcc53e1b7c969a75ead734742c281506eae62e0bfeb78315c6849e9ab",
+      "all_three_audits_accepted": true,
+      "inclusion": "accepted effective bank",
+      "mathematical_support_review": "supported_under_stated_local_domain",
+      "review": "For binom(X,Y)=21, positive relevant pairs are(21,1),(21,20),(7,2),(7,5). For3<=Y<=X-3, X=6 gives20 and X>=7 gives at least35, so no additional pairs. Distinct positive c,d excludeY=1. As1<=b<a, binom(a,b)>=a, giving a<=21; similarly c<=20. Exhaustive enumeration over those justified bounds yields13 ordered quadruples.",
+      "disclosure_approval": "pending copying and semantic review"
+    }
+  ]
+}

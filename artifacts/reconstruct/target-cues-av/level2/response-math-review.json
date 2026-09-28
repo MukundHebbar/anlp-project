@@ -1,0 +1,68 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "rows": [
+    {
+      "response_key": "21:level2:0",
+      "source_index": 21,
+      "response_output_hash": "5abd741c54d0c55eafa18cd2e54b336dfd53d374afaa0d0e02ece2b9945b7e80",
+      "evidence_hash": "1e0814f8678a60a5fc82810379aee0a61ee658485efd18416f1af74594ec5beb",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Count of elements whose order divides2^(m-1) is2^(m-1), a valid different target. Original asks generators (order2^m). Same answer does not establish equivalence."
+    },
+    {
+      "response_key": "35:level2:0",
+      "source_index": 35,
+      "response_output_hash": "20d8337e9b4566100d18955f81bb17c3c55dd42caf1688ac6252123ea2b2edc6",
+      "evidence_hash": "9ef17fe6556ac949bee155ec0834fe430eb184dd123b4a407aa62f2f50e16857",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Question asks an unspecified global regularity property; assumptions choose Lipschitz rather than uniform continuity. Not a fully specified original question."
+    },
+    {
+      "response_key": "54:level2:0",
+      "source_index": 54,
+      "response_output_hash": "b59d9e1a1564fb3d301d58135b17b69acab7042951f738fe2f43f0e7f7b907be",
+      "evidence_hash": "af159ce6df72e5ffe5cf390b6359da685197970a7a10365e280cac4d40a18960",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Asks maximum |tan(theta/2)| rather than tan²(theta). As theta approaches pi on the permitted circle, the half-angle expression is unbounded, not1/99."
+    },
+    {
+      "response_key": "68:level2:0",
+      "source_index": 68,
+      "response_output_hash": "f789a43525a8ca3a20f2b60947f702b9497582defb8278a51432a1a52b6206c9",
+      "evidence_hash": "98afcbd1ca1b3f5dc2aaa22bc013829b8d5cba2ddc439b3244b3fee28031a02f",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Asks probability determinant0 rather than determinant−1; nonsingularity makes its event impossible. A valid zero-probability alternative, not original recovery."
+    },
+    {
+      "response_key": "113:level2:0",
+      "source_index": 113,
+      "response_output_hash": "6a705d2a82aa8cbf2c2cf29c2d18d0e0d5e7708fb22bb1e656994a87b22ff8a5",
+      "evidence_hash": "b4688fb52a100ede243a0cee629c24ea759e1531b30a50420e5153ac14bbcce7",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Moves the root outside the sum and asks (n!-1)/n+1, which diverges; it is not the original normalized nth-root sequence."
+    },
+    {
+      "response_key": "114:level2:0",
+      "source_index": 114,
+      "response_output_hash": "7ab111d333b58e102796a0d1f83f32d5e471e0d33849f8a56a55a059108644e0",
+      "evidence_hash": "c68b67920eaec3850f51ce3c8810601cf9fe95048ef7286338079ede64e825f6",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "reason": "Question correctly asks the same radius, with a redundant valid bound. Verification falsely claims tau(n^50) approximately proportional to n^(49/2); on prime n it equals51. Semantic recovery yes, grounded recovery no."
+    },
+    {
+      "response_key": "132:level2:0",
+      "source_index": 132,
+      "response_output_hash": "97973752263cd82c8c5dfb0b7695dd52fa8571dfbc05f1d6a6f452c3dd6dc9f2",
+      "evidence_hash": "0f7426e294b24a18c4b47220c1112a6eb995c50ad93251b487173916f8839462",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Asks smallest hand with every combination meeting its complement; the empty hand already satisfies this. Original asks minimum guaranteed full combination, the opposite condition."
+    }
+  ]
+}

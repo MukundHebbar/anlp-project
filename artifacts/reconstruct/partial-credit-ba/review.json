@@ -1,0 +1,43 @@
+{
+  "status": "Completed targeted analytic review; automated scores unchanged; not a full human gold annotation",
+  "cases": [
+    {
+      "id": "zero:5:fidelity",
+      "issue": "False non-equivalence",
+      "raw_target_score": 2,
+      "analytic_reference_target_score": 4,
+      "proof": "Two disjoint cycles each of length at least51 would require at least102 elements, impossible in S_100. Thus at least one and exactly one are equivalent for these questions.",
+      "implication": "The automated score is artificially lower; an apparent middle/high partial score here cannot be credited as successful partial-credit calibration."
+    },
+    {
+      "id": "zero:16:validity",
+      "issue": "False answer-copy override on a substantive inverse-target error",
+      "raw_shortcut": true,
+      "analytic_reference_shortcut": false,
+      "proof": "The candidate asks for N given a count98; it does not supply N as its answer. It reverses the original target and makes mathematical errors, but finding N still requires inference. P/T/E/M should penalize those errors without an automatic zero.",
+      "raw_dimension_vector": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "reference_final_from_unchanged_dimensions": 43.75,
+      "implication": "The global zero override can erase legitimate partial performance if the judge confuses target reversal with asking to repeat an answer."
+    },
+    {
+      "id": "one:10:validity",
+      "issue": "Shortcut override conflates circular justification with tautological question",
+      "raw_shortcut": true,
+      "analytic_reference_shortcut": false,
+      "proof": "The question does not state remainder27; it leaves n underdetermined via a Wilson identity. For n1 and n2 the condition holds but the remainders differ. The justification copies27 without deriving it, warranting low M, but the reconstructed question remains substantive and underdetermined, as in the rubric partial-credit anchor.",
+      "raw_dimension_vector": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "reference_final_from_unchanged_dimensions": 37.5,
+      "implication": "Clarify the override boundary with paired examples of underdetermination versus a question explicitly giving its requested answer. No raw grades changed."
+    }
+  ]
+}

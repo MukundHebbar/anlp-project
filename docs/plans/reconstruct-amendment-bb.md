@@ -1,0 +1,7 @@
+# BB: repair partial-credit judging
+
+Freeze PC-v2 judge prompts separately from BA. Keep weights, score bands, student outputs and v1 historical grades unchanged. Require short verification certificates, exact quoted evidence for hard-zero answer-copy claims, and structural validation before aggregation. Mathematical truth still requires calibration/manual review; schema checks do not prove correctness.
+
+Run19 once-only DeepSeek V4.1 Flash calls, reasoninglow,8192 tokens, temperature0, three workers, no retry, within an incremental$0.15 allowance and existing$5 total research cap. Freeze expected labels before calls. Labels never enter rendered prompts. Cases comprise six fidelity controls, eight validity controls and five saved-response regressions. Known controls/examples and their variations are development calibration, not a held-out accuracy estimate.
+
+Check: conditional semantic equivalence versus a nearby counterexample; missing/wrong input versus changed target; inverse-target errors versus actual answer-copy questions; circular explanations versus tautological questions; false math with correct final number; legitimate inverse inference; previously successful substantive math. A run passes only if every expected label and certificate check passes. Missing calls count as unresolved, not passed. Do not repair outputs silently. Preserve false grades and identify the remaining limitation before promotion. No zero-error or near-perfect population accuracy claim can follow from this small development suite.

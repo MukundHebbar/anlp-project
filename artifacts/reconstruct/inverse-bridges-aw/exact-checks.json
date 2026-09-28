@@ -1,0 +1,15 @@
+{
+  "factorial_indices_with_remainder27_mod61": [
+    51
+  ],
+  "hyperbola_exponents_with_count98": [
+    3
+  ],
+  "hyperbola_N": 2000,
+  "complex_modulus_squared": "100",
+  "cycle_threshold_matches": [
+    51
+  ],
+  "inverse_matrix_relation": "A e1=c1 => A^-1 1=e1/c => sum of all entries=1/c; S=1 implies c=1.",
+  "factorial_root_relation": "log(x_n/n)=(1/alpha-1)log n-1/alpha+o(1); finite nonzero answer1/e forces alpha=1."
+}

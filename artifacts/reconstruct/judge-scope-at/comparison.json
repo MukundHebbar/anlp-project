@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "evaluate_p3": {
+      "planned": 12,
+      "scored": 12,
+      "missing": 0,
+      "frozen_label_matches": 9,
+      "adjudicated_matches": 10,
+      "false_full_credit": 2
+    },
+    "evaluate_p4_standalone": {
+      "planned": 12,
+      "scored": 11,
+      "missing": 1,
+      "frozen_label_matches": 9,
+      "adjudicated_matches": 10,
+      "false_full_credit": 1
+    }
+  },
+  "rows": [
+    {
+      "case_id": "rectangle_scope-valid",
+      "family": "rectangle_scope",
+      "frozen_expected": 4,
+      "adjudicated_expected": 4,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 4
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "rectangle_scope-contrast",
+      "family": "rectangle_scope",
+      "frozen_expected": 1,
+      "adjudicated_expected": 0,
+      "predictions": {
+        "evaluate_p3": 0,
+        "evaluate_p4_standalone": 0
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "continuity_scope-valid",
+      "family": "continuity_scope",
+      "frozen_expected": 4,
+      "adjudicated_expected": 4,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 4
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "continuity_scope-contrast",
+      "family": "continuity_scope",
+      "frozen_expected": 1,
+      "adjudicated_expected": 1,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 1
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "continuity_proof-valid",
+      "family": "continuity_proof",
+      "frozen_expected": 4,
+      "adjudicated_expected": 4,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 4
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "continuity_proof-contrast",
+      "family": "continuity_proof",
+      "frozen_expected": 1,
+      "adjudicated_expected": 1,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 4
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "distance_copy-valid",
+      "family": "distance_copy",
+      "frozen_expected": 4,
+      "adjudicated_expected": 4,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 4
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "distance_copy-contrast",
+      "family": "distance_copy",
+      "frozen_expected": 0,
+      "adjudicated_expected": 0,
+      "predictions": {
+        "evaluate_p3": 0,
+        "evaluate_p4_standalone": 0
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "mean_target-valid",
+      "family": "mean_target",
+      "frozen_expected": 4,
+      "adjudicated_expected": 4,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 4
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "mean_target-contrast",
+      "family": "mean_target",
+      "frozen_expected": 1,
+      "adjudicated_expected": 1,
+      "predictions": {
+        "evaluate_p3": 1,
+        "evaluate_p4_standalone": null
+      },
+      "failures": {
+        "evaluate_p4_standalone": "Connection error."
+      }
+    },
+    {
+      "case_id": "rectangle_proof-valid",
+      "family": "rectangle_proof",
+      "frozen_expected": 4,
+      "adjudicated_expected": 4,
+      "predictions": {
+        "evaluate_p3": 4,
+        "evaluate_p4_standalone": 4
+      },
+      "failures": {}
+    },
+    {
+      "case_id": "rectangle_proof-contrast",
+      "family": "rectangle_proof",
+      "frozen_expected": 1,
+      "adjudicated_expected": 1,
+      "predictions": {
+        "evaluate_p3": 1,
+        "evaluate_p4_standalone": 1
+      },
+      "failures": {}
+    }
+  ],
+  "adopted": false,
+  "limitations": [
+    "Authored, related development controls; no independent population accuracy estimate.",
+    "One frozen label corrected after observing judge output; raw and adjudicated agreement both shown.",
+    "Missing judgments stay in planned denominators; no retries or model-output edits."
+  ]
+}

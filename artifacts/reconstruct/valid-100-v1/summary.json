@@ -1,0 +1,60 @@
+{
+  "terminal": true,
+  "target_met": false,
+  "selected": 53,
+  "calibration": {
+    "n": 47,
+    "mean": 44.41489361702128,
+    "histogram": {
+      "1": 3,
+      "2": 12,
+      "3": 18,
+      "4": 12,
+      "5": 2
+    },
+    "semantic_matches": 1,
+    "provisional_grounded": 0
+  },
+  "extension": {
+    "n": 6,
+    "mean": 46.875,
+    "histogram": {
+      "1": 0,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 0
+    },
+    "semantic_matches": 0,
+    "provisional_grounded": 0
+  },
+  "combined": {
+    "n": 53,
+    "mean": 44.693396226415096,
+    "histogram": {
+      "1": 3,
+      "2": 14,
+      "3": 20,
+      "4": 14,
+      "5": 2
+    },
+    "semantic_matches": 1,
+    "provisional_grounded": 0
+  },
+  "extension_sources_attempted": 180,
+  "extension_input_dispositions": {
+    "rejected": 12,
+    "accepted": 9,
+    "unresolved": 3,
+    "null": 156
+  },
+  "extension_complete": 6,
+  "overflow": 0,
+  "failed_calls": 165,
+  "recorded_cost_usd": 2.3893737336,
+  "limitations": [
+    "Automatic gate/completion validity is not answer correctness or independent certification.",
+    "47 rows calibrated the rating scale; added rows are a new source frame, not a matched confirmation of the original pool.",
+    "No rating thresholds or prompts changed for the extension."
+  ]
+}

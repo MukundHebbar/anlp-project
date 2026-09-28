@@ -1,0 +1,23 @@
+{
+  "rows": [
+    {
+      "source_index": 96,
+      "eligible": true,
+      "bank_hash": "f84caa7407cd7bda28ec0702e88f16acc39ce79cb397aa1b09fd546872d590ca",
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "reason": "Differentiability and g(0)=0 leave derivative a free. Taylor g(u)=a*u+o(u) yields the limit a/12 for every admissible g, not merely linear examples. The provided1/12 therefore infers a=1. The clues do not contain this derivation or the derivative value. All six statements hold for the original setting, and the missing premise is essential to the question, not merely a solution witness.",
+      "copy_hash": "f88a8db8e3cefa78ba1f68150258c125576db6cbdb2581a403ee0da58823a6b9",
+      "adjudication_hash": "8c768e5393af5ec634ed24358cab98cf86cd8a07a0397797358c0794b952c2e0",
+      "policy": "AE explicit mathematical adjudication; original public REJECT retained and not overwritten"
+    },
+    {
+      "source_index": 137,
+      "eligible": false,
+      "bank_hash": "ffc83f148bb4a36bba3b1d861d1eda0aeb1732e006654022415e09eec7243bac",
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "reason": "Certificate adjudication did not accept; retain exclusion."
+    }
+  ],
+  "reviewer": "Assistant analytic review, not human gold",
+  "protocol": "docs/plans/reconstruct-amendment-ae.md"
+}

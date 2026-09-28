@@ -1,0 +1,209 @@
+{
+  "46:dense3:0": {
+    "source_index": 46,
+    "arm": "dense3",
+    "bank_key": "46:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "560",
+      "clues": [
+        "The problem concerns a shooting match with eight clay targets in total. The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.",
+        "The requested quantity is the number of different legal orders in which all eight targets can be broken. On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.",
+        "Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed. The columns do not all have the same number of targets, and their heights sum to eight."
+      ],
+      "rendered_clues": "- The problem concerns a shooting match with eight clay targets in total. The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken. On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.\n- Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed. The columns do not all have the same number of targets, and their heights sum to eight.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_AA_dense3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "fa8645279ae9cc0325b9a963de4ff11b8a1350ceacc8cd52c46501e95c0dfe76",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 560\nOBSERVATIONS:\n- The problem concerns a shooting match with eight clay targets in total. The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken. On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.\n- Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed. The columns do not all have the same number of targets, and their heights sum to eight.",
+    "rendered_input_hash": "8bf10388015781e93617f18bd4a0ef6633a3952a1e76301e98ce8233b47cdcb3"
+  },
+  "46:sparse3:0": {
+    "source_index": 46,
+    "arm": "sparse3",
+    "bank_key": "46:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "560",
+      "clues": [
+        "The problem concerns a shooting match with eight clay targets in total.",
+        "The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.",
+        "The requested quantity is the number of different legal orders in which all eight targets can be broken."
+      ],
+      "rendered_clues": "- The problem concerns a shooting match with eight clay targets in total.\n- The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_AA_sparse3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "9c34b7b00cf124c3f836393aeec7db0360c45cf469d2c01a082df6a190b667c2",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 560\nOBSERVATIONS:\n- The problem concerns a shooting match with eight clay targets in total.\n- The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken.",
+    "rendered_input_hash": "2568bde58ca7870727f3f85c009de761de3fc83138c3dfda318518fecb52041c"
+  },
+  "46:rich6:0": {
+    "source_index": 46,
+    "arm": "rich6",
+    "bank_key": "46:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "560",
+      "clues": [
+        "The problem concerns a shooting match with eight clay targets in total.",
+        "The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.",
+        "The requested quantity is the number of different legal orders in which all eight targets can be broken.",
+        "On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.",
+        "Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed.",
+        "The columns do not all have the same number of targets, and their heights sum to eight."
+      ],
+      "rendered_clues": "- The problem concerns a shooting match with eight clay targets in total.\n- The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken.\n- On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.\n- Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed.\n- The columns do not all have the same number of targets, and their heights sum to eight.",
+      "style": "sentence",
+      "clue_count": 6,
+      "selection_policy": "frozen_AA_rich6",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "f93f435753e368daba762241a1d59a493bd7aba16f6059ecb54ec92c8a1b37bf",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 560\nOBSERVATIONS:\n- The problem concerns a shooting match with eight clay targets in total.\n- The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken.\n- On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.\n- Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed.\n- The columns do not all have the same number of targets, and their heights sum to eight.",
+    "rendered_input_hash": "b70572b23f5123802762b9b19ac2c26626f81f1b6d1e15984e4c408c90f6bf80"
+  },
+  "62:sparse3:0": {
+    "source_index": 62,
+    "arm": "sparse3",
+    "bank_key": "62:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\infty",
+      "clues": [
+        "The function being expanded is f(z)= sin z/(z-π)^2.",
+        "The requested quantity is the outer radius of convergence of a Laurent series for f.",
+        "The Laurent expansion is taken about some point c, not necessarily the origin."
+      ],
+      "rendered_clues": "- The function being expanded is f(z)= sin z/(z-π)^2.\n- The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_AA_sparse3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "962d977ff0c648aa69fbc4c5497e0ffa9d37b8456d53af7d34cdee432a193ecf",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\infty\nOBSERVATIONS:\n- The function being expanded is f(z)= sin z/(z-π)^2.\n- The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin.",
+    "rendered_input_hash": "113a35c1136185a24429315d8d3ba6d43577bd4171a54fa9304f8310ec85de91"
+  },
+  "62:rich6:0": {
+    "source_index": 62,
+    "arm": "rich6",
+    "bank_key": "62:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\infty",
+      "clues": [
+        "The function being expanded is f(z)= sin z/(z-π)^2.",
+        "The requested quantity is the outer radius of convergence of a Laurent series for f.",
+        "The Laurent expansion is taken about some point c, not necessarily the origin.",
+        "The numerator sin z is entire and vanishes at z=π.",
+        "The denominator (z-π)^2 has a double zero at z=π.",
+        "Apart from z=π, the function f is analytic on the finite complex plane."
+      ],
+      "rendered_clues": "- The function being expanded is f(z)= sin z/(z-π)^2.\n- The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin.\n- The numerator sin z is entire and vanishes at z=π.\n- The denominator (z-π)^2 has a double zero at z=π.\n- Apart from z=π, the function f is analytic on the finite complex plane.",
+      "style": "sentence",
+      "clue_count": 6,
+      "selection_policy": "frozen_AA_rich6",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "394af1cc7f9d66680343c931f12835abb04465b0f4603ba65319e8134adbdaff",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\infty\nOBSERVATIONS:\n- The function being expanded is f(z)= sin z/(z-π)^2.\n- The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin.\n- The numerator sin z is entire and vanishes at z=π.\n- The denominator (z-π)^2 has a double zero at z=π.\n- Apart from z=π, the function f is analytic on the finite complex plane.",
+    "rendered_input_hash": "eb842a0028a2c4f5bbc57daf553236aefdfbcfce1ffecce766e359515ee56a16"
+  },
+  "62:dense3:0": {
+    "source_index": 62,
+    "arm": "dense3",
+    "bank_key": "62:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\infty",
+      "clues": [
+        "The function being expanded is f(z)= sin z/(z-π)^2. The requested quantity is the outer radius of convergence of a Laurent series for f.",
+        "The Laurent expansion is taken about some point c, not necessarily the origin. The numerator sin z is entire and vanishes at z=π.",
+        "The denominator (z-π)^2 has a double zero at z=π. Apart from z=π, the function f is analytic on the finite complex plane."
+      ],
+      "rendered_clues": "- The function being expanded is f(z)= sin z/(z-π)^2. The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin. The numerator sin z is entire and vanishes at z=π.\n- The denominator (z-π)^2 has a double zero at z=π. Apart from z=π, the function f is analytic on the finite complex plane.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_AA_dense3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "1d1cd29dee58fd5eba0b4b94fa080e7386220341a1a3ef90de69fca2a823c990",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\infty\nOBSERVATIONS:\n- The function being expanded is f(z)= sin z/(z-π)^2. The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin. The numerator sin z is entire and vanishes at z=π.\n- The denominator (z-π)^2 has a double zero at z=π. Apart from z=π, the function f is analytic on the finite complex plane.",
+    "rendered_input_hash": "6966df50461fa0b2980f8dcec68edf7ab2b8b22588165e614691d7d8d9089e5e"
+  },
+  "129:rich6:0": {
+    "source_index": 129,
+    "arm": "rich6",
+    "bank_key": "129:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1392",
+      "clues": [
+        "The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.",
+        "In any valid word, each pair of neighboring digits must differ by exactly 1.",
+        "The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.",
+        "The fixed length is less than 20.",
+        "For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.",
+        "For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero."
+      ],
+      "rendered_clues": "- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\n- In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.\n- The fixed length is less than 20.\n- For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.\n- For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.",
+      "style": "sentence",
+      "clue_count": 6,
+      "selection_policy": "frozen_AA_rich6",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "8654cb367fc73eded30c75d707332e36adb82ab1d3037d27d633f22cf7ba27c0",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\n- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\n- In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.\n- The fixed length is less than 20.\n- For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.\n- For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.",
+    "rendered_input_hash": "df2247a20bcd28853cea5d738c701d779ff2d14e19a370f3624c7f634e408ea8"
+  },
+  "129:dense3:0": {
+    "source_index": 129,
+    "arm": "dense3",
+    "bank_key": "129:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1392",
+      "clues": [
+        "The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6. In any valid word, each pair of neighboring digits must differ by exactly 1.",
+        "The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length. The fixed length is less than 20.",
+        "For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet. For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero."
+      ],
+      "rendered_clues": "- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6. In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length. The fixed length is less than 20.\n- For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet. For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_AA_dense3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "5d86b58062bc3f5544a3843e84bae6b96ed8fbaa37a176036014db6fb4ea16d3",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\n- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6. In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length. The fixed length is less than 20.\n- For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet. For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.",
+    "rendered_input_hash": "4cf6550b0a17ced06aa06b2ac06ce5dfbaa338d876c9146e2697c0b9dadc734d"
+  },
+  "129:sparse3:0": {
+    "source_index": 129,
+    "arm": "sparse3",
+    "bank_key": "129:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1392",
+      "clues": [
+        "The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.",
+        "In any valid word, each pair of neighboring digits must differ by exactly 1.",
+        "The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length."
+      ],
+      "rendered_clues": "- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\n- In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_AA_sparse3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "66289e32d47cfe40cbfb5dcfc4650c1e1fd2f38bdd56404ef0fbf5af91dfb492",
+    "rendered_prompt": "You receive a final mathematical answer and unordered observations from a worked solution. Reconstruct the original mathematical question that most plausibly produced this answer and these observations. Try to recover its essential objects, constraints, and requested target, rather than inventing a different question that happens to share the answer. The original question is hidden, so infer missing structure conservatively and state important missing details you chose. Return one self-contained question and a concise mathematical verification showing that every observation belongs substantively to one coherent solution. Several questions may fit; do not claim uniqueness. Do not copy the answer into a tautological question or attach clues to an unrelated problem.\n\nExample:\nAnswer: 21. Observations: selecting an endpoint excludes its neighbour; the empty selection counts; the endpoint cases contribute 13 and 8.\nOutput: {\"question\":\"How many subsets of six positions in a row contain no adjacent positions, including the empty set?\",\"justification\":\"Let F(n) count them. Splitting on the last position gives F(n)=F(n-1)+F(n-2), with F(0)=1,F(1)=2. Hence the endpoint cases give 13 and 8 and F(6)=21.\",\"assumptions\":[\"I chose a row of six positions.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\n- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\n- In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.",
+    "rendered_input_hash": "a1f287491452bfb350b55b10be082cf9cddacb67496887cc7b53dee665ecb0fe"
+  }
+}

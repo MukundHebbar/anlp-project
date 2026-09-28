@@ -1,0 +1,22 @@
+[
+  {
+    "response_key": "11:cbeb98b799fdccbff5477ca79a44d2af649d1c6d8523fe8f2fe996c80ebcb59f:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+    "seed": 0,
+    "reviewer": "assistant mathematical review; not independent human",
+    "reference_answer_under_standard_all_divisors_interpretation": 4,
+    "proof": "Order all positive divisors as 1=d1<...<dk=n. The displayed bound forces k<4. A composite n has k>=3, so k=3 and n=p^2 for prime p. The two gaps are p-1 and p^2-p=p(p-1); their required ratio1:2 forces p=2, hence n=4. Its divisors1,2,4 have gaps1,2, establishing existence.",
+    "verification_assessment": "The missing k=3 to n=4 completion is independently checkable and supports score3 under the rubric.",
+    "wording_caveat": "The question does not explicitly say all positive divisors in increasing order. This is conventional in the phrase consecutive divisors, but if an arbitrary subsequence were allowed uniqueness would fail. Seed0 is particularly terse about completeness. Do not treat both responses as unambiguously perfect wording.",
+    "conservative_review_status": "correct under conventional divisor ordering; clarify standalone wording in future global instruction, without rewriting saved responses"
+  },
+  {
+    "response_key": "11:cbeb98b799fdccbff5477ca79a44d2af649d1c6d8523fe8f2fe996c80ebcb59f:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+    "seed": 1,
+    "reviewer": "assistant mathematical review; not independent human",
+    "reference_answer_under_standard_all_divisors_interpretation": 4,
+    "proof": "Order all positive divisors as 1=d1<...<dk=n. The displayed bound forces k<4. A composite n has k>=3, so k=3 and n=p^2 for prime p. The two gaps are p-1 and p^2-p=p(p-1); their required ratio1:2 forces p=2, hence n=4. Its divisors1,2,4 have gaps1,2, establishing existence.",
+    "verification_assessment": "The missing k=3 to n=4 completion is independently checkable and supports score3 under the rubric.",
+    "wording_caveat": "The question does not explicitly say all positive divisors in increasing order. This is conventional in the phrase consecutive divisors, but if an arbitrary subsequence were allowed uniqueness would fail. Seed0 is particularly terse about completeness. Do not treat both responses as unambiguously perfect wording.",
+    "conservative_review_status": "correct under conventional divisor ordering; clarify standalone wording in future global instruction, without rewriting saved responses"
+  }
+]

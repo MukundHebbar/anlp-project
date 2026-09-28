@@ -1,0 +1,199 @@
+{
+  "status": "authored development controls, not independent final validation",
+  "reference_provenance": "assistant-authored explicit mathematical correspondences and mismatches",
+  "families": 8,
+  "fixtures": [
+    {
+      "id": "polynomial-2",
+      "family": "polynomial",
+      "source_question": "Find all real roots of x²-5x+6=0.",
+      "candidate_question": "Find all real t satisfying (t-2)(t-3)=0.",
+      "expected": 2,
+      "reference_reason": "Factorization preserves exactly the real roots."
+    },
+    {
+      "id": "polynomial-1",
+      "family": "polynomial",
+      "source_question": "Find all real roots of x²-5x+6=0.",
+      "candidate_question": "Find the larger real root of x²-5x+6=0.",
+      "expected": 1,
+      "reference_reason": "Only one root is requested instead of all roots."
+    },
+    {
+      "id": "polynomial-0",
+      "family": "polynomial",
+      "source_question": "Find all real roots of x²-5x+6=0.",
+      "candidate_question": "List the prime integers between1 and4.",
+      "expected": 0,
+      "reference_reason": "Coincident answer set{2,3}; primality and polynomial roots are different constraints."
+    },
+    {
+      "id": "dice-2",
+      "family": "dice",
+      "source_question": "Roll two independent fair six-sided dice. Find the probability their sum is7.",
+      "candidate_question": "Choose an ordered pair uniformly from{1,2,3,4,5,6}². What fraction have coordinates summing7?",
+      "expected": 2,
+      "reference_reason": "36 equally likely ordered outcomes correspond bijectively to dice results."
+    },
+    {
+      "id": "dice-1",
+      "family": "dice",
+      "source_question": "Roll two independent fair six-sided dice. Find the probability their sum is7.",
+      "candidate_question": "Roll two fair six-sided dice without assuming independence. Find the probability their sum is7.",
+      "expected": 1,
+      "reference_reason": "Marginal fairness does not fix joint probabilities."
+    },
+    {
+      "id": "dice-0",
+      "family": "dice",
+      "source_question": "Roll two independent fair six-sided dice. Find the probability their sum is7.",
+      "candidate_question": "What is the reciprocal of6?",
+      "expected": 0,
+      "reference_reason": "Same answer1/6 but no dice event."
+    },
+    {
+      "id": "derivative-2",
+      "family": "derivative",
+      "source_question": "For f(x)=x³ on the reals, find f′(2).",
+      "candidate_question": "Find the tangent slope of y=t³ at t=2.",
+      "expected": 2,
+      "reference_reason": "Derivative is the tangent slope at the same point."
+    },
+    {
+      "id": "derivative-1",
+      "family": "derivative",
+      "source_question": "For f(x)=x³ on the reals, find f′(2).",
+      "candidate_question": "For f(x)=x³ on the reals, find f′(-2).",
+      "expected": 1,
+      "reference_reason": "Evaluation point changes although both slopes equal12."
+    },
+    {
+      "id": "derivative-0",
+      "family": "derivative",
+      "source_question": "For f(x)=x³ on the reals, find f′(2).",
+      "candidate_question": "Find the area of a rectangle with sides3 and4.",
+      "expected": 0,
+      "reference_reason": "Answer12 does not preserve the derivative task."
+    },
+    {
+      "id": "modular-2",
+      "family": "modular",
+      "source_question": "Find the least positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "candidate_question": "Find the smallest positive n such that3 divides n-2 and5 divides n-3.",
+      "expected": 2,
+      "reference_reason": "Divisibility and congruence assertions are equivalent."
+    },
+    {
+      "id": "modular-1",
+      "family": "modular",
+      "source_question": "Find the least positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "candidate_question": "Find any positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "expected": 1,
+      "reference_reason": "Any solution is weaker than the least solution."
+    },
+    {
+      "id": "modular-0",
+      "family": "modular",
+      "source_question": "Find the least positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "candidate_question": "How many subsets does a set of three elements have?",
+      "expected": 0,
+      "reference_reason": "Answer8 is shared but the defining problem differs."
+    },
+    {
+      "id": "integral-2",
+      "family": "integral",
+      "source_question": "Evaluate the definite integral of2x from0 to1.",
+      "candidate_question": "Compute the signed area under y=2t between t=0 and t=1.",
+      "expected": 2,
+      "reference_reason": "Same integrand, bounds, and integral target."
+    },
+    {
+      "id": "integral-1",
+      "family": "integral",
+      "source_question": "Evaluate the definite integral of2x from0 to1.",
+      "candidate_question": "Evaluate the definite integral of2x from-1 to0.",
+      "expected": 1,
+      "reference_reason": "Bounds differ and change the result."
+    },
+    {
+      "id": "integral-0",
+      "family": "integral",
+      "source_question": "Evaluate the definite integral of2x from0 to1.",
+      "candidate_question": "How many positive divisors does1 have?",
+      "expected": 0,
+      "reference_reason": "Same numerical answer1 but unrelated mathematical object."
+    },
+    {
+      "id": "graph-2",
+      "family": "graph",
+      "source_question": "How many spanning trees does the complete graph on four labelled vertices have?",
+      "candidate_question": "On fixed vertex set{a,b,c,d}, count connected acyclic simple graphs.",
+      "expected": 2,
+      "reference_reason": "Every tree on these vertices is a spanning subgraph of K4, and conversely."
+    },
+    {
+      "id": "graph-1",
+      "family": "graph",
+      "source_question": "How many spanning trees does the complete graph on four labelled vertices have?",
+      "candidate_question": "How many unlabelled trees are there on four vertices?",
+      "expected": 1,
+      "reference_reason": "Counting up to isomorphism changes the objects counted."
+    },
+    {
+      "id": "graph-0",
+      "family": "graph",
+      "source_question": "How many spanning trees does the complete graph on four labelled vertices have?",
+      "candidate_question": "Compute2 to the fourth power.",
+      "expected": 0,
+      "reference_reason": "Answer16 alone omits the graph counting task."
+    },
+    {
+      "id": "sequence-2",
+      "family": "sequence",
+      "source_question": "Let a1=2 and a(n+1)=3a(n). Find a5.",
+      "candidate_question": "A geometric sequence starts at2 with ratio3. Find its fifth term.",
+      "expected": 2,
+      "reference_reason": "Equivalent initial value, recurrence, and index."
+    },
+    {
+      "id": "sequence-1",
+      "family": "sequence",
+      "source_question": "Let a1=2 and a(n+1)=3a(n). Find a5.",
+      "candidate_question": "Let a1=2 and a(n+1)=3a(n). Find a4.",
+      "expected": 1,
+      "reference_reason": "Target index is different."
+    },
+    {
+      "id": "sequence-0",
+      "family": "sequence",
+      "source_question": "Let a1=2 and a(n+1)=3a(n). Find a5.",
+      "candidate_question": "Compute the area of a rectangle with sides9 and18.",
+      "expected": 0,
+      "reference_reason": "Answer162 does not establish sequence equivalence."
+    },
+    {
+      "id": "quantifiers-2",
+      "family": "quantifiers",
+      "source_question": "Is it true that every real x satisfies x²≥x?",
+      "candidate_question": "Does x(x-1)≥0 hold for all real numbers x?",
+      "expected": 2,
+      "reference_reason": "Subtracting x preserves inequality and universal real quantifier."
+    },
+    {
+      "id": "quantifiers-1",
+      "family": "quantifiers",
+      "source_question": "Is it true that every real x satisfies x²≥x?",
+      "candidate_question": "Is there a real x satisfying x²≥x?",
+      "expected": 1,
+      "reference_reason": "Existential replaces universal quantification."
+    },
+    {
+      "id": "quantifiers-0",
+      "family": "quantifiers",
+      "source_question": "Is it true that every real x satisfies x²≥x?",
+      "candidate_question": "Is9 a prime number?",
+      "expected": 0,
+      "reference_reason": "Both original and candidate answer No, but propositions differ."
+    }
+  ]
+}

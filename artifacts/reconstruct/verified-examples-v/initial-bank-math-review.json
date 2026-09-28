@@ -1,0 +1,102 @@
+{
+  "provenance": "assistant analytic review linked to source-preflight certificates; not independent human review",
+  "stage": "before any student draws; mathematical support only, no disclosure approval",
+  "rows": [
+    {
+      "source_index": 0,
+      "bank_key": "0:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "3043195308ac3b196fa2a874c666aedbd3c41f9487aa7115aabe2967812799da",
+      "source_record_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "mathematical_support_passed": true,
+      "reason": "Moment checks give alpha+beta=2 and alpha\u00b2+beta\u00b2=8/3; both are necessary and jointly sufficient with constant moment2 for this quadratic quadrature. The omitted context affects recoverability, not truth."
+    },
+    {
+      "source_index": 13,
+      "bank_key": "13:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "7058a9913074243ebcfa82f9ed9d1a1dd03e98b01f4a93df83536862544febe0",
+      "source_record_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "mathematical_support_passed": true,
+      "reason": "Enumerated units have squares1 modulo24, and there are exactly8. Both clues have explicit domains."
+    },
+    {
+      "source_index": 46,
+      "bank_key": "46:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "c1a86c636cd14dd881b253f33736d34d30e74355b9a146bde34b366ac6ff9513",
+      "source_record_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "mathematical_support_passed": true,
+      "reason": "The mapping to column words is a bijection once multiplicities are fixed. The bottom-to-top rule fixes internal order. The third clue adds the requested counting target; it overlaps the first mapping fact, so record redundancy rather than assume independent information."
+    },
+    {
+      "source_index": 63,
+      "bank_key": "63:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "f46b7179402401a3b88d058ef97beb40ba2acaf302c0d6dca1d85f5079a4999d",
+      "source_record_hash": "f15efc1e7c16bfc117728be4698c80afe7687fa8834804c91ba240cad567600b",
+      "mathematical_support_passed": true,
+      "reason": "Consecutive absolute ratio is2*r^(n*n!), giving the stated inside/outside limits; at modulus1 terms are2^n. True but potentially complete convergence proof."
+    },
+    {
+      "source_index": 62,
+      "bank_key": "62:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "source_record_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "mathematical_support_passed": true,
+      "reason": "Translation w=z-pi gives -sin(w)/w\u00b2; its only negative power is -1/w and the remaining entire series converges everywhere. These true facts may disclose the entire solution; support does not clear disclosure."
+    },
+    {
+      "source_index": 118,
+      "bank_key": "118:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "853afea703496b94e87f664b310c97324fc48b426cbb1048f2b6392bb4681596",
+      "source_record_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "mathematical_support_passed": true,
+      "reason": "For the witness k=5, the unspecified associated formula evaluates to3;3 is both prime and triangular. The absent formula is the intentionally missing relation to infer, not an unbound arithmetic variable. This does not establish that the particular original formula is identifiable."
+    },
+    {
+      "source_index": 96,
+      "bank_key": "96:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "e72605078dc7e1280cc5cbe1c7bc62eebd04704ab7e3c6d92e8e0e08d7dcc037",
+      "source_record_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "mathematical_support_passed": true,
+      "reason": "Source preflight proves H(t)=t\u00b3/3+o(t\u00b3), the exact outer antiderivative and error o(x^8). Support is sound; the amount of exposed solution must be judged separately."
+    },
+    {
+      "source_index": 120,
+      "bank_key": "120:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "9d44f2b6645feb122a205578a0d81355d49874b9a7f5db1fbc9476a06eaebb2f",
+      "source_record_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "mathematical_support_passed": true,
+      "reason": "Decimal repunit congruence modulo3 and ord_7(3)=6 hold by direct arithmetic; the linking divisibility assumption and requested property remain omitted."
+    },
+    {
+      "source_index": 129,
+      "bank_key": "129:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "d23d550f455d75bd074cddb314e1361dead12d267795cf2e88129a771f38b7e5",
+      "source_record_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "mathematical_support_passed": true,
+      "reason": "The digit-walk recurrence, reflection pairs and initial counts follow from the checked DP. The fourth class is the singleton central digit3. No statistical independence of these related observations is assumed."
+    },
+    {
+      "source_index": 137,
+      "bank_key": "137:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "f9ece148fd17d8ce9e61587883764b8b01fd30bcef5a364ac2fcdbef4ba8c650",
+      "source_record_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "mathematical_support_passed": true,
+      "reason": "Handshaking and e=3n-6 hold for the stated simple maximal-planar setting; the source has three equal degree classes. Exact degrees are withheld. A valid reconstruction must establish a realizable graph, not only solve degree-sum arithmetic."
+    },
+    {
+      "source_index": 80,
+      "bank_key": "80:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "b61445aeca8418934e97eed051e8f0378016a4f4859ca37964c616d1d9b2840c",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "mathematical_support_passed": true,
+      "reason": "The two mixed derivatives equal1. Their difference is0, and Green gives zero over either oriented disk. Omitting the radius does not withhold answer-relevant computation; disclosure review remains separate."
+    },
+    {
+      "source_index": 87,
+      "bank_key": "87:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "cffe487154a09845cc5c789b46c1ac28faacb206e9d75a0ca418c895a28f1e9f",
+      "source_record_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "mathematical_support_passed": true,
+      "reason": "The clues describe the constructed counterexample, not every function satisfying the source limit. For f(1/n)=1/n\u00b3 and0 otherwise, each reciprocal is a discontinuity and they accumulate at0. Preserve this existential/witness interpretation in later grounding checks."
+    }
+  ]
+}

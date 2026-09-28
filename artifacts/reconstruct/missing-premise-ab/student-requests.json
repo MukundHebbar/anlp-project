@@ -1,0 +1,77 @@
+{
+  "46:rich6:0": {
+    "source_index": 46,
+    "arm": "rich6",
+    "bank_key": "46:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "560",
+      "clues": [
+        "The problem concerns a shooting match with eight clay targets in total.",
+        "The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.",
+        "The requested quantity is the number of different legal orders in which all eight targets can be broken.",
+        "On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.",
+        "Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed.",
+        "The columns do not all have the same number of targets, and their heights sum to eight."
+      ],
+      "rendered_clues": "- The problem concerns a shooting match with eight clay targets in total.\n- The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken.\n- On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.\n- Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed.\n- The columns do not all have the same number of targets, and their heights sum to eight.",
+      "style": "sentence",
+      "clue_count": 6,
+      "selection_policy": "frozen_AA_rich6",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "f93f435753e368daba762241a1d59a493bd7aba16f6059ecb54ec92c8a1b37bf",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 560\nOBSERVATIONS:\n- The problem concerns a shooting match with eight clay targets in total.\n- The targets are arranged in vertical columns, and each column is a stack with a lowest remaining target.\n- The requested quantity is the number of different legal orders in which all eight targets can be broken.\n- On each move, the marksman chooses a column that still has targets and breaks the lowest remaining target in that chosen column.\n- Because targets in a single column must be removed from bottom to top, the relative order of breaks within that column is fixed.\n- The columns do not all have the same number of targets, and their heights sum to eight.",
+    "rendered_input_hash": "376f04d5bd865c911bf7491f546ea343dac5cb42bfa7d363fe1dfce8ca3d7e98"
+  },
+  "62:rich6:0": {
+    "source_index": 62,
+    "arm": "rich6",
+    "bank_key": "62:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\infty",
+      "clues": [
+        "The function being expanded is f(z)= sin z/(z-π)^2.",
+        "The requested quantity is the outer radius of convergence of a Laurent series for f.",
+        "The Laurent expansion is taken about some point c, not necessarily the origin.",
+        "The numerator sin z is entire and vanishes at z=π.",
+        "The denominator (z-π)^2 has a double zero at z=π.",
+        "Apart from z=π, the function f is analytic on the finite complex plane."
+      ],
+      "rendered_clues": "- The function being expanded is f(z)= sin z/(z-π)^2.\n- The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin.\n- The numerator sin z is entire and vanishes at z=π.\n- The denominator (z-π)^2 has a double zero at z=π.\n- Apart from z=π, the function f is analytic on the finite complex plane.",
+      "style": "sentence",
+      "clue_count": 6,
+      "selection_policy": "frozen_AA_rich6",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "394af1cc7f9d66680343c931f12835abb04465b0f4603ba65319e8134adbdaff",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\infty\nOBSERVATIONS:\n- The function being expanded is f(z)= sin z/(z-π)^2.\n- The requested quantity is the outer radius of convergence of a Laurent series for f.\n- The Laurent expansion is taken about some point c, not necessarily the origin.\n- The numerator sin z is entire and vanishes at z=π.\n- The denominator (z-π)^2 has a double zero at z=π.\n- Apart from z=π, the function f is analytic on the finite complex plane.",
+    "rendered_input_hash": "1cf2f5f1c074a248fe4f4af079514dbfd63b257c5e270acef111215e276151c1"
+  },
+  "129:rich6:0": {
+    "source_index": 129,
+    "arm": "rich6",
+    "bank_key": "129:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1392",
+      "clues": [
+        "The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.",
+        "In any valid word, each pair of neighboring digits must differ by exactly 1.",
+        "The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.",
+        "The fixed length is less than 20.",
+        "For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.",
+        "For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero."
+      ],
+      "rendered_clues": "- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\n- In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.\n- The fixed length is less than 20.\n- For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.\n- For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.",
+      "style": "sentence",
+      "clue_count": 6,
+      "selection_policy": "frozen_AA_rich6",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "8654cb367fc73eded30c75d707332e36adb82ab1d3037d27d633f22cf7ba27c0",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\n- The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\n- In any valid word, each pair of neighboring digits must differ by exactly 1.\n- The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.\n- The fixed length is less than 20.\n- For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.\n- For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.",
+    "rendered_input_hash": "2335af506b7aab973d8c970e6b87d71e55fcca60f0348c4dac30b4fd74d9937e"
+  }
+}

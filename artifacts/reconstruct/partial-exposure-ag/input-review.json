@@ -1,0 +1,235 @@
+{
+  "reviewer": "Assistant analytic review, not human gold",
+  "manual_review_hash": "e70bd328993ecba648f583f8c3c678deffac9674157bf1c0fc5ab8948595e3ba",
+  "protocol": "docs/plans/reconstruct-amendment-ag.md",
+  "rows": [
+    {
+      "source_index": 0,
+      "eligible": true,
+      "source_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "bank_hash": "9aee6f3e9338075acfe62f09e06c88b84230365d7e51b789c2a423459d71b0d8",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "56a31e463fdf06660bb4dee4e199984b819fbed7b3e577801a8f4f0a43084dbe",
+      "manual_content_pass": true,
+      "reason": "Only polynomial class, unspecified integral-identity role and unknown endpoint are given. No full target or derivation is exposed; substantial ambiguity remains.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 13,
+      "eligible": true,
+      "source_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "bank_hash": "ad8cb80c8baa82fe7fc5e5879265c036eb3037baa2fad63030442ac967bf1c01",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "e67cb5c7824de817016824775056bcba1197ea6e5dde93760390276500565c1d",
+      "manual_content_pass": true,
+      "reason": "Product-of-units setup and target retain unknown factorial index; the useful unit-square/pairing facts are omitted, increasing ambiguity. No full source question is exposed.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 46,
+      "eligible": false,
+      "source_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "bank_hash": "fdab86ec844d33bdc44245d31f110f0f30740c04c505f3564fd392858aad5dca",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Three columns and within-column ordering/word encoding remain; heights, total and final counting formula are absent. This is a partial counting setup, not a displayed complete answer.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 62,
+      "eligible": false,
+      "source_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "bank_hash": "eae9f51d4068acb5cf3f6b00ad0e8d84bba95ddf05473c8583bd92bf59b7f8e7",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "The centered quotient and identity sin(a+w)=-sinw expose the equivalent translated Laurent question -sin(w)/w^2 at0 with its radius target. Reject equivalent premise-target exposure even though a is unreported.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 63,
+      "eligible": false,
+      "source_hash": "f15efc1e7c16bfc117728be4698c80afe7687fa8834804c91ba240cad567600b",
+      "bank_hash": "b4f9160026abcbb131e993e0cbedfc15fc94c88dd03c2e4b221781c7f648bc28",
+      "audit_statuses": {
+        "audit_support_p1": "missing",
+        "audit_public_p5": "missing",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "The power-series framework, coefficients and symbolic consecutive-term ratio remain; exponent growth and the actual n! sequence are absent. Interpret the ratio only where defined; no completed convergence proof is shown.",
+      "derived_inputs_reviewed": true,
+      "support_pass": false,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 80,
+      "eligible": false,
+      "source_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "bank_hash": "b5feafa240830dfb9fdf97c91fc85b4459cf6209171fc06aa43f2cc9222632d2",
+      "audit_statuses": {
+        "audit_support_p1": "missing",
+        "audit_public_p5": "missing",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Curve, integral structure and component P=x+b*y retain a genuinely unknown coefficient b. Green/curl calculation is no longer exposed. Infer b from the zero answer rather than copy a complete original question.",
+      "derived_inputs_reviewed": true,
+      "support_pass": false,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 87,
+      "eligible": false,
+      "source_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "bank_hash": "d714a37250289baaa7ee5e249f8e08bedb530d42146c8a3c468b178682bc53e0",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "missing",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "The real-function target and ratio f(x)/x^2 remain, but the actual limit value and spike construction are absent. Choice of normalization requires reconstruction; no counterexample proof is exposed.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 96,
+      "eligible": true,
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "bank_hash": "4b74a4789104831a73d41500ac1ccecd92ffb4af6336a439fa290e70a434d75a",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "9704ce69c4fbd855864ddd1c6550d61cf0441695cd07bbaaaabcfb0bda19e7e5",
+      "manual_content_pass": true,
+      "reason": "The derivative a is explicitly unknown; only the inner-integral asymptotic has been revealed. The outer integration and final sine limit remain to be worked out. This avoids the full-bank complete solution exposure.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 118,
+      "eligible": false,
+      "source_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "bank_hash": "e69e559ca7b6c9d0a743d9ab9c4422604ebc9c23acbf18d875ea65cef00fb486",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "missing",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Odd k, the expression and triangular requirement remain. The prime condition and witness verification are omitted. Many extra conditions could fit5, so do not claim uniqueness.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 120,
+      "eligible": false,
+      "source_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "bank_hash": "6cc7da2d2eb96e944ff389bb7541a4ae7d649bf6af374505f8f0ee764737c015",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "missing",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "Clue2 still states the original question verbatim in meaning. Prefixing cannot repair this direct question leak.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 129,
+      "eligible": true,
+      "source_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "bank_hash": "232428fd5cdc1bb0c62af141b831fcb6ea3a241cd2a01d1714ff8e1744607b14",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "c0c19ef674b2b4d67b7fb0bc43aa6db68ae00ca405e6593f0cf32f7449e896b6",
+      "manual_content_pass": true,
+      "reason": "Alphabet/adjacency, base case and recurrence remain, but length and even remainder target/modulus are absent. This is very ambiguous yet not a complete original task or computed solution.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 137,
+      "eligible": true,
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "bank_hash": "b42a6aca3399a6e428171844cc547d4718a9e259ddd1e4373dd022ce59ae77ac",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "b0f2f97476a97bd34c64b27457b21dd91740ef456ea3ed2888e3f74bcc2a225f",
+      "manual_content_pass": true,
+      "reason": "Graph/edge relation, equal group sizes, known degrees3 and4 and unknown degree d remain. The degree-sum/handshaking derivation is absent. This is genuine partial premise information; the missing degree must be inferred.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    }
+  ]
+}

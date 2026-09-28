@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-09-20T11:07:43.577356+00:00",
+  "stage": "Retry outputs reviewed while support audits running; no audit results or student results inspected",
+  "reviewer": "assistant analytic review, not independent human gold",
+  "rows": [
+    {
+      "source_index": 63,
+      "bank_key": "63:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "49de4bbf41a347fb9ba6128a6e007a1934316e0d06d85aadb8cc45efdbbe273f",
+      "explicit_target_role": true,
+      "clue_count": 3,
+      "public_clue_word_count": 39,
+      "note": "Potential complete-solution exposure: convergence throughout |z|<1 and boundary nonconvergence already determine radius1. Withholding factorial powers does not withhold this proof. Ratio at z=0 needs conventional separate treatment because the literal ratio is0/0."
+    },
+    {
+      "source_index": 120,
+      "bank_key": "120:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "4bbb5c09c45ac7d94716381429cfd3e4692dcc848bcfdc88fa287964b27bd620",
+      "explicit_target_role": true,
+      "clue_count": 3,
+      "public_clue_word_count": 37,
+      "note": "Target retained; prime and divisibility link omitted. Both7 and13 have multiplicative order6 for base10, and thus neither can be the least divisor of a decimal repunit. Original prime is not uniquely determined. Do not insert a prime bound after outcomes."
+    }
+  ],
+  "modular_order_checks": {
+    "7": 6,
+    "13": 6
+  }
+}

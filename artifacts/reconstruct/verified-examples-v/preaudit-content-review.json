@@ -1,0 +1,73 @@
+{
+  "stage": "before teacher audit outcomes and before any D4 student output",
+  "reviewer": "assistant",
+  "notes_are_hypotheses_not_gate_overrides": true,
+  "rows": [
+    {
+      "source_index": 0,
+      "bank_key": "0:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "3043195308ac3b196fa2a874c666aedbd3c41f9487aa7115aabe2967812799da",
+      "note": "Clues are true but remove the quadrature/integral origin entirely. A valid algebra problem is easy to form; recovering the original integral task remains uncertain. Do not add hints based on student outcomes."
+    },
+    {
+      "source_index": 13,
+      "bank_key": "13:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "7058a9913074243ebcfa82f9ed9d1a1dd03e98b01f4a93df83536862544febe0",
+      "note": "Two supported distinct facts; product target absent. No direct original-question copy seen."
+    },
+    {
+      "source_index": 46,
+      "bank_key": "46:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "c1a86c636cd14dd881b253f33736d34d30e74355b9a146bde34b366ac6ff9513",
+      "note": "Column-choice encoding and bottom-to-top rule retain structure while hiding heights. First and third clues overlap; support audit must assess distinctness. No missing numerical heights may be silently supplied."
+    },
+    {
+      "source_index": 63,
+      "bank_key": "63:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "f46b7179402401a3b88d058ef97beb40ba2acaf302c0d6dca1d85f5079a4999d",
+      "note": "Potential nearly complete-proof exposure: inside/boundary/outside convergence behavior fully determines radius1, although exact series is missing. Need disclosure review, not automatic acceptance based on one withheld formula."
+    },
+    {
+      "source_index": 62,
+      "bank_key": "62:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "note": "Potential complete-solution exposure: the negative-power term and entire regular part already yield the full convergence annulus. Missing target words/translation center may not be enough. Keep pending full disclosure review."
+    },
+    {
+      "source_index": 118,
+      "bank_key": "118:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "853afea703496b94e87f664b310c97324fc48b426cbb1048f2b6392bb4681596",
+      "note": "Associated computed value has no defined link to the candidate integer. This may be a local-interpretability/support defect and multiple clues merely restate properties of3. Do not repair from student performance."
+    },
+    {
+      "source_index": 96,
+      "bank_key": "96:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "e72605078dc7e1280cc5cbe1c7bc62eebd04704ab7e3c6d92e8e0e08d7dcc037",
+      "note": "Supported asymptotic relations, but original g, sine and normalization are absent. Broad family ambiguity is expected; no conclusion of original recoverability yet."
+    },
+    {
+      "source_index": 120,
+      "bank_key": "120:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "9d44f2b6645feb122a205578a0d81355d49874b9a7f5db1fbc9476a06eaebb2f",
+      "note": "Two supported arithmetic facts leave a nontrivial connection between divisibility by7, order6 and smaller factor3. Source target remains absent."
+    },
+    {
+      "source_index": 129,
+      "bank_key": "129:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "d23d550f455d75bd074cddb314e1361dead12d267795cf2e88129a771f38b7e5",
+      "note": "True recurrence and symmetry, but total length and modulus both missing. Many pairs can produce1392; original recoverability is uncertain, not established by converter explanation. The phrase four classes relies on the singleton central digit3 being implicit."
+    },
+    {
+      "source_index": 137,
+      "bank_key": "137:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "f9ece148fd17d8ce9e61587883764b8b01fd30bcef5a364ac2fcdbef4ba8c650",
+      "note": "Equal degree groups and planar identities constrain the sum of group degrees, but exact degrees absent. Candidate must choose degrees rather than copy original; review simple maximal-planar domains and existence."
+    },
+    {
+      "source_index": 80,
+      "bank_key": "80:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "b61445aeca8418934e97eed051e8f0378016a4f4859ca37964c616d1d9b2840c",
+      "note": "The integrand, zero curl, Green identity and disk domain expose an entire zero-integral proof. Withholding an irrelevant radius cannot suffice for non-disclosure."
+    }
+  ]
+}

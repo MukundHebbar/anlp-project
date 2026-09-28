@@ -1,0 +1,112 @@
+{
+  "0:prefix3:0": {
+    "source_index": 0,
+    "arm": "prefix3",
+    "bank_key": "0:AF_prefix3:9aee6f3e9338075acfe62f09e06c88b84230365d7e51b789c2a423459d71b0d8",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "4",
+      "clues": [
+        "The function f is a polynomial of degree at most 2.",
+        "The numbers alpha and beta are chosen so that an integral identity holds for every polynomial f in that class.",
+        "The integral is taken from 0 to an unreported positive endpoint L."
+      ],
+      "rendered_clues": "- The function f is a polynomial of degree at most 2.\n- The numbers alpha and beta are chosen so that an integral identity holds for every polynomial f in that class.\n- The integral is taken from 0 to an unreported positive endpoint L.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_prefix3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "e2770f364de10e145dd78cadb4a381e9dbb364080404ece17b5b12d0285c8dc0",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 4\nOBSERVATIONS:\n- The function f is a polynomial of degree at most 2.\n- The numbers alpha and beta are chosen so that an integral identity holds for every polynomial f in that class.\n- The integral is taken from 0 to an unreported positive endpoint L.",
+    "rendered_input_hash": "5d9822447602925dd0f61ecac9191ed4ffa55d3a1176d30fe7d7209d3a634922"
+  },
+  "13:prefix3:0": {
+    "source_index": 13,
+    "arm": "prefix3",
+    "bank_key": "13:AF_prefix3:ad8cb80c8baa82fe7fc5e5879265c036eb3037baa2fad63030442ac967bf1c01",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "Let N be the factorial of an unreported positive integer k, and let m be the product of all positive integers less than N that are invertible modulo N.",
+        "The requested value is the remainder when m is divided by N.",
+        "A positive integer a below N is included in m exactly when gcd(a,N)=1."
+      ],
+      "rendered_clues": "- Let N be the factorial of an unreported positive integer k, and let m be the product of all positive integers less than N that are invertible modulo N.\n- The requested value is the remainder when m is divided by N.\n- A positive integer a below N is included in m exactly when gcd(a,N)=1.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_prefix3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "95915ba69e04cfc63687b756727734844e0f012a2a98bb51a98425179ac2427f",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1\nOBSERVATIONS:\n- Let N be the factorial of an unreported positive integer k, and let m be the product of all positive integers less than N that are invertible modulo N.\n- The requested value is the remainder when m is divided by N.\n- A positive integer a below N is included in m exactly when gcd(a,N)=1.",
+    "rendered_input_hash": "39c951934f29ea7ab778dedc1faa06d5108d989560c798173a4f6f158d30b4f2"
+  },
+  "96:prefix3:0": {
+    "source_index": 96,
+    "arm": "prefix3",
+    "bank_key": "96:AF_prefix3:4b74a4789104831a73d41500ac1ccecd92ffb4af6336a439fa290e70a434d75a",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{12}",
+      "clues": [
+        "The target is the limit as x tends to 0 of sin(F(x))/x^8, where F(x) is the integral from x^3 to x^2 of H(t) dt and H(t) is the integral from 0 to t of g(s^2) ds.",
+        "The function g has a derivative defined on [-1,1] and satisfies g(0)=0; its derivative at 0 is an unreported number a.",
+        "Near 0, the derivative condition implies g(s^2)=a s^2+o(s^2), so the inner antiderivative H(t) has leading term a t^3/3."
+      ],
+      "rendered_clues": "- The target is the limit as x tends to 0 of sin(F(x))/x^8, where F(x) is the integral from x^3 to x^2 of H(t) dt and H(t) is the integral from 0 to t of g(s^2) ds.\n- The function g has a derivative defined on [-1,1] and satisfies g(0)=0; its derivative at 0 is an unreported number a.\n- Near 0, the derivative condition implies g(s^2)=a s^2+o(s^2), so the inner antiderivative H(t) has leading term a t^3/3.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_prefix3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "be83e2da1c511539978ddd02ea36b1c39264f057be0461885af9f359f02884e1",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{12}\nOBSERVATIONS:\n- The target is the limit as x tends to 0 of sin(F(x))/x^8, where F(x) is the integral from x^3 to x^2 of H(t) dt and H(t) is the integral from 0 to t of g(s^2) ds.\n- The function g has a derivative defined on [-1,1] and satisfies g(0)=0; its derivative at 0 is an unreported number a.\n- Near 0, the derivative condition implies g(s^2)=a s^2+o(s^2), so the inner antiderivative H(t) has leading term a t^3/3.",
+    "rendered_input_hash": "c5e84a8264268ef323dec4e71067f487de2be09383330a898df6b5fcefaf05a1"
+  },
+  "129:prefix3:0": {
+    "source_index": 129,
+    "arm": "prefix3",
+    "bank_key": "129:AF_prefix3:232428fd5cdc1bb0c62af141b831fcb6ea3a241cd2a01d1714ff8e1744607b14",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1392",
+      "clues": [
+        "Words are formed from the alphabet {0,1,2,3,4,5,6}, and each pair of neighboring digits must differ by exactly 1.",
+        "Let f_k(d) count valid k-digit words ending in digit d; for k=1, every digit is possible, so f_1(d)=1 for all d in {0,1,2,3,4,5,6}.",
+        "For k at least 1, the recurrence is f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0."
+      ],
+      "rendered_clues": "- Words are formed from the alphabet {0,1,2,3,4,5,6}, and each pair of neighboring digits must differ by exactly 1.\n- Let f_k(d) count valid k-digit words ending in digit d; for k=1, every digit is possible, so f_1(d)=1 for all d in {0,1,2,3,4,5,6}.\n- For k at least 1, the recurrence is f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_prefix3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "ce6aeb9a1b88b7e4c09b63d54388370616f3a260828b65a5d4783f222a274bee",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\n- Words are formed from the alphabet {0,1,2,3,4,5,6}, and each pair of neighboring digits must differ by exactly 1.\n- Let f_k(d) count valid k-digit words ending in digit d; for k=1, every digit is possible, so f_1(d)=1 for all d in {0,1,2,3,4,5,6}.\n- For k at least 1, the recurrence is f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+    "rendered_input_hash": "b1e0ee5efd214f4becf052f366a6bebb1cd6b571d8a958d516a7c39deaf8b2e5"
+  },
+  "137:prefix3:0": {
+    "source_index": 137,
+    "arm": "prefix3",
+    "bank_key": "137:AF_prefix3:b42a6aca3399a6e428171844cc547d4718a9e259ddd1e4373dd022ce59ae77ac",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "6",
+      "clues": [
+        "The graph is maximal planar with n vertices and e edges, and for such a graph e = 3n - 6.",
+        "The n vertices are partitioned into three equal-sized groups, so each group has n/3 vertices.",
+        "Two of the degree groups consist of vertices of degree 3 and degree 4; the third group has an unreported integer degree d."
+      ],
+      "rendered_clues": "- The graph is maximal planar with n vertices and e edges, and for such a graph e = 3n - 6.\n- The n vertices are partitioned into three equal-sized groups, so each group has n/3 vertices.\n- Two of the degree groups consist of vertices of degree 3 and degree 4; the third group has an unreported integer degree d.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "frozen_prefix3",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "c5753b9c0e601313ef55fdbd561c13821177ffdc62a9b2f2cc31ca147b6e02ae",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 6\nOBSERVATIONS:\n- The graph is maximal planar with n vertices and e edges, and for such a graph e = 3n - 6.\n- The n vertices are partitioned into three equal-sized groups, so each group has n/3 vertices.\n- Two of the degree groups consist of vertices of degree 3 and degree 4; the third group has an unreported integer degree d.",
+    "rendered_input_hash": "a03923cc0f0df5b67191394538782c24ad53011d1dfa72cac9c70d1f33b6d69b"
+  }
+}

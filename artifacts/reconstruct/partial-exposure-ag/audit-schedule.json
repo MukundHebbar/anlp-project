@@ -1,0 +1,56 @@
+[
+  {
+    "prompt": "audit_support_p1",
+    "indices": [
+      0,
+      13,
+      46,
+      62,
+      63,
+      80,
+      87,
+      96,
+      118,
+      120,
+      129,
+      137
+    ],
+    "cascade": true,
+    "requires_prior_accept": []
+  },
+  {
+    "prompt": "audit_public_p5",
+    "indices": [
+      0,
+      13,
+      46,
+      62,
+      87,
+      96,
+      118,
+      120,
+      129,
+      137
+    ],
+    "cascade": true,
+    "requires_prior_accept": [
+      "audit_support_p1"
+    ]
+  },
+  {
+    "prompt": "audit_source_disclosure_p4",
+    "indices": [
+      0,
+      13,
+      46,
+      96,
+      129,
+      137
+    ],
+    "cascade": true,
+    "requires_prior_accept": [
+      "audit_support_p1",
+      "audit_public_p5"
+    ]
+  }
+]

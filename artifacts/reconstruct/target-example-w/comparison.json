@@ -1,0 +1,381 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-w.md",
+  "arms": {
+    "V": {
+      "planned_draws": 16,
+      "parsed": 16,
+      "scored": 16,
+      "raw_mean": 18.75,
+      "planned_score_bounds": [
+        18.75,
+        18.75
+      ],
+      "complete_family_ci95": [
+        12.5,
+        25.0
+      ],
+      "primary_checked_original": 0,
+      "primary_checked_grounded": 0,
+      "accepted_source_count": 8,
+      "original_source_denominator": 12,
+      "semantic_returned": 16,
+      "semantic_resolved": 16,
+      "mean_prompt_tokens": 356.75,
+      "mean_completion_tokens": 206.0625
+    },
+    "W": {
+      "planned_draws": 16,
+      "parsed": 16,
+      "scored": 16,
+      "raw_mean": 12.5,
+      "planned_score_bounds": [
+        12.5,
+        12.5
+      ],
+      "complete_family_ci95": [
+        3.125,
+        21.875
+      ],
+      "primary_checked_original": 0,
+      "primary_checked_grounded": 0,
+      "accepted_source_count": 8,
+      "original_source_denominator": 12,
+      "semantic_returned": 16,
+      "semantic_resolved": 16,
+      "mean_prompt_tokens": 368.0,
+      "mean_completion_tokens": 231.8125
+    }
+  },
+  "population": {
+    "fixed_student_prompt": "student_p10_recover_original",
+    "paired_common_families": [
+      0,
+      13,
+      118,
+      129,
+      137
+    ],
+    "W_only_eligible": [
+      62,
+      80,
+      120
+    ],
+    "V_only_eligible": [
+      46,
+      87,
+      96
+    ],
+    "original_denominator_each": 12,
+    "paired_unit": "source family, two seeds nested; primary endpoint seed0",
+    "policy": "Compare each response with its own archived evidence. Do not import V responses as W responses. New/removed families separate from paired estimates.",
+    "W_evidence_hashes": {
+      "0": "45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0",
+      "13": "b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d",
+      "62": "23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f",
+      "80": "22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397",
+      "118": "e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411",
+      "120": "75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31",
+      "129": "b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76",
+      "137": "f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4"
+    },
+    "V_evidence_hashes": {
+      "0": "9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6",
+      "13": "d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a",
+      "46": "7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1",
+      "87": "dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d",
+      "96": "7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494",
+      "118": "cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4",
+      "129": "52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd",
+      "137": "e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8"
+    }
+  },
+  "paired_sources": [
+    {
+      "source_index": 0,
+      "score_delta": 25.0,
+      "V_primary_original": false,
+      "W_primary_original": false
+    },
+    {
+      "source_index": 13,
+      "score_delta": -12.5,
+      "V_primary_original": false,
+      "W_primary_original": false
+    },
+    {
+      "source_index": 118,
+      "score_delta": 0.0,
+      "V_primary_original": false,
+      "W_primary_original": false
+    },
+    {
+      "source_index": 129,
+      "score_delta": 0.0,
+      "V_primary_original": false,
+      "W_primary_original": false
+    },
+    {
+      "source_index": 137,
+      "score_delta": -25.0,
+      "V_primary_original": false,
+      "W_primary_original": false
+    }
+  ],
+  "paired_complete_count": 5,
+  "paired_mean_score_delta": -2.5,
+  "paired_score_ci95": [
+    -17.5,
+    12.5
+  ],
+  "W_rows": [
+    {
+      "source_index": 0,
+      "seed": 0,
+      "response_key": "0:45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 251,
+      "prompt_tokens": 350
+    },
+    {
+      "source_index": 13,
+      "seed": 0,
+      "response_key": "13:b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 294,
+      "prompt_tokens": 380
+    },
+    {
+      "source_index": 62,
+      "seed": 0,
+      "response_key": "62:23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 242,
+      "prompt_tokens": 352
+    },
+    {
+      "source_index": 80,
+      "seed": 0,
+      "response_key": "80:22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 155,
+      "prompt_tokens": 380
+    },
+    {
+      "source_index": 118,
+      "seed": 0,
+      "response_key": "118:e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 153,
+      "prompt_tokens": 350
+    },
+    {
+      "source_index": 120,
+      "seed": 0,
+      "response_key": "120:75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 173,
+      "prompt_tokens": 360
+    },
+    {
+      "source_index": 129,
+      "seed": 0,
+      "response_key": "129:b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 235,
+      "prompt_tokens": 415
+    },
+    {
+      "source_index": 137,
+      "seed": 0,
+      "response_key": "137:f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "evidence_hash": "f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 130,
+      "prompt_tokens": 357
+    },
+    {
+      "source_index": 0,
+      "seed": 1,
+      "response_key": "0:45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 638,
+      "prompt_tokens": 350
+    },
+    {
+      "source_index": 13,
+      "seed": 1,
+      "response_key": "13:b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 268,
+      "prompt_tokens": 380
+    },
+    {
+      "source_index": 62,
+      "seed": 1,
+      "response_key": "62:23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 210,
+      "prompt_tokens": 352
+    },
+    {
+      "source_index": 80,
+      "seed": 1,
+      "response_key": "80:22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 260,
+      "prompt_tokens": 380
+    },
+    {
+      "source_index": 118,
+      "seed": 1,
+      "response_key": "118:e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 131,
+      "prompt_tokens": 350
+    },
+    {
+      "source_index": 120,
+      "seed": 1,
+      "response_key": "120:75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 207,
+      "prompt_tokens": 360
+    },
+    {
+      "source_index": 129,
+      "seed": 1,
+      "response_key": "129:b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76",
+      "score": 1,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 230,
+      "prompt_tokens": 415
+    },
+    {
+      "source_index": 137,
+      "seed": 1,
+      "response_key": "137:f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "evidence_hash": "f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4",
+      "score": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "semantic_status": "scored",
+      "exact_bindings": true,
+      "independently_grounded": false,
+      "independently_original": false,
+      "completion_tokens": 132,
+      "prompt_tokens": 357
+    }
+  ],
+  "decision": "Do not promote W: independent mathematical review finds no grounded original recoveries; coverage also fails80%.",
+  "limitations": [
+    "Development comparison, not confirmation; only five shared accepted families.",
+    "Policy changes content and clue count together; no isolated count or target-cue effect.",
+    "One repair exhausted technical retries; retain its exclusion in coverage.",
+    "p3 and semantic evaluators remain provisional; assistant analytic review is not human gold.",
+    "Means on available scores and complete-family intervals are provisional if judgments remain unresolved.",
+    "Zero observed improvement is not proof of equal population performance or a global optimum."
+  ]
+}

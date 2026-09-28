@@ -1,0 +1,123 @@
+{
+  "source46": {
+    "all_positive_partitions_checked": 22,
+    "partitions_giving_560": [
+      [
+        2,
+        3,
+        3
+      ]
+    ]
+  },
+  "source129": {
+    "counts": [
+      {
+        "length": 1,
+        "count": 7,
+        "mod2008": 7
+      },
+      {
+        "length": 2,
+        "count": 12,
+        "mod2008": 12
+      },
+      {
+        "length": 3,
+        "count": 22,
+        "mod2008": 22
+      },
+      {
+        "length": 4,
+        "count": 40,
+        "mod2008": 40
+      },
+      {
+        "length": 5,
+        "count": 74,
+        "mod2008": 74
+      },
+      {
+        "length": 6,
+        "count": 136,
+        "mod2008": 136
+      },
+      {
+        "length": 7,
+        "count": 252,
+        "mod2008": 252
+      },
+      {
+        "length": 8,
+        "count": 464,
+        "mod2008": 464
+      },
+      {
+        "length": 9,
+        "count": 860,
+        "mod2008": 860
+      },
+      {
+        "length": 10,
+        "count": 1584,
+        "mod2008": 1584
+      },
+      {
+        "length": 11,
+        "count": 2936,
+        "mod2008": 928
+      },
+      {
+        "length": 12,
+        "count": 5408,
+        "mod2008": 1392
+      },
+      {
+        "length": 13,
+        "count": 10024,
+        "mod2008": 1992
+      },
+      {
+        "length": 14,
+        "count": 18464,
+        "mod2008": 392
+      },
+      {
+        "length": 15,
+        "count": 34224,
+        "mod2008": 88
+      },
+      {
+        "length": 16,
+        "count": 63040,
+        "mod2008": 792
+      },
+      {
+        "length": 17,
+        "count": 116848,
+        "mod2008": 384
+      },
+      {
+        "length": 18,
+        "count": 215232,
+        "mod2008": 376
+      },
+      {
+        "length": 19,
+        "count": 398944,
+        "mod2008": 1360
+      }
+    ],
+    "lengths_giving1392": [
+      12
+    ]
+  },
+  "source96": {
+    "derivation": "If g(0)=0 and g differentiable at0 with derivative a, then g(s\u00b2)=a*s\u00b2+o(s\u00b2), H(t)=a*t\u00b3/3+o(t\u00b3), F(x)=a*(x^8-x^12)/12+o(x^8), so sin(F(x))/x^8 -> a/12. The given1/12 determines a=1."
+  },
+  "source62": {
+    "caveat": "Converter claims infinity forces center pi, which is false for an exterior Laurent annulus centered elsewhere. For c=0, sin(z)/(z-pi)^2 has an exterior Laurent expansion for |z|>pi with outer radius infinity. Center pi is plausible but not unique. Do not assert unique identification."
+  },
+  "source87": {
+    "caveat": "The spike counterexample satisfies f(x)/x^p ->0 for every p<3, so exponent2 is not uniquely identified. Open-ended ambiguity is allowed; do not assert it must be2."
+  }
+}

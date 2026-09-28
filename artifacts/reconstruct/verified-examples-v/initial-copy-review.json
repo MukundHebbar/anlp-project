@@ -1,0 +1,93 @@
+{
+  "provenance": "assistant mathematical and source-semantic review; no independent human gold",
+  "partial_review": true,
+  "unresolved_sources": [
+    129
+  ],
+  "rows": [
+    {
+      "source_index": 13,
+      "bank_key": "13:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "7058a9913074243ebcfa82f9ed9d1a1dd03e98b01f4a93df83536862544febe0",
+      "source_record_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "copy_output_hash": "33bcbf9d609f7c3f3ec07881f0a4e222be90adb0b58fe9c8192667dfb2191dc9",
+      "copy_status": "direct_candidate",
+      "mathematical_support_passed": true,
+      "no_direct_source_disclosure": true,
+      "no_complete_solution_exposed": true,
+      "copy_challenge_reviewed": true,
+      "development_eligible_after_review": true,
+      "reason": "The attack asks for the square residue of one unit. The source asks for the product of all units modulo24. These are different targets and different operands. The product target and pairing argument remain missing; the copied lemma is a score0 restatement, not original recovery."
+    },
+    {
+      "source_index": 46,
+      "bank_key": "46:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "c1a86c636cd14dd881b253f33736d34d30e74355b9a146bde34b366ac6ff9513",
+      "source_record_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "copy_output_hash": "5e0fed007168832367b0d0c3ad6e8e8dd2dee9b42b5d8c55d7ec035882f114dc",
+      "copy_status": "no_direct_reconstruction",
+      "mathematical_support_passed": true,
+      "no_direct_source_disclosure": true,
+      "no_complete_solution_exposed": true,
+      "copy_challenge_reviewed": true,
+      "development_eligible_after_review": true,
+      "reason": "No direct candidate. Column multiplicities and total targets are absent. Restoring heights3,3,2 from the answer/counting structure requires inference, and the multinomial calculation is not supplied."
+    },
+    {
+      "source_index": 0,
+      "bank_key": "0:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "3043195308ac3b196fa2a874c666aedbd3c41f9487aa7115aabe2967812799da",
+      "source_record_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "copy_output_hash": "781cd1551fa80835bde352bcd4c1a36e6285465b78959c2b07ca3c09d5ca3450",
+      "copy_status": "no_direct_reconstruction",
+      "mathematical_support_passed": true,
+      "no_direct_source_disclosure": true,
+      "no_complete_solution_exposed": true,
+      "copy_challenge_reviewed": true,
+      "development_eligible_after_review": true,
+      "reason": "No direct candidate. The original target3(alpha-beta)\u00b2 is absent. The moment equations can replace the original integral premise by the recorded basis equivalence, but selecting the requested target still requires inference; neither the target nor the moment-extraction argument is given."
+    },
+    {
+      "source_index": 118,
+      "bank_key": "118:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "853afea703496b94e87f664b310c97324fc48b426cbb1048f2b6392bb4681596",
+      "source_record_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "copy_output_hash": "065932854342e4b0fd2ddaf0ed7ae468e5b5eb2c31640af92c238af787721665",
+      "copy_status": "no_direct_reconstruction",
+      "mathematical_support_passed": true,
+      "no_direct_source_disclosure": true,
+      "no_complete_solution_exposed": true,
+      "copy_challenge_reviewed": true,
+      "development_eligible_after_review": true,
+      "reason": "No direct candidate. The essential formula linking the odd witness to the triangular prime3 is absent. Original recovery requires that relation, not just an arbitrary odd integer or the fact3 is prime."
+    },
+    {
+      "source_index": 87,
+      "bank_key": "87:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "cffe487154a09845cc5c789b46c1ac28faacb206e9d75a0ca418c895a28f1e9f",
+      "source_record_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "copy_output_hash": "f3a3a4772a5fb782b9eafa09033a4a211884e53cc236a81c3e190c61067edffb",
+      "copy_status": "direct_candidate",
+      "mathematical_support_passed": true,
+      "no_direct_source_disclosure": true,
+      "no_complete_solution_exposed": true,
+      "copy_challenge_reviewed": true,
+      "development_eligible_after_review": true,
+      "reason": "The attack asks continuity at reciprocal points, a proposition directly supplied by a clue. The original asks whether a small-o limit premise guarantees differentiability in a neighborhood. The premise, constructed witness values, and verification of that premise remain absent. This copied local lemma is not original recovery."
+    },
+    {
+      "source_index": 137,
+      "bank_key": "137:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "f9ece148fd17d8ce9e61587883764b8b01fd30bcef5a364ac2fcdbef4ba8c650",
+      "source_record_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "copy_output_hash": "2c30a19c6c56c70decc11213c6c1a403954806553750c582040035a3f57eeed3",
+      "copy_status": "direct_candidate",
+      "mathematical_support_passed": true,
+      "no_direct_source_disclosure": true,
+      "no_complete_solution_exposed": true,
+      "copy_challenge_reviewed": true,
+      "development_eligible_after_review": true,
+      "reason": "The attack asks for the constant subtracted in the edge formula. The source asks for the number of vertices given a degree distribution. The target and missing degrees3,4,5 are not copied by this attack. Degree inference and graph existence remain substantive obligations."
+    }
+  ]
+}

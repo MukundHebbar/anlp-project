@@ -1,0 +1,72 @@
+{
+  "reviewer": "Assistant analytic review; teacher semantic labels separate",
+  "endpoint_note": "Meaningful recovery excludes answer-in-premise shortcuts even if an equivalence judge finds an implicit mathematically equivalent constraint. Preserve raw semantic matches separately.",
+  "rows": [
+    {
+      "response_key": "5:zero_bridge:0",
+      "source_index": 5,
+      "response_output_hash": "ad4b3e7ef16e830bdbe149207a9c2a42a91a061710503d2f0027c3de71e5911d",
+      "evidence_hash": "24a99c086e9282e9c177dd9210fbb16ca7cfa46edf779a18cfd55728366c37c8",
+      "semantic_equivalent": true,
+      "meaningful_semantic_recovery": true,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": false,
+      "reason": "Exactly one cycle>=51 equals at least one because two cannot fit. Correct original question; justification invokes a counting formula without deriving the essential fixed-cycle count."
+    },
+    {
+      "response_key": "10:zero_bridge:0",
+      "source_index": 10,
+      "response_output_hash": "2d5a5bcb30726fd7c3f2746f406ef984fff50a56b77ccb75d9fa62b1c6ddb5e7",
+      "evidence_hash": "199eeecb75e20cdfe6eb933ba029c6ed8453b2cba31bb65d282362386e9e2d69",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": true,
+      "reason": "Assumes n! mod61=27 in the question, directly supplying the requested answer."
+    },
+    {
+      "response_key": "16:zero_bridge:0",
+      "source_index": 16,
+      "response_output_hash": "a40969e0335658e25ec800130513146846e471f0190580c4898f45f4f5a78b14",
+      "evidence_hash": "16b801c8bdcba34b94fc5c85497dfbafb912fbb11b2be09b0371da28add9ad0a",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": false,
+      "reason": "Asks for N instead of point count, uses incorrect divisor exponent, and miscomputes16*15625."
+    },
+    {
+      "response_key": "54:zero_bridge:0",
+      "source_index": 54,
+      "response_output_hash": "2b3b7905e6bf5a34095bc0203599a8860143fb736b028291c7ff0b6b0bd6f1e2",
+      "evidence_hash": "ed20477e7afe2c774910d10a8588bdf7f547b57139302b05ab1fd608ba22e7fc",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": false,
+      "reason": "Leaves R unspecified; maximum depends on R."
+    },
+    {
+      "response_key": "67:zero_bridge:0",
+      "source_index": 67,
+      "response_output_hash": "6cba5fb5fc9c7f2d2d0a483442b70b934ca0ce831a0dd497a854ee2e8d3ff33f",
+      "evidence_hash": "d48e2d7a5074e2086cb7b158cf70c58c8c0816a479be9c9ef4814aa9300c0338",
+      "semantic_equivalent": true,
+      "meaningful_semantic_recovery": true,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": false,
+      "reason": "Correct original question with c1, but verification merely asserts inverse-entry sum1 without establishing A^-1 ones=e1."
+    },
+    {
+      "response_key": "113:zero_bridge:0",
+      "source_index": 113,
+      "response_output_hash": "45d4a37fd7d6d34e1dcebc0b13f5414622d6f658f41ef05db0c993f619dd464d",
+      "evidence_hash": "4e1bbe8c3b15f27ef376307e5ecabf37859f788c067c753f95dd09efc3ccb319",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": true,
+      "reason": "Question assumes the requested limit1/e; verification drops the nth root and recognizes divergence, then asserts1/e."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "reconstruct_judge_fixtures_v1",
+  "split_role": "adaptive_development_only",
+  "independent_families": 2,
+  "fixtures": [
+    {
+      "id": "production_divisor_wording_original",
+      "family_id": "divisor_gaps",
+      "category": "wording_adjudication",
+      "final_answer": "4",
+      "clues": [
+        "Let\n\n\\[\n\\Delta_i=d_{i+1}-d_i \\qquad (1\\le i\\le k-1).\n\\]\n\nThe condition says\n\n\\[\n\\Delta_1:\\Delta_2:\\cdots:\\Delta_{k-1}=1:2:\\cdots:(k-1),\n\\]\n\nso there is a constant \\(c>0\\) such that\n\n\\[\n\\Delta_i=ci.\n\\]\n\nNow \\(d_2\\) is the smallest prime divisor of \\(n\\); call it \\(p\\). Then\n\n\\[\n\\Delta_1=d_2-d_1=p-1,\n\\]\n\nso \\(c=p-1\\). Hence\n\n\\[\nd_i=1+\\sum_{j=1}^{i-1}(p-1)j\n=1+(p-1)\\frac{i(i-1)}2.\n\\]\n\nIn particular,\n\n\\[\nd_{k-1}=1+(p-1)\\frac{(k-1)(k-2)}2.\n\\]\n\nSince \\(d_{k-1}\\mid d_k=n\\), there is an integer \\(m\\ge 2\\) such that\n\n\\[\nd_k=m d_{k-1}.\n\\]\n\nTherefore\n\n\\[\nd_k-d_{k-1}=(m-1)d_{k-1}\\ge d_{k-1}.\n\\]\n\nBut also\n\n\\[\nd_k-d_{k-1}=\\Delta_{k-1}=(p-1)(k-1).\n\\]\n\nThus\n\n\\[\n1+(p-1)\\frac{(k-1)(k-2)}2 \\le (p-1)(k-1).\n\\]\n\nLet \\(q=p-1\\ge 1\\). Then\n\n\\[\n1\\le q(k-1)-q\\frac{(k-1)(k-2)}2\n=q(k-1)\\frac{4-k}{2}.\n\\]\n\nThe left side is positive, so we must have \\(k<4\\). Since \\(n\\) is composite, \\(k\\ge 3\\). Hence\n\n\\[\nk=3.\n\\]\n\nSo \\(n\\) has exactly three positive divisors, meaning \\(n\\) is the square of a prime. Since \\(d_2=p\\), we have\n\n\\[\nn=p^2.\n\\]\n\nOn the other hand, using the formula for \\(d_3\\),\n\n\\[\nn=d_3=1+3(p-1)=3p-2.\n\\]\n\nTherefore\n\n\\[\np^2=3p-2,\n\\]\n\nso\n\n\\[\np^2-3p+2=0,\n\\]\n\n\\[\n(p-1)(p-2)=0.\n\\]\n\nSince \\(p\\) is prime, \\(p=2\\). Thus\n\n\\[\nn=p^2=4.\n\\]\n\nChecking: the divisors of \\(4\\) are \\(1,2,4\\), and the consecutive differences are\n\n\\[\n2-1=1,\\qquad 4-2=2,\n\\]\n\nwhose ratio is \\(1:2\\). Therefore the only composite positive integer satisfying the condition is\n\n\\[\n\\boxed{4}.\n\\]"
+      ],
+      "student_response": {
+        "question": "What is the only composite positive integer such that the ratios of the consecutive differences of its divisors (including 1 and itself) are 1:2?",
+        "justification": "Let $ \\Delta_i = d_{i+1} - d_i $ for $ 1 \\le i \\le k-1 $. The condition $ \\Delta_1:\\Delta_2:\\cdots:\\Delta_{k-1} = 1:2:\\cdots:(k-1) $ implies $ \\Delta_i = ci $ for some $ c > 0 $. Using the formula for $ d_i $, we find $ d_{k-1} = 1 + (p-1)\\frac{(k-1)(k-2)}{2} $. Since $ d_{k-1} \\mid d_k = n $, there is an integer $ m \\ge 2 $ such that $ d_k = m d_{k-1} $. This leads to the inequality $ 1 \\le q(k-1)\\frac{4-k}{2} $, which implies $ k < 4 $. Since $ n $ is composite, $ k \\ge 3 $, so $ k = 3 $. Thus, $ n $ has exactly three positive divisors, meaning $ n $ is the square of a prime. Using the formula for $ d_3 $, we find $ n = 3p - 2 $, and solving $ p^2 = 3p - 2 $ gives $ p = 2 $, so $ n = 4 $.",
+        "assumptions": [
+          "The divisors are considered in increasing order including 1 and the number itself.",
+          "The ratio of consecutive differences is 1:2 for the first two differences."
+        ]
+      },
+      "acceptable_scores": [
+        3,
+        4
+      ],
+      "reference": {
+        "provenance": "assistant mathematical review; linguistic interpretation pending independent adjudication",
+        "derivation": "Interpreting the complete gap ratio list1:2 as two gaps gives three divisors1,p,p^2. Then p(p-1)=2(p-1) forcesp=2,n=4. The original judge rejected based on differing generality.",
+        "caveat": "Original wording may be read ambiguously; report separately from mechanically certified accuracy."
+      }
+    },
+    {
+      "id": "production_divisor_wording_clarified",
+      "family_id": "divisor_gaps",
+      "category": "valid_alternative",
+      "final_answer": "4",
+      "clues": [
+        "Let\n\n\\[\n\\Delta_i=d_{i+1}-d_i \\qquad (1\\le i\\le k-1).\n\\]\n\nThe condition says\n\n\\[\n\\Delta_1:\\Delta_2:\\cdots:\\Delta_{k-1}=1:2:\\cdots:(k-1),\n\\]\n\nso there is a constant \\(c>0\\) such that\n\n\\[\n\\Delta_i=ci.\n\\]\n\nNow \\(d_2\\) is the smallest prime divisor of \\(n\\); call it \\(p\\). Then\n\n\\[\n\\Delta_1=d_2-d_1=p-1,\n\\]\n\nso \\(c=p-1\\). Hence\n\n\\[\nd_i=1+\\sum_{j=1}^{i-1}(p-1)j\n=1+(p-1)\\frac{i(i-1)}2.\n\\]\n\nIn particular,\n\n\\[\nd_{k-1}=1+(p-1)\\frac{(k-1)(k-2)}2.\n\\]\n\nSince \\(d_{k-1}\\mid d_k=n\\), there is an integer \\(m\\ge 2\\) such that\n\n\\[\nd_k=m d_{k-1}.\n\\]\n\nTherefore\n\n\\[\nd_k-d_{k-1}=(m-1)d_{k-1}\\ge d_{k-1}.\n\\]\n\nBut also\n\n\\[\nd_k-d_{k-1}=\\Delta_{k-1}=(p-1)(k-1).\n\\]\n\nThus\n\n\\[\n1+(p-1)\\frac{(k-1)(k-2)}2 \\le (p-1)(k-1).\n\\]\n\nLet \\(q=p-1\\ge 1\\). Then\n\n\\[\n1\\le q(k-1)-q\\frac{(k-1)(k-2)}2\n=q(k-1)\\frac{4-k}{2}.\n\\]\n\nThe left side is positive, so we must have \\(k<4\\). Since \\(n\\) is composite, \\(k\\ge 3\\). Hence\n\n\\[\nk=3.\n\\]\n\nSo \\(n\\) has exactly three positive divisors, meaning \\(n\\) is the square of a prime. Since \\(d_2=p\\), we have\n\n\\[\nn=p^2.\n\\]\n\nOn the other hand, using the formula for \\(d_3\\),\n\n\\[\nn=d_3=1+3(p-1)=3p-2.\n\\]\n\nTherefore\n\n\\[\np^2=3p-2,\n\\]\n\nso\n\n\\[\np^2-3p+2=0,\n\\]\n\n\\[\n(p-1)(p-2)=0.\n\\]\n\nSince \\(p\\) is prime, \\(p=2\\). Thus\n\n\\[\nn=p^2=4.\n\\]\n\nChecking: the divisors of \\(4\\) are \\(1,2,4\\), and the consecutive differences are\n\n\\[\n2-1=1,\\qquad 4-2=2,\n\\]\n\nwhose ratio is \\(1:2\\). Therefore the only composite positive integer satisfying the condition is\n\n\\[\n\\boxed{4}.\n\\]"
+      ],
+      "student_response": {
+        "question": "Find the composite positive integer n having exactly three positive divisors 1=d_1<d_2<d_3=n, with d_3-d_2=2(d_2-d_1).",
+        "justification": "Exactly three divisors implies n=p^2 for a prime p=d_2. The gap equation gives p^2-p=2(p-1). Dividing by p-1 yields p=2, so n=4; its divisors1,2,4 verify both conditions. With k=3 and c=p-1, the general divisor-gap identities and last-gap bound in the observations specialize consistently to this case.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant derivation",
+        "derivation": "The only positive prime solution of(p-1)(p-2)=0 is2; n=4 exists. Every general gap observation specializes to k=3."
+      }
+    },
+    {
+      "id": "production_logistic_no_sign_change",
+      "family_id": "logistic_sign",
+      "category": "violated_clue",
+      "final_answer": "1",
+      "clues": [
+        "For F(x)=r x(1-x), the difference F(x)-x equals r x(p-x), so the sign of F(x)-x changes at the fixed point p.",
+        "The fixed points of F(x)=r x(1-x) are 0 and p=1-1/r=t/(1+t), and this p satisfies p\u2264r/4.",
+        "The answer is the limiting value of the recursively defined sequence."
+      ],
+      "student_response": {
+        "question": "Let a_1=1/2 and define a_{n+1}=a_n(1-a_n) for n\u22651. Find lim_{n\u2192\u221e} n a_n.",
+        "justification": "For F(x)=x(1-x), the fixed points satisfy x=x(1-x), so the only fixed point in [0,1] is p=0. Also F(x)-x=-x^2, so for x>0 the sequence decreases to 0. Then 1/a_{n+1}-1/a_n = 1/(1-a_n) \u2192 1, hence (1/a_n)/n \u2192 1, so n a_n \u2192 1. This matches the observations with r=1: p=1-1/r=0, p\u2264r/4, and the sign of F(x)-x changes at p.",
+        "assumptions": [
+          "I chose the initial value a_1=1/2; any 0<a_1<1 gives the same limit.",
+          "I interpreted the logistic-map observations as applying to the case r=1, so t=0 in p=t/(1+t)."
+        ]
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant exact algebra",
+        "derivation": "At r=1,p=0, F(x)-x=-x^2 is negative on both sides of0, so the claimed sign change is false. The asymptotic limit1 itself is valid; do not conflate answer correctness with clue compatibility."
+      }
+    },
+    {
+      "id": "production_logistic_sign_change_valid",
+      "family_id": "logistic_sign",
+      "category": "valid_alternative",
+      "final_answer": "1",
+      "clues": [
+        "For F(x)=r x(1-x), the difference F(x)-x equals r x(p-x), so the sign of F(x)-x changes at the fixed point p.",
+        "The fixed points of F(x)=r x(1-x) are 0 and p=1-1/r=t/(1+t), and this p satisfies p\u2264r/4.",
+        "The answer is the limiting value of the recursively defined sequence."
+      ],
+      "student_response": {
+        "question": "Let a_1=1/2 and a_{n+1}=2a_n-a_n^2 for n>=1. Find the limit of a_n.",
+        "justification": "Set x_n=a_n/2. Then x_{n+1}=F(x_n)=2x_n(1-x_n), so r=2,t=1 and p=1-1/r=t/(1+t)=1/2=r/4. Its fixed points are0 andp, and F(x)-x=2x(p-x) changes sign atp in the positive domain. Starting x_1=1/4, F is increasing on[0,p] and maps that interval into itself. Hence x_n increases, remains at mostp, and converges to a positive fixed point, necessarilyp. Thus a_n=2x_n tends to1.",
+        "assumptions": [
+          "The rescaling x_n=a_n/2 relates the reconstructed sequence to the displayed logistic map."
+        ]
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant algebra and monotone convergence proof",
+        "derivation": "For0<x<p=1/2, F(x)-x=2x(p-x)>0 and F(x)<=F(p)=p. A positive increasing bounded sequence has positive fixed-point limitp. For x>p, the difference is negative, confirming the sign change."
+      }
+    }
+  ]
+}

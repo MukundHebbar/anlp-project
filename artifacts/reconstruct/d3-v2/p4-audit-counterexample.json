@@ -1,0 +1,53 @@
+{
+  "provenance": "Exact integer arithmetic; assistant interpretation, not human adjudication",
+  "source_index": 122,
+  "bank_key": "122:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+  "bank_output_hash": "d963439cfe505cbd7cb677059ba16012c41045035fdde7acbd26e78b9d913811",
+  "audit_output_hash": "3a942614f377134dc177a71afd78336668e3c058111c8c41be88d3fc60bb57ac",
+  "raw_audit_status": "REJECT",
+  "witnesses": [
+    {
+      "m": 2,
+      "n": 2,
+      "s": 4,
+      "q": 4,
+      "d": 5,
+      "prime_divisors": [
+        5
+      ],
+      "displayed_observations": {
+        "cube_identity": true,
+        "d_odd": true,
+        "both_even": true,
+        "all_prime_divisors_exceed_s": true
+      },
+      "original_divisibility_remainders": [
+        0,
+        0
+      ]
+    },
+    {
+      "m": 2,
+      "n": 4,
+      "s": 6,
+      "q": 12,
+      "d": 13,
+      "prime_divisors": [
+        13
+      ],
+      "displayed_observations": {
+        "cube_identity": true,
+        "d_odd": true,
+        "both_even": true,
+        "all_prime_divisors_exceed_s": true
+      },
+      "original_divisibility_remainders": [
+        6,
+        7
+      ]
+    }
+  ],
+  "finding": "The displayed observations do not expose equivalent defining conditions for the original problem: (2,4) satisfies them but violates both original divisibility conditions. They also do not uniquely yield (2,2). The supplied answer is intentional and cannot supply missing premises.",
+  "scope": "Refutes the recorded premise-bundle/routine-verification rationale. It does not by itself certify all aspects of non-leakage, prove recoverability, or change the preregistered raw audit gate.",
+  "next_action": "Review this disagreement using source-aware disclosure and independently calibrated controls; do not silently relabel the bank."
+}

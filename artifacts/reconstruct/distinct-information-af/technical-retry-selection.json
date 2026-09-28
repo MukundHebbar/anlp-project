@@ -1,0 +1,17 @@
+{
+  "registered_timed_out_sources": [
+    0,
+    13,
+    129,
+    137
+  ],
+  "retry_sources": [
+    13,
+    129
+  ],
+  "not_retried": {
+    "0": "Source-aware audit already REJECT, so this cannot yield an eligible AF input.",
+    "137": "Source-aware audit failed attribution and manual full-bank review is unresolved; not transport recovery of an otherwise eligible bank."
+  },
+  "policy": "One retry of exact public audit keys only, identical input/decoding, timeout600; no scored verdict retried."
+}

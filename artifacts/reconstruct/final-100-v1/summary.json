@@ -1,0 +1,134 @@
+{
+  "terminal": true,
+  "input_status_counts": {
+    "accepted": 52,
+    "rejected": 40,
+    "unresolved": 8
+  },
+  "sample_stddev": 16.026580892290543,
+  "median": 50.0,
+  "minimum": 0.0,
+  "maximum": 75.0,
+  "version": "RECONSTRUCT-FINAL-PC-v1",
+  "allocated": 100,
+  "terminal_sources": 100,
+  "accepted_inputs": 52,
+  "qwen_responses": 50,
+  "scored": 47,
+  "mean": 44.41489361702128,
+  "sample_variance": 256.85129509713227,
+  "histogram_1_to_5": {
+    "1": 4,
+    "2": 11,
+    "3": 29,
+    "4": 3,
+    "5": 0
+  },
+  "provisional_grounded_recoveries": 0,
+  "failures": 16,
+  "missing_scores_on_accepted": 5,
+  "limitations": [
+    "Reused development sources, not untouched test data.",
+    "100 allocated sources; accepted task count reported separately.",
+    "Provisional automatic recoveries require case review.",
+    "No judge scores or source exclusions adjusted for histogram shape."
+  ],
+  "reviewed_semantic_recoveries": 2,
+  "reviewed_semantic_source_ids": [
+    94,
+    65
+  ],
+  "diagnostics": {
+    "dimensions_on_scored_responses": {
+      "premise_fidelity": {
+        "count": 47,
+        "mean": 2.1914893617021276,
+        "histogram": {
+          "1": 8,
+          "2": 30,
+          "3": 1,
+          "4": 8
+        }
+      },
+      "target_fidelity": {
+        "count": 47,
+        "mean": 2.6808510638297873,
+        "histogram": {
+          "1": 9,
+          "2": 17,
+          "3": 1,
+          "4": 20
+        }
+      },
+      "evidence_integration": {
+        "count": 47,
+        "mean": 2.0425531914893615,
+        "histogram": {
+          "1": 3,
+          "2": 41,
+          "3": 1,
+          "4": 2
+        }
+      },
+      "mathematical_validity": {
+        "count": 47,
+        "mean": 0.6382978723404256,
+        "histogram": {
+          "0": 19,
+          "1": 27,
+          "3": 1
+        }
+      }
+    },
+    "failures_by_stage": {
+      "copy": 7,
+      "audit": 4,
+      "student": 2,
+      "judge_validity": 3
+    },
+    "resolved_fidelity_calls": 50,
+    "resolved_validity_calls": 47,
+    "validity_answer_correct": 3,
+    "validity_verification_sound": 1,
+    "shortcut_flags": 3
+  },
+  "target_checks": {
+    "average_20_to_75": true,
+    "semantic_recovery_rate_on_accepted": 0.038461538461538464,
+    "grounded_recovery_rate_on_accepted": 0.0,
+    "middle_rating_strictly_modal": true,
+    "semantic_success_20_to_40_percent": false,
+    "grounded_success_20_to_40_percent": false
+  },
+  "student_token_cap_completions": 1,
+  "topic_counts": {
+    "Algebra": {
+      "allocated": 27,
+      "accepted": 14,
+      "scored": 13
+    },
+    "Calculus": {
+      "allocated": 24,
+      "accepted": 13,
+      "scored": 11
+    },
+    "Discrete Mathematics": {
+      "allocated": 23,
+      "accepted": 11,
+      "scored": 10
+    },
+    "Number Theory": {
+      "allocated": 26,
+      "accepted": 14,
+      "scored": 13
+    }
+  },
+  "automatic_semantic_recoveries": 2,
+  "reviewed_grounded_recoveries": 0,
+  "reviewed_grounded_source_ids": [],
+  "student_attempts": 52,
+  "paid_calls": 400,
+  "returned_usage_cost_usd": 0.5202124816,
+  "paid_calls_without_usage": 2,
+  "ordinal_rating_sample_variance": 0.5337650323774283
+}

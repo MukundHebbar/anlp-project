@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "selected_source_count": 100,
+  "calibration_count": 47,
+  "extension_count": 53,
+  "extension_bound_attempts": 829,
+  "accepted_records": 601,
+  "preserved_failures": 228,
+  "transport_history_count": 182,
+  "maximum_attempts_per_stage": 2,
+  "public_clue_count": 4,
+  "selection": "first53 completely scored gate-passed rows in frozen source order",
+  "scope": "Structural/provenance verification, not independent mathematical truth or universal leakage accuracy."
+}

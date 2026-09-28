@@ -1,0 +1,163 @@
+{
+  "21:level2:0": {
+    "source_index": 21,
+    "arm": "level2",
+    "bank_key": "21:convert_p9_prefix3:08fe53bb883538ef0797e25b4ba564a7722737e07869027b8211645ea2c0bd31",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "2^{m-1}",
+      "clues": [
+        "The modulus p is an odd prime and can be written as 2^m+1 for a positive integer m.",
+        "The residue g is considered in the range 1≤g≤p.",
+        "The nonzero residue classes modulo p form a cyclic group whose order is p−1.",
+        "The requested result is a count of certain elements in the multiplicative structure modulo the given prime.",
+        "Euler’s totient function applied to the order of a cyclic group is a useful tool."
+      ],
+      "rendered_clues": "- The modulus p is an odd prime and can be written as 2^m+1 for a positive integer m.\n- The residue g is considered in the range 1≤g≤p.\n- The nonzero residue classes modulo p form a cyclic group whose order is p−1.\n- The requested result is a count of certain elements in the multiplicative structure modulo the given prime.\n- Euler’s totient function applied to the order of a cyclic group is a useful tool.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "AV_level2"
+    },
+    "evidence_hash": "1e0814f8678a60a5fc82810379aee0a61ee658485efd18416f1af74594ec5beb",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 2^{m-1}\nOBSERVATIONS:\n- The modulus p is an odd prime and can be written as 2^m+1 for a positive integer m.\n- The residue g is considered in the range 1≤g≤p.\n- The nonzero residue classes modulo p form a cyclic group whose order is p−1.\n- The requested result is a count of certain elements in the multiplicative structure modulo the given prime.\n- Euler’s totient function applied to the order of a cyclic group is a useful tool.",
+    "rendered_input_hash": "cd024b4cbb288ab82374b7185ec17819a83087e6b11d148f4234fd218857afe2"
+  },
+  "35:level2:0": {
+    "source_index": 35,
+    "arm": "level2",
+    "bank_key": "35:convert_p9_prefix3:c010cf1d65a03654035fde12c35c2c695d21499e0a7252c86100d072110eb861",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "Yes",
+      "clues": [
+        "The function is defined on all real numbers and is differentiable at every point.",
+        "There is a positive constant M such that the absolute value of the derivative never exceeds M.",
+        "For any two distinct real inputs, the Mean Value Theorem supplies an intermediate point whose derivative value relates the output difference to the input difference.",
+        "The requested result is a yes/no conclusion about a global regularity property of a real function.",
+        "The Mean Value Theorem is useful for relating changes in function values to bounds on the derivative."
+      ],
+      "rendered_clues": "- The function is defined on all real numbers and is differentiable at every point.\n- There is a positive constant M such that the absolute value of the derivative never exceeds M.\n- For any two distinct real inputs, the Mean Value Theorem supplies an intermediate point whose derivative value relates the output difference to the input difference.\n- The requested result is a yes/no conclusion about a global regularity property of a real function.\n- The Mean Value Theorem is useful for relating changes in function values to bounds on the derivative.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "AV_level2"
+    },
+    "evidence_hash": "9ef17fe6556ac949bee155ec0834fe430eb184dd123b4a407aa62f2f50e16857",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: Yes\nOBSERVATIONS:\n- The function is defined on all real numbers and is differentiable at every point.\n- There is a positive constant M such that the absolute value of the derivative never exceeds M.\n- For any two distinct real inputs, the Mean Value Theorem supplies an intermediate point whose derivative value relates the output difference to the input difference.\n- The requested result is a yes/no conclusion about a global regularity property of a real function.\n- The Mean Value Theorem is useful for relating changes in function values to bounds on the derivative.",
+    "rendered_input_hash": "87db46ae5cccaa996d88834e3c5b90b4c4a15f7a4fe025490c1f8b9897d8a483"
+  },
+  "54:level2:0": {
+    "source_index": 54,
+    "arm": "level2",
+    "bank_key": "54:convert_p9_prefix3:ea0eda2428d62f84d02b00ea67024be56e45b56b6a53c382f1d8f896320db7bb",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{99}",
+      "clues": [
+        "The complex numbers satisfy |ω| = 1 and |z| = 10.",
+        "The angle θ is the argument of the quotient (ω − z)/z.",
+        "Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.",
+        "The requested result is an extremal value arising from complex-number constraints and an angle defined by a quotient.",
+        "A useful approach is to translate the quotient condition into a circle equation and analyze slopes via a discriminant."
+      ],
+      "rendered_clues": "- The complex numbers satisfy |ω| = 1 and |z| = 10.\n- The angle θ is the argument of the quotient (ω − z)/z.\n- Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.\n- The requested result is an extremal value arising from complex-number constraints and an angle defined by a quotient.\n- A useful approach is to translate the quotient condition into a circle equation and analyze slopes via a discriminant.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "AV_level2"
+    },
+    "evidence_hash": "af159ce6df72e5ffe5cf390b6359da685197970a7a10365e280cac4d40a18960",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{99}\nOBSERVATIONS:\n- The complex numbers satisfy |ω| = 1 and |z| = 10.\n- The angle θ is the argument of the quotient (ω − z)/z.\n- Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.\n- The requested result is an extremal value arising from complex-number constraints and an angle defined by a quotient.\n- A useful approach is to translate the quotient condition into a circle equation and analyze slopes via a discriminant.",
+    "rendered_input_hash": "67b70d28f6c6628feb8acccb78f1aec954b6b7f0e5ea95ba6829e6fb16310f49"
+  },
+  "68:level2:0": {
+    "source_index": 68,
+    "arm": "level2",
+    "bank_key": "68:convert_p9_prefix3:7a45c1d6cae05ac8eabc4cabc35d564022b2ef464d8e2b0ab3b4acdfb39189c2",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "0",
+      "clues": [
+        "A is a 2x2 matrix whose four entries are each chosen from -1, 0, and 1, and A is required to be non-singular.",
+        "The matrix equation A^2 + I = 0 is imposed, where I is the 2x2 identity matrix.",
+        "Writing A with entries a,b,c,d, the diagonal entries of A^2 are a^2+bc and d^2+bc.",
+        "The requested result is a probability computed over a constrained set of small 2x2 integer matrices.",
+        "Enumerating the possible entries and using the matrix equation to reduce the constraints is a useful approach."
+      ],
+      "rendered_clues": "- A is a 2x2 matrix whose four entries are each chosen from -1, 0, and 1, and A is required to be non-singular.\n- The matrix equation A^2 + I = 0 is imposed, where I is the 2x2 identity matrix.\n- Writing A with entries a,b,c,d, the diagonal entries of A^2 are a^2+bc and d^2+bc.\n- The requested result is a probability computed over a constrained set of small 2x2 integer matrices.\n- Enumerating the possible entries and using the matrix equation to reduce the constraints is a useful approach.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "AV_level2"
+    },
+    "evidence_hash": "98afcbd1ca1b3f5dc2aaa22bc013829b8d5cba2ddc439b3244b3fee28031a02f",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 0\nOBSERVATIONS:\n- A is a 2x2 matrix whose four entries are each chosen from -1, 0, and 1, and A is required to be non-singular.\n- The matrix equation A^2 + I = 0 is imposed, where I is the 2x2 identity matrix.\n- Writing A with entries a,b,c,d, the diagonal entries of A^2 are a^2+bc and d^2+bc.\n- The requested result is a probability computed over a constrained set of small 2x2 integer matrices.\n- Enumerating the possible entries and using the matrix equation to reduce the constraints is a useful approach.",
+    "rendered_input_hash": "2ce64895e99574e7852c0a36be78d47ed4fb37cee4d23eee991a0a077a46f5a8"
+  },
+  "113:level2:0": {
+    "source_index": 113,
+    "arm": "level2",
+    "bank_key": "113:convert_p9_prefix3:43f0461c8c7a955d8313a7061d57cf5044899c5a2b37adb68255ff54504135ea",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{e}",
+      "clues": [
+        "The sequence is indexed by integers n at least 2, and x_n is the n-th root of 1 plus a sum over k from 2 to n of (k-1)(k-1)!.",
+        "Each summand can be rewritten as k! minus (k-1)!.",
+        "The sum from k=2 to n telescopes, leaving n! minus 1.",
+        "The requested result is a limiting value associated with a sequence.",
+        "A telescoping simplification followed by logarithmic asymptotics or integral bounds is useful."
+      ],
+      "rendered_clues": "- The sequence is indexed by integers n at least 2, and x_n is the n-th root of 1 plus a sum over k from 2 to n of (k-1)(k-1)!.\n- Each summand can be rewritten as k! minus (k-1)!.\n- The sum from k=2 to n telescopes, leaving n! minus 1.\n- The requested result is a limiting value associated with a sequence.\n- A telescoping simplification followed by logarithmic asymptotics or integral bounds is useful.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "AV_level2"
+    },
+    "evidence_hash": "b4688fb52a100ede243a0cee629c24ea759e1531b30a50420e5153ac14bbcce7",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{e}\nOBSERVATIONS:\n- The sequence is indexed by integers n at least 2, and x_n is the n-th root of 1 plus a sum over k from 2 to n of (k-1)(k-1)!.\n- Each summand can be rewritten as k! minus (k-1)!.\n- The sum from k=2 to n telescopes, leaving n! minus 1.\n- The requested result is a limiting value associated with a sequence.\n- A telescoping simplification followed by logarithmic asymptotics or integral bounds is useful.",
+    "rendered_input_hash": "2b37cbe6d56ba7a0196cea89459e7016cb199519e6e8badef6b3e7ffe7f0b65c"
+  },
+  "114:level2:0": {
+    "source_index": 114,
+    "arm": "level2",
+    "bank_key": "114:convert_p9_prefix3:b9d57cbd9bbd013c7216c4f19685f80921e584f5488c253f785708bce367958a",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "The object under consideration is the power series sum from n=1 to infinity of a_n Z^n.",
+        "For each positive integer n, the coefficient a_n is the number of positive divisors of n^50.",
+        "Each coefficient is at least 1 and at most 2 n^25.",
+        "The requested result is a numerical convergence characteristic of the given power series.",
+        "The Cauchy-Hadamard root formula together with a divisor-count bound is useful."
+      ],
+      "rendered_clues": "- The object under consideration is the power series sum from n=1 to infinity of a_n Z^n.\n- For each positive integer n, the coefficient a_n is the number of positive divisors of n^50.\n- Each coefficient is at least 1 and at most 2 n^25.\n- The requested result is a numerical convergence characteristic of the given power series.\n- The Cauchy-Hadamard root formula together with a divisor-count bound is useful.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "AV_level2"
+    },
+    "evidence_hash": "c68b67920eaec3850f51ce3c8810601cf9fe95048ef7286338079ede64e825f6",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1\nOBSERVATIONS:\n- The object under consideration is the power series sum from n=1 to infinity of a_n Z^n.\n- For each positive integer n, the coefficient a_n is the number of positive divisors of n^50.\n- Each coefficient is at least 1 and at most 2 n^25.\n- The requested result is a numerical convergence characteristic of the given power series.\n- The Cauchy-Hadamard root formula together with a divisor-count bound is useful.",
+    "rendered_input_hash": "d328dd43c4283a332438470946a37f0f50dbfa7d7c26a8c8b207c7fc93897fb5"
+  },
+  "132:level2:0": {
+    "source_index": 132,
+    "arm": "level2",
+    "bank_key": "132:convert_p9_prefix3:8ee432497c18aab6db450f14a0c96f08a7b5e84b76ed8d0e44fcac2833715fe7",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "13",
+      "clues": [
+        "The deck consists of 18 distinct cards, and the game defines 24 combinations, each made of three cards.",
+        "Every card appears in exactly four of those combinations.",
+        "If a hand avoids containing any whole combination, then each of the 24 combinations must include at least one card left outside the hand.",
+        "The requested result is a numerical threshold for a hand size in this structured card game.",
+        "Counting incidences between undrawn cards and combinations, together with an extremal construction, is useful."
+      ],
+      "rendered_clues": "- The deck consists of 18 distinct cards, and the game defines 24 combinations, each made of three cards.\n- Every card appears in exactly four of those combinations.\n- If a hand avoids containing any whole combination, then each of the 24 combinations must include at least one card left outside the hand.\n- The requested result is a numerical threshold for a hand size in this structured card game.\n- Counting incidences between undrawn cards and combinations, together with an extremal construction, is useful.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "AV_level2"
+    },
+    "evidence_hash": "0f7426e294b24a18c4b47220c1112a6eb995c50ad93251b487173916f8839462",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 13\nOBSERVATIONS:\n- The deck consists of 18 distinct cards, and the game defines 24 combinations, each made of three cards.\n- Every card appears in exactly four of those combinations.\n- If a hand avoids containing any whole combination, then each of the 24 combinations must include at least one card left outside the hand.\n- The requested result is a numerical threshold for a hand size in this structured card game.\n- Counting incidences between undrawn cards and combinations, together with an extremal construction, is useful.",
+    "rendered_input_hash": "ad820c73ff4c7d50cfac44971b271904d2a78bb7d565625b2099ec667e522cb0"
+  }
+}

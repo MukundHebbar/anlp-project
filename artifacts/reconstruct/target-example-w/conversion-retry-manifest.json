@@ -1,0 +1,14 @@
+{
+  "reason": "One identical technical retry per no-visible-content failure; no scored result retried.",
+  "slots": [
+    {
+      "source_index": 63,
+      "key": "63:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low"
+    },
+    {
+      "source_index": 120,
+      "key": "120:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low"
+    }
+  ],
+  "maximum_additional_attempts_per_slot": 1
+}

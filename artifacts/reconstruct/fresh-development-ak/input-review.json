@@ -1,0 +1,237 @@
+{
+  "reviewer": "Assistant analytic review, not human gold",
+  "manual_review_hash": "7969cfd0e4d5d6dae47c379fec3693db7d58a94ffc717778c2e14f36eaa9822a",
+  "protocol": "docs/plans/reconstruct-amendment-ak.md",
+  "rows": [
+    {
+      "source_index": 1,
+      "eligible": false,
+      "source_hash": "d3b9413a0896842b3f62ef88d65ca0884ded03ce20329a707891c33db01ad863",
+      "reason": "Source preflight exclusion: Quarantine: recurrence applies only for k>1 and leaves a2 unspecified. Given a1=2^2009, a2011=[2^2008*(2^-2009+1/a2)]^-1. Choosing a2=2^2009 gives1, but a2=2^2010 gives4/3. The supplied solution silently assumes the missing k1 step."
+    },
+    {
+      "source_index": 5,
+      "eligible": false,
+      "source_hash": "cd7798c722b2c4133543396a480ecd3a5fd842f1a69251a6953cd9fd1a3c0d0f",
+      "bank_hash": "191982ccbc085ab25209fd743c30cccc007b76a9dbd35871fccb7767938a851e",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Threshold t is not supplied. Counting disjoint long-cycle events and matching harmonic sums to the public answer uniquely gives51. No general count formula is public. The at-most-one-cycle observation is a useful derived hint, not an independent premise.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 10,
+      "eligible": false,
+      "source_hash": "4a17cd5a1e9890fdeb24febfcb7153a3407d85bafb22dc287fc79564ece9a0b4",
+      "bank_hash": "fa851fb86b2dba62a9cd0d6b7f61c822219e2ebdeaec9e6cec6a38c07dc75653",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Factorial index n is hidden; Wilson/tail observations leave modular inversion and the finite factorial-residue search. Independent exact enumeration of0..60 gives only51 for residue27; nonzero answer excludes n>=61. c5 is a broad combination hint rather than new mathematical information; do not treat five entries as five independent constraints.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 16,
+      "eligible": false,
+      "source_hash": "8cd5dacff5d3255057ea2f51be04a946c66eebf9a86f254b5af785d0fd1af95a",
+      "bank_hash": "5484ebea34e1a3e5222a5621d52b5d7875430edc1c3a12a26023e77d6331b495",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "The5-adic exponent k is hidden, while the2-adic exponent and prime support remain. Public factor-pair/divisor reduction stops before factorizing N^2/4 and evaluating its divisor count as7(2k+1). These missing calculations plus answer98 yield k3,N2000. All98 resulting lattice points independently verified; this is an incomplete reduction, not a publicly evaluated parameterized answer polynomial.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 17,
+      "eligible": false,
+      "source_hash": "e92cbb7d0b39e72863f0d81ac006cd3d41c49173cc258da44027d48bf2ee8fd8",
+      "bank_hash": "b5d6c2738d6d1c8a26d9cc58e82936dd32a4161859c3c8c28f1bb738970add29",
+      "reason": "Converter NOT_SUITABLE: The final answer is itself the correct multiple-choice option, namely the relation ka0=a1. Hiding that option would be directly leaked by the supplied final answer, while hiding any other essential premise (such as the definition of c_i, the root structure, the monic polynomial form, or the number of colors k) cannot be inferred from the final symbolic relation and the remaining constraints. There is no numerical premise whose value can be recovered by a short calculation from the answer, so no non-leaking partial conversion is available."
+    },
+    {
+      "source_index": 21,
+      "eligible": false,
+      "source_hash": "075f73a794a7ee14c65df860cedb49e6d7211e54484aab342cf06a3c01636949",
+      "bank_hash": "cefd82590b566619312c6c92bd3e5c01c66cd49c868c4a7bd3110869f52e7d8a",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Primality is withheld; the prime-modulus theorem is conditional, not a premise. The answer forces prime p: for odd composite p with generators the count phi(phi(p))<=phi(p)/2<(p-1)/2; without generators it is0. For prime p the stated count follows. Independent elementary certificate avoids the converters unnecessary deep theorem.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 29,
+      "eligible": false,
+      "source_hash": "a188040f904b45296a22694be88ec195eccc6808bb2b90dd8ff23c7bd4a103e9",
+      "bank_hash": "74c32252f7d2c4d8eeaf04bde95e5d2a34be0c3528af5cb8b06e8fc2d148d03d",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "The private certificate establishes only equality of numerical exponent and modulus at one witness, then admits this does not recover the original variable relation k=m. It does not complete its claimed inverse inference. Public clues also state the witness exponent561 outright and misattribute the witness to the supplied answer, which is only Yes. Preserve as a failed certificate, not a valid unique reconstruction.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 35,
+      "eligible": false,
+      "source_hash": "392018be5553aa3aad9ba96d9f46bd28df0a10256232c29204fdf53fc7a37c9b",
+      "bank_hash": "770f0b19b6dc13cb7f824543e766ff41c9ce7d8322ee3973ddc7ab7659df4582",
+      "reason": "Converter NOT_SUITABLE: The final answer is only the qualitative verdict \"Yes\" for a yes/no implication. If either essential premise—differentiability everywhere or boundedness of f' on R—is withheld, the public answer plus the remaining constraints do not determine that premise. For example, differentiability alone does not imply uniform continuity, and boundedness of f' is not inferable from the answer \"Yes.\" Thus no honest inverse certificate can recover the original question from the final answer while hiding exactly one essential premise."
+    },
+    {
+      "source_index": 41,
+      "eligible": false,
+      "source_hash": "54ae7dbbcb5e184967a9a1c08c90f0d011da1d6892c1cf727a657816936d7a2e",
+      "bank_hash": "1707267f42151a548ce7940016fbe68e03e01774d9d672745c037896c76229ab",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "87a04ce1d9a44ff0d2fdaacb22edb07bab6aa6b0f4cd4c5388dff44763d36e16",
+      "manual_content_pass": false,
+      "reason": "c5 publicly supplies the completed parameterized answer b(b+1)/(b-1)^3. No forward calculation is needed to obtain that relation from the clues; only its inversion remains. This fails AKs retained partial-forward-solution requirement even though the cubic inverse itself is valid.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": true
+    },
+    {
+      "source_index": 54,
+      "eligible": true,
+      "source_hash": "d2dc95a27ec6b8983efb055a4b0c0dc477271ff6de9dd8796adc89fe4e23c69a",
+      "bank_hash": "4780409ba3c4fe3902f4c20f5c251aafc8efa77ae79164cbe5cb603c6aecc4c4",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "31d70fa83b733bc657f18b9b7cf265c0b978d794b76e8a56c32baa9f878e1814",
+      "manual_content_pass": true,
+      "reason": "Only modulus R10 is hidden. Circle and slope setup leave discriminant/tangency calculation unstated. A finite maximum excludes R<=1; for R>1 the maximum1/(R^2-1) yields R10. Independent domain and attainability checks fill the private certificates omitted domain case without changing public input.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 59,
+      "eligible": false,
+      "source_hash": "c1b3ccdf754b228faad9f01e2f4761c45cbe6125e4e372243f320bb34cfacce6",
+      "bank_hash": "eed35873e6f10131f2b951b9d13719fe1fb7125542223c6821dd63e760ff5538",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "Root separation sqrt69 together with monic quadratic coefficient11 determines c13 without using the answer. The displayed target plus these equivalent denominator constraints already form a fully specified equivalent classification problem. The hidden constant is encoded in a complete premise bundle; copying that bundle would suffice.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 67,
+      "eligible": true,
+      "source_hash": "26759297707af08212a06398d075cd18784e45cbed9306278d0e1bb91bae68db",
+      "bank_hash": "72f89919e8312e6b1d72dec2992b53715f8dbe7f9ac7451427b8721ff3cb506d",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "a29d0c98bd94afe71ab379161dc60a66316cf7b48bf685df79ff4ef328fa11e7",
+      "manual_content_pass": true,
+      "reason": "Scalar c1 is hidden. First-column relation is public, but inverse-times-ones and sum-of-entries calculation are not. Invertibility implies c!=0 and gives total1/c; answer1 forces c1. Inverse existence is the explicit presupposition already reviewed for the source.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 68,
+      "eligible": false,
+      "source_hash": "bebed2b43d07ec665a73fa73458c793031060a8ca0db3255a5f35251935bf0f0",
+      "bank_hash": "42af45a5bb3fda7d76b9639d665a82bfef90ee92a9b104bbae66f27714fd0ec6",
+      "reason": "Converter NOT_SUITABLE: The only premise that can be inferred from the retained constraints is the non-singularity assumption, since A^2+I=0 implies det(A)^2=1 and hence det(A)≠0. However, this premise is redundant and not essential to the solution. Hiding any essential premise—the 2x2 size, the entry set {-1,0,1}, or the equation A^2+I=0—does not allow unique recovery from the final answer 0 and the remaining constraints; many different sizes, entry sets, or matrix equations yield the same probability 0. Therefore no suitable partial conversion exists."
+    },
+    {
+      "source_index": 113,
+      "eligible": false,
+      "source_hash": "a5fc0c99366d2bb1812aead63a8641ac4af040b151d800a1a0e832e23b0da6e8",
+      "bank_hash": "cef3c595313afc0aef49b0b8038483717e804e1475fb21f8477db6d7a63b2143",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Root scale alpha1 is hidden. Public clues telescope to n! but do not provide asymptotic root growth. Stirling or log bounds yield n^(1/alpha-1)*exp(-1/alpha); finite nonzero answer forces alpha1, then verifies1/e. Source target and remaining definition are preserved.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 114,
+      "eligible": false,
+      "source_hash": "fb44e1ab1462ac0f4c5019dd1cf3b13092fc3e4bcdf9fc7ff07200696c10855c",
+      "bank_hash": "649ada71b01e93036beec541b2c0acf4418c35166152c65fa27670dc476f0c44",
+      "reason": "Converter NOT_SUITABLE: The final answer 1 is not enough to recover a unique withheld premise. For example, if the exponent 50 in a_n = tau(n^50) were hidden, the radius remains 1 for every positive integer exponent; if a positive coefficient multiplier or a positive power exponent on Z were hidden, the radius also remains 1. Thus the inverse inference from the public answer and retained constraints cannot uniquely determine the original premise, so no non-leaking partial conversion with a valid certificate is available."
+    },
+    {
+      "source_index": 132,
+      "eligible": false,
+      "source_hash": "b1dd6d7ac9608ef9e92930a971f3cd2405dea43ebd4d867b3d3665eef5692e55",
+      "reason": "Conversion technical failure"
+    }
+  ]
+}

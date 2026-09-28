@@ -1,0 +1,84 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "primary_endpoint": "Unchanged standalone reconstructed question; contextual definition clarification pending",
+  "rows": [
+    {
+      "response_key": "21:prefix3:0",
+      "source_index": 21,
+      "response_output_hash": "84d87be3c81aab1c4df26064eb3a1bcb183019745e87c2bb46627c4687b8879e",
+      "evidence_hash": "822913ee1ed4f06b47437c91b92bb47d30b3169366a1bf511c9b9e8dc0d86f43",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "reason": "Asks order of arbitraryg rather than number of primitive roots. Atp5,m2,g1 hasorder1,g2 hasorder4 andg5 is not a unit; answer2 cannot hold for arbitraryg."
+    },
+    {
+      "response_key": "35:prefix3:0",
+      "source_index": 35,
+      "response_output_hash": "b7cbbfc77bf38ae6474f6ac65075c9e7e2176d092a4636b514ae9dfd279fbcfb",
+      "evidence_hash": "718c0fde6312e409d4c5e73d5cd0ef4576b0bd89adae78ddff1cd92f63c45df8",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": true,
+      "contextual_semantic_equivalence_diagnostic": true,
+      "reason": "Identifies uniform-continuity target and gives the appropriate bounded-derivative/MVT argument, but question only says the function without stating necessary premises. Current standalone endpoint fails. Contextual equivalence is a separate diagnostic pending user definition; no retroactive primary success. Independent verifier additionally identifies the false claim that the Lipschitz inequality is the definition of uniform continuity; the implication is correct but the definition is not.",
+      "contextual_grounding_diagnostic": false
+    },
+    {
+      "response_key": "54:prefix3:0",
+      "source_index": 54,
+      "response_output_hash": "710919a4ef3da97a53c3c1527d4fb0f3aceca9d0823378bc2bf3718c82f96f4b",
+      "evidence_hash": "a32a48da8255fdb8e42504cb9d14ec17c8f0b8a59cff938bc3ccf5b4ee44bedc",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "reason": "Asks angle itself, not maximumtan^2. Forz10,omega1 andomegai give different arguments. Reu<0 also contradicts the claimed small positive arctan(1/99)."
+    },
+    {
+      "response_key": "68:prefix3:0",
+      "source_index": 68,
+      "response_output_hash": "e752755aa02c5af59e3475d5f058eb6df9185832fda9f5a2f506f51ec6cfd17c",
+      "evidence_hash": "2df8598f2b664c2be5c377414b52a64f5c2d8895c1502b7b6ea0e1fd821da090",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "reason": "Asks determinant rather than probabilitydet=-1, then contradicts nonsingularity by proposingzero matrix. Exact validmatricesdet1; zero failsA^2+I=0."
+    },
+    {
+      "response_key": "113:prefix3:0",
+      "source_index": 113,
+      "response_output_hash": "70b1fb70f62215340b0859d32b7a489d96a5b9a9be754b7ce3bb7369422af2ef",
+      "evidence_hash": "987f9e489162491ff9fd690aeafa2e3498722257249799607bf908a49c739767",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "reason": "Changes sequence to harmonic-sum/n, whose limit0 differs from1/e; verbal and symbolic definitions also disagree. n!/n does not tend to1/e."
+    },
+    {
+      "response_key": "114:prefix3:0",
+      "source_index": 114,
+      "response_output_hash": "f31d4d17ffb5d571ac319c43588ac98210a482fe7e6941269ec79efd9d254acc",
+      "evidence_hash": "fc5ab5de39d74f1e31f12c7a7c6d6bca78bffbff3d83ef84c2d2cc9eb29d1875",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "reason": "Series has no constant term (starts atn1), and atZ1 it diverges since everycoefficient>=1. Neither interpretation gives1; original target is convergence radius."
+    },
+    {
+      "response_key": "132:prefix3:0",
+      "source_index": 132,
+      "response_output_hash": "99df38f0e63e5d9c9b641fde7ecf82569aedd34490cb9877075b4a1e6c11246b",
+      "evidence_hash": "0f1863c963fce270a3e5994e5c8a06be0f0c4ddb3266466af69c074a01bfa44c",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "reason": "Asks largest avoiding hand, whose maximum across allowed arrangements is12, not guaranteed-hand threshold13. A13-card avoiding hand leaves5 cards with atmost20incidences, insufficient to meet24triples."
+    }
+  ]
+}

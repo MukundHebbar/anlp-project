@@ -1,0 +1,13 @@
+{
+  "status": "demonstrated_production_score_error",
+  "provenance": "assistant independent mathematical and public-span review; not human adjudication",
+  "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+  "response_hash": "ab1ac2958f5c01f68a25a62e0e58e348f5e4ea10956987c84edb69b1c15aae8a",
+  "evaluation_hash": "98fce83bc9c3e646c6029f51e54a4c03015dadd363e3303754731611f7f7dcfa",
+  "raw_score": 0,
+  "proposed_reference_score": 1,
+  "inference_reference": "substantive",
+  "reason": "The candidate introduces a maximum-family-size target absent from public clues. That is an essential target, under the same missing-target principle used for source112. It is therefore not copy-only. Its answer is nevertheless wrong: the family size is unbounded.",
+  "counterexample": "For arbitrary N>=3, take the universe of edges of K_N and let S_i be the edges incident to vertex i. Every pair S_i,S_j intersects in exactly edge ij; no edge lies in all sets. Within each S_i, every edge belongs to exactly one other set, so d_x=1<=44 and the displayed sum is N-1. Thus all clues and question conditions hold for arbitrary N; no finite maximum exists.",
+  "policy": "Do not overwrite the raw p3 label or silently alter the rubric. Report sensitivity to the independent reference and retain this as an evaluator regression case. U authored-control passing does not establish production perfection."
+}

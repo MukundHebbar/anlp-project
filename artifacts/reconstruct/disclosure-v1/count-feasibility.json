@@ -1,0 +1,15 @@
+{
+  "eligible_source_families": 11,
+  "original_sources": 12,
+  "rejected_required_conditions": [
+    "production-141-k1",
+    "production-8-k3",
+    "production-33-k3",
+    "production-112-k3",
+    "production-86-k3"
+  ],
+  "maximum_common_sources": 6,
+  "registered_minimum_common_sources": 8,
+  "gate_feasible_under_recorded_labels": false,
+  "labels_are_teacher_development_decisions_not_independent_gold": true
+}

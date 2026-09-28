@@ -1,0 +1,283 @@
+{
+  "reviewer": "Assistant analytic review, not human gold",
+  "manual_review_hash": "b4088f103ce73213147a319f8926698bd8c5179cfdd5a28404e1bd28a44f945f",
+  "protocol": "docs/plans/reconstruct-amendment-ap.md",
+  "rows": [
+    {
+      "source_index": 1,
+      "eligible": false,
+      "source_hash": "d3b9413a0896842b3f62ef88d65ca0884ded03ce20329a707891c33db01ad863",
+      "reason": "Source preflight exclusion: Quarantine: recurrence applies only for k>1 and leaves a2 unspecified. Given a1=2^2009, a2011=[2^2008*(2^-2009+1/a2)]^-1. Choosing a2=2^2009 gives1, but a2=2^2010 gives4/3. The supplied solution silently assumes the missing k1 step."
+    },
+    {
+      "source_index": 5,
+      "eligible": false,
+      "source_hash": "cd7798c722b2c4133543396a480ecd3a5fd842f1a69251a6953cd9fd1a3c0d0f",
+      "bank_hash": "d65eb46005822e6454361d40c6437394e81d550a19fd22041cf31907dd1aa5cc",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "direct_candidate",
+      "copy_hash": "3006d5fe9e2f2a065c6c14fbd3c5209aac679ed710bbfed45369133689d23857",
+      "manual_content_pass": true,
+      "reason": "Counting target and fixed-length combinatorial calculation absent; infer count from answer, then derive sum100!/k.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": false
+    },
+    {
+      "source_index": 10,
+      "eligible": false,
+      "source_hash": "4a17cd5a1e9890fdeb24febfcb7153a3407d85bafb22dc287fc79564ece9a0b4",
+      "bank_hash": "f8e0cbf2657c49763326f6648f15922c4a20012b00f1bc69e9ba8fa43b46f5ae",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "REJECT"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Factorial51 appears only in factorization60!, with Wilson60! mod61. Remainder target and inverse computation absent; multiple targets possible.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 16,
+      "eligible": false,
+      "source_hash": "8cd5dacff5d3255057ea2f51be04a946c66eebf9a86f254b5af785d0fd1af95a",
+      "bank_hash": "cef223a16634cba58a57ddd65bdb6080b00fb2dd7aac7f7afde8951b6bb2fb3f",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "direct_candidate",
+      "copy_hash": "b37ae78802a71f2c674f73bfd14eac54a50125cf838a28b57fd8c2e9d7f9b04e",
+      "manual_content_pass": true,
+      "reason": "Parity reduction shown, but division by4, prime factorization, divisor count and sign doubling absent. Count target inferred from98.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": false
+    },
+    {
+      "source_index": 17,
+      "eligible": false,
+      "source_hash": "e92cbb7d0b39e72863f0d81ac006cd3d41c49173cc258da44027d48bf2ee8fd8",
+      "bank_hash": "acf4aa8bcc4a79a67f1082de3da10fe5e5abbe82efcd399b189c686921a41f3e",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "Unclear polynomial specification: public prefix never defines its roots or factors; the monic polynomial in c3 is not adequately specified by the public statements. Exclude as ambiguous input quality, not a student failure.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 21,
+      "eligible": true,
+      "source_hash": "075f73a794a7ee14c65df860cedb49e6d7211e54484aab342cf06a3c01636949",
+      "bank_hash": "08fe53bb883538ef0797e25b4ba564a7722737e07869027b8211645ea2c0bd31",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "d143bf4f2ccdd194598cc1baf6b0b5f23b349f1770beb9688d69acbe79a42c4b",
+      "manual_content_pass": true,
+      "reason": "Generator-count theorem and explicitorder2^m removed; target is absent. Cyclic-group setup supports primitive-root count via phi, without claiming unique intent.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 29,
+      "eligible": false,
+      "source_hash": "a188040f904b45296a22694be88ec195eccc6808bb2b90dd8ff23c7bd4a103e9",
+      "bank_hash": "110519c5a2c30f25bc6c1779879ce72a7185bca4cd5fd126064f26da70c69ea1",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "REJECT"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "Only witness561, factorization and divisibility are given. Universal congruence/existence target and Fermat/nonunit/CRT proof must be reconstructed.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 35,
+      "eligible": true,
+      "source_hash": "392018be5553aa3aad9ba96d9f46bd28df0a10256232c29204fdf53fc7a37c9b",
+      "bank_hash": "c010cf1d65a03654035fde12c35c2c695d21499e0a7252c86100d072110eb861",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "aa1f89629b4ae2be4f3063360fe909f175c177d757eb4d86da149c467c23491d",
+      "manual_content_pass": true,
+      "reason": "MVT premise remains but global Lipschitz inequality removed. Must derive bound and infer a continuity property; several properties fitYes, which is genuine ambiguity.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 41,
+      "eligible": false,
+      "source_hash": "54ae7dbbcb5e184967a9a1c08c90f0d011da1d6892c1cf727a657816936d7a2e",
+      "bank_hash": "cbf6af2af755e942c8765d18fb3628ee60143141418d47876442b179f15bd58a",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "REJECT"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "Public sentences specify the entire infinite series; its scalar value is already the natural explicit mathematical expression. Retain conservative exclusion for expression-evaluation question disclosure.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 54,
+      "eligible": true,
+      "source_hash": "d2dc95a27ec6b8983efb055a4b0c0dc477271ff6de9dd8796adc89fe4e23c69a",
+      "bank_hash": "ea0eda2428d62f84d02b00ea67024be56e45b56b6a53c382f1d8f896320db7bb",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "e6d2fc46ba7fee21a0933bc51285d6f7e86d0702be950f6445a2c91b15f0f956",
+      "manual_content_pass": true,
+      "reason": "Complex moduli, angle, and circle relation remain. Need infer extremal squared-tangent target and derive1/99.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 59,
+      "eligible": false,
+      "source_hash": "c1b3ccdf754b228faad9f01e2f4761c45cbe6125e4e372243f320bb34cfacce6",
+      "bank_hash": "ef60f67c3c6e5edeb82f76a3952f31e2079031de3914b2a71feef15569a65d4d",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "direct_candidate",
+      "copy_hash": "0dbe8adf96179171204cef13f1d30a31f93fc03d31fbc9b7b9fbe4867efc93ad",
+      "manual_content_pass": true,
+      "reason": "Function and simple denominator zeros remain; numerator noncancellation and behavior0 require analysis. Classification target is suggested by intentional public answer, not requested in clues.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": false
+    },
+    {
+      "source_index": 67,
+      "eligible": false,
+      "source_hash": "26759297707af08212a06398d075cd18784e45cbed9306278d0e1bb91bae68db",
+      "bank_hash": "e784c5bdeae9ca7a63fe73af414076b38e2859cdcbd7df1b012009860da85777",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "direct_candidate",
+      "copy_hash": "e8136bf311546245058833e5d90e929e66038fcbb5298e4c55543557da2217e2",
+      "manual_content_pass": true,
+      "reason": "Only basis, T(v1) andAe1=1 remain. Inverse-entry-sum target and inverse-vector derivation absent; many other targets possible, so report uncertainty.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": false
+    },
+    {
+      "source_index": 68,
+      "eligible": true,
+      "source_hash": "bebed2b43d07ec665a73fa73458c793031060a8ca0db3255a5f35251935bf0f0",
+      "bank_hash": "7a45c1d6cae05ac8eabc4cabc35d564022b2ef464d8e2b0ab3b4acdfb39189c2",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "6ccacdad027faf67316ddb86bc6c987499ad2d5fcfa98ab992974403083101c5",
+      "manual_content_pass": true,
+      "reason": "Matrix premises and expansion diagonal remain; reduction tobc=-1,det1 and probability-zero target are not public. Many impossible events also fit0; not uniquely identifiable.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 113,
+      "eligible": true,
+      "source_hash": "a5fc0c99366d2bb1812aead63a8641ac4af040b151d800a1a0e832e23b0da6e8",
+      "bank_hash": "43f0461c8c7a955d8313a7061d57cf5044899c5a2b37adb68255ff54504135ea",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "e9ab19cb41d479c02c9f8dff529b2c24b08f72e47b3cdbee96873121688500c8",
+      "manual_content_pass": true,
+      "reason": "Sequence and telescoping sum remain; quotient and logarithmic target removed. Need infer normalizationxn/n and limit using factorial asymptotics.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 114,
+      "eligible": true,
+      "source_hash": "fb44e1ab1462ac0f4c5019dd1cf3b13092fc3e4bcdf9fc7ff07200696c10855c",
+      "bank_hash": "b9d57cbd9bbd013c7216c4f19685f80921e584f5488c253f785708bce367958a",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "4af21940f0062e875a00895ba42a6e99c752401213604d47999d8c6904f549fb",
+      "manual_content_pass": true,
+      "reason": "Coefficientdefinition and polynomial bounds remain; nth-root squeeze and reciprocal-limsup calculation absent. Radius is plausible but rootlimit alsofits1.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 132,
+      "eligible": true,
+      "source_hash": "b1dd6d7ac9608ef9e92930a971f3cd2405dea43ebd4d867b3d3665eef5692e55",
+      "bank_hash": "8ee432497c18aab6db450f14a0c96f08a7b5e84b76ed8d0e44fcac2833715fe7",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "4419bb0adffb06fc9042a65cc3eefd6a8fcb9028c84b4a436499788ac29f58f2",
+      "manual_content_pass": true,
+      "reason": "Regular3-card hypergraph premises and avoiding-hand condition remain. Need derive incidence upperbound12, establish sharpness across arrangements, and infer minimum guaranteed hand13.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    }
+  ]
+}

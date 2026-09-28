@@ -1,0 +1,72 @@
+{
+  "0:onegap:0": {
+    "source_index": 0,
+    "arm": "onegap",
+    "bank_key": "0:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "4",
+      "clues": [
+        "The function f is a polynomial of degree at most 2.",
+        "The numbers alpha and beta satisfy the identity integral from 0 to 2 of f(x) dx equals f(alpha) plus f(beta) for every such polynomial f.",
+        "The requested quantity is k times (alpha minus beta) squared, where k is an unreported real constant.",
+        "Applying the identity to f(x)=x gives alpha plus beta equal to 2."
+      ],
+      "rendered_clues": "- The function f is a polynomial of degree at most 2.\n- The numbers alpha and beta satisfy the identity integral from 0 to 2 of f(x) dx equals f(alpha) plus f(beta) for every such polynomial f.\n- The requested quantity is k times (alpha minus beta) squared, where k is an unreported real constant.\n- Applying the identity to f(x)=x gives alpha plus beta equal to 2.",
+      "style": "sentence",
+      "clue_count": 4,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "5272b3a5a49e3c6af0a3809e2aaefbf080a53b9a048fdaf7158a2c24755a0be6",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 4\nOBSERVATIONS:\n- The function f is a polynomial of degree at most 2.\n- The numbers alpha and beta satisfy the identity integral from 0 to 2 of f(x) dx equals f(alpha) plus f(beta) for every such polynomial f.\n- The requested quantity is k times (alpha minus beta) squared, where k is an unreported real constant.\n- Applying the identity to f(x)=x gives alpha plus beta equal to 2.",
+    "rendered_input_hash": "f849d18e9ff812690d075edea3629b71f1c1484c9fcdc10f35b62637e5712613"
+  },
+  "46:onegap:0": {
+    "source_index": 46,
+    "arm": "onegap",
+    "bank_key": "46:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "560",
+      "clues": [
+        "The requested quantity is the number of different orders in which a marksman can break all eight clay targets in a shooting match.",
+        "The targets are arranged in hanging columns; one column contains exactly two targets, and every other column has the same unknown positive integer height h.",
+        "The marksman first chooses a column and then must break the lowest remaining target in that chosen column.",
+        "Because each column is taken from bottom to top, the order within a column is fixed, so a complete breaking order is determined by the sequence of column choices."
+      ],
+      "rendered_clues": "- The requested quantity is the number of different orders in which a marksman can break all eight clay targets in a shooting match.\n- The targets are arranged in hanging columns; one column contains exactly two targets, and every other column has the same unknown positive integer height h.\n- The marksman first chooses a column and then must break the lowest remaining target in that chosen column.\n- Because each column is taken from bottom to top, the order within a column is fixed, so a complete breaking order is determined by the sequence of column choices.",
+      "style": "sentence",
+      "clue_count": 4,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "53ee2a4ab90e00e911f6ff8cd54e90161e3770298a0f89414028421cd3f19fe5",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 560\nOBSERVATIONS:\n- The requested quantity is the number of different orders in which a marksman can break all eight clay targets in a shooting match.\n- The targets are arranged in hanging columns; one column contains exactly two targets, and every other column has the same unknown positive integer height h.\n- The marksman first chooses a column and then must break the lowest remaining target in that chosen column.\n- Because each column is taken from bottom to top, the order within a column is fixed, so a complete breaking order is determined by the sequence of column choices.",
+    "rendered_input_hash": "21d1b2d1fb0829de5f3a99cb37f6f69353b105b1abbdc86dc9e0fdca8c96e253"
+  },
+  "96:onegap:0": {
+    "source_index": 96,
+    "arm": "onegap",
+    "bank_key": "96:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{12}",
+      "clues": [
+        "The requested quantity is the convergence and value of the limit as x→0 of sin(F(x))/x^8, where F(x)=∫_{x^3}^{x^2}(∫_0^t g(s^2) ds) dt.",
+        "The function g is differentiable for every x in [-1,1] and satisfies g(0)=0.",
+        "The value g'(0) is an unreported real number a.",
+        "Because g(0)=0 and g is differentiable at 0, the expansion g(u)=a u+o(u) holds as u→0.",
+        "Consequently, the inner integral H(t)=∫_0^t g(s^2) ds has leading term a t^3/3 as t→0."
+      ],
+      "rendered_clues": "- The requested quantity is the convergence and value of the limit as x→0 of sin(F(x))/x^8, where F(x)=∫_{x^3}^{x^2}(∫_0^t g(s^2) ds) dt.\n- The function g is differentiable for every x in [-1,1] and satisfies g(0)=0.\n- The value g'(0) is an unreported real number a.\n- Because g(0)=0 and g is differentiable at 0, the expansion g(u)=a u+o(u) holds as u→0.\n- Consequently, the inner integral H(t)=∫_0^t g(s^2) ds has leading term a t^3/3 as t→0.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "8e5917d116e2fa2df08b5efea3b54cb8621ce401f4b90f699eaa48b230a1a3d9",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{12}\nOBSERVATIONS:\n- The requested quantity is the convergence and value of the limit as x→0 of sin(F(x))/x^8, where F(x)=∫_{x^3}^{x^2}(∫_0^t g(s^2) ds) dt.\n- The function g is differentiable for every x in [-1,1] and satisfies g(0)=0.\n- The value g'(0) is an unreported real number a.\n- Because g(0)=0 and g is differentiable at 0, the expansion g(u)=a u+o(u) holds as u→0.\n- Consequently, the inner integral H(t)=∫_0^t g(s^2) ds has leading term a t^3/3 as t→0.",
+    "rendered_input_hash": "11f3d41d9100681dc50a80430db95a2897870e6e9374364a872c1d1ddf900943"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-ad.md",
+  "prompt_hash": "e433ad49b9cd27e0fcc038526ee2d8f6d2679376290654f1c7eecca931842705",
+  "cases": [
+    {
+      "id": "continuity-valid",
+      "family": "continuity",
+      "population": "authored",
+      "expected": "valid",
+      "final_answer": "Yes",
+      "clues": [
+        "The function is defined on the real line.",
+        "Its absolute value at x is |x|."
+      ],
+      "response": {
+        "question": "Is the function f(x)=|x| continuous at0?",
+        "justification": "For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon. Thus f is continuous at0.",
+        "assumptions": []
+      },
+      "reference": "For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon. Thus f is continuous at0."
+    },
+    {
+      "id": "continuity-invalid",
+      "family": "continuity",
+      "population": "authored",
+      "expected": "invalid",
+      "final_answer": "Yes",
+      "clues": [
+        "The function is defined on the real line.",
+        "Its absolute value at x is |x|."
+      ],
+      "response": {
+        "question": "Is the function f(x)=|x| continuous at0?",
+        "justification": "The function |x| is differentiable at0 with derivative0, and differentiability implies continuity, so it is continuous at0.",
+        "assumptions": []
+      },
+      "reference": "Right derivative is1, left derivative is-1, so differentiability at0 is false. The continuity conclusion is nevertheless true."
+    },
+    {
+      "id": "probability-valid",
+      "family": "probability",
+      "population": "authored",
+      "expected": "valid",
+      "final_answer": "11/36",
+      "clues": [
+        "Two fair six-sided dice are independent.",
+        "The desired event involves a six."
+      ],
+      "response": {
+        "question": "What is the probability that at least one of two independent fair six-sided dice shows6?",
+        "justification": "The complement is no six on either die, with probability(5/6)^2=25/36; subtracting from1 gives11/36.",
+        "assumptions": []
+      },
+      "reference": "The complement is no six on either die, with probability(5/6)^2=25/36; subtracting from1 gives11/36."
+    },
+    {
+      "id": "probability-invalid",
+      "family": "probability",
+      "population": "authored",
+      "expected": "invalid",
+      "final_answer": "11/36",
+      "clues": [
+        "Two fair six-sided dice are independent.",
+        "The desired event involves a six."
+      ],
+      "response": {
+        "question": "What is the probability that at least one of two independent fair six-sided dice shows6?",
+        "justification": "Let A and B mean the first and second dice show6. A and B are mutually exclusive. Inclusion-exclusion gives P(A union B)=1/6+1/6-1/36=11/36.",
+        "assumptions": []
+      },
+      "reference": "The claim of mutual exclusion is false: both show6 with probability1/36. A correct numerical formula does not validate that false claim."
+    },
+    {
+      "id": "quadratic-valid",
+      "family": "quadratic",
+      "population": "authored",
+      "expected": "valid",
+      "final_answer": "2 and 3",
+      "clues": [
+        "A monic quadratic has two real roots.",
+        "Their sum is5."
+      ],
+      "response": {
+        "question": "Find the real roots of x^2-5x+6=0.",
+        "justification": "Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.",
+        "assumptions": []
+      },
+      "reference": "Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3."
+    },
+    {
+      "id": "quadratic-invalid",
+      "family": "quadratic",
+      "population": "authored",
+      "expected": "invalid",
+      "final_answer": "2 and 3",
+      "clues": [
+        "A monic quadratic has two real roots.",
+        "Their sum is5."
+      ],
+      "response": {
+        "question": "Find the real roots of x^2-5x+6=0.",
+        "justification": "Factor x^2-5x+6=(x-2)(x+3). Setting each factor to zero gives roots2 and3.",
+        "assumptions": []
+      },
+      "reference": "(x-2)(x+3)=x^2+x-6 and its second root is-3, so both factorization and stated inference are false."
+    },
+    {
+      "id": "tree-valid",
+      "family": "tree",
+      "population": "authored",
+      "expected": "valid",
+      "final_answer": "5",
+      "clues": [
+        "A finite simple graph has six vertices.",
+        "Connectedness is relevant to the edge count."
+      ],
+      "response": {
+        "question": "How many edges does a tree with six vertices have?",
+        "justification": "A tree has n-1 edges, proved by removing a leaf inductively. For n=6 this gives5.",
+        "assumptions": []
+      },
+      "reference": "A tree has n-1 edges, proved by removing a leaf inductively. For n=6 this gives5."
+    },
+    {
+      "id": "tree-invalid",
+      "family": "tree",
+      "population": "authored",
+      "expected": "invalid",
+      "final_answer": "5",
+      "clues": [
+        "A finite simple graph has six vertices.",
+        "Connectedness is relevant to the edge count."
+      ],
+      "response": {
+        "question": "How many edges does a tree with six vertices have?",
+        "justification": "Every connected simple graph with six vertices has exactly five edges. A tree is connected, so its edge count is5.",
+        "assumptions": []
+      },
+      "reference": "The cycle C6 is connected with six edges, refuting the universal premise. Trees specifically have five edges."
+    },
+    {
+      "id": "production-62-invalid",
+      "family": "production-62",
+      "population": "production_diagnostic",
+      "expected": "invalid",
+      "final_answer": "\\infty",
+      "clues": [
+        "The function being expanded is f(z)= sin z/(z-π)^2.",
+        "The requested quantity is the outer radius of convergence of a Laurent series for f.",
+        "The Laurent expansion is taken about some point c, not necessarily the origin.",
+        "The numerator sin z is entire and vanishes at z=π.",
+        "The denominator (z-π)^2 has a double zero at z=π.",
+        "Apart from z=π, the function f is analytic on the finite complex plane."
+      ],
+      "response": {
+        "question": "What is the outer radius of convergence of the Laurent series expansion of f(z) = sin(z)/(z-π)^2 about the point z=π?",
+        "justification": "The function f(z) has a singularity at z=π, where sin(z) vanishes and the denominator (z-π)^2 creates a double pole. The outer radius of convergence of a Laurent series about a point is determined by the distance to the nearest singularity. Since the only singularity is at z=π and the function is analytic everywhere else in the finite complex plane, the radius of convergence is infinite. Thus, the outer radius of convergence is ∞.",
+        "assumptions": [
+          "The function f(z) is analytic everywhere except at z=π, which is the only singularity.",
+          "The Laurent series is taken about z=π, which is the point of expansion.",
+          "The radius of convergence for a Laurent series about a point is determined by the distance to the nearest singularity, which in this case is zero because the only singularity is at the expansion point, leading to an infinite radius of convergence."
+        ]
+      },
+      "reference": "The raw response claims a double pole, but the numerator has a simple zero, so f has a simple pole. Its nearest-singularity explanation is also inconsistent.",
+      "parent": {
+        "artifact": "artifacts/reconstruct/missing-premise-ab/student.json",
+        "response_key": "62:rich6:0",
+        "response_hash": "09d577ba45ac1463976f404c2b34d8f918b7dbb245119976c276f373c46237be"
+      }
+    },
+    {
+      "id": "production-62-valid",
+      "family": "production-62",
+      "population": "authored_correction_NOT_QWEN",
+      "expected": "valid",
+      "final_answer": "\\infty",
+      "clues": [
+        "The function being expanded is f(z)= sin z/(z-π)^2.",
+        "The requested quantity is the outer radius of convergence of a Laurent series for f.",
+        "The Laurent expansion is taken about some point c, not necessarily the origin.",
+        "The numerator sin z is entire and vanishes at z=π.",
+        "The denominator (z-π)^2 has a double zero at z=π.",
+        "Apart from z=π, the function f is analytic on the finite complex plane."
+      ],
+      "response": {
+        "question": "What is the outer radius of convergence of the Laurent series expansion of f(z) = sin(z)/(z-π)^2 about the point z=π?",
+        "justification": "Writing w=z-pi gives sin(pi+w)=-sin(w), so f=-sin(w)/w^2=-1/w+w/6-... . The regular part is entire in w and the only negative-power term is -1/w. Hence the Laurent expansion about pi converges for every0<|w|<infinity and has outer radius infinity.",
+        "assumptions": []
+      },
+      "reference": "Writing w=z-pi gives sin(pi+w)=-sin(w), so f=-sin(w)/w^2=-1/w+w/6-... . The regular part is entire in w and the only negative-power term is -1/w. Hence the Laurent expansion about pi converges for every0<|w|<infinity and has outer radius infinity.",
+      "parent": {
+        "artifact": "artifacts/reconstruct/missing-premise-ab/student.json",
+        "response_key": "62:rich6:0",
+        "response_hash": "09d577ba45ac1463976f404c2b34d8f918b7dbb245119976c276f373c46237be"
+      }
+    },
+    {
+      "id": "production-129-invalid",
+      "family": "production-129",
+      "population": "production_diagnostic",
+      "expected": "invalid",
+      "final_answer": "1392",
+      "clues": [
+        "The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.",
+        "In any valid word, each pair of neighboring digits must differ by exactly 1.",
+        "The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.",
+        "The fixed length is less than 20.",
+        "For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.",
+        "For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero."
+      ],
+      "response": {
+        "assumptions": [
+          "The fixed length is less than 20, and the alphabet has 7 digits (0-6). The recurrence relation f_{k+1}(d)=f_k(d-1)+f_k(d+1) with boundary conditions at 0 and 6 being zero is used. The total number of valid words for a fixed length k is the sum of f_k(d) over all digits d. The remainder modulo 2008 of this total is 1392."
+        ],
+        "question": "The alphabet consists of the digits 0,1,2,3,4,5,6. For a fixed positive length less than 20, how many valid words are there where each neighboring digit differs by exactly 1? Find the remainder modulo 2008 of this total number of valid words.",
+        "justification": "The problem involves counting valid words with specific digit transitions. Using the recurrence relation f_{k+1}(d)=f_k(d-1)+f_k(d+1) with boundary conditions, we calculate the total number of valid words for each length k < 20. Summing these totals and taking the remainder modulo 2008 gives 1392. The recurrence and boundary conditions are consistent with the observations, and the final answer is derived from the specified constraints."
+      },
+      "reference": "The raw question leaves the fixed length unspecified. Length1 gives7 and length2 gives12. Its claimed sum over all lengths1..19 actually gives1115 modulo2008, not1392.",
+      "parent": {
+        "artifact": "artifacts/reconstruct/premises-first-ac/student.json",
+        "response_key": "129:rich6:0",
+        "response_hash": "ca3060e0b8e24bc3ed29de80f6e5a4175c53836c7e1252f3d24522f0353286c9"
+      }
+    },
+    {
+      "id": "production-129-valid",
+      "family": "production-129",
+      "population": "authored_correction_NOT_QWEN",
+      "expected": "valid",
+      "final_answer": "1392",
+      "clues": [
+        "The alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.",
+        "In any valid word, each pair of neighboring digits must differ by exactly 1.",
+        "The requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.",
+        "The fixed length is less than 20.",
+        "For a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.",
+        "For k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero."
+      ],
+      "response": {
+        "question": "How many length12 words over digits0,1,2,3,4,5,6 have neighboring digits differing by exactly1, reduced modulo2008?",
+        "justification": "Let f1(d)=1 for all seven digits. Iterate f(k+1,d)=f(k,d-1)+f(k,d+1), using zero only outside0..6. At length12 the vector is[396,792,956,1120,956,792,396], summing to5408. Thus the remainder is5408-2*2008=1392.",
+        "assumptions": []
+      },
+      "reference": "Let f1(d)=1 for all seven digits. Iterate f(k+1,d)=f(k,d-1)+f(k,d+1), using zero only outside0..6. At length12 the vector is[396,792,956,1120,956,792,396], summing to5408. Thus the remainder is5408-2*2008=1392.",
+      "parent": {
+        "artifact": "artifacts/reconstruct/premises-first-ac/student.json",
+        "response_key": "129:rich6:0",
+        "response_hash": "ca3060e0b8e24bc3ed29de80f6e5a4175c53836c7e1252f3d24522f0353286c9"
+      }
+    }
+  ],
+  "budget_usd": 0.15,
+  "calls": 12
+}

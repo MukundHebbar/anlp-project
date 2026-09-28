@@ -1,0 +1,810 @@
+{
+  "incumbent": {
+    "planned": 24,
+    "resolved": 24,
+    "failure_records": 0,
+    "deterministically_revalidated": 0,
+    "labeled_controls": 18,
+    "control_agreements": 17,
+    "rows": [
+      {
+        "id": "dice-sparse",
+        "family": "dice",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public observation gives a useful but incomplete probabilistic bridge. It does not state the target event or enough constraints to determine the probability, so substantive mathematical structure must still be inferred.",
+        "agrees": true
+      },
+      {
+        "id": "dice-full",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "ACCEPT",
+        "reason": "The premise bundle is present, but the target expression is not explicitly disclosed. The answer 1/6 requires inferring that the desired quantity is the probability of the described event and performing the favorable-outcome count.",
+        "agrees": false
+      },
+      {
+        "id": "dice-superset",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observations supply the complete probabilistic setup and total outcome count, and the final answer is given. The only unstated step is a routine enumeration of favorable outcomes, so no substantive mathematical structure remains.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-sparse",
+        "family": "derivative",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public observations provide only a generic method clue and the final answer. They do not disclose a complete premise bundle, target expression, or solution steps, so meaningful mathematical structure must still be inferred.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-full",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public observation explicitly supplies the complete premise (f(x)=x³) and the requested target (its derivative at x=2), leaving only routine differentiation/arithmetic.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-superset",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observations explicitly state the function, the requested derivative evaluation point, and the derivative formula. This leaves only routine evaluation, so the public disclosure is sufficient to reconstruct the solution.",
+        "agrees": true
+      },
+      {
+        "id": "modular-sparse",
+        "family": "modular",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public observation gives only a single modular condition and the final answer. It does not disclose a complete premise bundle, the requested target, or the substantive bridge needed to derive 8.",
+        "agrees": true
+      },
+      {
+        "id": "modular-full",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observation explicitly states the constraints on n and asks for the smallest such n, which is the complete problem setup and target. The remaining work is routine arithmetic/CRT, so this is a disclosure rejection.",
+        "agrees": true
+      },
+      {
+        "id": "modular-superset",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public observations provide the complete premise bundle, the requested target, and the congruence class of all solutions, leaving only trivial identification of the least positive representative.",
+        "agrees": true
+      },
+      {
+        "id": "integral-sparse",
+        "family": "integral",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public observation provides only a broad definition/theorem about antiderivatives differing by a constant. It does not disclose a complete premise bundle, target, or solution steps, so meaningful missing structure remains.",
+        "agrees": true
+      },
+      {
+        "id": "integral-full",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue explicitly supplies the complete premise bundle and requested target, and the final answer is also present. This leaves no meaningful mathematical setup, constraint, or bridge to infer.",
+        "agrees": true
+      },
+      {
+        "id": "integral-superset",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observations explicitly provide the integrand, limits, target definite integral, and the antiderivative/evaluation step, leaving only routine arithmetic.",
+        "agrees": true
+      },
+      {
+        "id": "graph-sparse",
+        "family": "graph",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The clue is a routine mathematical fact but does not disclose a complete premise bundle, target, or solution. Substantive setup and inference remain missing.",
+        "agrees": true
+      },
+      {
+        "id": "graph-full",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public observation explicitly provides the complete premise (complete graph on four labelled vertices) and the requested target (count its spanning trees), with the final answer also given. This is a complete question restatement rather than a partial setup requiring meaningful inference.",
+        "agrees": true
+      },
+      {
+        "id": "graph-superset",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observations explicitly state the exact counting problem and provide Cayley’s formula with the needed substitution, leaving only routine arithmetic to obtain 16.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-sparse",
+        "family": "sequence",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public observation gives only a geometric recurrence relation. It does not disclose a complete premise bundle, the requested target, or the steps needed to obtain 162.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-full",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public observation provides both the complete premise bundle and the requested target, leaving only mechanical computation of the fifth term.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-superset",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observations provide the complete setup (initial term 2, multiplier 3, fifth term requested) and the target expression (2 times 3 to the fourth power), leaving only routine calculation.",
+        "agrees": true
+      },
+      {
+        "id": "production-123-k1",
+        "family": "production-123",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clue explicitly states the nth partial sum formula for the given sequence, which is the complete mathematical content needed for a yes/no verification or direct target of that form.",
+        "agrees": null
+      },
+      {
+        "id": "production-141-k1",
+        "family": "production-141",
+        "expected": null,
+        "observed": "ACCEPT",
+        "reason": "The observation provides a definition/setup and target expression, but not the actual count or the substantive enumeration needed to evaluate it. Meaningful mathematical structure remains missing.",
+        "agrees": null
+      },
+      {
+        "id": "production-8-k3",
+        "family": "production-8",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The observations give the premise a+b+c=0, the denominator factorizations, and the common-denominator forms of the three fractions, while the final answer 1 is provided. No substantive mathematical bridge remains beyond routine algebra.",
+        "agrees": null
+      },
+      {
+        "id": "production-33-k3",
+        "family": "production-33",
+        "expected": null,
+        "observed": "ACCEPT",
+        "reason": "The observations provide key proof ingredients but do not fully state the requested target or complete the contradiction argument for both possible signs of h.",
+        "agrees": null
+      },
+      {
+        "id": "production-112-k3",
+        "family": "production-112",
+        "expected": null,
+        "observed": "ACCEPT",
+        "reason": "The public clues provide necessary constraints and a useful bridge, but the actual optimization/target selection is not explicitly stated. The final value is not derived in the observations, so meaningful mathematical structure remains to be inferred.",
+        "agrees": null
+      },
+      {
+        "id": "production-86-k3",
+        "family": "production-86",
+        "expected": null,
+        "observed": "ACCEPT",
+        "reason": "The observations provide key solution ingredients, but they do not explicitly state the complete problem setup or target expression. A solver must infer the integral being studied and how the pieces combine to yield the final answer.",
+        "agrees": null
+      }
+    ]
+  },
+  "candidate": {
+    "planned": 24,
+    "resolved": 24,
+    "failure_records": 4,
+    "deterministically_revalidated": 4,
+    "labeled_controls": 18,
+    "control_agreements": 18,
+    "rows": [
+      {
+        "id": "dice-sparse",
+        "family": "dice",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public input gives a final numeric answer and a general conditioning observation, but it does not expose a complete premise-target bundle or a full solution. The target event and the computation remain missing.",
+        "agrees": true
+      },
+      {
+        "id": "dice-full",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The clue supplies the full probability experiment and event, and the final answer gives the requested probability. Removing an explicit ask verb does not withhold meaningful structure.",
+        "agrees": true
+      },
+      {
+        "id": "dice-superset",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues give the full dice-roll setup and total outcome count, and the answer 1/6 supplies the target probability. The only omitted step is trivial enumeration of favorable outcomes, so the premise-target bundle and nearly complete solution are exposed.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-sparse",
+        "family": "derivative",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public observation is only a generic method cue. It does not expose a complete question, constraints, target, or solution, so meaningful structure remains to be inferred.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-full",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue supplies the function, the exact target (derivative at x=2), and the final answer 12. This exposes a complete premise-and-target bundle and leaves only routine computation.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-superset",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public observations supply the function, the target derivative evaluation point, and the derivative function. Together with the final answer 12, this exposes the complete premise-target bundle and leaves only routine arithmetic.",
+        "agrees": true
+      },
+      {
+        "id": "modular-sparse",
+        "family": "modular",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public input supplies a single local divisibility condition and the answer 8, but not the original target or enough constraints to form a complete premise-and-target bundle or solution.",
+        "agrees": true
+      },
+      {
+        "id": "modular-full",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue exposes the full premise and target: find the smallest positive integer satisfying n≡2 mod 3 and n≡3 mod 5. With the final answer 8, the complete problem and solution are disclosed.",
+        "agrees": true
+      },
+      {
+        "id": "modular-superset",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues jointly provide the full modular setup, the requested smallest positive solution, and the solution class congruent to 8 modulo 15, with final answer 8. This is a complete premise-and-target bundle and complete solution disclosure.",
+        "agrees": true
+      },
+      {
+        "id": "integral-sparse",
+        "family": "integral",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public clue is only a general fact about antiderivatives. It does not expose a complete premise-and-target bundle or a solution yielding the final answer 1.",
+        "agrees": true
+      },
+      {
+        "id": "integral-full",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The clue supplies the integrand, limits, and target, and the final answer supplies the result, fully exposing the evaluation problem and its solution.",
+        "agrees": true
+      },
+      {
+        "id": "integral-superset",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observations jointly provide the full definite-integral setup, the antiderivative evaluation, and the final value, so the premise-target bundle and complete solution are exposed.",
+        "agrees": true
+      },
+      {
+        "id": "graph-sparse",
+        "family": "graph",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The only public clue is a general fact about leaf removal in trees. It does not expose a complete premise-target bundle or a solution to a specific problem yielding 16.",
+        "agrees": true
+      },
+      {
+        "id": "graph-full",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The clue directly asks for the number of spanning trees of K4, and the supplied final answer is 16. This exposes the complete premise-and-target bundle and the answer, so the reconstruction input is not meaningfully withheld.",
+        "agrees": true
+      },
+      {
+        "id": "graph-superset",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues provide the complete problem and the Cayley-formula computation leading directly to the final answer 16.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-sparse",
+        "family": "sequence",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public clue only states a recurrence relation. It does not provide an initial term, a term position, or a target relation, so the answer 162 is not derivable from the disclosed information alone.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-full",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The clue supplies the full sequence rule, starting value, and target term, while the final answer supplies the result. This exposes a complete premise-and-target bundle and leaves only routine computation.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-superset",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The observations jointly provide the complete sequence setup, the requested fifth term, and the formula needed to compute it, with the final answer also supplied. No meaningful missing structure remains to infer.",
+        "agrees": true
+      },
+      {
+        "id": "production-123-k1",
+        "family": "production-123",
+        "expected": null,
+        "observed": "ACCEPT",
+        "reason": "The public input gives a final answer and a local partial-sum fact, but it does not expose the question or target that 'Yes' answers. The formula alone is not a complete premise-and-target bundle.",
+        "agrees": null
+      },
+      {
+        "id": "production-141-k1",
+        "family": "production-141",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The observation states the exact coefficient target and its generating-function/counting setup, so the premise and target are exposed. The remaining work is routine computation, not a meaningful missing structure.",
+        "agrees": null
+      },
+      {
+        "id": "production-8-k3",
+        "family": "production-8",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public observations jointly expose the original sum-evaluation setup and nearly all solution steps. The final answer 1 plus the common-denominator transformation leaves only routine simplification, so the reconstruction input is substantially disclosed.",
+        "agrees": null
+      },
+      {
+        "id": "production-33-k3",
+        "family": "production-33",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The observations jointly expose the common-maximum premise, the equality target, and the key contradiction argument. Together they form a nearly complete solution to the existence question, so the disclosure is not acceptable.",
+        "agrees": null
+      },
+      {
+        "id": "production-112-k3",
+        "family": "production-112",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The clues jointly provide the congruence, the four-digit negative range, and the derived bounds for k. With the supplied answer -1011, the complete setup and result for finding the largest such integer are exposed; the only absent wording is the target adjective, which is inferable from the answer.",
+        "agrees": null
+      },
+      {
+        "id": "production-86-k3",
+        "family": "production-86",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The clues provide the key proof steps for evaluating the limit of the integral, and the final answer supplies the value; together they expose a complete or nearly complete solution.",
+        "agrees": null
+      }
+    ]
+  },
+  "source-aware": {
+    "planned": 24,
+    "resolved": 24,
+    "failure_records": 0,
+    "deterministically_revalidated": 0,
+    "labeled_controls": 18,
+    "control_agreements": 16,
+    "rows": [
+      {
+        "id": "dice-sparse",
+        "family": "dice",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public text gives the numerical answer and a generic conditioning clue, but it does not state the original dice-rolling premise or the sum-is-7 event. The full premise-target bundle and complete solution are not exposed.",
+        "agrees": true
+      },
+      {
+        "id": "dice-full",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue paraphrases the source premise and target event, while the public final answer gives the exact requested probability. Together they expose the complete premise-target bundle and final solution.",
+        "agrees": true
+      },
+      {
+        "id": "dice-superset",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue c1 paraphrases the source premise and target event, and the public final answer supplies the requested probability. Together they expose the full premise-target bundle, so the original task is recoverable without source-only information.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-sparse",
+        "family": "derivative",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public text gives the final numeric answer and a generic power-rule clue, but it withholds the essential source premise: the specific function x^3 and the evaluation point x=2. The original task is not directly copied, and the full premise-target bundle is not exposed.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-full",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue paraphrases the full source task by identifying f(x)=x³ and the required derivative at x=2, and the public final answer 12 supplies the solution value.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-superset",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue c1 paraphrases the full source task by identifying f(x)=x³ and the target as its derivative at x=2. Clue c2 states the derivative function 3x², and the public final answer 12 completes the solution. Thus the premise-target bundle and complete solution are exposed.",
+        "agrees": true
+      },
+      {
+        "id": "modular-sparse",
+        "family": "modular",
+        "expected": "ACCEPT",
+        "observed": "REJECT",
+        "reason": "The public final answer 8 is exactly the least positive integer solution to the private question, so the complete solution/target is exposed. The clue only supplies the first congruence n≡2 (mod 3), leaving the second congruence absent, but that does not prevent disclosure of the answer.",
+        "agrees": false
+      },
+      {
+        "id": "modular-full",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue restates the full source premise and target: positive n satisfying n≡2(mod3), n≡3(mod5), and requiring the smallest such n. The public final answer 8 directly supplies the complete solution.",
+        "agrees": true
+      },
+      {
+        "id": "modular-superset",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue c1 paraphrases the entire private task, including positivity, both congruences, and the requirement for the smallest such n. The public answer 8 and clue c2 also expose the solution, so the original task and complete solution are publicly available.",
+        "agrees": true
+      },
+      {
+        "id": "integral-sparse",
+        "family": "integral",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public text gives only the numeric result and a generic fact about antiderivatives. It does not state the integrand, the limits, or the definite-integral task, so the original private question is not directly disclosed or fully recoverable by paraphrase.",
+        "agrees": true
+      },
+      {
+        "id": "integral-full",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue exposes the full source premise-target bundle by specifying the integrand 2x, limits 0 and 1, and target definite integral. The public final answer 1 exposes the complete solution.",
+        "agrees": true
+      },
+      {
+        "id": "integral-superset",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues paraphrase the full source task by specifying the integrand 2x, limits 0 and 1, and target definite integral. They also provide the antiderivative/evaluation method, and the final answer 1 completes the solution. Thus the original task and a complete solution are exposed.",
+        "agrees": true
+      },
+      {
+        "id": "graph-sparse",
+        "family": "graph",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public text gives only the numeric answer 16 and a generic tree fact. It does not state K4, labelled vertices, spanning trees, or the counting task, so the original question is not directly disclosed or fully recoverable from the public clues.",
+        "agrees": true
+      },
+      {
+        "id": "graph-full",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue paraphrases the private question by asking to count spanning trees of the complete graph on four labelled vertices, which is equivalent to K4 on four labelled vertices. The public final answer 16 directly supplies the complete solution.",
+        "agrees": true
+      },
+      {
+        "id": "graph-superset",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue states the same task as the private question: counting spanning trees of the complete graph on four labelled vertices. The other clue and final answer give Cayley’s formula application and the result 16, exposing both the target and complete solution.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-sparse",
+        "family": "sequence",
+        "expected": "ACCEPT",
+        "observed": "REJECT",
+        "reason": "The public clue states the recurrence rule and the public final answer gives the target value 162, so the original task's answer and method are effectively disclosed. The only absent source element is the initial value, which is recoverable by routine arithmetic.",
+        "agrees": false
+      },
+      {
+        "id": "sequence-full",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue states the starting value 2, the rule of multiplying each term by 3, and that the fifth term is required. Together with the public final answer 162, this exposes the full source task and its answer.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-superset",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues paraphrase the full private task by specifying the start value, multiplicative recurrence, and requested fifth term. They also expose the complete solution formula and final value, so the original task and solution are effectively disclosed.",
+        "agrees": true
+      },
+      {
+        "id": "production-123-k1",
+        "family": "production-123",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clue supplies the exact witness sequence 2,4,4,... and its partial-sum formula, while the public answer confirms existence. Together they constitute a nearly complete solution to the private existence question; only the routine modular verification of the non-perfect-power property is left implicit.",
+        "agrees": null
+      },
+      {
+        "id": "production-141-k1",
+        "family": "production-141",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The original task is effectively exposed by the public clue: the coefficient of \\(x^{21}\\) in \\((x^3+x^4+\\cdots+x^{10})^4\\) equals the coefficient of \\(x^9\\) in \\((1+x+\\cdots+x^7)^4\\), which the clue states, and the public answer gives 204. The remaining recovery step is routine algebraic shifting, not a genuinely withheld essential element.",
+        "agrees": null
+      },
+      {
+        "id": "production-8-k3",
+        "family": "production-8",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues state the condition a+b+c=0, the three denominators 2a^2+bc, 2b^2+ca, 2c^2+ab, the common denominator and transformed fractions, and the final answer 1. Together they reconstruct the original expression and nearly complete the solution; only routine simplification remains.",
+        "agrees": null
+      },
+      {
+        "id": "production-33-k3",
+        "family": "production-33",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues state the common maximum premise, the negation of the target equality condition, and the key contradiction for the f>g case. Together with the public answer 'Yes', this exposes a nearly complete solution to the private question.",
+        "agrees": null
+      },
+      {
+        "id": "production-112-k3",
+        "family": "production-112",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues expose the congruence condition and the four-digit negative range, and the public final answer gives the exact target value -1011. Together they expose the complete premise-target bundle and solution.",
+        "agrees": null
+      },
+      {
+        "id": "production-86-k3",
+        "family": "production-86",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues collectively expose the integrand 1/(1+(x/a)^n), its behavior on 0≤x<a and x≥a, the comparison integral for the tail, and the final answer a. Although the exact limit notation is not copied, the original task and a nearly complete solution are recoverable by routine assembly.",
+        "agrees": null
+      }
+    ]
+  },
+  "source-aware-p2": {
+    "planned": 24,
+    "resolved": 24,
+    "failure_records": 0,
+    "deterministically_revalidated": 0,
+    "labeled_controls": 18,
+    "control_agreements": 18,
+    "rows": [
+      {
+        "id": "dice-sparse",
+        "family": "dice",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public answer gives only the result 1/6, and the clue only states a generic conditioning partition into six equally probable cases. It does not disclose the source question's target sum of 7 or the complete two-dice premise, so the original task is not directly copied or fully exposed.",
+        "agrees": true
+      },
+      {
+        "id": "dice-full",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue paraphrases the source premise and event, and the public answer gives the target probability. The missing question verb is routine grammatical assembly and does not count as a withheld essential element.",
+        "agrees": true
+      },
+      {
+        "id": "dice-superset",
+        "family": "dice",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue c1 paraphrases the private question's essential premise and target event: two independent fair six-sided dice and the event that their sum is 7. Although the favorable-outcome count is not explicitly shown, the original task is effectively exposed as a premise-target bundle, so this is not safe.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-sparse",
+        "family": "derivative",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public clue only mentions the power rule, and the final answer gives 12. Neither publicly states the function x^3 nor the evaluation point x=2, so the original task is not directly copied or fully exposed. The answer alone is not a complete solution or premise-target bundle.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-full",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue paraphrases the private source task by specifying f(x)=x³ and that the required quantity is its derivative at x=2. The final answer 12 is also supplied. Thus the premise-target bundle is exposed, even though no derivation is shown.",
+        "agrees": true
+      },
+      {
+        "id": "derivative-superset",
+        "family": "derivative",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues expose the full premise-target bundle and the derivative rule needed to obtain the answer. Although c1 is a paraphrase rather than an exact copy, it states the original task equivalently, and c2 supplies the derivative function, so the original task and complete solution are publicly disclosed.",
+        "agrees": true
+      },
+      {
+        "id": "modular-sparse",
+        "family": "modular",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public clue exposes only one of the two required congruences. The final answer 8 is supplied, but its presence is not treated as a leak. The essential second congruence and the full premise-target bundle remain absent, so the original task is not directly disclosed or completely solved by the public material.",
+        "agrees": true
+      },
+      {
+        "id": "modular-full",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue is a paraphrase of the full private task: it exposes all essential premises and the target. Although it does not show the derivation, the premise-target bundle is fully disclosed, so this is a source disclosure rejection.",
+        "agrees": true
+      },
+      {
+        "id": "modular-superset",
+        "family": "modular",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue c1 paraphrases the full source task, including all premises and the target. The answer 8 and c2 also identify the solution congruence, so the original task is publicly recoverable without using private source evidence.",
+        "agrees": true
+      },
+      {
+        "id": "integral-sparse",
+        "family": "integral",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public material supplies only the final value 1 and a generic fact about antiderivatives. It does not expose the source question's integrand, limits, or derivation, and the result alone is not a complete solution or premise-target bundle.",
+        "agrees": true
+      },
+      {
+        "id": "integral-full",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue explicitly states the integrand 2x, the limits 0 and 1, and that the target is the definite integral, which is a complete paraphrase of the private source question. The final answer 1 is also supplied, though the derivation is not shown. The essential premise-target bundle is exposed.",
+        "agrees": true
+      },
+      {
+        "id": "integral-superset",
+        "family": "integral",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues explicitly state the integrand, limits, and target, and also provide the antiderivative/evaluation step, so the original task and a complete solution are exposed by paraphrase.",
+        "agrees": true
+      },
+      {
+        "id": "graph-sparse",
+        "family": "graph",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public material only gives the final numeric answer 16 and a generic fact about trees. It does not state K4, labelled vertices, spanning trees, or the counting method. The answer alone is not a disclosure of the original task or a complete solution.",
+        "agrees": true
+      },
+      {
+        "id": "graph-full",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue is a paraphrase of the private source question, exposing the essential premise and target. The answer 16 is present, but the rejection is based on the premise-target bundle being exposed, not merely the result.",
+        "agrees": true
+      },
+      {
+        "id": "graph-superset",
+        "family": "graph",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue c1 paraphrases the private question by asking to count spanning trees of the complete graph on four labelled vertices, which is exactly K4. Clue c2 supplies Cayley’s formula and the computation 4^(4-2), and the final answer 16 is given. Thus the premise-target bundle and complete solution are publicly exposed.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-sparse",
+        "family": "sequence",
+        "expected": "ACCEPT",
+        "observed": "ACCEPT",
+        "reason": "The public clue paraphrases only the recurrence relation, and the public answer gives the final value. The source task's initial condition and requested term are not publicly specified, so the original question is not directly disclosed or fully recoverable from the public material alone.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-full",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clue paraphrases the full source task: initial value 2, recurrence multiply by 3, and target fifth term. Together with the supplied answer 162, the essential premise-target bundle is exposed, so the original task is recoverable without private evidence.",
+        "agrees": true
+      },
+      {
+        "id": "sequence-superset",
+        "family": "sequence",
+        "expected": "REJECT",
+        "observed": "REJECT",
+        "reason": "The public clues paraphrase the full source task by specifying the starting value 2, the recurrence multiply by 3, and the required fifth term. They also expose the complete solution as 2 times 3 to the fourth power, yielding 162. Thus the premise-target bundle and solution are publicly disclosed.",
+        "agrees": true
+      },
+      {
+        "id": "production-123-k1",
+        "family": "production-123",
+        "expected": null,
+        "observed": "ACCEPT",
+        "reason": "The public clue supplies a candidate sequence and its partial-sum formula, but it does not state the original question, the perfect-power condition, or the modular argument excluding perfect powers. The final answer 'Yes' alone is only the result, not the task or derivation.",
+        "agrees": null
+      },
+      {
+        "id": "production-141-k1",
+        "family": "production-141",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clue exposes the equivalent reduced premise and target: coefficient of \\(x^9\\) in \\((1+x+\\cdots+x^7)^4\\), which is exactly the original coefficient of \\(x^{21}\\) after factoring out \\(x^{12}\\). The supplied answer 204 is also present. Thus the original task is recoverable by routine transformation, so the premise-target bundle is exposed.",
+        "agrees": null
+      },
+      {
+        "id": "production-8-k3",
+        "family": "production-8",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues expose the key factorization and common-denominator transformation for the original expression, and the final answer 1 is supplied. Together they provide a complete or nearly complete derivation of the source task, so the original premise-target bundle and solution are effectively disclosed.",
+        "agrees": null
+      },
+      {
+        "id": "production-33-k3",
+        "family": "production-33",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues expose the common-maximum premise, the equality target, the no-equality setup, and the key contradiction for f>g. Together with the supplied answer Yes, this is a nearly complete proof outline of the original task, not merely an isolated result.",
+        "agrees": null
+      },
+      {
+        "id": "production-112-k3",
+        "family": "production-112",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues expose the congruence equivalence, the four-digit negative interval, and the transformed k-interval. With the public answer -1011, the original task is recoverable by routine selection of the largest k, so a nearly complete solution is exposed.",
+        "agrees": null
+      },
+      {
+        "id": "production-86-k3",
+        "family": "production-86",
+        "expected": null,
+        "observed": "REJECT",
+        "reason": "The public clues c1-c3 outline the exact solution: bound the tail by (a/x)^n, note the pointwise limit 1 on [0,a), handle x=a, and evaluate the tail integral a/(n-1) tending to 0. With the final answer a, the original limit and its derivation are effectively exposed.",
+        "agrees": null
+      }
+    ]
+  }
+}

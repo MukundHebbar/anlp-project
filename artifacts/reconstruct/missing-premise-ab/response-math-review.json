@@ -1,0 +1,32 @@
+{
+  "reviewer": "Assistant analytic review before DeepSeek judgments; not human gold",
+  "rows": [
+    {
+      "response_key": "46:rich6:0",
+      "response_output_hash": "fe33363ef08f79a90aa3fe94f68a0be3e80eb85c554050e1adc584da0a06a106",
+      "evidence_hash": "f93f435753e368daba762241a1d59a493bd7aba16f6059ecb54ec92c8a1b37bf",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question changes the target to finding column heights and supplies560 as a premise. Its answer is a height distribution, not560. This is the inverse subproblem, not the reconstructed original count question; the heights are not actually computed."
+    },
+    {
+      "response_key": "62:rich6:0",
+      "response_output_hash": "dd89f114bfee8656c2193ec78b61b88b6eb5e6c3df59d2b02486539cdbe9023b",
+      "evidence_hash": "394af1cc7f9d66680343c931f12835abb04465b0f4603ba65319e8134adbdaff",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": true,
+      "grounded_valid": false,
+      "reason": "The question now exactly recovers the original function, center pi and outer-radius target. However sin(z) has a simple zero at pi, so the quotient has a simple pole, not the claimed double pole. The nearest-singularity-distance explanation and zero-distance-therefore-infinity statement are also mathematically wrong; semantic recovery succeeds but grounded verification fails."
+    },
+    {
+      "response_key": "129:rich6:0",
+      "response_output_hash": "37cbf57cafabd5d9fd216badce732d45b96af6a07716642d44182b2f123b286a",
+      "evidence_hash": "8654cb367fc73eded30c75d707332e36adb82ab1d3037d27d633f22cf7ba27c0",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question still leaves word length unspecified below20, so it does not recover length12. Different permitted lengths produce different remainders. Saying1392 is consistent with some length is not reconstruction or a verification."
+    }
+  ]
+}

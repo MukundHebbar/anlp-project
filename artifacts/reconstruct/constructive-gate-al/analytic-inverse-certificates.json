@@ -1,0 +1,27 @@
+{
+  "provenance": "Assistant mathematical arguments; separate from executed exact checks",
+  "certificates": {
+    "source21": {
+      "independent_elementary_inverse": [
+        "For odd p>2, if its unit group has no generator, primitive-root count is0 and cannot match the positive answer.",
+        "If it has a generator, its primitive-root count is phi(phi(p)).",
+        "phi(p) is even, so phi(phi(p))<=phi(p)/2.",
+        "For composite p, phi(p)<p-1; therefore its primitive-root count is strictly less than(p-1)/2=2^(m-1).",
+        "The supplied count therefore forces p prime. For prime p=2^m+1, phi(p-1)=phi(2^m)=2^(m-1) verifies the reconstruction."
+      ],
+      "certificate_note": "This independently verifies the conclusion without relying on the converter private certificate invocation of Catalan theorem."
+    },
+    "source54": {
+      "finite_answer_domain": "For R<=1, the circle touches/crosses the imaginary axis and Y^2/X^2 is unbounded near X0. Hence a finite maximum forces R>1.",
+      "forward_relation_not_public": "Maximum slope squared=1/(R^2-1), derived from discriminant/tangency.",
+      "inverse": "1/(R^2-1)=1/99 => R=10 since R>0.",
+      "attainability": "At R10 choose X=-99/100 and Y^2=99/10000: (X+1)^2+Y^2=1/100 and Y^2/X^2=1/99.",
+      "certificate_limit": "Converter omits explicit treatment of R<=1; independent review supplies the domain check without changing public clues."
+    },
+    "source67": {
+      "identity": "Ae1=c*ones and invertibility imply c!=0; sum entries of inverse=ones^T*A^-1*ones=1/c.",
+      "inverse": "Public answer1 forces c1.",
+      "public_missing_step": "Neither A^-1*ones=e1/c nor entry-sum evaluation is displayed."
+    }
+  }
+}

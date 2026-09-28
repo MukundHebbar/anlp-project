@@ -1,0 +1,273 @@
+{
+  "rows": [
+    {
+      "id": "continuity-valid",
+      "population": "authored",
+      "expected": "valid",
+      "observed": "valid",
+      "passed": true,
+      "reason": "The question asks whether f(x)=|x| is continuous at 0, and the answer is yes. The supplied epsilon-delta justification is mathematically correct: f(0)=0, so the difference is |x|, and delta=epsilon works.",
+      "checks": [
+        {
+          "claim_quote": "For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon.",
+          "verdict": "supported",
+          "evidence": "Since f(0)=|0|=0, we have |f(x)-f(0)|=||x|-0|=|x|. Choosing delta=epsilon gives |x|<delta=epsilon, hence |f(x)-f(0)|<epsilon."
+        },
+        {
+          "claim_quote": "Thus f is continuous at0.",
+          "verdict": "supported",
+          "evidence": "This satisfies the epsilon-delta definition of continuity at 0: for every epsilon>0 there exists delta>0 such that |x-0|<delta implies |f(x)-f(0)|<epsilon."
+        }
+      ]
+    },
+    {
+      "id": "continuity-invalid",
+      "population": "authored",
+      "expected": "invalid",
+      "observed": "invalid",
+      "passed": true,
+      "reason": "The final answer that f(x)=|x| is continuous at 0 is correct, but the supplied justification relies on the false claim that |x| is differentiable at 0 with derivative 0. Therefore the verification is unsound.",
+      "checks": [
+        {
+          "claim_quote": "The function |x| is differentiable at0 with derivative0",
+          "verdict": "false",
+          "evidence": "For f(x)=|x| at x=0, the difference quotient is (|h|-0)/h = |h|/h. As h→0− this is -1, and as h→0+ this is 1, so the two-sided limit does not exist. Thus |x| is not differentiable at 0."
+        },
+        {
+          "claim_quote": "differentiability implies continuity",
+          "verdict": "supported",
+          "evidence": "This is a standard theorem: if a function is differentiable at a point, then it is continuous at that point. However, it cannot be applied here because |x| is not differentiable at 0."
+        }
+      ]
+    },
+    {
+      "id": "probability-valid",
+      "population": "authored",
+      "expected": "valid",
+      "observed": "valid",
+      "passed": true,
+      "reason": "The question asks for the probability that at least one of two independent fair six-sided dice shows 6. The complement calculation is correct, and the final answer 11/36 is mathematically valid.",
+      "checks": [
+        {
+          "claim_quote": "The complement is no six on either die, with probability(5/6)^2=25/36; subtracting from1 gives11/36.",
+          "verdict": "supported",
+          "evidence": "For each fair six-sided die, P(no 6)=5/6. Independence gives P(no 6 on either die)=(5/6)^2=25/36. Therefore P(at least one 6)=1-25/36=11/36."
+        }
+      ]
+    },
+    {
+      "id": "probability-invalid",
+      "population": "authored",
+      "expected": "invalid",
+      "observed": "invalid",
+      "passed": true,
+      "reason": "The final probability 11/36 is correct, but the justification contains a false substantive claim: the events of the first and second die showing 6 are not mutually exclusive. The inclusion-exclusion expression is correct, but the stated mutual-exclusivity premise is false.",
+      "checks": [
+        {
+          "claim_quote": "A and B are mutually exclusive.",
+          "verdict": "false",
+          "evidence": "A and B can occur together when both dice show 6, so P(A∩B)=1/36>0. Thus they are not mutually exclusive."
+        },
+        {
+          "claim_quote": "P(A union B)=1/6+1/6-1/36=11/36.",
+          "verdict": "supported",
+          "evidence": "P(A∪B)=1-P(no six)=1-(5/6)^2=1-25/36=11/36, matching the stated value."
+        }
+      ]
+    },
+    {
+      "id": "quadratic-valid",
+      "population": "authored",
+      "expected": "valid",
+      "observed": "valid",
+      "passed": true,
+      "reason": "The question is well-posed, the factorization is correct, and the roots are correctly identified. The assumptions list is empty, so there are no unsupported assumptions in the student response.",
+      "checks": [
+        {
+          "claim_quote": "Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.",
+          "verdict": "supported",
+          "evidence": "Expanding (x-2)(x-3) gives x^2-5x+6. Setting each factor to zero gives x=2 or x=3, so the real roots are 2 and 3."
+        }
+      ]
+    },
+    {
+      "id": "quadratic-invalid",
+      "population": "authored",
+      "expected": "invalid",
+      "observed": "invalid",
+      "passed": true,
+      "reason": "The final answer is correct, but the supplied justification contains a false factorization and an invalid derivation. Therefore the verification is not sound.",
+      "checks": [
+        {
+          "claim_quote": "Factor x^2-5x+6=(x-2)(x+3).",
+          "verdict": "false",
+          "evidence": "Expanding (x-2)(x+3) gives x^2+x-6, not x^2-5x+6. The correct factorization is (x-2)(x-3)."
+        },
+        {
+          "claim_quote": "Setting each factor to zero gives roots2 and3.",
+          "verdict": "false",
+          "evidence": "From the stated factors, x-2=0 gives 2 and x+3=0 gives -3, so the stated factorization would give roots 2 and -3, not 2 and 3."
+        },
+        {
+          "claim_quote": "roots2 and3",
+          "verdict": "supported",
+          "evidence": "The equation x^2-5x+6=0 factors as (x-2)(x-3)=0, so the actual roots are 2 and 3."
+        }
+      ]
+    },
+    {
+      "id": "tree-valid",
+      "population": "authored",
+      "expected": "valid",
+      "observed": "valid",
+      "passed": true,
+      "reason": "The question asks for the number of edges in a tree with six vertices. The standard theorem gives n-1 edges, so the answer 5 is correct, and the supplied inductive justification is mathematically sound.",
+      "checks": [
+        {
+          "claim_quote": "A tree has n-1 edges, proved by removing a leaf inductively. For n=6 this gives5.",
+          "verdict": "supported",
+          "evidence": "A tree on n vertices has exactly n-1 edges. Inductively, a tree with n=1 has 0 edges; removing a leaf and its incident edge leaves a tree on n-1 vertices with n-2 edges, so adding the removed edge gives n-1. For n=6, this is 6-1=5."
+        }
+      ]
+    },
+    {
+      "id": "tree-invalid",
+      "population": "authored",
+      "expected": "invalid",
+      "observed": "invalid",
+      "passed": true,
+      "reason": "The final answer 5 is correct for a tree with six vertices, but the supplied justification contains a false universal claim about all connected simple graphs on six vertices. Therefore the verification is unsound.",
+      "checks": [
+        {
+          "claim_quote": "Every connected simple graph with six vertices has exactly five edges.",
+          "verdict": "false",
+          "evidence": "Counterexample: the cycle graph C6 is a connected simple graph with six vertices, but it has six edges. The complete graph K6 also has 15 edges."
+        },
+        {
+          "claim_quote": "A tree is connected, so its edge count is5.",
+          "verdict": "false",
+          "evidence": "Connectedness alone does not force five edges; C6 is connected with six vertices and six edges. A six-vertex tree has five edges because it is connected and acyclic, so e = v - 1 = 6 - 1 = 5, not merely because it is connected."
+        }
+      ]
+    },
+    {
+      "id": "production-62-invalid",
+      "population": "production_diagnostic",
+      "expected": "invalid",
+      "observed": "invalid",
+      "passed": true,
+      "reason": "The final answer ∞ is correct, but the verification contains substantive false claims: it calls the pole at z=π a double pole when it is simple, and it incorrectly justifies the infinite outer radius via the distance to the expansion-point singularity rather than the absence of any other finite singularity.",
+      "checks": [
+        {
+          "claim_quote": "where sin(z) vanishes and the denominator (z-π)^2 creates a double pole",
+          "verdict": "false",
+          "evidence": "Let w=z-π. Then sin(z)=sin(π+w)=-sin w=-w+w^3/6-..., so f(z)=(-w+w^3/6-...)/w^2=-1/w+w/6-... . Thus z=π is a simple pole, not a double pole."
+        },
+        {
+          "claim_quote": "The radius of convergence for a Laurent series about a point is determined by the distance to the nearest singularity, which in this case is zero because the only singularity is at the expansion point, leading to an infinite radius of convergence.",
+          "verdict": "false",
+          "evidence": "For a Laurent series about an isolated singular point, the outer radius is determined by the distance to the next nearest singularity, not by the distance to the expansion point itself. Here there is no other finite singularity, so the outer radius is ∞; the distance to the singularity at z=π is 0 and does not imply an infinite outer radius."
+        },
+        {
+          "claim_quote": "Since the only singularity is at z=π and the function is analytic everywhere else in the finite complex plane, the radius of convergence is infinite.",
+          "verdict": "supported",
+          "evidence": "The Laurent expansion f(π+w)=-1/w+w/6-w^3/120+... converges for all finite w≠0, so the outer radius of convergence is indeed ∞."
+        }
+      ]
+    },
+    {
+      "id": "production-62-valid",
+      "population": "authored_correction_NOT_QWEN",
+      "expected": "valid",
+      "observed": "valid",
+      "passed": true,
+      "reason": "The Laurent expansion about z=π is correctly derived. The singularity at z=π is a simple pole after cancellation of one factor, and there are no other finite singularities, so the outer radius of convergence is indeed infinity.",
+      "checks": [
+        {
+          "claim_quote": "Writing w=z-pi gives sin(pi+w)=-sin(w)",
+          "verdict": "supported",
+          "evidence": "Using sin(pi+w)=sin pi cos w + cos pi sin w = 0 - sin w = -sin w."
+        },
+        {
+          "claim_quote": "f=-sin(w)/w^2=-1/w+w/6-...",
+          "verdict": "supported",
+          "evidence": "Since sin w = w - w^3/6 + w^5/120 - ..., dividing by -w^2 gives -1/w + w/6 - w^3/120 + ... ."
+        },
+        {
+          "claim_quote": "The regular part is entire in w and the only negative-power term is -1/w.",
+          "verdict": "supported",
+          "evidence": "The nonnegative-power part is w/6 - w^3/120 + ..., an entire power series, and the only term with negative exponent is -1/w."
+        },
+        {
+          "claim_quote": "Hence the Laurent expansion about pi converges for every0<|w|<infinity and has outer radius infinity.",
+          "verdict": "supported",
+          "evidence": "A Laurent series with finite principal part and entire regular part converges for all w≠0, so in z it converges for all z≠π; the outer radius is ∞."
+        }
+      ]
+    },
+    {
+      "id": "production-129-invalid",
+      "population": "production_diagnostic",
+      "expected": "invalid",
+      "observed": "invalid",
+      "passed": true,
+      "reason": "The question omits the fixed length, so the answer is ambiguous. The verification's claim that summing totals over all lengths <20 gives 1392 is false; that sum is 1115 mod 2008. Although 1392 is correct for length 12, it is not justified by the stated question.",
+      "checks": [
+        {
+          "claim_quote": "For a fixed positive length less than 20, how many valid words are there where each neighboring digit differs by exactly 1? Find the remainder modulo 2008 of this total number of valid words.",
+          "verdict": "false",
+          "evidence": "The fixed length is not specified. For k=11 the total is 2936, remainder 928; for k=12 the total is 5408, remainder 1392; for k=13 the total is 10024, remainder 1992. Thus the requested remainder is not determined by the stated question."
+        },
+        {
+          "claim_quote": "Summing these totals and taking the remainder modulo 2008 gives 1392.",
+          "verdict": "false",
+          "evidence": "The sum of totals for k=1,...,19 is 868571, and 868571 mod 2008 = 1115, not 1392. The value 1392 is the remainder for k=12 only: total for k=12 is 5408 and 5408 mod 2008 = 1392."
+        },
+        {
+          "claim_quote": "The remainder modulo 2008 of this total is 1392.",
+          "verdict": "unresolved",
+          "evidence": "This is true only if the omitted fixed length is k=12; without that parameter it is not a determined mathematical claim."
+        }
+      ]
+    },
+    {
+      "id": "production-129-valid",
+      "population": "authored_correction_NOT_QWEN",
+      "expected": "valid",
+      "observed": "valid",
+      "passed": true,
+      "reason": "The recurrence and boundary conditions correctly count valid words over digits 0 through 6 with adjacent digits differing by exactly 1. The length-12 vector and sum are correct, and reducing 5408 modulo 2008 gives 1392.",
+      "checks": [
+        {
+          "claim_quote": "Let f1(d)=1 for all seven digits.",
+          "verdict": "supported",
+          "evidence": "For length 1, every one-digit word over {0,1,2,3,4,5,6} is valid, so f_1(d)=1 for each of the seven digits."
+        },
+        {
+          "claim_quote": "Iterate f(k+1,d)=f(k,d-1)+f(k,d+1), using zero only outside0..6.",
+          "verdict": "supported",
+          "evidence": "A valid word of length k+1 ending in d must have previous digit d-1 or d+1, and those must lie in 0..6; hence the recurrence is correct with boundary terms zero."
+        },
+        {
+          "claim_quote": "At length12 the vector is[396,792,956,1120,956,792,396], summing to5408.",
+          "verdict": "supported",
+          "evidence": "Iterating from f_1=[1,1,1,1,1,1,1] gives f_12=[396,792,956,1120,956,792,396]. The sum is 396+792+956+1120+956+792+396=5408."
+        },
+        {
+          "claim_quote": "Thus the remainder is5408-2*2008=1392.",
+          "verdict": "supported",
+          "evidence": "5408 divided by 2008 has quotient 2 and remainder 5408-4016=1392."
+        }
+      ]
+    }
+  ],
+  "planned": 12,
+  "returned": 12,
+  "failures": 0,
+  "passed": 12,
+  "false_acceptances": [],
+  "false_rejections": [],
+  "decision": "advance_to_validation_only",
+  "recorded_cost_usd": 0.0073576272,
+  "limitation": "Twelve correlated assistant-authored/development controls; no independent human gold, no representative accuracy estimate, no change to student correctness."
+}

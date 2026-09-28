@@ -1,0 +1,15 @@
+{
+  "provenance": "Assistant combinatorial proof with exact integer arithmetic; not a teacher label",
+  "source_index": 136,
+  "claimed_maximum": 87429,
+  "set_size_bound": 1987,
+  "other_sets_per_point_bound": 44,
+  "total_incidences_at_claimed_equality": 173721423,
+  "required_point_frequency_at_equality": 45,
+  "incidence_remainder_mod45": 3,
+  "proof": "If N=44*1987+1, then for every set S the equality N-1=sum d_x<=44|S|<=44*1987 forces |S|=1987 and every d_x=44. Thus each element in the union belongs to exactly45 sets. Counting incidences two ways forces45 to divide N*1987, but its remainder is3. Hence the claimed bound cannot be attained and cannot be the maximum possible number of sets. The actual optimum need not be determined to refute87429.",
+  "scope": "Refutes this generated maximum claim. It does not dispute the original source union-size answer87429 or require resolving an existence problem for block designs.",
+  "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+  "response_output_hash": "9009a231e8b70d48ff5b8bea64bf5b717ece3015c88bd918dff6864e7df9fa63",
+  "evidence_hash": "bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8"
+}

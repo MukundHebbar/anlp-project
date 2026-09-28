@@ -1,0 +1,23 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "rows": [
+    {
+      "response_key": "54:target_example:0",
+      "source_index": 54,
+      "response_output_hash": "1b5c52e390fc9af3a3536477ccf8d2213c37b1fa36bd822c146baa36d45c414c",
+      "evidence_hash": "84b4a3a6334c6ac16c0acf1f46d23e421766eeb1a6c53e9e4c89728c0ed6b60f",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Proposed magnitude lies in[0.9,1.1] by reverse/ordinary triangle inequalities, so cannot equal1/99. With z10, omega1 gives0.9 while omega-1 gives1.1: quantity not fixed. Original target is maximumtan^2theta."
+    },
+    {
+      "response_key": "67:target_example:0",
+      "source_index": 67,
+      "response_output_hash": "1f6a8d9d5cb85fe345e8e87c85cfac7599a40dc3f750317d81e465b581b8ff50",
+      "evidence_hash": "da4c54dea15f2850cf6a55a2abf90ac73bf7a0752a09d1543ee3afaeb6ea4434",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Candidate asks for first columnA, the n-component all-ones vector. Scalar1 is an entry, not that vector; source asks sum of inverse entries. Forn2, column(1,1) differs from scalar1."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "status": "development candidate; immediate two-recovery goal achieved, not production approved",
+  "source_indices": [
+    5,
+    10,
+    16,
+    54,
+    67,
+    113
+  ],
+  "converter_prompts": [
+    "convert_p8_one_gap",
+    "convert_p11_inverse_bridge"
+  ],
+  "student_prompt": "student_p14_premises_first",
+  "prompt_hashes": {
+    "convert_p8_one_gap": "37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d",
+    "convert_p11_inverse_bridge": "32e74c1e0bb7c856fb4045a8e1501eaa423ff0fcbdd4d408cf06d217d15d34b3",
+    "student_p14_premises_first": "da827e484641c9821a541a520ee15d9a62ee0fde97d4362070f334c54f97325d",
+    "audit_source_disclosure_p4": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+    "copy_challenge_p1": "7bcff55c22846b18d02aaf46e7baef2630fe67fccb79415e026fefa900d395a1",
+    "evaluate_p3": "98bad7acaa8e6b4816135f17c2cd773205415728fc8110bf9d8d0dd12008b1f8",
+    "source_recovery_p2": "45256aec601314df9606bfd235d06a923c9c7275c56eca47808d812ec57388b8",
+    "verify_math_p1": "e433ad49b9cd27e0fcc038526ee2d8f6d2679376290654f1c7eecca931842705"
+  },
+  "model": "Qwen/Qwen3-4B",
+  "sampling": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "max_tokens": 8192,
+    "seed": 0
+  },
+  "exposure": "All fixed one-gap clues plus both globally generated symbolic bridge sentences; private support omitted",
+  "pipeline_calls_per_student_example": 1,
+  "selected_successes": [
+    54,
+    113
+  ],
+  "all_sources_retained": true,
+  "confirmation_opened": false,
+  "adjudication_required_for": [
+    113
+  ]
+}

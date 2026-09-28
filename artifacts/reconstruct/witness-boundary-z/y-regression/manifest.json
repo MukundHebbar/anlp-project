@@ -1,0 +1,116 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-z.md",
+  "fixtures": [
+    {
+      "family": "46",
+      "condition": "46:convert_p5",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Essential column heights omitted; answer-conditioned multinomial inversion needed.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "0:archived_boundary:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "origin_source_index": 0,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 0,
+      "bank_key": "0:witness_boundary_z:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "bank_output_hash": "892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "source_record_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46"
+    },
+    {
+      "family": "129",
+      "condition": "129:convert_p5",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Essential length omitted; inverse recurrence search needed, with documented multiple matches.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "1:archived_boundary:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "origin_source_index": 1,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 1,
+      "bank_key": "1:witness_boundary_z:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "bank_output_hash": "5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "source_record_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae"
+    },
+    {
+      "family": "80",
+      "condition": "80:repair_disclosure_p1",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Exact linear integrand coefficients omitted; curve, general form and target do not supply them.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "2:archived_boundary:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "origin_source_index": 2,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 2,
+      "bank_key": "2:witness_boundary_z:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "bank_output_hash": "46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d"
+    },
+    {
+      "family": "80",
+      "condition": "80:convert_p5",
+      "reference_status": "REJECT",
+      "reference_argument": "Equal partial derivatives and zero Green integrand expose complete zero-integral argument.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "3:archived_boundary:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "origin_source_index": 3,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 3,
+      "bank_key": "3:witness_boundary_z:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "bank_output_hash": "6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d"
+    },
+    {
+      "family": "96",
+      "condition": "96:convert_p5",
+      "reference_status": "REJECT",
+      "reference_argument": "F(x)~x^8/12 plus target sin(F(x))/x^8 leaves only routine sine asymptotic, exposing nearly complete proof.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "4:archived_boundary:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "origin_source_index": 4,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 4,
+      "bank_key": "4:witness_boundary_z:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "bank_output_hash": "165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "source_record_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3"
+    },
+    {
+      "family": "62",
+      "condition": "62:convert_p4",
+      "reference_status": "REJECT",
+      "reference_argument": "Shifted function, sole principal term and entire regular part disclose the convergence proof.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "5:archived_boundary:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "origin_source_index": 5,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 5,
+      "bank_key": "5:witness_boundary_z:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "bank_output_hash": "9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "source_record_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6"
+    },
+    {
+      "family": "123",
+      "condition": "123:repair_disclosure_p1",
+      "reference_status": "REJECT",
+      "reference_argument": "Existential source question can be assembled from proposed infinite natural sequence and partial sums excluding perfect powers. Missing witness is missing proof, not missing question premise.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "6:archived_boundary:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "origin_source_index": 6,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 6,
+      "bank_key": "6:witness_boundary_z:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "bank_output_hash": "087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "source_record_hash": "e0c5f16198ec2ce40bca6acbc0f3e2f5c27e36cfdcab91ac56565822160d7770"
+    }
+  ],
+  "prompts": [
+    "audit_source_disclosure_p4"
+  ],
+  "prompt_file_hashes": {
+    "audit_source_disclosure_p4": "6da1bc8b039c9c7a15475af526f5d10da5c3a82c5fb1a1cffe6a3bb123658518"
+  },
+  "teacher_model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "reasoning_effort": "low",
+  "teacher_max_tokens": 8192,
+  "planned_initial_calls": 7,
+  "maximum_substudy_cost_usd": 0.1,
+  "technical_retry_max": 1,
+  "reference_scope": "Assistant-authored/archived development references; not independent human gold."
+}

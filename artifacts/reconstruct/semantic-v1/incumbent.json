@@ -1,0 +1,972 @@
+{
+  "metadata": {
+    "signature": "b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1",
+    "fixture_path": "data/manifests/reconstruct-semantic-development-v1.json",
+    "prompt": "source_recovery_p1",
+    "status": "development calibration, no independent accuracy claim"
+  },
+  "banks": {},
+  "judge_fixtures": {
+    "polynomial-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "polynomial-2",
+      "family": "polynomial",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "The candidate asks for the real solutions of (t-2)(t-3)=0, which expands to t^2-5t+6=0. This is the same equation as the source up to variable name and equivalent factored representation, with the same requested quantity (all real roots)."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Find all real roots of x²-5x+6=0.\nCANDIDATE QUESTION: Find all real t satisfying (t-2)(t-3)=0.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"The candidate asks for the real solutions of (t-2)(t-3)=0, which expands to t^2-5t+6=0. This is the same equation as the source up to variable name and equivalent factored representation, with the same requested quantity (all real roots).\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: x^2 -5x+6=0 roots 2,3. Candidate: (t-2)(t-3)=0 roots 2,3. Same mathematical objects up to variable and factored form. Score 2. Need status scored, source_recovery 2, reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 152,
+          "prompt_tokens": 186,
+          "total_tokens": 338,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 75,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.988e-05
+        },
+        "elapsed_seconds": 4.351
+      }
+    },
+    "polynomial-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "polynomial-1",
+      "family": "polynomial",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "Same quadratic equation, but the requested quantity changed from all real roots to only the larger real root."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Find all real roots of x²-5x+6=0.\nCANDIDATE QUESTION: Find the larger real root of x²-5x+6=0.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"Same quadratic equation, but the requested quantity changed from all real roots to only the larger real root.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source asks all real roots. Candidate asks larger real root. Same equation, but requested quantity changed from all roots to larger root. Essential target changed. Score 1. Need status scored, source_recovery 1, reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 96,
+          "prompt_tokens": 186,
+          "total_tokens": 282,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 59,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 6.636000000000001e-05
+        },
+        "elapsed_seconds": 1.734
+      }
+    },
+    "polynomial-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "polynomial-0",
+      "family": "polynomial",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The candidate asks for prime integers between 1 and 4, not for roots of the quadratic equation x²-5x+6=0. Although the resulting set {2,3} matches, the mathematical objects and requested task are different."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Find all real roots of x²-5x+6=0.\nCANDIDATE QUESTION: List the prime integers between1 and4.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The candidate asks for prime integers between 1 and 4, not for roots of the quadratic equation x²-5x+6=0. Although the resulting set {2,3} matches, the mathematical objects and requested task are different.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare candidate with hidden source. Source: quadratic roots x^2-5x+6=0 roots 2,3. Candidate: list prime integers between 1 and 4. Prime integers between 1 and4? Usually primes >1 and <4: 2,3. Essential mathematical objects? Source asks roots of quadratic, candidate asks primes in interval. Although answer set same {2,3}, mathematical structure/target different. Score 0? Need diagnostic source recovery. Essential objects conditions target changed. Candidate not reconstruct quadratic. It yields same numbers but different problem. Score 0 for different problem. Need JSON. reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 205,
+          "prompt_tokens": 179,
+          "total_tokens": 384,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 138,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00011116000000000001
+        },
+        "elapsed_seconds": 4.069
+      }
+    },
+    "dice-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "dice-2",
+      "family": "dice",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "The candidate is an equivalent reformulation: choosing an ordered pair uniformly from {1,...,6}² corresponds to rolling two independent fair six-sided dice, and asking the fraction with coordinates summing to 7 is the same as the probability that the dice sum is 7."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Roll two independent fair six-sided dice. Find the probability their sum is7.\nCANDIDATE QUESTION: Choose an ordered pair uniformly from{1,2,3,4,5,6}². What fraction have coordinates summing7?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"The candidate is an equivalent reformulation: choosing an ordered pair uniformly from {1,...,6}² corresponds to rolling two independent fair six-sided dice, and asking the fraction with coordinates summing to 7 is the same as the probability that the dice sum is 7.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: roll two independent fair six-sided dice, probability sum is 7. Candidate: ordered pair uniformly from {1..6}^2, fraction coordinates summing 7. Same mathematical objects: two independent uniform 1-6, target sum 7, probability/fraction. Equivalent. Score 2. Need JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 145,
+          "prompt_tokens": 199,
+          "total_tokens": 344,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 74,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.876e-05
+        },
+        "elapsed_seconds": 4.062
+      }
+    },
+    "dice-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "dice-1",
+      "family": "dice",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "The candidate keeps two fair six-sided dice and the target sum 7, but removes the essential independence condition, making the probability no longer determined as in the source."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Roll two independent fair six-sided dice. Find the probability their sum is7.\nCANDIDATE QUESTION: Roll two fair six-sided dice without assuming independence. Find the probability their sum is7.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"The candidate keeps two fair six-sided dice and the target sum 7, but removes the essential independence condition, making the probability no longer determined as in the source.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: two independent fair dice, probability sum 7. Candidate: two fair six-sided dice without assuming independence, probability sum 7. Essential condition changed: independence removed. For fair dice not independent, probability sum 7 not determined; can vary. So related structure but essential condition changed. Score 1. Need status scored. reason concise. Ensure JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 132,
+          "prompt_tokens": 189,
+          "total_tokens": 321,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 82,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.19e-05
+        },
+        "elapsed_seconds": 3.568
+      }
+    },
+    "dice-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "dice-0",
+      "family": "dice",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The source asks for a probability involving sums of two dice, while the candidate asks for the reciprocal of 6; they share no substantive mathematical structure or target."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Roll two independent fair six-sided dice. Find the probability their sum is7.\nCANDIDATE QUESTION: What is the reciprocal of6?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The source asks for a probability involving sums of two dice, while the candidate asks for the reciprocal of 6; they share no substantive mathematical structure or target.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: probability sum of two dice is 7. Candidate: reciprocal of 6. Different. status scored, source_recovery 0. reason concise. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 94,
+          "prompt_tokens": 178,
+          "total_tokens": 272,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 45,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 6.44e-05
+        },
+        "elapsed_seconds": 2.519
+      }
+    },
+    "derivative-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "derivative-2",
+      "family": "derivative",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "Both ask for the derivative/tangent slope of the cubic function at input 2; variable name and phrasing differ only cosmetically."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: For f(x)=x³ on the reals, find f′(2).\nCANDIDATE QUESTION: Find the tangent slope of y=t³ at t=2.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"Both ask for the derivative/tangent slope of the cubic function at input 2; variable name and phrasing differ only cosmetically.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: f(x)=x^3 on reals, find f'(2). Candidate: Find tangent slope of y=t^3 at t=2. Same derivative at 2, variable t vs x, tangent slope = derivative. Essential objects same. Score 2. Need JSON with status scored, source_recovery 2, reason.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 124,
+          "prompt_tokens": 184,
+          "total_tokens": 308,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 79,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.784e-05
+        },
+        "elapsed_seconds": 2.45
+      }
+    },
+    "derivative-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "derivative-1",
+      "family": "derivative",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "Same function and derivative task, but the evaluation point is changed from x=2 to x=-2, an essential parameter change."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: For f(x)=x³ on the reals, find f′(2).\nCANDIDATE QUESTION: For f(x)=x³ on the reals, find f′(-2).",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"Same function and derivative task, but the evaluation point is changed from x=2 to x=-2, an essential parameter change.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source asks derivative at 2. Candidate at -2. Same function, same derivative concept, but parameter changed from 2 to -2. Essential parameter changed. Score 1. Need status scored. reason concise. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 100,
+          "prompt_tokens": 188,
+          "total_tokens": 288,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 57,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 6.832000000000001e-05
+        },
+        "elapsed_seconds": 7.777
+      }
+    },
+    "derivative-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "derivative-0",
+      "family": "derivative",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The source asks for the derivative of f(x)=x^3 at x=2, while the candidate asks for the area of a 3 by 4 rectangle. They share no essential mathematical objects, conditions, or requested quantity."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: For f(x)=x³ on the reals, find f′(2).\nCANDIDATE QUESTION: Find the area of a rectangle with sides3 and4.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The source asks for the derivative of f(x)=x^3 at x=2, while the candidate asks for the area of a 3 by 4 rectangle. They share no essential mathematical objects, conditions, or requested quantity.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: derivative of x^3 at 2. Candidate: area rectangle sides 3 and 4. Different problem. status scored, source_recovery 0, reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 113,
+          "prompt_tokens": 183,
+          "total_tokens": 296,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 49,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.308e-05
+        },
+        "elapsed_seconds": 1.507
+      }
+    },
+    "modular-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "modular-2",
+      "family": "modular",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "The candidate restates the same congruences n≡2 (mod 3) and n≡3 (mod 5), and asks for the same least positive integer solution."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Find the least positive integer n with n≡2(mod3) and n≡3(mod5).\nCANDIDATE QUESTION: Find the smallest positive n such that3 divides n-2 and5 divides n-3.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"The candidate restates the same congruences n≡2 (mod 3) and n≡3 (mod 5), and asks for the same least positive integer solution.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: least positive integer n with n≡2 mod3 and n≡3 mod5. Candidate: smallest positive n such that 3 divides n-2 and 5 divides n-3. Equivalent exactly. Score 2. Need reason concise. Ensure JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 115,
+          "prompt_tokens": 194,
+          "total_tokens": 309,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 63,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.545999999999999e-05
+        },
+        "elapsed_seconds": 2.841
+      }
+    },
+    "modular-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "modular-1",
+      "family": "modular",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "Same congruences and positive integer condition, but the requested quantity changes from the least such integer to any such integer."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Find the least positive integer n with n≡2(mod3) and n≡3(mod5).\nCANDIDATE QUESTION: Find any positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"Same congruences and positive integer condition, but the requested quantity changes from the least such integer to any such integer.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source asks least positive integer satisfying congruences. Candidate asks any positive integer satisfying same congruences. Essential objects conditions same, requested quantity changed from least to any. Is that essential target changed? Score 1 likely: related structure with target changed. Need status scored, source_recovery 1. Reason concise. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 115,
+          "prompt_tokens": 194,
+          "total_tokens": 309,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 75,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.545999999999999e-05
+        },
+        "elapsed_seconds": 2.334
+      }
+    },
+    "modular-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "modular-0",
+      "family": "modular",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The candidate asks for the number of subsets of a 3-element set, while the source asks for the least positive integer satisfying two modular congruences. The mathematical objects and requested quantity are unrelated."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Find the least positive integer n with n≡2(mod3) and n≡3(mod5).\nCANDIDATE QUESTION: How many subsets does a set of three elements have?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The candidate asks for the number of subsets of a 3-element set, while the source asks for the least positive integer satisfying two modular congruences. The mathematical objects and requested quantity are unrelated.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare candidate with hidden source. Source: least positive integer n satisfying congruences mod3=2, mod5=3. Candidate: number of subsets of a 3-element set. Different problem. Score 0. status scored. reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 113,
+          "prompt_tokens": 186,
+          "total_tokens": 299,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 57,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.35e-05
+        },
+        "elapsed_seconds": 2.692
+      }
+    },
+    "integral-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "integral-2",
+      "family": "integral",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "Same definite integral of 2x (or 2t) from 0 to 1, with only the variable name changed; signed area is equivalent to the definite integral."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Evaluate the definite integral of2x from0 to1.\nCANDIDATE QUESTION: Compute the signed area under y=2t between t=0 and t=1.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"Same definite integral of 2x (or 2t) from 0 to 1, with only the variable name changed; signed area is equivalent to the definite integral.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: definite integral of 2x from 0 to1. Candidate: signed area under y=2t between t=0 and t=1. Same mathematical objects: integrand 2 variable, limits 0 to1, requested definite integral/signed area. Equivalent representation variable x vs t. Score 2. Need JSON with status scored, source_recovery 2, reason. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 146,
+          "prompt_tokens": 185,
+          "total_tokens": 331,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 93,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.722000000000001e-05
+        },
+        "elapsed_seconds": 3.071
+      }
+    },
+    "integral-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "integral-1",
+      "family": "integral",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "Same integrand and operation, but the integration limits are changed from [0,1] to [-1,0], altering the requested definite integral."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Evaluate the definite integral of2x from0 to1.\nCANDIDATE QUESTION: Evaluate the definite integral of2x from-1 to0.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"Same integrand and operation, but the integration limits are changed from [0,1] to [-1,0], altering the requested definite integral.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: integral of 2x from 0 to1. Candidate: integral of 2x from -1 to0. Essential integrand same, but limits changed. Requested quantity definite integral. Is this score 1? Related structure with essential parameter changed (interval). Yes. Need status scored, source_recovery 1, reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 130,
+          "prompt_tokens": 180,
+          "total_tokens": 310,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 83,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.979999999999999e-05
+        },
+        "elapsed_seconds": 2.284
+      }
+    },
+    "integral-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "integral-0",
+      "family": "integral",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The source asks to evaluate a definite integral, while the candidate asks for the number of positive divisors of 1; the mathematical objects and requested quantity are unrelated."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Evaluate the definite integral of2x from0 to1.\nCANDIDATE QUESTION: How many positive divisors does1 have?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The source asks to evaluate a definite integral, while the candidate asks for the number of positive divisors of 1; the mathematical objects and requested quantity are unrelated.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare source: definite integral of 2x from 0 to1. Candidate: number of positive divisors of 1. Different. status scored, source_recovery 0. reason concise. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 99,
+          "prompt_tokens": 175,
+          "total_tokens": 274,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 50,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 6.608e-05
+        },
+        "elapsed_seconds": 1.708
+      }
+    },
+    "graph-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "graph-2",
+      "family": "graph",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "Both ask for the number of spanning trees on four labelled vertices; the candidate describes connected acyclic simple graphs on the fixed vertex set {a,b,c,d}, which is equivalent to spanning trees of K4."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: How many spanning trees does the complete graph on four labelled vertices have?\nCANDIDATE QUESTION: On fixed vertex set{a,b,c,d}, count connected acyclic simple graphs.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"Both ask for the number of spanning trees on four labelled vertices; the candidate describes connected acyclic simple graphs on the fixed vertex set {a,b,c,d}, which is equivalent to spanning trees of K4.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: number of spanning trees of complete graph K4 labelled vertices. Candidate: On fixed vertex set {a,b,c,d}, count connected acyclic simple graphs. This is exactly spanning trees on 4 labelled vertices. Same. Score 2. Need JSON with status scored, source_recovery 2, reason. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 136,
+          "prompt_tokens": 185,
+          "total_tokens": 321,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 77,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.302e-05
+        },
+        "elapsed_seconds": 2.186
+      }
+    },
+    "graph-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "graph-1",
+      "family": "graph",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "Both concern trees on four vertices, but the source counts labelled spanning trees of K4 (16), while the candidate counts unlabelled trees (2), changing the labelling condition and target."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: How many spanning trees does the complete graph on four labelled vertices have?\nCANDIDATE QUESTION: How many unlabelled trees are there on four vertices?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"Both concern trees on four vertices, but the source counts labelled spanning trees of K4 (16), while the candidate counts unlabelled trees (2), changing the labelling condition and target.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: number of spanning trees of complete graph K4 labelled vertices. Cayley n^{n-2}=4^2=16. Candidate: number of unlabelled trees on four vertices. Unlabelled trees on 4 vertices = 2 (path P4 and star K1,3). Essential objects changed: labelled spanning trees of complete graph vs unlabelled trees. Target changed. Related? Both trees on four vertices, but labelled vs unlabelled and spanning trees of complete graph vs unlabelled trees. Score 1? Essential parameter condition changed (labelled vs unlabelled). Mathematical structure related. So source_recovery 1. Need JSON. Reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 204,
+          "prompt_tokens": 181,
+          "total_tokens": 385,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 149,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00011102
+        },
+        "elapsed_seconds": 3.25
+      }
+    },
+    "graph-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "graph-0",
+      "family": "graph",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The candidate asks for a simple arithmetic computation, 2^4, while the source asks for the number of spanning trees of the complete graph on four labelled vertices. Although both yield 16, the mathematical objects, conditions, and requested quantity are not the same."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: How many spanning trees does the complete graph on four labelled vertices have?\nCANDIDATE QUESTION: Compute2 to the fourth power.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The candidate asks for a simple arithmetic computation, 2^4, while the source asks for the number of spanning trees of the complete graph on four labelled vertices. Although both yield 16, the mathematical objects, conditions, and requested quantity are not the same.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare candidate with hidden source. Source asks number spanning trees of complete graph K4 labelled = Cayley n^{n-2}=4^2=16. Candidate: Compute 2 to fourth power = 16. Essential mathematical objects? Source is graph theory spanning trees K4, candidate arithmetic exponent. They yield same numeric answer but not same mathematical objects/conditions/requested quantity. Score? Diagnostic source recovery. Need score 0? It is different problem, though answer same. \"Score 2 when essential mathematical objects, conditions or parameters, and requested quantity are same up to equivalent representation.\" Not same. Score 1 for related mathematical structure with essential parameter condition target changed. Is it related? Candidate is just compute 2^4, which equals number of spanning trees K4. But no graph structure. It might be a different problem. Score 0. Need JSON. reason concise. status scored. source_recovery 0.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 268,
+          "prompt_tokens": 176,
+          "total_tokens": 444,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 198,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00013719999999999997
+        },
+        "elapsed_seconds": 4.37
+      }
+    },
+    "sequence-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "sequence-2",
+      "family": "sequence",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "Both specify a sequence with initial term 2 and common ratio/multiplier 3, and ask for the fifth term; the recurrence and geometric-sequence wording are equivalent."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Let a1=2 and a(n+1)=3a(n). Find a5.\nCANDIDATE QUESTION: A geometric sequence starts at2 with ratio3. Find its fifth term.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"Both specify a sequence with initial term 2 and common ratio/multiplier 3, and ask for the fifth term; the recurrence and geometric-sequence wording are equivalent.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: recurrence a1=2, a_{n+1}=3a_n. Find a5. Candidate: geometric sequence starts at 2 with ratio 3. Find fifth term. Same essential: initial term 2, common ratio 3, fifth term. Score 2. Need JSON with status scored, source_recovery 2, reason. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 138,
+          "prompt_tokens": 189,
+          "total_tokens": 327,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 86,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.442e-05
+        },
+        "elapsed_seconds": 2.216
+      }
+    },
+    "sequence-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "sequence-1",
+      "family": "sequence",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "Same recurrence and initial value, but the requested term is changed from a5 to a4."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Let a1=2 and a(n+1)=3a(n). Find a5.\nCANDIDATE QUESTION: Let a1=2 and a(n+1)=3a(n). Find a4.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"Same recurrence and initial value, but the requested term is changed from a5 to a4.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source asks a5, candidate asks a4. Same recurrence initial, target changed from a5 to a4. Essential requested quantity changed. Score 1. status scored. reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 83,
+          "prompt_tokens": 193,
+          "total_tokens": 276,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 47,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 6.188e-05
+        },
+        "elapsed_seconds": 1.859
+      }
+    },
+    "sequence-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "sequence-0",
+      "family": "sequence",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The source asks for the fifth term of a recursively defined geometric sequence, while the candidate asks for the area of a rectangle with given side lengths. The mathematical objects and requested quantity are entirely different."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Let a1=2 and a(n+1)=3a(n). Find a5.\nCANDIDATE QUESTION: Compute the area of a rectangle with sides9 and18.",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The source asks for the fifth term of a recursively defined geometric sequence, while the candidate asks for the area of a rectangle with given side lengths. The mathematical objects and requested quantity are entirely different.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: recurrence geometric sequence a1=2, a_{n+1}=3a_n, find a5. Candidate: area rectangle sides 9 and 18. Different. status scored, source_recovery 0, reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 117,
+          "prompt_tokens": 186,
+          "total_tokens": 303,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 61,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.518e-05
+        },
+        "elapsed_seconds": 2.025
+      }
+    },
+    "quantifiers-2:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "quantifiers-2",
+      "family": "quantifiers",
+      "expected": 2,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 2,
+        "reason": "The candidate asks whether x(x-1)≥0 for all real x, which is algebraically equivalent to x²≥x for all real x."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Is it true that every real x satisfies x²≥x?\nCANDIDATE QUESTION: Does x(x-1)≥0 hold for all real numbers x?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":2,\"reason\":\"The candidate asks whether x(x-1)≥0 for all real x, which is algebraically equivalent to x²≥x for all real x.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source: \"Is it true that every real x satisfies x²≥x?\" Candidate: \"Does x(x-1)≥0 hold for all real numbers x?\" Need assess equivalence. x²≥x equivalent to x² - x ≥0 equivalent x(x-1)≥0. Same universal real x, same inequality. Score 2. Need JSON with status scored, source_recovery 2, reason. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 146,
+          "prompt_tokens": 183,
+          "total_tokens": 329,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 98,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.694e-05
+        },
+        "elapsed_seconds": 2.175
+      }
+    },
+    "quantifiers-1:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "quantifiers-1",
+      "family": "quantifiers",
+      "expected": 1,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 1,
+        "reason": "Same inequality x²≥x over real numbers, but the source asks whether it holds for every real x, while the candidate asks whether there exists at least one real x satisfying it; the quantifier/target is essentially changed."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Is it true that every real x satisfies x²≥x?\nCANDIDATE QUESTION: Is there a real x satisfying x²≥x?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":1,\"reason\":\"Same inequality x²≥x over real numbers, but the source asks whether it holds for every real x, while the candidate asks whether there exists at least one real x satisfying it; the quantifier/target is essentially changed.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare. Source asks \"Is it true that every real x satisfies x²≥x?\" Universal statement. Candidate asks \"Is there a real x satisfying x²≥x?\" Existential. Essential quantifier/target changed. Related structure same inequality. Score 1. Need reason concise. Ensure JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 131,
+          "prompt_tokens": 179,
+          "total_tokens": 310,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 68,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 8.007999999999999e-05
+        },
+        "elapsed_seconds": 4.233
+      }
+    },
+    "quantifiers-0:b527edafd089ace67ee25721ff02e66147ceb81180b2514abd63bc322d045fe1": {
+      "fixture_id": "quantifiers-0",
+      "family": "quantifiers",
+      "expected": 0,
+      "passed": true,
+      "output": {
+        "status": "scored",
+        "source_recovery": 0,
+        "reason": "The source asks about the universal inequality x²≥x for all real x, while the candidate asks whether 9 is prime. They share no essential mathematical objects, conditions, or requested quantity."
+      },
+      "rendered_prompt": "Compare the candidate with the hidden source question. This is a diagnostic, not the primary validity score.\n\nReturn JSON only: {\"status\":\"scored|needs_review\",\"source_recovery\":2,\"reason\":\"...\"}\n\nScore 2 when the essential mathematical objects, conditions or parameters, and requested quantity are the same up to equivalent representation. Score 1 for related mathematical structure with an essential parameter, condition, or target changed. Score 0 for a different problem or no substantive reconstruction. Use needs_review with null when equivalence cannot be assessed. Ignore cosmetic wording.\n\nSOURCE QUESTION: Is it true that every real x satisfies x²≥x?\nCANDIDATE QUESTION: Is9 a prime number?",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "prompt": "source_recovery_p1",
+      "raw_content": "{\"status\":\"scored\",\"source_recovery\":0,\"reason\":\"The source asks about the universal inequality x²≥x for all real x, while the candidate asks whether 9 is prime. They share no essential mathematical objects, conditions, or requested quantity.\"}",
+      "request": {
+        "reasoning": "We need answer JSON only. Need compare candidate with hidden source. Source: \"Is it true that every real x satisfies x²≥x?\" Candidate: \"Is9 a prime number?\" Different problem. Score 0. status scored. reason concise. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 111,
+          "prompt_tokens": 174,
+          "total_tokens": 285,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 55,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 7.097999999999999e-05
+        },
+        "elapsed_seconds": 3.352
+      }
+    }
+  },
+  "failures": []
+}

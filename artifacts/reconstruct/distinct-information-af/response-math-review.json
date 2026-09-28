@@ -1,0 +1,14 @@
+{
+  "reviewer": "Assistant analytic review with independent exact integer recurrence; not human gold",
+  "rows": [
+    {
+      "response_key": "129:full:0",
+      "response_output_hash": "1970067fe64bb859f1ac690f39724efa713c62ceea6ef6285d01e8c8442db51d",
+      "evidence_hash": "f88856922dac8069d9518d5ffa505ed09aba48a443b0df12a62cbd2df2cd3dee",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Chooses length10 instead of original length12. Exact recurrence gives total 1584 and remainder 1584 for length10, not1392; length12 gives1392. No computation supports the invented length. Different parameter changes the problem meaning, not merely its representation."
+    }
+  ]
+}

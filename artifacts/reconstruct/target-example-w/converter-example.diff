@@ -1,0 +1,11 @@
+--- convert_p4.md
++++ convert_p5.md
+@@ -12,7 +12,7 @@
+ 
+ Positive example:
+ Source: A rectangle has perimeter20 and area24. Find its longer side. Answer6. Checked solution: x+y=10, xy=24; x(10-x)=24 gives sides4,6.
+-Output: {"status":"OK","clues":[{"id":"c1","sentence":"The two side lengths x and y satisfy x+y=10.","fragment":"x+y=10 for the two sides","hidden_support":"Perimeter20 gives2(x+y)=20."},{"id":"c2","sentence":"Expressing area in terms of one side x gives x(10-x).","fragment":"Area=x(10-x)","hidden_support":"Substitute y=10-x in area xy."}],"withheld":"The area24 and longer-side target are not stated. The student must recover a compatible missing area constraint and target from the answer and the side/area relations."}
++Output: {"status":"OK","clues":[{"id":"c1","sentence":"The two side lengths x and y satisfy x+y=10.","fragment":"x+y=10 for the two sides","hidden_support":"Perimeter20 gives2(x+y)=20."},{"id":"c2","sentence":"Expressing area in terms of one side x gives x(10-x).","fragment":"Area=x(10-x)","hidden_support":"Substitute y=10-x in area xy."},{"id":"c3","sentence":"The requested quantity is the longer side length.","fragment":"target: longer side length","hidden_support":"The source asks for the longer side, and the checked solution selects6 from the sides4,6."}],"withheld":"The area24 is absent. The target role is retained. From the supplied longer-side answer6 and the side sum10, infer the other side4 and hence the missing area constraint24. This constructs an essential source premise rather than copying a complete question."}
+ 
+ Negative example:
+ Source: Find the larger root of x²-10x+21=0. Answer7.

@@ -1,0 +1,7 @@
+{
+  "indices": [
+    80,
+    87
+  ],
+  "rule": "Exactly one same-settings technical retry; no scored-bank retries"
+}

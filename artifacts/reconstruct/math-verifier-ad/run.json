@@ -1,0 +1,616 @@
+{
+  "metadata": {
+    "manifest_hash": "22a971f307bc71762a3c7b724478622cc8ccc91efd3e00cdb6ba5be7fed1742d"
+  },
+  "records": {
+    "continuity-invalid": {
+      "output": {
+        "status": "invalid",
+        "question_answer_correct": true,
+        "verification_sound": false,
+        "checks": [
+          {
+            "claim_quote": "The function |x| is differentiable at0 with derivative0",
+            "verdict": "false",
+            "evidence": "For f(x)=|x| at x=0, the difference quotient is (|h|-0)/h = |h|/h. As h→0− this is -1, and as h→0+ this is 1, so the two-sided limit does not exist. Thus |x| is not differentiable at 0."
+          },
+          {
+            "claim_quote": "differentiability implies continuity",
+            "verdict": "supported",
+            "evidence": "This is a standard theorem: if a function is differentiable at a point, then it is continuous at that point. However, it cannot be applied here because |x| is not differentiable at 0."
+          }
+        ],
+        "reason": "The final answer that f(x)=|x| is continuous at 0 is correct, but the supplied justification relies on the false claim that |x| is differentiable at 0 with derivative 0. Therefore the verification is unsound."
+      },
+      "raw": {
+        "content": "{\"status\":\"invalid\",\"question_answer_correct\":true,\"verification_sound\":false,\"checks\":[{\"claim_quote\":\"The function |x| is differentiable at0 with derivative0\",\"verdict\":\"false\",\"evidence\":\"For f(x)=|x| at x=0, the difference quotient is (|h|-0)/h = |h|/h. As h→0− this is -1, and as h→0+ this is 1, so the two-sided limit does not exist. Thus |x| is not differentiable at 0.\"},{\"claim_quote\":\"differentiability implies continuity\",\"verdict\":\"supported\",\"evidence\":\"This is a standard theorem: if a function is differentiable at a point, then it is continuous at that point. However, it cannot be applied here because |x| is not differentiable at 0.\"}],\"reason\":\"The final answer that f(x)=|x| is continuous at 0 is correct, but the supplied justification relies on the false claim that |x| is differentiable at 0 with derivative 0. Therefore the verification is unsound.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need check mathematical validity. Question: Is f(x)=|x| continuous at 0? Answer yes. Justification: \"The function |x| is differentiable at0 with derivative0, and differentiability implies continuity, so it is continuous at0.\" This is false: |x| not differentiable at 0. It is continuous. So question_answer_correct true, verification_sound false. Need checks with exact substring from student response. Claim quote: \"The function |x| is differentiable at0 with derivative0\" verdict false evidence: derivative from left -1, right 1, limit of difference quotient (|h|-0)/h = |h|/h, left -1 right 1, no derivative. Also \"differentiability implies continuity\" supported generally, but premise false. Need maybe check final answer? The question asks continuous at 0, yes. Need status invalid because verification false. JSON only. Ensure exact substring maybe includes \"at0\" no space. Use exact. checks array. reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 454,
+          "prompt_tokens": 379,
+          "total_tokens": 833,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 224,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00024374
+        },
+        "elapsed_seconds": 7.021
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: Yes\nOBSERVATIONS:\nThe function is defined on the real line.\nIts absolute value at x is |x|.\nSTUDENT RESPONSE:\n{\n  \"question\": \"Is the function f(x)=|x| continuous at0?\",\n  \"justification\": \"The function |x| is differentiable at0 with derivative0, and differentiability implies continuity, so it is continuous at0.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "23745b4641c48ff9171557867859e8571a7bda7ac44b2c423ec82000017610eb",
+      "case_hash": "dd53d7b3f9dd64a95b5f67fa0fc826de125b864eac9e0926f3c7b45dc76da9d3"
+    },
+    "probability-valid": {
+      "output": {
+        "status": "valid",
+        "question_answer_correct": true,
+        "verification_sound": true,
+        "checks": [
+          {
+            "claim_quote": "The complement is no six on either die, with probability(5/6)^2=25/36; subtracting from1 gives11/36.",
+            "verdict": "supported",
+            "evidence": "For each fair six-sided die, P(no 6)=5/6. Independence gives P(no 6 on either die)=(5/6)^2=25/36. Therefore P(at least one 6)=1-25/36=11/36."
+          }
+        ],
+        "reason": "The question asks for the probability that at least one of two independent fair six-sided dice shows 6. The complement calculation is correct, and the final answer 11/36 is mathematically valid."
+      },
+      "raw": {
+        "content": "{\"status\":\"valid\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"The complement is no six on either die, with probability(5/6)^2=25/36; subtracting from1 gives11/36.\",\"verdict\":\"supported\",\"evidence\":\"For each fair six-sided die, P(no 6)=5/6. Independence gives P(no 6 on either die)=(5/6)^2=25/36. Therefore P(at least one 6)=1-25/36=11/36.\"}],\"reason\":\"The question asks for the probability that at least one of two independent fair six-sided dice shows 6. The complement calculation is correct, and the final answer 11/36 is mathematically valid.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need check mathematical validity. We have question: probability at least one of two independent fair six-sided dice shows 6. Justification complement no six on either die prob (5/6)^2=25/36; subtract from 1 gives 11/36. Correct. Need check assumptions empty okay. Need output JSON with status valid, question_answer_correct true, verification_sound true, checks with exact substring from student response. Need include claim quotes. Need ensure exact substrings. Student response JSON string includes \"What is the probability that at least one of two independent fair six-sided dice shows6?\" Note missing space shows6? Exact substring. Justification: \"The complement is no six on either die, with probability(5/6)^2=25/36; subtracting from1 gives11/36.\" Need quote exact. Check central claims. Evidence: For two independent fair dice, P(no six on a die)=5/6, independence gives (5/6)^2=25/36, complement P(at least one six)=1-25/36=11/36. Also direct count 36 outcomes, 11 have at least one six. Good.\n\nNeed final JSON only. Ensure valid JSON. Use no markdown.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 435,
+          "prompt_tokens": 387,
+          "total_tokens": 822,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 269,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00023688
+        },
+        "elapsed_seconds": 7.393
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 11/36\nOBSERVATIONS:\nTwo fair six-sided dice are independent.\nThe desired event involves a six.\nSTUDENT RESPONSE:\n{\n  \"question\": \"What is the probability that at least one of two independent fair six-sided dice shows6?\",\n  \"justification\": \"The complement is no six on either die, with probability(5/6)^2=25/36; subtracting from1 gives11/36.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "83558289ff6320e774403c8d3a4b7f04da56793cf5eff39295f8cf0b66eaaaa4",
+      "case_hash": "951ce5d59946e7a8b3534080d1d7f870a28ab21b7beef4cf6332991632e74e6f"
+    },
+    "continuity-valid": {
+      "output": {
+        "status": "valid",
+        "question_answer_correct": true,
+        "verification_sound": true,
+        "checks": [
+          {
+            "claim_quote": "For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon.",
+            "verdict": "supported",
+            "evidence": "Since f(0)=|0|=0, we have |f(x)-f(0)|=||x|-0|=|x|. Choosing delta=epsilon gives |x|<delta=epsilon, hence |f(x)-f(0)|<epsilon."
+          },
+          {
+            "claim_quote": "Thus f is continuous at0.",
+            "verdict": "supported",
+            "evidence": "This satisfies the epsilon-delta definition of continuity at 0: for every epsilon>0 there exists delta>0 such that |x-0|<delta implies |f(x)-f(0)|<epsilon."
+          }
+        ],
+        "reason": "The question asks whether f(x)=|x| is continuous at 0, and the answer is yes. The supplied epsilon-delta justification is mathematically correct: f(0)=0, so the difference is |x|, and delta=epsilon works."
+      },
+      "raw": {
+        "content": "{\"status\":\"valid\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon.\",\"verdict\":\"supported\",\"evidence\":\"Since f(0)=|0|=0, we have |f(x)-f(0)|=||x|-0|=|x|. Choosing delta=epsilon gives |x|<delta=epsilon, hence |f(x)-f(0)|<epsilon.\"},{\"claim_quote\":\"Thus f is continuous at0.\",\"verdict\":\"supported\",\"evidence\":\"This satisfies the epsilon-delta definition of continuity at 0: for every epsilon>0 there exists delta>0 such that |x-0|<delta implies |f(x)-f(0)|<epsilon.\"}],\"reason\":\"The question asks whether f(x)=|x| is continuous at 0, and the answer is yes. The supplied epsilon-delta justification is mathematically correct: f(0)=0, so the difference is |x|, and delta=epsilon works.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need check mathematical validity. Question: Is f(x)=|x| continuous at 0? Answer yes. Justification: For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon. Thus continuous at 0. This is correct. Need check assumptions empty. Observations: function defined real line, abs value at x is |x|. Need maybe issue: f(0)=|0|=0, so |f(x)-f(0)|=||x|-0|=|x|. If |x|<delta=epsilon, then |x|<epsilon. Correct. Need status valid, question_answer_correct true, verification_sound true. checks with exact substring from student response. Need include claim quotes. Maybe quote \"For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon.\" Verdict supported. Evidence: f(0)=0, so |f(x)-f(0)|=||x|-0|=|x|; with delta=epsilon, |x|<delta implies |x|<epsilon. Also quote \"Thus f is continuous at0.\" supported by epsilon-delta definition. Need JSON only. Ensure no markdown.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 521,
+          "prompt_tokens": 390,
+          "total_tokens": 911,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 281,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002386552
+        },
+        "elapsed_seconds": 11.281
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: Yes\nOBSERVATIONS:\nThe function is defined on the real line.\nIts absolute value at x is |x|.\nSTUDENT RESPONSE:\n{\n  \"question\": \"Is the function f(x)=|x| continuous at0?\",\n  \"justification\": \"For every epsilon>0 choose delta=epsilon. If |x|<delta, then |f(x)-f(0)|=|x|<epsilon. Thus f is continuous at0.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "071fe0dad58882310675027a3ceed1d8a5e78873d037b3fccdd4cb4b8c777611",
+      "case_hash": "d36e8b5d7ea2e3ffcd6d07ebbb697f5086368e85d9e40fab78b98ee81491d30c"
+    },
+    "probability-invalid": {
+      "output": {
+        "status": "invalid",
+        "question_answer_correct": true,
+        "verification_sound": false,
+        "checks": [
+          {
+            "claim_quote": "A and B are mutually exclusive.",
+            "verdict": "false",
+            "evidence": "A and B can occur together when both dice show 6, so P(A∩B)=1/36>0. Thus they are not mutually exclusive."
+          },
+          {
+            "claim_quote": "P(A union B)=1/6+1/6-1/36=11/36.",
+            "verdict": "supported",
+            "evidence": "P(A∪B)=1-P(no six)=1-(5/6)^2=1-25/36=11/36, matching the stated value."
+          }
+        ],
+        "reason": "The final probability 11/36 is correct, but the justification contains a false substantive claim: the events of the first and second die showing 6 are not mutually exclusive. The inclusion-exclusion expression is correct, but the stated mutual-exclusivity premise is false."
+      },
+      "raw": {
+        "content": "{\"status\":\"invalid\",\"question_answer_correct\":true,\"verification_sound\":false,\"checks\":[{\"claim_quote\":\"A and B are mutually exclusive.\",\"verdict\":\"false\",\"evidence\":\"A and B can occur together when both dice show 6, so P(A∩B)=1/36>0. Thus they are not mutually exclusive.\"},{\"claim_quote\":\"P(A union B)=1/6+1/6-1/36=11/36.\",\"verdict\":\"supported\",\"evidence\":\"P(A∪B)=1-P(no six)=1-(5/6)^2=1-25/36=11/36, matching the stated value.\"}],\"reason\":\"The final probability 11/36 is correct, but the justification contains a false substantive claim: the events of the first and second die showing 6 are not mutually exclusive. The inclusion-exclusion expression is correct, but the stated mutual-exclusivity premise is false.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need check mathematical validity. We have final answer 11/36. Student question: probability at least one of two independent fair six-sided dice shows 6. Justification: Let A and B mean first and second dice show6. A and B are mutually exclusive. Inclusion-exclusion gives P(A union B)=1/6+1/6-1/36=11/36.\n\nIssue: A and B are not mutually exclusive; they can both occur (double six). Inclusion-exclusion formula uses subtract intersection, so actually treating not mutually exclusive. The claim \"A and B are mutually exclusive\" is false. But formula correct for union. Does false substantive step invalidate verification? Yes, question_answer_correct true (11/36 correct). verification_sound false due false claim. Need exact quote. Checks: claim_quote \"A and B are mutually exclusive.\" verdict false. Evidence: P(A∩B)=1/36 >0, e.g. both dice show 6, so not mutually exclusive. Also inclusion-exclusion formula correct despite false statement. Maybe another claim: \"Inclusion-exclusion gives P(A union B)=1/6+1/6-1/36=11/36.\" supported? The formula is correct, but if A and B mutually exclusive, inclusion-exclusion would be 1/6+1/6, not subtract. However the expression is correct for non-mutually exclusive. Need check central verification claims. We can include one check for false mutual exclusivity. Maybe also check final answer supported. Need JSON with status invalid, question_answer_correct true, verification_sound false, checks array. Reason concise.\n\nNeed ensure exact substring from student response. The response has \"A and B are mutually exclusive.\" exact. Also \"P(A union B)=1/6+1/6-1/36=11/36.\" exact? It says \"Inclusion-exclusion gives P(A union B)=1/6+1/6-1/36=11/36.\" We can quote. Verdict supported? The calculation is correct. But if we quote entire sentence, it includes \"Inclusion-exclusion gives...\" supported. But central false is mutual exclusive. Need maybe check \"A and B are mutually exclusive.\" false. Another check \"P(A union B)=1/6+1/6-1/36=11/36.\" supported. Evidence: P(A∪B)=1-P(no six)=1-(5/6)^2=11/36. Good.\n\nNeed final JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 739,
+          "prompt_tokens": 402,
+          "total_tokens": 1141,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 537,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0003318952
+        },
+        "elapsed_seconds": 13.354
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 11/36\nOBSERVATIONS:\nTwo fair six-sided dice are independent.\nThe desired event involves a six.\nSTUDENT RESPONSE:\n{\n  \"question\": \"What is the probability that at least one of two independent fair six-sided dice shows6?\",\n  \"justification\": \"Let A and B mean the first and second dice show6. A and B are mutually exclusive. Inclusion-exclusion gives P(A union B)=1/6+1/6-1/36=11/36.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "34fc6bcbe9bfdbf6195ce647456e7e09503adc60d443ef6e6eb0d09980a42403",
+      "case_hash": "372597f682787dfb86132fae17641cf905aa47f1a004685fbd36ebccb6be7481"
+    },
+    "tree-valid": {
+      "output": {
+        "status": "valid",
+        "question_answer_correct": true,
+        "verification_sound": true,
+        "checks": [
+          {
+            "claim_quote": "A tree has n-1 edges, proved by removing a leaf inductively. For n=6 this gives5.",
+            "verdict": "supported",
+            "evidence": "A tree on n vertices has exactly n-1 edges. Inductively, a tree with n=1 has 0 edges; removing a leaf and its incident edge leaves a tree on n-1 vertices with n-2 edges, so adding the removed edge gives n-1. For n=6, this is 6-1=5."
+          }
+        ],
+        "reason": "The question asks for the number of edges in a tree with six vertices. The standard theorem gives n-1 edges, so the answer 5 is correct, and the supplied inductive justification is mathematically sound."
+      },
+      "raw": {
+        "content": "{\"status\":\"valid\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"A tree has n-1 edges, proved by removing a leaf inductively. For n=6 this gives5.\",\"verdict\":\"supported\",\"evidence\":\"A tree on n vertices has exactly n-1 edges. Inductively, a tree with n=1 has 0 edges; removing a leaf and its incident edge leaves a tree on n-1 vertices with n-2 edges, so adding the removed edge gives n-1. For n=6, this is 6-1=5.\"}],\"reason\":\"The question asks for the number of edges in a tree with six vertices. The standard theorem gives n-1 edges, so the answer 5 is correct, and the supplied inductive justification is mathematically sound.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need check mathematical validity. Question: \"How many edges does a tree with six vertices have?\" Answer 5. Justification: tree has n-1 edges, proved by removing leaf inductively. For n=6 gives 5. This is correct. Need check central verification claims. Assumptions empty. Observations mention finite simple graph six vertices, connectedness relevant. The question asks tree with six vertices. A tree is connected acyclic simple graph. Number edges n-1=5. Justification sound. Need output JSON with status valid, question_answer_correct true, verification_sound true, checks with exact substring from student response. Need include claim quote and verdict supported, evidence concrete calculation/derivation. Maybe quote \"A tree has n-1 edges, proved by removing a leaf inductively. For n=6 this gives5.\" Verdict supported. Evidence: For any tree, induction: base n=1 has 0 edges; remove leaf and incident edge, remaining tree n-1 vertices has n-2 edges, add one gives n-1. For n=6, 6-1=5. Also quote \"How many edges does a tree with six vertices have?\" supported? The question itself is valid. Need maybe check \"assumptions\": [] no issue. Need reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 461,
+          "prompt_tokens": 374,
+          "total_tokens": 835,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 283,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00021121520000000002
+        },
+        "elapsed_seconds": 6.781
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 5\nOBSERVATIONS:\nA finite simple graph has six vertices.\nConnectedness is relevant to the edge count.\nSTUDENT RESPONSE:\n{\n  \"question\": \"How many edges does a tree with six vertices have?\",\n  \"justification\": \"A tree has n-1 edges, proved by removing a leaf inductively. For n=6 this gives5.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "19ff094bcdf07aaf6965733c259a1ea7f6a8752759671647eb9c8ca63468bfcb",
+      "case_hash": "155c82273587da2d8958ac0d7ccdd5c59e23a2f4ef2c378d20b4fdac7d3eaf94"
+    },
+    "tree-invalid": {
+      "output": {
+        "status": "invalid",
+        "question_answer_correct": true,
+        "verification_sound": false,
+        "checks": [
+          {
+            "claim_quote": "Every connected simple graph with six vertices has exactly five edges.",
+            "verdict": "false",
+            "evidence": "Counterexample: the cycle graph C6 is a connected simple graph with six vertices, but it has six edges. The complete graph K6 also has 15 edges."
+          },
+          {
+            "claim_quote": "A tree is connected, so its edge count is5.",
+            "verdict": "false",
+            "evidence": "Connectedness alone does not force five edges; C6 is connected with six vertices and six edges. A six-vertex tree has five edges because it is connected and acyclic, so e = v - 1 = 6 - 1 = 5, not merely because it is connected."
+          }
+        ],
+        "reason": "The final answer 5 is correct for a tree with six vertices, but the supplied justification contains a false universal claim about all connected simple graphs on six vertices. Therefore the verification is unsound."
+      },
+      "raw": {
+        "content": "{\"status\":\"invalid\",\"question_answer_correct\":true,\"verification_sound\":false,\"checks\":[{\"claim_quote\":\"Every connected simple graph with six vertices has exactly five edges.\",\"verdict\":\"false\",\"evidence\":\"Counterexample: the cycle graph C6 is a connected simple graph with six vertices, but it has six edges. The complete graph K6 also has 15 edges.\"},{\"claim_quote\":\"A tree is connected, so its edge count is5.\",\"verdict\":\"false\",\"evidence\":\"Connectedness alone does not force five edges; C6 is connected with six vertices and six edges. A six-vertex tree has five edges because it is connected and acyclic, so e = v - 1 = 6 - 1 = 5, not merely because it is connected.\"}],\"reason\":\"The final answer 5 is correct for a tree with six vertices, but the supplied justification contains a false universal claim about all connected simple graphs on six vertices. Therefore the verification is unsound.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need check mathematical validity. Question: \"How many edges does a tree with six vertices have?\" Answer 5. Justification: \"Every connected simple graph with six vertices has exactly five edges. A tree is connected, so its edge count is5.\" This is false: not every connected simple graph with six vertices has exactly five edges; e.g. cycle C6 has 6 edges, complete graph K6 has 15. A tree with n vertices has n-1 edges, so six vertices tree has 5. The final answer correct, but verification has false substantive claim. Need status invalid, question_answer_correct true, verification_sound false. Need checks with exact substring from student response. Claim quote: \"Every connected simple graph with six vertices has exactly five edges.\" verdict false. Evidence: counterexample C6 has 6 vertices, 6 edges, connected simple. Or K6. Also maybe quote \"A tree is connected, so its edge count is5.\" This inference relies on false premise; but tree edge count is 5 by tree theorem. Need maybe check central verification claims. We can include one check false. Maybe also check final answer? The question answer correct. Need reason. Ensure JSON only. Use exact substring. \"Every connected simple graph with six vertices has exactly five edges.\" exact. Evidence concrete. Maybe mention tree with six vertices has 5 edges because acyclic connected graph has n-1 edges. But the universal claim is false. Status invalid. question_answer_correct true. verification_sound false. checks array. reason concise.\n\nNeed be careful: The \"question\" asks how many edges does a tree with six vertices have? Answer 5. Correct. The justification's first sentence false. The second \"A tree is connected, so its edge count is5\" is not logically valid from first? Actually if every connected simple graph with six vertices has exactly five edges, then tree connected => 5. But premise false. The conclusion true. Verification unsound. Need maybe include check for \"A tree is connected, so its edge count is5.\" verdict false? It is a non sequitur? It says because tree is connected, edge count 5. But connectedness alone doesn't imply 5. However if combined with false universal premise, it's valid modus ponens. But as standalone, \"A tree is connected, so its edge count is 5\" is false reasoning. But exact quote includes \"A tree is connected, so its edge count is5.\" We can mark false because connectedness alone doesn't determine edge count; e.g. connected simple graph C6. But the conclusion for tree is true due to acyclicity. The claim as written \"A tree is connected, so...\" implies connectedness is sufficient. It is false. But maybe not necessary. We can include both. Need ensure evidence.\n\nFinal JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 812,
+          "prompt_tokens": 374,
+          "total_tokens": 1186,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 601,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00035863519999999996
+        },
+        "elapsed_seconds": 12.368
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 5\nOBSERVATIONS:\nA finite simple graph has six vertices.\nConnectedness is relevant to the edge count.\nSTUDENT RESPONSE:\n{\n  \"question\": \"How many edges does a tree with six vertices have?\",\n  \"justification\": \"Every connected simple graph with six vertices has exactly five edges. A tree is connected, so its edge count is5.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "ee8fc73dacd53eeddafd375310514c53d756faa6dd5241636767619b612078ce",
+      "case_hash": "b52dbcdcfc6f81f8584b8acb19409dd09374b9bb81a8398ec989f24cc01ec524"
+    },
+    "quadratic-invalid": {
+      "output": {
+        "status": "invalid",
+        "question_answer_correct": true,
+        "verification_sound": false,
+        "checks": [
+          {
+            "claim_quote": "Factor x^2-5x+6=(x-2)(x+3).",
+            "verdict": "false",
+            "evidence": "Expanding (x-2)(x+3) gives x^2+x-6, not x^2-5x+6. The correct factorization is (x-2)(x-3)."
+          },
+          {
+            "claim_quote": "Setting each factor to zero gives roots2 and3.",
+            "verdict": "false",
+            "evidence": "From the stated factors, x-2=0 gives 2 and x+3=0 gives -3, so the stated factorization would give roots 2 and -3, not 2 and 3."
+          },
+          {
+            "claim_quote": "roots2 and3",
+            "verdict": "supported",
+            "evidence": "The equation x^2-5x+6=0 factors as (x-2)(x-3)=0, so the actual roots are 2 and 3."
+          }
+        ],
+        "reason": "The final answer is correct, but the supplied justification contains a false factorization and an invalid derivation. Therefore the verification is not sound."
+      },
+      "raw": {
+        "content": "{\"status\":\"invalid\",\"question_answer_correct\":true,\"verification_sound\":false,\"checks\":[{\"claim_quote\":\"Factor x^2-5x+6=(x-2)(x+3).\",\"verdict\":\"false\",\"evidence\":\"Expanding (x-2)(x+3) gives x^2+x-6, not x^2-5x+6. The correct factorization is (x-2)(x-3).\"},{\"claim_quote\":\"Setting each factor to zero gives roots2 and3.\",\"verdict\":\"false\",\"evidence\":\"From the stated factors, x-2=0 gives 2 and x+3=0 gives -3, so the stated factorization would give roots 2 and -3, not 2 and 3.\"},{\"claim_quote\":\"roots2 and3\",\"verdict\":\"supported\",\"evidence\":\"The equation x^2-5x+6=0 factors as (x-2)(x-3)=0, so the actual roots are 2 and 3.\"}],\"reason\":\"The final answer is correct, but the supplied justification contains a false factorization and an invalid derivation. Therefore the verification is not sound.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need parse. FINAL ANSWER: 2 and 3. OBSERVATIONS: A monic quadratic has two real roots. Their sum is5. STUDENT RESPONSE: question \"Find real roots of x^2-5x+6=0.\" justification: \"Factor x^2-5x+6=(x-2)(x+3). Setting each factor to zero gives roots2 and3.\" assumptions [].\n\nWe need check mathematical validity. The question asks roots of x^2-5x+6=0. Correct roots are 2 and 3. But justification factorization is wrong: (x-2)(x+3)=x^2+x-6, not x^2-5x+6. Correct factorization (x-2)(x-3). Setting factors zero from wrong factorization gives roots 2 and -3, not 2 and 3. They state roots 2 and 3, final answer correct, but substantive step false. Thus question_answer_correct true, verification_sound false, status invalid. Need include exact false claim quote. Checks: claim_quote \"Factor x^2-5x+6=(x-2)(x+3).\" verdict false, evidence expand = x^2+x-6. Also maybe \"Setting each factor to zero gives roots2 and3.\" false because factors x-2=0 ->2, x+3=0 -> -3. But final answer 2 and3 correct via correct factorization. Need maybe check observations? \"Their sum is5\" true for roots 2 and3. \"A monic quadratic has two real roots\" not always, but for this one yes. Is that a claim? Observations maybe context. Need check actual mathematical claims in assumptions and justification. The observation \"A monic quadratic has two real roots\" is false generally (x^2+1 no real roots). But maybe it's an observation about this monic quadratic? It says \"A monic quadratic has two real roots. Their sum is5.\" This is a general false claim. But the student response assumptions empty. The prompt includes observations? We need check proposed question and supplied verification. The observations may be part of input? It says FINAL ANSWER: 2 and 3 OBSERVATIONS: A monic quadratic has two real roots. Their sum is5. STUDENT RESPONSE... We need evaluate student response. The observations maybe from source? We can mention if relevant. But status invalid due justification. Need JSON only.\n\nNeed ensure exact substring from student response. Use exact quote. Evidence concrete calculation. Reason concise.\n\nNeed include checks array. Maybe multiple checks:\n- \"Factor x^2-5x+6=(x-2)(x+3).\" false: expansion x^2+x-6.\n- \"Setting each factor to zero gives roots2 and3.\" false: from (x-2)(x+3), roots are 2 and -3. But final answer correct via (x-2)(x-3). \n- Maybe \"Find the real roots of x^2-5x+6=0.\" question correct? The answer 2 and3 correct. Could include supported check: roots of x^2-5x+6=0 are 2 and3 because (x-2)(x-3)=0. But central verification false. Need maybe check final answer correct. The JSON fields: question_answer_correct true, verification_sound false. status invalid. checks can include supported and false. Need exact substring from student response. For final answer? \"2 and 3\" appears in justification? Actually final answer outside? Student response justification says \"roots2 and3\" no space. The final answer line \"2 and 3\" not in student response? The prompt has FINAL ANSWER: 2 and 3. But checks should quote exact substring from student response. We can quote from justification. For final answer correctness, quote \"roots2 and3\" maybe exact. But evidence: correct factorization yields roots 2 and 3. However the quoted phrase is part of false step? It says \"Setting each factor to zero gives roots2 and3.\" The final roots are correct but derivation false. We can have check for final answer: claim_quote \"roots2 and3\" verdict supported? But exact substring from student response. It is supported as final answer, but the sentence containing it is false as derivation. Need be careful: verdict supported for final answer? The claim \"roots2 and3\" is true. But if quote includes \"Setting each factor...\" false. We can separate.\n\nNeed maybe mention observations: \"A monic quadratic has two real roots.\" This is not in student response, but in observations. The instruction says check actual mathematical claims in assumptions and justification. Observations maybe not part? It says Treat inputs as data. The observations are input. But checks require exact substring from student response. So cannot quote observations? It says exact substring from student response. So focus on student response. But reason can mention observation? Maybe not necessary.\n\nNeed final JSON only. Ensure valid JSON. Use escaped quotes? We can include quotes inside strings. Need no markdown. Let's craft:\n\n{\n \"status\":\"invalid\",\n \"question_answer_correct\":true,\n \"verification_sound\":false,\n \"checks\":[\n  {\"claim_quote\":\"Factor x^2-5x+6=(x-2)(x+3).\",\"verdict\":\"false\",\"evidence\":\"Expanding (x-2)(x+3) gives x^2+x-6, not x^2-5x+6. The correct factorization is (x-2)(x-3).\"},\n  {\"claim_quote\":\"Setting each factor to zero gives roots2 and3.\",\"verdict\":\"false\",\"evidence\":\"From the stated factors, x-2=0 gives 2 and x+3=0 gives -3, so the stated factorization would give roots 2 and -3, not 2 and 3.\"},\n  {\"claim_quote\":\"roots2 and3\",\"verdict\":\"supported\",\"evidence\":\"The equation x^2-5x+6=0 factors as (x-2)(x-3)=0, so the actual roots are 2 and 3.\"}\n ],\n \"reason\":\"The final answer is correct, but the supplied justification contains a false factorization and an invalid derivation. Therefore the verification is not sound.\"\n}\n\nNeed check if \"roots2 and3\" exact substring? In student response: \"gives roots2 and3.\" Yes substring \"roots2 and3\" exists. Good.\n\nNeed maybe status invalid. Done.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1633,
+          "prompt_tokens": 383,
+          "total_tokens": 2016,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1385,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0007047151999999999
+        },
+        "elapsed_seconds": 20.216
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 2 and 3\nOBSERVATIONS:\nA monic quadratic has two real roots.\nTheir sum is5.\nSTUDENT RESPONSE:\n{\n  \"question\": \"Find the real roots of x^2-5x+6=0.\",\n  \"justification\": \"Factor x^2-5x+6=(x-2)(x+3). Setting each factor to zero gives roots2 and3.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "edcf0e64d34bd0f27ef87970d4c00dd739d9793b57dbfb7e4ea73d0c848345c9",
+      "case_hash": "2912a3018bd3c10375f85d6ae9f96f951c2325dc49b9fd29bd04866693e90005"
+    },
+    "production-62-invalid": {
+      "output": {
+        "status": "invalid",
+        "question_answer_correct": true,
+        "verification_sound": false,
+        "checks": [
+          {
+            "claim_quote": "where sin(z) vanishes and the denominator (z-π)^2 creates a double pole",
+            "verdict": "false",
+            "evidence": "Let w=z-π. Then sin(z)=sin(π+w)=-sin w=-w+w^3/6-..., so f(z)=(-w+w^3/6-...)/w^2=-1/w+w/6-... . Thus z=π is a simple pole, not a double pole."
+          },
+          {
+            "claim_quote": "The radius of convergence for a Laurent series about a point is determined by the distance to the nearest singularity, which in this case is zero because the only singularity is at the expansion point, leading to an infinite radius of convergence.",
+            "verdict": "false",
+            "evidence": "For a Laurent series about an isolated singular point, the outer radius is determined by the distance to the next nearest singularity, not by the distance to the expansion point itself. Here there is no other finite singularity, so the outer radius is ∞; the distance to the singularity at z=π is 0 and does not imply an infinite outer radius."
+          },
+          {
+            "claim_quote": "Since the only singularity is at z=π and the function is analytic everywhere else in the finite complex plane, the radius of convergence is infinite.",
+            "verdict": "supported",
+            "evidence": "The Laurent expansion f(π+w)=-1/w+w/6-w^3/120+... converges for all finite w≠0, so the outer radius of convergence is indeed ∞."
+          }
+        ],
+        "reason": "The final answer ∞ is correct, but the verification contains substantive false claims: it calls the pole at z=π a double pole when it is simple, and it incorrectly justifies the infinite outer radius via the distance to the expansion-point singularity rather than the absence of any other finite singularity."
+      },
+      "raw": {
+        "content": "{\"status\":\"invalid\",\"question_answer_correct\":true,\"verification_sound\":false,\"checks\":[{\"claim_quote\":\"where sin(z) vanishes and the denominator (z-π)^2 creates a double pole\",\"verdict\":\"false\",\"evidence\":\"Let w=z-π. Then sin(z)=sin(π+w)=-sin w=-w+w^3/6-..., so f(z)=(-w+w^3/6-...)/w^2=-1/w+w/6-... . Thus z=π is a simple pole, not a double pole.\"},{\"claim_quote\":\"The radius of convergence for a Laurent series about a point is determined by the distance to the nearest singularity, which in this case is zero because the only singularity is at the expansion point, leading to an infinite radius of convergence.\",\"verdict\":\"false\",\"evidence\":\"For a Laurent series about an isolated singular point, the outer radius is determined by the distance to the next nearest singularity, not by the distance to the expansion point itself. Here there is no other finite singularity, so the outer radius is ∞; the distance to the singularity at z=π is 0 and does not imply an infinite outer radius.\"},{\"claim_quote\":\"Since the only singularity is at z=π and the function is analytic everywhere else in the finite complex plane, the radius of convergence is infinite.\",\"verdict\":\"supported\",\"evidence\":\"The Laurent expansion f(π+w)=-1/w+w/6-w^3/120+... converges for all finite w≠0, so the outer radius of convergence is indeed ∞.\"}],\"reason\":\"The final answer ∞ is correct, but the verification contains substantive false claims: it calls the pole at z=π a double pole when it is simple, and it incorrectly justifies the infinite outer radius via the distance to the expansion-point singularity rather than the absence of any other finite singularity.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate mathematical validity. Need parse. Proposed question: outer radius of convergence of Laurent series expansion of f(z)= sin z/(z-π)^2 about z=π. Student says ∞. Need check.\n\nWe need determine actual math. f(z)= sin z/(z-π)^2. At z=π, sin π=0, denominator double zero. sin z near π: sin(π+w)= - sin w? sin(π+w)= - sin w = -w + w^3/6 - ... So f = (-w + w^3/6 - ...)/w^2 = -1/w + w/6 - ... Laurent series about z=π has principal part -1/(z-π) plus Taylor. It is analytic in punctured plane? f has isolated singularity at π, removable? Actually simple pole? Since numerator simple zero, denominator double -> simple pole. No other singularities finite. Laurent series about π converges for 0<|z-π|<∞? Laurent series in powers (z-π)^n for n≥-1. Does it converge for all finite z≠π? Since entire sin z expansion about π has infinite radius, divide by w^2 gives Laurent with infinite annulus outer radius ∞. Inner radius 0. So outer radius ∞. Question answer correct.\n\nBut verification sound? Need inspect claims. Student justification: \"The function f(z) has a singularity at z=π, where sin(z) vanishes and denominator creates a double pole.\" Wait sin vanishes, denominator double zero, so not double pole; it's a simple pole (unless numerator zero order 1). They say \"creates a double pole\" false. Then \"outer radius determined by distance to nearest singularity. Since only singularity at z=π and function analytic everywhere else finite, radius infinite.\" This reasoning is flawed: distance from expansion point z=π to nearest singularity is 0, not infinite. For Laurent series about a singular point, outer radius is distance to next nearest singularity, not distance to expansion point. Since no other singularities, outer radius infinite. But their assumption says \"distance to nearest singularity, which in this case is zero because the only singularity is at expansion point, leading to an infinite radius\" contradictory. Need mark verification_sound false due false substantive step. question_answer_correct true. Status invalid? The instruction: \"A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false.\" So status invalid.\n\nNeed provide checks with exact substring from student response. Need quote false claims. Need evidence concrete calculation. We can quote \"where sin(z) vanishes and the denominator (z-π)^2 creates a double pole\" false: compute sin(π+w)= -w + w^3/6..., f= -1/w + w/6..., simple pole. Also quote \"The radius of convergence for a Laurent series about a point is determined by the distance to the nearest singularity, which in this case is zero because the only singularity is at the expansion point, leading to an infinite radius of convergence.\" This is false/contradictory: distance to expansion point singularity is 0, but outer radius is not determined by that; outer radius is distance to next singularity, and no next singularity -> ∞. Need maybe quote \"Since the only singularity is at z=π and the function is analytic everywhere else in the finite complex plane, the radius of convergence is infinite.\" This is okay if interpreted outer radius, but preceding \"distance nearest singularity\" false. Need check central verification claims. We can include supported claim: \"The numerator sin z is entire and vanishes at z=π\" supported. \"Apart from z=π, f analytic finite plane\" supported. But false double pole and radius reasoning.\n\nNeed JSON only. Ensure exact substrings from student response. The student response is JSON string. Need exact substring. We can quote from justification and assumptions. Need verdict supported/false/unresolved. Evidence concrete.\n\nNeed reason concise. Status invalid. question_answer_correct true. verification_sound false.\n\nNeed maybe mention outer radius of Laurent series about z=π: expansion sin(π+w)= -w + w^3/6 -..., f(w)= -1/w + w/6 - w^3/120 + ... converges for all w≠0 finite, so outer radius ∞. The final answer correct. But verification has false pole order and flawed radius statement.\n\nNeed ensure JSON valid. Use quotes escaped. Final only JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1327,
+          "prompt_tokens": 632,
+          "total_tokens": 1959,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 936,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0006110552
+        },
+        "elapsed_seconds": 17.706
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: \\infty\nOBSERVATIONS:\nThe function being expanded is f(z)= sin z/(z-π)^2.\nThe requested quantity is the outer radius of convergence of a Laurent series for f.\nThe Laurent expansion is taken about some point c, not necessarily the origin.\nThe numerator sin z is entire and vanishes at z=π.\nThe denominator (z-π)^2 has a double zero at z=π.\nApart from z=π, the function f is analytic on the finite complex plane.\nSTUDENT RESPONSE:\n{\n  \"question\": \"What is the outer radius of convergence of the Laurent series expansion of f(z) = sin(z)/(z-π)^2 about the point z=π?\",\n  \"justification\": \"The function f(z) has a singularity at z=π, where sin(z) vanishes and the denominator (z-π)^2 creates a double pole. The outer radius of convergence of a Laurent series about a point is determined by the distance to the nearest singularity. Since the only singularity is at z=π and the function is analytic everywhere else in the finite complex plane, the radius of convergence is infinite. Thus, the outer radius of convergence is ∞.\",\n  \"assumptions\": [\n    \"The function f(z) is analytic everywhere except at z=π, which is the only singularity.\",\n    \"The Laurent series is taken about z=π, which is the point of expansion.\",\n    \"The radius of convergence for a Laurent series about a point is determined by the distance to the nearest singularity, which in this case is zero because the only singularity is at the expansion point, leading to an infinite radius of convergence.\"\n  ]\n}",
+      "prompt_hash": "404ae27d4c2f39a85bd7b783b864976a14ac0eef91a57dfd1dbed7e94ec51563",
+      "case_hash": "9b52486a53218f34ec68cff83e27ff7c4da1e60855870a595122063f9459c328"
+    },
+    "production-62-valid": {
+      "output": {
+        "status": "valid",
+        "question_answer_correct": true,
+        "verification_sound": true,
+        "checks": [
+          {
+            "claim_quote": "Writing w=z-pi gives sin(pi+w)=-sin(w)",
+            "verdict": "supported",
+            "evidence": "Using sin(pi+w)=sin pi cos w + cos pi sin w = 0 - sin w = -sin w."
+          },
+          {
+            "claim_quote": "f=-sin(w)/w^2=-1/w+w/6-...",
+            "verdict": "supported",
+            "evidence": "Since sin w = w - w^3/6 + w^5/120 - ..., dividing by -w^2 gives -1/w + w/6 - w^3/120 + ... ."
+          },
+          {
+            "claim_quote": "The regular part is entire in w and the only negative-power term is -1/w.",
+            "verdict": "supported",
+            "evidence": "The nonnegative-power part is w/6 - w^3/120 + ..., an entire power series, and the only term with negative exponent is -1/w."
+          },
+          {
+            "claim_quote": "Hence the Laurent expansion about pi converges for every0<|w|<infinity and has outer radius infinity.",
+            "verdict": "supported",
+            "evidence": "A Laurent series with finite principal part and entire regular part converges for all w≠0, so in z it converges for all z≠π; the outer radius is ∞."
+          }
+        ],
+        "reason": "The Laurent expansion about z=π is correctly derived. The singularity at z=π is a simple pole after cancellation of one factor, and there are no other finite singularities, so the outer radius of convergence is indeed infinity."
+      },
+      "raw": {
+        "content": "{\"status\":\"valid\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Writing w=z-pi gives sin(pi+w)=-sin(w)\",\"verdict\":\"supported\",\"evidence\":\"Using sin(pi+w)=sin pi cos w + cos pi sin w = 0 - sin w = -sin w.\"},{\"claim_quote\":\"f=-sin(w)/w^2=-1/w+w/6-...\",\"verdict\":\"supported\",\"evidence\":\"Since sin w = w - w^3/6 + w^5/120 - ..., dividing by -w^2 gives -1/w + w/6 - w^3/120 + ... .\"},{\"claim_quote\":\"The regular part is entire in w and the only negative-power term is -1/w.\",\"verdict\":\"supported\",\"evidence\":\"The nonnegative-power part is w/6 - w^3/120 + ..., an entire power series, and the only term with negative exponent is -1/w.\"},{\"claim_quote\":\"Hence the Laurent expansion about pi converges for every0<|w|<infinity and has outer radius infinity.\",\"verdict\":\"supported\",\"evidence\":\"A Laurent series with finite principal part and entire regular part converges for all w≠0, so in z it converges for all z≠π; the outer radius is ∞.\"}],\"reason\":\"The Laurent expansion about z=π is correctly derived. The singularity at z=π is a simple pole after cancellation of one factor, and there are no other finite singularities, so the outer radius of convergence is indeed infinity.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Need check mathematical validity. We have final answer infinity. Need determine question_answer_correct? The question: \"What is the outer radius of convergence of the Laurent series expansion of f(z)= sin(z)/(z-π)^2 about z=π?\" Laurent expansion about z=π. f has double pole at π. Expansion in w=z-π: sin(π+w) = -sin w. f = -sin w / w^2 = -(w - w^3/6 + ...)/w^2 = -1/w + w/6 - w^3/120 + ... . Laurent series has principal part -1/w and analytic part entire? Actually coefficients for nonnegative powers: w/6 - w^3/120 + ... entire. Laurent series converges for all w≠0? Since analytic part entire, principal finite. Yes annulus 0<|w|<∞, outer radius ∞. So answer correct.\n\nNeed check verification sound. Student justification: \"Writing w=z-pi gives sin(pi+w)=-sin(w), so f=-sin(w)/w^2=-1/w+w/6-... . The regular part is entire in w and the only negative-power term is -1/w. Hence the Laurent expansion about pi converges for every0<|w|<infinity and has outer radius infinity.\" This is sound. Need maybe note typo \"every0<|w|<infinity\" but okay. Need JSON with checks. Need exact substring from student response. Claims: sin(pi+w)=-sin(w) supported. f=-sin(w)/w^2=-1/w+w/6-... supported. regular part entire and only negative-power term -1/w supported. convergence every 0<|w|<∞ supported. Need maybe question asks outer radius of convergence of Laurent series expansion about z=π. Since Laurent series about point with singularity at center, outer radius is distance to nearest other singularity? f entire except π, so ∞. Good.\n\nNeed produce JSON only. Ensure status valid, question_answer_correct true, verification_sound true. checks array. reason concise. Use exact substrings. Need no markdown.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 794,
+          "prompt_tokens": 522,
+          "total_tokens": 1316,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 459,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00035441279999999997
+        },
+        "elapsed_seconds": 10.119
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: \\infty\nOBSERVATIONS:\nThe function being expanded is f(z)= sin z/(z-π)^2.\nThe requested quantity is the outer radius of convergence of a Laurent series for f.\nThe Laurent expansion is taken about some point c, not necessarily the origin.\nThe numerator sin z is entire and vanishes at z=π.\nThe denominator (z-π)^2 has a double zero at z=π.\nApart from z=π, the function f is analytic on the finite complex plane.\nSTUDENT RESPONSE:\n{\n  \"question\": \"What is the outer radius of convergence of the Laurent series expansion of f(z) = sin(z)/(z-π)^2 about the point z=π?\",\n  \"justification\": \"Writing w=z-pi gives sin(pi+w)=-sin(w), so f=-sin(w)/w^2=-1/w+w/6-... . The regular part is entire in w and the only negative-power term is -1/w. Hence the Laurent expansion about pi converges for every0<|w|<infinity and has outer radius infinity.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "eefb6ac9fac020f031b117d26d00bf07512552a404830d332ac7a09546f869ad",
+      "case_hash": "7d55f5659e4c090c7944eb850e87d263b9d0788833bea820174204b3b7298c73"
+    },
+    "quadratic-valid": {
+      "output": {
+        "status": "valid",
+        "question_answer_correct": true,
+        "verification_sound": true,
+        "checks": [
+          {
+            "claim_quote": "Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.",
+            "verdict": "supported",
+            "evidence": "Expanding (x-2)(x-3) gives x^2-5x+6. Setting each factor to zero gives x=2 or x=3, so the real roots are 2 and 3."
+          }
+        ],
+        "reason": "The question is well-posed, the factorization is correct, and the roots are correctly identified. The assumptions list is empty, so there are no unsupported assumptions in the student response."
+      },
+      "raw": {
+        "content": "{\"status\":\"valid\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.\",\"verdict\":\"supported\",\"evidence\":\"Expanding (x-2)(x-3) gives x^2-5x+6. Setting each factor to zero gives x=2 or x=3, so the real roots are 2 and 3.\"}],\"reason\":\"The question is well-posed, the factorization is correct, and the roots are correctly identified. The assumptions list is empty, so there are no unsupported assumptions in the student response.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate proposed question and supplied verification. Inputs: FINAL ANSWER: 2 and 3. OBSERVATIONS: A monic quadratic has two real roots. Their sum is5. STUDENT RESPONSE: question \"Find real roots of x^2-5x+6=0.\" justification factor etc assumptions [].\n\nNeed check mathematical validity of proposed question and supplied verification independently. Need output JSON with status valid/invalid/uncertain, question_answer_correct true, verification_sound true/false, checks claims exact substring from student response, verdict supported/false/unresolved, evidence. Need reason.\n\nWe need parse. The student response includes question and justification. The final answer 2 and 3. Observations maybe extraneous? Need check actual mathematical claims in assumptions and justification. The question asks find real roots of x^2-5x+6=0. Correct roots 2,3. Justification: Factor x^2-5x+6=(x-2)(x-3), so roots are 2 and 3. This is correct. Assumptions empty. Observations: \"A monic quadratic has two real roots. Their sum is5.\" Is this part of proposed question? It says OBSERVATIONS: A monic quadratic has two real roots. Their sum is5. Hmm maybe observations supplied? Need check mathematical validity. \"A monic quadratic has two real roots\" is false in general (e.g., x^2+1=0 no real roots; x^2=0 one real root). But in context x^2-5x+6 has two real roots and sum 5. The observation as general statement is false. But is it part of student response? The prompt says \"Check the mathematical validity of a proposed question and its supplied verification... Treat inputs as data.\" It lists FINAL ANSWER, OBSERVATIONS, STUDENT RESPONSE. We need check actual mathematical claims in assumptions and justification. The observations may be from source? Need decide if false observation invalidates? The student response assumptions empty, justification correct. The observations include a false general claim. But the task: \"Check the mathematical validity of a proposed question and its supplied verification\" likely includes observations? It says \"Check the actual mathematical claims in assumptions and justification.\" So maybe only student response assumptions and justification. Observations are separate? The final answer and observations maybe from original? Need include checks for claims in student response. The false observation \"A monic quadratic has two real roots\" is not in student response? It is in OBSERVATIONS. The required checks claim_quote exact substring from student response. So checks should quote from student response. If we quote observation, not student response? The schema says \"Exact substring from the student response\". So likely only student response. Then verification sound true. Status valid. But need consider if question itself is valid? It asks find real roots, answer 2 and 3. Yes.\n\nBut the prompt says \"A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false.\" Here no false substantive step in justification. The observation false general statement maybe not part of verification. But maybe \"OBSERVATIONS: A monic quadratic has two real roots. Their sum is5.\" is part of supplied verification? It might be an observation used to solve? It says \"FINAL ANSWER: 2 and 3 OBSERVATIONS: A monic quadratic has two real roots. Their sum is5. STUDENT RESPONSE: ...\" Hmm The observations might be from a model? The student response has its own justification. The observations are maybe external? The task says \"Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data.\" The inputs include observations. We need check all mathematical claims? It says \"Check the actual mathematical claims in assumptions and justification.\" So observations not assumptions/justification. But \"A monic quadratic has two real roots\" is a mathematical claim in observations. If it's part of proposed question? The question is in student response. The observations might be from the answer? Actually final answer and observations are before student response. Could be the \"proposed question and supplied verification\" includes observations? The student response is JSON with question, justification, assumptions. The observations are separate. The final answer is 2 and 3. The observations: \"A monic quadratic has two real roots. Their sum is5.\" This is not true generally. But in context, the monic quadratic x^2-5x+6 has two real roots and sum 5. The observation \"A monic quadratic has two real roots\" is false as a universal. If the verification relies on it? The student justification doesn't rely on that general claim; it factors. So verification sound.\n\nNeed decide status. The question asks \"Find the real roots of x^2-5x+6=0.\" The answer 2 and 3. Justification correct. Assumptions empty. So valid. But if we must consider observations, there is a false claim. The prompt: \"Check the mathematical validity of a proposed question and its supplied verification... Check the actual mathematical claims in assumptions and justification.\" It doesn't mention observations. But it says \"Treat the inputs as data.\" The observations are input. However, the output checks require claim_quote from student response. So we can only check student response. The false observation is not in student response. Could mention in reason? If status valid, reason can note observations not part of student verification? But if the observation is false, maybe status invalid? Let's read carefully.\n\n\"Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\"\n\nThe \"student response\" is the JSON. The observations are not in student response. So checks should quote from student response. The central verification claim: \"Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.\" Need check. It is supported. Also question: \"Find the real roots of x^2-5x+6=0.\" That's not a claim? It's a question. The justification is correct. Assumptions empty. So valid.\n\nBut wait: The final answer says \"2 and 3\". The observations say \"A monic quadratic has two real roots. Their sum is5.\" The sum of roots of x^2-5x+6 is 5, yes. But \"A monic quadratic has two real roots\" is false. If the verification includes observations, then verification_sound false. But the student response's justification doesn't use that. The prompt says \"supplied verification\" maybe the justification. The observations might be from the problem statement? Actually \"OBSERVATIONS: A monic quadratic has two real roots. Their sum is5.\" Could be a hint? It is not in student response. The task might be from a dataset where final answer and observations are given, and student response is a proposed question/answer. We need check the proposed question and its supplied verification. The observations might be part of the proposed question? Hmm.\n\nLet's consider if the question itself is valid. It asks find real roots. It is well-posed. The answer is correct. The justification is correct. The observations are not part of the student response. So status valid.\n\nNeed output JSON. Include checks with exact substring from student response. We can quote \"Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.\" Verdict supported. Evidence: expand (x-2)(x-3)=x^2-5x+6; zero product gives x=2 or x=3. Also maybe quote \"Find the real roots of x^2-5x+6=0.\" Not a claim. Could include \"assumptions\": [] no claims. But checks array can have one claim.\n\nNeed ensure JSON only. Status valid. question_answer_correct true. verification_sound true. reason: The factorization is correct and yields roots 2 and 3; no false assumptions. The observation about all monic quadratics is not part of the student response/verification, so it does not affect soundness. But if I mention observation, might confuse. Maybe omit.\n\nBut the prompt says \"For valid, check the central verification claims, not just the final answer.\" We do.\n\nLet's craft final JSON. Need exact substring from student response. The student response string has \"Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.\" Note no space between are and 2? In given: \"so the roots are2 and3.\" Yes. Use exact.\n\nEvidence: \"Expanding (x-2)(x-3) gives x^2-5x+6; by zero product property, x-2=0 or x-3=0, so x=2 or x=3.\"\n\nReason: \"The question is well-posed, the factorization is correct, and the roots are correctly identified. Assumptions list is empty, so no unsupported assumptions.\"\n\nShould status be valid. Yes.\n\nDouble-check if there is any issue: The question says \"Find the real roots of x^2-5x+6=0.\" The roots are 2 and 3. The justification says factor. Correct. The final answer 2 and 3. Observations: \"A monic quadratic has two real roots. Their sum is5.\" The sum of roots is 5. But \"A monic quadratic has two real roots\" is false. If the verification soundness includes observations, then false. But the student response doesn't include observations. The prompt says \"Check the mathematical validity of a proposed question and its supplied verification\" and \"Check the actual mathematical claims in assumptions and justification.\" So observations are not in assumptions/justification. So valid.\n\nCould there be a hidden issue: The question asks \"Find the real roots\" but the answer \"2 and 3\" is correct. The justification uses factorization. No missing step. Valid.\n\nLet's output.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 2510,
+          "prompt_tokens": 380,
+          "total_tokens": 2890,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 2360,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0010726352000000002
+        },
+        "elapsed_seconds": 32.015
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 2 and 3\nOBSERVATIONS:\nA monic quadratic has two real roots.\nTheir sum is5.\nSTUDENT RESPONSE:\n{\n  \"question\": \"Find the real roots of x^2-5x+6=0.\",\n  \"justification\": \"Factor x^2-5x+6=(x-2)(x-3), so the roots are2 and3.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "9898ed7dd2d05f5604b201ca1ab1cbbc6e009b127dc9f0ba1ca6c91fdafd9e1b",
+      "case_hash": "9c9aac2606adbef0643c12b2262d7609c852b52ed866877fc146abd7359a27ac"
+    },
+    "production-129-valid": {
+      "output": {
+        "status": "valid",
+        "question_answer_correct": true,
+        "verification_sound": true,
+        "checks": [
+          {
+            "claim_quote": "Let f1(d)=1 for all seven digits.",
+            "verdict": "supported",
+            "evidence": "For length 1, every one-digit word over {0,1,2,3,4,5,6} is valid, so f_1(d)=1 for each of the seven digits."
+          },
+          {
+            "claim_quote": "Iterate f(k+1,d)=f(k,d-1)+f(k,d+1), using zero only outside0..6.",
+            "verdict": "supported",
+            "evidence": "A valid word of length k+1 ending in d must have previous digit d-1 or d+1, and those must lie in 0..6; hence the recurrence is correct with boundary terms zero."
+          },
+          {
+            "claim_quote": "At length12 the vector is[396,792,956,1120,956,792,396], summing to5408.",
+            "verdict": "supported",
+            "evidence": "Iterating from f_1=[1,1,1,1,1,1,1] gives f_12=[396,792,956,1120,956,792,396]. The sum is 396+792+956+1120+956+792+396=5408."
+          },
+          {
+            "claim_quote": "Thus the remainder is5408-2*2008=1392.",
+            "verdict": "supported",
+            "evidence": "5408 divided by 2008 has quotient 2 and remainder 5408-4016=1392."
+          }
+        ],
+        "reason": "The recurrence and boundary conditions correctly count valid words over digits 0 through 6 with adjacent digits differing by exactly 1. The length-12 vector and sum are correct, and reducing 5408 modulo 2008 gives 1392."
+      },
+      "raw": {
+        "content": "{\"status\":\"valid\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Let f1(d)=1 for all seven digits.\",\"verdict\":\"supported\",\"evidence\":\"For length 1, every one-digit word over {0,1,2,3,4,5,6} is valid, so f_1(d)=1 for each of the seven digits.\"},{\"claim_quote\":\"Iterate f(k+1,d)=f(k,d-1)+f(k,d+1), using zero only outside0..6.\",\"verdict\":\"supported\",\"evidence\":\"A valid word of length k+1 ending in d must have previous digit d-1 or d+1, and those must lie in 0..6; hence the recurrence is correct with boundary terms zero.\"},{\"claim_quote\":\"At length12 the vector is[396,792,956,1120,956,792,396], summing to5408.\",\"verdict\":\"supported\",\"evidence\":\"Iterating from f_1=[1,1,1,1,1,1,1] gives f_12=[396,792,956,1120,956,792,396]. The sum is 396+792+956+1120+956+792+396=5408.\"},{\"claim_quote\":\"Thus the remainder is5408-2*2008=1392.\",\"verdict\":\"supported\",\"evidence\":\"5408 divided by 2008 has quotient 2 and remainder 5408-4016=1392.\"}],\"reason\":\"The recurrence and boundary conditions correctly count valid words over digits 0 through 6 with adjacent digits differing by exactly 1. The length-12 vector and sum are correct, and reducing 5408 modulo 2008 gives 1392.\"}",
+        "reasoning": "We need answer JSON only. Need check validity. Need parse. We need verify proposed question and supplied verification. Observations say fixed length less than 20, alphabet digits 0..6, adjacent differ exactly 1, remainder mod 2008. Student question length12. Justification recurrence. Need check math.\n\nWe need independently compute f_k for length 12 over path graph P7 with adjacency diff 1. f1 all ones. Need compute vector length12? Let's calculate carefully. Recurrence f_{k+1}(d)=f_k(d-1)+f_k(d+1), boundaries zero. Starting k=1: [1,1,1,1,1,1,1].\nk=2: d0=f1(-1)+f1(1)=0+1=1; d1=f1(0)+f1(2)=1+1=2; d2=1+1=2; d3=2; d4=2; d5=2; d6=f1(5)+f1(7)=1+0=1. [1,2,2,2,2,2,1], sum12? Actually number length2 valid = 12 yes.\n\nk=3: [2,3,4,4,4,3,2]? compute d0=f2(1)=2; d1=f2(0)+f2(2)=1+2=3; d2=2+2=4; d3=2+2=4; d4=2+2=4; d5=2+1=3; d6=f2(5)=2. sum22.\n\nk=4: d0=3; d1=2+4=6; d2=3+4=7; d3=4+4=8; d4=4+3=7; d5=4+2=6; d6=3. [3,6,7,8,7,6,3] sum40.\n\nk=5: d0=6; d1=3+7=10; d2=6+8=14; d3=7+7=14; d4=8+6=14; d5=7+3=10; d6=6. [6,10,14,14,14,10,6] sum74.\n\nk=6: d0=10; d1=6+14=20; d2=10+14=24; d3=14+14=28; d4=14+10=24; d5=14+6=20; d6=10. [10,20,24,28,24,20,10] sum136.\n\nk=7: d0=20; d1=10+24=34; d2=20+28=48; d3=24+24=48; d4=28+20=48; d5=24+10=34; d6=20. [20,34,48,48,48,34,20] sum252.\n\nk=8: d0=34; d1=20+48=68; d2=34+48=82; d3=48+48=96; d4=48+34=82; d5=48+20=68; d6=34. [34,68,82,96,82,68,34] sum464.\n\nk=9: d0=68; d1=34+82=116; d2=68+96=164; d3=82+82=164; d4=96+68=164; d5=82+34=116; d6=68. [68,116,164,164,164,116,68] sum860.\n\nk=10: d0=116; d1=68+164=232; d2=116+164=280; d3=164+164=328; d4=164+116=280; d5=164+68=232; d6=116. [116,232,280,328,280,232,116] sum1584.\n\nk=11: d0=232; d1=116+280=396; d2=232+328=560; d3=280+280=560; d4=328+232=560; d5=280+116=396; d6=232. [232,396,560,560,560,396,232] sum2936? 232+396=628; +560=1188; +560=1748; +560=2308; +396=2704; +232=2936.\n\nk=12: d0=396; d1=232+560=792; d2=396+560=956; d3=560+560=1120; d4=560+396=956; d5=560+232=792; d6=396. Vector [396,792,956,1120,956,792,396]. Sum: 396+792=1188; +956=2144; +1120=3264; +956=4220; +792=5012; +396=5408. Yes. Mod 2008: 2008*2=4016; 5408-4016=1392. Correct.\n\nNeed check verification sound. It states recurrence and vector. Seems sound. Need maybe question length12 is allowed? Observations fixed length less than 20, positive. Yes. Alphabet exactly seven digits. Neighboring differ exactly 1. Mod 2008. Answer 1392. Valid.\n\nNeed produce JSON with checks. Need exact substring from student response. Claims: \"Let f1(d)=1 for all seven digits.\" supported. \"Iterate f(k+1,d)=f(k,d-1)+f(k,d+1), using zero only outside0..6.\" supported. \"At length12 the vector is[396,792,956,1120,956,792,396], summing to5408.\" supported. \"Thus the remainder is5408-2*2008=1392.\" supported. Need maybe check central verification claims. We can include calculations.\n\nNeed final JSON only. Ensure status valid, question_answer_correct true, verification_sound true. checks array. reason concise.\n\nNeed be careful: \"question_answer_correct\" refers proposed question and answer? The final answer 1392. Yes.\n\nNeed no markdown. JSON valid. Use exact substrings. Evidence concrete calculations. Could include recurrence iteration. Need maybe mention f_12 vector. Good.\n\nFinal.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1798,
+          "prompt_tokens": 582,
+          "total_tokens": 2380,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1417,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0007844928000000001
+        },
+        "elapsed_seconds": 21.139
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\nThe alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\nIn any valid word, each pair of neighboring digits must differ by exactly 1.\nThe requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.\nThe fixed length is less than 20.\nFor a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.\nFor k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.\nSTUDENT RESPONSE:\n{\n  \"question\": \"How many length12 words over digits0,1,2,3,4,5,6 have neighboring digits differing by exactly1, reduced modulo2008?\",\n  \"justification\": \"Let f1(d)=1 for all seven digits. Iterate f(k+1,d)=f(k,d-1)+f(k,d+1), using zero only outside0..6. At length12 the vector is[396,792,956,1120,956,792,396], summing to5408. Thus the remainder is5408-2*2008=1392.\",\n  \"assumptions\": []\n}",
+      "prompt_hash": "69b6a144f5986b5bb1c76d0a2e340a6c22b5fe6399dd2bf0d771a67b120d2b53",
+      "case_hash": "0dc84fce03d6165956b4a996b88519a679411b5931e3bb01f49cd76fa16372b7"
+    },
+    "production-129-invalid": {
+      "output": {
+        "status": "invalid",
+        "question_answer_correct": false,
+        "verification_sound": false,
+        "checks": [
+          {
+            "claim_quote": "For a fixed positive length less than 20, how many valid words are there where each neighboring digit differs by exactly 1? Find the remainder modulo 2008 of this total number of valid words.",
+            "verdict": "false",
+            "evidence": "The fixed length is not specified. For k=11 the total is 2936, remainder 928; for k=12 the total is 5408, remainder 1392; for k=13 the total is 10024, remainder 1992. Thus the requested remainder is not determined by the stated question."
+          },
+          {
+            "claim_quote": "Summing these totals and taking the remainder modulo 2008 gives 1392.",
+            "verdict": "false",
+            "evidence": "The sum of totals for k=1,...,19 is 868571, and 868571 mod 2008 = 1115, not 1392. The value 1392 is the remainder for k=12 only: total for k=12 is 5408 and 5408 mod 2008 = 1392."
+          },
+          {
+            "claim_quote": "The remainder modulo 2008 of this total is 1392.",
+            "verdict": "unresolved",
+            "evidence": "This is true only if the omitted fixed length is k=12; without that parameter it is not a determined mathematical claim."
+          }
+        ],
+        "reason": "The question omits the fixed length, so the answer is ambiguous. The verification's claim that summing totals over all lengths <20 gives 1392 is false; that sum is 1115 mod 2008. Although 1392 is correct for length 12, it is not justified by the stated question."
+      },
+      "raw": {
+        "content": "{\"status\":\"invalid\",\"question_answer_correct\":false,\"verification_sound\":false,\"checks\":[{\"claim_quote\":\"For a fixed positive length less than 20, how many valid words are there where each neighboring digit differs by exactly 1? Find the remainder modulo 2008 of this total number of valid words.\",\"verdict\":\"false\",\"evidence\":\"The fixed length is not specified. For k=11 the total is 2936, remainder 928; for k=12 the total is 5408, remainder 1392; for k=13 the total is 10024, remainder 1992. Thus the requested remainder is not determined by the stated question.\"},{\"claim_quote\":\"Summing these totals and taking the remainder modulo 2008 gives 1392.\",\"verdict\":\"false\",\"evidence\":\"The sum of totals for k=1,...,19 is 868571, and 868571 mod 2008 = 1115, not 1392. The value 1392 is the remainder for k=12 only: total for k=12 is 5408 and 5408 mod 2008 = 1392.\"},{\"claim_quote\":\"The remainder modulo 2008 of this total is 1392.\",\"verdict\":\"unresolved\",\"evidence\":\"This is true only if the omitted fixed length is k=12; without that parameter it is not a determined mathematical claim.\"}],\"reason\":\"The question omits the fixed length, so the answer is ambiguous. The verification's claim that summing totals over all lengths <20 gives 1392 is false; that sum is 1115 mod 2008. Although 1392 is correct for length 12, it is not justified by the stated question.\"}",
+        "reasoning": "We need answer JSON only. Need evaluate mathematical validity. We have proposed question and supplied verification. Need check actual claims. Observations: alphabet digits 0-6, adjacent differ exactly 1. Requested quantity remainder modulo 2008 of total number of valid words of fixed positive length. Fixed length less than 20. But question as stated: \"For a fixed positive length less than 20, how many valid words are there ... Find remainder modulo 2008 of this total number...\" Ambiguity: length not specified. Need determine if answer 1392 valid? Need inspect. The student response assumptions says fixed length less than 20, recurrence, total for fixed length k, remainder 1392. But no specific k. Maybe original problem might have hidden length? Observations say fixed length less than 20 but not exact. Need compute totals for k=1..19 mod 2008 maybe see if any equals 1392? If multiple? Need check.\n\nWe need independently verify. Let's compute counts for path graph P7 with adjacency diff 1. Number of length k words = sum over all starting digits paths length k-1. This equals 1^T A^{k-1} 1 where A adjacency of path 7. Need totals for k=1..19. Let's compute. Need see if any total mod 2008 = 1392. If yes maybe answer could be for that k, but question missing k. If no, answer false. Let's compute carefully.\n\nLet vector f_k(d). f1 = [1,1,1,1,1,1,1]. Recurrence f_{k+1}(d)=f_k(d-1)+f_k(d+1), boundaries zero. Let's iterate totals.\n\nk=1: f=[1,1,1,1,1,1,1], total=7.\n\nk=2: each d count neighbors: d0=1, d1=2, d2=2, d3=2, d4=2, d5=2, d6=1. total=12. (7*2 -2 =12)\n\nk=3: compute from k2 [1,2,2,2,2,2,1]:\nd0=f1=2\nd1=f0+f2=1+2=3\nd2=f1+f3=2+2=4\nd3=f2+f4=2+2=4\nd4=f3+f5=2+2=4\nd5=f4+f6=2+1=3\nd6=f5=2\ntotal=2+3+4+4+4+3+2=22.\n\nk=4: from [2,3,4,4,4,3,2]:\nd0=3\nd1=2+4=6\nd2=3+4=7\nd3=4+4=8\nd4=4+3=7\nd5=4+2=6\nd6=3\ntotal=3+6+7+8+7+6+3=40.\n\nk=5: [3,6,7,8,7,6,3]:\nd0=6\nd1=3+7=10\nd2=6+8=14\nd3=7+7=14\nd4=8+6=14\nd5=7+3=10\nd6=6\ntotal=6+10+14+14+14+10+6=74.\n\nk=6: [6,10,14,14,14,10,6]:\nd0=10\nd1=6+14=20\nd2=10+14=24\nd3=14+14=28\nd4=14+10=24\nd5=14+6=20\nd6=10\ntotal=10+20+24+28+24+20+10=136.\n\nk=7: [10,20,24,28,24,20,10]:\nd0=20\nd1=10+24=34\nd2=20+28=48\nd3=24+24=48\nd4=28+20=48\nd5=24+10=34\nd6=20\ntotal=20+34+48+48+48+34+20=252.\n\nk=8: [20,34,48,48,48,34,20]:\nd0=34\nd1=20+48=68\nd2=34+48=82\nd3=48+48=96\nd4=48+34=82\nd5=48+20=68\nd6=34\ntotal=34+68+82+96+82+68+34 =? 34+68=102, +82=184, +96=280, +82=362, +68=430, +34=464.\n\nk=9: [34,68,82,96,82,68,34]:\nd0=68\nd1=34+82=116\nd2=68+96=164\nd3=82+82=164\nd4=96+68=164\nd5=82+34=116\nd6=68\ntotal=68+116+164+164+164+116+68 =? 68+116=184, +164=348, +164=512, +164=676, +116=792, +68=860.\n\nk=10: [68,116,164,164,164,116,68]:\nd0=116\nd1=68+164=232\nd2=116+164=280\nd3=164+164=328\nd4=164+116=280\nd5=164+68=232\nd6=116\ntotal=116+232+280+328+280+232+116 =? 116+232=348, +280=628, +328=956, +280=1236, +232=1468, +116=1584.\n\nk=11: [116,232,280,328,280,232,116]:\nd0=232\nd1=116+280=396\nd2=232+328=560\nd3=280+280=560\nd4=328+232=560\nd5=280+116=396\nd6=232\ntotal=232+396+560+560+560+396+232 =? 232+396=628, +560=1188, +560=1748, +560=2308, +396=2704, +232=2936.\n\nk=12: [232,396,560,560,560,396,232]:\nd0=396\nd1=232+560=792\nd2=396+560=956\nd3=560+560=1120\nd4=560+396=956\nd5=560+232=792\nd6=396\ntotal=396+792+956+1120+956+792+396 =? 396+792=1188, +956=2144, +1120=3264, +956=4220, +792=5012, +396=5408.\n\nk=13: [396,792,956,1120,956,792,396]:\nd0=792\nd1=396+956=1352\nd2=792+1120=1912\nd3=956+956=1912\nd4=1120+792=1912\nd5=956+396=1352\nd6=792\ntotal=792+1352+1912+1912+1912+1352+792 =? 792+1352=2144, +1912=4056, +1912=5968, +1912=7880, +1352=9232, +792=10024.\n\nk=14: [792,1352,1912,1912,1912,1352,792]:\nd0=1352\nd1=792+1912=2704\nd2=1352+1912=3264\nd3=1912+1912=3824\nd4=1912+1352=3264\nd5=1912+792=2704\nd6=1352\ntotal=1352+2704+3264+3824+3264+2704+1352 =? 1352+2704=4056, +3264=7320, +3824=11144, +3264=14408, +2704=17112, +1352=18464.\n\nk=15: [1352,2704,3264,3824,3264,2704,1352]:\nd0=2704\nd1=1352+3264=4616\nd2=2704+3824=6528\nd3=3264+3264=6528\nd4=3824+2704=6528\nd5=3264+1352=4616\nd6=2704\ntotal=2704+4616+6528+6528+6528+4616+2704 =? 2704+4616=7320, +6528=13848, +6528=20376, +6528=26904, +4616=31520, +2704=34224.\n\nk=16: [2704,4616,6528,6528,6528,4616,2704]:\nd0=4616\nd1=2704+6528=9232\nd2=4616+6528=11144\nd3=6528+6528=13056\nd4=6528+4616=11144\nd5=6528+2704=9232\nd6=4616\ntotal=4616+9232+11144+13056+11144+9232+4616 =? 4616+9232=13848, +11144=24992, +13056=38048, +11144=49192, +9232=58424, +4616=63040.\n\nk=17: [4616,9232,11144,13056,11144,9232,4616]:\nd0=9232\nd1=4616+11144=15760\nd2=9232+13056=22288\nd3=11144+11144=22288\nd4=13056+9232=22288\nd5=11144+4616=15760\nd6=9232\ntotal=9232+15760+22288+22288+22288+15760+9232 =? 9232+15760=24992, +22288=47280, +22288=69568, +22288=91856, +15760=107616, +9232=116848.\n\nk=18: [9232,15760,22288,22288,22288,15760,9232]:\nd0=15760\nd1=9232+22288=31520\nd2=15760+22288=38048\nd3=22288+22288=44576\nd4=22288+15760=38048\nd5=22288+9232=31520\nd6=15760\ntotal=15760+31520+38048+44576+38048+31520+15760 =? 15760+31520=47280, +38048=85328, +44576=129904, +38048=167952, +31520=199472, +15760=215232.\n\nk=19: [15760,31520,38048,44576,38048,31520,15760]:\nd0=31520\nd1=15760+38048=53808\nd2=31520+44576=76096\nd3=38048+38048=76096\nd4=44576+31520=76096\nd5=38048+15760=53808\nd6=31520\ntotal=31520+53808+76096+76096+76096+53808+31520 =? 31520+53808=85328, +76096=161424, +76096=237520, +76096=313616, +53808=367424, +31520=398944.\n\nNow mod 2008 for k=1..19:\nk1 7\nk2 12\nk3 22\nk4 40\nk5 74\nk6 136\nk7 252\nk8 464\nk9 860\nk10 1584\nk11 2936 mod 2008 = 928\nk12 5408 mod 2008 = 5408-4016=1392. Ah k=12 gives 1392.\nk13 10024 mod 2008: 2008*4=8032, remainder1992? 10024-10024? 2008*5=10040, so -16 => 1992.\nk14 18464: 2008*9=18072, rem392.\nk15 34224: 2008*17=34136, rem88.\nk16 63040: 2008*31=62248, rem792? 2008*31=62248, +792=63040 yes.\nk17 116848: 2008*58=116464, rem384.\nk18 215232: 2008*107=214856, rem376? 2008*107=214856, rem376.\nk19 398944: 2008*198=397584, rem1360? 2008*199=399592, so rem -648 =1360. Yes.\n\nSo 1392 occurs for k=12. But question says fixed positive length less than 20, not specifying which. If original intended length maybe 12? Observations: \"The fixed length is less than 20.\" Not enough. The final answer 1392 corresponds to k=12. But question as written asks \"For a fixed positive length less than 20\" without giving length. It is ambiguous; many possible answers. The supplied verification says \"calculate total for each length k<20. Summing these totals and taking remainder modulo 2008 gives 1392.\" Wait that's false: summing totals for each length k<20? Let's compute sum k=1..19 totals mod 2008. Sum totals: 7+12+22+40+74+136+252+464+860+1584+2936+5408+10024+18464+34224+63040+116848+215232+398944. Let's sum: first 10 =? 7+12=19, +22=41, +40=81, +74=155, +136=291, +252=543, +464=1007, +860=1867, +1584=3451. +2936=6387, +5408=11795, +10024=21819, +18464=40283, +34224=74507, +63040=137547, +116848=254395, +215232=469627, +398944=868571. Mod 2008: 2008*432=867456, rem1115. 2008*433=869464 too high. So sum all lengths <20 mod 2008 =1115, not 1392. If \"summing these totals\" means sum over digits for fixed k? The justification is vague. It says \"calculate total number for each length k<20. Summing these totals and taking remainder modulo 2008 gives 1392.\" That is false if sum over lengths. If for k=12, total mod 2008 =1392. But question didn't specify k=12. Need decide status.\n\nWe need return JSON with status valid/invalid/uncertain, question_answer_correct true/false, verification_sound true/false, checks. Need assess mathematical validity of proposed question and supplied verification independently. The question is ambiguous because length parameter absent. The answer 1392 is correct for length 12, but not determined by question. The verification claims summing totals for each length k<20 gives 1392, which is false. Also assumptions include \"The remainder modulo 2008 of this total is 1392\" as assumption, not derived. The question asks \"For a fixed positive length less than 20\" but no fixed length. So question_answer_correct? The final answer 1392 is not correct for the question as stated because no unique answer. But if we interpret \"fixed length\" maybe hidden? Observations say fixed length less than 20, not exact. The final answer 1392 corresponds to k=12. Since parameter necessary absent, explain ambiguity with two permitted cases. The instructions: \"If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness.\" Here parameter length absent. We can say invalid? The question is mathematically invalid/ambiguous. question_answer_correct? Since no unique answer, cannot be true. But maybe final answer 1392 is correct for one permitted length (12), but not for others. The field question_answer_correct boolean. Should it be false? The question as stated doesn't determine answer; final answer 1392 is not correct as answer to ambiguous question. But maybe \"question_answer_correct\" means proposed final answer correct? It is correct for k=12 but not specified. I'd set false? Need be careful: The prompt says \"Check mathematical validity of a proposed question and its supplied verification... If a parameter necessary to determine the answer is absent, explain ambiguity with two permitted cases.\" So status likely invalid due to missing length. question_answer_correct maybe false because answer not determined. verification_sound false because justification false (summing all lengths gives 1115, not 1392; also no length specified). Need include exact false claim quote: \"Summing these totals and taking the remainder modulo 2008 gives 1392.\" Refute: sum totals for k=1..19 is 868571, mod 2008 =1115. Also quote \"For a fixed positive length less than 20\" missing exact length; for k=11 remainder 928, k=12 remainder 1392, k=13 remainder 1992. So answer depends on k.\n\nNeed maybe compute k=12 total = 5408, mod 2008 = 1392. So final answer 1392 is correct for length 12. But question didn't specify length 12. The observations say fixed length less than 20. Could there be original problem with length 12 hidden? The student response question says \"For a fixed positive length less than 20\" not \"length 12\". So invalid.\n\nNeed produce JSON only. Need include checks array with exact substrings from student response. We can quote from student response. Need verdict supported/false/unresolved. Evidence concrete calculation.\n\nLet's craft:\n{\n \"status\":\"invalid\",\n \"question_answer_correct\":false,\n \"verification_sound\":false,\n \"checks\":[\n  {\"claim_quote\":\"For a fixed positive length less than 20, how many valid words are there ... Find the remainder modulo 2008 of this total number of valid words.\",\"verdict\":\"false\",\"evidence\":\"The length is not specified. For k=11 total=2936, remainder 928; for k=12 total=5408, remainder 1392; for k=13 total=10024, remainder 1992. Thus the requested remainder is not determined by the stated question.\"},\n  {\"claim_quote\":\"Summing these totals and taking the remainder modulo 2008 gives 1392.\",\"verdict\":\"false\",\"evidence\":\"The sum of totals for k=1,...,19 is 868571, and 868571 mod 2008 = 1115, not 1392. The value 1392 is the remainder for k=12 only: total for k=12 is 5408 and 5408 mod 2008 = 1392.\"},\n  {\"claim_quote\":\"The remainder modulo 2008 of this total is 1392.\",\"verdict\":\"unresolved\",\"evidence\":\"This is true only if the omitted fixed length is k=12; without that parameter it is not a determined mathematical claim.\"}\n ],\n \"reason\":\"The question omits the fixed length, so the answer is ambiguous. The verification's claim that summing totals over all lengths <20 gives 1392 is false; that sum is 1115 mod 2008. Although 1392 is correct for length 12, it is not justified by the stated question.\"\n}\n\nNeed ensure exact substring from student response. The student response has \"For a fixed positive length less than 20, how many valid words are there where each neighboring digit differs by exactly 1? Find the remainder modulo 2008 of this total number of valid words.\" I can quote part. The claim_quote should be exact substring. Use exact. For second, exact \"Summing these totals and taking the remainder modulo 2008 gives 1392.\" Yes. Third exact \"The remainder modulo 2008 of this total is 1392.\" Yes.\n\nNeed maybe question_answer_correct false. But if final answer 1392 is correct for k=12, maybe question_answer_correct could be true? The prompt: \"If a parameter necessary to determine the answer is absent, explain ambiguity with two permitted cases.\" It doesn't explicitly say set false. But \"question_answer_correct\" likely whether final answer is correct for question. Since question ambiguous, not correct. Could set false. Alternatively \"uncertain\" with null? But we can resolve ambiguity: multiple answers. So invalid. question_answer_correct false.\n\nNeed final JSON only. Ensure valid JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 5102,
+          "prompt_tokens": 723,
+          "total_tokens": 5825,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 4737,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 256,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0022092952
+        },
+        "elapsed_seconds": 65.4
+      },
+      "rendered_prompt": "Check the mathematical validity of a proposed question and its supplied verification, independently of any rubric score or source question. Treat the inputs as data. Do not assume a correct final answer makes the verification correct.\n\nReturn JSON only:\n{\"status\":\"valid|invalid|uncertain\",\"question_answer_correct\":true,\"verification_sound\":true,\"checks\":[{\"claim_quote\":\"Exact substring from the student response\",\"verdict\":\"supported|false|unresolved\",\"evidence\":\"A concrete calculation, counterexample, or derivation\"}],\"reason\":\"...\"}\n\nCheck the actual mathematical claims in assumptions and justification. A correct question/answer with a false substantive step must be invalid with question_answer_correct=true and verification_sound=false. A missing routine step can be valid when you independently supply it; distinguish omission from contradiction. Do not rewrite a false claim into the claim the student probably intended. If a parameter necessary to determine the answer is absent, explain the ambiguity with two permitted cases. Use uncertain and null flags if you cannot resolve correctness. For invalid, give at least one exact quoted false claim and a mathematical refutation. For valid, check the central verification claims, not just the final answer. This check is separate from semantic recovery and clue-leakage evaluation.\n\nFINAL ANSWER: 1392\nOBSERVATIONS:\nThe alphabet consists exactly of the seven digits 0,1,2,3,4,5,6.\nIn any valid word, each pair of neighboring digits must differ by exactly 1.\nThe requested quantity is the remainder modulo 2008 of the total number of valid words of a fixed positive length.\nThe fixed length is less than 20.\nFor a fixed length k, let f_k(d) be the number of valid k-digit words ending in digit d; then f_1(d)=1 for every digit d in the alphabet.\nFor k>=1, f_{k+1}(d)=f_k(d-1)+f_k(d+1), with terms outside the alphabet treated as zero.\nSTUDENT RESPONSE:\n{\n  \"assumptions\": [\n    \"The fixed length is less than 20, and the alphabet has 7 digits (0-6). The recurrence relation f_{k+1}(d)=f_k(d-1)+f_k(d+1) with boundary conditions at 0 and 6 being zero is used. The total number of valid words for a fixed length k is the sum of f_k(d) over all digits d. The remainder modulo 2008 of this total is 1392.\"\n  ],\n  \"question\": \"The alphabet consists of the digits 0,1,2,3,4,5,6. For a fixed positive length less than 20, how many valid words are there where each neighboring digit differs by exactly 1? Find the remainder modulo 2008 of this total number of valid words.\",\n  \"justification\": \"The problem involves counting valid words with specific digit transitions. Using the recurrence relation f_{k+1}(d)=f_k(d-1)+f_k(d+1) with boundary conditions, we calculate the total number of valid words for each length k < 20. Summing these totals and taking the remainder modulo 2008 gives 1392. The recurrence and boundary conditions are consistent with the observations, and the final answer is derived from the specified constraints.\"\n}",
+      "prompt_hash": "72748acd1e3c37fc83481a3d9825fe92063b5deb382f4a27af2bf6fcdace88de",
+      "case_hash": "bac192ab560f2e58015106a9b9cb6f72a59c2fec67a1b2fef298c3436634f744"
+    }
+  },
+  "failures": []
+}

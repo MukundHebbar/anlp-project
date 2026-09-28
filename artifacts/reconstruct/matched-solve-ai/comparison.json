@@ -1,0 +1,9 @@
+{
+  "scheduled": 12,
+  "parsed": 12,
+  "technical_failures": 0,
+  "answer_correct": 4,
+  "grounded_solve_success": 3,
+  "reconstruction_successes_created": 0,
+  "limitation": "One seed, reused development sources, assistant reference checks; different task prompt and information, not a causal information-only intervention or a training-transfer experiment."
+}

@@ -1,0 +1,142 @@
+{
+  "sources": {
+    "8": {
+      "source_index": 8,
+      "source_id": "pilot-8",
+      "question": "Let \\( a, b, \\) and \\( c \\) be real numbers such that \\( a + b + c = 0 \\). Find the value of the expression:\n\\[\nP = \\frac{a^2}{2a^2+bc} + \\frac{b^2}{2b^2+ca} + \\frac{c^2}{2c^2+ab}.\n\\]",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Algebra -> Algebraic Expressions",
+      "broad_topic": "Algebra",
+      "difficulty": 5.5,
+      "checked_solution": "Assume the expression is defined, so the denominators are nonzero.\n\nSince \\(a+b+c=0\\), we have \\(b+c=-a\\), \\(c+a=-b\\), \\(a+b=-c\\). Thus\n\n\\[\n2a^2+bc=a^2-a(b+c)+bc=a^2-ab-ac+bc=(a-b)(a-c).\n\\]\n\nSimilarly,\n\n\\[\n2b^2+ca=(b-c)(b-a),\n\\]\n\\[\n2c^2+ab=(c-a)(c-b).\n\\]\n\nTherefore\n\n\\[\nP=\\frac{a^2}{(a-b)(a-c)}\n+\\frac{b^2}{(b-c)(b-a)}\n+\\frac{c^2}{(c-a)(c-b)}.\n\\]\n\nPut the three fractions over the common denominator\n\n\\[\nD=(a-b)(a-c)(b-c).\n\\]\n\nThen\n\n\\[\n\\frac{a^2}{(a-b)(a-c)}\n=\\frac{a^2(b-c)}{D},\n\\]\n\n\\[\n\\frac{b^2}{(b-c)(b-a)}\n=\\frac{b^2}{(b-c)(-(a-b))}\n=-\\frac{b^2(a-c)}{D},\n\\]\n\nand\n\n\\[\n\\frac{c^2}{(c-a)(c-b)}\n=\\frac{c^2}{(-(a-c))(-(b-c))}\n=\\frac{c^2(a-b)}{D}.\n\\]\n\nHence\n\n\\[\nP=\\frac{a^2(b-c)-b^2(a-c)+c^2(a-b)}{(a-b)(a-c)(b-c)}.\n\\]\n\nNow expand the numerator:\n\n\\[\na^2(b-c)-b^2(a-c)+c^2(a-b)\n\\]\n\n\\[\n= a^2b-a^2c-ab^2+b^2c+ac^2-bc^2.\n\\]\n\nAlso,\n\n\\[\n(a-b)(a-c)(b-c)\n\\]\n\n\\[\n= a^2b-a^2c-ab^2+ac^2+b^2c-bc^2.\n\\]\n\nThe two expressions are identical, so the numerator equals the denominator. Therefore\n\n\\[\nP=1.\n\\]\n\nThus, whenever the given expression is defined,\n\n\\[\n\\boxed{P=1}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "20": {
+      "source_index": 20,
+      "source_id": "pilot-20",
+      "question": "Let \\( x = e^{2ir\\pi/7} \\) where \\( r \\equiv 0, \\pm1, \\pm2, \\pm3 \\pmod{7} \\). Evaluate the sum: \n\\[ \\sum_{r=1}^6 \\frac{x^r}{1+x^{2r}} \\]",
+      "final_answer": "-4",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "broad_topic": "Algebra",
+      "difficulty": 7.5,
+      "checked_solution": "Let \\(x\\) be a primitive seventh root of unity, so \\(x^7=1\\) and \\(x\\neq 1\\). Define\n\n\\[\nS=\\sum_{r=1}^6 \\frac{x^r}{1+x^{2r}}.\n\\]\n\nFor each \\(r\\),\n\n\\[\n1+x^{2r}=x^r(x^{-r}+x^r),\n\\]\n\nso\n\n\\[\n\\frac{x^r}{1+x^{2r}}\n=\\frac{1}{x^r+x^{-r}}.\n\\]\n\nThus\n\n\\[\nS=\\sum_{r=1}^6 \\frac{1}{x^r+x^{-r}}.\n\\]\n\nLet\n\n\\[\nu_r=x^r+x^{-r}.\n\\]\n\nSince \\(u_{7-r}=u_r\\),\n\n\\[\nS=2\\left(\\frac1{u_1}+\\frac1{u_2}+\\frac1{u_3}\\right).\n\\]\n\nNow use \\(x^7=1\\), \\(x\\neq 1\\):\n\n\\[\nx^6+x^5+x^4+x^3+x^2+x+1=0.\n\\]\n\nDivide by \\(x^3\\):\n\n\\[\n(x^3+x^{-3})+(x^2+x^{-2})+(x+x^{-1})+1=0.\n\\]\n\nLet \\(u=x+x^{-1}\\). Then\n\n\\[\nx^2+x^{-2}=u^2-2,\\qquad x^3+x^{-3}=u^3-3u.\n\\]\n\nHence\n\n\\[\nu^3+u^2-2u-1=0.\n\\]\n\nThe three numbers \\(u_1,u_2,u_3\\) are the roots of this cubic. By Vieta\u2019s formulas,\n\n\\[\nu_1+u_2+u_3=-1,\n\\]\n\\[\nu_1u_2+u_1u_3+u_2u_3=-2,\n\\]\n\\[\nu_1u_2u_3=1.\n\\]\n\nTherefore\n\n\\[\n\\frac1{u_1}+\\frac1{u_2}+\\frac1{u_3}\n=\n\\frac{u_1u_2+u_1u_3+u_2u_3}{u_1u_2u_3}\n=\n-2.\n\\]\n\nSo\n\n\\[\nS=2(-2)=-4.\n\\]\n\n\\[\n\\boxed{-4}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "27": {
+      "source_index": 27,
+      "source_id": "pilot-27",
+      "question": "What is the least number of square roots needed to express \\(\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{100}\\) in the form \\(a+b\\sqrt{c}+d\\sqrt{e}+\\cdots\\) where \\(a,b,c,d,e,\\ldots\\) are all integers?",
+      "final_answer": "60",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let \\(n=s^2m\\), where \\(m\\) is squarefree. Then\n\n\\[\n\\sqrt n=s\\sqrt m.\n\\]\n\nSo the whole sum can be grouped by squarefree parts:\n\n\\[\n\\sum_{n=1}^{100}\\sqrt n\n=\n\\sum_{\\substack{m\\le 100\\\\ m\\text{ squarefree}}}\n\\left(\\sum_{\\substack{s\\ge 1\\\\ s^2m\\le 100}} s\\right)\\sqrt m.\n\\]\n\nFor \\(m=1\\), this gives\n\n\\[\n\\sum_{s=1}^{10}s=55,\n\\]\n\nwhich is an integer and can be absorbed into the constant term \\(a\\). Thus \\(\\sqrt 1\\) does not need to appear as a square-root term.\n\nFor every squarefree \\(m\\) with \\(2\\le m\\le 100\\), the choice \\(s=1\\) is allowed, so its coefficient is positive. Hence every such \\(m\\) must appear as a nonzero square-root term. No squarefree \\(m>100\\) can appear, since \\(m\\le n\\le 100\\).\n\nTherefore the number of square roots needed is exactly the number of squarefree integers from \\(2\\) to \\(100\\).\n\nNow count squarefree integers \\(\\le 100\\). A number is not squarefree iff it is divisible by one of \\(4,9,25,49\\). By inclusion-exclusion:\n\n\\[\n\\left\\lfloor\\frac{100}{4}\\right\\rfloor+\n\\left\\lfloor\\frac{100}{9}\\right\\rfloor+\n\\left\\lfloor\\frac{100}{25}\\right\\rfloor+\n\\left\\lfloor\\frac{100}{49}\\right\\rfloor\n-\n\\left\\lfloor\\frac{100}{36}\\right\\rfloor-\n\\left\\lfloor\\frac{100}{100}\\right\\rfloor\n\\]\n\n\\[\n=25+11+4+2-2-1=39.\n\\]\n\nSo there are \\(100-39=61\\) squarefree integers from \\(1\\) to \\(100\\). Excluding \\(1\\), there are\n\n\\[\n61-1=60.\n\\]\n\nThe square roots of distinct squarefree integers are linearly independent over \\(\\mathbb Q\\), so no cancellation or alternative representation can reduce this number.\n\n\\[\n\\boxed{60}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "33": {
+      "source_index": 33,
+      "source_id": "pilot-33",
+      "question": "For every pair of continuous functions $f,g:[0,1] \\rightarrow \\mathbb{R}$ such that \\(\\max\\{f(x):x \\in [0,1]\\} = \\max\\{g(x):x \\in [0,1]\\}\\), is there always a point $c \\in [0,1]$ such that $f(c) = g(c)$? Answer yes or no.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "broad_topic": "Calculus",
+      "difficulty": 5.5,
+      "checked_solution": "Yes.\n\nLet  \n\\[\nM=\\max_{x\\in[0,1]} f(x)=\\max_{x\\in[0,1]} g(x).\n\\]\n\nSuppose, for contradiction, that there is no \\(c\\in[0,1]\\) with \\(f(c)=g(c)\\). Define\n\n\\[\nh(x)=f(x)-g(x).\n\\]\n\nThen \\(h\\) is continuous on \\([0,1]\\), and \\(h(x)\\neq 0\\) for every \\(x\\in[0,1]\\). Therefore \\(h\\) cannot take both positive and negative values, because then by the Intermediate Value Theorem it would have a zero. Hence either\n\n\\[\nf(x)>g(x)\\quad \\text{for all }x\\in[0,1],\n\\]\n\nor\n\n\\[\ng(x)>f(x)\\quad \\text{for all }x\\in[0,1].\n\\]\n\nIf \\(f(x)>g(x)\\) for all \\(x\\), choose \\(x_0\\in[0,1]\\) such that \\(g(x_0)=M\\). Then\n\n\\[\nf(x_0)>g(x_0)=M,\n\\]\n\nso \\(\\max f>M\\), contradicting \\(\\max f=\\max g\\).\n\nIf \\(g(x)>f(x)\\) for all \\(x\\), choose \\(x_1\\in[0,1]\\) such that \\(f(x_1)=M\\). Then\n\n\\[\ng(x_1)>f(x_1)=M,\n\\]\n\nso \\(\\max g>M\\), again a contradiction.\n\nThus the assumption was false. Therefore there must exist some \\(c\\in[0,1]\\) such that\n\n\\[\nf(c)=g(c).\n\\]\n\n\\[\n\\boxed{\\text{Yes}}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "77": {
+      "source_index": 77,
+      "source_id": "deepmath-row-94174-873f9d6e8cbf",
+      "question": "Find the maximum area of the region bounded by the curves \\( C_1 : y = x^3 - x \\) and \\( C_2 : y = (x-a)^3 - (x-a) \\), given that they intersect at two points.",
+      "final_answer": "\\dfrac{1}{2}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Applications of Integrals",
+      "broad_topic": "Calculus",
+      "difficulty": 6.5,
+      "checked_solution": "Let  \n\\[\nf(x)=x^3-x.\n\\]\nThen \\(C_2\\) is \\(y=f(x-a)\\).\n\nIntersections occur when\n\\[\nf(x)=f(x-a).\n\\]\nCompute:\n\\[\nf(x)-f(x-a)=x^3-x-\\bigl((x-a)^3-(x-a)\\bigr)\n=a(3x^2-3ax+a^2-1).\n\\]\n\nSince \\(a=0\\) makes the curves identical, not two intersections, we need \\(a\\neq 0\\). Thus the intersections are the roots of\n\\[\nq(x)=3x^2-3ax+a^2-1=0.\n\\]\nThis quadratic has two distinct roots iff\n\\[\n\\Delta=(-3a)^2-4\\cdot 3(a^2-1)=12-3a^2>0,\n\\]\nso\n\\[\n0<|a|<2.\n\\]\n\nLet the two roots be \\(x_1<x_2\\). Their distance is\n\\[\nL=x_2-x_1=\\frac{\\sqrt{\\Delta}}{3}\n=\\frac{\\sqrt{12-3a^2}}{3}\n=\\frac{\\sqrt{4-a^2}}{\\sqrt3}.\n\\]\n\nBetween \\(x_1\\) and \\(x_2\\), \\(q(x)<0\\), so the area between the curves is\n\\[\nA(a)=\\int_{x_1}^{x_2}|f(x)-f(x-a)|\\,dx\n=|a|\\int_{x_1}^{x_2}-q(x)\\,dx.\n\\]\nSince\n\\[\nq(x)=3(x-x_1)(x-x_2),\n\\]\nwe have\n\\[\n-q(x)=3(x-x_1)(x_2-x).\n\\]\nAlso,\n\\[\n\\int_{x_1}^{x_2}(x-x_1)(x_2-x)\\,dx=\\frac{L^3}{6}.\n\\]\nTherefore\n\\[\nA(a)=|a|\\cdot 3\\cdot \\frac{L^3}{6}\n=\\frac{|a|L^3}{2}.\n\\]\nSubstitute \\(L\\):\n\\[\nA(a)=\\frac{|a|}{2}\\left(\\frac{\\sqrt{4-a^2}}{\\sqrt3}\\right)^3\n=\\frac{|a|(4-a^2)^{3/2}}{6\\sqrt3}.\n\\]\n\nLet \\(u=|a|\\), where \\(0<u<2\\). Then\n\\[\nA(u)=\\frac{u(4-u^2)^{3/2}}{6\\sqrt3}.\n\\]\nDifferentiate:\n\\[\nA'(u)=\\frac{(4-u^2)^{1/2}(4-4u^2)}{6\\sqrt3}.\n\\]\nSince \\(4-u^2>0\\), the sign of \\(A'(u)\\) is determined by \\(4-4u^2\\). Thus \\(A\\) increases on \\((0,1)\\) and decreases on \\((1,2)\\), so the maximum occurs at \\(u=1\\), i.e. \\(a=\\pm1\\).\n\nHence\n\\[\nA_{\\max}=A(1)=\\frac{1\\cdot 3^{3/2}}{6\\sqrt3}\n=\\frac{3\\sqrt3}{6\\sqrt3}\n=\\frac12.\n\\]\n\n<final_answer>\\(\\frac{1}{2}\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "86": {
+      "source_index": 86,
+      "source_id": "deepmath-row-82787-17012ac533a8",
+      "question": "Evaluate the limit: $$\\lim_{n\\to\\infty} \\int^\\infty_0 \\frac{1}{1+\\left(\\frac{x}{a}\\right)^n} dx$$ where $a$ is a positive constant.",
+      "final_answer": "a",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 6.0,
+      "checked_solution": "Let\n\n\\[\nI_n=\\int_0^\\infty \\frac{1}{1+\\left(\\frac{x}{a}\\right)^n}\\,dx.\n\\]\n\nFor \\(n>1\\), split the integral at \\(x=a\\):\n\n\\[\nI_n=\\int_0^a \\frac{dx}{1+\\left(\\frac{x}{a}\\right)^n}\n+\\int_a^\\infty \\frac{dx}{1+\\left(\\frac{x}{a}\\right)^n}.\n\\]\n\n### First integral\n\nFor \\(0\\le x<a\\),\n\n\\[\n\\left(\\frac{x}{a}\\right)^n\\to 0,\n\\]\n\nso\n\n\\[\n\\frac{1}{1+\\left(\\frac{x}{a}\\right)^n}\\to 1.\n\\]\n\nAt \\(x=a\\), the value is \\(1/2\\), but that single point does not affect the integral. Also,\n\n\\[\n0\\le \\frac{1}{1+\\left(\\frac{x}{a}\\right)^n}\\le 1\n\\]\n\non \\([0,a]\\), and the constant function \\(1\\) is integrable on the finite interval \\([0,a]\\). Therefore, by dominated convergence,\n\n\\[\n\\lim_{n\\to\\infty}\\int_0^a \\frac{dx}{1+\\left(\\frac{x}{a}\\right)^n}\n=\\int_0^a 1\\,dx=a.\n\\]\n\n### Second integral\n\nFor \\(x\\ge a\\),\n\n\\[\n1+\\left(\\frac{x}{a}\\right)^n\\ge \\left(\\frac{x}{a}\\right)^n,\n\\]\n\nso\n\n\\[\n0\\le \\frac{1}{1+\\left(\\frac{x}{a}\\right)^n}\n\\le \\left(\\frac{a}{x}\\right)^n.\n\\]\n\nThus\n\n\\[\n0\\le \\int_a^\\infty \\frac{dx}{1+\\left(\\frac{x}{a}\\right)^n}\n\\le \\int_a^\\infty \\left(\\frac{a}{x}\\right)^n dx\n= \\frac{a}{n-1}.\n\\]\n\nSince \\(\\frac{a}{n-1}\\to 0\\), the second integral tends to \\(0\\).\n\nTherefore,\n\n\\[\n\\lim_{n\\to\\infty}\\int_0^\\infty \\frac{dx}{1+\\left(\\frac{x}{a}\\right)^n}\n= a+0=a.\n\\]\n\n<final_answer>a</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "112": {
+      "source_index": 112,
+      "source_id": "deepmath-row-97042-e1340127f53a",
+      "question": "What is the largest four-digit negative integer congruent to $1 \\pmod{23}?$",
+      "final_answer": "-1011",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.0,
+      "checked_solution": "Let \\(n\\) be the desired integer. A four-digit negative integer satisfies\n\n\\[\n-9999 \\le n \\le -1000.\n\\]\n\nWe need\n\n\\[\nn \\equiv 1 \\pmod{23},\n\\]\n\nso\n\n\\[\nn = 23k + 1\n\\]\n\nfor some integer \\(k\\). Substituting into the four-digit condition gives\n\n\\[\n-9999 \\le 23k + 1 \\le -1000.\n\\]\n\nSubtract \\(1\\):\n\n\\[\n-10000 \\le 23k \\le -1001.\n\\]\n\nDivide by \\(23\\):\n\n\\[\n-\\frac{10000}{23} \\le k \\le -\\frac{1001}{23}.\n\\]\n\nSince\n\n\\[\n\\frac{10000}{23} \\approx 434.78, \\qquad \\frac{1001}{23} \\approx 43.52,\n\\]\n\nwe have\n\n\\[\n-434.78 \\le k \\le -43.52.\n\\]\n\nThus the possible integer values of \\(k\\) are\n\n\\[\n-434 \\le k \\le -44.\n\\]\n\nTo maximize \\(n=23k+1\\), choose the largest possible \\(k\\), which is\n\n\\[\nk=-44.\n\\]\n\nThen\n\n\\[\nn = 23(-44)+1 = -1012+1 = -1011.\n\\]\n\nCheck:\n\n\\[\n-1011 - 1 = -1012 = 23(-44),\n\\]\n\nso \\(-1011 \\equiv 1 \\pmod{23}\\). Also, \\(-1011\\) is a four-digit negative integer.\n\n<final_answer>-1011</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "122": {
+      "source_index": 122,
+      "source_id": "deepmath-row-89814-04e161f1428c",
+      "question": "Determine all pairs of positive integers \\((m, n)\\) such that \\(m^2 - mn + n^2 + 1\\) divides both \\(3^{m+n} + (m+n)!\\) and \\(3^{m^3+n^3} + m + n\\).",
+      "final_answer": "(2, 2)",
+      "topic": "Mathematics -> Number Theory -> Divisibility",
+      "broad_topic": "Number Theory",
+      "difficulty": 8.0,
+      "checked_solution": "Let  \n\\[\ns=m+n,\\qquad q=m^2-mn+n^2,\\qquad d=q+1.\n\\]\nThen\n\\[\nm^3+n^3=(m+n)(m^2-mn+n^2)=sq,\n\\]\nso the two required divisibility conditions become\n\\[\nd\\mid 3^s+s!,\\qquad d\\mid 3^{sq}+s.\n\\]\n\nFirst note that \\(3\\nmid d\\). Indeed,\n\\[\nq=m^2-mn+n^2\\equiv (m+n)^2\\pmod 3,\n\\]\nand a square modulo \\(3\\) is \\(0\\) or \\(1\\), so \\(q\\not\\equiv 2\\pmod 3\\). Hence\n\\[\nd=q+1\\not\\equiv 0\\pmod 3,\n\\]\nso \\(\\gcd(3,d)=1\\).\n\nNow \\(s\\ge 2\\), so \\(s!\\) is even and \\(3^s\\) is odd. Thus \\(3^s+s!\\) is odd. Since \\(d\\mid 3^s+s!\\), \\(d\\) cannot be even. Therefore \\(d\\) is odd. But\n\\[\nd=m^2-mn+n^2+1\n\\]\nis odd exactly when \\(m^2-mn+n^2\\) is even, which happens exactly when both \\(m,n\\) are even. Hence \\(m,n\\) are even, so \\(s\\ge 4\\).\n\nLet \\(p\\) be any prime divisor of \\(d\\). From\n\\[\nd\\mid 3^s+s!\n\\]\nwe get\n\\[\n3^s\\equiv -s!\\pmod p.\n\\]\nSince \\(p\\nmid 3\\), we have \\(p\\nmid s!\\). Therefore every prime divisor of \\(d\\) is greater than \\(s\\).\n\nOn the other hand,\n\\[\nd=q+1=s^2-3mn+1.\n\\]\nBecause \\(mn\\ge s-1\\),\n\\[\nd\\le s^2-3(s-1)+1=s^2-3s+4<s^2\n\\]\nfor \\(s\\ge 4\\). If \\(d\\) were composite, it would be a product of at least two primes each greater than \\(s\\), hence \\(d>s^2\\), contradiction. Thus \\(d\\) is prime. Write\n\\[\np=d.\n\\]\n\nThen \\(p>s\\), and \\(q=d-1=p-1\\). From the second divisibility condition,\n\\[\np\\mid 3^{sq}+s.\n\\]\nBut\n\\[\n3^{sq}=3^{s(p-1)}\\equiv 1\\pmod p\n\\]\nby Fermat\u2019s little theorem. Hence\n\\[\ns+1\\equiv 0\\pmod p.\n\\]\nSince \\(p>s\\), this forces\n\\[\np=s+1.\n\\]\nTherefore\n\\[\nq=d-1=p-1=s.\n\\]\n\nSo we need\n\\[\nm^2-mn+n^2=m+n.\n\\]\nLet \\(r=m-n\\). Then\n\\[\nm^2-mn+n^2=\\frac{s^2+3r^2}{4}.\n\\]\nThus\n\\[\n\\frac{s^2+3r^2}{4}=s,\n\\]\nso\n\\[\n3r^2=s(4-s).\n\\]\nThe right-hand side is nonnegative, so \\(s\\le 4\\). Since \\(s\\) is even and \\(s\\ge 4\\), we get \\(s=4\\), and then \\(r=0\\). Hence\n\\[\nm=n=2.\n\\]\n\nFinally, check \\((m,n)=(2,2)\\). Here\n\\[\nd=2^2-2\\cdot2+2^2+1=5,\n\\]\nand\n\\[\n3^4+4!=81+24=105\\equiv 0\\pmod 5,\n\\]\nwhile\n\\[\n3^{2^3+2^3}+4=3^{16}+4\\equiv 1+4\\equiv 0\\pmod 5.\n\\]\nSo the pair works.\n\n<final_answer>(2,2)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "123": {
+      "source_index": 123,
+      "source_id": "deepmath-row-25666-a1b3626fef17",
+      "question": "Is there an infinite sequence of natural numbers such that any finite partial sum of this sequence is not a perfect power?",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Number Theory -> Other",
+      "broad_topic": "Number Theory",
+      "difficulty": 8.0,
+      "checked_solution": "Yes.\n\nDefine the sequence by  \n\\[\na_1=2,\\qquad a_n=4\\quad(n\\ge 2).\n\\]\nThen the \\(n\\)-th partial sum is\n\\[\nS_n=a_1+a_2+\\cdots+a_n=2+4(n-1)=4n-2.\n\\]\nThus every partial sum satisfies\n\\[\nS_n\\equiv 2 \\pmod 4.\n\\]\n\nNow suppose \\(S_n\\) were a perfect power, say \\(S_n=m^k\\) with \\(k\\ge 2\\). If \\(m\\) is odd, then \\(m^k\\) is odd, contradicting \\(S_n\\equiv 2\\pmod 4\\). If \\(m\\) is even, then \\(m^k\\) is divisible by \\(2^k\\), hence by \\(4\\), so \\(m^k\\equiv 0\\pmod 4\\), also a contradiction.\n\nTherefore no partial sum \\(S_n=4n-2\\) is a perfect power. Hence such an infinite sequence exists.\n\n<final_answer>Yes; for example, the sequence \\(2,4,4,4,\\ldots\\) works.</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "136": {
+      "source_index": 136,
+      "source_id": "deepmath-row-91799-03d3156fb2d8",
+      "question": "Given 1987 sets, each containing exactly 45 elements, and the union of any two sets contains exactly 89 elements, determine the number of elements in the union of these 1987 sets. Choose the correct answer from the following options:\n\nA. 87429\nB. 89415\nC. 89326\nD. 89504",
+      "final_answer": "87429",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.0,
+      "checked_solution": "Let the sets be \\(S_1,S_2,\\dots,S_{1987}\\). For any two distinct sets \\(S_i,S_j\\),\n\n\\[\n|S_i\\cap S_j|=|S_i|+|S_j|-|S_i\\cup S_j|\n=45+45-89=1.\n\\]\n\nSo any two sets intersect in exactly one element.\n\nNow suppose, for contradiction, that no element belongs to all 1987 sets. Fix one set \\(S\\). For each \\(x\\in S\\), let \\(d_x\\) be the number of other sets that contain \\(x\\). Since every other set intersects \\(S\\) in exactly one element,\n\n\\[\n\\sum_{x\\in S} d_x = 1986.\n\\]\n\nIf only one element of \\(S\\) had positive \\(d_x\\), then every other set would contain that same element, making it common to all sets. Therefore at least two elements of \\(S\\) have positive \\(d_x\\).\n\nChoose \\(a\\in S\\) with \\(d_a>0\\), and choose a set \\(A\\neq S\\) containing \\(a\\). For any \\(x\\in S\\setminus\\{a\\}\\), consider the \\(d_x\\) sets containing \\(x\\). Each such set intersects \\(A\\) in exactly one point, and that point cannot lie in \\(S\\). Distinct such sets must give distinct intersection points with \\(A\\); otherwise two of them would share both \\(x\\) and that intersection point, contradicting pairwise intersection size \\(1\\). Hence\n\n\\[\nd_x\\le |A|-1=44.\n\\]\n\nSimilarly, using another element of \\(S\\) with positive \\(d\\), we get \\(d_a\\le 44\\). Thus every \\(d_x\\le 44\\), so\n\n\\[\n1986=\\sum_{x\\in S} d_x\\le 45\\cdot 44=1980,\n\\]\n\na contradiction. Therefore there is an element \\(p\\) common to all 1987 sets.\n\nSince any two sets already intersect in \\(p\\), they cannot share any other element. Thus each set contributes \\(45-1=44\\) unique elements besides \\(p\\). Hence the union has\n\n\\[\n1+1987\\cdot 44=1+87428=87429\n\\]\n\nelements.\n\n<final_answer>A. 87429</final_answer>",
+      "solution_origin": "deepseek_verified_answer",
+      "answer_normalization": {
+        "method": "unique explicit option-label lookup, no mathematical repair",
+        "original_answer": "A",
+        "normalized_answer": "87429"
+      }
+    },
+    "141": {
+      "source_index": 141,
+      "source_id": "deepmath-row-79019-9bcd85bb8678",
+      "question": "Find the coefficient of \\(x^{21}\\) in the expansion of \\((x^3 + x^4 + x^5 + \\ldots + x^{10})^4\\).",
+      "final_answer": "204",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.0,
+      "checked_solution": "\\[\n(x^3+x^4+\\cdots+x^{10})^4\n= x^{12}(1+x+\\cdots+x^7)^4.\n\\]\n\nSo the coefficient of \\(x^{21}\\) is the coefficient of \\(x^9\\) in \\((1+x+\\cdots+x^7)^4\\).\n\nThis coefficient counts quadruples \\((a_1,a_2,a_3,a_4)\\) with\n\n\\[\n0\\le a_i\\le 7,\\qquad a_1+a_2+a_3+a_4=9.\n\\]\n\nWithout the upper bound, the number of nonnegative solutions is\n\n\\[\n\\binom{9+4-1}{4-1}=\\binom{12}{3}=220.\n\\]\n\nNow exclude solutions where some \\(a_i\\ge 8\\). Since the total sum is \\(9\\), at most one variable can be at least \\(8\\). For a fixed variable \\(a_i\\), count solutions with \\(a_i\\ge 8\\) by writing \\(a_i'=a_i-8\\). Then\n\n\\[\na_i'+a_1+\\cdots+a_4=1,\n\\]\n\nwhere \\(a_i'\\ge 0\\) and the other variables are nonnegative. The number of solutions is\n\n\\[\n\\binom{1+4-1}{4-1}=\\binom{4}{3}=4.\n\\]\n\nThere are \\(4\\) choices for the variable \\(a_i\\), so the number of excluded solutions is\n\n\\[\n4\\cdot 4=16.\n\\]\n\nThus the valid count is\n\n\\[\n220-16=204.\n\\]\n\nTherefore, the coefficient of \\(x^{21}\\) is\n\n\\[\n\\boxed{204}.\n\\]\n\n<final_answer>204</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "143": {
+      "source_index": 143,
+      "source_id": "deepmath-row-89166-4f8172e30d63",
+      "question": "Determine the number of ordered quadruples \\((a, b, c, d)\\) of distinct positive integers such that \\(\\binom{\\binom{a}{b}}{\\binom{c}{d}} = 21\\).",
+      "final_answer": "13",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 6.0,
+      "checked_solution": "Let\n\n\\[\nX=\\binom ab,\\qquad Y=\\binom cd.\n\\]\n\nWe need\n\n\\[\n\\binom XY=21.\n\\]\n\nBy symmetry \\(\\binom XY=\\binom X{X-Y}\\). Let \\(r=\\min(Y,X-Y)\\). Since the value is \\(21\\), \\(r\\ge 1\\). If \\(r=1\\), then \\(X=21\\), giving\n\n\\[\n(X,Y)=(21,1)\\quad\\text{or}\\quad (21,20).\n\\]\n\nIf \\(r=2\\), then\n\n\\[\n\\binom X2=21 \\implies X(X-1)=42 \\implies X=7,\n\\]\n\ngiving\n\n\\[\n(X,Y)=(7,2)\\quad\\text{or}\\quad (7,5).\n\\]\n\nFor \\(r\\ge 3\\), \\(r=3\\) gives no integer solution to \\(\\binom X3=21\\), and \\(r\\ge 4\\) gives \\(\\binom Xr\\ge \\binom84=70>21\\). Hence the only possible outer pairs are\n\n\\[\n(21,1),(21,20),(7,2),(7,5).\n\\]\n\nThe case \\(Y=1\\) is impossible because \\(\\binom cd=1\\) would require \\(d=0\\) or \\(d=c\\), neither allowed with \\(c,d\\) distinct positive integers. So only three cases remain:\n\n\\[\n(21,20),\\quad (7,2),\\quad (7,5).\n\\]\n\nNow count the possible inner pairs for the relevant binomial values:\n\n\\[\n\\begin{array}{c|c}\nm & \\text{pairs }(n,k)\\text{ with }n\\ne k,\\ \\binom nk=m\\\\\n\\hline\n21 & (21,1),(21,20),(7,2),(7,5)\\\\\n7 & (7,1),(7,6)\\\\\n20 & (20,1),(20,19),(6,3)\\\\\n2 & (2,1)\\\\\n5 & (5,1),(5,4)\n\\end{array}\n\\]\n\nNow enforce that \\(a,b,c,d\\) are all distinct.\n\n### Case 1: \\((X,Y)=(21,20)\\)\n\nThere are \\(4\\) choices for \\((a,b)\\) and \\(3\\) choices for \\((c,d)\\), but some share a value:\n\n- \\((21,1)\\) conflicts with \\((20,1)\\).\n- \\((21,20)\\) conflicts with \\((20,1)\\) and \\((20,19)\\).\n\nThus valid count:\n\n\\[\n4\\cdot 3-3=9.\n\\]\n\n### Case 2: \\((X,Y)=(7,2)\\)\n\nChoices: \\((a,b)\\in\\{(7,1),(7,6)\\}\\), \\((c,d)=(2,1)\\).\n\n\\((7,1)\\) conflicts with \\((2,1)\\), so only \\((7,6)\\) works:\n\n\\[\n1.\n\\]\n\n### Case 3: \\((X,Y)=(7,5)\\)\n\nChoices: \\((a,b)\\in\\{(7,1),(7,6)\\}\\), \\((c,d)\\in\\{(5,1),(5,4)\\}\\).\n\n\\((7,1)\\) conflicts with \\((5,1)\\), so valid count:\n\n\\[\n2+1=3.\n\\]\n\nTherefore the total number of ordered quadruples is\n\n\\[\n9+1+3=13.\n\\]\n\n<final_answer>13</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    }
+  },
+  "preflight": "d3-source-preflight.json"
+}

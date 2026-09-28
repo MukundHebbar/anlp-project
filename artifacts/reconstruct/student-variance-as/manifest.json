@@ -1,0 +1,21 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-as.md",
+  "source_indices": [
+    21,
+    35,
+    54,
+    68,
+    113,
+    114,
+    132
+  ],
+  "baseline_root": "artifacts/reconstruct/target-prefix-ap",
+  "additional_seeds": [
+    1,
+    2
+  ],
+  "additional_draws": 14,
+  "independent_source_count": 7,
+  "evidence_unchanged": true,
+  "no_best_of_selection": true
+}

@@ -1,0 +1,58 @@
+{
+  "original_sources": 12,
+  "source_eligible": 11,
+  "support_accepted": 11,
+  "public_outcomes": [
+    {
+      "source_index": 8,
+      "status": "REJECT"
+    },
+    {
+      "source_index": 27,
+      "status": "ACCEPT"
+    },
+    {
+      "source_index": 33,
+      "status": "REJECT"
+    },
+    {
+      "source_index": 77,
+      "status": "ACCEPT"
+    },
+    {
+      "source_index": 86,
+      "status": "REJECT"
+    },
+    {
+      "source_index": 112,
+      "status": "ACCEPT"
+    },
+    {
+      "source_index": 122,
+      "status": "ACCEPT"
+    },
+    {
+      "source_index": 123,
+      "status": "ACCEPT"
+    },
+    {
+      "source_index": 136,
+      "status": "unresolved"
+    },
+    {
+      "source_index": 141,
+      "status": "REJECT"
+    },
+    {
+      "source_index": 143,
+      "status": "ACCEPT"
+    }
+  ],
+  "public_accepted": 6,
+  "public_rejected": 4,
+  "public_unresolved": 1,
+  "upstream_unresolved": [
+    20
+  ],
+  "decision": "Full-bank policy fails all-source80% coverage; do not promote. Exact prefix policies are separate audited conditions."
+}

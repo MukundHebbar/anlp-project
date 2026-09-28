@@ -1,0 +1,32 @@
+{
+  "design": "targeted cap/timeout package; not a causal cap-only or accuracy study",
+  "conditions": [
+    [
+      8192,
+      180
+    ],
+    [
+      16384,
+      300
+    ]
+  ],
+  "comparisons": [
+    {
+      "source_index": 8,
+      "prior_status": "REJECT",
+      "new_status": "ACCEPT",
+      "new_completion_tokens": 2315,
+      "new_elapsed_seconds": 32.603,
+      "same_bank_output": true
+    },
+    {
+      "source_index": 136,
+      "prior_status": "no_visible_output_length",
+      "new_status": "ACCEPT",
+      "new_completion_tokens": 1434,
+      "new_elapsed_seconds": 39.37,
+      "same_bank_output": true
+    }
+  ],
+  "decision": "No promotion as a reliability fix: resolved exhaustion case but flipped rejection control; both new completions used fewer than8192 tokens."
+}

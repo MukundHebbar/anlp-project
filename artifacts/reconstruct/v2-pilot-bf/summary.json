@@ -1,0 +1,37 @@
+{
+  "terminal": true,
+  "input_status_counts": {
+    "accepted": 8,
+    "conversion_failed": 2,
+    "rejected": 7,
+    "unresolved": 3
+  },
+  "sample_stddev": 19.118404558360588,
+  "median": 50.0,
+  "minimum": 0.0,
+  "maximum": 62.5,
+  "version": "RECONSTRUCT-FINAL-V2-PILOT-v1",
+  "allocated": 100,
+  "terminal_sources": 20,
+  "accepted_inputs": 8,
+  "qwen_responses": 8,
+  "scored": 8,
+  "mean": 45.3125,
+  "sample_variance": 365.51339285714283,
+  "histogram_1_to_5": {
+    "1": 1,
+    "2": 0,
+    "3": 6,
+    "4": 1,
+    "5": 0
+  },
+  "provisional_grounded_recoveries": 0,
+  "failures": 5,
+  "missing_scores_on_accepted": 0,
+  "limitations": [
+    "Reused development sources, not untouched test data.",
+    "100 allocated sources; accepted task count reported separately.",
+    "Provisional automatic recoveries require case review.",
+    "No judge scores or source exclusions adjusted for histogram shape."
+  ]
+}

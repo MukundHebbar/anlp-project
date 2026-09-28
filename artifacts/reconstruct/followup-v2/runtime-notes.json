@@ -1,0 +1,9 @@
+{
+  "server_properties_artifact": "server-props.json",
+  "observed_default_min_p": 0.05000000074505806,
+  "request_explicitly_overrides": ["temperature", "top_p", "top_k", "seed", "max_tokens", "enable_thinking"],
+  "request_does_not_override": ["min_p"],
+  "interpretation": "The follow-up inherits the local server's min_p approximately 0.05. The value is now recorded rather than assumed to be zero. All current arms use this same server configuration.",
+  "historical_comparability": "Do not claim sampling equivalence to the historical vLLM run without establishing its effective min_p and other backend defaults.",
+  "decision": "Preserve this setting for the current matched experiment. Any change to min_p is a new controlled runtime condition and requires new cache/configuration identity."
+}

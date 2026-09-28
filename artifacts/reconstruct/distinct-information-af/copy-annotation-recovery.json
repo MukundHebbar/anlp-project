@@ -1,0 +1,26 @@
+{
+  "changes": [
+    {
+      "source_index": 129,
+      "key": "129:987508a8757db9d1f1514d36aef213cdb0a6221d87dbcdf3936c72af66db4537:7bcff55c22846b18d02aaf46e7baef2630fe67fccb79415e026fefa900d395a1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "rule": "null-question-exact-public-annotations-v1",
+      "removed_alignments": [
+        {
+          "question_span": "the total number A of valid words of an unreported length n",
+          "public_quote": "The target is the remainder when the total number A of valid words of an unreported length n is divided by 2008",
+          "operation": "copy"
+        },
+        {
+          "question_span": "for any length k the total count is 2a_k+2b_k+2c_k+d_k",
+          "public_quote": "for any length k the total count is 2a_k+2b_k+2c_k+d_k",
+          "operation": "copy"
+        }
+      ],
+      "original_output_hash": "079e2eab314b5dc23ea3c45bb6a12acba3270c56b18dfc69939468a5551629b9",
+      "normalized_output_hash": "aa9adf09ee69df0b2dccd170a5b6cf73318fd9e5983cd9617e12cad689d0570d",
+      "semantic_verdict_unchanged": true
+    }
+  ],
+  "model_calls": 0,
+  "errors_and_raw_outputs_preserved": true
+}

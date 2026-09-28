@@ -1,0 +1,315 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-as.md",
+  "independent_source_families": 7,
+  "planned_draws": 21,
+  "scored_draws": 18,
+  "per_seed": {
+    "0": {
+      "planned": 7,
+      "scored": 7,
+      "mean": 28.571428571428573,
+      "sample_variance": 1130.952380952381,
+      "histogram_1_to_5": [
+        2,
+        4,
+        0,
+        0,
+        1
+      ],
+      "missing": 0
+    },
+    "1": {
+      "planned": 7,
+      "scored": 4,
+      "mean": 43.75,
+      "sample_variance": 1406.25,
+      "histogram_1_to_5": [
+        0,
+        3,
+        0,
+        0,
+        1
+      ],
+      "missing": 3
+    },
+    "2": {
+      "planned": 7,
+      "scored": 7,
+      "mean": 28.571428571428573,
+      "sample_variance": 1130.952380952381,
+      "histogram_1_to_5": [
+        2,
+        4,
+        0,
+        0,
+        1
+      ],
+      "missing": 0
+    }
+  },
+  "per_source": [
+    {
+      "source_index": 21,
+      "scores_by_seed": [
+        25,
+        25,
+        25
+      ],
+      "scored": 3,
+      "mean_available": 25,
+      "within_source_sample_variance": 0
+    },
+    {
+      "source_index": 35,
+      "scores_by_seed": [
+        100,
+        100,
+        100
+      ],
+      "scored": 3,
+      "mean_available": 100,
+      "within_source_sample_variance": 0
+    },
+    {
+      "source_index": 54,
+      "scores_by_seed": [
+        0,
+        null,
+        0
+      ],
+      "scored": 2,
+      "mean_available": 0,
+      "within_source_sample_variance": 0
+    },
+    {
+      "source_index": 68,
+      "scores_by_seed": [
+        25,
+        null,
+        25
+      ],
+      "scored": 2,
+      "mean_available": 25,
+      "within_source_sample_variance": 0
+    },
+    {
+      "source_index": 113,
+      "scores_by_seed": [
+        25,
+        25,
+        25
+      ],
+      "scored": 3,
+      "mean_available": 25,
+      "within_source_sample_variance": 0
+    },
+    {
+      "source_index": 114,
+      "scores_by_seed": [
+        0,
+        null,
+        0
+      ],
+      "scored": 2,
+      "mean_available": 0,
+      "within_source_sample_variance": 0
+    },
+    {
+      "source_index": 132,
+      "scores_by_seed": [
+        25,
+        25,
+        25
+      ],
+      "scored": 3,
+      "mean_available": 25,
+      "within_source_sample_variance": 0
+    }
+  ],
+  "source_balanced_available_mean": 28.571428571428573,
+  "all_draw_available_mean": 31.944444444444443,
+  "all_draw_sample_variance": 1088.6437908496732,
+  "pooled_within_source_variance": 0.0,
+  "within_source_degrees_of_freedom": 11,
+  "complete_three_score_sources": 4,
+  "planned_mean_bounds": [
+    27.38095238095238,
+    41.666666666666664
+  ],
+  "rows": [
+    {
+      "source_index": 21,
+      "seed": 0,
+      "response_key": "21:prefix3:0",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 35,
+      "seed": 0,
+      "response_key": "35:prefix3:0",
+      "readable": true,
+      "score_100": 100,
+      "rating_1_to_5": 5.0
+    },
+    {
+      "source_index": 54,
+      "seed": 0,
+      "response_key": "54:prefix3:0",
+      "readable": true,
+      "score_100": 0,
+      "rating_1_to_5": 1.0
+    },
+    {
+      "source_index": 68,
+      "seed": 0,
+      "response_key": "68:prefix3:0",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 113,
+      "seed": 0,
+      "response_key": "113:prefix3:0",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 114,
+      "seed": 0,
+      "response_key": "114:prefix3:0",
+      "readable": true,
+      "score_100": 0,
+      "rating_1_to_5": 1.0
+    },
+    {
+      "source_index": 132,
+      "seed": 0,
+      "response_key": "132:prefix3:0",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 21,
+      "seed": 1,
+      "response_key": "21:seed1:1",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 35,
+      "seed": 1,
+      "response_key": "35:seed1:1",
+      "readable": true,
+      "score_100": 100,
+      "rating_1_to_5": 5.0
+    },
+    {
+      "source_index": 54,
+      "seed": 1,
+      "response_key": "54:seed1:1",
+      "readable": true,
+      "score_100": null,
+      "rating_1_to_5": null
+    },
+    {
+      "source_index": 68,
+      "seed": 1,
+      "response_key": "68:seed1:1",
+      "readable": false,
+      "score_100": null,
+      "rating_1_to_5": null
+    },
+    {
+      "source_index": 113,
+      "seed": 1,
+      "response_key": "113:seed1:1",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 114,
+      "seed": 1,
+      "response_key": "114:seed1:1",
+      "readable": true,
+      "score_100": null,
+      "rating_1_to_5": null
+    },
+    {
+      "source_index": 132,
+      "seed": 1,
+      "response_key": "132:seed1:1",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 21,
+      "seed": 2,
+      "response_key": "21:seed2:2",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 35,
+      "seed": 2,
+      "response_key": "35:seed2:2",
+      "readable": true,
+      "score_100": 100,
+      "rating_1_to_5": 5.0
+    },
+    {
+      "source_index": 54,
+      "seed": 2,
+      "response_key": "54:seed2:2",
+      "readable": true,
+      "score_100": 0,
+      "rating_1_to_5": 1.0
+    },
+    {
+      "source_index": 68,
+      "seed": 2,
+      "response_key": "68:seed2:2",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 113,
+      "seed": 2,
+      "response_key": "113:seed2:2",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    },
+    {
+      "source_index": 114,
+      "seed": 2,
+      "response_key": "114:seed2:2",
+      "readable": true,
+      "score_100": 0,
+      "rating_1_to_5": 1.0
+    },
+    {
+      "source_index": 132,
+      "seed": 2,
+      "response_key": "132:seed2:2",
+      "readable": true,
+      "score_100": 25,
+      "rating_1_to_5": 2.0
+    }
+  ],
+  "limitations": [
+    "Seven families with repeated draws, not21 independent questions.",
+    "Within-input score variability includes student sampling and one-off judging; this is not isolated judge repeatability.",
+    "Available-score estimates are conditional on missingness; failed draws are retained in planned bounds.",
+    "Ordinal rubric variance is descriptive; no best-seed selection, normality claim, or held-out confirmation."
+  ]
+}

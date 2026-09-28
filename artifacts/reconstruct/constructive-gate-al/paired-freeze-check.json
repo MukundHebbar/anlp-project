@@ -1,0 +1,17 @@
+{
+  "AK_jobs": [
+    "54:onegap:0",
+    "67:onegap:0"
+  ],
+  "AL_jobs": [
+    "5:onegap:0",
+    "10:onegap:0",
+    "16:onegap:0",
+    "54:onegap:0",
+    "67:onegap:0",
+    "113:onegap:0"
+  ],
+  "common_requests_exactly_equal": true,
+  "both_frozen_before_generation": true,
+  "generation_policy": "AL union only; reuse common responses into AK"
+}

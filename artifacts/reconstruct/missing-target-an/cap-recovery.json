@@ -1,0 +1,24 @@
+{
+  "cause": "CLI default cap4 was mistakenly used for a registered3–5-clue prompt.",
+  "recovered_indices": [
+    5,
+    10,
+    16,
+    17,
+    21,
+    29,
+    41,
+    59,
+    54,
+    67,
+    114,
+    68,
+    113,
+    132
+  ],
+  "original_failures_preserved": true,
+  "new_model_calls": 0,
+  "raw_output_changed": false,
+  "enforced_min": 3,
+  "enforced_max": 5
+}

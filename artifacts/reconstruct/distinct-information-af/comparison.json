@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "full": {
+      "planned": 1,
+      "scores_returned": 1,
+      "mean_score_100": 25.0,
+      "raw_grounded": 0,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 1,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.7934506856227534
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        25.0,
+        25.0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "response_key": "129:full:0",
+      "source_index": 129,
+      "arm": "full",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 105,
+      "clue_count": 5,
+      "finish_reason": "stop"
+    }
+  ],
+  "limitations": [
+    "Development screen on reused families, one seed; not an independent confirmation.",
+    "Wilson intervals are descriptive and do not correct for adaptive development or policy selection.",
+    "Auditors and assistant review are fallible; raw and reviewed outcomes retained separately."
+  ]
+}

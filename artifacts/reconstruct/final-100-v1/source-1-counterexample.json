@@ -1,0 +1,17 @@
+{
+  "source_index": 1,
+  "method": "Exact rational arithmetic; recurrence applies for k>=2, so S2010=2^2008*S2.",
+  "cases": [
+    {
+      "a1": "2^2009",
+      "a2": "2^2009",
+      "a2011": "1"
+    },
+    {
+      "a1": "2^2009",
+      "a2": "2^2010",
+      "a2011": "4/3"
+    }
+  ],
+  "source_answer_uniquely_determined": false
+}

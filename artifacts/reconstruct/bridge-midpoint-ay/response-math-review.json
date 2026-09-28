@@ -1,0 +1,72 @@
+{
+  "reviewer": "Assistant analytic review; teacher semantic labels separate",
+  "endpoint_note": "Meaningful recovery excludes answer-in-premise shortcuts even if an equivalence judge finds an implicit mathematically equivalent constraint. Preserve raw semantic matches separately.",
+  "rows": [
+    {
+      "response_key": "5:midpoint:0",
+      "source_index": 5,
+      "response_output_hash": "222af43f9f4c865c64d917cf64ca347d848db007b361f3d260ec9dd17523cec0",
+      "evidence_hash": "032ad4e182ad0442772e8ce4de6b10e8b1e1a19ff5c189c5e5b30274b87849f1",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": false,
+      "reason": "Leaves threshold t unspecified."
+    },
+    {
+      "response_key": "10:midpoint:0",
+      "source_index": 10,
+      "response_output_hash": "b567377a21fd37bc2edf6972e26cfd2a96ba8c298b4aa29d6594c21fc422df65",
+      "evidence_hash": "747f3f47093ebec4103e798579e5b0f9d6e5185dc186fa40762de8bcbdd1e6ea",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": false,
+      "reason": "Leaves n unspecified; Wilson congruence holds for every admissible n, not just51."
+    },
+    {
+      "response_key": "16:midpoint:0",
+      "source_index": 16,
+      "response_output_hash": "32ae3ff323acebb59c6b24203d7910b4d82fc71a4c4c30472ea7428746327f56",
+      "evidence_hash": "95222a24f102ed59359a90dfeabd8b9bedf03062365eadb9b212ff92fdf2ecb2",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": false,
+      "reason": "Uses k2 (N400), giving70 points; also falsely computes16*25 as800."
+    },
+    {
+      "response_key": "54:midpoint:0",
+      "source_index": 54,
+      "response_output_hash": "53f3bd456b9dc2a0621e5c6c8f1411f1b1693e31db4dcba044579d6bd1a31518",
+      "evidence_hash": "8eb574973e53dabc7dcfbe1638d74939e65fa2fa156e3a2ef31b6ac4c35ade13",
+      "semantic_equivalent": true,
+      "meaningful_semantic_recovery": true,
+      "grounded_semantic_success": true,
+      "answer_copy_shortcut": false,
+      "reason": "Correct R10 and original maximum question. Circle setup is correct; final optimization omitted, independently supplied by the success certificate."
+    },
+    {
+      "response_key": "67:midpoint:0",
+      "source_index": 67,
+      "response_output_hash": "78e1f96de498f8dc27c055211cb304f9967b98afe1af6af4b0c0a989e374bd35",
+      "evidence_hash": "9a5a556b44374742572bee5a113a467ae24360f30e2152c20d2db6ba31f56bca",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": true,
+      "reason": "Asks for S if S=1; answer copied into premise."
+    },
+    {
+      "response_key": "113:midpoint:0",
+      "source_index": 113,
+      "response_output_hash": "72defad9c227c21edb099059a299afa8383403a919c1672a4455da4913dfec0e",
+      "evidence_hash": "eb8412ef145ab8bed5ba510c2697a467082f661695dabc2bda734b05c37916f7",
+      "semantic_equivalent": false,
+      "meaningful_semantic_recovery": false,
+      "grounded_semantic_success": false,
+      "answer_copy_shortcut": true,
+      "reason": "Question defines alpha through the requested limit already equaling1/e. Despite inferring alpha1 in prose, the returned question is circular."
+    }
+  ]
+}

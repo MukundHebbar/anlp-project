@@ -1,0 +1,140 @@
+{
+  "sources": {
+    "0": {
+      "source_index": 0,
+      "source_id": "pilot-0",
+      "question": "Let \\(f\\) be a polynomial of degree at most 2. Find the value of \\(3(\\alpha-\\beta)^2\\) where \\(\\alpha,\\beta\\) satisfy \\(\\int_0^2 f(x)\\,dx = f(\\alpha) + f(\\beta)\\) for all such \\(f\\).",
+      "final_answer": "4",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "broad_topic": "Algebra",
+      "difficulty": 5.5,
+      "checked_solution": "Let the identity hold for every polynomial of degree at most \\(2\\). It is enough to test the monomials \\(1,x,x^2\\), since both sides are linear in \\(f\\).\n\nFor \\(f(x)=x\\),\n\n\\[\n\\int_0^2 x\\,dx=2,\n\\]\n\nso\n\n\\[\n\\alpha+\\beta=2.\n\\]\n\nFor \\(f(x)=x^2\\),\n\n\\[\n\\int_0^2 x^2\\,dx=\\frac83,\n\\]\n\nso\n\n\\[\n\\alpha^2+\\beta^2=\\frac83.\n\\]\n\nNow use\n\n\\[\n(\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta.\n\\]\n\nFrom \\(\\alpha+\\beta=2\\),\n\n\\[\n(\\alpha+\\beta)^2=4.\n\\]\n\nAlso,\n\n\\[\n(\\alpha+\\beta)^2=\\alpha^2+\\beta^2+2\\alpha\\beta,\n\\]\n\nso\n\n\\[\n4=\\frac83+2\\alpha\\beta.\n\\]\n\nThus\n\n\\[\n2\\alpha\\beta=\\frac43,\n\\]\n\nand therefore\n\n\\[\n(\\alpha-\\beta)^2=4-4\\alpha\\beta\n=4-\\frac83\n=\\frac43.\n\\]\n\nHence\n\n\\[\n3(\\alpha-\\beta)^2=3\\cdot \\frac43=4.\n\\]\n\n\\[\n\\boxed{4}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "13": {
+      "source_index": 13,
+      "source_id": "pilot-13",
+      "question": "Let $m$ be the product of all positive integers less than $4!$ which are invertible modulo $4!$. Find the remainder when $m$ is divided by $4!$.\n\n(Here $n!$ denotes $1\\times\\cdots\\times n$ for each positive integer $n$.)",
+      "final_answer": "1",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.0,
+      "checked_solution": "\\(4! = 24\\). A positive integer \\(a<24\\) is invertible modulo \\(24\\) exactly when \\(\\gcd(a,24)=1\\). Thus \\(a\\) is odd and not divisible by \\(3\\).\n\nFor such \\(a\\),\n\n\\[\na^2 \\equiv 1 \\pmod 8\n\\]\n\nbecause every odd square is \\(1 \\pmod 8\\), and\n\n\\[\na^2 \\equiv 1 \\pmod 3\n\\]\n\nbecause \\(a\\not\\equiv 0 \\pmod 3\\). Since \\(8\\) and \\(3\\) are coprime,\n\n\\[\na^2 \\equiv 1 \\pmod{24}.\n\\]\n\nNow pair each unit \\(a\\) with \\(24-a\\). This is also a unit, and it is distinct from \\(a\\), since \\(a=12\\) would be the only fixed point but \\(\\gcd(12,24)\\neq 1\\). For each pair,\n\n\\[\na(24-a)=24a-a^2 \\equiv -a^2 \\equiv -1 \\pmod{24}.\n\\]\n\nThe number of units modulo \\(24\\) is\n\n\\[\n\\phi(24)=8,\n\\]\n\nso there are \\(4\\) such pairs. Therefore\n\n\\[\nm \\equiv (-1)^4 \\equiv 1 \\pmod{24}.\n\\]\n\nHence the remainder is\n\n\\[\n\\boxed{1}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "46": {
+      "source_index": 46,
+      "source_id": "pilot-46",
+      "question": "In a shooting match, eight clay targets are arranged in two hanging columns of three targets each and one column of two targets. A marksman is to break all the targets according to the following rules:\n1) The marksman first chooses a column from which a target is to be broken.\n2) The marksman must then break the lowest remaining target in the chosen column.\nIf the rules are followed, in how many different orders can the eight targets be broken?",
+      "final_answer": "560",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.0,
+      "checked_solution": "Label the three columns \\(A,B,C\\), with heights \\(3,3,2\\). In each column, targets must be broken from bottom to top, so the order within each column is fixed.\n\nA legal order is determined by the sequence of column choices. For example, the word\n\n\\[\nAABCBACB\n\\]\n\nmeans: first break the bottom target in \\(A\\), then the next target in \\(A\\), then the bottom target in \\(B\\), etc.\n\nThus we need to count words of length \\(8\\) using:\n\n- \\(3\\) letters \\(A\\),\n- \\(3\\) letters \\(B\\),\n- \\(2\\) letters \\(C\\).\n\nThe number of such words is the multinomial coefficient\n\n\\[\n\\frac{8!}{3!3!2!}\n=\n\\frac{40320}{6\\cdot 6\\cdot 2}\n=\n560.\n\\]\n\nTherefore, the eight targets can be broken in\n\n\\[\n\\boxed{560}\n\\]\n\ndifferent orders.",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "62": {
+      "source_index": 62,
+      "source_id": "deepmath-row-53202-60da07f01270",
+      "question": "Determine the radius of convergence of the Laurent series for the function \\( f(z) = \\frac{\\sin z}{(z-\\pi)^2} \\) centered at \\( z = \\pi \\).",
+      "final_answer": "\\infty",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "broad_topic": "Algebra",
+      "difficulty": 5.0,
+      "checked_solution": "Let \\(w = z - \\pi\\). Then \\(z = \\pi + w\\), and\n\n\\[\n\\sin z = \\sin(\\pi + w) = -\\sin w.\n\\]\n\nUsing the Maclaurin series for \\(\\sin w\\),\n\n\\[\n\\sin w = \\sum_{n=0}^{\\infty} \\frac{(-1)^n w^{2n+1}}{(2n+1)!},\n\\]\n\nwe get\n\n\\[\nf(z)=\\frac{\\sin z}{(z-\\pi)^2}\n= \\frac{-\\sin w}{w^2}\n= -\\frac{1}{w^2}\\sum_{n=0}^{\\infty} \\frac{(-1)^n w^{2n+1}}{(2n+1)!}.\n\\]\n\nTherefore,\n\n\\[\nf(\\pi+w)\n= \\sum_{n=0}^{\\infty} \\frac{(-1)^{n+1} w^{2n-1}}{(2n+1)!}\n= -\\frac1w + \\frac{w}{6} - \\frac{w^3}{120} + \\cdots.\n\\]\n\nThis is the Laurent series centered at \\(z=\\pi\\). The negative-power part is only the single term \\(-1/(z-\\pi)\\), which converges for every \\(z\\neq \\pi\\). The positive-power part is an entire power series, so it converges for all finite \\(w\\).\n\nThus the Laurent series converges exactly on the punctured plane\n\n\\[\n0<|z-\\pi|<\\infty.\n\\]\n\nHence the outer radius of convergence is \\(\\infty\\), and the inner radius is \\(0\\).\n\n<final_answer>\\(\\infty\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "63": {
+      "source_index": 63,
+      "source_id": "deepmath-row-33653-b20ae1e85537",
+      "question": "Find the radius of convergence of the series \\( \\sum_{n=0}^{\\infty} 2^{n} z^{n!} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let \\(z\\in\\mathbb C\\) and set \\(r=|z|\\). Consider the absolute value of the terms:\n\n\\[\n|2^n z^{n!}|=2^n r^{n!}.\n\\]\n\nSo we study the convergence of\n\n\\[\n\\sum_{n=0}^{\\infty} 2^n r^{n!}.\n\\]\n\nFor \\(n\\ge 1\\), the ratio of consecutive absolute terms is\n\n\\[\n\\frac{2^{n+1}r^{(n+1)!}}{2^n r^{n!}}\n=2r^{(n+1)!-n!}\n=2r^{n\\cdot n!}.\n\\]\n\nIf \\(0<r<1\\), then \\(n\\cdot n!\\to\\infty\\), so\n\n\\[\nr^{n\\cdot n!}\\to 0.\n\\]\n\nHence the ratio tends to \\(0\\), and the series converges absolutely. If \\(r=0\\), all terms are \\(0\\), so convergence is immediate. Therefore the series converges for every \\(|z|<1\\).\n\nIf \\(r=1\\), then the absolute terms are\n\n\\[\n2^n,\n\\]\n\nwhich do not tend to \\(0\\), so the series diverges.\n\nIf \\(r>1\\), then\n\n\\[\n2r^{n\\cdot n!}\\to \\infty,\n\\]\n\nso the terms do not tend to \\(0\\), and the series diverges.\n\nThus the series converges exactly for \\(|z|<1\\) and diverges for \\(|z|\\ge 1\\). Therefore the radius of convergence is\n\n\\[\n\\boxed{1}.\n\\]\n\n<final_answer>1</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "80": {
+      "source_index": 80,
+      "source_id": "deepmath-row-69011-98b5ecb82497",
+      "question": "Evaluate the line integral \\(\\int_C (x+y) \\, dx + (x-y) \\, dy\\) using Green's Theorem, where \\(C\\) is the circle with center at the origin and radius \\(2\\).",
+      "final_answer": "0",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 5.0,
+      "checked_solution": "Let  \n\\[\nP(x,y)=x+y,\\qquad Q(x,y)=x-y.\n\\]\nThen the given line integral is\n\\[\n\\oint_C P\\,dx+Q\\,dy.\n\\]\n\nBy Green’s Theorem, for a positively oriented simple closed curve \\(C\\) bounding a region \\(D\\),\n\\[\n\\oint_C P\\,dx+Q\\,dy=\\iint_D \\left(\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}\\right)\\,dA.\n\\]\n\nCompute the partial derivatives:\n\\[\n\\frac{\\partial Q}{\\partial x}=\\frac{\\partial}{\\partial x}(x-y)=1,\n\\]\n\\[\n\\frac{\\partial P}{\\partial y}=\\frac{\\partial}{\\partial y}(x+y)=1.\n\\]\n\nTherefore,\n\\[\n\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}=1-1=0.\n\\]\n\nThus,\n\\[\n\\oint_C (x+y)\\,dx+(x-y)\\,dy=\\iint_D 0\\,dA=0.\n\\]\n\n<final_answer>0</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "87": {
+      "source_index": 87,
+      "source_id": "deepmath-row-52361-c3fc42fcb804",
+      "question": "Is a function $f: \\mathbb{R} \\rightarrow \\mathbb{R}$, which satisfies $\\lim_{x \\rightarrow 0} \\frac{f(x)}{x^2} = 0$, necessarily differentiable in a neighborhood of $x = 0$ without any additional assumptions on $f$? Provide a justification for your answer.",
+      "final_answer": "No",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "broad_topic": "Calculus",
+      "difficulty": 6.0,
+      "checked_solution": "No. The condition only forces \\(f(x)=o(x^2)\\) as \\(x\\to 0\\), so it controls the behavior at \\(0\\) but says nothing about differentiability at points near \\(0\\).\n\nConsider the function\n\n\\[\nf(x)=\n\\begin{cases}\n\\dfrac1{n^3}, & x=\\dfrac1n \\text{ for some } n\\in\\mathbb N,\\\\[4pt]\n0, & \\text{otherwise},\n\\end{cases}\n\\qquad f(0)=0.\n\\]\n\nFor \\(x\\neq 0\\), if \\(x=1/n\\), then\n\n\\[\n\\frac{f(x)}{x^2}\n=\n\\frac{1/n^3}{1/n^2}\n=\n\\frac1n,\n\\]\n\nand otherwise \\(\\frac{f(x)}{x^2}=0\\). Hence as \\(x\\to 0\\),\n\n\\[\n\\frac{f(x)}{x^2}\\to 0.\n\\]\n\nSo the given limit condition is satisfied.\n\nHowever, at each point \\(x_n=\\frac1n\\), the function is discontinuous. Indeed, choose\n\n\\[\n\\delta_n=\\frac{1}{2n(n+1)}.\n\\]\n\nThen for \\(0<|x-x_n|<\\delta_n\\), \\(x\\) is not equal to any \\(\\frac1m\\), so \\(f(x)=0\\), while\n\n\\[\nf(x_n)=\\frac1{n^3}\\neq 0.\n\\]\n\nThus\n\n\\[\n\\lim_{x\\to x_n} f(x)=0\\neq f(x_n),\n\\]\n\nso \\(f\\) is not continuous, and therefore not differentiable, at \\(x_n\\).\n\nSince every neighborhood of \\(0\\) contains points \\(x_n=1/n\\) for all sufficiently large \\(n\\), there is no neighborhood of \\(0\\) on which \\(f\\) is differentiable.\n\n\\[\n\\boxed{\\text{No, such a function need not be differentiable in a neighborhood of }0.}\n\\]\n\n<final_answer>No; the condition does not guarantee differentiability in any neighborhood of \\(0\\). A counterexample is \\(f(1/n)=1/n^3\\), \\(f(x)=0\\) otherwise, with \\(f(0)=0\\).</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "96": {
+      "source_index": 96,
+      "source_id": "deepmath-row-76751-6e239f7c8db2",
+      "question": "Determine whether the limit \\( \\lim_{x\\rightarrow0}\\frac{\\sin\\left(\\int\\limits _{x^{3}}^{x^{2}}\\left(\\int\\limits _{0}^{t}g\\left(s^{2}\\right)ds\\right)dt\\right)}{x^{8}} \\) converges, given that \\( g \\) is a function with a derivative defined for all \\( x \\) in the interval \\([-1, 1]\\), \\( g(0) = 0 \\), and \\( g'(0) = 1 \\).",
+      "final_answer": "\\dfrac{1}{12}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 8.0,
+      "checked_solution": "Let  \n\\[\nF(x)=\\int_{x^3}^{x^2}\\left(\\int_0^t g(s^2)\\,ds\\right)dt.\n\\]\n\nSince \\(g(0)=0\\) and \\(g'(0)=1\\), Taylor’s formula gives\n\\[\ng(u)=u+o(u)\\qquad (u\\to 0).\n\\]\nThus, as \\(s\\to 0\\),\n\\[\ng(s^2)=s^2+o(s^2).\n\\]\n\nDefine\n\\[\nH(t)=\\int_0^t g(s^2)\\,ds.\n\\]\nFor small \\(t\\), using \\(|g(s^2)-s^2|\\le \\varepsilon s^2\\), we get\n\\[\n\\left|H(t)-\\frac{t^3}{3}\\right|\n=\\left|\\int_0^t \\bigl(g(s^2)-s^2\\bigr)\\,ds\\right|\n\\le \\int_0^{|t|}\\varepsilon s^2\\,ds\n=\\frac{\\varepsilon}{3}|t|^3.\n\\]\nHence\n\\[\nH(t)=\\frac{t^3}{3}+o(t^3)\\qquad (t\\to 0).\n\\]\n\nTherefore\n\\[\nF(x)=\\int_{x^3}^{x^2}\\frac{t^3}{3}\\,dt+R(x),\n\\]\nwhere the remainder satisfies\n\\[\n|R(x)|\\le \\frac{\\varepsilon}{3}\\int_{x^3}^{x^2}|t|^3\\,dt.\n\\]\nFor small \\(x\\),\n\\[\n\\int_{x^3}^{x^2}|t|^3\\,dt\\le \\frac{x^8+x^{12}}4\\le \\frac{x^8}{2}.\n\\]\nSo \\(R(x)=o(x^8)\\). Thus\n\\[\nF(x)=\\frac{x^8-x^{12}}{12}+o(x^8)\n=\\frac{x^8}{12}+o(x^8).\n\\]\nHence\n\\[\n\\frac{F(x)}{x^8}\\to \\frac{1}{12}.\n\\]\n\nSince \\(F(x)\\to 0\\), we also have\n\\[\n\\frac{\\sin F(x)}{F(x)}\\to 1.\n\\]\nTherefore\n\\[\n\\lim_{x\\to0}\\frac{\\sin F(x)}{x^8}\n=\n\\lim_{x\\to0}\\frac{\\sin F(x)}{F(x)}\\cdot \\frac{F(x)}{x^8}\n=\n\\frac{1}{12}.\n\\]\n\n<final_answer>1/12</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "118": {
+      "source_index": 118,
+      "source_id": "deepmath-row-41575-9f417c8b5a44",
+      "question": "Find an odd integer $k$ such that the expression $\\frac{(k^2 - 1)}{8}$ is both a triangular number and a prime number.",
+      "final_answer": "5",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.0,
+      "checked_solution": "The question requests one witness. Choose k=5. Then (k²-1)/8=3=2*3/2 is triangular and prime. Also k=-5 works; no uniqueness is claimed.",
+      "solution_origin": "deepseek_verified_answer",
+      "solution_correction": {
+        "original_solution_hash": "6c769531d1bb2c1f5dcc1dde9bd469a97e6296248ddb2578d3cb5c6b718657d0",
+        "reason": "Avoid unsupported uniqueness over all odd integers; preserve the requested witness and original question."
+      }
+    },
+    "120": {
+      "source_index": 120,
+      "source_id": "deepmath-row-56921-e4904e86e16f",
+      "question": "Determine whether 7 can be the smallest prime factor of a repunit.",
+      "final_answer": "No",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.0,
+      "checked_solution": "Let \\(R_n\\) be the repunit with \\(n\\) digits:\n\n\\[\nR_n=111\\cdots 1=\\frac{10^n-1}{9}.\n\\]\n\nSuppose \\(7\\mid R_n\\). Since \\(\\gcd(7,9)=1\\),\n\n\\[\n7\\mid R_n \\iff 7\\mid 10^n-1,\n\\]\n\nso\n\n\\[\n10^n\\equiv 1 \\pmod 7.\n\\]\n\nNow \\(10\\equiv 3\\pmod 7\\), so this becomes\n\n\\[\n3^n\\equiv 1\\pmod 7.\n\\]\n\nThe powers of \\(3\\) modulo \\(7\\) are:\n\n\\[\n3^1\\equiv 3,\\quad 3^2\\equiv 2,\\quad 3^3\\equiv 6,\\quad 3^4\\equiv 4,\\quad 3^5\\equiv 5,\\quad 3^6\\equiv 1\\pmod 7.\n\\]\n\nThus the order of \\(3\\) modulo \\(7\\) is \\(6\\), so\n\n\\[\n3^n\\equiv 1\\pmod 7 \\iff 6\\mid n.\n\\]\n\nTherefore, if \\(7\\mid R_n\\), then \\(6\\mid n\\), and in particular \\(3\\mid n\\).\n\nNow reduce \\(R_n\\) modulo \\(3\\). Since \\(10\\equiv 1\\pmod 3\\),\n\n\\[\nR_n=1+10+10^2+\\cdots+10^{n-1}\\equiv 1+1+\\cdots+1=n\\pmod 3.\n\\]\n\nBecause \\(3\\mid n\\), we get\n\n\\[\nR_n\\equiv 0\\pmod 3.\n\\]\n\nSo every repunit divisible by \\(7\\) is also divisible by \\(3\\). Since \\(3<7\\), \\(7\\) cannot be the smallest prime factor of a repunit.\n\n<final_answer>No.</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "129": {
+      "source_index": 129,
+      "source_id": "deepmath-row-92565-049d9e1aa615",
+      "question": "Let $A$ be the number of 12-digit words that can be formed from the alphabet $\\{0,1,2,3,4,5,6\\}$ if each pair of neighboring digits must differ by exactly $1$. Find the remainder when $A$ is divided by $2008$. \\( \\text{Provide your answer in the form } \\boxed{\\text{remainder}}. \\)",
+      "final_answer": "1392",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.5,
+      "checked_solution": "Let \\(f_k(d)\\) be the number of valid \\(k\\)-digit words ending in digit \\(d\\), where \\(d\\in\\{0,1,\\dots,6\\}\\).\n\nFor one digit, all choices are valid:\n\\[\nf_1(d)=1.\n\\]\nFor \\(k\\ge 1\\),\n\\[\nf_{k+1}(d)=f_k(d-1)+f_k(d+1),\n\\]\nwhere \\(f_k(-1)=f_k(7)=0\\).\n\nBy symmetry, let\n\\[\na_k=f_k(0)=f_k(6),\\quad b_k=f_k(1)=f_k(5),\\quad c_k=f_k(2)=f_k(4),\\quad d_k=f_k(3).\n\\]\nThen\n\\[\n\\begin{aligned}\na_{k+1}&=b_k,\\\\\nb_{k+1}&=a_k+c_k,\\\\\nc_{k+1}&=b_k+d_k,\\\\\nd_{k+1}&=2c_k,\n\\end{aligned}\n\\]\nwith \\(a_1=b_1=c_1=d_1=1\\).\n\nComputing up to length \\(12\\):\n\n\\[\n\\begin{array}{c|rrrr|r}\nk & a_k & b_k & c_k & d_k & \\text{total}\\\\\n\\hline\n1 & 1 & 1 & 1 & 1 & 7\\\\\n2 & 1 & 2 & 2 & 2 & 12\\\\\n3 & 2 & 3 & 4 & 4 & 22\\\\\n4 & 3 & 6 & 7 & 8 & 40\\\\\n5 & 6 & 10 & 14 & 14 & 74\\\\\n6 & 10 & 20 & 24 & 28 & 136\\\\\n7 & 20 & 34 & 48 & 48 & 252\\\\\n8 & 34 & 68 & 82 & 96 & 464\\\\\n9 & 68 & 116 & 164 & 164 & 860\\\\\n10 & 116 & 232 & 280 & 328 & 1584\\\\\n11 & 232 & 396 & 560 & 560 & 2936\\\\\n12 & 396 & 792 & 956 & 1120 & 5408\n\\end{array}\n\\]\n\nThus\n\\[\nA=5408.\n\\]\nNow\n\\[\n5408=2\\cdot 2008+1392,\n\\]\nso the required remainder is\n\n\\[\n\\boxed{1392}\n\\]\n\n<final_answer>\\boxed{1392}</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "137": {
+      "source_index": 137,
+      "source_id": "deepmath-row-80293-2c04d55796e6",
+      "question": "Determine the number of vertices $n$ in a maximal planar graph where $\\frac{1}{3}n$ vertices have degree $3$, $\\frac{1}{3}n$ have degree $4$, and $\\frac{1}{3}n$ have degree $5$. Use the formula for the number of edges in a maximal planar graph, $e = 3n - 6$, where $e$ is the number of edges.",
+      "final_answer": "6",
+      "topic": "Mathematics -> Discrete Mathematics -> Graph Theory",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.0,
+      "checked_solution": "Let \\(n\\) be the number of vertices. Since the vertices are divided into three equal groups, there are \\(\\frac n3\\) vertices of each degree \\(3,4,5\\).\n\nBy the handshaking lemma,\n\n\\[\n\\sum_{v\\in V}\\deg(v)=2e.\n\\]\n\nThe total degree sum is\n\n\\[\n\\frac n3\\cdot 3+\\frac n3\\cdot 4+\\frac n3\\cdot 5\n= n+ \\frac{4n}{3}+\\frac{5n}{3}\n=4n.\n\\]\n\nFor a maximal planar graph,\n\n\\[\ne=3n-6.\n\\]\n\nTherefore,\n\n\\[\n4n=2e=2(3n-6)=6n-12.\n\\]\n\nSolving,\n\n\\[\n4n=6n-12\n\\]\n\n\\[\n12=2n\n\\]\n\n\\[\nn=6.\n\\]\n\nThis is consistent with the degree counts, since \\(\\frac n3=2\\) vertices of each degree are required.\n\n<final_answer>\\(n=6\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    }
+  }
+}

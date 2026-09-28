@@ -1,0 +1,6 @@
+{
+  "addition": "Preserve the requested quantity whenever the observations specify it. The inferred missing value belongs in the premises of your question, replacing its unknown placeholder; it must not become the quantity your question asks for. In the rectangle example, ask for the longer side after inferring area24; asking for the area given longer side6 reverses the task and is not a reconstruction.",
+  "parent_prompt_hash": "7ffe5449d72a6a98858c779b29a453267638443789c606a9780a8f6ecfb6eaca",
+  "new_prompt_hash": "8975f2870ed039955552a9c144a5989396ac7da13cd01b757875186a3f499758",
+  "all_six_public_inputs_unchanged": true
+}

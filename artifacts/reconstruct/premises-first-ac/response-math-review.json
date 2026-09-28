@@ -1,0 +1,32 @@
+{
+  "reviewer": "Assistant analytic review before DeepSeek judgments; not human gold",
+  "rows": [
+    {
+      "response_key": "46:rich6:0",
+      "response_output_hash": "9318644800503a548184491952069dc880f5ce563d46183ada63073366fba1f1",
+      "evidence_hash": "f93f435753e368daba762241a1d59a493bd7aba16f6059ecb54ec92c8a1b37bf",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "No concrete column heights are specified in the question. The assumptions merely impose that the count equals the supplied answer560, without reconstructing a height distribution. Heights[6,1,1] also meet the written question and give56 instead of560."
+    },
+    {
+      "response_key": "62:rich6:0",
+      "response_output_hash": "4863a37030458f30d352862d31afaea22d33beff732b613aacdb1be558764965",
+      "evidence_hash": "394af1cc7f9d66680343c931f12835abb04465b0f4603ba65319e8134adbdaff",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": true,
+      "grounded_valid": false,
+      "reason": "The question is semantically the original function, center pi and radius target. Verification wrongly claims both a double pole and an essential singularity. In fact sin(pi+w)=-w+O(w^3), so f=-1/w+O(w), a simple pole. There is no essential singularity. Grounded verification fails despite correct question recovery."
+    },
+    {
+      "response_key": "129:rich6:0",
+      "response_output_hash": "f13954b136b749bc5e5ccc44e30f72e3748f3731c5163325cb9d9410f1a14b22",
+      "evidence_hash": "8654cb367fc73eded30c75d707332e36adb82ab1d3037d27d633f22cf7ba27c0",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "Length remains unspecified below20, so the original length12 premise is absent. The justification also incorrectly sums all lengths, whose combined remainder is1115, not1392. Its statement of zero boundary values at digits0 and6 confuses outside-alphabet zero terms with valid endpoint counts."
+    }
+  ]
+}

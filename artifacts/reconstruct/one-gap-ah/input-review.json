@@ -1,0 +1,186 @@
+{
+  "reviewer": "Assistant analytic review, not human gold",
+  "manual_review_hash": "4578e68c5e94deebcbb77d50b56f040981dde8f8763307420eeb1d8bbe2ea999",
+  "protocol": "docs/plans/reconstruct-amendment-ah.md",
+  "rows": [
+    {
+      "source_index": 0,
+      "eligible": true,
+      "source_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "bank_hash": "8ab0e8f3be649f806243695d0cd013aef5f454133b8632e28ad8152a6f011b10",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "d3313df1f5fc468d903abbd27713f167d7b5d3db6c2562d228c866161ab84495",
+      "manual_content_pass": true,
+      "reason": "Only target coefficient3 is hidden as k; the target form is retained. The public first moment is incomplete; square-moment calculation and answer-conditioned multiplication coefficient remain to infer. Independent certificate checks give k3.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 13,
+      "eligible": false,
+      "source_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "bank_hash": "6d34c17c8dab3233d3f24071cc2a8323a65e1aaf3cf4b051836a967af4a747f0",
+      "reason": "Converter NOT_SUITABLE: The only natural numerical premise to withhold is 4!=24 (equivalently, the modulus 24). From the final answer 1 and the retained structure, the modulus cannot be uniquely recovered: many moduli or factorial moduli can have product of units congruent to 1 modulo the modulus (for example, 2, 24, 120, and others). Withholding other premises would either remove the target/domain or require adding non-source constraints such as φ(n)=8 to force uniqueness, which is not allowed."
+    },
+    {
+      "source_index": 46,
+      "eligible": true,
+      "source_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "bank_hash": "905c3d0d8e02988b64a5e323903f6246ffe0a0091cdc767349c95d167a0094cc",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "fc7ec63a5154d35f617e5d5ce3997aad6186bf1d9c0319544705b4bf74e69c09",
+      "manual_content_pass": true,
+      "reason": "The equal-column count and height obey retained total kh=6, leaving one independent integer factor choice. The original column-arrangement premise is hidden; the public bank provides no multinomial formula. Exhaustive factor-pair evaluation gives uniquely k2,h3. This is one constrained arrangement premise, not two independent omitted degrees of freedom.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 62,
+      "eligible": false,
+      "source_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "bank_hash": "20ff54a10db969a526cdf36d0e2bee113715a3eb19f9407e49202d19b1078f79",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "Certificate and public clue c4 confuse a Laurent expansion with its Taylor/interior expansion. Center0 also admits an exterior Laurent annulus with outer radius infinity. The claimed unique recovery of pi is invalid. Repeating the answer in c5 also adds no observation.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 63,
+      "eligible": false,
+      "source_hash": "f15efc1e7c16bfc117728be4698c80afe7687fa8834804c91ba240cad567600b",
+      "bank_hash": "77d0bbc0ec97461d5ec999256a63a98befd406c441c3177b64d52b5d70465ea8",
+      "reason": "Converter NOT_SUITABLE: The only natural numerical premises are the coefficient base 2 and the factorial exponent n!. Replacing either by an unknown does not allow unique recovery from the final answer 1: for a series sum a^n z^{n!}, radius 1 only implies |a|>=1, not a=2; and for sum 2^n z^{f(n)}, radius 1 does not uniquely force f(n)=n!, since many superlinear exponents give the same radius. Thus no honest partial conversion can recover the original premise without inventing extra constraints."
+    },
+    {
+      "source_index": 80,
+      "eligible": false,
+      "source_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "bank_hash": "fcd56ee143acbbd2a110940918a7acf9beb011f898e0ea5c2dea66c5da45726a",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "6572b516d103f519b0952e82a39fb391633929fae45ee9cf913edf3e01172cb1",
+      "manual_content_pass": false,
+      "reason": "Boundary uncertainty: Green reduction, one derivative and disk area expose nearly the complete method; only the other elementary derivative and substitution remain. Preserve the same conservative near-complete-solution boundary used for AF80; do not promote based on a potentially favorable student result.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": true
+    },
+    {
+      "source_index": 87,
+      "eligible": false,
+      "source_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "bank_hash": "d81ee1cf1ef0feff93fd73483aa810141818b074b638c4e8a1b6e4f1ce9351f3",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "REJECT",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": false,
+      "reason": "Full counterexample, its quotient and target expose the original limiting value0 without using the answer. This is near-complete solution exposure; repeated answer clue is padding.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 96,
+      "eligible": true,
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "bank_hash": "ec6c5cf2037d6be7157720e37f93102a0e1356501ab26926391a94b9d52338b6",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "fb7d01926f27c33f0b5bbe862bb8d72bf44588845caa59d2a7e50fff08ea293a",
+      "manual_content_pass": true,
+      "reason": "Derivative value1 is withheld as a; target/domain and g0 condition remain. Only inner integral asymptotic is provided; outer integration and final limit a/12 must be computed to infer a1. Correct private certificate; mathematically similar exposure to AG96 despite different grouping.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": true,
+      "copy_pass": true
+    },
+    {
+      "source_index": 118,
+      "eligible": false,
+      "source_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "bank_hash": "2b87f1b5d0d866c87e1523d352d1bd37edd2676f8042dda9c096ab32ba44a171",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "missing",
+        "audit_source_disclosure_p4": "missing"
+      },
+      "copy_status": "missing",
+      "copy_hash": null,
+      "manual_content_pass": true,
+      "reason": "The missing denominator8 is a question premise, not merely an existential witness. Triangular-prime reasoning from witness5 forces24/d=3 and d8. Public clues omit that derivation and value. Private claim m=2 overlooks m=-3 for integer m; independent sign-symmetry argument fixes the proof without changing clues or inferred denominator. Record this certificate defect, not flawless teacher accuracy.",
+      "derived_inputs_reviewed": true,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": false
+    },
+    {
+      "source_index": 120,
+      "eligible": false,
+      "source_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "bank_hash": "51e772bdfc45692dfc7ef134533379afa07cf8f0ee51e2deefad6c8d6edc768f",
+      "reason": "Converter NOT_SUITABLE: The final answer is only the binary verdict \"No\", while the original question's essential numerical premise is the specific candidate prime 7. From the public answer and any retained repunit/smallest-prime-factor constraints, 7 cannot be uniquely recovered: many primes also cannot be the smallest prime factor of a repunit (for example 2, 5, 13, 37, etc.), and hiding the \"smallest\" condition instead would not be uniquely inferred either. Thus no honest inverse certificate can recover the withheld original premise without inventing extra constraints."
+    },
+    {
+      "source_index": 129,
+      "eligible": false,
+      "source_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "reason": "Conversion technical failure"
+    },
+    {
+      "source_index": 137,
+      "eligible": false,
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "bank_hash": "4583eaa43d6e05df6af3ddc20b76dfad14e375963d0da2cd54d11c296ab8d631",
+      "audit_statuses": {
+        "audit_support_p1": "ACCEPT",
+        "audit_public_p5": "ACCEPT",
+        "audit_source_disclosure_p4": "ACCEPT"
+      },
+      "copy_status": "no_direct_reconstruction",
+      "copy_hash": "8abd97c0f1a50f63bcdb91f42d0015a64bf1579070b3aef6aa3b88823ba10613",
+      "manual_content_pass": false,
+      "reason": "Boundary uncertainty: both edge and complete degree-sum equations plus handshaking expose nearly the whole parameterized method, as in AF137. The inverse conclusion d5 is valid and realizability was previously certified; conservative full-method uncertainty still excludes this bank.",
+      "derived_inputs_reviewed": false,
+      "support_pass": true,
+      "disclosure_pass": false,
+      "copy_pass": true
+    }
+  ]
+}

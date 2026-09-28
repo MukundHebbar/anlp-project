@@ -1,0 +1,6 @@
+{
+  "manifest": "data/manifests/reconstruct-d4-allocation-v1.json",
+  "manifest_hash": "858d80eda24ba9707a071a982aee00ce242edc9d736caaf105eb1895f29baed5",
+  "student_generation_started": false,
+  "source_content_review_started": true
+}

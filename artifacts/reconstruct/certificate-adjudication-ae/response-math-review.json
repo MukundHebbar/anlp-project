@@ -1,0 +1,14 @@
+{
+  "reviewer": "Assistant analytic review before teacher judgments; not human gold",
+  "rows": [
+    {
+      "response_key": "96:rich6:0",
+      "response_output_hash": "184ce0d98daaadb7e2f416c195ae1dcd9bfc78531c20de6757bdd9d280e31757",
+      "evidence_hash": "e175edf21de06fcb79957b83483a1f84054ac28bd7cc20a3783b935645116ffb",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question still omits gprime(0)=1. Taking g identically0 meets its written hypotheses and makes the limit0, not1/12. Generally g(s²)=a*s²+o(s²), H(t)=a*t³/3+o(t³), F(x)=a*(x^8-x^12)/12+o(x^8); the limit is a/12. The student's assertion that F behaves like x^5-x^4 is also false. It repeats the supplied answer instead of recovering the missing derivative premise."
+    }
+  ]
+}

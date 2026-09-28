@@ -1,0 +1,54 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-aw.md",
+  "reviewer": "Assistant pre-student review; high-exposure disclosure checks pending",
+  "rows": [
+    {
+      "source_index": 5,
+      "evidence_hash": "9ff44789f026b0640f0beefb6e4a544c421cdffa049417d3873833c2fa78ae3e",
+      "manual_candidate_pass": true,
+      "missing_essential_element": "minimum cycle threshold t",
+      "reason": "Symbolic relation does not substitute supplied answer or disclose missing source value. Inversion and question composition remain. High exposure; independent disclosure verdict retained separately.",
+      "domain_note": "Fixed-k count is applied to qualifying k>=t>50, as specified by the surrounding observations."
+    },
+    {
+      "source_index": 10,
+      "evidence_hash": "e7c74ef730cdd48348b82fe6b23c6e8c4971eff1472326da50185827c13f2d0b",
+      "manual_candidate_pass": true,
+      "missing_essential_element": "factorial index n",
+      "reason": "Symbolic relation does not substitute supplied answer or disclose missing source value. Inversion and question composition remain. High exposure; independent disclosure verdict retained separately.",
+      "domain_note": ""
+    },
+    {
+      "source_index": 16,
+      "evidence_hash": "a821a4f7fd7ec5ef3f0fe7487d6ddd7dbda15cd7ecde4ca6dd171fca8251a7ec",
+      "manual_candidate_pass": true,
+      "missing_essential_element": "power k and hence N",
+      "reason": "Symbolic relation does not substitute supplied answer or disclose missing source value. Inversion and question composition remain. High exposure; independent disclosure verdict retained separately.",
+      "domain_note": ""
+    },
+    {
+      "source_index": 54,
+      "evidence_hash": "ef12a663b292c0c094a84cc92f29d948001f90ad0187aa5edc44a8f355542865",
+      "manual_candidate_pass": true,
+      "missing_essential_element": "modulus R",
+      "reason": "Symbolic relation does not substitute supplied answer or disclose missing source value. Inversion and question composition remain. High exposure; independent disclosure verdict retained separately.",
+      "domain_note": "A finite positive maximum implies R>1; the max formula is used in this regime."
+    },
+    {
+      "source_index": 67,
+      "evidence_hash": "26f1b8034c1dc48d3747f2ae860a2c157571353f57257f25d4df9f3c8103dd26",
+      "manual_candidate_pass": true,
+      "missing_essential_element": "scalar c",
+      "reason": "Symbolic relation does not substitute supplied answer or disclose missing source value. Inversion and question composition remain. High exposure; independent disclosure verdict retained separately.",
+      "domain_note": ""
+    },
+    {
+      "source_index": 113,
+      "evidence_hash": "b6a4bdb15b22156e2e4f26b4f6bac7a4a0408e0ac04bfeb36f64115417255d22",
+      "manual_candidate_pass": true,
+      "missing_essential_element": "root multiplier alpha",
+      "reason": "Symbolic relation does not substitute supplied answer or disclose missing source value. Inversion and question composition remain. High exposure; independent disclosure verdict retained separately.",
+      "domain_note": ""
+    }
+  ]
+}

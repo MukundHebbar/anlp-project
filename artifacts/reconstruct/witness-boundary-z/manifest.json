@@ -1,0 +1,25 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-z.md",
+  "populations": [
+    {
+      "root": "artifacts/reconstruct/witness-boundary-z/authored",
+      "manifest_hash": "51dc772592bf273cdfb3b2545d2de60d3cea0cfe28033a2ff4ad62844474143c",
+      "planned_initial_calls": 16
+    },
+    {
+      "root": "artifacts/reconstruct/witness-boundary-z/x-regression",
+      "manifest_hash": "a8613b98cbbb92adfbb26da2f4654206c1b83892f79da745dea872587e1f3a9f",
+      "planned_initial_calls": 16
+    },
+    {
+      "root": "artifacts/reconstruct/witness-boundary-z/y-regression",
+      "manifest_hash": "fa3b8a257d05417aa89166c2a4fab76b0af0ec85e3e84181de4994f59a905f39",
+      "planned_initial_calls": 7
+    }
+  ],
+  "planned_initial_calls": 39,
+  "aggregate_cost_cap_usd": 0.3,
+  "source_prompt_only_changed": true,
+  "public_prompt_fixed": "audit_public_p5",
+  "teacher_and_sampling_unchanged": true
+}

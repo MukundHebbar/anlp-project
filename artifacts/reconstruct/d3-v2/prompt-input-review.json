@@ -1,0 +1,39 @@
+{
+  "status": "input support review; not a student-response review or human annotation",
+  "source77_reading_explicit": true,
+  "source33_identifiability_limitation_explicit": true,
+  "rows": [
+    {
+      "source_index": 8,
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "input_review_passed": true,
+      "review_provenance": "assistant mathematical review; selected polynomial/integral/count identities verified by SymPy",
+      "proof": "2a²+bc−(a−b)(a−c)=a(a+b+c); cyclic variants vanish under the source condition. D contains the factors needed for all three denominators.",
+      "domain": "Fractions must be defined, so D≠0, as in source preflight. Numerators and target remain withheld."
+    },
+    {
+      "source_index": 27,
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "input_review_passed": true,
+      "review_provenance": "assistant mathematical review; selected polynomial/integral/count identities verified by SymPy",
+      "proof": "For positive integer n=s²m with squarefree m, sqrt(n)=s sqrt(m); grouping identical m adds multipliers. m=1 yields an integer contribution. Exact squarefree count over2..100 is60.",
+      "domain": "Positive integer radicands and multipliers. Minimality of a rational radical representation uses the previously recorded squarefree-radical independence lemma; the public clues do not supply a full minimality proof."
+    },
+    {
+      "source_index": 33,
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "input_review_passed": true,
+      "review_provenance": "assistant mathematical review; selected polynomial/integral/count identities verified by SymPy",
+      "proof": "Differences of continuous functions are continuous. A continuous nonvanishing function on a connected interval cannot change sign by IVT.",
+      "domain": "Real continuous functions on[0,1]. Clues are generic and also support the checked equal-integral alternative; original recovery is not uniquely determined."
+    },
+    {
+      "source_index": 77,
+      "evidence_hash": "722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6",
+      "input_review_passed": true,
+      "review_provenance": "assistant mathematical review; selected polynomial/integral/count identities verified by SymPy",
+      "proof": "f(x)-f(x-a)=a(3x²−3ax+a²−1). For a≠0, discriminant12−3a²>0 gives0<|a|<2. Integrating3t(L−t) givesL³/2, hence area=|a|L³/2.",
+      "domain": "Read “the two distinct intersection x-coordinates” as exactly two intersections, as in the source; this excludes identical curves at a=0. The discriminant alone is positive at0, so the statement must not be treated as a universal assertion outside this local domain."
+    }
+  ]
+}

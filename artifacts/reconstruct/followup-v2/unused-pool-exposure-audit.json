@@ -1,0 +1,51 @@
+{
+  "purpose": "Prospective development-pool exposure audit; no student outcome values used in selection",
+  "pool": [
+    1,
+    5,
+    10,
+    16,
+    17,
+    21,
+    29,
+    35,
+    41,
+    54,
+    59,
+    67,
+    68,
+    113,
+    114,
+    132
+  ],
+  "pool_size": 16,
+  "protected_partitions_disjoint": true,
+  "allocation_hash": "858d80eda24ba9707a071a982aee00ce242edc9d736caaf105eb1895f29baed5",
+  "source_identity_hashes": {
+    "1": "b89c2da70141f756b78ca2c172bc54e48c4a801177a7d73f76caa0cc4536c412",
+    "5": "e16bb58ab7634342cc0e232b8adf32b75c2c7f3e82153d6fb51be7dcd3b397ba",
+    "10": "f44af130f507f750c4b1d6e8aab594763fda117e0da0ff283b78fb21f4ff6223",
+    "16": "178c1241937f57738455e6a4341bdb93727fa51877b3c1214999d44cf155d83b",
+    "17": "239d8e8e9ac111016d4b22c7afb6852d86418e0bc17eee154793cdf510eaeb7f",
+    "21": "5da043ff087dc7da0679a056fc537dabf10acae435e584454b896feb4f5bf9cd",
+    "29": "23780bf3c84b220e43476f622a2e01702976bd6fb6c4c2cbc8d272c79e2d3f6a",
+    "35": "d89d5e8d3ce0a6c3c8b5ba092eb64df0a78d30ceb3a092201650c660ff1a550d",
+    "41": "5c10705a57ce3ed61d611fc49100362f462b14c6d7abdc4b7f479bea31b721d2",
+    "54": "9c585d1a7eb113c7006657fae5af8fa1a537dc4c327c2a8d243e5db606e642bd",
+    "59": "a594b2f00c68961bb9d8055d3977e4d21e678db022f890dd02277aa4e58360e1",
+    "67": "edefb0461e4440fdb85c851ae868548062292c02756f56f3a7d0fe5f279d39f3",
+    "68": "23a23219abfbbe3908a7229df04a0ddaf03b24af96cfd743661ca56a5d49b269",
+    "113": "68d633d418d65b4470e8e12037e1f33cede16f2e93b18a11b6a3fd0b5f54ff4d",
+    "114": "170498cd1787524d15f75fab75679d6c0c1a11b3ebd805f433e0bff8343f138a",
+    "132": "8dfe5c1389a657d735a6b9422b8aa506414de59de1aa4e2db7dcc7c197e66fcf"
+  },
+  "topic_counts": {
+    "Algebra": 6,
+    "Discrete Mathematics": 2,
+    "Number Theory": 6,
+    "Calculus": 2
+  },
+  "source_artifacts_scanned": 61,
+  "prior_reconstruct_stage_hits": [],
+  "limitation": "Exact question or source_id identity check, not semantic near-duplicate adjudication. Historical SOLVE evaluations may exist; no their outcomes were inspected for this allocation. Absence of a saved stage record is not proof of no earlier human exposure."
+}

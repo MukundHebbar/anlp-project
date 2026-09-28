@@ -1,0 +1,75 @@
+{
+  "provenance": "Assistant mathematical review with exact SymPy counterexamples; not independent human validation",
+  "scope": "All parseable amendment P responses; mathematical counterexamples reject claimed results but do not assign rubric scores",
+  "cases": [
+    {
+      "response_key": "8:ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 8,
+      "seed": 0,
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "output_sha256_sorted_json": "017d287251d2568ee33a1701e3528f0d02c2e53a209ddceacd63b73c8eebdab6",
+      "review": "Witness a=1,b=2,c=-3 meets distinctness and all three factorizations. Seed0 asserted identity has LHS -400 versus RHS -100. Seed1 altered sum is -21/20, not 1. Both change the original sum of a^2/(2a^2+bc).",
+      "same_original_supported": false
+    },
+    {
+      "response_key": "27:c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 27,
+      "seed": 0,
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "output_sha256_sorted_json": "76f6bf903965d20b55fbc7d53daa968de206a1a65177cb8463aafebb0ccf2683",
+      "review": "Both candidates ask for a radical sum rather than its minimal number of radical terms. Every sqrt(n)>=1 for n=1..100, and some are >1, so the sum is >100, not 60. This elementary bound disproves the proposed answer without a numerical approximation.",
+      "same_original_supported": false
+    },
+    {
+      "response_key": "33:901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 33,
+      "seed": 0,
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "output_sha256_sorted_json": "28caeeaab6d9ba3527a22a42c705042be9cd0c6208826484513e9af248e734ce",
+      "review": "Both candidates ask whether a difference can change sign while f is nonzero. The existential answer Yes has witness f=1 and g=2x on [0,1]; f-g=1-2x changes sign. This does not recover the original equal-maxima universal meeting theorem, and the nonzero-continuous-function clue is not substantively used to obtain this witness.",
+      "same_original_supported": false
+    },
+    {
+      "response_key": "77:722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 77,
+      "seed": 0,
+      "evidence_hash": "722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6",
+      "output_sha256_sorted_json": "f85078374318ecaff8ba2e531a9f4cc89a6fdcef54a74b707a9dfc2a35d5b938",
+      "review": "Seed0 changes the fixed cubic x^3-x to x^3-3x and asks for area in terms of two translations rather than its maximum. Its |a|<2,|b|<2 restrictions even allow a=b, where the curves coincide. The unparseable seed1 raw output also changes the cubic and target; retain it as a format failure, not a rescued success.",
+      "same_original_supported": false
+    },
+    {
+      "response_key": "8:ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 8,
+      "seed": 1,
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "output_sha256_sorted_json": "e876c8fe5149ae984b6ab9532904169dc059ccf26f683e617d8f072cb900875d",
+      "review": "Witness a=1,b=2,c=-3 meets distinctness and all three factorizations. Seed0 asserted identity has LHS -400 versus RHS -100. Seed1 altered sum is -21/20, not 1. Both change the original sum of a^2/(2a^2+bc).",
+      "same_original_supported": false
+    },
+    {
+      "response_key": "27:c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 27,
+      "seed": 1,
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "output_sha256_sorted_json": "7c3b085cf5561de895d41a057cd866189506e9ace6783819a3bd47cd55b662a2",
+      "review": "Both candidates ask for a radical sum rather than its minimal number of radical terms. Every sqrt(n)>=1 for n=1..100, and some are >1, so the sum is >100, not 60. This elementary bound disproves the proposed answer without a numerical approximation.",
+      "same_original_supported": false
+    },
+    {
+      "response_key": "33:901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f:cd304f26dfade3253a3f9e6ca1e462613ea0ffe29130645986cf06c66041c771:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 33,
+      "seed": 1,
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "output_sha256_sorted_json": "e77e8d7119570124394b544f848dd37f92936d2cb5ce1cecfb423e5e30739c54",
+      "review": "Both candidates ask whether a difference can change sign while f is nonzero. The existential answer Yes has witness f=1 and g=2x on [0,1]; f-g=1-2x changes sign. This does not recover the original equal-maxima universal meeting theorem, and the nonzero-continuous-function clue is not substantively used to obtain this witness.",
+      "same_original_supported": false
+    }
+  ],
+  "notes_by_source": {
+    "8": "Witness a=1,b=2,c=-3 meets distinctness and all three factorizations. Seed0 asserted identity has LHS -400 versus RHS -100. Seed1 altered sum is -21/20, not 1. Both change the original sum of a^2/(2a^2+bc).",
+    "27": "Both candidates ask for a radical sum rather than its minimal number of radical terms. Every sqrt(n)>=1 for n=1..100, and some are >1, so the sum is >100, not 60. This elementary bound disproves the proposed answer without a numerical approximation.",
+    "33": "Both candidates ask whether a difference can change sign while f is nonzero. The existential answer Yes has witness f=1 and g=2x on [0,1]; f-g=1-2x changes sign. This does not recover the original equal-maxima universal meeting theorem, and the nonzero-continuous-function clue is not substantively used to obtain this witness.",
+    "77": "Seed0 changes the fixed cubic x^3-x to x^3-3x and asks for area in terms of two translations rather than its maximum. Its |a|<2,|b|<2 restrictions even allow a=b, where the curves coincide. The unparseable seed1 raw output also changes the cubic and target; retain it as a format failure, not a rescued success."
+  }
+}

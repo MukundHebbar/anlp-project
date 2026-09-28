@@ -1,0 +1,1326 @@
+{
+  "sources": {
+    "0": {
+      "question": "A rectangle has perimeter20 and area24. Find its longer side.",
+      "final_answer": "6",
+      "checked_solution": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+    },
+    "1": {
+      "question": "A rectangle has perimeter20 and area24. Find its longer side.",
+      "final_answer": "6",
+      "checked_solution": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+    },
+    "2": {
+      "question": "A rectangle has perimeter20 and area24. Find its longer side.",
+      "final_answer": "6",
+      "checked_solution": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+    },
+    "3": {
+      "question": "A rectangle has perimeter20 and area24. Find its longer side.",
+      "final_answer": "6",
+      "checked_solution": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+    },
+    "4": {
+      "question": "Solve3x+2=14 for real x.",
+      "final_answer": "4",
+      "checked_solution": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+    },
+    "5": {
+      "question": "Solve3x+2=14 for real x.",
+      "final_answer": "4",
+      "checked_solution": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+    },
+    "6": {
+      "question": "Solve3x+2=14 for real x.",
+      "final_answer": "4",
+      "checked_solution": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+    },
+    "7": {
+      "question": "Solve3x+2=14 for real x.",
+      "final_answer": "4",
+      "checked_solution": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+    },
+    "8": {
+      "question": "An urn contains6 red balls and4 blue balls. One ball is chosen uniformly. What is the probability it is red?",
+      "final_answer": "3/5",
+      "checked_solution": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+    },
+    "9": {
+      "question": "An urn contains6 red balls and4 blue balls. One ball is chosen uniformly. What is the probability it is red?",
+      "final_answer": "3/5",
+      "checked_solution": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+    },
+    "10": {
+      "question": "An urn contains6 red balls and4 blue balls. One ball is chosen uniformly. What is the probability it is red?",
+      "final_answer": "3/5",
+      "checked_solution": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+    },
+    "11": {
+      "question": "An urn contains6 red balls and4 blue balls. One ball is chosen uniformly. What is the probability it is red?",
+      "final_answer": "3/5",
+      "checked_solution": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+    },
+    "12": {
+      "question": "A vehicle travels at a constant60 km/h for2 hours. How far does it travel?",
+      "final_answer": "120 km",
+      "checked_solution": "Distance=speed*time=60*2=120 km."
+    },
+    "13": {
+      "question": "A vehicle travels at a constant60 km/h for2 hours. How far does it travel?",
+      "final_answer": "120 km",
+      "checked_solution": "Distance=speed*time=60*2=120 km."
+    },
+    "14": {
+      "question": "A vehicle travels at a constant60 km/h for2 hours. How far does it travel?",
+      "final_answer": "120 km",
+      "checked_solution": "Distance=speed*time=60*2=120 km."
+    },
+    "15": {
+      "question": "A vehicle travels at a constant60 km/h for2 hours. How far does it travel?",
+      "final_answer": "120 km",
+      "checked_solution": "Distance=speed*time=60*2=120 km."
+    }
+  },
+  "partitions": {
+    "D1": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "banks": {
+    "0:witness_boundary_z:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43": {
+      "source_index": 0,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The side lengths satisfy x+y=10 and xy=24.",
+            "fragment": "The side lengths satisfy x+y=10 and xy=24.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is the longer side length.",
+            "fragment": "The requested quantity is the longer side length.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "1:witness_boundary_z:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b": {
+      "source_index": 1,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The side lengths satisfy x+y=5+5 and xy=3*8.",
+            "fragment": "The side lengths satisfy x+y=5+5 and xy=3*8.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is the longer side length.",
+            "fragment": "The requested quantity is the longer side length.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "2:witness_boundary_z:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c": {
+      "source_index": 2,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The rectangle side lengths satisfy x+y=10.",
+            "fragment": "The rectangle side lengths satisfy x+y=10.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          },
+          {
+            "id": "c2",
+            "sentence": "Its area in terms of one side x is x(10-x).",
+            "fragment": "Its area in terms of one side x is x(10-x).",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          },
+          {
+            "id": "c3",
+            "sentence": "The requested quantity is the longer side length.",
+            "fragment": "The requested quantity is the longer side length.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          }
+        ],
+        "withheld": "The area24 is absent. Using answer6 as the longer side, infer the other side10-6=4 and then area6*4=24."
+      }
+    },
+    "3:witness_boundary_z:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433": {
+      "source_index": 3,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The rectangle has side lengths4 and6.",
+            "fragment": "The rectangle has side lengths4 and6.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          },
+          {
+            "id": "c2",
+            "sentence": "Selecting the longer side gives6.",
+            "fragment": "Selecting the longer side gives6.",
+            "hidden_support": "x+y=10, xy=24. The sides are4 and6, so the longer side is6."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "4:witness_boundary_z:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c": {
+      "source_index": 4,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The equation is3x+2=14.",
+            "fragment": "The equation is3x+2=14.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is the real solution x.",
+            "fragment": "The requested quantity is the real solution x.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "5:witness_boundary_z:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a": {
+      "source_index": 5,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The equation is(1+2)x+2=7+7.",
+            "fragment": "The equation is(1+2)x+2=7+7.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is the real solution x.",
+            "fragment": "The requested quantity is the real solution x.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "6:witness_boundary_z:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea": {
+      "source_index": 6,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The equation has the form ax+2=14 for a positive coefficient a.",
+            "fragment": "The equation has the form ax+2=14 for a positive coefficient a.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is its real solution x.",
+            "fragment": "The requested quantity is its real solution x.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          }
+        ],
+        "withheld": "The coefficient a=3 is absent. Insert the supplied solution x=4 into ax+2=14 to infer a=(14-2)/4=3."
+      }
+    },
+    "7:witness_boundary_z:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717": {
+      "source_index": 7,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "Subtracting2 from the two sides gives3x=12.",
+            "fragment": "Subtracting2 from the two sides gives3x=12.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          },
+          {
+            "id": "c2",
+            "sentence": "Dividing by3 givesx=4.",
+            "fragment": "Dividing by3 givesx=4.",
+            "hidden_support": "Subtract2 to obtain3x=12; divide by3 to obtainx=4."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "8:witness_boundary_z:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6": {
+      "source_index": 8,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The urn contains6 red balls and4 blue balls.",
+            "fragment": "The urn contains6 red balls and4 blue balls.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          },
+          {
+            "id": "c2",
+            "sentence": "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+            "fragment": "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "9:witness_boundary_z:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174": {
+      "source_index": 9,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The urn contains3+3 red balls and2+2 blue balls.",
+            "fragment": "The urn contains3+3 red balls and2+2 blue balls.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          },
+          {
+            "id": "c2",
+            "sentence": "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+            "fragment": "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "10:witness_boundary_z:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f": {
+      "source_index": 10,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The urn contains10 balls, each either red or blue.",
+            "fragment": "The urn contains10 balls, each either red or blue.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          },
+          {
+            "id": "c2",
+            "sentence": "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+            "fragment": "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          }
+        ],
+        "withheld": "The color counts are absent. Supplied red probability3/5 and total10 imply6 red and4 blue by inverse proportion."
+      }
+    },
+    "11:witness_boundary_z:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48": {
+      "source_index": 11,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "There are6 favorable outcomes among10 equally likely outcomes.",
+            "fragment": "There are6 favorable outcomes among10 equally likely outcomes.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          },
+          {
+            "id": "c2",
+            "sentence": "The probability of drawing a red ball is6/10=3/5.",
+            "fragment": "The probability of drawing a red ball is6/10=3/5.",
+            "hidden_support": "There are10 equally likely balls,6 red, so the probability is6/10=3/5."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "12:witness_boundary_z:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da": {
+      "source_index": 12,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The vehicle travels at a constant60 km/h for2 hours.",
+            "fragment": "The vehicle travels at a constant60 km/h for2 hours.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is its distance traveled.",
+            "fragment": "The requested quantity is its distance traveled.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "13:witness_boundary_z:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4": {
+      "source_index": 13,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The vehicle travels at a constant(30+30) km/h for(1+1) hours.",
+            "fragment": "The vehicle travels at a constant(30+30) km/h for(1+1) hours.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is its distance traveled.",
+            "fragment": "The requested quantity is its distance traveled.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    },
+    "14:witness_boundary_z:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46": {
+      "source_index": 14,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "The vehicle travels at a constant speed for2 hours.",
+            "fragment": "The vehicle travels at a constant speed for2 hours.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          },
+          {
+            "id": "c2",
+            "sentence": "The requested quantity is its distance traveled.",
+            "fragment": "The requested quantity is its distance traveled.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          }
+        ],
+        "withheld": "Speed60 km/h is absent. Supplied distance120 km and duration2 h imply speed120/2=60 km/h."
+      }
+    },
+    "15:witness_boundary_z:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a": {
+      "source_index": 15,
+      "prompt": "frozen_witness_boundary_z",
+      "model": "authored_fixture",
+      "output": {
+        "status": "OK",
+        "clues": [
+          {
+            "id": "c1",
+            "sentence": "Distance equals speed times duration.",
+            "fragment": "Distance equals speed times duration.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          },
+          {
+            "id": "c2",
+            "sentence": "The distance calculation is60 km/h times2 hours, giving120 km.",
+            "fragment": "The distance calculation is60 km/h times2 hours, giving120 km.",
+            "hidden_support": "Distance=speed*time=60*2=120 km."
+          }
+        ],
+        "withheld": "No essential content withheld: negative disclosure control."
+      }
+    }
+  },
+  "audits": {
+    "0:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 0,
+      "bank_key": "0:witness_boundary_z:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "bank_output_hash": "6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "rendered_input_hash": "0f283493a202c6eb4baab56c08d498c8a6be08a20e472b2cd7e07ef3924eba27",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=10 and xy=24.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine solving of x+y=10 and xy=24 and selecting the larger root is needed; no source premise or target is genuinely withheld.",
+        "reason": "The public clues state the perimeter/area constraints as x+y=10 and xy=24 and explicitly identify the target as the longer side length. Together with the answer 6, the original question is fully recoverable by paraphrase, so the premise-target bundle is exposed."
+      },
+      "request": {
+        "reasoning": "We need answer JSON. Need assess. Private source: rectangle perimeter20 area24 find longer side. Public final answer 6. Clues: c1 side lengths satisfy x+y=10 and xy=24. c2 requested quantity is longer side length. This exposes full premise-target bundle? c1 gives perimeter via x+y=10 and area xy=24. c2 target longer side. Answer 6. So REJECT. Need cite exact public substrings. Flags: direct_question_copy? It is paraphrase? Public clues state equations and target. direct_question_copy maybe false? But premise_target_bundle_exposed true. complete_solution_exposed? Does public include derivation? It gives equations and answer 6. Complete solution? It doesn't show solving, but answer plus equations. The definition complete solution exposed means mathematical derivation/construction, not merely result. Here no derivation, but premise-target bundle exposed. REJECT requires at least one true. direct_question_copy? The public text is not exact copied question? It paraphrases essential premises and target. Could set direct_question_copy false, premise_target_bundle_exposed true, complete_solution_exposed false. Missing essential element none. Inference required: solve quadratic x(10-x)=24 and choose larger root, but that's solution not missing premise. Since question fully exposed, reject. Need JSON only. Ensure public_quotes exact nonempty substrings from public answer/clues only. Include \"The side lengths satisfy x+y=10 and xy=24.\" and \"The requested quantity is the longer side length.\" Maybe final answer \"6\" too. But public_quotes from public answer/clues. Include all. Reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 520,
+          "prompt_tokens": 1048,
+          "total_tokens": 1568,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 348,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002434432
+        },
+        "elapsed_seconds": 9.666
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":false,\"public_quotes\":[\"The side lengths satisfy x+y=10 and xy=24.\",\"The requested quantity is the longer side length.\",\"6\"],\"missing_essential_element\":\"none\",\"inference_required\":\"Only routine solving of x+y=10 and xy=24 and selecting the larger root is needed; no source premise or target is genuinely withheld.\",\"reason\":\"The public clues state the perimeter/area constraints as x+y=10 and xy=24 and explicitly identify the target as the longer side length. Together with the answer 6, the original question is fully recoverable by paraphrase, so the premise-target bundle is exposed.\"}"
+    },
+    "2:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 2,
+      "bank_key": "2:witness_boundary_z:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "bank_output_hash": "7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "rendered_input_hash": "dfae4257afad42af8908171a33abc5aa3ea31cb1b7a9ec510f5451911a2342f0",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "6",
+          "The rectangle side lengths satisfy x+y=10.",
+          "Its area in terms of one side x is x(10-x).",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "The area value 24 is not stated in the public clues.",
+        "inference_required": "Use the public final answer 6 together with x+y=10 to infer the other side is 4, then compute the area as 6*4=24, recovering the missing source premise area=24.",
+        "reason": "The public material gives the perimeter relation and target, and the answer gives the longer side, but it does not state the area value 24. Recovering the original question requires an inverse inference from the answer and perimeter relation to the missing area premise."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess. Private source: rectangle perimeter20 area24 find longer side. Public answer 6. Clues: x+y=10, area expression x(10-x), requested quantity longer side. Missing essential premise: area=24? The clue c2 says \"Its area in terms of one side x is x(10-x).\" Does that state area value? No, it gives expression but not equals 24. c1 gives perimeter via x+y=10. c3 target longer side. Public answer 6. Need determine if original task disclosed? Missing area=24. Can infer from answer? If longer side 6, with x+y=10, other side 4, area=24. But is area premise absent. Need nontrivial inverse inference using answer to recover area=24. Is that allowed? Yes, genuinely absent essential premise may be inferred using supplied final answer. So ACCEPT? Need check if c2 \"Its area in terms of one side x is x(10-x)\" maybe area expression but not value. It doesn't state area=24. The target longer side is stated. Perimeter is stated via x+y=10. Area value absent. Public answer 6. To recover original question, infer area=24 from answer and x+y=10: if longer side 6, other 4, area 24. But wait answer alone 6 plus x+y=10 gives other side 4, area 24. This is inverse. Missing essential element area=24. No complete solution exposed. Direct question copy? No, area value missing. Premise-target bundle? No. Complete solution? No. So ACCEPT. Need public_quotes exact nonempty substrings from public answer/clues only. Include \"6\", \"The rectangle side lengths satisfy x+y=10.\", \"Its area in terms of one side x is x(10-x).\", \"The requested quantity is the longer side length.\" Need ensure quotes exact. Missing essential element: area=24. Inference required: use final answer 6 and x+y=10 to infer other side 4, then area=24, thereby recover original premise. Reason.\n\nNeed JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 659,
+          "prompt_tokens": 1078,
+          "total_tokens": 1737,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 454,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00030602319999999995
+        },
+        "elapsed_seconds": 11.059
+      },
+      "raw_content": "{\"status\":\"ACCEPT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":false,\"public_quotes\":[\"6\",\"The rectangle side lengths satisfy x+y=10.\",\"Its area in terms of one side x is x(10-x).\",\"The requested quantity is the longer side length.\"],\"missing_essential_element\":\"The area value 24 is not stated in the public clues.\",\"inference_required\":\"Use the public final answer 6 together with x+y=10 to infer the other side is 4, then compute the area as 6*4=24, recovering the missing source premise area=24.\",\"reason\":\"The public material gives the perimeter relation and target, and the answer gives the longer side, but it does not state the area value 24. Recovering the original question requires an inverse inference from the answer and perimeter relation to the missing area premise.\"}"
+    },
+    "1:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 1,
+      "bank_key": "1:witness_boundary_z:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "bank_output_hash": "3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "rendered_input_hash": "209106ec9ef9d69a8d2cb92bd1c064fe1ad30bd3d4188a7c9e26ad7eb65b6bf2",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=5+5 and xy=3*8.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine simplification of 5+5 and 3*8 and solving/recognizing the side lengths 4 and 6; no genuinely missing source premise or target remains.",
+        "reason": "The public clues state the rectangle side-sum and product equations and identify the target as the longer side length. Together with the answer 6, this exposes the original premise-target bundle by paraphrase, so the source question is recoverable without a hidden essential element."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess. Private source: rectangle perimeter20 area24 find longer side. Public final answer 6. Clues: c1 \"The side lengths satisfy x+y=5+5 and xy=3*8.\" c2 \"The requested quantity is the longer side length.\"\n\nNeed determine disclosure. Public clues state x+y=10 (5+5) and xy=24 (3*8). Target longer side length. Answer 6. This is essentially full premise-target bundle exposed by paraphrase/arithmetic expressions. Missing? The original question asks longer side. Public c2 states requested quantity is longer side length. c1 gives perimeter/area equations. So all essential premises and target are public. Complete solution? They don't derive roots, but answer 6. The question can be assembled: rectangle side lengths satisfy sum 10 product 24, find longer side. That's copied/paraphrased question. Reject. Need flags: direct_question_copy? It is paraphrase? The public clues expose question. direct_question_copy maybe false? The schema says reject if premise_target_bundle_exposed true or complete_solution_exposed true. direct_question_copy maybe false because not exact copied? But \"copied/paraphrased questions\" reject. We can set direct_question_copy true? It says direct_question_copy boolean. Public text doesn't copy exact question, but clues paraphrase. Maybe direct_question_copy false, premise_target_bundle_exposed true. complete_solution_exposed? They don't show derivation, but answer 6 and equations. Is complete solution exposed? Not derivation. But premise-target bundle exposed enough. Need public_quotes exact nonempty substrings from public answer/clues only. Include \"The side lengths satisfy x+y=5+5 and xy=3*8.\" and \"The requested quantity is the longer side length.\" Maybe final answer \"6\" too. Missing essential element: none. Inference required: routine arithmetic to simplify 5+5=10, 3*8=24, solve quadratic or recognize 4 and6. But since all premises target public, no nontrivial missing. Reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 634,
+          "prompt_tokens": 1052,
+          "total_tokens": 1686,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 454,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002918832
+        },
+        "elapsed_seconds": 11.676
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":false,\"public_quotes\":[\"The side lengths satisfy x+y=5+5 and xy=3*8.\",\"The requested quantity is the longer side length.\",\"6\"],\"missing_essential_element\":\"none\",\"inference_required\":\"Only routine simplification of 5+5 and 3*8 and solving/recognizing the side lengths 4 and 6; no genuinely missing source premise or target remains.\",\"reason\":\"The public clues state the rectangle side-sum and product equations and identify the target as the longer side length. Together with the answer 6, this exposes the original premise-target bundle by paraphrase, so the source question is recoverable without a hidden essential element.\"}"
+    },
+    "3:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 3,
+      "bank_key": "3:witness_boundary_z:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "bank_output_hash": "c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "rendered_input_hash": "67988ebbec0c74b5df16e86cb430eea9717c24ac4dc4936ddc0168ce31663554",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "6",
+          "The rectangle has side lengths4 and6.",
+          "Selecting the longer side gives6."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed: the public clues already state the rectangle's side lengths and identify the longer side as 6.",
+        "reason": "The public material exposes the essential premise-target bundle by giving the side lengths 4 and 6 and directly selecting the longer side as 6. Although the original perimeter and area are not quoted, the stated side lengths are equivalent to those premises and the target is explicitly supplied."
+      },
+      "request": {
+        "reasoning": "We need answer JSON. Need assess. Private source: rectangle perimeter20 area24 find longer side. Public final answer 6. Public clues: c1 \"The rectangle has side lengths4 and6.\" c2 \"Selecting the longer side gives6.\" This directly exposes side lengths and longer side. It is essentially complete premise-target bundle? It states side lengths 4 and6, selecting longer gives6. Does it expose original question? It gives answer and dimensions. Missing perimeter/area? But c1 side lengths 4 and6 imply perimeter20 area24. The target longer side is 6. Public material alone can assemble question? It doesn't explicitly state perimeter20 area24, but side lengths 4 and6 are equivalent to those premises. It also states target. So reject. Need cite exact substrings. Flags: direct_question_copy? It is not copied question wording, but complete premise-target bundle exposed true. complete_solution_exposed? It gives side lengths and longer side, essentially solution. But question vs solution: c1 gives witness/solution. Since original asks find longer side, c2 gives answer. Complete solution exposed? It doesn't show derivation from perimeter/area, but it states side lengths and selection. The definition says solution exposed means mathematical derivation/construction, not merely result. Here c1 is construction/witness? It states side lengths, which is solution to finding dimensions. But original target only longer side. c2 gives result. Is complete solution exposed? Maybe not derivation, but complete premise-target bundle exposed. Need at least one true. direct_question_copy false. premise_target_bundle_exposed true. complete_solution_exposed maybe true? It states side lengths 4 and6, which is complete solution to rectangle dimensions, and selecting longer gives6. But no derivation. The prompt says complete solution exposed means mathematical derivation/construction, not merely result. c1 is construction? It constructs rectangle side lengths. It may be complete solution? It doesn't derive from perimeter/area. But it gives the side lengths, which is the solution. However \"solution exposed\" means derivation/construction, not merely result. c1 is a construction of the rectangle. It is enough. But to be safe, set complete_solution_exposed true? Need JSON. Missing essential element: none? Since c1/c2 state side lengths and longer side. Inference required: none beyond copying/paraphrase; maybe perimeter/area can be inferred from side lengths but not needed. Reason.\n\nNeed ensure public_quotes exact nonempty substrings from public answer/clues only. Include \"6\", \"The rectangle has side lengths4 and6.\", \"Selecting the longer side gives6.\" Note exact spacing? c1 sentence: \"The rectangle has side lengths4 and6.\" no space between lengths and 4? It says side lengths4 and6. Use exact. c2 exact.\n\nFinal JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 764,
+          "prompt_tokens": 1043,
+          "total_tokens": 1807,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 599,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00034522319999999993
+        },
+        "elapsed_seconds": 14.68
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":true,\"public_quotes\":[\"6\",\"The rectangle has side lengths4 and6.\",\"Selecting the longer side gives6.\"],\"missing_essential_element\":\"none\",\"inference_required\":\"No nontrivial inference is needed: the public clues already state the rectangle's side lengths and identify the longer side as 6.\",\"reason\":\"The public material exposes the essential premise-target bundle by giving the side lengths 4 and 6 and directly selecting the longer side as 6. Although the original perimeter and area are not quoted, the stated side lengths are equivalent to those premises and the target is explicitly supplied.\"}"
+    },
+    "4:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 4,
+      "bank_key": "4:witness_boundary_z:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "bank_output_hash": "7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "rendered_input_hash": "5889fd5ed55c8ec21a8989de3918c0c203570f2b38662ae0f68ca1dbc8999787",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is3x+2=14.",
+          "The requested quantity is the real solution x."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed to recover the original question; the public clues already state the equation and the requested real solution x.",
+        "reason": "The public clues paraphrase the full source task: they provide the equation 3x+2=14 and identify the target as the real solution x. The final answer 4 is supplied, but the derivation is not shown. However, the question premise-target bundle is exposed, so this is a question disclosure rejection."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: Solve 3x+2=14 for real x. Public final answer 4. Public clues: \"The equation is3x+2=14.\" \"The requested quantity is the real solution x.\" This is essentially complete question paraphrase: equation and target. Missing? The operation solve? c2 says requested quantity is real solution x. So full premise-target bundle exposed. Answer 4. Complete solution? They don't show derivation, but question exposed. Need REJECT. Flags: direct_question_copy? It is copied/paraphrased? Public clues state equation and target. direct_question_copy maybe true? The instruction says reject copied/paraphrased questions. direct_question_copy likely true? It is exact equation and target. But \"direct_question_copy\" maybe whether public text directly copies original task. c1 exact equation, c2 target. So true. premise_target_bundle_exposed true. complete_solution_exposed false (no derivation). public_quotes exact substrings. missing_essential_element none. inference_required none beyond routine solving? Actually solving is routine arithmetic, but question fully exposed. Reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 425,
+          "prompt_tokens": 1042,
+          "total_tokens": 1467,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 252,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00020270319999999997
+        },
+        "elapsed_seconds": 5.946
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":true,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":false,\"public_quotes\":[\"The equation is3x+2=14.\",\"The requested quantity is the real solution x.\"],\"missing_essential_element\":\"none\",\"inference_required\":\"No nontrivial inference is needed to recover the original question; the public clues already state the equation and the requested real solution x.\",\"reason\":\"The public clues paraphrase the full source task: they provide the equation 3x+2=14 and identify the target as the real solution x. The final answer 4 is supplied, but the derivation is not shown. However, the question premise-target bundle is exposed, so this is a question disclosure rejection.\"}"
+    },
+    "6:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 6,
+      "bank_key": "6:witness_boundary_z:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "bank_output_hash": "ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "rendered_input_hash": "99c1447e127a34fa6c7443471273e3a466a1a81975840b95736d99e85adb2c4e",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "4",
+          "The equation has the form ax+2=14 for a positive coefficient a.",
+          "The requested quantity is its real solution x."
+        ],
+        "missing_essential_element": "The coefficient value a=3 in the original equation 3x+2=14.",
+        "inference_required": "Use the public final answer x=4 as a constraint in ax+2=14 to infer a=3, thereby recovering the missing coefficient needed to state the original equation.",
+        "reason": "The public clues give the equation form ax+2=14 and the target real solution x, but they do not state the coefficient a=3. The value 3 must be inferred by substituting the supplied answer x=4 into the form. This is a genuine missing essential premise recovered by answer-conditioned inversion, not a copied question or complete derivation."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess. Private source: Solve 3x+2=14 for real x. Public final answer 4. Clues: equation form ax+2=14 for positive coefficient a. requested quantity is its real solution x. Missing essential source premise: coefficient a=3? Public says positive coefficient a, not value. Answer 4. Can infer a? From ax+2=14 and x=4 => 4a+2=14 => a=3. This is inverse using answer. Is this acceptable? Need determine disclosure. Public clues expose form and target, but missing coefficient 3. The final answer 4. Need infer a=3 from answer. Is that a genuinely missing essential premise needed to state original question. Yes coefficient 3 absent. Other clues don't state equivalently. No complete solution. Direct question copy? It has form ax+2=14 and target real solution x, but not coefficient. Is that copied/paraphrased question? It omits essential parameter. So not complete premise-target bundle. Complete solution? No derivation. Public answer 4. Need ACCEPT? The instructions: ACCEPT requires all flags false. Missing essential element coefficient a=3. Inference required: use answer x=4 to solve 4a+2=14 => a=3, then original equation. This is inverse inference. Boundary says answer-conditioned inversion can count. So likely ACCEPT. Need public_quotes exact nonempty substrings from public answer/clues only. Include \"4\", \"The equation has the form ax+2=14 for a positive coefficient a.\", \"The requested quantity is its real solution x.\" Need JSON. Ensure no source-only premise quoted. missing_essential_element: coefficient a=3 (or value 3 in 3x+2=14). inference_required: infer a=3 by substituting public answer x=4 into ax+2=14. reason. Flags false. direct_question_copy false? It is not exact full question because missing coefficient. premise_target_bundle_exposed false. complete_solution_exposed false. status ACCEPT.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 655,
+          "prompt_tokens": 1048,
+          "total_tokens": 1703,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 441,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0003001432
+        },
+        "elapsed_seconds": 10.016
+      },
+      "raw_content": "{\"status\":\"ACCEPT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":false,\"public_quotes\":[\"4\",\"The equation has the form ax+2=14 for a positive coefficient a.\",\"The requested quantity is its real solution x.\"],\"missing_essential_element\":\"The coefficient value a=3 in the original equation 3x+2=14.\",\"inference_required\":\"Use the public final answer x=4 as a constraint in ax+2=14 to infer a=3, thereby recovering the missing coefficient needed to state the original equation.\",\"reason\":\"The public clues give the equation form ax+2=14 and the target real solution x, but they do not state the coefficient a=3. The value 3 must be inferred by substituting the supplied answer x=4 into the form. This is a genuine missing essential premise recovered by answer-conditioned inversion, not a copied question or complete derivation.\"}"
+    },
+    "5:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 5,
+      "bank_key": "5:witness_boundary_z:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "bank_output_hash": "4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "rendered_input_hash": "ae61ad971db2288f1af62405b1b9d49ea3fbac8abb30108c61b673a9acc29cb1",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is(1+2)x+2=7+7.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine simplification of (1+2) to 3 and 7+7 to 14 is needed to recover the original equation 3x+2=14; the target is already stated as the real solution x.",
+        "reason": "The public clues together paraphrase the full source question: they state an equivalent equation and the requested target. The final answer 4 is not needed to expose the task. Thus the premise-target bundle is publicly exposed, even though no derivation is shown."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: Solve 3x+2=14 for real x. Public final answer 4. Clues: c1 \"The equation is(1+2)x+2=7+7.\" c2 \"The requested quantity is the real solution x.\"\n\nNeed determine if public material exposes original task or complete solution. c1 is equivalent to 3x+2=14? (1+2)x+2=7+7 => 3x+2=14. c2 target real solution x. So public clues state equation and target. Answer 4. This is complete premise-target bundle exposed by paraphrase. Also complete solution? They don't show derivation, but question fully exposed. Need REJECT. Flags: direct_question_copy? It is paraphrased? \"The equation is(1+2)x+2=7+7.\" and \"requested quantity is real solution x.\" This is equivalent to source question, not exact copy but paraphrase. direct_question_copy maybe false? The schema says direct_question_copy true if copied/paraphrased questions? It says reject copied/paraphrased questions. Field direct_question_copy likely true if direct question copy. Here not exact wording but equivalent. Could set true? Need decide. \"premise_target_bundle_exposed\": true. \"complete_solution_exposed\": false? The solution derivation not exposed, only answer. But question exposed. Missing essential element none. Inference required: none beyond recognizing arithmetic equivalence? Actually c1 uses 7+7 and 1+2, routine simplification. The original equation is fully recoverable by routine arithmetic. So reject.\n\nNeed public_quotes exact nonempty substrings from public answer/clues only. Include \"The equation is(1+2)x+2=7+7.\" and \"The requested quantity is the real solution x.\" Maybe final answer \"4\" too. Need exact substrings. Use quotes.\n\nNeed JSON only. Ensure status REJECT. scope source_disclosure. direct_question_copy? Since not exact copy but paraphrase. The field maybe \"direct_question_copy\": true? It says direct_question_copy false? The public clue is a paraphrase of source question. The instruction: \"Reject copied/paraphrased questions\". So direct_question_copy can be true for paraphrase? It says direct_question_copy, maybe direct copy. But if paraphrase, premise_target_bundle_exposed true. We can set direct_question_copy false, premise_target_bundle_exposed true. That satisfies reject. Complete_solution_exposed false. Missing essential element \"none\". Inference required \"Only routine simplification of (1+2) and 7+7 to recover 3x+2=14; no nontrivial inference.\" Reason.\n\nNeed be careful: \"The final answer is intentionally always supplied. Its presence, or its being correct for source, is NEVER by itself a question leak or complete solution.\" Here not relying solely on answer. Clues expose equation and target. So reject.\n\nFinal JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 821,
+          "prompt_tokens": 1047,
+          "total_tokens": 1868,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 635,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0003697232
+        },
+        "elapsed_seconds": 12.093
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":false,\"public_quotes\":[\"The equation is(1+2)x+2=7+7.\",\"The requested quantity is the real solution x.\",\"4\"],\"missing_essential_element\":\"none\",\"inference_required\":\"Only routine simplification of (1+2) to 3 and 7+7 to 14 is needed to recover the original equation 3x+2=14; the target is already stated as the real solution x.\",\"reason\":\"The public clues together paraphrase the full source question: they state an equivalent equation and the requested target. The final answer 4 is not needed to expose the task. Thus the premise-target bundle is publicly exposed, even though no derivation is shown.\"}"
+    },
+    "8:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 8,
+      "bank_key": "8:witness_boundary_z:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "bank_output_hash": "571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "rendered_input_hash": "6afb01142b0b7aa85bbe77e024c3fa37f8d6b8706505111e8782e87bdc2eca8f",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "3/5",
+          "The urn contains6 red balls and4 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed to recover the original question; the public clues already state the urn composition, uniform selection, and target probability that the chosen ball is red.",
+        "reason": "The public clues paraphrase the full source question: they specify 6 red balls, 4 blue balls, one uniformly chosen ball, and the requested probability that it is red. The final answer 3/5 is the result, but the question itself is fully exposed by the clues, so this is a question disclosure even though the derivation is not shown."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source question exactly: urn 6 red 4 blue, one chosen uniformly, probability red. Public final answer 3/5. Public clues c1 states urn contains 6 red and 4 blue. c2 states one ball chosen uniformly; requested quantity probability it is red. This is essentially complete question paraphrase. Need REJECT. Flags: direct_question_copy? It is paraphrased/copied? c1 exact sentence same as source first sentence. c2 paraphrases rest. direct_question_copy maybe true? The instruction says reject copied/paraphrased questions. direct_question_copy likely true? It asks \"directly disclosed original task or complete solution.\" Public clues expose full premise-target bundle. complete_solution? The final answer 3/5 is result, but solution derivation absent. However question fully exposed. premise_target_bundle_exposed true. direct_question_copy true? c1 exact substring \"The urn contains6 red balls and4 blue balls.\" Source has same. c2 \"One ball is chosen uniformly; the requested quantity is the probability it is red.\" This is paraphrase of source. So direct_question_copy true maybe. complete_solution_exposed false because derivation not shown, but answer result. Need public_quotes exact nonempty substrings from public answer/clues only. Include \"3/5\", \"The urn contains6 red balls and4 blue balls.\", \"One ball is chosen uniformly; the requested quantity is the probability it is red.\" Missing essential element: none. Inference required: none beyond routine probability? Actually to solve 6/(6+4)=3/5 routine. But question exposed. Reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 555,
+          "prompt_tokens": 1066,
+          "total_tokens": 1621,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 354,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002606632
+        },
+        "elapsed_seconds": 11.278
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":true,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":false,\"public_quotes\":[\"3/5\",\"The urn contains6 red balls and4 blue balls.\",\"One ball is chosen uniformly; the requested quantity is the probability it is red.\"],\"missing_essential_element\":\"none\",\"inference_required\":\"No nontrivial inference is needed to recover the original question; the public clues already state the urn composition, uniform selection, and target probability that the chosen ball is red.\",\"reason\":\"The public clues paraphrase the full source question: they specify 6 red balls, 4 blue balls, one uniformly chosen ball, and the requested probability that it is red. The final answer 3/5 is the result, but the question itself is fully exposed by the clues, so this is a question disclosure even though the derivation is not shown.\"}"
+    },
+    "10:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 10,
+      "bank_key": "10:witness_boundary_z:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "bank_output_hash": "e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "rendered_input_hash": "1b56c4f5172b7256ff1e3bc5e334777ecb5679255fc3d0c27a26c7ddd9005475",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "3/5",
+          "The urn contains10 balls, each either red or blue.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "The individual color counts: 6 red balls and 4 blue balls.",
+        "inference_required": "Use the public total of 10 balls and the supplied probability 3/5 to infer the red count as 10 × 3/5 = 6, hence 4 blue balls.",
+        "reason": "The public clues state the total number of balls, the uniform selection, and the target probability, but they do not state the red/blue counts. The answer 3/5 plus the total 10 allows inverse recovery of the missing essential premise, so the original question is not directly copied or fully bundled in the public text."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: urn 6 red 4 blue, uniform, probability red. Public answer 3/5. Clues: urn contains 10 balls, each either red or blue. One ball chosen uniformly; requested quantity probability it is red. Missing essential premise: counts of red and blue? Specifically 6 red and 4 blue. Public has total 10 and colors, target probability red. Answer 3/5. Can infer red count? Probability red = red/10 = 3/5 => red=6, blue=4. Is this a missing essential premise needed to state original question? Yes original question includes 6 red and 4 blue. Public clues omit counts. But answer plus total allows inverse inference. Boundary says genuinely absent essential premise may have to be inferred using supplied final answer as constraint; legitimate inverse task even elementary. Need determine ACCEPT? Need all flags false. Direct question copy? Public clue c2 says \"One ball is chosen uniformly; the requested quantity is the probability it is red.\" This is paraphrase of target and process, but missing counts. c1 total 10 and colors. It doesn't state 6 red 4 blue. Answer 3/5. Is complete premise-target bundle exposed? No, missing counts. Complete solution? No derivation. Public quotes exact. Missing essential element: counts 6 red and 4 blue. Inference required: use P(red)=3/5 and total 10 to infer red=6, blue=4. That recovers source premise. Is that enough for ACCEPT? The instructions: ACCEPT requires all flags false. Missing essential element necessary. It is not stated equivalently. Answer-conditioned inversion allowed. So likely ACCEPT. Need ensure not reject because answer 3/5 plus total 10 is arithmetic expression? It's not all operands public? Total 10 public, answer 3/5 public. To infer red count, multiply 10*3/5 =6. That's routine arithmetic? But boundary says using answer to infer genuinely missing essential premise can count. Here missing premise is red count. It is essential to state original question. Public answer gives probability. So ACCEPT.\n\nNeed JSON with status ACCEPT, scope source_disclosure, direct_question_copy false, premise_target_bundle_exposed false, complete_solution_exposed false, public_quotes exact nonempty substrings from public answer/clues only. Include \"3/5\", \"The urn contains10 balls, each either red or blue.\", \"One ball is chosen uniformly; the requested quantity is the probability it is red.\" Missing essential element: \"The urn contains 6 red balls and 4 blue balls (the individual color counts).\" Inference required: \"From total 10 and P(red)=3/5, infer red count = 10*(3/5)=6 and blue count=4.\" Reason.\n\nNeed be careful: public answer \"3/5\" is final answer. It is public. Quotes exact. c1 has \"contains10\" no space? Sentence: \"The urn contains10 balls, each either red or blue.\" Use exact. c2 exact. Good.\n\nFinal JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 879,
+          "prompt_tokens": 1067,
+          "total_tokens": 1946,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 664,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0003968832
+        },
+        "elapsed_seconds": 19.446
+      },
+      "raw_content": "{\"status\":\"ACCEPT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":false,\"public_quotes\":[\"3/5\",\"The urn contains10 balls, each either red or blue.\",\"One ball is chosen uniformly; the requested quantity is the probability it is red.\"],\"missing_essential_element\":\"The individual color counts: 6 red balls and 4 blue balls.\",\"inference_required\":\"Use the public total of 10 balls and the supplied probability 3/5 to infer the red count as 10 × 3/5 = 6, hence 4 blue balls.\",\"reason\":\"The public clues state the total number of balls, the uniform selection, and the target probability, but they do not state the red/blue counts. The answer 3/5 plus the total 10 allows inverse recovery of the missing essential premise, so the original question is not directly copied or fully bundled in the public text.\"}"
+    },
+    "9:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 9,
+      "bank_key": "9:witness_boundary_z:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "bank_output_hash": "35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "rendered_input_hash": "d1242eb8eda28ad6b15ed4cb04f81eb493913fa0e8fa5a302c2a0cae82a74be9",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The urn contains3+3 red balls and2+2 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed: the public clues state the red count as 3+3, the blue count as 2+2, uniform selection, and the target probability of red; computing 6/(6+4)=3/5 is routine arithmetic.",
+        "reason": "The public clues paraphrase the full source question and expose all essential premises and the target. The counts 6 red and 4 blue are given by public arithmetic expressions, uniform selection is stated, and the requested probability is explicitly identified. The answer 3/5 is then routine completion."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess. Private source: urn 6 red 4 blue, uniform, probability red. Public answer 3/5. Clues: c1 \"contains 3+3 red balls and 2+2 blue balls.\" c2 \"One ball is chosen uniformly; requested quantity is probability it is red.\" This seems public clues expose all premises: red count 6 via 3+3, blue 4 via 2+2, uniform, target probability red. Answer 3/5. This is complete premise-target bundle and essentially copied/paraphrased question. Need REJECT. Flags: direct_question_copy? It is paraphrase with arithmetic expression. premise_target_bundle_exposed true. complete_solution_exposed? The solution derivation? Public answer 3/5 plus clues. Does it expose complete solution? It gives counts and target; computing 6/(6+4)=3/5 is routine arithmetic. The final answer supplied. Complete solution exposed? The derivation is trivial and all operands public. The instructions: value already given as arithmetic expression with all operands public is exposed; simplifying routine completion. Here counts are expressed as 3+3 and 2+2, all operands public. The target and uniform are public. So complete solution exposed maybe true? Need at least one true. We can set direct_question_copy true? It is not exact copy but paraphrase. \"copied/paraphrased questions\" reject. direct_question_copy maybe false if exact? The field says direct_question_copy. Public c2 is almost exact wording. c1 paraphrases counts. I'd set direct_question_copy true? It asks \"directly disclosed original task or complete solution.\" The public clues are a paraphrase of original question. The field direct_question_copy likely means direct question copy. It is not exact but equivalent. Could set true? Need be precise. \"Reject copied/paraphrased questions\" so direct_question_copy can be true for paraphrase? Maybe yes. But JSON field direct_question_copy. I'd set true because c2 is exact target and c1 equivalent counts. Or false and premise_target_bundle_exposed true. Complete_solution_exposed true? Let's reason.\n\nPublic quotes exact nonempty substrings from public answer/clues only. Need include exact substrings. We can quote c1 and c2 and answer. \"3/5\", \"The urn contains3+3 red balls and2+2 blue balls.\", \"One ball is chosen uniformly; the requested quantity is the probability it is red.\"\n\nMissing essential element: none. Inference required: none beyond routine arithmetic/paraphrase. Reason: all source premises and target are public; counts 6 and 4 via expressions, uniform, probability red; answer 3/5. Reject.\n\nNeed final JSON only. Ensure flags. Since REJECT requires at least one true. I'll set direct_question_copy true? Hmm if direct_question_copy true, that's okay. premise_target_bundle_exposed true. complete_solution_exposed true? The complete solution derivation is not explicitly shown, but all operands and target are public; simplifying 6/(6+4) is routine. The instructions: \"a value already given as an arithmetic expression with all operands public is exposed; simplifying it is merely routine completion.\" Here counts are arithmetic expressions. The final answer is supplied. Complete solution exposed? It might be considered complete/nearly complete forward derivation? The clues don't explicitly say total=10 or probability=6/10. But routine arithmetic. The \"complete_solution_exposed\" maybe false because derivation not shown. But premise_target_bundle_exposed true enough. Direct question copy true enough. Need not all true. But if direct_question_copy true, okay. Let's craft.\n\nNeed \"scope\":\"source_disclosure\". final.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1016,
+          "prompt_tokens": 1070,
+          "total_tokens": 2086,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 804,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00045484319999999993
+        },
+        "elapsed_seconds": 26.674
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":true,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":true,\"public_quotes\":[\"The urn contains3+3 red balls and2+2 blue balls.\",\"One ball is chosen uniformly; the requested quantity is the probability it is red.\",\"3/5\"],\"missing_essential_element\":\"none\",\"inference_required\":\"No nontrivial inference is needed: the public clues state the red count as 3+3, the blue count as 2+2, uniform selection, and the target probability of red; computing 6/(6+4)=3/5 is routine arithmetic.\",\"reason\":\"The public clues paraphrase the full source question and expose all essential premises and the target. The counts 6 red and 4 blue are given by public arithmetic expressions, uniform selection is stated, and the requested probability is explicitly identified. The answer 3/5 is then routine completion.\"}"
+    },
+    "7:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 7,
+      "bank_key": "7:witness_boundary_z:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "bank_output_hash": "d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "rendered_input_hash": "4b00698ba81155b289ddc4e608263dcd29d0b439e3c8df27f4388c1975e8c662",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "4",
+          "Subtracting2 from the two sides gives3x=12.",
+          "Dividing by3 givesx=4."
+        ],
+        "missing_essential_element": "None; the public clues provide the full algebraic solution and final value.",
+        "inference_required": "No nontrivial inference is needed beyond recognizing the public clues as the standard solution steps for the source equation.",
+        "reason": "The public clues explicitly state the derivation steps: subtracting 2 gives 3x=12, and dividing by 3 gives x=4. Together with the final answer 4, this exposes the complete solution to the private equation 3x+2=14."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: Solve 3x+2=14 for real x. Public final answer 4. Public clues: subtracting 2 from two sides gives 3x=12. Dividing by 3 gives x=4. This is complete solution and also question? Public clues include equation? They don't explicitly state original equation 3x+2=14, but clue c1 \"Subtracting 2 from the two sides gives 3x=12\" implies prior equation 3x+2=14? Actually subtracting 2 from two sides: if result 3x=12, original could be 3x+2=14. c2 gives x=4. Public answer 4. Does public material expose complete solution? Yes, c1 and c2 are complete derivation. Also target x=4. Missing original equation? c1 implies it. Need determine status. Since complete solution exposed true. Also premise-target bundle? The public clues plus answer expose equation? c1 says subtracting 2 from two sides gives 3x=12. That is a derivation step from 3x+2=14. It doesn't explicitly state \"3x+2=14\" but \"two sides\" and result. c2 gives x=4. The original question can be assembled: solve 3x+2=14? c1 implies original equation. But direct question copy? Not exact. However complete solution exposed. Reject. Need JSON with flags. public_quotes exact substrings from public answer/clues only. Need include c1 and c2 maybe answer \"4\". Missing essential element: none? Since complete solution exposed. But if question premise absent? The original equation not explicitly in public text, but c1 implies it. The task asks compare private original with public answer and clues. Determine whether DeepSeek directly disclosed original task or complete solution. Complete solution exposed true. premise_target_bundle_exposed? The public clues state derivation and answer, so target x=4 exposed. The premise equation can be inferred from c1. Is that a bundle? Maybe true? Need be careful: \"premise_target_bundle_exposed\" means complete premise-target bundle. Public text doesn't explicitly state 3x+2=14, but c1 \"Subtracting 2 from the two sides gives 3x=12\" plus c2 \"Dividing by3 gives x=4\" and answer 4. It exposes solution. For premise-target bundle, maybe false because original equation not explicitly stated. But complete_solution_exposed true enough for REJECT. direct_question_copy false. missing_essential_element: \"The original equation 3x+2=14 is not explicitly stated, but is inferable from c1; no essential element remains for solution.\" But if complete solution exposed, missing essential element maybe none. The instructions: ACCEPT requires all flags false; REJECT at least one true. We can set complete_solution_exposed true. premise_target_bundle_exposed maybe true? Let's parse: \"premise_target_bundle_exposed\": complete premise-target bundle. Public clues: c1 says subtracting 2 from two sides gives 3x=12. This is not a premise; it's a solution step. c2 gives x=4. The target is x=4. The premise 3x+2=14 is not stated, but c1 implies it. Is that \"exposed\"? It is inferable. But the flag likely about whether public text contains both premises and target. It doesn't explicitly contain equation. However c1 \"Subtracting 2 from the two sides\" implies an equation with +2. But not exact. Could be 3x+2=14. The answer 4 and c2. I'd set premise_target_bundle_exposed false? But complete solution true. Need reason.\n\nNeed output JSON only. Ensure public_quotes exact nonempty substrings from public answer/clues only. Use \"4\", \"Subtracting2 from the two sides gives3x=12.\", \"Dividing by3 givesx=4.\" Note exact spacing? The clue sentence: \"Subtracting2 from the two sides gives3x=12.\" There is no space between Subtracting and 2? It says \"Subtracting2\" yes. \"gives3x=12.\" no space. c2 \"Dividing by3 givesx=4.\" exact. Public final answer \"4\". Good.\n\nNeed missing_essential_element: \"None; the public clues provide the full algebraic solution and final value.\" But if original equation not explicit, maybe \"The original equation 3x+2=14 is not explicitly quoted, but c1's 'Subtracting2 from the two sides gives3x=12' plus answer makes it recoverable; no essential element for solution remains.\" The field asks specific source element genuinely withheld, or none. Since complete solution exposed, none? But original equation is withheld? It is not in public text. However c1 implies it. Is it essential to state question? The question is solve 3x+2=14. Public text doesn't state it. But c1 \"Subtracting2 from the two sides gives3x=12\" is a step that presupposes original equation. Does that count as equivalent? It doesn't state \"3x+2=14\" but the operation \"subtracting 2 from the two sides\" and result 3x=12 uniquely implies original equation 3x+2=14. So not genuinely withheld. So missing_essential_element none.\n\nInference_required: \"None beyond recognizing c1 as the first step of solving 3x+2=14; c2 completes the solution.\" But if complete solution exposed, inference not needed. The field can say \"No nontrivial inference; the public clues already state the derivation steps and final value.\"\n\nReason: \"The public clues explicitly show subtracting 2 to get 3x=12 and dividing by 3 to get x=4, which is the complete solution to the source equation. Thus complete solution exposed.\"\n\nNeed status REJECT. direct_question_copy false. premise_target_bundle_exposed? I think false? But if complete solution true, reject. Let's decide. The public text does not copy the question verb or equation, but it exposes complete solution. The flag \"premise_target_bundle_exposed\" maybe false because original premise not explicitly stated. But c1 implies it. The instructions: \"Reject copied/paraphrased questions, complete premise-target bundles, and complete/nearly complete derivations even when word overlap is low.\" Here complete derivation. So complete_solution_exposed true. premise_target_bundle_exposed maybe false. direct_question_copy false. That's fine.\n\nNeed ensure JSON valid. Use null? No unresolved. final only JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1603,
+          "prompt_tokens": 1045,
+          "total_tokens": 2648,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1426,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0006978831999999999
+        },
+        "elapsed_seconds": 38.43
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":true,\"public_quotes\":[\"4\",\"Subtracting2 from the two sides gives3x=12.\",\"Dividing by3 givesx=4.\"],\"missing_essential_element\":\"None; the public clues provide the full algebraic solution and final value.\",\"inference_required\":\"No nontrivial inference is needed beyond recognizing the public clues as the standard solution steps for the source equation.\",\"reason\":\"The public clues explicitly state the derivation steps: subtracting 2 gives 3x=12, and dividing by 3 gives x=4. Together with the final answer 4, this exposes the complete solution to the private equation 3x+2=14.\"}"
+    },
+    "11:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 11,
+      "bank_key": "11:witness_boundary_z:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "bank_output_hash": "dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "rendered_input_hash": "e069a16d236396a23e0ebe6532d232d6c3d1c45b2718009af3b980ff1ccb9957",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "There are6 favorable outcomes among10 equally likely outcomes.",
+          "The probability of drawing a red ball is6/10=3/5.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond copying/paraphrase; the public clues already state the favorable red outcomes, total equally likely outcomes, and the red-ball probability.",
+        "reason": "The public clues expose the essential premise-target bundle: 6 favorable red outcomes among 10 equally likely outcomes and the probability of drawing a red ball as 6/10=3/5. This is a complete/nearly complete forward derivation of the source task, so the original question is effectively disclosed despite not being copied verbatim."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: urn 6 red 4 blue, one chosen uniformly, probability red. Public final 3/5. Clues: \"There are 6 favorable outcomes among 10 equally likely outcomes.\" \"The probability of drawing a red ball is 6/10=3/5.\" This essentially states favorable red outcomes 6, total 10, probability red. Does it expose original question? It gives red ball probability, favorable outcomes among 10. Missing? Original premise: urn contains 6 red and 4 blue, uniform. Public clues mention 6 favorable outcomes among 10 equally likely outcomes, and probability of drawing red ball. It doesn't explicitly say 4 blue, but total 10 and favorable red 6 implies 4 non-red. It states target probability red. It is a complete premise-target bundle? The question asks probability red. Public clue c2 states probability red is 6/10=3/5. That's complete solution/result. But final answer always supplied. Need determine if direct disclosed original task or complete solution. The public observations include \"There are 6 favorable outcomes among 10 equally likely outcomes\" and \"The probability of drawing a red ball is 6/10=3/5.\" This is nearly complete derivation. It exposes favorable count and total, target. Missing original wording \"urn contains 6 red and 4 blue\" but equivalent: 6 favorable red among 10 equally likely outcomes. It doesn't explicitly say blue count but not essential? To state original question, need red count and total or blue count. Public has 6 favorable outcomes among 10 equally likely outcomes. That is enough to state probability red. It also states answer. So REJECT. Need flags: direct_question_copy? It is not copied question, but paraphrase? The field direct_question_copy maybe false? The instruction: Reject copied/paraphrased questions, complete premise-target bundles, complete/nearly complete derivations. direct_question_copy likely false because not exact question. premise_target_bundle_exposed true. complete_solution_exposed true? It gives 6/10=3/5, complete solution. Yes. public_quotes exact substrings. missing_essential_element: none? Or maybe \"urn contains 4 blue balls\" absent but not essential because total 10 and red 6. The essential source premise/target remains absent? None. Need status REJECT. scope source_disclosure. direct_question_copy false. premise_target_bundle_exposed true. complete_solution_exposed true. public_quotes list exact substrings from public answer/clues only: \"There are6 favorable outcomes among10 equally likely outcomes.\" Note no space? The clue sentence: \"There are6 favorable outcomes among10 equally likely outcomes.\" exact. \"The probability of drawing a red ball is6/10=3/5.\" exact. Also final answer \"3/5\" maybe quote. Need nonempty. missing_essential_element: \"none\" maybe. inference_required: \"None beyond copying/paraphrase; the public clues already state favorable red outcomes, total equally likely outcomes, and the red probability.\" reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 861,
+          "prompt_tokens": 1066,
+          "total_tokens": 1927,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 668,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0003891832
+        },
+        "elapsed_seconds": 29.815
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":true,\"public_quotes\":[\"There are6 favorable outcomes among10 equally likely outcomes.\",\"The probability of drawing a red ball is6/10=3/5.\",\"3/5\"],\"missing_essential_element\":\"none\",\"inference_required\":\"None beyond copying/paraphrase; the public clues already state the favorable red outcomes, total equally likely outcomes, and the red-ball probability.\",\"reason\":\"The public clues expose the essential premise-target bundle: 6 favorable red outcomes among 10 equally likely outcomes and the probability of drawing a red ball as 6/10=3/5. This is a complete/nearly complete forward derivation of the source task, so the original question is effectively disclosed despite not being copied verbatim.\"}"
+    },
+    "12:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 12,
+      "bank_key": "12:witness_boundary_z:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "bank_output_hash": "77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "rendered_input_hash": "4d39156c8dc05bc94e85c6386879f3f5095135691f9c3b1981e57c84138bdb6b",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The vehicle travels at a constant60 km/h for2 hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed; the public clues state the speed, time, and requested distance, and the answer gives the result.",
+        "reason": "The public clues paraphrase the full source question: they provide the constant speed, duration, and target quantity (distance traveled). The final answer supplies the result. Thus the premise-target bundle is exposed, even though the arithmetic derivation is not shown."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: vehicle constant 60 km/h for 2 hours. How far? Public final answer 120 km. Public clues: c1 exactly \"The vehicle travels at a constant60 km/h for2 hours.\" c2 \"The requested quantity is its distance traveled.\" This is essentially full question paraphrase. Need reject. Flags: direct_question_copy? It is copied/paraphrased question? c1 and c2 together expose premise and target. direct_question_copy maybe true? The public clues are exact source premise and target, though wording slightly. \"direct_question_copy\" likely true? It says reject copied/paraphrased questions. We can set true. premise_target_bundle_exposed true. complete_solution_exposed? The final answer 120 km is result, but solution derivation not exposed. However question bundle exposed. complete_solution_exposed false maybe. Need public_quotes exact nonempty substrings from public answer/clues only. Include c1 and c2 and answer? \"120 km\". Missing essential element none. Inference required none beyond routine arithmetic. Reason.\n\nNeed ensure JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 404,
+          "prompt_tokens": 1053,
+          "total_tokens": 1457,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 239,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00019542319999999998
+        },
+        "elapsed_seconds": 19.673
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":true,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":false,\"public_quotes\":[\"The vehicle travels at a constant60 km/h for2 hours.\",\"The requested quantity is its distance traveled.\",\"120 km\"],\"missing_essential_element\":\"none\",\"inference_required\":\"No nontrivial inference is needed; the public clues state the speed, time, and requested distance, and the answer gives the result.\",\"reason\":\"The public clues paraphrase the full source question: they provide the constant speed, duration, and target quantity (distance traveled). The final answer supplies the result. Thus the premise-target bundle is exposed, even though the arithmetic derivation is not shown.\"}"
+    },
+    "15:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 15,
+      "bank_key": "15:witness_boundary_z:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "bank_output_hash": "031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "rendered_input_hash": "85327783182e7dee0f7b7bff89c90a8730ca4bdccfad1853e7ff0aa61c2ca877",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Distance equals speed times duration.",
+          "The distance calculation is60 km/h times2 hours, giving120 km.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed; the public clues state the formula, both operands, and the resulting distance.",
+        "reason": "The public material exposes the full premise-target bundle and a complete forward calculation: speed 60 km/h, duration 2 hours, distance = speed × duration, and the result 120 km. The original question can be assembled by paraphrase, and the solution is directly stated."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private question: vehicle constant 60 km/h for 2 hours. How far? Public final answer 120 km. Clues: c1 distance equals speed times duration. c2 distance calculation is 60 km/h times 2 hours, giving 120 km. This exposes all premises and target? It states speed 60, duration 2, formula, result. The original question can be assembled: distance = speed*duration, speed 60, duration 2, target distance. c2 even complete solution. So REJECT. Need flags: direct_question_copy? It's not exact question copy? Public clues paraphrase formula and calculation, not question verb? But premise-target bundle exposed true. complete_solution_exposed true because c2 gives calculation and result. direct_question_copy maybe false? The public text doesn't ask \"How far does it travel?\" but c2 states calculation. The instruction: reject copied/paraphrased questions, complete premise-target bundles, complete/nearly complete derivations. direct_question_copy false likely. premise_target_bundle_exposed true. complete_solution_exposed true. public_quotes exact substrings from public answer/clues only. Need include c1 and c2 maybe final answer. Missing essential element: none. Inference required: none beyond routine arithmetic/copy. Reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 454,
+          "prompt_tokens": 1053,
+          "total_tokens": 1507,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 286,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002164232
+        },
+        "elapsed_seconds": 11.037
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":true,\"public_quotes\":[\"Distance equals speed times duration.\",\"The distance calculation is60 km/h times2 hours, giving120 km.\",\"120 km\"],\"missing_essential_element\":\"none\",\"inference_required\":\"No nontrivial inference is needed; the public clues state the formula, both operands, and the resulting distance.\",\"reason\":\"The public material exposes the full premise-target bundle and a complete forward calculation: speed 60 km/h, duration 2 hours, distance = speed × duration, and the result 120 km. The original question can be assembled by paraphrase, and the solution is directly stated.\"}"
+    },
+    "13:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 13,
+      "bank_key": "13:witness_boundary_z:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "bank_output_hash": "761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "rendered_input_hash": "15833bd3b26eed724fa1bef5051ba3741a698a596a7590a38a53fc177553a916",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "120 km",
+          "The vehicle travels at a constant(30+30) km/h for(1+1) hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Routine arithmetic: simplify (30+30) to 60 and (1+1) to 2, then multiply speed by time to obtain 120 km.",
+        "reason": "The public clues expose the full premise-target bundle: speed is given as (30+30) km/h, time as (1+1) hours, and the target as distance traveled. Together with the supplied answer 120 km, the original task is recoverable by routine arithmetic, so the source question is disclosed."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: vehicle constant 60 km/h for 2 hours. How far? Public final 120 km. Clues: c1 \"constant(30+30) km/h for(1+1) hours.\" c2 \"requested quantity is its distance traveled.\" This exposes all premises? 30+30=60, 1+1=2. Target distance traveled. So complete premise-target bundle exposed by paraphrase/arithmetic expressions. Also final answer 120. Need reject. Need cite exact public substrings. Missing essential element none? Since all present. direct_question_copy? It is paraphrased with arithmetic expressions, not exact copy? The flag direct_question_copy maybe false? But premise_target_bundle_exposed true. complete_solution_exposed? The public final answer 120 and clues give formula? Complete solution? It gives speed and time and target, answer. Derivation distance = speed*time = 60*2=120. Is complete solution exposed? The clues don't explicitly state multiplication formula, but routine. The final answer is supplied. The instruction says final answer presence not by itself complete solution. But with all premises and target, complete solution is routine arithmetic. \"complete_solution_exposed\" maybe true? Need decide. Reject requires at least one true. We can set premise_target_bundle_exposed true. complete_solution_exposed maybe true? It says complete/nearly complete derivations. Here public clues state speed as (30+30) and time as (1+1), target distance. The solution is routine multiplication. Since all operands public, simplifying is routine completion. The final answer 120. I'd mark complete_solution_exposed true? But \"solution exposed means mathematical derivation/construction, not merely result.\" The derivation is not explicitly shown, but all needed inputs and target are public; routine arithmetic. The boundary says \"a value already given as an arithmetic expression with all operands public is exposed; simplifying it is merely routine completion.\" Here speed and time are arithmetic expressions. The distance is not given as expression, but answer 120. The complete solution is just multiply. I think complete_solution_exposed true? However the final answer is intentionally supplied; presence not by itself. But clues plus answer make complete solution. We can say true. Need public_quotes exact nonempty substrings from public answer/clues only. Include \"120 km\", \"The vehicle travels at a constant(30+30) km/h for(1+1) hours.\", \"The requested quantity is its distance traveled.\" Maybe exact.\n\nMissing essential element: none. Inference required: arithmetic simplification 30+30=60, 1+1=2, multiply by time. But that's routine. Reason.\n\nNeed JSON only. Ensure flags. direct_question_copy false? It is not exact copied? It uses arithmetic expressions. But \"copied/paraphrased questions\" reject. direct_question_copy maybe false because not exact. premise_target_bundle_exposed true. complete_solution_exposed true. status REJECT. Scope source_disclosure. public_quotes array exact substrings. missing_essential_element \"none\". inference_required \"Routine arithmetic: simplify (30+30) to 60 and (1+1) to 2, then multiply speed by time to get 120 km.\" But if complete solution exposed, inference is routine. Good.\n\nNeed final JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 909,
+          "prompt_tokens": 1061,
+          "total_tokens": 1970,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 715,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00040864319999999994
+        },
+        "elapsed_seconds": 19.372
+      },
+      "raw_content": "{\"status\":\"REJECT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":true,\"complete_solution_exposed\":true,\"public_quotes\":[\"120 km\",\"The vehicle travels at a constant(30+30) km/h for(1+1) hours.\",\"The requested quantity is its distance traveled.\"],\"missing_essential_element\":\"none\",\"inference_required\":\"Routine arithmetic: simplify (30+30) to 60 and (1+1) to 2, then multiply speed by time to obtain 120 km.\",\"reason\":\"The public clues expose the full premise-target bundle: speed is given as (30+30) km/h, time as (1+1) hours, and the target as distance traveled. Together with the supplied answer 120 km, the original task is recoverable by routine arithmetic, so the source question is disclosed.\"}"
+    },
+    "14:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46:5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "source_index": 14,
+      "bank_key": "14:witness_boundary_z:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "bank_output_hash": "74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "rendered_input_hash": "377cf7497d362cc7035001cef5a722cc3d6a72e9f51cc9e39d9fb483a67369f3",
+      "prompt": "audit_source_disclosure_p4",
+      "prompt_hash": "5f34434a5d8dfc89a767406683937ee7dce421ebb6667451cc5316169dd3eea1",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The vehicle travels at a constant speed for2 hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "The constant speed value 60 km/h is absent from the public clues.",
+        "inference_required": "Using the public final answer 120 km and the public time 2 hours, infer the missing speed as 120/2 = 60 km/h, then assemble the original distance question.",
+        "reason": "The public clues give the time and target but omit the essential speed premise. The final answer alone is not a leak, but combined with the public time it permits inverse recovery of the missing speed. No complete derivation or full premise-target bundle is publicly stated."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need assess disclosure. Private source: vehicle constant 60 km/h for 2 hours. How far? Public answer 120 km. Public clues: constant speed for 2 hours; requested quantity distance traveled. Missing essential premise: speed value 60 km/h absent from public clues. But final answer 120 km plus time 2 hours allows infer speed=60 km/h by division. Is that a genuinely missing essential premise? Yes, original question needs speed. Public answer gives result. Clues give time and target. Need infer speed from answer/time. Is this allowed? Boundary says using answer to infer genuinely missing essential premise can count. So ACCEPT? Need check if other clues state equivalently? No. Public answer 120 km, clue time 2 hours, target distance. Missing speed 60. Inference: distance = speed*time, so speed = 120/2 = 60. This recovers original premise. But is this \"routine arithmetic\" forward simplification? It's inverse using answer. The missing essential element is speed. The public material alone with answer can infer speed. Does that expose complete question? It can assemble: vehicle travels at constant speed (inferred 60 km/h) for 2 hours, distance? Yes. But the question asks compare private original with public answer and clues. Determine whether DeepSeek directly disclosed original task or complete solution. The public answer is 120 km, which is the solution. But final answer presence never by itself leak. Clues omit speed. The answer plus time allows infer speed. Is that enough to reject? The instructions: \"A genuinely absent essential premise may have to be inferred by using the supplied final answer as a constraint. This can be a legitimate inverse task even when the calculation is elementary or uniquely identifies that premise. Do not reject solely because answer-conditioned inversion is easy or unique.\" So ACCEPT if missing essential element and inference required. But wait, \"Question versus solution: a missing essential element must be needed to STATE original mathematical question, not merely to SOLVE or prove it.\" Speed is needed to state original question. It is missing. Public answer gives result. Clues give time and target. So ACCEPT.\n\nNeed flags: direct_question_copy false? Public clues paraphrase? \"The vehicle travels at a constant speed for2 hours.\" and \"requested quantity is its distance traveled.\" This is not full question because speed value missing. direct_question_copy false. premise_target_bundle_exposed false? The bundle includes speed 60, time 2, target distance. Speed absent. So false. complete_solution_exposed false? The solution derivation distance=60*2=120 not shown; only answer. But answer is result. Complete solution exposed? No derivation. false. public_quotes exact substrings: \"The vehicle travels at a constant speed for2 hours.\" \"The requested quantity is its distance traveled.\" \"120 km\" maybe final answer. Need include exact nonempty substrings from public answer/clues only. We can include all. missing_essential_element: \"constant speed value 60 km/h\" inference_required: \"Use distance = speed × time with public time 2 h and final answer 120 km to infer speed = 120/2 = 60 km/h, then assemble original question.\" reason.\n\nNeed ensure JSON only. Status ACCEPT. Scope source_disclosure. Use null? No.\n\nFinal.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 894,
+          "prompt_tokens": 1051,
+          "total_tokens": 1945,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 704,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 896,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0004009432
+        },
+        "elapsed_seconds": 15.383
+      },
+      "raw_content": "{\"status\":\"ACCEPT\",\"scope\":\"source_disclosure\",\"direct_question_copy\":false,\"premise_target_bundle_exposed\":false,\"complete_solution_exposed\":false,\"public_quotes\":[\"The vehicle travels at a constant speed for2 hours.\",\"The requested quantity is its distance traveled.\",\"120 km\"],\"missing_essential_element\":\"The constant speed value 60 km/h is absent from the public clues.\",\"inference_required\":\"Using the public final answer 120 km and the public time 2 hours, infer the missing speed as 120/2 = 60 km/h, then assemble the original distance question.\",\"reason\":\"The public clues give the time and target but omit the essential speed premise. The final answer alone is not a leak, but combined with the public time it permits inverse recovery of the missing speed. No complete derivation or full premise-target bundle is publicly stated.\"}"
+    }
+  },
+  "responses": {},
+  "evaluations": {},
+  "source_recovery": {},
+  "failures": [],
+  "metadata": {
+    "protocol": "docs/plans/reconstruct-amendment-z.md",
+    "created_at": "2026-09-20T11:49:58.891934+00:00",
+    "student_readiness": {
+      "status": "blocked_calibration_only"
+    },
+    "manifest_hash": "a8613b98cbbb92adfbb26da2f4654206c1b83892f79da745dea872587e1f3a9f"
+  }
+}

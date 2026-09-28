@@ -1,0 +1,50 @@
+[
+  {
+    "prompt": "audit_support_p1",
+    "indices": [
+      0,
+      46,
+      62,
+      80,
+      87,
+      96,
+      118,
+      137
+    ],
+    "cascade": true,
+    "requires_prior_accept": []
+  },
+  {
+    "prompt": "audit_public_p5",
+    "indices": [
+      0,
+      46,
+      62,
+      80,
+      87,
+      96,
+      118,
+      137
+    ],
+    "cascade": true,
+    "requires_prior_accept": [
+      "audit_support_p1"
+    ]
+  },
+  {
+    "prompt": "audit_source_disclosure_p4",
+    "indices": [
+      0,
+      46,
+      62,
+      80,
+      96,
+      137
+    ],
+    "cascade": true,
+    "requires_prior_accept": [
+      "audit_support_p1",
+      "audit_public_p5"
+    ]
+  }
+]

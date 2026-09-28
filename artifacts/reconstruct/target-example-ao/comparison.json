@@ -1,0 +1,73 @@
+{
+  "arms": {
+    "target_example": {
+      "planned": 2,
+      "scores_returned": 2,
+      "mean_score_100": 12.5,
+      "raw_grounded": 0,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 2,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.6576197724933345
+      ],
+      "denominator_all_sources": 16,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        12.5,
+        12.5
+      ],
+      "rating_counts_1_to_5": {
+        "1": 1,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "rating_missing": 0,
+      "rating_scale": "display=stored0to4+1; normalized=25*(display-1)",
+      "middle_heavy_observed": false
+    }
+  },
+  "rows": [
+    {
+      "response_key": "54:target_example:0",
+      "source_index": 54,
+      "arm": "target_example",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 93,
+      "clue_count": 5,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "67:target_example:0",
+      "source_index": 67,
+      "arm": "target_example",
+      "score_100": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 88,
+      "clue_count": 5,
+      "finish_reason": "stop"
+    }
+  ],
+  "limitations": [
+    "Development screen, one seed; cohort provenance and adaptive reuse must be checked in its protocol; not final confirmation.",
+    "Wilson intervals are descriptive and do not correct for adaptive development or policy selection.",
+    "Auditors and assistant review are fallible; raw and reviewed outcomes retained separately."
+  ]
+}

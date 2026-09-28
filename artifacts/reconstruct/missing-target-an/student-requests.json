@@ -1,0 +1,50 @@
+{
+  "54:missing_target:0": {
+    "source_index": 54,
+    "arm": "missing_target",
+    "bank_key": "54:487a399a9aa936b0a3276a7995bb25937a94895c09fb7baee4db74b688f8bff1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{99}",
+      "clues": [
+        "The complex numbers satisfy |ω| = 1 and |z| = 10.",
+        "The angle θ is the argument of the quotient (ω − z)/z.",
+        "Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.",
+        "Every point on the circle |u + 1| = 1/10 can be realized by choosing z = 10 and ω = 10(u + 1).",
+        "Writing u = X + iY, the circle becomes (X + 1)^2 + Y^2 = 1/100, and X lies between −11/10 and −9/10."
+      ],
+      "rendered_clues": "- The complex numbers satisfy |ω| = 1 and |z| = 10.\n- The angle θ is the argument of the quotient (ω − z)/z.\n- Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.\n- Every point on the circle |u + 1| = 1/10 can be realized by choosing z = 10 and ω = 10(u + 1).\n- Writing u = X + iY, the circle becomes (X + 1)^2 + Y^2 = 1/100, and X lies between −11/10 and −9/10.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_missing_target",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "84b4a3a6334c6ac16c0acf1f46d23e421766eeb1a6c53e9e4c89728c0ed6b60f",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{99}\nOBSERVATIONS:\n- The complex numbers satisfy |ω| = 1 and |z| = 10.\n- The angle θ is the argument of the quotient (ω − z)/z.\n- Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.\n- Every point on the circle |u + 1| = 1/10 can be realized by choosing z = 10 and ω = 10(u + 1).\n- Writing u = X + iY, the circle becomes (X + 1)^2 + Y^2 = 1/100, and X lies between −11/10 and −9/10.",
+    "rendered_input_hash": "2d988ca087197341cbc13e288e99d6d7677656267d275e26e9a883b26530280e"
+  },
+  "67:missing_target:0": {
+    "source_index": 67,
+    "arm": "missing_target",
+    "bank_key": "67:487a399a9aa936b0a3276a7995bb25937a94895c09fb7baee4db74b688f8bff1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "The set B consists of n vectors and is a basis of the vector space V.",
+        "The linear operator T sends the first basis vector to the sum of all n basis vectors.",
+        "If A is the matrix of T in the basis B, then its first column is the coordinate vector of T(v1), so A e1 is the all-ones vector.",
+        "The matrix representing the inverse operator in the same basis is the inverse of A.",
+        "Applying A^{-1} to A e1 returns e1."
+      ],
+      "rendered_clues": "- The set B consists of n vectors and is a basis of the vector space V.\n- The linear operator T sends the first basis vector to the sum of all n basis vectors.\n- If A is the matrix of T in the basis B, then its first column is the coordinate vector of T(v1), so A e1 is the all-ones vector.\n- The matrix representing the inverse operator in the same basis is the inverse of A.\n- Applying A^{-1} to A e1 returns e1.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_missing_target",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "da4c54dea15f2850cf6a55a2abf90ac73bf7a0752a09d1543ee3afaeb6ea4434",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1\nOBSERVATIONS:\n- The set B consists of n vectors and is a basis of the vector space V.\n- The linear operator T sends the first basis vector to the sum of all n basis vectors.\n- If A is the matrix of T in the basis B, then its first column is the coordinate vector of T(v1), so A e1 is the all-ones vector.\n- The matrix representing the inverse operator in the same basis is the inverse of A.\n- Applying A^{-1} to A e1 returns e1.",
+    "rendered_input_hash": "dcc5366d7a54cc8cebd0655b21d1e08dd1ca4b1afce9f140cfe45ad903527523"
+  }
+}

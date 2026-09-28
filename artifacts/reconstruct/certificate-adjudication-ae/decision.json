@@ -1,0 +1,18 @@
+{
+  "adjudication": {
+    "96": "ACCEPT",
+    "137": "REJECT"
+  },
+  "newly_tested_sources": [
+    96
+  ],
+  "still_excluded_sources": [
+    137
+  ],
+  "Qwen_score": 0,
+  "Qwen_semantic_score": 1,
+  "independent_math_status": "invalid",
+  "grounded_semantic_successes": 0,
+  "decision": "No promotion; separate verifier correctly vetoes the new invalid output. Certificate-based adjudicator is not generally reliable: source137 rejection explicitly contradicts the allowed answer-conditioned inversion rule.",
+  "next_hypothesis": "The six-clue banks contain repeated setup descriptions but omit useful partial intermediate relations/structural constraints. Test a global converter policy prioritizing distinct constraints and incomplete intermediate expressions over padding, holding the source cohort and Qwen fixed. Do not alter success definitions or choose cases by Qwen outcome."
+}

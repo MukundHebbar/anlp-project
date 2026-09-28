@@ -1,0 +1,132 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "rows": [
+    {
+      "source_index": 5,
+      "response_hash": "6c1f090ca6efd04139c01e55cc6ff60294b8edb2bc274d4241e41ebc23059efe",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "100!-1 is wrong: identity is not the only permutation without a long cycle; a single transposition also qualifies. Correct count100!*(H100-H50)."
+    },
+    {
+      "source_index": 10,
+      "response_hash": "07caf29a3e4eb9701d5a43a00e7d0847e9e5a5ff4569736cb3235a5160515147",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "9! residue52 has inverse27, not58. Wilson setup is right but final modular arithmetic wrong."
+    },
+    {
+      "source_index": 16,
+      "response_hash": "ed9f7fff68429a4eecf628cba5bb7ffefb608f194b3d022dc836b43869af98c0",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "Same-parity count is not half of63 rounded. Divide both factors by2 and count signed factors of10^6:2*7*7=98."
+    },
+    {
+      "source_index": 17,
+      "response_hash": "77a3f52068a1ff18166de6e7ba7033dd3ed5183643a418b2bffde271bb973af8",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "k>a0 does not follow froma0>=1; one object givesk=a0=1. Correct relationa1=k*a0."
+    },
+    {
+      "source_index": 21,
+      "response_hash": "741099801aa0e7cf6bed224a333da37b59d61ec3bee7e3761121ff243df09522",
+      "answer_correct": true,
+      "explanation_status": "sound",
+      "strict_grounded_correct": true,
+      "reason": "Prime cyclic group has2^m elements andphi(2^m)=2^(m-1) generators."
+    },
+    {
+      "source_index": 29,
+      "response_hash": "2f38597f3af3c22a86316aebd2f0e9bfcc04fb71c3f4ceae77c1029c33c282d1",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "561=3*11*17 supplies a composite counterexample to the claimed nonexistence; Fermat andCRT prove the universal congruence."
+    },
+    {
+      "source_index": 35,
+      "response_hash": "8e22adfcf38edf94498766000c5c79d292f7e9af2d5546f97f9bb12fabb4ce4b",
+      "answer_correct": true,
+      "explanation_status": "sound",
+      "strict_grounded_correct": true,
+      "reason": "Bounded derivative plusMVT yields a global Lipschitz bound, hence uniform continuity."
+    },
+    {
+      "source_index": 41,
+      "response_hash": "31e8aea225c04d345c2be2c70e989443560efb2a492d9137d57b4ff2fc9419a6",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "Formula is correct but numerator(1/3)*(4/3)=4/9, not4/3. Correct value3/2, not9/2."
+    },
+    {
+      "source_index": 54,
+      "response_hash": "a78e8fc7c0b47e84795fd03889e900a715a6597a18f53dad68c3c9367c36551d",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "Top point of the circle gives1/100, not the tangent maximum1/99. The argument calculation also uses an incorrect quadrant formula."
+    },
+    {
+      "source_index": 59,
+      "response_hash": "0421a7fc7856fcb3f3a3296ed3ae0e1042e5550f97c3fa7941706b1961718059",
+      "answer_correct": true,
+      "explanation_status": "sound_with_routine_omissions",
+      "strict_grounded_correct": true,
+      "reason": "Correct classification. Independently complete routine noncancellation: both quadratic roots<-1 because sqrt69<9; reciprocals lie(-1,0) and sine is nonzero there. At0 denominator nonzero and sin1/z has infinitely many negative Laurent terms."
+    },
+    {
+      "source_index": 67,
+      "response_hash": "176dc8509bb5814b1a6cd3c1d37c61096b0fb6c863578f6a2876c5b9dbaeb609",
+      "answer_correct": true,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "Correct answer1 with false proof: unspecified columns need not be zero. A=[[1,0],[1,1]] is invertible forn2 and satisfies the premise, refuting the claimed restrictionn1."
+    },
+    {
+      "source_index": 68,
+      "response_hash": "4e234198b2d9285f440f80498a297af6c2ee0bf9b8f5e29279c7ecb1bb81d02c",
+      "answer_correct": true,
+      "explanation_status": "incomplete",
+      "strict_grounded_correct": false,
+      "reason": "Answer0 correct, but proof only derivesdet=±1 then asserts exclusion of-1. Independent verification: a^2+bc=-1 withboundedentries forcesa=d=0,bc=-1,det1. The missing sign-exclusion is the central step; report incomplete rather than a false asserted conclusion."
+    },
+    {
+      "source_index": 113,
+      "response_hash": "72b141e7134ed4efede2980b7e71703ac6f2cfd186156e8f91c65138ef146e2b",
+      "answer_correct": true,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "Correct answer1/e but false equality(k-1)(k-1)!=k!; atk2 the sides are1 and2. Actual telescoping term is k!-(k-1)!."
+    },
+    {
+      "source_index": 114,
+      "response_hash": "f332cf475789ab842580a130edc718089e510f0fcf988f598a37e7956f077cf6",
+      "answer_correct": true,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "Correct radius1 but false claim divisorcount(n^50) approximately proportional ton^50. Along primes this count is51. Correct bound1<=a_n<=2n^25 suffices for rootlimit1."
+    },
+    {
+      "source_index": 132,
+      "response_hash": "e9353d15f62a752972400fe9a37252f73852eb770fc30623cb37c8152e4036c1",
+      "answer_correct": false,
+      "explanation_status": "invalid",
+      "strict_grounded_correct": false,
+      "reason": "9-card guarantee is wrong. An avoiding hand can have12 cards; incidence bound4h<=48 then guarantees13, with sharp regular-hypergraph construction."
+    }
+  ],
+  "all_allocated": 16,
+  "attempted_valid_sources": 15,
+  "correct_answers": 7,
+  "strict_grounded_correct": 3,
+  "uncertain_or_incomplete_proofs": [
+    68
+  ]
+}

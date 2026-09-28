@@ -1,0 +1,5 @@
+# AZ: zero-bridge control under the same p14 prompt
+
+Registered after AX and AY local outputs, before AZ draws. AX high exposure gives4 semantic matches, including3 on disclosure-accepted inputs; AY midpoint gives one non-tautological semantic match54. The old AL low endpoint used p13, so run the exact six AL inputs with p14 to remove that prompt confound. No clue edits or conversions. Same original Qwen, seed0, .7/.8/20/8192/nonthinking. All6 once; retain failures. Report zero/one/two added observations under p14 separately from the p13→p14 prompt comparison on high exposure. This control is not a success-selected retry. No claim that performance is guaranteed monotonic.
+
+Local-only initially; source equivalence/math checking uses available paid capacity, global<=4 and session cap$5. The narrower user objective is at least2–3 meaningful semantic recoveries, not declaration of production validation. Full confirmation, distribution and teacher-accuracy requirements remain separately unproven.

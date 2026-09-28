@@ -1,0 +1,11 @@
+# BA: prospective partial-credit distribution check
+
+Freeze RECONSTRUCT-PC v1 before scoring. Apply its two judges to all18 saved p14 responses: the same six source families at zero, one and two added bridge clues (AZ, AY, AX). No response editing, new student draws, weight changes, new generator calls or favorable seed selection. This checks how the new rubric measures existing behavior; it does not validate the untested PC-v1 converter/student prompt distribution.
+
+Score P,T source-aware and E,M source-blind,0–4 each. Deterministic total6.25*(P+T+E+M); known response shortcuts override final task score to0 while preserving raw dimensions. Unknown scores/shortcut status remain missing, with bounds. Display bands1:[0,20),2:[20,40),3:[40,60),4:[60,80),5:[80,100]. Never reuse old rating bins for this new scoring version.
+
+Primary output is a separate histogram per exposure arm, including missing scores and invalid/unresolved input counts. The same families repeat across arms:18 responses are not18 independent questions. The desired descriptive shape is rating3 uniquely modal, rating2 more frequent than1, and4 more frequent than5; do not force this shape by changing weights, thresholds, exclusions or judgments. Six families are too few to establish a population distribution.
+
+Retain existing independent input gates. Zero exposure has six previously accepted inputs. High exposure has three passing source-disclosure and copy checks. Midpoint has five source-disclosure accepts, one unresolved transport/visible-output failure and public-only copy checks not yet performed. Run those six copy checks once; preserve the unresolved source audit and do not replace it with an assumed acceptance.
+
+36 scoring calls, plus6 midpoint copy checks. Paid cap$0.30 within prior$5 research cap; maximum4 concurrent paid calls. Each role judge uses DeepSeek V4.1 Flash reasoninglow,8192 max tokens, timeout180, temperature0, no retries. Main scoring runs at3 workers concurrently with one-worker copy checks. Validate schemas, save raw responses/failures, and inspect every new middle score plus shortcut disagreement. Report automated and reviewed findings distinctly; do not quietly relabel scores to obtain a nice histogram. Existing71-test results do not validate this new rubric.

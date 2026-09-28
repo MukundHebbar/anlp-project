@@ -1,0 +1,27 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "rows": [
+    {
+      "response_key": "54:onegap:0",
+      "source_index": 54,
+      "response_output_hash": "4c70510d50930ce449c194e1b0e7716cbef0cfb69b9e8e4534c2aaa122c795f9",
+      "evidence_hash": "ed20477e7afe2c774910d10a8588bdf7f547b57139302b05ab1fd608ba22e7fc",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Leaves R unspecified and asserts1/99 without deriving it. For example R2 has maximum1/3, contradicting the claim for arbitrary R. The top of the circle is not the tangent maximizing slope."
+    },
+    {
+      "response_key": "67:onegap:0",
+      "source_index": 67,
+      "response_output_hash": "fe2712a3317bf4f142980bb0c414388ef53db4f1ba7a0baff5aeb3fa01331e02",
+      "evidence_hash": "d48e2d7a5074e2086cb7b158cf70c58c8c0816a479be9c9ef4814aa9300c0338",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Leaves c unspecified. In fact Ae1=c1 implies Ainv1=e1/c, so entry sum1/c. c1 is essential and not recovered."
+    }
+  ],
+  "failed_attempt_reviews": [],
+  "reused_from": "artifacts/reconstruct/constructive-gate-al/response-math-review.json"
+}

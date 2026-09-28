@@ -1,0 +1,180 @@
+{
+  "sources": {
+    "1": {
+      "source_index": 1,
+      "source_id": "pilot-1",
+      "question": "Consider the sequence \\( a_1, a_2, a_3, \\ldots \\) defined by \\( \\frac{1}{a_{k+1}} = \\frac{1}{a_1} + \\frac{1}{a_2} + \\cdots + \\frac{1}{a_k} \\) for \\( k > 1 \\) with \\( a_1 = 2^{2009} \\). Find the value of \\( a_{2011} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let\n\n\\[\nS_k=\\sum_{i=1}^k \\frac1{a_i}.\n\\]\n\nThe recurrence is\n\n\\[\n\\frac1{a_{k+1}}=S_k.\n\\]\n\nThen\n\n\\[\nS_{k+1}=S_k+\\frac1{a_{k+1}}=S_k+S_k=2S_k.\n\\]\n\nSo \\(S_k\\) doubles at each step. Since\n\n\\[\nS_1=\\frac1{a_1}=\\frac1{2^{2009}}=2^{-2009},\n\\]\n\nwe get\n\n\\[\nS_k=2^{k-1}S_1=2^{k-1}\\cdot 2^{-2009}=2^{k-2010}.\n\\]\n\nNow\n\n\\[\n\\frac1{a_{2011}}=S_{2010}=2^{2010-2010}=2^0=1.\n\\]\n\nTherefore,\n\n\\[\n\\boxed{a_{2011}=1}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "5": {
+      "source_index": 5,
+      "source_id": "pilot-5",
+      "question": "How many permutations in the symmetric group $S_{100}$ contain at least one cycle of length 51 or more?",
+      "final_answer": "100! \\left( H_{100} - H_{50} \\right)",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 6.5,
+      "checked_solution": "Let a “long” cycle mean a cycle of length at least \\(51\\).\n\nIn any permutation of \\(100\\) elements, there can be at most one long cycle, since two such cycles would have total length at least\n\n\\[\n51+51=102>100.\n\\]\n\nSo we may count permutations by the length \\(k\\) of their unique long cycle, where\n\n\\[\nk=51,52,\\dots,100.\n\\]\n\nFor a fixed \\(k\\):\n\n1. Choose the \\(k\\) elements that form the long cycle:\n\n\\[\n\\binom{100}{k}\n\\]\n\n2. Arrange them into a \\(k\\)-cycle. The number of distinct \\(k\\)-cycles on \\(k\\) given elements is\n\n\\[\n(k-1)!\n\\]\n\n3. Arrange the remaining \\(100-k\\) elements arbitrarily:\n\n\\[\n(100-k)!\n\\]\n\nThus the number of permutations containing a cycle of length exactly \\(k\\) is\n\n\\[\n\\binom{100}{k}(k-1)!(100-k)!\n=\n\\frac{100!}{k!(100-k)!}(k-1)!(100-k)!\n=\n\\frac{100!}{k}.\n\\]\n\nSince these cases for different \\(k\\) are disjoint, the total number of permutations containing at least one cycle of length \\(51\\) or more is\n\n\\[\n\\sum_{k=51}^{100} \\frac{100!}{k}.\n\\]\n\nEquivalently,\n\n\\[\n100!\\sum_{k=51}^{100}\\frac1k\n=\n100!\\left(H_{100}-H_{50}\\right),\n\\]\n\nwhere \\(H_m=1+\\frac12+\\cdots+\\frac1m\\).\n\n\\[\n\\boxed{100!\\left(H_{100}-H_{50}\\right)}\n\\]\n\nSo the number of permutations in \\(S_{100}\\) with at least one cycle of length \\(51\\) or more is\n\n\\[\n\\boxed{\\sum_{k=51}^{100}\\frac{100!}{k}}\n=\n\\boxed{100!\\left(H_{100}-H_{50}\\right)}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "10": {
+      "source_index": 10,
+      "source_id": "pilot-10",
+      "question": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+      "final_answer": "27",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.0,
+      "checked_solution": "Since \\(61\\) is prime, Wilson’s theorem gives\n\n\\[\n60! \\equiv -1 \\pmod{61}.\n\\]\n\nNow write\n\n\\[\n60! = 51! \\cdot 52 \\cdot 53 \\cdots 60.\n\\]\n\nModulo \\(61\\),\n\n\\[\n52 \\equiv -9,\\quad 53 \\equiv -8,\\quad \\dots,\\quad 60 \\equiv -1.\n\\]\n\nTherefore\n\n\\[\n52 \\cdot 53 \\cdots 60 \\equiv (-9)(-8)\\cdots(-1) = (-1)^9 \\cdot 9! = -9! \\pmod{61}.\n\\]\n\nSo\n\n\\[\n60! \\equiv 51! \\cdot (-9!) \\equiv -1 \\pmod{61}.\n\\]\n\nMultiplying both sides by \\(-1\\),\n\n\\[\n51! \\cdot 9! \\equiv 1 \\pmod{61}.\n\\]\n\nHence\n\n\\[\n51! \\equiv (9!)^{-1} \\pmod{61}.\n\\]\n\nCompute \\(9!\\):\n\n\\[\n9! = 362880.\n\\]\n\nSince\n\n\\[\n61 \\cdot 5949 = 362889,\n\\]\n\nwe get\n\n\\[\n9! \\equiv -9 \\pmod{61}.\n\\]\n\nThus\n\n\\[\n51! \\equiv (-9)^{-1} \\pmod{61}.\n\\]\n\nNow find the inverse of \\(9\\) modulo \\(61\\). Solve\n\n\\[\n9x \\equiv 1 \\pmod{61}.\n\\]\n\nUsing the Euclidean algorithm:\n\n\\[\n61 = 6\\cdot 9 + 7,\n\\]\n\\[\n9 = 1\\cdot 7 + 2,\n\\]\n\\[\n7 = 3\\cdot 2 + 1.\n\\]\n\nBack-substituting:\n\n\\[\n1 = 7 - 3\\cdot 2\n= 7 - 3(9 - 7)\n= 4\\cdot 7 - 3\\cdot 9\n= 4(61 - 6\\cdot 9) - 3\\cdot 9\n= 4\\cdot 61 - 27\\cdot 9.\n\\]\n\nSo\n\n\\[\n9^{-1} \\equiv -27 \\equiv 34 \\pmod{61}.\n\\]\n\nTherefore\n\n\\[\n(-9)^{-1} \\equiv -34 \\equiv 27 \\pmod{61}.\n\\]\n\nThus\n\n\\[\n51! \\equiv 27 \\pmod{61}.\n\\]\n\nThe remainder when \\(51!\\) is divided by \\(61\\) is\n\n\\[\n\\boxed{27}.\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "16": {
+      "source_index": 16,
+      "source_id": "pilot-16",
+      "question": "Determine the number of integral points on the hyperbola \\(x^2 - y^2 = (2000)^2\\). An integral point is a point where both coordinates are integers.",
+      "final_answer": "98",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.5,
+      "checked_solution": "Let  \n\\[\nu=x-y,\\qquad v=x+y.\n\\]\nThen\n\\[\nuv=(x-y)(x+y)=x^2-y^2=2000^2.\n\\]\n\nSince\n\\[\nx=\\frac{u+v}{2},\\qquad y=\\frac{v-u}{2},\n\\]\nthe integers \\(u\\) and \\(v\\) must have the same parity. Their product \\(2000^2\\) is even, so they cannot both be odd. Hence both \\(u\\) and \\(v\\) are even.\n\nWrite\n\\[\nu=2a,\\qquad v=2b.\n\\]\nThen\n\\[\n4ab=2000^2,\n\\]\nso\n\\[\nab=\\frac{2000^2}{4}=1000^2=1{,}000{,}000.\n\\]\n\nNow factor:\n\\[\n1{,}000{,}000=10^6=2^6\\cdot 5^6.\n\\]\n\nWe need ordered integer pairs \\((a,b)\\) such that\n\\[\nab=2^6\\cdot 5^6.\n\\]\nSince the product is positive, \\(a\\) and \\(b\\) are either both positive or both negative.\n\nFor positive pairs, \\(a\\) can be any positive divisor of \\(2^6\\cdot 5^6\\), and then \\(b\\) is determined. The number of positive divisors is\n\\[\n(6+1)(6+1)=49.\n\\]\nFor negative pairs, there are also \\(49\\) choices.\n\nThus the total number of integral points is\n\\[\n49+49=98.\n\\]\n\n\\[\n\\boxed{98}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "17": {
+      "source_index": 17,
+      "source_id": "pilot-17",
+      "question": "Suppose $o_1, o_2, \\dots, o_n$ are $n$ objects, each colored with a single color. For each object $o_i$, let $c_i$ be the number of objects having the same color as $o_i$. Consider the monic polynomial with roots $-c_1, -c_2, \\dots, -c_n$:\n\\[ x^n + a_{n-1}x^{n-1} + \\dots + a_1x + a_0 \\]\nIf exactly $k$ colors are used, determine which of the following statements is always true:\n\nA. $k > a_0$\nB. $ka_0 = a_1$\nC. $k = a_{n-1}$\nD. $ka_1 = a_0$",
+      "final_answer": "B",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "broad_topic": "Algebra",
+      "difficulty": 5.0,
+      "checked_solution": "Let the color class sizes be\n\n\\[\nm_1,m_2,\\dots,m_k,\n\\]\n\nwhere each \\(m_j\\ge 1\\) and \\(\\sum_{j=1}^k m_j=n\\). If an object belongs to the color class of size \\(m_j\\), then its corresponding \\(c_i\\) is \\(m_j\\). Therefore the polynomial is\n\n\\[\nP(x)=\\prod_{i=1}^n (x+c_i)\n=\\prod_{j=1}^k (x+m_j)^{m_j}.\n\\]\n\nWrite\n\n\\[\nP(x)=x^n+a_{n-1}x^{n-1}+\\cdots+a_1x+a_0.\n\\]\n\nThe constant term is\n\n\\[\na_0=P(0)=\\prod_{j=1}^k m_j^{m_j}.\n\\]\n\nNow examine the coefficient of \\(x\\). For each factor,\n\n\\[\n(x+m_j)^{m_j}\n= m_j^{m_j}+m_j^{m_j}x+\\cdots,\n\\]\n\nbecause the linear term is\n\n\\[\n\\binom{m_j}{1}m_j^{m_j-1}x=m_j^{m_j}x.\n\\]\n\nThus each factor \\((x+m_j)^{m_j}\\) has linear coefficient equal to its constant term. When multiplying the \\(k\\) factors, the coefficient of \\(x\\) is obtained by choosing the linear term from exactly one factor and the constant term from all the others. For each fixed \\(j\\), that contribution is\n\n\\[\nm_j^{m_j}\\prod_{r\\ne j}m_r^{m_r}\n=\n\\prod_{r=1}^k m_r^{m_r}\n=a_0.\n\\]\n\nThere are \\(k\\) choices of \\(j\\), so\n\n\\[\na_1=ka_0.\n\\]\n\nTherefore the always true statement is\n\n\\[\n\\boxed{\\text{B. } ka_0=a_1}.\n\\]\n\nThe other options are not always true; for example, with one color and \\(n=2\\),\n\n\\[\nP(x)=(x+2)^2=x^2+4x+4,\n\\]\n\nso \\(k=1\\), \\(a_0=4\\), and \\(a_{n-1}=4\\), disproving A and C. With two singleton color classes,\n\n\\[\nP(x)=(x+1)^2=x^2+2x+1,\n\\]\n\nso \\(k=2\\), \\(a_0=1\\), \\(a_1=2\\), and \\(ka_1=4\\ne 1\\), disproving D.",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "21": {
+      "source_index": 21,
+      "source_id": "pilot-21",
+      "question": "Let $p$ be an odd prime of the form $p=2^m+1$, for some positive integer $m$. Let $g$ be a primitive root mod $p$ with $1 \\le g \\le p$. How many such $g$ are there?",
+      "final_answer": "2^{m-1}",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "broad_topic": "Number Theory",
+      "difficulty": 6.5,
+      "checked_solution": "Let \\(p\\) be an odd prime with\n\n\\[\np=2^m+1.\n\\]\n\nThen\n\n\\[\np-1=2^m.\n\\]\n\nThe multiplicative group modulo \\(p\\), denoted \\((\\mathbb Z/p\\mathbb Z)^\\times\\), is cyclic of order \\(p-1=2^m\\). A primitive root modulo \\(p\\) is exactly a generator of this cyclic group.\n\nIn a cyclic group of order \\(n\\), the number of generators is \\(\\varphi(n)\\), where \\(\\varphi\\) is Euler’s totient function. Therefore the number of primitive roots modulo \\(p\\) is\n\n\\[\n\\varphi(p-1)=\\varphi(2^m).\n\\]\n\nSince\n\n\\[\n\\varphi(2^m)=2^m-2^{m-1}=2^{m-1},\n\\]\n\nthe number of primitive roots \\(g\\) with \\(1\\le g\\le p\\) is\n\n\\[\n\\boxed{2^{m-1}}.\n\\]\n\nEquivalently, since \\(p=2^m+1\\),\n\n\\[\n2^{m-1}=\\frac{p-1}{2}.\n\\]\n\nSo there are \\(\\boxed{2^{m-1}}\\) primitive roots modulo \\(p\\).",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "29": {
+      "source_index": 29,
+      "source_id": "pilot-29",
+      "question": "Determine whether there exists a composite number $m$ such that for every integer $n$, the congruence $n^m \\equiv n \\pmod{m}$ holds true.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "broad_topic": "Number Theory",
+      "difficulty": 6.5,
+      "checked_solution": "Yes. A concrete example is\n\n\\[\nm=561=3\\cdot 11\\cdot 17,\n\\]\n\nwhich is composite. We verify that for every integer \\(n\\),\n\n\\[\nn^{561}\\equiv n \\pmod{561}.\n\\]\n\nIt suffices to check the congruence modulo each prime factor \\(3,11,17\\), since they are pairwise coprime.\n\nFor each prime \\(p\\in\\{3,11,17\\}\\), we have\n\n\\[\np-1 \\mid 560,\n\\]\n\nbecause\n\n\\[\n3-1=2\\mid 560,\\qquad 11-1=10\\mid 560,\\qquad 17-1=16\\mid 560.\n\\]\n\nNow fix such a prime \\(p\\). If \\(p\\mid n\\), then\n\n\\[\nn^{561}\\equiv 0\\equiv n \\pmod{p}.\n\\]\n\nIf \\(p\\nmid n\\), then by Fermat’s little theorem,\n\n\\[\nn^{p-1}\\equiv 1 \\pmod{p}.\n\\]\n\nSince \\(p-1\\mid 560\\),\n\n\\[\nn^{560}\\equiv 1 \\pmod{p}.\n\\]\n\nTherefore\n\n\\[\nn^{561}=n\\cdot n^{560}\\equiv n \\pmod{p}.\n\\]\n\nThus\n\n\\[\nn^{561}\\equiv n \\pmod{3},\\qquad\nn^{561}\\equiv n \\pmod{11},\\qquad\nn^{561}\\equiv n \\pmod{17}.\n\\]\n\nBy the Chinese remainder theorem,\n\n\\[\nn^{561}\\equiv n \\pmod{561}.\n\\]\n\nHence such a composite number exists.\n\n<final_answer>Yes; for example, \\(m=561\\) works.</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "35": {
+      "source_index": 35,
+      "source_id": "pilot-35",
+      "question": "Does the existence of the derivative $f'(x)$ for all $x \\in \\mathbb{R}$ and the fact that $f'$ is bounded on $\\mathbb{R}$ imply that the function $f: \\mathbb{R} \\rightarrow \\mathbb{R}$ is uniformly continuous? Answer yes or no and justify your answer.",
+      "final_answer": "Yes",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "broad_topic": "Calculus",
+      "difficulty": 6.0,
+      "checked_solution": "Yes.\n\nLet \\(f:\\mathbb R\\to\\mathbb R\\) be differentiable everywhere, and suppose there exists \\(M>0\\) such that\n\n\\[\n|f'(x)|\\le M \\quad \\text{for all } x\\in\\mathbb R.\n\\]\n\nTake any \\(x<y\\). Since \\(f\\) is differentiable on \\(\\mathbb R\\), it is continuous on \\([x,y]\\) and differentiable on \\((x,y)\\). Therefore the Mean Value Theorem applies, so there exists \\(c\\in(x,y)\\) such that\n\n\\[\nf(y)-f(x)=f'(c)(y-x).\n\\]\n\nHence\n\n\\[\n|f(y)-f(x)|=|f'(c)||y-x|\\le M|y-x|.\n\\]\n\nThe same inequality holds for \\(y<x\\) by symmetry, and it is trivial for \\(x=y\\). Thus for all \\(x,y\\in\\mathbb R\\),\n\n\\[\n|f(x)-f(y)|\\le M|x-y|.\n\\]\n\nSo \\(f\\) is Lipschitz continuous on \\(\\mathbb R\\).\n\nNow let \\(\\varepsilon>0\\). Choose\n\n\\[\n\\delta=\\frac{\\varepsilon}{M+1}.\n\\]\n\nThen whenever \\(|x-y|<\\delta\\),\n\n\\[\n|f(x)-f(y)|\\le M|x-y|\n< M\\frac{\\varepsilon}{M+1}\n<\\varepsilon.\n\\]\n\nTherefore \\(f\\) is uniformly continuous on \\(\\mathbb R\\).\n\n\\[\n\\boxed{\\text{Yes, the existence and boundedness of } f' \\text{ imply } f \\text{ is uniformly continuous.}}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "41": {
+      "source_index": 41,
+      "source_id": "pilot-41",
+      "question": "Evaluate the infinite series \\( \\sum_{n=1}^\\infty \\frac{n^2}{3^n} \\).",
+      "final_answer": "\\dfrac{3}{2}",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "broad_topic": "Calculus",
+      "difficulty": 5.0,
+      "checked_solution": "Let  \n\\[\nS(x)=\\sum_{n=0}^{\\infty}x^n=\\frac{1}{1-x},\\qquad |x|<1.\n\\]\n\nDifferentiate term by term with respect to \\(x\\):\n\n\\[\n\\sum_{n=1}^{\\infty} n x^{n-1}=\\frac{1}{(1-x)^2}.\n\\]\n\nMultiplying by \\(x\\),\n\n\\[\n\\sum_{n=1}^{\\infty} n x^n=\\frac{x}{(1-x)^2}.\n\\]\n\nDifferentiate again:\n\n\\[\n\\sum_{n=1}^{\\infty} n^2 x^{n-1}\n=\\frac{d}{dx}\\left(\\frac{x}{(1-x)^2}\\right)\n=\\frac{1+x}{(1-x)^3}.\n\\]\n\nMultiplying by \\(x\\),\n\n\\[\n\\sum_{n=1}^{\\infty} n^2 x^n\n=\\frac{x(1+x)}{(1-x)^3}.\n\\]\n\nNow set \\(x=\\frac13\\):\n\n\\[\n\\sum_{n=1}^{\\infty} \\frac{n^2}{3^n}\n=\n\\frac{\\frac13\\left(1+\\frac13\\right)}{\\left(1-\\frac13\\right)^3}\n=\n\\frac{\\frac13\\cdot \\frac43}{\\left(\\frac23\\right)^3}\n=\n\\frac{\\frac49}{\\frac{8}{27}}\n=\n\\frac{4}{9}\\cdot \\frac{27}{8}\n=\n\\frac32.\n\\]\n\n\\[\n\\boxed{\\frac32}\n\\]",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "54": {
+      "source_index": 54,
+      "source_id": "deepmath-row-12880-25b4bdec8b33",
+      "question": "Let \\( \\omega \\) and \\( z \\) be complex numbers such that \\( |\\omega| = 1 \\) and \\( |z| = 10 \\). Define \\( \\theta = \\arg\\left(\\frac{\\omega - z}{z}\\right) \\). Determine the maximum possible value of \\( \\tan^2 \\theta \\).",
+      "final_answer": "\\dfrac{1}{99}",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let  \n\\[\nu=\\frac{\\omega-z}{z}.\n\\]\nThen\n\\[\nu+1=\\frac{\\omega}{z},\n\\]\nso\n\\[\n|u+1|=\\frac{|\\omega|}{|z|}=\\frac{1}{10}.\n\\]\nConversely, every \\(u\\) with \\(|u+1|=1/10\\) can be realized by taking \\(z=10\\), \\(\\omega=10(u+1)\\), since then \\(|\\omega|=1\\). Thus we only need to maximize \\(\\tan^2(\\arg u)\\) over the circle\n\\[\n|u+1|=\\frac{1}{10}.\n\\]\n\nWrite \\(u=X+iY\\). Then\n\\[\n(X+1)^2+Y^2=\\frac{1}{100}.\n\\]\nAlso \\(X\\in[-11/10,-9/10]\\), so \\(X\\neq 0\\). Since \\(\\theta=\\arg u\\),\n\\[\n\\tan^2\\theta=\\frac{Y^2}{X^2}.\n\\]\n\nLet\n\\[\nm=\\frac{Y}{X}=\\tan\\theta.\n\\]\nThen \\(Y=mX\\). Substituting into the circle equation gives\n\\[\n(X+1)^2+m^2X^2=\\frac{1}{100},\n\\]\nor\n\\[\n(1+m^2)X^2+2X+\\frac{99}{100}=0.\n\\]\nFor a real \\(X\\) to exist, the discriminant must be nonnegative:\n\\[\n4-4(1+m^2)\\frac{99}{100}\\ge 0.\n\\]\nThus\n\\[\n1-\\frac{99}{100}(1+m^2)\\ge 0,\n\\]\nso\n\\[\n1+m^2\\le \\frac{100}{99}.\n\\]\nTherefore\n\\[\nm^2\\le \\frac{1}{99}.\n\\]\n\nEquality is attainable when the discriminant is zero, so the maximum value is\n\n<final_answer>\\(\\frac{1}{99}\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "59": {
+      "source_index": 59,
+      "source_id": "deepmath-row-21531-6b1a33b12929",
+      "question": "Determine the nature of the singularities of the function \\( f(z) = \\frac{\\sin(1/z)}{z^{2}+11z+13} \\). Choose the correct option:\n(a) No singularity.\n(b) Only poles.\n(c) Only an essential singularity.\n(d) Both an essential singularity and poles.",
+      "final_answer": "D",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "broad_topic": "Algebra",
+      "difficulty": 5.5,
+      "checked_solution": "The denominator has zeros where  \n\\[\nz^2+11z+13=0.\n\\]\nThe discriminant is\n\\[\n11^2-4\\cdot 13=121-52=69,\n\\]\nso\n\\[\nz_{1,2}=\\frac{-11\\pm \\sqrt{69}}{2}.\n\\]\nThese are two distinct nonzero roots. Also both roots satisfy \\(|z_j|>1\\), so\n\\[\n\\left|\\frac1{z_j}\\right|<1<\\pi.\n\\]\nSince \\(\\sin w=0\\) only when \\(w=k\\pi\\), \\(k\\in\\mathbb Z\\), and \\(|1/z_j|<\\pi\\), we cannot have \\(\\sin(1/z_j)=0\\). Thus the numerator is analytic and nonzero at each \\(z_j\\).\n\nThe denominator has a simple zero at each \\(z_j\\), because\n\\[\n\\frac{d}{dz}(z^2+11z+13)=2z+11\n\\]\nis nonzero at both roots. Therefore \\(f\\) has a simple pole at each of\n\\[\nz=\\frac{-11\\pm \\sqrt{69}}{2}.\n\\]\n\nNow consider \\(z=0\\). The denominator is \\(13\\neq 0\\) there, so near \\(0\\),\n\\[\nf(z)=h(z)\\sin(1/z),\n\\]\nwhere \\(h(z)=1/(z^2+11z+13)\\) is analytic and \\(h(0)=1/13\\neq 0\\). The Laurent expansion\n\\[\n\\sin(1/z)=\\frac1z-\\frac1{3!z^3}+\\frac1{5!z^5}-\\cdots\n\\]\nhas infinitely many negative powers. Multiplication by \\(h(z)\\), whose constant term is nonzero, leaves infinitely many negative powers in the Laurent expansion. Hence \\(z=0\\) is an essential singularity.\n\nThus \\(f\\) has an essential singularity at \\(0\\) and simple poles at the two zeros of the denominator.\n\n<final_answer>(d) Both an essential singularity and poles.</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "67": {
+      "source_index": 67,
+      "source_id": "deepmath-row-24257-507c5bbe874b",
+      "question": "Let $B = \\{ v_i \\}_{i=1}^n$ be a basis of a vector space $V$, and let $T: V \\rightarrow V$ be a linear operator such that $T(v_1) = \\sum_{i=1}^n v_i$. Find the sum of the elements of the matrix $[T^{-1}]_B$, where $[T^{-1}]_B$ is the matrix representation of the inverse of $T$ with respect to the basis $B$. Provide your answer as a single number.",
+      "final_answer": "1",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Linear Transformations",
+      "broad_topic": "Algebra",
+      "difficulty": 6.0,
+      "checked_solution": "Let \\(A=[T]_B\\). Then \\([T^{-1}]_B=A^{-1}\\).\n\nThe first column of \\(A\\) is the coordinate vector of \\(T(v_1)\\) in the basis \\(B\\). Since\n\n\\[\nT(v_1)=v_1+v_2+\\cdots+v_n,\n\\]\n\nwe have\n\n\\[\nA e_1=\\mathbf{1},\n\\]\n\nwhere \\(\\mathbf{1}=(1,1,\\ldots,1)^T\\).\n\nThe sum of all entries of \\(A^{-1}\\) is\n\n\\[\n\\mathbf{1}^T A^{-1}\\mathbf{1}.\n\\]\n\nUsing \\(A e_1=\\mathbf{1}\\),\n\n\\[\n\\mathbf{1}^T A^{-1}\\mathbf{1}\n=\n\\mathbf{1}^T A^{-1}(A e_1)\n=\n\\mathbf{1}^T e_1\n=\n1.\n\\]\n\nThus the sum of the elements of \\([T^{-1}]_B\\) is\n\n<final_answer>1</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "68": {
+      "source_index": 68,
+      "source_id": "deepmath-row-38144-d81addc18851",
+      "question": "Let $A$ be a non-singular 2x2 matrix with elements from the set $S=\\{-1,0,1\\}$. If $A^2 + I = 0$, where $I$ is the identity matrix, determine the probability that $\\det(A) = -1$. Express your answer as a fraction.",
+      "final_answer": "0",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Matrices",
+      "broad_topic": "Algebra",
+      "difficulty": 5.0,
+      "checked_solution": "Let  \n\\[\nA=\\begin{pmatrix}a&b\\\\ c&d\\end{pmatrix},\\qquad a,b,c,d\\in\\{-1,0,1\\}.\n\\]\n\nCompute\n\\[\nA^2=\\begin{pmatrix}a^2+bc & b(a+d)\\\\ c(a+d)& d^2+bc\\end{pmatrix}.\n\\]\n\nThe condition \\(A^2+I=0\\) means \\(A^2=-I\\), so\n\n\\[\n\\begin{pmatrix}a^2+bc & b(a+d)\\\\ c(a+d)& d^2+bc\\end{pmatrix}\n=\n\\begin{pmatrix}-1&0\\\\0&-1\\end{pmatrix}.\n\\]\n\nThus\n\\[\na^2+bc=-1,\\qquad d^2+bc=-1.\n\\]\n\nFrom \\(a^2+bc=-1\\),\n\\[\nbc=-1-a^2.\n\\]\nSince \\(a^2\\ge 0\\), we get \\(bc\\le -1\\). But \\(b,c\\in\\{-1,0,1\\}\\), so the only possible value is\n\\[\nbc=-1.\n\\]\nThen\n\\[\na^2=0,\\qquad d^2=0,\n\\]\nso\n\\[\na=d=0.\n\\]\n\nThe off-diagonal equations become \\(b(0)=0\\) and \\(c(0)=0\\), which are automatically satisfied. Therefore the condition reduces to\n\\[\nbc=-1.\n\\]\n\nSo \\(b,c\\in\\{-1,1\\}\\) with opposite signs. The possible matrices are\n\n\\[\n\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix},\n\\qquad\n\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}.\n\\]\n\nFor either matrix,\n\\[\n\\det(A)=0\\cdot 0-bc=-bc=1.\n\\]\n\nThus none of the matrices satisfying \\(A^2+I=0\\) has determinant \\(-1\\). Therefore the probability is\n\n\\[\n0.\n\\]\n\n<final_answer>0</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "113": {
+      "source_index": 113,
+      "source_id": "deepmath-row-58287-3a1d53d15e84",
+      "question": "Compute the limit \\( \\lim_{n\\rightarrow \\infty }\\frac{x_{n}}{n} \\) for the sequence \\((x_{n})_{n\\geq 2}\\) defined by \\(x_{n}=\\sqrt[n]{1+\\sum_{k=2}^{n}(k-1)(k-1)!}\\).",
+      "final_answer": "\\dfrac{1}{e}",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "broad_topic": "Number Theory",
+      "difficulty": 6.5,
+      "checked_solution": "First simplify the sum inside the root:\n\n\\[\n(k-1)(k-1)! = k!-(k-1)!.\n\\]\n\nTherefore,\n\n\\[\n\\sum_{k=2}^{n}(k-1)(k-1)!\n=\\sum_{k=2}^{n}\\bigl(k!-(k-1)!\\bigr)\n=n!-1.\n\\]\n\nSo\n\n\\[\nx_n=\\sqrt[n]{1+(n!-1)}=\\sqrt[n]{n!}.\n\\]\n\nHence\n\n\\[\n\\frac{x_n}{n}=\\frac{(n!)^{1/n}}{n}.\n\\]\n\nTake logarithms:\n\n\\[\n\\ln\\left(\\frac{x_n}{n}\\right)\n=\\frac1n\\ln(n!)-\\ln n.\n\\]\n\nSince \\(\\ln x\\) is increasing, we have the integral bounds\n\n\\[\n\\int_0^n \\ln x\\,dx \\le \\sum_{k=1}^n \\ln k \\le \\int_1^{n+1}\\ln x\\,dx.\n\\]\n\nNow\n\n\\[\n\\int_0^n \\ln x\\,dx=n\\ln n-n,\n\\]\n\nand\n\n\\[\n\\int_1^{n+1}\\ln x\\,dx=(n+1)\\ln(n+1)-n.\n\\]\n\nThus\n\n\\[\nn\\ln n-n\\le \\ln(n!)\\le (n+1)\\ln(n+1)-n.\n\\]\n\nDividing by \\(n\\) and subtracting \\(\\ln n\\),\n\n\\[\n-1\\le \\ln\\left(\\frac{x_n}{n}\\right)\n\\le \\left(1+\\frac1n\\right)\\ln(n+1)-1-\\ln n.\n\\]\n\nThe upper bound becomes\n\n\\[\n\\ln\\left(1+\\frac1n\\right)+\\frac{\\ln(n+1)}n-1 \\to -1.\n\\]\n\nTherefore, by the squeeze theorem,\n\n\\[\n\\ln\\left(\\frac{x_n}{n}\\right)\\to -1.\n\\]\n\nExponentiating gives\n\n\\[\n\\lim_{n\\to\\infty}\\frac{x_n}{n}=e^{-1}.\n\\]\n\n<final_answer>\\(\\frac{1}{e}\\)</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "114": {
+      "source_index": 114,
+      "source_id": "deepmath-row-16162-c793e1272a3d",
+      "question": "Find the radius of convergence of the power series \\( \\sum\\limits_{n=1}^{\\infty} a_n Z^n \\), where \\( a_n \\) is the number of divisors of \\( n^{50} \\).",
+      "final_answer": "1",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "broad_topic": "Number Theory",
+      "difficulty": 5.5,
+      "checked_solution": "Let \\(\\tau(m)\\) denote the number of positive divisors of \\(m\\). Then\n\n\\[\na_n=\\tau(n^{50}).\n\\]\n\nFor any positive integer \\(m\\),\n\n\\[\n\\tau(m)\\le 2\\sqrt m,\n\\]\n\nbecause divisors pair as \\(d\\) and \\(m/d\\), and at least one of each pair is at most \\(\\sqrt m\\). Hence\n\n\\[\na_n=\\tau(n^{50})\\le 2\\sqrt{n^{50}}=2n^{25}.\n\\]\n\nAlso clearly \\(a_n\\ge 1\\). Therefore\n\n\\[\n1\\le a_n^{1/n}\\le (2n^{25})^{1/n}\n=2^{1/n}n^{25/n}.\n\\]\n\nSince \\(2^{1/n}\\to 1\\) and \\(n^{25/n}\\to 1\\), we get\n\n\\[\n\\lim_{n\\to\\infty} a_n^{1/n}=1.\n\\]\n\nBy the Cauchy-Hadamard formula, the radius of convergence is\n\n\\[\nR=\\frac{1}{\\limsup_{n\\to\\infty} |a_n|^{1/n}}\n=\\frac{1}{1}=1.\n\\]\n\n<final_answer>1</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    },
+    "132": {
+      "source_index": 132,
+      "source_id": "deepmath-row-72365-7cc7e6e04212",
+      "question": "In a card game, you have a set of 18 distinct cards. Each card is part of four different combinations, and there are a total of 24 combinations, each consisting of three cards. How many cards must you draw in your opening hand to guarantee that at least one complete combination is present in your hand?",
+      "final_answer": "13",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "broad_topic": "Discrete Mathematics",
+      "difficulty": 5.5,
+      "checked_solution": "Let \\(m\\) be the number of cards drawn, and let \\(U\\) be the set of undrawn cards, so \\(|U|=18-m\\).\n\nSuppose the drawn hand contains no complete combination. Then every one of the 24 combinations must contain at least one card from \\(U\\); otherwise the combination would lie entirely in the hand.\n\nCount incidences between combinations and cards in \\(U\\). Each card in \\(U\\) belongs to exactly 4 combinations, so the number of such incidences is\n\n\\[\n4|U|=4(18-m).\n\\]\n\nBut since each of the 24 combinations must contain at least one card from \\(U\\), this number must be at least \\(24\\). Therefore\n\n\\[\n4(18-m)\\ge 24\n\\]\n\n\\[\n18-m\\ge 6\n\\]\n\n\\[\nm\\le 12.\n\\]\n\nSo a hand of 13 cards must contain a complete combination.\n\nIt remains to show that 12 cards are not enough in general. Label 12 cards as\n\n\\[\na_1,b_1,a_2,b_2,\\dots,a_6,b_6\n\\]\n\nand label the other 6 cards as \\(t_1,\\dots,t_6\\). For each \\(j\\), with indices modulo 6, create the four combinations\n\n\\[\n\\{t_j,a_k,b_k\\}\n\\]\n\nfor every \\(k\\notin\\{j,j+1\\}\\). This gives \\(6\\cdot 4=24\\) combinations. Each \\(t_j\\) appears in 4 combinations, and each \\(a_i,b_i\\) appears in 4 combinations. However, every combination contains one of the \\(t_j\\)'s, so the 12-card hand\n\n\\[\n\\{a_1,b_1,\\dots,a_6,b_6\\}\n\\]\n\ncontains no complete combination.\n\nThus 12 cards do not guarantee a complete combination, while 13 cards do.\n\n<final_answer>13</final_answer>",
+      "solution_origin": "deepseek_verified_answer"
+    }
+  }
+}

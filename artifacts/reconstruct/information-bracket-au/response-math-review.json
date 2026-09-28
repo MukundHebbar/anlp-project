@@ -1,0 +1,135 @@
+{
+  "reviewer": "Assistant analytic review, not independent human gold",
+  "rows": [
+    {
+      "response_key": "21:ceiling:0",
+      "source_index": 21,
+      "response_output_hash": "1ad8d9e4fc121534f735993b902dcdc4e0ea34e91bb617c4a53475ac0a32a0e4",
+      "evidence_hash": "e7e4f392d40a8c9c4e1266a0488c7141d288dd53d078e84fc8d97dc24dea26f7",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "candidate_eligible": false,
+      "reason": "Original-question ceiling control: semantic identity, deliberately leaking; never a candidate success."
+    },
+    {
+      "response_key": "21:full_bank:0",
+      "source_index": 21,
+      "response_output_hash": "922938522e79142d0d2e714fc086e45e71882c8905f75954c57324cb4ab43c7a",
+      "evidence_hash": "8f9883a2e8124784a39df4a9e012bbc13e5947365ad4199529dc69828a5c04c3",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "candidate_eligible": false,
+      "reason": "Counting generators of the multiplicative group is equivalent to counting primitive roots in canonical residue range. Totient verification correct; full bank explicitly gives generators-count target and was disclosure-rejected in AN, so diagnostic only."
+    },
+    {
+      "response_key": "35:ceiling:0",
+      "source_index": 35,
+      "response_output_hash": "751cda82dae57635dd15ac9aaf5cd944f1e9037f5418b9b3a06ebfce2363d62b",
+      "evidence_hash": "6567e3c47dbcca3c55df5c22d8df1033d6fcf3e8d7087c58dad45c7f9b0e01ee",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "candidate_eligible": false,
+      "reason": "Original-question ceiling control: semantic identity, deliberately leaking; never a candidate success."
+    },
+    {
+      "response_key": "35:full_bank:0",
+      "source_index": 35,
+      "response_output_hash": "deb926c5ec7a22cbbd6559d0a704dadc52dd8532507edd76cc9487e2c012cb05",
+      "evidence_hash": "bd26cdf7b69b167d9f757a696ace04b539c3171fce1ec87ae422a9acdcb1ff75",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "candidate_eligible": null,
+      "reason": "Lipschitz instead of uniform continuity, with necessary hypotheses absent from question."
+    },
+    {
+      "response_key": "54:ceiling:0",
+      "source_index": 54,
+      "response_output_hash": "b38727387dbb4bb52b320417d9751fe9b835c2351ac89e554fd3cf4a84ec280d",
+      "evidence_hash": "86c0d3325c5506089ef2a6e7ed338f9f1e44c2abac6d5e8c4729201e52454b95",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "candidate_eligible": false,
+      "reason": "Original-question ceiling control: semantic identity, deliberately leaking; never a candidate success."
+    },
+    {
+      "response_key": "54:full_bank:0",
+      "source_index": 54,
+      "response_output_hash": "1887c66918a44d3cbfa823d76a288c88f52cd54ba293356384eac3f71908caa4",
+      "evidence_hash": "6957a2a1194a77b466f8086cc6a484a9c898ad7cfcd5632442be53b474f560cf",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "candidate_eligible": null,
+      "reason": "Asks minimum |u|=9/10, not maximum tan²=1/99; explicitly rationalizes contradiction."
+    },
+    {
+      "response_key": "68:ceiling:0",
+      "source_index": 68,
+      "response_output_hash": "17c25482c47ea52de98f4024edc8717a5b44e63f68e5b348342f102733d12a17",
+      "evidence_hash": "7e25a7ca4ae4adcf9c1cd9d63ab0834d7e1aec3b5f9ae02cd6fdf62ec88e4ac9",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "candidate_eligible": false,
+      "reason": "Original-question ceiling control: semantic identity, deliberately leaking; never a candidate success."
+    },
+    {
+      "response_key": "68:full_bank:0",
+      "source_index": 68,
+      "response_output_hash": "bd8355fd1461756f1721629b525eb71fd697d86e0ff7dcd4505fc1afe4ab447b",
+      "evidence_hash": "1894bae15e49f93c4397c0aa1019ecb13121acc7e3ff80b6e23d0931589eae44",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "candidate_eligible": null,
+      "reason": "Asks determinant1, not probability of determinant−1; claims determinant0 despite nonsingularity."
+    },
+    {
+      "response_key": "113:full_bank:0",
+      "source_index": 113,
+      "response_output_hash": "155a43f23f97b3a6921b19a932879df735a16497e27e642d055658123867cf6a",
+      "evidence_hash": "91956c526b03d9a9a36fbc8ba59de4e1642fa40d51f5613a392b5a695afa8a9b",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "candidate_eligible": null,
+      "reason": "Asks limit log(x_n)/n=0, not x_n/n→1/e; incoherent logarithmic calculation."
+    },
+    {
+      "response_key": "114:ceiling:0",
+      "source_index": 114,
+      "response_output_hash": "9a1c568a328320f72cd6d6bbe24b4d301d722bea7db27e98d348c5bb84cb7567",
+      "evidence_hash": "68e96b11668d0081e0798830b6ad99f6370693226d7c419517fb8c2ae35ab95e",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "candidate_eligible": false,
+      "reason": "Original-question ceiling control: semantic identity, deliberately leaking; never a candidate success."
+    },
+    {
+      "response_key": "114:full_bank:0",
+      "source_index": 114,
+      "response_output_hash": "0259cebf26988f345946d688d67acdf0e5d9a8c9c25ea966b4fcd4cde0f3f94e",
+      "evidence_hash": "ce2b3febe9f5c831e990ac98167c0b1046599fcbe33da77dba6daa7bc461f917",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "candidate_eligible": null,
+      "reason": "Asks nth-root coefficient limit rather than convergence radius. Shared answer1 does not make the requested quantities identical."
+    },
+    {
+      "response_key": "132:ceiling:0",
+      "source_index": 132,
+      "response_output_hash": "43bc91444c16f66031c33a6944073d23812bdf678b596bfa494a9816eb2f8014",
+      "evidence_hash": "58c8d00afe96d969bc179b038f1954e7b3fe1a7c4c37c3e93dfa8910c014d42d",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "candidate_eligible": false,
+      "reason": "Original-question ceiling control: semantic identity, deliberately leaking; never a candidate success."
+    },
+    {
+      "response_key": "132:full_bank:0",
+      "source_index": 132,
+      "response_output_hash": "629cf7af506dc86a6392e2b1a90a3fa39ac4c4d3b76be4efdb667f7cebb6172e",
+      "evidence_hash": "62c9e88ad64adf0e5fcb92dbaa10cd3f102c9a79f5915fdfec9f545aab5146bc",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "candidate_eligible": null,
+      "reason": "Asks largest avoiding hand12 instead of minimum guaranteeing hand13."
+    }
+  ]
+}

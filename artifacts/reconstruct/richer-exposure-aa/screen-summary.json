@@ -1,0 +1,168 @@
+{
+  "studies": [
+    {
+      "label": "AA: sparse3",
+      "root": "artifacts/reconstruct/richer-exposure-aa",
+      "arm": "sparse3",
+      "planned": 3,
+      "scores_returned": 2,
+      "mean_score_100": 12.5,
+      "raw_grounded": 0,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 2,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.561497031755032
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        8.333333333333334,
+        41.666666666666664
+      ]
+    },
+    {
+      "label": "AA: rich6",
+      "root": "artifacts/reconstruct/richer-exposure-aa",
+      "arm": "rich6",
+      "planned": 3,
+      "scores_returned": 3,
+      "mean_score_100": 0.0,
+      "raw_grounded": 0,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 3,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.561497031755032
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "label": "AA: dense3",
+      "root": "artifacts/reconstruct/richer-exposure-aa",
+      "arm": "dense3",
+      "planned": 3,
+      "scores_returned": 3,
+      "mean_score_100": 0.0,
+      "raw_grounded": 0,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 3,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.561497031755032
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "label": "AB: rich6 + inverse example",
+      "root": "artifacts/reconstruct/missing-premise-ab",
+      "arm": "rich6",
+      "planned": 3,
+      "scores_returned": 3,
+      "mean_score_100": 41.666666666666664,
+      "raw_grounded": 1,
+      "raw_semantic": 1,
+      "raw_joint": 1,
+      "reviewed_joint": 0,
+      "reviews_returned": 3,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.561497031755032
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 1,
+      "planned_score_bounds": [
+        41.666666666666664,
+        41.666666666666664
+      ]
+    },
+    {
+      "label": "AC: rich6 + premises first",
+      "root": "artifacts/reconstruct/premises-first-ac",
+      "arm": "rich6",
+      "planned": 3,
+      "scores_returned": 3,
+      "mean_score_100": 16.666666666666668,
+      "raw_grounded": 0,
+      "raw_semantic": 1,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 3,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.561497031755032
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 1,
+      "planned_score_bounds": [
+        16.666666666666668,
+        16.666666666666668
+      ]
+    }
+  ],
+  "paired_exact_input_checks": [
+    {
+      "study": "missing-premise-ab",
+      "response_key": "46:rich6:0",
+      "evidence_hash": "f93f435753e368daba762241a1d59a493bd7aba16f6059ecb54ec92c8a1b37bf"
+    },
+    {
+      "study": "missing-premise-ab",
+      "response_key": "62:rich6:0",
+      "evidence_hash": "394af1cc7f9d66680343c931f12835abb04465b0f4603ba65319e8134adbdaff"
+    },
+    {
+      "study": "missing-premise-ab",
+      "response_key": "129:rich6:0",
+      "evidence_hash": "8654cb367fc73eded30c75d707332e36adb82ab1d3037d27d633f22cf7ba27c0"
+    },
+    {
+      "study": "premises-first-ac",
+      "response_key": "46:rich6:0",
+      "evidence_hash": "f93f435753e368daba762241a1d59a493bd7aba16f6059ecb54ec92c8a1b37bf"
+    },
+    {
+      "study": "premises-first-ac",
+      "response_key": "62:rich6:0",
+      "evidence_hash": "394af1cc7f9d66680343c931f12835abb04465b0f4603ba65319e8134adbdaff"
+    },
+    {
+      "study": "premises-first-ac",
+      "response_key": "129:rich6:0",
+      "evidence_hash": "8654cb367fc73eded30c75d707332e36adb82ab1d3037d27d633f22cf7ba27c0"
+    }
+  ],
+  "semantic_definition": "Same essential mathematical question, including equivalent formulations; different wording is allowed.",
+  "decision": "Do not declare the grounded target or final task validated. Richer evidence alone did not improve recovery. The inverse-example prompt improved semantic recovery on one of three selected development tasks, but its verification was wrong and the evaluator over-scored it.",
+  "planned_qwen_draws": 15,
+  "parsed_qwen_responses": 14,
+  "source_population": 12,
+  "accepted_source_population": 3,
+  "heldout_confirmation_run": false
+}

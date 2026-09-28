@@ -1,0 +1,70 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "before_student_calls": true,
+  "rows": [
+    {
+      "source_index": 62,
+      "bank_hash": "4f90093f0c865db185979ada12adc6a4f6219942d961433a85b71fc3f4515ea5",
+      "source_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "manual_content_pass": true,
+      "reason": "The expansion center is absent. Choosing pi reconstructs the source, but infinity does not uniquely force it: exterior Laurent expansions about other centers also have infinite outer radius. Do not endorse the converter uniqueness claim. Public observations themselves are true; original center must be supplied by reconstruction.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    },
+    {
+      "source_index": 46,
+      "bank_hash": "76fb454760aaa61537a90951200e95bb480278e9f70180c3c3916e82c41366ef",
+      "source_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "manual_content_pass": true,
+      "reason": "Column heights are genuinely missing. Enumerating all22 positive integer partitions of8 yields only[2,3,3] with count560. Need to construct the interleaving count and infer heights; the complete question is not stated.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    },
+    {
+      "source_index": 87,
+      "bank_hash": "9b4aa6280d4d7973d1c46de6b6475eef44f54c1910a37ae6b7c428f3746405d9",
+      "source_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "manual_content_pass": false,
+      "reason": "The complete spike construction and its nondifferentiability at accumulating points are exposed. Only checking it against a selected missing limit hypothesis remains. Conservatively reject near-complete solution exposure; the withheld exponent is also nonunique. Preserve raw auditor decisions separately.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    },
+    {
+      "source_index": 96,
+      "bank_hash": "f84caa7407cd7bda28ec0702e88f16acc39ce79cb397aa1b09fd546872d590ca",
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "manual_content_pass": true,
+      "reason": "Derivative at0 is genuinely missing. With gprime0=a, the nested integral yields a/12, so answer1/12 implies a=1. The bank does not show this asymptotic derivation. Conditions g0 and differentiability remain visible only in richer arms.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    },
+    {
+      "source_index": 118,
+      "bank_hash": "909d0dab65ed9285f280695c3308474f092feee3a3a16e18ce86752d0db92542",
+      "source_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "manual_content_pass": false,
+      "reason": "The bank explicitly supplies witness k5, evaluation to3, and triangular verification. The missing primality of3 is a routine final check, so this nearly complete construction/verification violates the solution-exposure bound even though the prime target condition is withheld.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    },
+    {
+      "source_index": 129,
+      "bank_hash": "b1674a7af4ff9e60e9994f763765bf0cc7320009060696ffd6e6b0552ec04906",
+      "source_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "manual_content_pass": true,
+      "reason": "Length is genuinely missing. Recurrence and length<20 permit answer-conditioned search; direct calculation finds only12 gives1392 in1..19. No selected row or complete computation is exposed. Sparse prefix lacks the bound and is more ambiguous.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    },
+    {
+      "source_index": 120,
+      "bank_hash": "dc0e39dfddc9e095f75f5e484a53bd1c1c754e90f9addc5b408180245162307f",
+      "source_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "manual_content_pass": false,
+      "reason": "Public facts contain the decisive order6, divisibility-by3 argument and7-divides-R6 witness; comparing3<7 finishes the smallest-prime proof. Conservatively reject near-complete derivation exposure; also a support audit request failed technically.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    },
+    {
+      "source_index": 137,
+      "bank_hash": "ffc83f148bb4a36bba3b1d861d1eda0aeb1732e006654022415e09eec7243bac",
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "manual_content_pass": true,
+      "reason": "Exact degree triple is missing. Answer n6 gives e12 and mean degree4; equal groups of consecutive degrees imply3,4,5. Without answer, the group middle degree is not determined. Need inverse use of answer, not paraphrase alone.",
+      "derived_transform_review": "sparse3 removes observations; dense3 concatenates unchanged propositions without adding facts. Same target-role order preserved. Fewer premises can increase ambiguity; no claim of equivalent difficulty."
+    }
+  ]
+}

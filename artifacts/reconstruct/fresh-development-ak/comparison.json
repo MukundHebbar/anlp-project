@@ -1,0 +1,63 @@
+{
+  "arms": {
+    "onegap": {
+      "planned": 2,
+      "scores_returned": 2,
+      "mean_score_100": 0.0,
+      "raw_grounded": 0,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 2,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.6576197724933345
+      ],
+      "denominator_all_sources": 16,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "response_key": "54:onegap:0",
+      "source_index": 54,
+      "arm": "onegap",
+      "score_100": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 88,
+      "clue_count": 5,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "67:onegap:0",
+      "source_index": 67,
+      "arm": "onegap",
+      "score_100": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 87,
+      "clue_count": 5,
+      "finish_reason": "stop"
+    }
+  ],
+  "limitations": [
+    "Development screen, one seed; cohort provenance and adaptive reuse must be checked in its protocol; not final confirmation.",
+    "Wilson intervals are descriptive and do not correct for adaptive development or policy selection.",
+    "Auditors and assistant review are fallible; raw and reviewed outcomes retained separately."
+  ]
+}

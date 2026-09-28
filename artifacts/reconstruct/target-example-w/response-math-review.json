@@ -1,0 +1,199 @@
+{
+  "provenance": "Assistant analytic review with explicit mathematical witnesses; not independent human gold",
+  "teacher_judgments_used": false,
+  "responses": 16,
+  "confirmed_original_recoveries": 0,
+  "mathematically_grounded_valid": 0,
+  "exact_checks": {
+    "source0_seed1_coefficient_target": "49/3",
+    "source129_actual_no_equal_adjacent": {
+      "length": 10,
+      "count": 70543872,
+      "remainder_mod2008": 824
+    },
+    "source129_charitable_difference_one": {
+      "length": 10,
+      "count": 1584,
+      "remainder_mod2008": 1584
+    }
+  },
+  "rows": [
+    {
+      "response_key": "0:45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 0,
+      "seed": 0,
+      "response_output_hash": "8a75a51081408cbe8ca49c788bad30796fa59aac95d7e16a61a0fe14de0c682d",
+      "evidence_hash": "45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "The proposed roots satisfy x^2-(a+b)x+ab=(x-a)(x-b), so alpha^2+beta^2=a^2+b^2. The given second moment therefore forces the requested a^2+b^2 to8/3, not4. The target also changes from3(alpha-beta)^2."
+    },
+    {
+      "response_key": "13:b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 13,
+      "seed": 0,
+      "response_output_hash": "d03a6d9bae0b69d8ad0e1f7e06cfb83b03b4c6d5bed5bac9db026ff1fefadbfe",
+      "evidence_hash": "b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Counts units rather than their product. Literally integers less than24 include infinitely many negative units; under the charitable positive domain there are8 and the requested remainder is8, not1. The response itself acknowledges the contradiction. Original product operation is missing."
+    },
+    {
+      "response_key": "62:23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 62,
+      "seed": 0,
+      "response_output_hash": "992bea9bf1a15a1cf428bb23b597fbc115c7c175d7bb8653cf00bf07c84b30d8",
+      "evidence_hash": "23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "For1/(z^2-1), the numerator is constant, with no first-order zero. Its |z|<1 expansion is -sum(z^(2k)), with zero negative powers; its |z|>1 expansion is sum(z^(-2k-2)), with infinitely many negative powers. Neither has exactly one negative term. The stated nearest-singularity computation gives1 rather than the supplied infinity. The outer annulus ambiguity cannot rescue incompatible clues or the changed source function."
+    },
+    {
+      "response_key": "80:22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 80,
+      "seed": 0,
+      "response_output_hash": "c4c6a2bb7f67fdb0b19cb4c0d0ed599ce54f58bd130aca2cc459f00de61b323a",
+      "evidence_hash": "22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Merely says P,Q are linear, omitting coefficients. On the positively oriented radius2 circle, P=-y,Q=x gives8*pi by Green, whereas P=x,Q=y gives0. Both satisfy the stated linear-component/curve/method conditions; the integral is not determined. Original integrand is not recovered."
+    },
+    {
+      "response_key": "118:e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 118,
+      "seed": 0,
+      "response_output_hash": "9566212a97b88cecdbd9b8c0c060592c861c543366ca997538401e247a18b266",
+      "evidence_hash": "e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Asks the fifth triangular number that is prime. The only prime triangular number is3=T2: for n>=3, Tn=n(n+1)/2 has two factors greater than1. No fifth prime triangular number exists. If interpreted as asking whether T5 is prime, T5=15 is not. Neither reading yields odd witness5 for the source formula."
+    },
+    {
+      "response_key": "120:75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 120,
+      "seed": 0,
+      "response_output_hash": "8e70ee0e87dad9198fc16b3702ba8b091702fdf98b3ba7f99719900c4fffcf01",
+      "evidence_hash": "75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Changes a question about specified prime7 into existence of any prime>3. The decimal repunit R2=11 is prime, so11 is its least prime divisor and the existential answer is Yes, contrary to supplied No. Divisibility by3 only when3 divides n does not establish a universal prohibition."
+    },
+    {
+      "response_key": "129:b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 129,
+      "seed": 0,
+      "response_output_hash": "bf90c65f393454b7ebb5cba9df4a6bc6192ae2aad866dfbd15d1f3b369bbbc1f",
+      "evidence_hash": "b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "No equal adjacent digits is weaker than adjacent difference exactly1. For the actual length10 question there are7*6^9=70543872 words, remainder824 modulo2008. Even replacing the condition by the displayed difference-one recurrence at length10 does not yield1392. Changes both adjacency constraint and original length12."
+    },
+    {
+      "response_key": "137:f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 137,
+      "seed": 0,
+      "response_output_hash": "6ef947f2c4f1e893ccab63fc05caa6cdf28461c1d0f40cd1ee850804d9e29d2c",
+      "evidence_hash": "f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Sum of degrees4n and handshaking imply E=2n but do not determine n. K5 has n5 and all degrees4; the octahedral graph has n6 and all degrees4. Both simple undirected examples satisfy the proposed premises. Original maximal-planarity and degree3/4/5 groups are omitted."
+    },
+    {
+      "response_key": "0:45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 0,
+      "seed": 1,
+      "response_output_hash": "58c81bca5f8d5c91b44131ef93e142214c438e4d3617fa38fed18957b197484f",
+      "evidence_hash": "45a38ab40c36c68ad337089ccc2aa47ffd8fade335fc66d3adca6ad9420beff0",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "The question asks3a^2+3b^2+3c^2, while the justification switches to3(alpha-beta)^2. Take(a,b,c)=(1,-2,2/3), roots1±1/sqrt(3). Their difference is2/sqrt(3) and even the external second-moment clue8/3 holds, but the actual requested coefficient statistic is49/3. Scaling the polynomial changes that statistic while preserving roots. Not grounded or same target."
+    },
+    {
+      "response_key": "13:b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 13,
+      "seed": 1,
+      "response_output_hash": "fe7e8f1b7035090fe4c23c779aefed36d1d957b111a5cb9195281c2701f8dd21",
+      "evidence_hash": "b219392766b9cab096ce123312c47cc3e15386be50cc6a281dc0d1b5fed4c47d",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Counts units rather than their product. Literally integers less than24 include infinitely many negative units; under the charitable positive domain there are8 and the requested remainder is8, not1. The response itself acknowledges the contradiction. Original product operation is missing."
+    },
+    {
+      "response_key": "62:23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 62,
+      "seed": 1,
+      "response_output_hash": "621fde3f844581fdcf0f7af28008696634dbc4f2d71d8b177cbf138d01257f00",
+      "evidence_hash": "23f7c23ee034517534b7c32f0ebb6e515385d224ac46a7197fcb03f7a912477f",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "For1/(z^2-1), the numerator is constant, with no first-order zero. Its |z|<1 expansion is -sum(z^(2k)), with zero negative powers; its |z|>1 expansion is sum(z^(-2k-2)), with infinitely many negative powers. Neither has exactly one negative term. The stated nearest-singularity computation gives1 rather than the supplied infinity. The outer annulus ambiguity cannot rescue incompatible clues or the changed source function."
+    },
+    {
+      "response_key": "80:22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 80,
+      "seed": 1,
+      "response_output_hash": "139d46a2bd29177f132d3a7890b2a4180cbaafd5872f1a3785ea46f00c1953c2",
+      "evidence_hash": "22ac2ba23b0a54e56483593a5ce6fc970bf6c9733f9577c417801fe91c4fc397",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Merely says P,Q are linear, omitting coefficients. On the positively oriented radius2 circle, P=-y,Q=x gives8*pi by Green, whereas P=x,Q=y gives0. Both satisfy the stated linear-component/curve/method conditions; the integral is not determined. Original integrand is not recovered."
+    },
+    {
+      "response_key": "118:e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 118,
+      "seed": 1,
+      "response_output_hash": "820cab0b8d44f8e2919b0dfdea197b97c9ed844501a88d763a5b00fd08598629",
+      "evidence_hash": "e107f4429282fa86da0d32248ba5c4caea608e364ab46a1cff53843a6539a411",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Asks the fifth triangular number that is prime. The only prime triangular number is3=T2: for n>=3, Tn=n(n+1)/2 has two factors greater than1. No fifth prime triangular number exists. If interpreted as asking whether T5 is prime, T5=15 is not. Neither reading yields odd witness5 for the source formula."
+    },
+    {
+      "response_key": "120:75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 120,
+      "seed": 1,
+      "response_output_hash": "94f696ce3980b1c1e89e7ae860e3f6ebab1fd07820f64c993cb2080c20280514",
+      "evidence_hash": "75254b3f0fbf6ec26f9cbfc58b21ffc95dc828b0197409496290cdc205815f31",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Changes a question about specified prime7 into existence of any prime>3. The decimal repunit R2=11 is prime, so11 is its least prime divisor and the existential answer is Yes, contrary to supplied No. Divisibility by3 only when3 divides n does not establish a universal prohibition."
+    },
+    {
+      "response_key": "129:b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 129,
+      "seed": 1,
+      "response_output_hash": "48340df31363f4e07408fa3fd5e6a245e00e0ba7fcc0983b10d8098036e83450",
+      "evidence_hash": "b2e415f50d572b785eab0f729cb84ca2b1efb2730a234ec300bf41b971881a76",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "No equal adjacent digits is weaker than adjacent difference exactly1. For the actual length10 question there are7*6^9=70543872 words, remainder824 modulo2008. Even replacing the condition by the displayed difference-one recurrence at length10 does not yield1392. Changes both adjacency constraint and original length12."
+    },
+    {
+      "response_key": "137:f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 137,
+      "seed": 1,
+      "response_output_hash": "475f6df0e613e071e52295a11b3a8cd8cabd4475eba0d97b8f03adb81486ff6f",
+      "evidence_hash": "f51a201e9692d03d2a24d0c5776bd614fd864cbe30beba33cadf97aca38d9fc4",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "reference_score": null,
+      "reason": "Sum of degrees4n and handshaking imply E=2n but do not determine n. K5 has n5 and all degrees4; the octahedral graph has n6 and all degrees4. Both simple undirected examples satisfy the proposed premises. Original maximal-planarity and degree3/4/5 groups are omitted."
+    }
+  ],
+  "score_policy": "Counterexamples disprove grounded validity and original recovery. They do not adjudicate every0-versus1 rubric distinction; raw teacher scores remain separate."
+}

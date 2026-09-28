@@ -1,0 +1,114 @@
+{
+  "reviewer": "Assistant analytic checks; not human gold",
+  "scope": "All twelve direct SOLVE outputs; analytic review, not independent human gold.",
+  "rows": [
+    {
+      "source_index": 0,
+      "response_output_hash": "58e0a75dfdfac00225ff5d42496273db69f89363983f8e3193455629c5f81748",
+      "source_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "Incorrect integral coefficients and squared-difference identity yield6 rather than4."
+    },
+    {
+      "source_index": 13,
+      "response_output_hash": "70804656a228900c201419634216cc40eb98596cb81c5df43d07e2db309468f4",
+      "source_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "Incorrect extension of Wilson theorem to modulus24; the product of its eight listed units is1 modulo24, not23."
+    },
+    {
+      "source_index": 46,
+      "response_output_hash": "ce42677227b71420e967daabdcf2d8f57a783f5915e8435a2bc39c45b86a8122",
+      "source_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "answer_correct": true,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "Final answer560 and multinomial formula are correct, but the prose falsely describes three columns of3 plus one of2 rather than two columns of3 plus one of2. Strict whole-justification consistency fails; keep answer credit separate."
+    },
+    {
+      "source_index": 62,
+      "response_output_hash": "144519ac946263e5fbaaf5a4f3fce0107e57652a3f788a8b14f24a57ab27a807",
+      "source_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "Confuses the singularity at the center with outer Laurent radius; correct punctured-plane outer radius is infinity, not0."
+    },
+    {
+      "source_index": 63,
+      "response_output_hash": "f14611e5f295e4b79979e17b804a15fc470f766e9d689acc923a3148f05d9e98",
+      "source_hash": "f15efc1e7c16bfc117728be4698c80afe7687fa8834804c91ba240cad567600b",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "Concludes radius0 after describing decay for |z|<1; the correct factorial-exponent ratio/root analysis gives radius1."
+    },
+    {
+      "source_index": 80,
+      "response_output_hash": "839acad275d447005fa24319e7616a51f9016aea37638a0e7577a7fc719b61a6",
+      "source_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "answer_correct": true,
+      "justification_valid": true,
+      "grounded_solve_success": true,
+      "reason": "Green curl1-1=0, so the line integral vanishes. Correct answer and verification."
+    },
+    {
+      "source_index": 87,
+      "response_output_hash": "3afce7d77c9857014f6e374fab845fa2164edde68019e5922167aaa804ddc722",
+      "source_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "An asymptotic value limit does not imply differentiability throughout a neighborhood; the supplied spike counterexample refutes Yes."
+    },
+    {
+      "source_index": 96,
+      "response_output_hash": "1730667803e70988301a6630aaf992dc6fa53792890860468f6919086c7e7972",
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "Evaluating t^4 at x^2 and x^3 gives x^8 and x^12, not x^6 and x^9; actual limit1/12 rather than divergence."
+    },
+    {
+      "source_index": 118,
+      "response_output_hash": "0d03946371ba6550f15bc588fa12f5f446e63dd0587a66f7867d00555555224b",
+      "source_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "answer_correct": true,
+      "justification_valid": true,
+      "grounded_solve_success": true,
+      "reason": "Witness5 gives3, which is prime and triangular. This suffices for the existence request."
+    },
+    {
+      "source_index": 120,
+      "response_output_hash": "ce47d6872a48165e1a3219d66d2d9eca36cbc4230c5e11579ca08f5b782dfd6c",
+      "source_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "Divisibility by7 does not establish smallest prime factor7. Its proposed witness111111 is also divisible by3."
+    },
+    {
+      "source_index": 129,
+      "response_output_hash": "46bcc83411e5486cbe13bcee5ccdc3ed69af5ed8b71cb21ff08aeecf81e55446",
+      "source_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "answer_correct": false,
+      "justification_valid": false,
+      "grounded_solve_success": false,
+      "reason": "States the correct recurrence but never evaluates it. Exact iteration gives5408 and remainder1392, not the claimed1024. See the independently reproduced AF/AG count check."
+    },
+    {
+      "source_index": 137,
+      "response_output_hash": "4f1476adf3e10e35f6f52f2e93c8afa1644822c60b8e95fb6166beb01974bbce",
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "answer_correct": true,
+      "justification_valid": true,
+      "grounded_solve_success": true,
+      "reason": "Degree sum4n and maximal-planar6n-12 imply n6. Correct conditional calculation; original graph existence was independently certified in AE."
+    }
+  ]
+}

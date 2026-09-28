@@ -1,0 +1,139 @@
+{
+  "arms": {
+    "seed1": {
+      "planned": 7,
+      "scores_returned": 4,
+      "mean_score_100": 43.75,
+      "raw_grounded": 1,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 6,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        0,
+        0.35433043506667483
+      ],
+      "denominator_all_sources": 16,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        25.0,
+        67.85714285714286
+      ],
+      "rating_counts_1_to_5": {
+        "1": 0,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 1
+      },
+      "rating_missing": 3,
+      "rating_scale": "display=stored0to4+1; normalized=25*(display-1)",
+      "middle_heavy_observed": null
+    }
+  },
+  "rows": [
+    {
+      "response_key": "21:seed1:1",
+      "source_index": 21,
+      "arm": "seed1",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 44,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "35:seed1:1",
+      "source_index": 35,
+      "arm": "seed1",
+      "score_100": 100,
+      "raw_grounded": true,
+      "raw_semantic": 0,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 59,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "54:seed1:1",
+      "source_index": 54,
+      "arm": "seed1",
+      "score_100": null,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": false,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 44,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "68:seed1:1",
+      "source_index": 68,
+      "arm": "seed1",
+      "missing_response": true
+    },
+    {
+      "response_key": "113:seed1:1",
+      "source_index": 113,
+      "arm": "seed1",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 52,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "114:seed1:1",
+      "source_index": 114,
+      "arm": "seed1",
+      "score_100": null,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": false,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 46,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "132:seed1:1",
+      "source_index": 132,
+      "arm": "seed1",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 54,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    }
+  ],
+  "limitations": [
+    "Development screen, one seed; cohort provenance and adaptive reuse must be checked in its protocol; not final confirmation.",
+    "Wilson intervals are descriptive and do not correct for adaptive development or policy selection.",
+    "Auditors and assistant review are fallible; raw and reviewed outcomes retained separately."
+  ]
+}

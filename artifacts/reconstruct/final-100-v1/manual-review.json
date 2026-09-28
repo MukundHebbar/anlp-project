@@ -1,0 +1,152 @@
+{
+  "status": "completed targeted review; raw gates and scores unchanged",
+  "input_reviews": [
+    {
+      "source_index": 1,
+      "finding": "Copy challenge invents a quotient target",
+      "automatic_audit": "ACCEPT",
+      "automatic_copy": "direct_candidate",
+      "review": "The public clues state an equality but do not request a quotient. Converting that equality into a new quotient question invents a target and performs an algebraic transformation, both beyond the copying prompt permissions. This is a false-positive copy candidate, not demonstrated source-question leakage.",
+      "disposition": "Keep excluded: the copying allegation is overbroad, but the source itself is underdetermined. The audit source_answer_correct=true is a separate false acceptance. Do not repair the source inequality or add a2 silently.",
+      "additional_source_defect": "The source recurrence is specified only for k>1, leaving a2 unconstrained. The checked solution silently uses the recurrence at k=1.",
+      "source_counterexample": "Choose a2=2^2009: the recurrence gives a2011=1. Choose a2=2^2010: S2=3*2^-2010 and S2010=2^2008*S2=3/4, so a2011=4/3. Both are positive sequences satisfying every stated k>1 recurrence. Thus the source answer is not uniquely determined."
+    },
+    {
+      "source_index": 114,
+      "finding": "Copy candidate substantively supported; quote formatting failed",
+      "review": "For the copied generic power-series question, positive divisor-count coefficients satisfy1<=a_n<=a polynomial in n, so limsup a_n^(1/n)=1 and the radius is1. The target is explicitly public and no new parameter is introduced. This is a substantive copying risk, although a capitalization mismatch in a claimed question substring failed the strict copy validator.",
+      "disposition": "Keep automatic unresolved/excluded status; this case does not justify accepting a failed gate."
+    },
+    {
+      "source_index": 123,
+      "finding": "Supported example of reconstructing a genuinely missing target condition",
+      "review": "Public clues mention infinite natural-number sequences, finite partial sums, perfect powers, and a sufficient residue2 modulo4. They do not state the non-perfect-power condition. Parity shows no nontrivial integer perfect power is2 modulo4; the sequence2,4,4,... gives every partial sum4n-2. This supports the source answer Yes and requires a mathematical inference to identify the missing condition.",
+      "disposition": "Automatic input acceptance is supported by this analytic check. The Qwen negation reversal remains a student error, not an input defect."
+    },
+    {
+      "source_index": 52,
+      "finding": "Clues leave substantial freedom in the quadratic coefficients",
+      "review": "The four clues specify four quadratic radicands and equal linear pair differences, but no coefficients. For example, sqrt(x^2+x+3)+sqrt(2x^2+x+3)=sqrt(x^2+2x+5)+sqrt(2x^2+2x+5) also fits them and has unique solution-2: all radicands are positive and both right radicands exceed the corresponding left ones by x+2, so strict monotonicity forces x+2=0. This illustrates the permitted alternative-reconstruction space; literal coefficient recovery is not identifiable from the public clues alone.",
+      "disposition": "Do not call this a source leak. Do not infer general source-recovery capability merely from answer agreement; semantic reformulations need explicit mathematical assessment. The observed Qwen equation fails the supplied-answer check."
+    },
+    {
+      "source_index": 49,
+      "finding": "False-positive copying claim: missing upper bound remains unspecified",
+      "review": "The copied logistic-recurrence question leaves the t-dependent upper bound unspecified and is not self-contained. At t=1, a0=1 stays1; a0=3 gives -3,-15,... and diverges. Both can satisfy a positive initial value below an unspecified bound. The source bound0<a0<1+1/t is essential.",
+      "disposition": "Keep frozen automatic exclusion; candidate for a separately registered gate correction."
+    },
+    {
+      "source_index": 39,
+      "finding": "False-positive copying claim: chosen tower height",
+      "review": "Public clues omit the requested term index. The copying candidate selects the third term, introducing a target choice. a1 mod1000=7 and a2 mod1000=543, while all terms from a3 onward have remainder343. The answer can inform inference, but choosing a3 is not copying an exposed index.",
+      "disposition": "Keep frozen automatic exclusion; candidate for a separately registered gate correction."
+    },
+    {
+      "source_index": 5,
+      "finding": "False-positive copying claim: chosen cycle cutoff",
+      "review": "A cutoff greater than50 does not specify51. The copying candidate silently chooses51. Cutoff100 also fits the public restriction and counts99! permutations; cutoff51 gives100!*(H100-H50). Recovering51 using the answer and counting reasoning is permitted inverse inference, not direct copying.",
+      "disposition": "Keep frozen automatic exclusion; candidate for a separately registered gate correction."
+    },
+    {
+      "source_index": 12,
+      "finding": "False-positive source leakage claim: changed target",
+      "review": "The source counts complete tilings of a10x10 board. The copying candidate instead asks the black-white imbalance of a complete covering. That quantity is0 for a balanced board, but it is not the source target or a semantic reformulation of the tiling count. The missing dimensions and odd tile count remain unrecovered.",
+      "disposition": "Keep frozen automatic exclusion; broad same-answer question detection is not proof of original-question leakage."
+    },
+    {
+      "source_index": 109,
+      "finding": "Substantive copying risk",
+      "review": "With A=3^(n-1)+5^(n-1) and B=3^n+5^n, B>A>0. Asking whether one divides the other is already equivalent to A dividing B. Hiding the direction leaves no essential uncertainty.",
+      "disposition": "Keep excluded."
+    },
+    {
+      "source_index": 68,
+      "finding": "Substantive copying risk despite hidden negative value",
+      "review": "For real2x2 A satisfying A^2=-I, det(A)=1. Therefore the probability of any specified negative determinant is0. The hidden negative integer is mathematically irrelevant.",
+      "disposition": "Keep excluded; exact quotation failures are separately recorded."
+    },
+    {
+      "source_index": 124,
+      "finding": "Substantive copying risk despite hidden large height",
+      "review": "The last two digits of the base3 power tower stabilize at87 from height3 onward. Public large-height wording already specifies a sufficient question; the exact large index is not essential.",
+      "disposition": "Keep excluded."
+    },
+    {
+      "source_index": 17,
+      "finding": "Missing answer options do not create sufficient reconstruction uncertainty",
+      "review": "The public root/product/color-class structure and coefficient-relation target retain the mathematical core. Omitting multiple-choice options alone is insufficient. Wording about distinct color-class sizes also needs care when class sizes coincide.",
+      "disposition": "Keep excluded; do not claim a validated source from this inspection alone."
+    },
+    {
+      "source_index": 135,
+      "finding": "Source/target ambiguity; not a clean copying verdict",
+      "review": "The source says minimum number of arc-disjoint paths; the copying candidate selects maximum. An arbitrary collection can contain0 paths, whereas a guaranteed connectivity/minimum-cut interpretation givesk from degree balance. Selecting maximum is a target change, and the source minimum wording needs disambiguation.",
+      "disposition": "Keep excluded/unresolved; no silent source rewrite."
+    },
+    {
+      "source_index": 126,
+      "finding": "Substantive copying risk: missing permutation condition is irrelevant",
+      "review": "The public bound0<=D_n<=n! already forces D_n/n^n to0; n!/n^n<=2^(-floor(n/2)). No exact forbidden permutation condition is needed for the requested limit.",
+      "disposition": "Keep excluded."
+    },
+    {
+      "source_index": 82,
+      "finding": "Substantive copying risk: missing lower limit is irrelevant",
+      "review": "For any fixed positive c, integral_c^(n+1) ln(x)/x dx divided by ln(n)^2 tends to1/2. The hidden precise constant does not change the mathematical target or answer.",
+      "disposition": "Keep excluded."
+    },
+    {
+      "source_index": 69,
+      "finding": "Substantive copying risk: sufficient premises are already public",
+      "review": "For |z|=1 and nonzero denominator, |z-a|=|1-conj(a)z|. The public fractional expression and modulus target already form a complete sufficient question with answer1.",
+      "disposition": "Keep excluded."
+    },
+    {
+      "source_index": 55,
+      "finding": "Substantive copying risk; exact-span validation failed",
+      "review": "The public observations disclose all three cyclic quadratics, the positive-root requirement, and the coefficient-relation target. Omitting the multiple-choice alternatives does not remove an essential premise or target.",
+      "disposition": "Keep unresolved/excluded; quote-format failure is not evidence that the input is safe."
+    }
+  ],
+  "success_reviews": [
+    {
+      "source_index": 94,
+      "verdict": "semantic_match_without_grounded_verification",
+      "review": "The candidate is exactly the source integral over[0,1]. Substituting x=sin(theta) and adding its reflected integral gives twice the integral=pi/2, proving pi/4. Qwen only says this value is known and can be verified, with no actual calculation. Semantic recovery is verified, but the frozen grounded-success criterion is not met (M=0)."
+    },
+    {
+      "source_index": 65,
+      "verdict": "semantic_match_without_grounded_verification",
+      "review": "The candidate asks exactly whether p divides binomial(p^2+1,p) for every prime p. Lucas base-p digits give binomial(p^2+1,p)=0 modulo p, so Yes is correct. Qwen only cites the supplied Yes and vague consistency, not a proof. The validity output additionally failed exact claim quotation (removed dollar delimiters); its raw proposed score is not accepted. Semantic match verified separately, grounded success not established."
+    },
+    {
+      "source_index": 28,
+      "verdict": "valid_alternative_not_source_recovery",
+      "review": "Qwen replaces the source function with x^(-a)*sin(x^(-a)). For every a>0, x_k=(pi/2+2*pi*k)^(-1/a) tends to0 and the candidate function equals pi/2+2*pi*k, proving unboundedness. It fits the broad clues and supplied parameter-set answer, supporting partial credit. It does not recover or algebraically reformulate the actual source function."
+    }
+  ],
+  "student_error_examples": [
+    {
+      "source_index": 107,
+      "category": "wrong requested quantity",
+      "finding": "Returns a numerical odd-count question, although the supplied answer is Jill; its own explanation acknowledges the mismatch."
+    },
+    {
+      "source_index": 22,
+      "category": "answer-copy question",
+      "finding": "The returned question explicitly says the answer is11 while asking for that prime, and leaves N unspecified."
+    },
+    {
+      "source_index": 123,
+      "category": "negation reversal",
+      "finding": "Source asks for partial sums that are not perfect powers. The candidate asks for perfect powers congruent to2 modulo4. No nontrivial perfect power is2 modulo4: an odd base gives an odd number; an even base with exponent>=2 gives a multiple of4. The candidate existence claim is therefore false."
+    },
+    {
+      "source_index": 78,
+      "category": "material parameter change and invalid limit check",
+      "finding": "sqrt(4n^2+n+1)-2n tends to1/4, so the cosine tends tocos(pi/4)=sqrt(2)/2; the candidate limit is-sqrt(2)/2, not-1. Qwen also asserts two factors each tending to-1 have product-1."
+    }
+  ],
+  "review_scope": "Assistant mathematical case review, not independent human annotation. All15 audit-ACCEPT/direct-copy disagreements reviewed; raw gates, scores and inclusion remain unchanged. Additional selected accepted inputs and apparent recoveries reviewed separately.",
+  "reviewed_after_all_fidelity_calls": true
+}

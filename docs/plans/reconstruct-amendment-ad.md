@@ -1,0 +1,9 @@
+# AD: independent mathematical verification gate
+
+Prior turn made progress: AA/AB/AC completed15 local draws and28 judgments. AB62 recovered the source question but its incorrect pole/nearest-singularity verification received4/4. Do not alter that raw label or score the candidate repeatedly until it changes.
+
+Test a separate source-blind mathematics verifier, which never sees the original question or prior rubric judgment. It returns independent question/answer correctness and verification soundness plus exact claim quotes and concrete checks. Its decision cannot increase rubric scores or semantic matches; it can only veto an alleged grounded success. Uncertain/technical failures remain unverified. No new Qwen or confirmation calls in AD.
+
+Freeze twelve cases before calls: four newly authored mathematical families with identical question/answer and correct versus incorrect proof; two production pairs (AB62 and AC129 exact outputs, plus explicitly labeled corrected diagnostic counterparts). These are development controls, not independent human gold or representative population accuracy. The corrected responses are never counted as Qwen outputs or student successes. No fixture/reference label goes into the verifier request.
+
+One reasoning-enabled DeepSeek V4.1 Flash request per case, max8192 tokens, low reasoning effort, four workers, no scored retries, budget$.15 within global$5 cap. Require all6 wrong proofs rejected and all6 valid proofs accepted to advance to an independent validation stage; a single false acceptance blocks adoption. Preserve failures, exact inputs, outputs, hashes, evidence attribution errors and manual reference derivations. A pass would validate only these controls, not near-perfect production accuracy. Changing the judge cannot make Qwen's original mathematical mistakes disappear.

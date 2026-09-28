@@ -1,0 +1,22 @@
+{
+  "stage": "before all D4 student generation",
+  "policy": "Apply the existing semantic-equivalence definition; auxiliary notation may be eliminated only with a verified equivalence, not merely a shared answer. These notes are private review material, never student hints.",
+  "cases": {
+    "0": {
+      "equivalent_reformulation": "Real alpha,beta satisfy alpha+beta=2 and alpha\u00b2+beta\u00b2=8/3; find3(alpha-beta)\u00b2.",
+      "certificate": "For f(x)=a+bx+cx\u00b2, the source integral identity is 2a+2b+(8/3)c = 2a+b(alpha+beta)+c(alpha\u00b2+beta\u00b2) for every a,b,c. This is equivalent in both directions to the two moment equations. The requested quantity is unchanged.",
+      "not_equivalent_by_answer_alone": "Asking for an unrelated expression equal to4 is not automatically the same target; every displayed clue must also be substantively grounded."
+    },
+    "13": {
+      "equivalent_reformulation": "Product of the units1<=a<24 modulo24; arithmetic4!=24 preserves the source modulus and multiplicative target."
+    },
+    "46": {
+      "equivalent_reformulation": "Count words with three A letters, three B letters and two C letters.",
+      "certificate": "Map a target-breaking order to its column-choice word. Given the word, the lowest-remaining rule determines exactly one target at each step. This is a bijection; equal-height columns stay distinguished."
+    },
+    "118": {
+      "domain_caution": "The source asks for any odd integer, not necessarily positive. k=5 is a valid witness but k=-5 also works. A question imposing positivity changes the feasible witness set and requires explicit semantic review; do not inherit the original worked-solution uniqueness error."
+    }
+  },
+  "scope": "Prospective review notes, not new labels or target-specific instructions to the models."
+}

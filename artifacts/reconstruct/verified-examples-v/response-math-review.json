@@ -1,0 +1,713 @@
+{
+  "provenance": "assistant analytic review with executable finite/exact certificates; no teacher labels read by this script, not independent human gold",
+  "responses": 32,
+  "grounded_valid_alternatives": 2,
+  "confirmed_original_recoveries": 0,
+  "certificates": {
+    "cubic_alternative": "4",
+    "interleavings": {
+      "7x10": 1445652147019814670743591757156403283835679622544230400,
+      "7x7": 7363615666157189603982585462030336000,
+      "7x8": 4104167472585675600759440022842715359250000,
+      "4x2": 2520
+    },
+    "unequal_adjacent_length10_starts_0or6_ends_1or5": 5758684,
+    "unequal_adjacent_length10_different_endpoints": 60466182,
+    "divisible11_digit0to6_counts_by_length": [
+      1,
+      7,
+      31,
+      239,
+      1520,
+      10903,
+      74775,
+      526223,
+      3667527,
+      25701957
+    ],
+    "divisible11_lengths1to10_total": 29983183,
+    "n12_maximal_planar_counterexample": {
+      "vertices": 12,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          11
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          9,
+          5
+        ],
+        [
+          10,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          1,
+          5,
+          6
+        ],
+        [
+          11,
+          6,
+          7
+        ],
+        [
+          10,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          7
+        ],
+        [
+          2,
+          6,
+          7
+        ],
+        [
+          11,
+          7,
+          8
+        ],
+        [
+          10,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          8
+        ],
+        [
+          3,
+          7,
+          8
+        ],
+        [
+          11,
+          8,
+          9
+        ],
+        [
+          4,
+          0,
+          9
+        ],
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          1,
+          4,
+          10
+        ],
+        [
+          1,
+          4,
+          0
+        ],
+        [
+          6,
+          9,
+          11
+        ],
+        [
+          6,
+          9,
+          5
+        ]
+      ],
+      "flips": [
+        {
+          "removed_edge": [
+            10,
+            0
+          ],
+          "inserted_edge": [
+            1,
+            4
+          ]
+        },
+        {
+          "removed_edge": [
+            11,
+            5
+          ],
+          "inserted_edge": [
+            6,
+            9
+          ]
+        }
+      ],
+      "degrees": {
+        "0": 4,
+        "1": 6,
+        "5": 4,
+        "9": 6,
+        "10": 4,
+        "2": 5,
+        "6": 6,
+        "11": 4,
+        "7": 5,
+        "3": 5,
+        "8": 5,
+        "4": 6
+      },
+      "certificate": "Two pentagonal rings form a triangulated annulus capped by vertices10 and11. Flipping the two indicated cap edges replaces diagonals of embedded quadrilaterals and preserves a simple sphere triangulation. Thus this is maximal planar, with four vertices of each degree4,5,6. It contradicts uniqueness of n=6 when the three degree values are unspecified."
+    },
+    "unit_square_or_cube_integrals_lower_bound": "Every integrand proposed for source96 is >=1 throughout its unit-measure domain (away from a measure-zero singular boundary), so each integral is >=1, not1/12. For the exponential integral the exact value is(e-1)^3>1."
+  },
+  "rows": [
+    {
+      "response_key": "0:9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 0,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "9e8684b9fe2003ebbc1d141f7f2386985f56aadca01431a9e7d92bb99726c944",
+      "evidence_hash": "9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The requested roots are1±1/sqrt(3), not the supplied scalar4. A correct calculation for another target does not give the required answer.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "0:9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 0,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "35117a00f9c0cbe87aeb998a8d718b1ae14bad5018a907e527ce5fa0efc3608b",
+      "evidence_hash": "9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6",
+      "mathematically_grounded_valid": true,
+      "confirmed_original_recovery": false,
+      "review": "The sum-cubes identity correctly gives4 and substantively uses both clues. This is a valid alternative. The source requests3(alpha-beta)², not alpha³+beta³. Coinciding values after solving the constraints do not by themselves preserve the requested statistic; classify as related, not an exact original recovery.",
+      "score_reference": 4,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "13:d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 13,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "0a8c855a847c310777a65c476eedac4d135670a75b42973c618274d4723ff63b",
+      "evidence_hash": "d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The requested square residue/theorem is directly stated by the first clue. It is a copy-only restatement, not reconstruction of the source product.",
+      "score_reference": 0,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "13:d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 13,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "3c9929e801d2b244c7126e733a2494ddb61b988ea57aa2e961ae53bcd7af74a5",
+      "evidence_hash": "d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "With the literal unbounded integer domain a<24 there are infinitely many solutions1-24k. Even under the charitable positive-domain reading there are8, not the supplied1. The target is a count instead of a product.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "46:7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 46,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "71771293aca3771299e9532a71bd912b2917c769071ceac3b4e630158945a701",
+      "evidence_hash": "7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed/assumed equal-height configuration 7x10 has 1445652147019814670743591757156403283835679622544230400 interleavings, not560. In the4x2 response, equality of column sizes is also not stated in the question. Original heights3,3,2 are never recovered.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "46:7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 46,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "82b5495a0fcd2d521cbdf608daef447dd3a1a03d04240f05e5e0307dfe6a81f6",
+      "evidence_hash": "7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed/assumed equal-height configuration 7x7 has 7363615666157189603982585462030336000 interleavings, not560. In the4x2 response, equality of column sizes is also not stated in the question. Original heights3,3,2 are never recovered.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "87:dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 87,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "530c31e857ef64957cc97a5c85c40c6a04e89ef56e45a53d2b0c20765dc83b7c",
+      "evidence_hash": "dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed 1/x function is continuous at every1/n; this directly violates the displayed discontinuity clue. Accumulation at0 is not density in a neighborhood. A No answer for continuity at0 cannot establish the original small-o/differentiability theorem or ground the reciprocal-point clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "87:dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 87,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "6eb4cd09d13e3b8de6648ecc62d53018551c26bfc08d981f8fd733a890219604",
+      "evidence_hash": "dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed 1/x function is continuous at every1/n; this directly violates the displayed discontinuity clue. Accumulation at0 is not density in a neighborhood. A No answer for continuity at0 cannot establish the original small-o/differentiability theorem or ground the reciprocal-point clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "96:7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 96,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "b43d3b894f1bd09212e8b58a014e7c1f943d392346ad044a4fe9ac53af57d738",
+      "evidence_hash": "7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "Every integrand proposed for source96 is >=1 throughout its unit-measure domain (away from a measure-zero singular boundary), so each integral is >=1, not1/12. For the exponential integral the exact value is(e-1)^3>1. None of the proposed ordinary unit-domain integrals restores the source nested asymptotic limit or supports the H(t) clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "96:7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 96,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "d4cf88dc6cf507440c872ebd6a94f60c2f9076e6fadc79c58349e5fc7c80449f",
+      "evidence_hash": "7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "Every integrand proposed for source96 is >=1 throughout its unit-measure domain (away from a measure-zero singular boundary), so each integral is >=1, not1/12. For the exponential integral the exact value is(e-1)^3>1. None of the proposed ordinary unit-domain integrals restores the source nested asymptotic limit or supports the H(t) clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "118:cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 118,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "b34ad22966d139853d0365f4aa8c259156248c038ee17009cda7bd974915b6af",
+      "evidence_hash": "cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The question never defines the associated computation, and its justification returns3 rather than the supplied5. Adding a minimum target does not make the missing relation well-defined.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "118:cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 118,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "d9925395044a0505238617cebf594108ec48063fd399c583921cbe90600fac82",
+      "evidence_hash": "cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The question omits the associated computation. Even granting the assumption that it counts subsets of proper divisors, every prime has proper positive divisor set{1}, with2 subsets, not3. Also3 is T2, not the third triangular number.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "129:52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 129,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "5b7d870814ec4623439b005a9a5c60c2015d54b8cbe860dfaf2d39275feb3124",
+      "evidence_hash": "52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The no-equal-adjacency question has 5758684 words under its stated endpoint conditions, not1392. Its transition is the sum over all other digits, not only d±1; its extra initial/end restrictions also invalidate the displayed initial counts.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "129:52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 129,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "d684240058fa2bf48d2baa70e3c93fb019631b7a6c49a2eae703cf6d40080a30",
+      "evidence_hash": "52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The question leaves n and d unspecified, yet the answer is a scalar. Forbidding a leading0 gives initial count0 for digit0, contradicting the displayed symmetric initial conditions. No-equal adjacency is not adjacency difference1.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "137:e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 137,
+      "prompt": "student_p12_verified_examples",
+      "seed": 0,
+      "response_output_hash": "90c8e2f2af1ee8dba9c64d065666acc6a6ac46ac89e013cc70b02b99b4cb8242",
+      "evidence_hash": "e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "With6 vertices, handshaking and e=3n-6 give degree sum24, not the supplied6; the model has put the supplied answer into a premise and changed the target.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "137:e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2",
+      "source_index": 137,
+      "prompt": "student_p10_recover_original",
+      "seed": 0,
+      "response_output_hash": "b91d6c736ddd14d13d23e22822b8a6c84c2caf29e6a41936080bf78e6d4c3f6b",
+      "evidence_hash": "e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The degree values are unspecified. Both the source six-vertex construction and the explicit twelve-vertex triangulation certificate have three equally sized degree classes. Thus n=6 is not determined by this question; the missing source degrees are essential.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "0:9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 0,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "4f1e0a41810c77a071db089d25ac068556f03e4328a5e4de69b34e2311408e87",
+      "evidence_hash": "9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6",
+      "mathematically_grounded_valid": true,
+      "confirmed_original_recovery": false,
+      "review": "The sum-cubes identity correctly gives4 and substantively uses both clues. This is a valid alternative. The source requests3(alpha-beta)², not alpha³+beta³. Coinciding values after solving the constraints do not by themselves preserve the requested statistic; classify as related, not an exact original recovery.",
+      "score_reference": 4,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "0:9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 0,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "5e0b3ea17cfeb268a40cdb5ff9bed01c48832b4d6b3264cd6e98ae65a1f30430",
+      "evidence_hash": "9ffaced8cf4c191b7a4c35c1e6c27e23c8c166f767f8994afaf1a30a5606dde6",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The requested roots are1±1/sqrt(3), not the supplied scalar4. A correct calculation for another target does not give the required answer.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "13:d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 13,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "0c577807f0b4d18e85dd519fb6078ebe040ceadf9d956b1f78484659a0a6a5b8",
+      "evidence_hash": "d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "With the literal unbounded integer domain a<24 there are infinitely many solutions1-24k. Even under the charitable positive-domain reading there are8, not the supplied1. The target is a count instead of a product.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "13:d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 13,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "ee2ac4d8d8304d4dd52f023f40b3c7878b24f5be7ab9b05622d22e6591c9a38b",
+      "evidence_hash": "d286fd84768d83636494b2bad1374a80163be50f64e5463b05bdda7edaa6c84a",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The requested square residue/theorem is directly stated by the first clue. It is a copy-only restatement, not reconstruction of the source product.",
+      "score_reference": 0,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "46:7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 46,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "fd785185e0789be6163e2936b58d6cf62863839447fbf3240e57265a2a170d6d",
+      "evidence_hash": "7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed/assumed equal-height configuration 4x2 has 2520 interleavings, not560. In the4x2 response, equality of column sizes is also not stated in the question. Original heights3,3,2 are never recovered.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "46:7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 46,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "73a60389f05355e3f006f270dee98a897eb94ca39030b9e8be6a424736cab13b",
+      "evidence_hash": "7c4919360f0234c7b6cabab735fa9d1fe5a9af8f0e9549b9032fc2e4a9ee5ff1",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed/assumed equal-height configuration 7x8 has 4104167472585675600759440022842715359250000 interleavings, not560. In the4x2 response, equality of column sizes is also not stated in the question. Original heights3,3,2 are never recovered.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "87:dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 87,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "5d7bf827087fe55dc6d491455a495dec9d1e929674e400c72e642fa98d4f7549",
+      "evidence_hash": "dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed 1/x function is continuous at every1/n; this directly violates the displayed discontinuity clue. Accumulation at0 is not density in a neighborhood. A No answer for continuity at0 cannot establish the original small-o/differentiability theorem or ground the reciprocal-point clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "87:dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 87,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "ee5cbf69b835ebae41745d28a7f6eb77355a8abb7b70a949c7931cff876fbfe5",
+      "evidence_hash": "dd361becba3f970dd8ed36be1841f6cfacf99cae904ece45119b3c04f137710d",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The proposed 1/x function is continuous at every1/n; this directly violates the displayed discontinuity clue. Accumulation at0 is not density in a neighborhood. A No answer for continuity at0 cannot establish the original small-o/differentiability theorem or ground the reciprocal-point clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "96:7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 96,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "5b9d919de15cd187b1462b7c0cc8a0d6614e2a24b4e2663455bb4a8e7d46e44f",
+      "evidence_hash": "7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "Every integrand proposed for source96 is >=1 throughout its unit-measure domain (away from a measure-zero singular boundary), so each integral is >=1, not1/12. For the exponential integral the exact value is(e-1)^3>1. None of the proposed ordinary unit-domain integrals restores the source nested asymptotic limit or supports the H(t) clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "96:7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 96,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "1ff0ab2799823a9985495895bef1a184a92cd775b0278c66ef686d014fa673df",
+      "evidence_hash": "7fc5ebaf089df313735f764198529e421e8a83dee079b449422daad7acc1b494",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "Every integrand proposed for source96 is >=1 throughout its unit-measure domain (away from a measure-zero singular boundary), so each integral is >=1, not1/12. For the exponential integral the exact value is(e-1)^3>1. None of the proposed ordinary unit-domain integrals restores the source nested asymptotic limit or supports the H(t) clue.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "118:cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 118,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "669c62c6825e50cda10e3c294085a300c4d72383188a5ddc49be01c870b6bb8c",
+      "evidence_hash": "cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The question omits the computation. Its assumption T_p=p(p+1)/2 equals3 has p=2 among positive integers, not an odd prime; for5 it gives15. The supplied5 is unsupported.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "118:cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 118,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "505e9effd58b843e6d10a6285bbed8902c56c17005fbe39199da282248696d2e",
+      "evidence_hash": "cc130acbefb55b2ade2c9a45c25cc704453f2d66a21fda112c985c9f14eae2e4",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The question never defines the associated computation, and its justification returns3 rather than the supplied5. Adding a minimum target does not make the missing relation well-defined.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "129:52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 129,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "63c6d258c027466f8d1ab11210c547344a4d573fd8d776e6fdafb63a09f56135",
+      "evidence_hash": "52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "Divisibility by11 is an invented constraint. At length1 only digit0 is divisible by11, contradicting the stated initial counts. Counting all digit0..6 words of lengths1..10 with numeric value divisible by11 gives 29983183, not1392.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "129:52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 129,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "d95bf4910c47e2810534aafb1874ce8e153a777e5965319c1b086b77c850cfb6",
+      "evidence_hash": "52748d4f274f9414cd71d05426fe6b0a426e762f40e391040c313e2ee75c85fd",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The no-equal-adjacency question has 60466182 words under its stated endpoint conditions, not1392. Its transition is the sum over all other digits, not only d±1; its extra initial/end restrictions also invalidate the displayed initial counts.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "137:e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8:decf9a46174e812884c935d56dd6282cb3b5f8b605fa71dec8fdd62e9f57893b:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 137,
+      "prompt": "student_p10_recover_original",
+      "seed": 1,
+      "response_output_hash": "814183ccee492a7cba7b7ab5c716b6aa7cb132be987fd856d69f5ebfabe6d108",
+      "evidence_hash": "e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "The degree values are unspecified. Both the source six-vertex construction and the explicit twelve-vertex triangulation certificate have three equally sized degree classes. Thus n=6 is not determined by this question; the missing source degrees are essential.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    },
+    {
+      "response_key": "137:e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8:7bdd7547e64bfe3ad796aef284ab970e400bcdfae940694f947bf2e3ac9d670d:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3",
+      "source_index": 137,
+      "prompt": "student_p12_verified_examples",
+      "seed": 1,
+      "response_output_hash": "37aba23d52d05d4aed9aa4f2668aff17e579cb51e462c35df7a14dc3f3efc4fe",
+      "evidence_hash": "e6976b7eb7b9d19511332886ca4af80511309fcc102f5c3bdf6d5ef5913e28f8",
+      "mathematically_grounded_valid": false,
+      "confirmed_original_recovery": false,
+      "review": "With6 vertices, handshaking and e=3n-6 give degree sum24, not the supplied6; the model has put the supplied answer into a premise and changed the target.",
+      "score_reference": null,
+      "score_note": "For remaining failures, the review certifies lack of grounded success without forcing every ambiguous0-versus1 boundary into a reference label."
+    }
+  ]
+}

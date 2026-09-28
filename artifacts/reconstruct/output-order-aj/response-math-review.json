@@ -1,0 +1,27 @@
+{
+  "reviewer": "Assistant analytic review; not human gold",
+  "rows": [
+    {
+      "response_key": "0:verification_first:0",
+      "response_output_hash": "75e4ede8c305d545f39299f3f0e306c9969f03177a545916f971df49fba6599c",
+      "evidence_hash": "5272b3a5a49e3c6af0a3809e2aaefbf080a53b9a048fdaf7158a2c24755a0be6",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "The question still leaves k unspecified. Correct coefficient is3; it instead claims k2 and alpha,beta0,2, which violate the second moment. Even its claimed2*(2)^2 equals8, not4."
+    },
+    {
+      "response_key": "96:verification_first:0",
+      "response_output_hash": "7b07f4fde326b29e7b6900db4119bc4c6dcd9acce5e4b4eeb63fb430c9712ab3",
+      "evidence_hash": "8e5917d116e2fa2df08b5efea3b54cb8621ce401f4b90f699eaa48b230a1a3d9",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "The question leaves derivative a unspecified and never infers a1. The claimed outer x^5 term is wrong; correct leading term is a*x^8/12. Saying a is inferred without stating it does not recover the original question."
+    }
+  ],
+  "unparsed_scheduled_draws": [
+    "46:verification_first:0"
+  ],
+  "unparsed_count_as_success": false
+}

@@ -1,0 +1,99 @@
+{
+  "arms": {
+    "prefix3": {
+      "planned": 5,
+      "scores_returned": 4,
+      "mean_score_100": 18.75,
+      "raw_grounded": 0,
+      "raw_semantic": 0,
+      "raw_joint": 0,
+      "reviewed_joint": 0,
+      "reviews_returned": 4,
+      "reviewed_conditional_rate": 0.0,
+      "reviewed_end_to_end_rate": 0.0,
+      "reviewed_conditional_wilson95": [
+        5.551115123125783e-17,
+        0.4344824647831612
+      ],
+      "denominator_all_sources": 12,
+      "reviewed_semantic": 0,
+      "planned_score_bounds": [
+        15.0,
+        35.0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "response_key": "0:prefix3:0",
+      "source_index": 0,
+      "arm": "prefix3",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 46,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "13:prefix3:0",
+      "source_index": 13,
+      "arm": "prefix3",
+      "missing_response": true
+    },
+    {
+      "response_key": "96:prefix3:0",
+      "source_index": 96,
+      "arm": "prefix3",
+      "score_100": 0,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 78,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "129:prefix3:0",
+      "source_index": 129,
+      "arm": "prefix3",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 0,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 55,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    },
+    {
+      "response_key": "137:prefix3:0",
+      "source_index": 137,
+      "arm": "prefix3",
+      "score_100": 25,
+      "raw_grounded": false,
+      "raw_semantic": 1,
+      "exact_bindings": true,
+      "raw_joint": false,
+      "reviewed_joint": false,
+      "reviewed_semantic": false,
+      "word_count": 62,
+      "clue_count": 3,
+      "finish_reason": "stop"
+    }
+  ],
+  "limitations": [
+    "Development screen on reused families, one seed; not an independent confirmation.",
+    "Wilson intervals are descriptive and do not correct for adaptive development or policy selection.",
+    "Auditors and assistant review are fallible; raw and reviewed outcomes retained separately."
+  ]
+}

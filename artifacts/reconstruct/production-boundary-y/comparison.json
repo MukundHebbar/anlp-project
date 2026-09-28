@@ -1,0 +1,359 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-y.md",
+  "summaries": {
+    "audit_public_p5": {
+      "returned": 7,
+      "matches": 7,
+      "hard_negatives_rejected": 4,
+      "hard_negative_count": 4,
+      "planned": 7
+    },
+    "audit_source_disclosure_p3": {
+      "returned": 7,
+      "matches": 6,
+      "hard_negatives_rejected": 3,
+      "hard_negative_count": 4,
+      "planned": 7
+    }
+  },
+  "rows": [
+    {
+      "source_index": 0,
+      "original_source_index": 46,
+      "family": "46",
+      "condition": "46:convert_p5",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Essential column heights omitted; answer-conditioned multinomial inversion needed.",
+      "bank_key": "0:archived_boundary:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "bank_output_hash": "892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "source_record_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "origin_artifact": "artifacts/reconstruct/target-example-w/run.json",
+      "origin_bank_key": "46:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "decisions": {
+        "audit_public_p5": {
+          "status": "ACCEPT",
+          "scope": "public_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "The eight targets are arranged in three vertical columns.",
+            "The number of legal orders is a multinomial coefficient determined by the three column sizes.",
+            "The requested quantity is the number of different legal breaking orders."
+          ],
+          "missing_essential_element": "The sizes of the three vertical columns are not provided.",
+          "inference_required": "Use the final answer 560 with the multinomial relation 8!/(a!b!c!) and a+b+c=8 to infer the missing column sizes, such as 2,3,3, then reconstruct the count.",
+          "reason": "The target and general multinomial relation are public, but the essential column-size parameters are absent. The answer must be used to infer that missing premise, so this is not a complete forward solution or fully exposed premise-target bundle."
+        },
+        "audit_source_disclosure_p3": {
+          "status": "ACCEPT",
+          "scope": "source_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "The eight targets are arranged in three vertical columns.",
+            "In any legal breaking order, the targets within a single column must be taken from bottom to top, so their relative order inside that column is fixed.",
+            "The number of legal orders is a multinomial coefficient determined by the three column sizes.",
+            "The requested quantity is the number of different legal breaking orders.",
+            "560"
+          ],
+          "missing_essential_element": "The exact column sizes/arrangement: two columns of three targets and one column of two targets.",
+          "inference_required": "Using the supplied answer 560 and total eight targets, infer that the three column sizes must be 3, 3, and 2, since 8!/(3!3!2!) = 560.",
+          "reason": "The public clues state the target, the fixed within-column order, and that the count is a multinomial coefficient determined by three column sizes, but they do not state the actual column sizes. The original arrangement must be recovered by answer-conditioned inversion from 560 and the total of eight targets. This is a genuinely missing essential premise, not merely a copied question or complete forward derivation."
+        }
+      }
+    },
+    {
+      "source_index": 1,
+      "original_source_index": 129,
+      "family": "129",
+      "condition": "129:convert_p5",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Essential length omitted; inverse recurrence search needed, with documented multiple matches.",
+      "bank_key": "1:archived_boundary:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "bank_output_hash": "5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "source_record_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "origin_artifact": "artifacts/reconstruct/target-example-w/run.json",
+      "origin_bank_key": "129:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "decisions": {
+        "audit_public_p5": {
+          "status": "ACCEPT",
+          "scope": "public_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "For each digit d in {0,1,2,3,4,5,6}, the number of valid words of length k ending in d satisfies f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+            "For one-digit words, every allowed ending digit has count 1.",
+            "The requested quantity is the remainder modulo 2008 of the total count for a certain word length."
+          ],
+          "missing_essential_element": "The specific word length n for which the total count is taken modulo 2008.",
+          "inference_required": "Use the recurrence and initial condition to compute total counts T_n modulo 2008, then infer the missing length n from the given final answer 1392; this yields n=12.",
+          "reason": "The recurrence, initial condition, and modulo target are public, but the essential word length is withheld. The answer 1392 must be used inversely to identify the missing length, so this is not a complete premise-target bundle or complete solution."
+        },
+        "audit_source_disclosure_p3": {
+          "status": "ACCEPT",
+          "scope": "source_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "For each digit d in {0,1,2,3,4,5,6}, the number of valid words of length k ending in d satisfies f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+            "For one-digit words, every allowed ending digit has count 1.",
+            "The requested quantity is the remainder modulo 2008 of the total count for a certain word length.",
+            "1392"
+          ],
+          "missing_essential_element": "The specific word length 12 is not stated in the public clues; they only say 'a certain word length.'",
+          "inference_required": "Using the recurrence, base case, modulus 2008, and supplied final answer 1392, one would need to infer which word length produces that remainder; the public material does not directly specify length 12.",
+          "reason": "The public clues expose the alphabet, adjacency recurrence, base case, modulus, and final remainder, but they omit the essential source parameter of length 12. The final answer alone is not treated as a leak, and the missing length is not equivalently stated in the clues. Thus the original task is not directly copied or fully solved in public."
+        }
+      }
+    },
+    {
+      "source_index": 2,
+      "original_source_index": 80,
+      "family": "80",
+      "condition": "80:repair_disclosure_p1",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Exact linear integrand coefficients omitted; curve, general form and target do not supply them.",
+      "bank_key": "2:archived_boundary:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "bank_output_hash": "46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "origin_artifact": "artifacts/reconstruct/target-example-w/repair-study.json",
+      "origin_bank_key": "80:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "decisions": {
+        "audit_public_p5": {
+          "status": "ACCEPT",
+          "scope": "public_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "The curve C is the circle centered at the origin with radius 2.",
+            "The differential form in the line integral has two components that are linear in x and y.",
+            "The requested quantity is the value of a line integral over that closed curve."
+          ],
+          "missing_essential_element": "The specific differential form/vector field, i.e. the linear component coefficients P and Q, to be integrated over C.",
+          "inference_required": "Use Green's Theorem and the final value 0 to infer or constrain the missing integrand/curl; the observations do not provide the integrand or a complete forward computation.",
+          "reason": "The curve, method, and target are stated, but the actual integrand is absent. The final answer 0 alone does not expose a complete premise-target bundle or solution; a meaningful missing mathematical element remains to be inferred."
+        },
+        "audit_source_disclosure_p3": {
+          "status": "ACCEPT",
+          "scope": "source_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "The curve C is the circle centered at the origin with radius 2.",
+            "The line integral is evaluated by applying Green's Theorem to a closed curve bounding a plane region.",
+            "The differential form in the line integral has two components that are linear in x and y.",
+            "The requested quantity is the value of a line integral over that closed curve.",
+            "0"
+          ],
+          "missing_essential_element": "The exact differential form coefficients/components, specifically P(x,y)=x+y and Q(x,y)=x-y in the line integral.",
+          "inference_required": "The public clues only state that the components are linear in x and y and that Green's Theorem applies. They do not specify the exact linear coefficients. Even using the final answer 0, one can only infer that the curl is zero for the chosen linear form, not uniquely recover the source integrand.",
+          "reason": "The public material discloses the curve, method, target type, and final value, but withholds the exact integrand needed to reproduce the source line integral. The missing coefficients are not stated equivalently in any clue, and the answer alone does not uniquely determine them."
+        }
+      }
+    },
+    {
+      "source_index": 3,
+      "original_source_index": 80,
+      "family": "80",
+      "condition": "80:convert_p5",
+      "reference_status": "REJECT",
+      "reference_argument": "Equal partial derivatives and zero Green integrand expose complete zero-integral argument.",
+      "bank_key": "3:archived_boundary:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "bank_output_hash": "6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "origin_artifact": "artifacts/reconstruct/target-example-w/run.json",
+      "origin_bank_key": "80:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "decisions": {
+        "audit_public_p5": {
+          "status": "REJECT",
+          "scope": "public_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": true,
+          "complete_solution_exposed": true,
+          "public_quotes": [
+            "For the differential form in the line integral, the partial derivative of the second component with respect to x is 1.",
+            "For the same differential form, the partial derivative of the first component with respect to y is 1.",
+            "The Green's theorem integrand is the difference of those partial derivatives, and it is identically zero.",
+            "The requested quantity is the value of a line integral over a closed curve."
+          ],
+          "missing_essential_element": "none",
+          "inference_required": "Only routine application of Green's theorem: the supplied zero integrand over a closed curve directly gives the line integral value 0.",
+          "reason": "The observations jointly expose the full setup and solution: a closed-curve line integral, equal mixed partial derivatives, zero Green's theorem integrand, and the target value. The final answer 0 follows by routine completion."
+        },
+        "audit_source_disclosure_p3": {
+          "status": "REJECT",
+          "scope": "source_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": true,
+          "public_quotes": [
+            "the partial derivative of the second component with respect to x is 1",
+            "the partial derivative of the first component with respect to y is 1",
+            "The Green's theorem integrand is the difference of those partial derivatives, and it is identically zero.",
+            "The requested quantity is the value of a line integral over a closed curve.",
+            "0"
+          ],
+          "missing_essential_element": "None for the solution; the exact differential form and circle radius are withheld, but they are not needed once the public clues state the relevant partial derivatives and closed curve.",
+          "inference_required": "None beyond routine completion: the clues already state the Green integrand is identically zero and the curve is closed, so the line integral is zero.",
+          "reason": "The public clues expose the key derivation: both relevant partial derivatives are 1, their difference is identically zero, and the curve is closed. Together with the final answer 0, this effectively discloses the complete solution, even though the exact source form and radius are not quoted."
+        }
+      }
+    },
+    {
+      "source_index": 4,
+      "original_source_index": 96,
+      "family": "96",
+      "condition": "96:convert_p5",
+      "reference_status": "REJECT",
+      "reference_argument": "F(x)~x^8/12 plus target sin(F(x))/x^8 leaves only routine sine asymptotic, exposing nearly complete proof.",
+      "bank_key": "4:archived_boundary:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "bank_output_hash": "165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "source_record_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "origin_artifact": "artifacts/reconstruct/target-example-w/run.json",
+      "origin_bank_key": "96:3913eabb7a4385729512789aec526df433b0526aed1984cccf5242af00ede0f4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "decisions": {
+        "audit_public_p5": {
+          "status": "REJECT",
+          "scope": "public_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": true,
+          "complete_solution_exposed": true,
+          "public_quotes": [
+            "The iterated integral F(x) has leading term x^8/12 as x→0.",
+            "The requested quantity is a limit as x→0 of a ratio whose numerator is the sine of F(x) and whose denominator is x^8.",
+            "\\dfrac{1}{12}"
+          ],
+          "missing_essential_element": "none",
+          "inference_required": "Only routine substitution of F(x) ~ x^8/12 into sin(F(x))/x^8 to obtain 1/12; no missing premise or target remains.",
+          "reason": "The observations supply the needed leading term of F(x) and the exact target limit ratio, so the final value 1/12 follows by routine completion."
+        },
+        "audit_source_disclosure_p3": {
+          "status": "REJECT",
+          "scope": "source_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": true,
+          "public_quotes": [
+            "The inner integral H(t) has leading term t^3/3 as t→0.",
+            "The iterated integral F(x) has leading term x^8/12 as x→0.",
+            "The requested quantity is a limit as x→0 of a ratio whose numerator is the sine of F(x) and whose denominator is x^8.",
+            "\\dfrac{1}{12}"
+          ],
+          "missing_essential_element": "None; the needed asymptotic consequence of the source premises is supplied publicly by the leading-term clues.",
+          "inference_required": "Only routine asymptotic simplification: use F(x) ~ x^8/12 and sin(F(x)) ~ F(x) to obtain the limit 1/12.",
+          "reason": "The public clues state the key leading term of the iterated integral and identify the ratio sin(F(x))/x^8, while the final answer gives 1/12. Together these expose a complete/nearly complete forward derivation of the limit, so the original task is effectively disclosed."
+        }
+      }
+    },
+    {
+      "source_index": 5,
+      "original_source_index": 62,
+      "family": "62",
+      "condition": "62:convert_p4",
+      "reference_status": "REJECT",
+      "reference_argument": "Shifted function, sole principal term and entire regular part disclose the convergence proof.",
+      "bank_key": "5:archived_boundary:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "bank_output_hash": "9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "source_record_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "origin_artifact": "artifacts/reconstruct/verified-examples-v/run.json",
+      "origin_bank_key": "62:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "decisions": {
+        "audit_public_p5": {
+          "status": "REJECT",
+          "scope": "public_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": true,
+          "public_quotes": [
+            "The resulting Laurent expansion has exactly one negative-power term, namely -1/w.",
+            "The nonnegative-power part of that expansion is an entire power series."
+          ],
+          "missing_essential_element": "none",
+          "inference_required": "Only routine identification that an entire power series has infinite radius of convergence; c4 already states the nonnegative-power part is entire, so the answer infinity is directly exposed.",
+          "reason": "The clues jointly characterize the Laurent expansion and state that the nonnegative-power part is an entire power series. That directly yields an infinite radius/outer convergence, matching the final answer infinity, so the complete solution is exposed."
+        },
+        "audit_source_disclosure_p3": {
+          "status": "REJECT",
+          "scope": "source_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": true,
+          "complete_solution_exposed": true,
+          "public_quotes": [
+            "After shifting the variable by the center, the numerator becomes the negative of the sine of the shifted variable.",
+            "The denominator in the shifted expression is the square of the shifted variable.",
+            "The resulting Laurent expansion has exactly one negative-power term, namely -1/w.",
+            "The nonnegative-power part of that expansion is an entire power series.",
+            "\\infty"
+          ],
+          "missing_essential_element": "none",
+          "inference_required": "Only routine recognition that an entire power series has infinite radius of convergence; the Laurent expansion structure is already supplied.",
+          "reason": "The public clues reconstruct the shifted function and state the Laurent expansion has exactly one negative-power term and an entire nonnegative-power part. Together with the supplied answer, this exposes the essential derivation that the radius of convergence is infinite, so the original task is effectively solved publicly."
+        }
+      }
+    },
+    {
+      "source_index": 6,
+      "original_source_index": 123,
+      "family": "123",
+      "condition": "123:repair_disclosure_p1",
+      "reference_status": "REJECT",
+      "reference_argument": "Existential source question can be assembled from proposed infinite natural sequence and partial sums excluding perfect powers. Missing witness is missing proof, not missing question premise.",
+      "bank_key": "6:archived_boundary:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "bank_output_hash": "087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "source_record_hash": "e0c5f16198ec2ce40bca6acbc0f3e2f5c27e36cfdcab91ac56565822160d7770",
+      "origin_artifact": "artifacts/reconstruct/d3-v2/repair-study.json",
+      "origin_bank_key": "123:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "decisions": {
+        "audit_public_p5": {
+          "status": "REJECT",
+          "scope": "public_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": true,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "The proposed example is an infinite sequence of natural numbers that is eventually constant.",
+            "In that example, every partial sum is even.",
+            "The solution rules out perfect powers by considering the parity of a hypothetical perfect power."
+          ],
+          "missing_essential_element": "none",
+          "inference_required": "Only routine completion or verification remains; the existence target and its conditions are already jointly exposed by the observations and final answer.",
+          "reason": "The observations together disclose the setup (eventually constant natural sequence with even partial sums) and the target (ruling out perfect powers), with the final answer Yes. This exposes the premise-target bundle even though the explicit construction is not shown."
+        },
+        "audit_source_disclosure_p3": {
+          "status": "ACCEPT",
+          "scope": "source_disclosure",
+          "direct_question_copy": false,
+          "premise_target_bundle_exposed": false,
+          "complete_solution_exposed": false,
+          "public_quotes": [
+            "Yes",
+            "The proposed example is an infinite sequence of natural numbers that is eventually constant.",
+            "In that example, every partial sum is even.",
+            "The solution rules out perfect powers by considering the parity of a hypothetical perfect power."
+          ],
+          "missing_essential_element": "The actual sequence/construction, or equivalently the key congruence such as all partial sums being 2 mod 4 (e.g. 2,4,4,4,...), is not stated publicly. The clues only say the partial sums are even, which by itself does not rule out even perfect powers.",
+          "inference_required": "One must infer that an even perfect power is divisible by 4, so the construction needs partial sums that are even but not divisible by 4, then supply an eventually constant sequence achieving this. The public clues do not state the needed congruence or the sequence.",
+          "reason": "The public answer and clues describe high-level features of a construction but omit the essential construction/congruence needed to recover the source solution. The final answer 'Yes' and the parity hint are not a complete premise-target bundle or derivation."
+        }
+      }
+    }
+  ],
+  "hard_negative_misses": [
+    {
+      "case": 6,
+      "prompt": "audit_source_disclosure_p3",
+      "decision": "ACCEPT"
+    }
+  ],
+  "all_declared_references_matched": false,
+  "adoption_blocked_by_hard_negative_miss": true,
+  "production_accuracy_established": false,
+  "automatic_promotion_authorized": false,
+  "provenance": "Seven selected archived cases across six families; assistant reference review, not independent human gold. Historical W/V/R records unchanged."
+}

@@ -1,0 +1,2239 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-x.md",
+  "summaries": {
+    "audit_public_p4": {
+      "returned": 16,
+      "planned": 16,
+      "reference_matches": 13,
+      "hard_negative_rejects": 12,
+      "hard_negative_count": 12,
+      "hard_negative_gate_passed": true,
+      "inverse_accepts": 1,
+      "inverse_count": 4,
+      "all_authored_references_matched": false,
+      "by_condition": {
+        "full": {
+          "REJECT": 4
+        },
+        "cosmetic": {
+          "REJECT": 4
+        },
+        "inverse": {
+          "ACCEPT": 1,
+          "REJECT": 3
+        },
+        "proof": {
+          "REJECT": 4
+        }
+      },
+      "by_family": {
+        "rectangle": 4,
+        "linear": 3,
+        "urn": 3,
+        "motion": 3
+      }
+    },
+    "audit_source_disclosure_p2": {
+      "returned": 16,
+      "planned": 16,
+      "reference_matches": 15,
+      "hard_negative_rejects": 12,
+      "hard_negative_count": 12,
+      "hard_negative_gate_passed": true,
+      "inverse_accepts": 3,
+      "inverse_count": 4,
+      "all_authored_references_matched": false,
+      "by_condition": {
+        "full": {
+          "REJECT": 4
+        },
+        "cosmetic": {
+          "REJECT": 4
+        },
+        "inverse": {
+          "ACCEPT": 3,
+          "REJECT": 1
+        },
+        "proof": {
+          "REJECT": 4
+        }
+      },
+      "by_family": {
+        "rectangle": 4,
+        "linear": 4,
+        "urn": 4,
+        "motion": 3
+      }
+    },
+    "audit_public_p5": {
+      "returned": 16,
+      "planned": 16,
+      "reference_matches": 16,
+      "hard_negative_rejects": 12,
+      "hard_negative_count": 12,
+      "hard_negative_gate_passed": true,
+      "inverse_accepts": 4,
+      "inverse_count": 4,
+      "all_authored_references_matched": true,
+      "by_condition": {
+        "full": {
+          "REJECT": 4
+        },
+        "cosmetic": {
+          "REJECT": 4
+        },
+        "inverse": {
+          "ACCEPT": 4
+        },
+        "proof": {
+          "REJECT": 4
+        }
+      },
+      "by_family": {
+        "rectangle": 4,
+        "linear": 4,
+        "urn": 4,
+        "motion": 4
+      }
+    },
+    "audit_source_disclosure_p3": {
+      "returned": 16,
+      "planned": 16,
+      "reference_matches": 16,
+      "hard_negative_rejects": 12,
+      "hard_negative_count": 12,
+      "hard_negative_gate_passed": true,
+      "inverse_accepts": 4,
+      "inverse_count": 4,
+      "all_authored_references_matched": true,
+      "by_condition": {
+        "full": {
+          "REJECT": 4
+        },
+        "cosmetic": {
+          "REJECT": 4
+        },
+        "inverse": {
+          "ACCEPT": 4
+        },
+        "proof": {
+          "REJECT": 4
+        }
+      },
+      "by_family": {
+        "rectangle": 4,
+        "linear": 4,
+        "urn": 4,
+        "motion": 4
+      }
+    }
+  },
+  "rows": [
+    {
+      "source_index": 0,
+      "family": "rectangle",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "0:authored_x:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "bank_output_hash": "6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The side lengths satisfy x+y=10 and xy=24.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine solving of the quadratic implied by x+y=10 and xy=24 to obtain roots 4 and 6, then selecting the longer side; no meaningful missing structure remains.",
+        "reason": "The public observations jointly provide the full premise and target: side lengths satisfy x+y=10 and xy=24, and the requested quantity is the longer side. With the supplied final answer 6, this exposes a complete premise-target bundle and a nearly complete solution."
+      }
+    },
+    {
+      "source_index": 1,
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "1:authored_x:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "bank_output_hash": "3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The side lengths satisfy x+y=5+5 and xy=3*8.",
+          "The requested quantity is the longer side length.",
+          "FINAL ANSWER: 6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine solving of the quadratic implied by x+y=10 and xy=24 remains; the target and all parameters are already supplied.",
+        "reason": "The observations provide the full constraint system and the requested target, and the final answer 6 is the longer root. This exposes a complete premise-and-target bundle with only routine algebra remaining."
+      }
+    },
+    {
+      "source_index": 2,
+      "family": "rectangle",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The area24 is absent. Using answer6 as the longer side, infer the other side10-6=4 and then area6*4=24.",
+      "bank_key": "2:authored_x:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "bank_output_hash": "7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p4",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The rectangle side lengths satisfy x+y=10.",
+          "Its area in terms of one side x is x(10-x).",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "The area value or another equation that determines x is absent.",
+        "inference_required": "One must supply or infer an area constraint, solve x(10-x)=A, and select the longer side; the given sum and area expression alone do not determine the answer 6.",
+        "reason": "The observations expose a target and a side-sum relation, but no area value or additional constraint is provided, so the longer side length cannot be computed from the public clues alone."
+      }
+    },
+    {
+      "source_index": 3,
+      "family": "rectangle",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "3:authored_x:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "bank_output_hash": "c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The rectangle has side lengths4 and6.",
+          "Selecting the longer side gives6."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine comparison/selection of the longer side; no nontrivial inference remains.",
+        "reason": "The observations provide the rectangle's side lengths and directly state that selecting the longer side gives 6, which fully exposes the premise, target, and answer."
+      }
+    },
+    {
+      "source_index": 4,
+      "family": "linear",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "4:authored_x:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "bank_output_hash": "7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The equation is3x+2=14.",
+          "The requested quantity is the real solution x.",
+          "FINAL ANSWER: 4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic remains: solving 3x+2=14 gives x=4, which is already supplied as the final answer.",
+        "reason": "The public observations provide the full equation and explicitly identify the target as the real solution x, while the final answer 4 is also given. This exposes a complete premise-and-target bundle and the solution."
+      }
+    },
+    {
+      "source_index": 5,
+      "family": "linear",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "5:authored_x:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "bank_output_hash": "4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The equation is(1+2)x+2=7+7.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic remains: simplify (1+2)x+2=7+7 to 3x+2=14, then solve x=4.",
+        "reason": "The public clues jointly provide the full equation and explicitly identify the target as its real solution, while the final answer 4 is also supplied. This exposes a complete premise-and-target bundle and leaves only routine evaluation."
+      }
+    },
+    {
+      "source_index": 6,
+      "family": "linear",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The coefficient a=3 is absent. Insert the supplied solution x=4 into ax+2=14 to infer a=(14-2)/4=3.",
+      "bank_key": "6:authored_x:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "bank_output_hash": "ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": false,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The equation has the form ax+2=14 for a positive coefficient a.",
+          "The requested quantity is its real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none; the coefficient a is uniquely determined by the supplied answer x=4",
+        "inference_required": "Only routine substitution to recover a=3; no nontrivial inference remains",
+        "reason": "The equation form, target x, and answer 4 jointly determine a=3, exposing the complete problem and solution."
+      }
+    },
+    {
+      "source_index": 7,
+      "family": "linear",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "7:authored_x:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "bank_output_hash": "d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Subtracting2 from the two sides gives3x=12.",
+          "Dividing by3 givesx=4."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic remains: dividing 12 by 3 to obtain x=4, which is already stated.",
+        "reason": "The observations expose the equation-solving steps and directly state the final value x=4, matching the supplied answer. This is a complete/nearly complete solution rather than a setup requiring meaningful inference."
+      }
+    },
+    {
+      "source_index": 8,
+      "family": "urn",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "8:authored_x:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "bank_output_hash": "571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The urn contains6 red balls and4 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic 6/(6+4)=3/5 remains; the premise, target, and answer are already exposed.",
+        "reason": "The observations provide the full urn composition and explicitly identify the requested probability, while the final answer supplies 3/5. This is a complete premise-and-target bundle with only trivial computation remaining."
+      }
+    },
+    {
+      "source_index": 9,
+      "family": "urn",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "9:authored_x:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "bank_output_hash": "35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The urn contains3+3 red balls and2+2 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "FINAL ANSWER: 3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic remains: red balls = 6, blue balls = 4, total = 10, so probability red = 6/10 = 3/5.",
+        "reason": "The public clues provide the full urn composition, the uniform selection setup, and the exact requested probability. Combined with the final answer 3/5, this exposes a complete premise-target bundle and complete solution."
+      }
+    },
+    {
+      "source_index": 10,
+      "family": "urn",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The color counts are absent. Supplied red probability3/5 and total10 imply6 red and4 blue by inverse proportion.",
+      "bank_key": "10:authored_x:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "bank_output_hash": "e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": false,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The urn contains10 balls, each either red or blue.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond trivial reverse arithmetic: the target probability is stated and the final answer 3/5 is supplied, so the red count is recoverable as 6.",
+        "reason": "The public observations state the requested quantity is the probability of drawing a red ball, and the final answer 3/5 is given. This exposes the target value; the missing red-ball count is only a routine arithmetic consequence, not a meaningful remaining inference."
+      }
+    },
+    {
+      "source_index": 11,
+      "family": "urn",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "11:authored_x:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "bank_output_hash": "dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "There are6 favorable outcomes among10 equally likely outcomes.",
+          "The probability of drawing a red ball is6/10=3/5."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference remains; the favorable count, total equally likely outcomes, target event, and final probability computation are all supplied.",
+        "reason": "The observations jointly expose the complete probability setup and solution for drawing a red ball, including the final value 3/5."
+      }
+    },
+    {
+      "source_index": 12,
+      "family": "motion",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "12:authored_x:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "bank_output_hash": "77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The vehicle travels at a constant60 km/h for2 hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine multiplication 60 × 2 remains; the speed, time, target quantity, and final distance are all exposed.",
+        "reason": "The observations provide the complete rate-time-distance setup and explicitly identify the requested quantity, while the final answer supplies the computed distance. This leaves no meaningful domain, constraint, target, or relation to infer beyond routine arithmetic."
+      }
+    },
+    {
+      "source_index": 13,
+      "family": "motion",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "13:authored_x:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "bank_output_hash": "761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "FINAL ANSWER: 120 km",
+          "The vehicle travels at a constant(30+30) km/h for(1+1) hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic: add 30+30 to get speed, add 1+1 to get time, then multiply speed by time to obtain 120 km.",
+        "reason": "The public observations supply the full setup, target quantity, and final answer. The distance is directly computed from the given speed and time, so the premise-and-target bundle and complete solution are exposed."
+      }
+    },
+    {
+      "source_index": 14,
+      "family": "motion",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Speed60 km/h is absent. Supplied distance120 km and duration2 h imply speed120/2=60 km/h.",
+      "bank_key": "14:authored_x:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "bank_output_hash": "74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": false,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "120 km",
+          "The vehicle travels at a constant speed for2 hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference remains: the requested quantity is distance traveled and the final value 120 km is already supplied.",
+        "reason": "The target quantity and its final answer are both public, so the solution is exposed even though the speed premise is omitted."
+      }
+    },
+    {
+      "source_index": 15,
+      "family": "motion",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "15:authored_x:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "bank_output_hash": "031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p4",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Distance equals speed times duration.",
+          "The distance calculation is60 km/h times2 hours, giving120 km.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic/copying remains; the speed, duration, formula, and final distance are all exposed.",
+        "reason": "The observations provide the complete distance calculation and final answer, so the premise-target bundle and solution are disclosed."
+      }
+    },
+    {
+      "source_index": 0,
+      "family": "rectangle",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "0:authored_x:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "bank_output_hash": "6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=10 and xy=24.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Solve the quadratic implied by x+y=10 and xy=24, then select the larger root. This is routine calculation once the public clues are given.",
+        "reason": "The public clues paraphrase the full source premise-target bundle: they state the equivalent equations x+y=10 and xy=24 and explicitly identify the target as the longer side length. The final answer 6 is also supplied. Although the derivation is not shown, the original task is fully recoverable from the public material, so this is a disclosure."
+      }
+    },
+    {
+      "source_index": 1,
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "1:authored_x:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "bank_output_hash": "3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=5+5 and xy=3*8.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Solving x(10-x)=24 and selecting the larger root is routine arithmetic once the public clues supply the sum, product, and target.",
+        "reason": "The public clues paraphrase the source premises: x+y=5+5 is equivalent to perimeter 20, xy=3*8 is equivalent to area 24, and the target is explicitly stated as the longer side length. Thus the full premise-target bundle is exposed, even though the derivation is not fully written out."
+      }
+    },
+    {
+      "source_index": 2,
+      "family": "rectangle",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The area24 is absent. Using answer6 as the longer side, infer the other side10-6=4 and then area6*4=24.",
+      "bank_key": "2:authored_x:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "bank_output_hash": "7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "6",
+          "The rectangle side lengths satisfy x+y=10.",
+          "Its area in terms of one side x is x(10-x).",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "The source premise that the rectangle's area is 24 is not stated in the public clues.",
+        "inference_required": "To recover the original task, one must supply the missing area value 24, set x(10-x)=24, solve the resulting quadratic, and select the larger root. The public material gives the perimeter relation, an area expression, and the target, but not the area value needed to determine the equation.",
+        "reason": "The public clues expose the perimeter relation x+y=10, the area expression x(10-x), and the target longer side, but they do not state the essential source premise area=24. The final answer 6 is present, but under the review rules it cannot by itself supply the missing premise or complete derivation. Thus the original premise-target bundle and complete solution are not publicly exposed."
+      }
+    },
+    {
+      "source_index": 3,
+      "family": "rectangle",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "3:authored_x:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "bank_output_hash": "c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The rectangle has side lengths4 and6.",
+          "Selecting the longer side gives6.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed: the public clues directly state the side lengths and the selection of the longer side, yielding the target answer.",
+        "reason": "The public clues expose the rectangle's side lengths as 4 and 6 and explicitly state that selecting the longer side gives 6. This supplies the essential premise-target bundle and the answer, so the original task is recoverable by paraphrase rather than requiring a withheld inference."
+      }
+    },
+    {
+      "source_index": 4,
+      "family": "linear",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "4:authored_x:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "bank_output_hash": "7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is3x+2=14.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic: subtract 2 from 14 and divide by 3 to obtain x=4.",
+        "reason": "The public clues state the full equation and the target quantity, so the original premise-target bundle is exposed by paraphrase. The final answer 4 is also supplied. No essential source element is withheld."
+      }
+    },
+    {
+      "source_index": 5,
+      "family": "linear",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "5:authored_x:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "bank_output_hash": "4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "4",
+          "The equation is(1+2)x+2=7+7.",
+          "The requested quantity is the real solution x."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic is needed to solve the publicly stated equation (1+2)x+2=7+7 for x; the source premise and target are already exposed by paraphrase.",
+        "reason": "The public clues state an equivalent equation, (1+2)x+2=7+7, which simplifies to 3x+2=14, and explicitly identify the requested quantity as the real solution x. Thus the original premise-target bundle is exposed, even though the derivation is not shown."
+      }
+    },
+    {
+      "source_index": 6,
+      "family": "linear",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The coefficient a=3 is absent. Insert the supplied solution x=4 into ax+2=14 to infer a=(14-2)/4=3.",
+      "bank_key": "6:authored_x:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "bank_output_hash": "ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation has the form ax+2=14 for a positive coefficient a.",
+          "The requested quantity is its real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "The specific coefficient a=3 in the source equation 3x+2=14.",
+        "inference_required": "The public clues only give a generic form ax+2=14 with positive a and target x; recovering the original task requires supplying the withheld coefficient 3, not merely reading or paraphrasing the public text.",
+        "reason": "The public material gives the answer 4 and a generic equation form, but it does not state the essential source premise a=3. The original task cannot be reconstructed as a public premise-target bundle without using the withheld coefficient or reverse-engineering from the supplied answer, which is not itself a disclosure of the source task."
+      }
+    },
+    {
+      "source_index": 7,
+      "family": "linear",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "7:authored_x:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "bank_output_hash": "d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Subtracting2 from the two sides gives3x=12.",
+          "Dividing by3 givesx=4.",
+          "4"
+        ],
+        "missing_essential_element": "The exact original equation 3x+2=14 and the instruction 'for real x' are not quoted verbatim.",
+        "inference_required": "No nontrivial inference is needed: the public clues already state the subtraction and division steps yielding x=4.",
+        "reason": "The public clues explicitly provide the algebraic derivation: subtract 2 to obtain 3x=12, then divide by 3 to obtain x=4, and the final answer is 4. This exposes a complete/nearly complete solution to the source task, even though the original equation is not quoted verbatim."
+      }
+    },
+    {
+      "source_index": 8,
+      "family": "urn",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "8:authored_x:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "bank_output_hash": "571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The urn contains6 red balls and4 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond routine arithmetic; the public clues already state the urn composition, uniform draw, and target probability.",
+        "reason": "The public clues paraphrase the private source question almost completely: they specify 6 red balls, 4 blue balls, a uniform single draw, and that the requested quantity is the probability of red. The final answer 3/5 is also supplied. Thus the premise-target bundle is exposed, even though the arithmetic derivation is not shown."
+      }
+    },
+    {
+      "source_index": 9,
+      "family": "urn",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "9:authored_x:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "bank_output_hash": "35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "3/5",
+          "The urn contains3+3 red balls and2+2 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Routine arithmetic: 3+3=6 red, 2+2=4 blue, total 10, so probability red is 6/10=3/5.",
+        "reason": "The public clues paraphrase the full source premise and target: they specify the red and blue counts via sums and state that one ball is chosen uniformly with the requested quantity being the probability it is red. Together with the public answer 3/5, the original task is recoverable by routine arithmetic, so the premise-target bundle is exposed."
+      }
+    },
+    {
+      "source_index": 10,
+      "family": "urn",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The color counts are absent. Supplied red probability3/5 and total10 imply6 red and4 blue by inverse proportion.",
+      "bank_key": "10:authored_x:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "bank_output_hash": "e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The urn contains10 balls, each either red or blue.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "The number of red balls (6) and blue balls (4) in the urn.",
+        "inference_required": "No nontrivial inference; recovering 6 red from 3/5 and 10 total is routine arithmetic and does not disclose the source premise as a stated fact.",
+        "reason": "The public clues state the total number of balls, the uniform draw, and the target probability, and the final answer is 3/5. However, the original red/blue counts are not stated. The source premise 6 red and 4 blue remains absent, and no complete derivation or copied/paraphrased source question is exposed."
+      }
+    },
+    {
+      "source_index": 11,
+      "family": "urn",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "11:authored_x:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "bank_output_hash": "dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "There are6 favorable outcomes among10 equally likely outcomes.",
+          "The probability of drawing a red ball is6/10=3/5."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond routine arithmetic; the public clues already state the favorable red count, total equally likely outcomes, target event, and the probability calculation.",
+        "reason": "The public clues expose the essential premise-target bundle and complete solution: 6 favorable red outcomes among 10 equally likely outcomes, and the probability of drawing red as 6/10=3/5. The private source's blue count and uniform-choice wording are not needed beyond the already-public equally likely framing."
+      }
+    },
+    {
+      "source_index": 12,
+      "family": "motion",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "12:authored_x:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "bank_output_hash": "77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The vehicle travels at a constant60 km/h for2 hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine multiplication of the publicly stated speed and time (60 × 2) is needed to obtain the answer.",
+        "reason": "The public clues expose both essential source premises—constant speed 60 km/h and duration 2 hours—and the target quantity, distance traveled. The final answer 120 km is also supplied. This is effectively a copied/paraphrased version of the original task, so the source question is directly disclosed."
+      }
+    },
+    {
+      "source_index": 13,
+      "family": "motion",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "13:authored_x:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "bank_output_hash": "761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "120 km",
+          "The vehicle travels at a constant(30+30) km/h for(1+1) hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic: (30+30) km/h times (1+1) hours gives 120 km.",
+        "reason": "The public clues expose the full premise-target bundle: speed 60 km/h via (30+30), time 2 hours via (1+1), and the requested quantity as distance traveled. The final answer supplies 120 km. Recovering the source task requires only routine arithmetic, so the original task is effectively disclosed by paraphrase."
+      }
+    },
+    {
+      "source_index": 14,
+      "family": "motion",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Speed60 km/h is absent. Supplied distance120 km and duration2 h imply speed120/2=60 km/h.",
+      "bank_key": "14:authored_x:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "bank_output_hash": "74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": false,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "120 km",
+          "The vehicle travels at a constant speed for2 hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "The constant speed of 60 km/h is not explicitly stated in the public clues.",
+        "inference_required": "Divide the public answer 120 km by the public time 2 hours to recover 60 km/h; this is routine arithmetic, and the answer plus time states the missing speed equivalently.",
+        "reason": "The public clues give the time and target quantity, and the public answer 120 km together with 2 hours equivalently supplies the missing speed 60 km/h. Thus the full premise-target bundle is recoverable from public material, so the original task is effectively exposed."
+      }
+    },
+    {
+      "source_index": 15,
+      "family": "motion",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "15:authored_x:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "bank_output_hash": "031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p2",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Distance equals speed times duration.",
+          "The distance calculation is60 km/h times2 hours, giving120 km."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "none beyond copying the stated speed, duration, formula, and arithmetic result",
+        "reason": "The public clues explicitly provide the formula, the source values 60 km/h and 2 hours, and the computed result 120 km, so the original task and its complete solution are exposed by paraphrase."
+      }
+    },
+    {
+      "source_index": 0,
+      "family": "rectangle",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "0:authored_x:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "bank_output_hash": "6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=10 and xy=24.",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine completion remains: solve the fully specified system x+y=10, xy=24 and select the larger root.",
+        "reason": "The public clues jointly expose the complete premise-target bundle: the side-length constraints and the requested longer side are both stated. The answer 6 follows by routine quadratic solving, so no meaningful missing structure remains to infer."
+      }
+    },
+    {
+      "source_index": 1,
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "1:authored_x:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "bank_output_hash": "3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=5+5 and xy=3*8.",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine completion remains: solve the fully specified system x+y=10, xy=24 and select the larger root.",
+        "reason": "The public clues jointly provide the complete premise-target bundle: both side-length constraints and the requested target are stated. The remaining work is routine quadratic solving, not inference of a genuinely missing essential element."
+      }
+    },
+    {
+      "source_index": 2,
+      "family": "rectangle",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The area24 is absent. Using answer6 as the longer side, infer the other side10-6=4 and then area6*4=24.",
+      "bank_key": "2:authored_x:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "bank_output_hash": "7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p5",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The rectangle side lengths satisfy x+y=10.",
+          "Its area in terms of one side x is x(10-x).",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "The area value (or product xy) is not supplied; only the area expression x(10-x) is given.",
+        "inference_required": "Use the final answer 6 as the longer side, combine with x+y=10 to get the other side 4, and infer the missing area/product 24; the observations alone do not provide this constraint.",
+        "reason": "The target and some setup are exposed, but the essential area value is absent, so reconstructing the problem requires inverse inference rather than routine completion."
+      }
+    },
+    {
+      "source_index": 3,
+      "family": "rectangle",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "3:authored_x:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "bank_output_hash": "c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The rectangle has side lengths4 and6.",
+          "Selecting the longer side gives6."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine selection/copying: the longer side is already identified and its value is directly given.",
+        "reason": "The observations expose both the relevant premise (side lengths 4 and 6) and the target result (the longer side is 6), so no meaningful missing structure remains to infer."
+      }
+    },
+    {
+      "source_index": 4,
+      "family": "linear",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "4:authored_x:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "bank_output_hash": "7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is3x+2=14.",
+          "The requested quantity is the real solution x.",
+          "FINAL ANSWER: 4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine solving or verification of the fully specified linear equation remains; no meaningful missing premise or target must be inferred.",
+        "reason": "The observations jointly provide the complete equation and explicitly identify the requested quantity as its real solution, which is a paraphrased solve-for-x problem. The final answer 4 is also supplied, so the reconstruction input is exposed."
+      }
+    },
+    {
+      "source_index": 5,
+      "family": "linear",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "5:authored_x:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "bank_output_hash": "4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is(1+2)x+2=7+7.",
+          "The requested quantity is the real solution x."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic: simplify (1+2) and 7+7, then solve the linear equation for x.",
+        "reason": "The observations jointly provide the full equation and explicitly identify the target as the real solution x, so the original premise-target bundle is exposed; solving is routine completion."
+      }
+    },
+    {
+      "source_index": 6,
+      "family": "linear",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The coefficient a=3 is absent. Insert the supplied solution x=4 into ax+2=14 to infer a=(14-2)/4=3.",
+      "bank_key": "6:authored_x:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "bank_output_hash": "ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p5",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation has the form ax+2=14 for a positive coefficient a.",
+          "The requested quantity is its real solution x.",
+          "FINAL ANSWER: 4"
+        ],
+        "missing_essential_element": "The value of the positive coefficient a is not supplied.",
+        "inference_required": "Using the final answer x=4 with ax+2=14, infer the missing coefficient a=3, which is required to reconstruct the original setup.",
+        "reason": "The observations give the equation form and target x, but omit the essential coefficient a. The answer 4 uniquely determines a=3 by inverse inference, so the full premise is not directly exposed."
+      }
+    },
+    {
+      "source_index": 7,
+      "family": "linear",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "7:authored_x:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "bank_output_hash": "d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Subtracting2 from the two sides gives3x=12.",
+          "Dividing by3 givesx=4."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine completion remains: the clues directly derive x=4 from 3x=12.",
+        "reason": "The public observations expose the full derivation and final value x=4, so the target and solution are already disclosed."
+      }
+    },
+    {
+      "source_index": 8,
+      "family": "urn",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "8:authored_x:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "bank_output_hash": "571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The urn contains6 red balls and4 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic: 6/(6+4)=3/5; no missing premise or target remains.",
+        "reason": "The public clues provide the full urn composition, the uniform selection setup, and the exact requested probability. With the final answer 3/5, the complete premise-target bundle and solution are exposed."
+      }
+    },
+    {
+      "source_index": 9,
+      "family": "urn",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "9:authored_x:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "bank_output_hash": "35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The urn contains3+3 red balls and2+2 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic remains: sum red balls to 6, sum blue balls to 4, total to 10, then compute 6/10 = 3/5.",
+        "reason": "The observations jointly provide the full urn composition, the uniform selection setup, and the requested target probability. The final answer follows by trivial arithmetic, so the premise-target bundle and nearly complete solution are exposed."
+      }
+    },
+    {
+      "source_index": 10,
+      "family": "urn",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The color counts are absent. Supplied red probability3/5 and total10 imply6 red and4 blue by inverse proportion.",
+      "bank_key": "10:authored_x:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "bank_output_hash": "e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p5",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The urn contains10 balls, each either red or blue.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "The number of red balls in the urn.",
+        "inference_required": "Use the final answer 3/5 as the probability of drawing red from 10 equally likely balls to infer that the missing red-ball count is 6.",
+        "reason": "The setup and target are stated, but the essential composition value is absent. The answer must be used inversely to recover the number of red balls, so this is not merely routine completion of a fully exposed solution."
+      }
+    },
+    {
+      "source_index": 11,
+      "family": "urn",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "11:authored_x:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "bank_output_hash": "dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "There are6 favorable outcomes among10 equally likely outcomes.",
+          "The probability of drawing a red ball is6/10=3/5.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference remains; the target probability and its computation are fully stated.",
+        "reason": "The observations provide the favorable/equally likely setup, identify the target as the probability of drawing a red ball, and compute it as 6/10=3/5, exposing a complete premise-target-solution bundle."
+      }
+    },
+    {
+      "source_index": 12,
+      "family": "motion",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "12:authored_x:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "bank_output_hash": "77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The vehicle travels at a constant60 km/h for2 hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine multiplication of the disclosed speed and time remains: 60 km/h × 2 h = 120 km.",
+        "reason": "The observations provide the complete premise-target bundle: constant speed, duration, and the requested distance. The final answer is directly obtained by routine arithmetic, so the reconstruction input is fully exposed."
+      }
+    },
+    {
+      "source_index": 13,
+      "family": "motion",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "13:authored_x:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "bank_output_hash": "761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The vehicle travels at a constant(30+30) km/h for(1+1) hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic remains: simplify (30+30) km/h to 60 km/h, (1+1) hours to 2 hours, and multiply to get 120 km.",
+        "reason": "The observations jointly expose the full premise-target bundle: constant speed, travel time, and the requested distance. The final answer follows by routine simplification and multiplication, so the reconstruction input is disclosed."
+      }
+    },
+    {
+      "source_index": 14,
+      "family": "motion",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Speed60 km/h is absent. Supplied distance120 km and duration2 h imply speed120/2=60 km/h.",
+      "bank_key": "14:authored_x:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "bank_output_hash": "74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p5",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The vehicle travels at a constant speed for2 hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "The constant speed value is not supplied.",
+        "inference_required": "Using the final answer 120 km and the given time of 2 hours, infer the missing constant speed as 120/2 = 60 km/h.",
+        "reason": "The observations provide time and target distance but omit the essential speed. The answer must be used to infer that missing premise, so this is not a complete premise-target bundle or full solution."
+      }
+    },
+    {
+      "source_index": 15,
+      "family": "motion",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "15:authored_x:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "bank_output_hash": "031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Distance equals speed times duration.",
+          "The distance calculation is60 km/h times2 hours, giving120 km."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic/copying remains; the speed, duration, formula, and final distance are all supplied.",
+        "reason": "The public observations provide the complete distance calculation and its result, so the premise-target bundle and solution are exposed."
+      }
+    },
+    {
+      "source_index": 0,
+      "family": "rectangle",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "0:authored_x:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "bank_output_hash": "6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=10 and xy=24.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed to recover the source task: the public clues already state the perimeter-derived sum, the area product, and the target longer side, with the final answer supplied.",
+        "reason": "The public clues together paraphrase the original problem completely: x+y=10 encodes perimeter 20, xy=24 states the area, and the requested quantity is the longer side. The answer 6 is also supplied. Thus the essential premise-target bundle is exposed, so this is a direct/paraphrased disclosure rather than a safe withholding."
+      }
+    },
+    {
+      "source_index": 1,
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "1:authored_x:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "bank_output_hash": "3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "6",
+          "The side lengths satisfy x+y=5+5 and xy=3*8.",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine solving of the disclosed system x+y=10, xy=24 and selecting the larger root; the source premises and target are already stated equivalently.",
+        "reason": "The public clues expose the essential source premises equivalently: perimeter 20 gives x+y=10 via 5+5, area 24 gives xy=24 via 3*8, and the target is explicitly the longer side. The final answer 6 is also supplied. Thus the original task is recoverable by paraphrase, even though no full derivation is shown."
+      }
+    },
+    {
+      "source_index": 2,
+      "family": "rectangle",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The area24 is absent. Using answer6 as the longer side, infer the other side10-6=4 and then area6*4=24.",
+      "bank_key": "2:authored_x:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "bank_output_hash": "7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "6",
+          "The rectangle side lengths satisfy x+y=10.",
+          "Its area in terms of one side x is x(10-x).",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "The source premise that the rectangle's area is 24 is not stated in the public clues.",
+        "inference_required": "Using the public final answer 6 together with x+y=10, infer the other side is 4, hence the area is 24; this recovers the withheld area premise rather than copying it from the clues.",
+        "reason": "The public clues give the perimeter-derived sum, an area expression, and the target longer side, but they do not state the essential area value 24. The final answer alone does not expose the derivation, and the missing premise must be inferred by answer-conditioned inversion."
+      }
+    },
+    {
+      "source_index": 3,
+      "family": "rectangle",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "3:authored_x:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "bank_output_hash": "c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The rectangle has side lengths4 and6.",
+          "Selecting the longer side gives6."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None; the public clues directly state the side lengths and the longer side.",
+        "reason": "The public clues expose the essential premise and target: they state the rectangle's side lengths are 4 and 6 and that selecting the longer side gives 6. This is a complete premise-target bundle and effectively a complete solution to the private question."
+      }
+    },
+    {
+      "source_index": 4,
+      "family": "linear",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "4:authored_x:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "bank_output_hash": "7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is3x+2=14.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine algebraic solving of the fully disclosed equation 3x+2=14 for x.",
+        "reason": "The public clues state the exact equation and the requested target (the real solution x), which together paraphrase the private source question. The final answer 4 is supplied, but no derivation is shown; however, the full premise-target bundle is already exposed, so this is a direct question disclosure."
+      }
+    },
+    {
+      "source_index": 5,
+      "family": "linear",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "5:authored_x:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "bank_output_hash": "4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is(1+2)x+2=7+7.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine simplification/solving from the publicly stated equivalent equation and target.",
+        "reason": "The public clues state an equation equivalent to 3x+2=14 and identify the requested quantity as the real solution x, so the full premise-target bundle is exposed by paraphrase. The final answer 4 is also supplied, though no derivation is shown."
+      }
+    },
+    {
+      "source_index": 6,
+      "family": "linear",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The coefficient a=3 is absent. Insert the supplied solution x=4 into ax+2=14 to infer a=(14-2)/4=3.",
+      "bank_key": "6:authored_x:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "bank_output_hash": "ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation has the form ax+2=14 for a positive coefficient a.",
+          "The requested quantity is its real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "The coefficient a=3 in the original equation 3x+2=14.",
+        "inference_required": "Use the public answer x=4 and the public form ax+2=14 to infer a by solving 4a+2=14, yielding a=3, thereby recovering the original equation.",
+        "reason": "The public clues give the equation form and target but omit the essential coefficient 3. The final answer alone does not state the original equation or derivation; recovering a=3 requires an inverse inference from the supplied solution."
+      }
+    },
+    {
+      "source_index": 7,
+      "family": "linear",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "7:authored_x:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "bank_output_hash": "d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Subtracting2 from the two sides gives3x=12.",
+          "Dividing by3 givesx=4."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference remains; the public clues provide the full algebraic derivation to x=4.",
+        "reason": "The public clues explicitly perform the two solving steps: subtract 2 to obtain 3x=12, then divide by 3 to obtain x=4. This exposes a complete solution to the private equation-solving task, even though the original equation is not quoted verbatim."
+      }
+    },
+    {
+      "source_index": 8,
+      "family": "urn",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "8:authored_x:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "bank_output_hash": "571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The urn contains6 red balls and4 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed; the public clues paraphrase the full source premise and target, and the answer is the routine probability 6/(6+4).",
+        "reason": "The public clues state the urn composition, uniform single draw, and requested probability that the ball is red. Together with the supplied answer 3/5, this exposes the complete premise-target bundle by paraphrase, so the original task is directly disclosed."
+      }
+    },
+    {
+      "source_index": 9,
+      "family": "urn",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "9:authored_x:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "bank_output_hash": "35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The urn contains3+3 red balls and2+2 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic: 3+3=6 red, 2+2=4 blue, total 10, probability red = 6/10 = 3/5.",
+        "reason": "The public clues paraphrase the source question and expose all essential premises and the target: red count as 3+3, blue count as 2+2, uniform selection, and probability of red. The remaining step is routine arithmetic, so the original task is effectively disclosed."
+      }
+    },
+    {
+      "source_index": 10,
+      "family": "urn",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The color counts are absent. Supplied red probability3/5 and total10 imply6 red and4 blue by inverse proportion.",
+      "bank_key": "10:authored_x:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "bank_output_hash": "e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "3/5",
+          "The urn contains10 balls, each either red or blue.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "The number of red balls (6) and blue balls (4) in the urn.",
+        "inference_required": "Use the supplied probability 3/5 and the public total of 10 balls to solve red/10 = 3/5, yielding 6 red balls and therefore 4 blue balls.",
+        "reason": "The public clues state the total number of balls, uniform selection, and the target probability, but they do not state the red/blue counts. The final answer 3/5 is present, but the original premise counts must be recovered by inverse inference from the answer and total. No derivation or complete premise-target bundle is publicly exposed."
+      }
+    },
+    {
+      "source_index": 11,
+      "family": "urn",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "11:authored_x:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "bank_output_hash": "dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "There are6 favorable outcomes among10 equally likely outcomes.",
+          "The probability of drawing a red ball is6/10=3/5."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed; the public clues directly state the favorable red count, total outcomes, and the resulting probability.",
+        "reason": "The public clues expose the essential premise-target bundle and a complete solution: they state 6 favorable outcomes among 10 equally likely outcomes and directly compute the probability of drawing a red ball as 6/10=3/5. The original task is recoverable by paraphrase, so this is a disclosure."
+      }
+    },
+    {
+      "source_index": 12,
+      "family": "motion",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "bank_key": "12:authored_x:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "bank_output_hash": "77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The vehicle travels at a constant60 km/h for2 hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond routine multiplication of the publicly stated rate and time.",
+        "reason": "The public clues state the same rate, time, and target quantity as the private source, and the final answer supplies the result. This is a copied/paraphrased question with the full premise-target bundle exposed; no essential source element is withheld."
+      }
+    },
+    {
+      "source_index": 13,
+      "family": "motion",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "bank_key": "13:authored_x:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "bank_output_hash": "761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "constant(30+30) km/h for(1+1) hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Routine arithmetic only: evaluate 30+30 as 60, 1+1 as 2, then multiply speed by time to obtain 120 km.",
+        "reason": "The public clues state the speed and time equivalently as arithmetic expressions and explicitly identify the target as distance traveled. Together with the public answer 120 km, the full premise-target bundle is exposed; recovering the original task requires only routine simplification and multiplication, not a nontrivial withheld inference."
+      }
+    },
+    {
+      "source_index": 14,
+      "family": "motion",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Speed60 km/h is absent. Supplied distance120 km and duration2 h imply speed120/2=60 km/h.",
+      "bank_key": "14:authored_x:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "bank_output_hash": "74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "ACCEPT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "120 km",
+          "The vehicle travels at a constant speed for2 hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "The constant speed value, 60 km/h, is not stated in the public clues.",
+        "inference_required": "Use the supplied distance 120 km and public time 2 hours to infer the missing speed: 120 km / 2 h = 60 km/h.",
+        "reason": "The public material gives the time and target quantity and supplies the final distance, but it does not state the speed. Recovering the original task requires an answer-conditioned inverse inference to obtain 60 km/h, so the full source premise-target bundle is not directly exposed."
+      }
+    },
+    {
+      "source_index": 15,
+      "family": "motion",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "bank_key": "15:authored_x:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "bank_output_hash": "031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "prompt": "audit_source_disclosure_p3",
+      "status": "REJECT",
+      "matches_proposed_reference": true,
+      "review": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Distance equals speed times duration.",
+          "The distance calculation is60 km/h times2 hours, giving120 km.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is required; the public clue states the speed, duration, multiplication, and resulting distance.",
+        "reason": "The public clue c2 explicitly supplies the source premises (60 km/h and 2 hours), the operation (multiplication), and the target result (120 km), so the original task and complete solution are exposed by paraphrase."
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "family": "rectangle",
+      "condition": "full",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "rectangle",
+      "condition": "inverse",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "ACCEPT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "rectangle",
+      "condition": "proof",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "linear",
+      "condition": "full",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "linear",
+      "condition": "cosmetic",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "linear",
+      "condition": "inverse",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 1
+    },
+    {
+      "family": "linear",
+      "condition": "proof",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "urn",
+      "condition": "full",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "urn",
+      "condition": "cosmetic",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "urn",
+      "condition": "inverse",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 1
+    },
+    {
+      "family": "urn",
+      "condition": "proof",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "motion",
+      "condition": "full",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "motion",
+      "condition": "cosmetic",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "motion",
+      "condition": "inverse",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 1
+    },
+    {
+      "family": "motion",
+      "condition": "proof",
+      "incumbent": "audit_public_p4",
+      "candidate": "audit_public_p5",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "rectangle",
+      "condition": "full",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "rectangle",
+      "condition": "inverse",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "ACCEPT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "rectangle",
+      "condition": "proof",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "linear",
+      "condition": "full",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "linear",
+      "condition": "cosmetic",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "linear",
+      "condition": "inverse",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "ACCEPT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "linear",
+      "condition": "proof",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "urn",
+      "condition": "full",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "urn",
+      "condition": "cosmetic",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "urn",
+      "condition": "inverse",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "ACCEPT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "urn",
+      "condition": "proof",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "motion",
+      "condition": "full",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "motion",
+      "condition": "cosmetic",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    },
+    {
+      "family": "motion",
+      "condition": "inverse",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "ACCEPT",
+      "both_returned": true,
+      "reference_agreement_gain": 1
+    },
+    {
+      "family": "motion",
+      "condition": "proof",
+      "incumbent": "audit_source_disclosure_p2",
+      "candidate": "audit_source_disclosure_p3",
+      "before": "REJECT",
+      "after": "REJECT",
+      "both_returned": true,
+      "reference_agreement_gain": 0
+    }
+  ],
+  "candidate_production_validated": false,
+  "promotion_authorized": false,
+  "limitations": [
+    "Four authored mathematical families; transformations within a family are correlated.",
+    "Rectangle intentionally overlaps an existing prompt demonstration, testing consistency rather than held-out generalization.",
+    "Agreement is with a proposed operational definition, not independently measured near-perfect accuracy.",
+    "No Qwen score or original-recovery result is produced by this diagnostic.",
+    "Candidate acceptance of inversions cannot override a full-question or full-proof false acceptance.",
+    "Historical W labels and results remain unchanged; these are separate development controls."
+  ]
+}

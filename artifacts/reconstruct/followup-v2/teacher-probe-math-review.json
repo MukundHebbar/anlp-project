@@ -1,0 +1,31 @@
+{
+  "reviewer": "assistant mathematical review, not independent human labels",
+  "scope": "four preselected development inputs; not a judge accuracy estimate or a held-out model benchmark",
+  "model_and_compute_confounds": "DeepSeek uses reasoning; Qwen is non-thinking and differs in model size/runtime. This does not isolate either factor.",
+  "cases": [
+    {
+      "source_index": 11,
+      "record_key": "11:c9a3c3a885da1d31637469c156e7d9648ced9e4a6643484efbda19e207ffc8e4:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "review_status": "supported",
+      "certificate": "With all positive divisors ordered, the gap bound gives k<4. Composite n requires k>=3, so n=p^2; p(p-1)=2(p-1) forces p=2. Divisors1,2,4 verify existence."
+    },
+    {
+      "source_index": 22,
+      "record_key": "22:aeffbbddb686814807f50e2423188fc0ed2ed42caa938a7cfbf075748e7792d1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "review_status": "supported",
+      "certificate": "The exponents for primes2,3,5,7 are97,48,24,16, all at least the prime. At11 the exponent is9. These exhaust smaller primes and prove minimality."
+    },
+    {
+      "source_index": 30,
+      "record_key": "30:1dfe6344b6578a18ca232657bf47ce7e37e3acd11a8288e00d43fffd68aba723:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "review_status": "supported_alternative",
+      "certificate": "Log z has a simple zero at1 since Log(1)=0 and Log prime(1)=1. Its squared reciprocal therefore has a pole of order2. The translation w=z-1 and both qualitative observations are grounded. This differs from the original function Log(z)/(z-1)^3 and is still a valid reconstruction."
+    },
+    {
+      "source_index": 49,
+      "record_key": "49:880d60a6315960a96eab1c711eb61c54df59621723825c1fdaa5de16e95bf4ca:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "review_status": "clue_violation",
+      "certificate": "The positive recurrence a_(n+1)=a_n(1-a_n) decreases to0 and reciprocal increments tend to1, so n*a_n tends to1. But at the chosen r=1,p=0, F(x)-x=-x^2 has the same negative sign on both sides of0. The stated sign-change clue is false. Correct final answer does not establish grounded reconstruction."
+    }
+  ]
+}

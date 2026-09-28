@@ -1,0 +1,12 @@
+{
+  "source_index": 80,
+  "bank_key": "80:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+  "bank_output_hash": "46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+  "stage": "Before W student generation",
+  "explicit_target_role": true,
+  "clue_count": 4,
+  "public_clue_word_count": 61,
+  "withheld_elements": "Exact linear-component coefficients and resulting zero curl",
+  "analytic_review": "Circle radius2, Green method, linear components and integral target are source-supported. Exact coefficients and zero curl are absent. A form P=ax+by,Q=cx+dy has integral4pi(c-b), so answer0 constrains c=b but leaves a,b,d undetermined. No complete forward proof or source integrand is given. Orientation is not an essential omission for this zero answer; acceptance rests on missing integrand, not orientation.",
+  "student_readiness_granted_by_this_file": false
+}

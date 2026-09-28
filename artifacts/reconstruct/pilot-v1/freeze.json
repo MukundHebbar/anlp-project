@@ -1,0 +1,25 @@
+{
+  "status": "development_candidate_not_confirmed",
+  "reason": "The best D1 condition reached 3/8 grounded successes under the final judge, but the complete-bank D2 check reached only 1/12. The confirmation split was therefore left untouched.",
+  "best_tested_procedure": {
+    "converter_prompt": "convert_p2",
+    "bank_audit_prompt": "audit_p2",
+    "clue_policy": "all honest clues in the accepted bank (one to four; no padding)",
+    "disclosure": "medium",
+    "format": "sentence bullets",
+    "display_order": "seeded random order",
+    "student_prompt": "student_p1",
+    "student_model": "Qwen/Qwen3-4B-GGUF Q4_K_M",
+    "thinking": false,
+    "student_sampling": {"temperature": 0.7, "top_p": 0.8, "top_k": 20, "max_tokens": 8192, "seed": 0},
+    "evaluator_prompt": "evaluate_p2",
+    "evaluator_model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "evaluator_reasoning_effort": "low",
+    "source_recovery_prompt": "source_recovery_p1"
+  },
+  "development_results": {
+    "D1_four_clue_common_subset": {"responses": 9, "evaluated": 8, "grounded_successes": 3, "grounded_success_rate": 0.375, "exact_source_recoveries": 1},
+    "D2_complete_bank": {"responses": 12, "evaluated": 12, "grounded_successes": 1, "grounded_success_rate": 0.08333333333333333, "exact_source_recoveries": 1}
+  },
+  "untouched_confirmation_indices": [12, 32, 36, 38, 39, 42, 51, 53, 56, 57, 60, 61, 78, 79, 82, 85, 93, 103, 107, 109, 115, 128, 130, 146]
+}

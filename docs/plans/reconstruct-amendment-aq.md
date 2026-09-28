@@ -1,0 +1,5 @@
+# AQ: matched direct SOLVE control on the fresh sixteen-source allocation
+
+Registered after four AN/AO reconstruction responses but before any AQ outputs. Their answer-consistency failures suggest a possible forward-mathematics limitation; prior AI control used a different twelve-source cohort. Run every fifteen preflight-eligible AK source directly with the original question visible, answer/checked solution hidden; keep quarantined1 in the sixteen-source allocation denominator. No selection based on reconstruction success.
+
+Use exactly AI's concise SOLVE prompt, same original nonthinking Qwen3-4B Q4_K_M,0.7/0.8/20/seed0/8192, once per source. Freeze sources/requests before calls, preserve failures, manually verify both final answers and explanations. These are SOLVE controls, never RECONSTRUCT successes and not a reconstruction ceiling (reconstruction receives the answer). No provider calls; local run must not overlap another local student runner. AP input review is frozen before AQ outputs to prevent outcome-based eligibility changes. Compare descriptively within source; this is adaptive development, not training transfer or fresh confirmation.

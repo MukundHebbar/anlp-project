@@ -1,0 +1,50 @@
+{
+  "54:target_example:0": {
+    "source_index": 54,
+    "arm": "target_example",
+    "bank_key": "54:487a399a9aa936b0a3276a7995bb25937a94895c09fb7baee4db74b688f8bff1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{99}",
+      "clues": [
+        "The complex numbers satisfy |ω| = 1 and |z| = 10.",
+        "The angle θ is the argument of the quotient (ω − z)/z.",
+        "Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.",
+        "Every point on the circle |u + 1| = 1/10 can be realized by choosing z = 10 and ω = 10(u + 1).",
+        "Writing u = X + iY, the circle becomes (X + 1)^2 + Y^2 = 1/100, and X lies between −11/10 and −9/10."
+      ],
+      "rendered_clues": "- The complex numbers satisfy |ω| = 1 and |z| = 10.\n- The angle θ is the argument of the quotient (ω − z)/z.\n- Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.\n- Every point on the circle |u + 1| = 1/10 can be realized by choosing z = 10 and ω = 10(u + 1).\n- Writing u = X + iY, the circle becomes (X + 1)^2 + Y^2 = 1/100, and X lies between −11/10 and −9/10.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_missing_target",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "84b4a3a6334c6ac16c0acf1f46d23e421766eeb1a6c53e9e4c89728c0ed6b60f",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 4.\nObservations: The data are2,3 and7. Their sum is12. Each entry has equal weight.\nOutput: {\"question\":\"What is the arithmetic mean of2,3 and7?\",\"justification\":\"The target is missing. The sum12 divided by the three equally weighted entries gives4, matching the supplied answer; the sum itself is12 and the median is3. Thus the arithmetic mean is a plausible target. The reconstructed question has answer(2+3+7)/3=4 and uses the observations.\",\"assumptions\":[\"I inferred the arithmetic-mean target from the answer and equal-weight observations; I do not claim it is the only conceivable question.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{99}\nOBSERVATIONS:\n- The complex numbers satisfy |ω| = 1 and |z| = 10.\n- The angle θ is the argument of the quotient (ω − z)/z.\n- Setting u = (ω − z)/z gives u + 1 = ω/z, so |u + 1| = 1/10.\n- Every point on the circle |u + 1| = 1/10 can be realized by choosing z = 10 and ω = 10(u + 1).\n- Writing u = X + iY, the circle becomes (X + 1)^2 + Y^2 = 1/100, and X lies between −11/10 and −9/10.",
+    "rendered_input_hash": "011a90d82488d1702167829226def6a05707018afd93cbdcd5c21957a37a75ac"
+  },
+  "67:target_example:0": {
+    "source_index": 67,
+    "arm": "target_example",
+    "bank_key": "67:487a399a9aa936b0a3276a7995bb25937a94895c09fb7baee4db74b688f8bff1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "The set B consists of n vectors and is a basis of the vector space V.",
+        "The linear operator T sends the first basis vector to the sum of all n basis vectors.",
+        "If A is the matrix of T in the basis B, then its first column is the coordinate vector of T(v1), so A e1 is the all-ones vector.",
+        "The matrix representing the inverse operator in the same basis is the inverse of A.",
+        "Applying A^{-1} to A e1 returns e1."
+      ],
+      "rendered_clues": "- The set B consists of n vectors and is a basis of the vector space V.\n- The linear operator T sends the first basis vector to the sum of all n basis vectors.\n- If A is the matrix of T in the basis B, then its first column is the coordinate vector of T(v1), so A e1 is the all-ones vector.\n- The matrix representing the inverse operator in the same basis is the inverse of A.\n- Applying A^{-1} to A e1 returns e1.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_missing_target",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "da4c54dea15f2850cf6a55a2abf90ac73bf7a0752a09d1543ee3afaeb6ea4434",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 4.\nObservations: The data are2,3 and7. Their sum is12. Each entry has equal weight.\nOutput: {\"question\":\"What is the arithmetic mean of2,3 and7?\",\"justification\":\"The target is missing. The sum12 divided by the three equally weighted entries gives4, matching the supplied answer; the sum itself is12 and the median is3. Thus the arithmetic mean is a plausible target. The reconstructed question has answer(2+3+7)/3=4 and uses the observations.\",\"assumptions\":[\"I inferred the arithmetic-mean target from the answer and equal-weight observations; I do not claim it is the only conceivable question.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1\nOBSERVATIONS:\n- The set B consists of n vectors and is a basis of the vector space V.\n- The linear operator T sends the first basis vector to the sum of all n basis vectors.\n- If A is the matrix of T in the basis B, then its first column is the coordinate vector of T(v1), so A e1 is the all-ones vector.\n- The matrix representing the inverse operator in the same basis is the inverse of A.\n- Applying A^{-1} to A e1 returns e1.",
+    "rendered_input_hash": "4fddb9a8e09e827eb3863a08a73ae5bc995d44c264ea0cf10511a5505ae0da29"
+  }
+}

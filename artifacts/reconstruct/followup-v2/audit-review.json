@@ -1,0 +1,27 @@
+{
+  "reviewer_provenance": "assistant mathematical/protocol review; not independent human annotation",
+  "reviewed_before_role_student_generation": true,
+  "cases": [
+    {
+      "source_index": 73,
+      "auditor": "audit_role_p1",
+      "teacher_decision": "REJECT",
+      "review": "False full-proof rationale: the auditor explicitly uses a_n=2^{x_n} from the private source, but that definition is absent from the public clue bank. Public clues give the telescoping expression and x_0=1; linking x_0 to a_0 still requires a missing definition. The supplied answer constrains a_0, but does not expose the source mapping.",
+      "action": "Test a global public/private disclosure boundary clarification in audit_role_p2, before student generation. Preserve original audit."
+    },
+    {
+      "source_index": 40,
+      "auditor": "audit_role_p1",
+      "teacher_decision": "ACCEPT",
+      "review": "The role sentence contains the source-specific count 'four', violating the predeclared no-numbers rule. This is a protocol defect even though four variables are already present in the base bank.",
+      "action": "Do not accept under the registered rule. Include spelled-out counts explicitly in audit_role_p2."
+    },
+    {
+      "source_index": 105,
+      "auditor": "audit_role_p1",
+      "teacher_decision": "REJECT",
+      "review": "Supported rejection: the original bank already gives the expression, integrality, positivity, and coprimality, while the new role cue identifies counting ordered pairs. Together these disclose the premise and target bundle.",
+      "action": "Retain rejection as coverage loss; do not remove source from the overall denominator."
+    }
+  ]
+}

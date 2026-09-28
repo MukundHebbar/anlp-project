@@ -1,0 +1,7 @@
+# AV: target family plus mathematical tool
+
+All7 conversions and7 level2 student draws returned. All7 source-disclosure audits returned: accept21/35/54/68/113, reject114/132. The single semantic recovery is114 (convergence radius), but its proof invents an incorrect asymptotic for the divisor function and its richer input is disclosure-rejected. Therefore semantic recovery is1/7 before eligibility,0 eligible; grounded original recovery0/7. The registered condition for testing the shorter level1 (at least2 semantic recoveries) was not met, so that arm is not run.
+
+The extra count cue21 produces a valid alternative count (elements with order dividing half the group order), not primitive roots. The probability cue68 produces the probability of determinant0 rather than−1. These are meaningful changes in task understanding, but answer coincidence does not establish original recovery. Geometry54 chooses a different tangent expression;113 corrupts the root;132 reverses the guarantee condition. Exact reviews and hashes are in level2/response-math-review.json. Audit rejections and raw outputs are retained, not overridden to increase success.
+
+This experiment isolates adding the same two kinds of information to the seven unchanged three-clue inputs. It does not establish a broadly useful policy. Next AW tests higher-information symbolic intermediate equations on the separately matched AL missing-premise cohort, where the target is already specified. The two cohorts must not be pooled as one clue-count curve.

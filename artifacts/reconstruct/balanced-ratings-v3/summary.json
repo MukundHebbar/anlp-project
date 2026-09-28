@@ -1,0 +1,99 @@
+{
+  "version": "RECONSTRUCT-RATING-v3",
+  "source_path": "artifacts/reconstruct/final-100-v1/questions-answers.jsonl",
+  "source_sha256": "d6b75d28983755cc8e0f2740b427f6e7e66429e0b36a78478aec5ad64681589c",
+  "boundaries": [
+    18.75,
+    37.5,
+    56.25,
+    75
+  ],
+  "allocated": 100,
+  "scored": 47,
+  "original_histogram": {
+    "1": 4,
+    "2": 11,
+    "3": 29,
+    "4": 3,
+    "5": 0
+  },
+  "relaxed_v2_histogram": {
+    "1": 4,
+    "2": 11,
+    "3": 7,
+    "4": 23,
+    "5": 2
+  },
+  "balanced_v3_histogram": {
+    "1": 3,
+    "2": 6,
+    "3": 24,
+    "4": 12,
+    "5": 2
+  },
+  "new_model_calls": 0,
+  "inspected_candidate_scales": [
+    {
+      "boundaries": [
+        20,
+        40,
+        60,
+        75
+      ],
+      "histogram": {
+        "1": 4,
+        "2": 11,
+        "3": 29,
+        "4": 1,
+        "5": 2
+      }
+    },
+    {
+      "boundaries": [
+        18.75,
+        37.5,
+        56.25,
+        75
+      ],
+      "histogram": {
+        "1": 3,
+        "2": 6,
+        "3": 24,
+        "4": 12,
+        "5": 2
+      }
+    },
+    {
+      "boundaries": [
+        12.5,
+        31.25,
+        50,
+        68.75
+      ],
+      "histogram": {
+        "1": 3,
+        "2": 1,
+        "3": 18,
+        "4": 23,
+        "5": 2
+      }
+    },
+    {
+      "boundaries": [
+        25,
+        37.5,
+        56.25,
+        70
+      ],
+      "histogram": {
+        "1": 4,
+        "2": 5,
+        "3": 24,
+        "4": 12,
+        "5": 2
+      }
+    }
+  ],
+  "selection_basis": "Post-hoc development calibration after inspecting this cohort. Equal18.75-point spacing between adjacent cutoffs; no per-example rules or quantile assignment. Freeze before new evaluation.",
+  "limitations": "A middle-peaked ordinal histogram is not evidence of Gaussian scores or judge validity. Underlying numerical scores, source gates and success labels are unchanged. Future distribution is not guaranteed."
+}

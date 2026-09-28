@@ -1,0 +1,149 @@
+{
+  "scope": "AA development assistant reference, not independent gold or model population accuracy",
+  "rows": [
+    {
+      "source_index": 87,
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "assistant_reference": "REJECT",
+      "agrees": true,
+      "reason": "The observations jointly provide the complete premise-target setup and a complete counterexample solution supporting the final answer No.",
+      "analytic_review": "The complete spike construction and its nondifferentiability at accumulating points are exposed. Only checking it against a selected missing limit hypothesis remains. Conservatively reject near-complete solution exposure; the withheld exponent is also nonunique. Preserve raw auditor decisions separately."
+    },
+    {
+      "source_index": 118,
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "assistant_reference": "REJECT",
+      "agrees": true,
+      "reason": "The observations jointly expose the sought odd integer k, the constrained expression, the triangular-number condition, and the specific value k=5 with verification, so the complete solution is disclosed.",
+      "analytic_review": "The bank explicitly supplies witness k5, evaluation to3, and triangular verification. The missing primality of3 is a routine final check, so this nearly complete construction/verification violates the solution-exposure bound even though the prime target condition is withheld."
+    },
+    {
+      "source_index": 62,
+      "prompt": "audit_public_p5",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The public clues give the function and target but omit the essential expansion center. The answer \u221e uniquely forces c=\u03c0, so a genuine inverse inference remains rather than mere routine completion.",
+      "analytic_review": "The expansion center is absent. Choosing pi reconstructs the source, but infinity does not uniquely force it: exterior Laurent expansions about other centers also have infinite outer radius. Do not endorse the converter uniqueness claim. Public observations themselves are true; original center must be supplied by reconstruction."
+    },
+    {
+      "source_index": 96,
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "assistant_reference": "ACCEPT",
+      "agrees": false,
+      "reason": "The observations jointly provide the complete limit setup, the double-integral definition, the differentiability condition, and the requested target, while the final answer is also supplied. This is a paraphrased question/premise-target bundle, so it must be rejected despite the omitted g'(0) value.",
+      "analytic_review": "Derivative at0 is genuinely missing. With gprime0=a, the nested integral yields a/12, so answer1/12 implies a=1. The bank does not show this asymptotic derivation. Conditions g0 and differentiability remain visible only in richer arms."
+    },
+    {
+      "source_index": 46,
+      "prompt": "audit_public_p5",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The observations describe the shooting-order setup and target, but they omit the essential column heights. The answer 560 constrains the missing heights uniquely, so a nontrivial inverse inference remains rather than mere routine completion.",
+      "analytic_review": "Column heights are genuinely missing. Enumerating all22 positive integer partitions of8 yields only[2,3,3] with count560. Need to construct the interleaving count and infer heights; the complete question is not stated."
+    },
+    {
+      "source_index": 129,
+      "prompt": "audit_public_p5",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The observations define the alphabet, adjacency rule, recurrence, and target form, but they omit the exact fixed length. The final answer 1392 constrains that missing length, so a nontrivial inverse inference remains rather than a complete premise-target bundle or full solution.",
+      "analytic_review": "Length is genuinely missing. Recurrence and length<20 permit answer-conditioned search; direct calculation finds only12 gives1392 in1..19. No selected row or complete computation is exposed. Sparse prefix lacks the bound and is more ambiguous."
+    },
+    {
+      "source_index": 120,
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "assistant_reference": "REJECT",
+      "agrees": true,
+      "reason": "The observations expose the key proof ingredients: if 7 divides R_n then n is a multiple of 6, and R_n is congruent to n modulo 3, hence 3 divides R_n. With the answer No, this is a nearly complete solution to the likely target, leaving only the exact role wording to infer.",
+      "analytic_review": "Public facts contain the decisive order6, divisibility-by3 argument and7-divides-R6 witness; comparing3<7 finishes the smallest-prime proof. Conservatively reject near-complete derivation exposure; also a support audit request failed technically."
+    },
+    {
+      "source_index": 137,
+      "prompt": "audit_public_p5",
+      "status": "REJECT",
+      "assistant_reference": "ACCEPT",
+      "agrees": false,
+      "reason": "The observations jointly expose a complete premise-and-target bundle: the graph class, the partition/degree constraints, and the explicit target n are all stated. The final answer 6 is supplied, so this is not an inverse task with a genuinely withheld essential element.",
+      "analytic_review": "Exact degree triple is missing. Answer n6 gives e12 and mean degree4; equal groups of consecutive degrees imply3,4,5. Without answer, the group middle degree is not determined. Need inverse use of answer, not paraphrase alone."
+    },
+    {
+      "source_index": 96,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The public clues paraphrase the limit expression, the double integral, the convergence/value target, and some of the hypotheses on g, but they do not state the essential source premise g'(0)=1. The final answer 1/12 and hints do not provide a complete forward derivation or a premise-target bundle. The missing premise can be recovered only by a nontrivial asymptotic/inverse inference using the answer.",
+      "analytic_review": "Derivative at0 is genuinely missing. With gprime0=a, the nested integral yields a/12, so answer1/12 implies a=1. The bank does not show this asymptotic derivation. Conditions g0 and differentiability remain visible only in richer arms."
+    },
+    {
+      "source_index": 87,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "REJECT",
+      "assistant_reference": "REJECT",
+      "agrees": true,
+      "reason": "The public clues c4-c6 provide a counterexample and explain why it is not differentiable arbitrarily close to 0, which is essentially the complete solution to the source question. Although the explicit limit hypothesis is not quoted, the counterexample values make its verification routine, so the solution is exposed.",
+      "analytic_review": "The complete spike construction and its nondifferentiability at accumulating points are exposed. Only checking it against a selected missing limit hypothesis remains. Conservatively reject near-complete solution exposure; the withheld exponent is also nonunique. Preserve raw auditor decisions separately."
+    },
+    {
+      "source_index": 46,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The public clues state the total number of targets, the column-removal rule, the target quantity, and that column heights sum to 8 but are not all equal. They do not directly state the original arrangement of two columns of three and one column of two. That essential premise is recoverable only by an answer-conditioned inverse inference from 560, not by copying or paraphrase. The final answer alone is not a complete derivation.",
+      "analytic_review": "Column heights are genuinely missing. Enumerating all22 positive integer partitions of8 yields only[2,3,3] with count560. Need to construct the interleaving count and infer heights; the complete question is not stated."
+    },
+    {
+      "source_index": 118,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "ACCEPT",
+      "assistant_reference": "REJECT",
+      "agrees": false,
+      "reason": "Public clues expose the odd integer target, expression, triangular definition, and a candidate verification, but omit the essential prime condition. Thus the original task is not fully disclosed.",
+      "analytic_review": "The bank explicitly supplies witness k5, evaluation to3, and triangular verification. The missing primality of3 is a routine final check, so this nearly complete construction/verification violates the solution-exposure bound even though the prime target condition is withheld."
+    },
+    {
+      "source_index": 129,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The public clues expose the alphabet, adjacency rule, modulus, target type, and recurrence, but they only bound the length as less than 20. The exact source premise length 12 must be recovered by an answer-conditioned inverse computation, so the original question is not directly copied or fully bundled.",
+      "analytic_review": "Length is genuinely missing. Recurrence and length<20 permit answer-conditioned search; direct calculation finds only12 gives1392 in1..19. No selected row or complete computation is exposed. Sparse prefix lacks the bound and is more ambiguous."
+    },
+    {
+      "source_index": 62,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The public clues give the function, target, and singularity analysis at \u03c0, but do not explicitly state that the Laurent series is centered at z=\u03c0. The center is an essential premise of the original question and must be recovered by using the supplied answer \u221e as a constraint.",
+      "analytic_review": "The expansion center is absent. Choosing pi reconstructs the source, but infinity does not uniquely force it: exterior Laurent expansions about other centers also have infinite outer radius. Do not endorse the converter uniqueness claim. Public observations themselves are true; original center must be supplied by reconstruction."
+    },
+    {
+      "source_index": 120,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "REJECT",
+      "assistant_reference": "REJECT",
+      "agrees": true,
+      "reason": "The public clues c5 and c6 together prove that whenever 7 divides a repunit, 3 also divides it, so 7 cannot be the smallest prime factor. Although the exact phrase 'smallest prime factor' is absent, the public material supplies the essential derivation for the original task, making this a complete solution disclosure.",
+      "analytic_review": "Public facts contain the decisive order6, divisibility-by3 argument and7-divides-R6 witness; comparing3<7 finishes the smallest-prime proof. Conservatively reject near-complete derivation exposure; also a support audit request failed technically."
+    },
+    {
+      "source_index": 137,
+      "prompt": "audit_source_disclosure_p4",
+      "status": "ACCEPT",
+      "assistant_reference": "ACCEPT",
+      "agrees": true,
+      "reason": "The public material does not state the exact degree distribution (3,4,5) that is essential to the original question. It only gives structural clues (equal groups, consecutive degrees) and the final answer. The exact degrees must be inferred by an answer-conditioned inverse calculation, which is a legitimate missing premise rather than a direct question copy or complete solution.",
+      "analytic_review": "Exact degree triple is missing. Answer n6 gives e12 and mean degree4; equal groups of consecutive degrees imply3,4,5. Without answer, the group middle degree is not determined. Need inverse use of answer, not paraphrase alone."
+    }
+  ]
+}

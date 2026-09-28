@@ -1,0 +1,516 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-u.md",
+  "fixtures_hash": "a96bed77b3fabe611c5d05d56e08f470fea4324407e6a7de680e446a66f5368a",
+  "results": {
+    "evaluate_p2": {
+      "rows": [
+        {
+          "id": "linear-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed under the intended reading that a is nonzero. The supplied answer Yes is correct, and the justification explicitly solves ax+b=0 by subtracting b and dividing by nonzero a to obtain the unique solution -b/a."
+        },
+        {
+          "id": "linear-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the sole observation is explicitly connected to the question and verified by the algebraic solution."
+        },
+        {
+          "id": "linear-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstructed equation is well-posed, the supplied answer x=3 is correct, and the displayed observation is explicitly used in the complete solution."
+        },
+        {
+          "id": "linear-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The proposed equation 2x+5=13 is well-posed, but its correct solution is x=4, not the final answer 3. The student's justification even derives x=4 and then incorrectly claims it matches 3, creating a mathematical contradiction."
+        },
+        {
+          "id": "probability-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the answer Yes is correct, and the justification explicitly grounds it in the probability additivity axiom."
+        },
+        {
+          "id": "probability-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the answer Yes is correct, and the justification correctly grounds the equality in the probability additivity axiom."
+        },
+        {
+          "id": "probability-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the supplied answer 1/2 is correct, and the displayed observation is explicitly and substantively grounded in the partition-and-add calculation."
+        },
+        {
+          "id": "probability-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The proposed question is well-posed, but the supplied final answer 1/2 is incorrect for rolling 1 or 2 on a fair six-sided die; the correct probability is 1/3. The student's own justification computes 1/3 and then contradicts the final answer by claiming it matches 1/2."
+        },
+        {
+          "id": "graph-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the justification explicitly grounds the observation via the standard edge-counting argument."
+        },
+        {
+          "id": "graph-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the supplied answer Yes is correct, and the observation is explicitly grounded by the handshake lemma justification."
+        },
+        {
+          "id": "graph-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the supplied answer 6 is correct, and the observation is explicitly connected to the calculation 12/2=6."
+        },
+        {
+          "id": "graph-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The proposed question is well-posed, but the supplied final answer 6 contradicts the handshaking lemma and the student's own calculation 14/2=7. The correct answer is 7, so the response has a demonstrated wrong answer."
+        },
+        {
+          "id": "geometric-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the displayed observation is explicitly grounded by the proposed question and the student's valid derivation."
+        },
+        {
+          "id": "geometric-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the displayed observation is explicitly connected to the proposed question through a valid derivation of the finite geometric series formula."
+        },
+        {
+          "id": "geometric-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the supplied answer 31 is correct, and the observation about multiplying by the common ratio and subtracting is explicitly and correctly connected to the geometric-series cancellation."
+        },
+        {
+          "id": "geometric-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The proposed question asks for 1+2+4+8, whose sum is 15, not 31. The student's own computation gives 15 but then incorrectly claims it matches 31, creating a mathematical contradiction."
+        },
+        {
+          "id": "qwen-33-copy",
+          "category": "production_diagnostic",
+          "expected": [
+            0
+          ],
+          "observed": 3,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The proposed question is well-posed and the answer Yes is correct. The first observation is explicitly used. The second observation is compatible and essentially the desired conclusion, but the supplied justification has a minor gap: from max(f-g)>0 one still needs to argue, e.g. by evaluating at a maximizer of g, that max f > max g. This is a routine omitted step, so the reconstruction is valid but not fully verified."
+        },
+        {
+          "id": "stronger-33-copy",
+          "category": "production_diagnostic",
+          "expected": [
+            0
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": false,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the answer Yes is correct, and the justification fully verifies the claim using compactness, continuity of h, and the positive minimum of h."
+        },
+        {
+          "id": "stronger-112-target",
+          "category": "production_diagnostic",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the supplied answer -1011 is correct, and the justification fully verifies the interval and congruence conditions while identifying the greatest valid integer."
+        },
+        {
+          "id": "scale-86-copy",
+          "category": "production_diagnostic",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstruction is not a genuine problem; it asks for a value already stated in the observation, so it is tautological answer-copying. The answer a is correct only by restatement."
+        }
+      ],
+      "authored_passed": 8,
+      "authored_total": 16,
+      "diagnostics_passed": 2,
+      "diagnostics_total": 4,
+      "failures": 0,
+      "resolved": 20,
+      "recorded_cost_usd": 0.0054482791999999995
+    },
+    "evaluate_p3": {
+      "rows": [
+        {
+          "id": "linear-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstruction is copy-only: it asks whether the given observation is true without adding or inferring any missing mathematical content."
+        },
+        {
+          "id": "linear-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "Copy-only restatement of the observation as a question; no substantive reconstruction."
+        },
+        {
+          "id": "linear-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed, the answer x=3 is correct, the clue is coherently grounded, and the reconstruction adds a genuine numerical equation rather than merely restating the observation."
+        },
+        {
+          "id": "linear-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed and the procedural clue is compatible, but the proposed equation solves to x=4, not the final answer 3, so the answer is demonstrably wrong."
+        },
+        {
+          "id": "probability-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "Copy-only restatement of the supplied observation as a yes/no question; no substantive reconstruction."
+        },
+        {
+          "id": "probability-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "Copy-only restatement of the supplied assertion as a question; the correct answer and proof do not constitute reconstruction work."
+        },
+        {
+          "id": "probability-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed, the answer 1/2 is correct, and the observation is explicitly and correctly used in a substantive reconstruction."
+        },
+        {
+          "id": "probability-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed and uses the partition-and-add idea, but its correct answer is 1/3, contradicting the given final answer 1/2; the justification falsely claims 1/3 matches 1/2."
+        },
+        {
+          "id": "graph-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstruction is a copy-only restatement of the observation, so despite a correct answer and proof, it earns score 0."
+        },
+        {
+          "id": "graph-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The proposed question is a copy-only restatement of the observation, even though the answer and proof are correct."
+        },
+        {
+          "id": "graph-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstructed question is well-posed, the answer 6 is correct, and the observation is directly and sufficiently used to derive the edge count from the supplied degree sum."
+        },
+        {
+          "id": "graph-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed and the reconstruction is substantive, but the correct edge count is 14/2=7, not the final answer 6. The student's own justification also computes 7 while claiming it matches 6, so the answer is demonstrably wrong."
+        },
+        {
+          "id": "geometric-copy",
+          "category": "authored_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstructed question is copy-only: it asks whether the exact formula given in the observation is true, with no missing mathematical content supplied by reconstruction."
+        },
+        {
+          "id": "geometric-decorated_copy",
+          "category": "authored_decorated_copy",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstruction is a copy-only restatement of the supplied observation as a question. Although the answer and proof are correct, no substantive missing-content reconstruction occurs, so it earns score 0."
+        },
+        {
+          "id": "geometric-substantive",
+          "category": "authored_substantive",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed, the answer 31 is correct, the observation is explicitly used, and the reconstruction substantively supplies a concrete finite geometric series and target."
+        },
+        {
+          "id": "geometric-wrong",
+          "category": "authored_wrong",
+          "expected": [
+            1
+          ],
+          "observed": 1,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed, but its correct sum is 15, not the stated final answer 31. The justification even computes 15 and then contradicts itself by claiming it matches 31."
+        },
+        {
+          "id": "qwen-33-copy",
+          "category": "production_diagnostic",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is a copy-only restatement of the provided observation, so despite being well-posed and having the correct answer, it earns score 0."
+        },
+        {
+          "id": "stronger-33-copy",
+          "category": "production_diagnostic",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed and the answer/proof are correct, but the reconstruction is copy-only: it turns the supplied observation into a question without inferring a missing premise, parameter, target, or relation."
+        },
+        {
+          "id": "stronger-112-target",
+          "category": "production_diagnostic",
+          "expected": [
+            4
+          ],
+          "observed": 4,
+          "shortcut": false,
+          "passed": true,
+          "resolved": true,
+          "reason": "The question is well-posed, the answer -1011 is correct, both observations are explicitly used, and the verification correctly derives k ≤ -44 and n = -1011. The reconstruction adds the essential target of finding the greatest such integer."
+        },
+        {
+          "id": "scale-86-copy",
+          "category": "production_diagnostic",
+          "expected": [
+            0
+          ],
+          "observed": 0,
+          "shortcut": true,
+          "passed": true,
+          "resolved": true,
+          "reason": "The reconstruction is a copy-only restatement of the observation that the scale point is a, with no inferred premise, parameter, target, or relation beyond what was already given."
+        }
+      ],
+      "authored_passed": 16,
+      "authored_total": 16,
+      "diagnostics_passed": 4,
+      "diagnostics_total": 4,
+      "failures": 0,
+      "resolved": 20,
+      "recorded_cost_usd": 0.0071178856
+    }
+  },
+  "decision": "passes_development_gate",
+  "limitations": [
+    "Assistant-authored/reviewed references, not independent human gold.",
+    "Four authored families; multiple variants are correlated.",
+    "Production diagnostics were selected for known failure modes.",
+    "Expected labels use the proposed refinement; old-prompt differences need not violate its old specification.",
+    "No change to Qwen semantic recovery follows from changing a rubric."
+  ]
+}

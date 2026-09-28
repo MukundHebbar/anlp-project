@@ -1,0 +1,9 @@
+# AW: symbolic intermediate equations for missing-premise reconstruction
+
+Registered after AU and AV level2 local outcomes, before AW calls. AV reaches only one semantic recovery and retains invalid verification. More target hints alone have not met the goal. Return to the six fixed AL one-gap inputs5,10,16,54,67,113, whose exact targets are already supplied but one premise parameter must be inferred. This is a separate matched bracket on the AL cohort, not a causal comparison against the seven AP families.
+
+One frozen few-shot converter appends two symbolic intermediate observations to every AL input. It may give a general parameter-to-answer relation, but must not substitute the supplied answer, reveal the missing value, or provide the complete original question or full derivation. This deliberately tests more informative clues; a symbolic answer relation is labeled high exposure and receives explicit disclosure review. The student must still invert it and preserve the requested target. No case-specific prompt edits. All six allocated student slots are retained, even if audits reject an input; such outputs are diagnostic only.
+
+High arm: all old clues plus both new observations. If at least2 semantic recoveries occur, test midpoint all old clues plus the first observation on all six. Keep Qwen model, p13 student prompt, seed0 and8192 cap fixed. Low endpoint is AL0/6. No success-selected source subset. Semantic identity, proof validity, and disclosure eligibility are separately reviewed; no historical score edits.
+
+Six conversions at two workers while at most two AV audit calls remain, global paid concurrency<=4. Budget$0.40 within global$5; later equivalence/math calls wait for available capacity. All attempts once-only. Save raw records, exact input hashes, pre-student manual review, and paired outcome differences. This is development adaptation, not25-family confirmation.

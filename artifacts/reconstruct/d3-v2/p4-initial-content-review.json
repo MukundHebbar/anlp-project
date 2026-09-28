@@ -1,0 +1,55 @@
+{
+  "provenance": "Assistant qualitative review; neither independent human gold nor an acceptance decision",
+  "scope": "Eight first-pass p4 banks, reviewed before p4 audit outcomes; the three technical-retry sources are not included",
+  "eligibility_effect": "none; run all preregistered audits and copying checks",
+  "rows": [
+    {
+      "source_index": 27,
+      "bank_key": "27:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "521805e583bdaddf454db46c7b747d890b7c7d4babf126e365fa37ea2c458005",
+      "observation": "Removes the range 1..100 retained in p3 and still omits the count/minimality target. Adds the positive-coefficient consequence of a direct squarefree term. This is not uniformly more informative than p3 and does not implement the preferred target-role retention."
+    },
+    {
+      "source_index": 33,
+      "bank_key": "33:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "f05b80304c02d4df42c3bfd97bc41530036c87ef7b71535823815a722cd8cceb",
+      "observation": "Replaces the generic constant-sign lemma with a strict pointwise-dominance versus maxima relationship. The equal-maxima premise and meeting target remain absent. More distinctive source structure is visible; its copying/proof disclosure still requires review."
+    },
+    {
+      "source_index": 8,
+      "bank_key": "8:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "1d97a1dc56d4a0ff03e2419bef8465085e4a3b531df02f1d89c3467540244fc9",
+      "observation": "Names the denominator role explicitly, but adds the final numerator-equals-denominator cancellation. Check whether the combined bank exposes nearly all proof despite hiding original squared numerators and zero-sum premise. No acceptance inferred from omission alone."
+    },
+    {
+      "source_index": 122,
+      "bank_key": "122:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "d963439cfe505cbd7cb677059ba16012c41045035fdde7acbd26e78b9d913811",
+      "observation": "Retains algebraic substitution, parity and large-prime consequences while withholding both divisibility conditions. Neither recovery of the original nor a target-role improvement is established by these true observations."
+    },
+    {
+      "source_index": 86,
+      "bank_key": "86:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "c1f57d132cc15944efa3b87d81c2032e7bf1dbf6283a7ad054fe337c20df4821",
+      "observation": "Gives the split interval, left pointwise limit, and right-tail bound. Exact integrand and limit target are withheld. These may still expose nearly the complete convergence argument; shortness or a hidden formula is not sufficient acceptance evidence."
+    },
+    {
+      "source_index": 136,
+      "bank_key": "136:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "81698809f70e60110978ea6fb6f961c29f208dae8859ece7f83a23c408112295",
+      "observation": "Gives pairwise intersection size, a degree sum, and the degree bound44 under no-common-element. The private withheld explanation says size45 is omitted, although44 indirectly constrains size in the intended argument. Review semantic disclosure rather than literal occurrence of45."
+    },
+    {
+      "source_index": 141,
+      "bank_key": "141:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "447b70c5ed5224a9429ae10cbc3135f550e3556ce24e991e216cfa809625c5ea",
+      "observation": "Explicitly retains a coefficient/count target role and four factor exponent ranges; omits the requested exponent. Distinguish inference of the target from simply copying a coefficient expression. The claim that answer204 uniquely identifies shifted exponent9 needs qualification because coefficient symmetry also gives19."
+    },
+    {
+      "source_index": 143,
+      "bank_key": "143:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank_output_hash": "66dec2869d363e106ea40aa79885c1d51f2cb7cd57cbd4d38612809d5b14136c",
+      "observation": "Retains nested binomial roles, X in{21,7}, and exclusion ofY=1. The latter indirectly reveals restrictions on equality and zero values. The outer equation and total-count request remain implicit; inspect joint disclosure."
+    }
+  ]
+}

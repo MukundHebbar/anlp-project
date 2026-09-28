@@ -1,0 +1,1320 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-z.md",
+  "summaries": {
+    "authored": {
+      "cases": 8,
+      "incumbent_returned": 8,
+      "incumbent_matches": 6,
+      "candidate_returned": 7,
+      "candidate_matches": 7,
+      "hard_negatives": 4,
+      "hard_negatives_rejected": 4
+    },
+    "x-regression": {
+      "cases": 16,
+      "incumbent_returned": 16,
+      "incumbent_matches": 16,
+      "candidate_returned": 8,
+      "candidate_matches": 8,
+      "hard_negatives": 12,
+      "hard_negatives_rejected": 6
+    },
+    "y-regression": {
+      "cases": 7,
+      "incumbent_returned": 7,
+      "incumbent_matches": 6,
+      "candidate_returned": 0,
+      "candidate_matches": 0,
+      "hard_negatives": 4,
+      "hard_negatives_rejected": 0
+    },
+    "all": {
+      "cases": 31,
+      "incumbent_returned": 31,
+      "incumbent_matches": 28,
+      "candidate_returned": 15,
+      "candidate_matches": 15,
+      "hard_negatives": 20,
+      "hard_negatives_rejected": 10
+    }
+  },
+  "rows": [
+    {
+      "family": "integer",
+      "condition": "complete_question_missing_witness",
+      "reference_status": "REJECT",
+      "reference_argument": "The complete existential proposition is public. An unknown witness is part of its solution, not missing question information.",
+      "source_index": 0,
+      "bank_key": "0:witness_boundary_z:05fe5737f453e00125a553033ad2bb6178cd5258132ab9f5ebb33548bf7d8e93",
+      "bank_output_hash": "05fe5737f453e00125a553033ad2bb6178cd5258132ab9f5ebb33548bf7d8e93",
+      "source_record_hash": "cd29a77b310217eb27c13aeb258f527467e719ddd6f929519b449504b378c5a5",
+      "population": "authored",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The proposed n is a positive integer.",
+          "It satisfies2n=6.",
+          "Yes"
+        ],
+        "missing_essential_element": "None; the source condition is paraphrased in the clues and the existence target is supplied by the public answer.",
+        "inference_required": "Only routine arithmetic n=3 from 2n=6 to confirm the already supplied Yes; no nontrivial inference is needed.",
+        "reason": "The public clues state the source premise (a positive integer n satisfying 2n=6) and the public final answer supplies the existence target (Yes). This exposes the premise-target bundle by paraphrase, even though the witness n=3 is not explicitly written."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed n is a positive integer.",
+          "It satisfies2n=6."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed: the public clues and answer already paraphrase the existence question by stating a proposed n is a positive integer and satisfies 2n=6, with final answer Yes.",
+        "reason": "The public material exposes the full premise-target bundle of the source existence question: positive integer n and condition 2n=6, plus the affirmative existence answer. The witness n=3 is not given, but for an existence question the witness is a solution detail, not a missing question premise."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": false
+    },
+    {
+      "family": "integer",
+      "condition": "missing_question_parameter",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The right-hand parameter6 is missing, unlike the witness n=3. Yes constrains m to be even, but does not uniquely identify6.",
+      "source_index": 1,
+      "bank_key": "1:witness_boundary_z:5698bf25822bec8b77810d601e4632e6c12a64c7d458a2e4af906c87018d2d22",
+      "bank_output_hash": "5698bf25822bec8b77810d601e4632e6c12a64c7d458a2e4af906c87018d2d22",
+      "source_record_hash": "cd29a77b310217eb27c13aeb258f527467e719ddd6f929519b449504b378c5a5",
+      "population": "authored",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed n is a positive integer.",
+          "It satisfies2n=m for an unspecified positive integer m."
+        ],
+        "missing_essential_element": "The specific right-hand side value 6 in the equation 2n=6.",
+        "inference_required": "The public material only gives 2n=m for an unspecified positive integer m and the answer Yes; it does not determine m=6. At most, Yes implies m is even, but the specific source premise m=6 cannot be recovered from the public clues alone.",
+        "reason": "The public clues omit the essential source premise that the equation is 2n=6, replacing it with an unspecified positive integer m. The final answer Yes is the target result but does not disclose the missing RHS value 6 or a derivation. Thus the original task is not directly copied or fully exposed."
+      },
+      "candidate": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed n is a positive integer.",
+          "It satisfies2n=m for an unspecified positive integer m."
+        ],
+        "missing_essential_element": "The specific equation value 6, i.e. the source condition 2n=6 rather than 2n=m for an unspecified positive integer m.",
+        "inference_required": "No public inference uniquely recovers m=6; the public answer Yes only asserts existence for an unspecified m and is compatible with many even m values.",
+        "reason": "The public material withholds the essential source parameter 6. The clues replace the original equation 2n=6 with 2n=m for an unspecified positive integer m, so the original existence question cannot be assembled from public text alone."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": false
+    },
+    {
+      "family": "graph",
+      "condition": "complete_question_missing_witness",
+      "reference_status": "REJECT",
+      "reference_argument": "The complete existential proposition is public. An unknown witness is part of its solution, not missing question information.",
+      "source_index": 2,
+      "bank_key": "2:witness_boundary_z:2dfe953bffc6e74a737e9ef66f4a7f3e4328da49368f5c45fcc78b8dfcb127bd",
+      "bank_output_hash": "2dfe953bffc6e74a737e9ef66f4a7f3e4328da49368f5c45fcc78b8dfcb127bd",
+      "source_record_hash": "a854f19e4933b12dca79ea69c647814d02a69a144534b9fa420b3bcf208fb263",
+      "population": "authored",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example is a simple undirected graph on6 vertices.",
+          "Every vertex has degree3."
+        ],
+        "missing_essential_element": "The actual construction/edges of a simple undirected graph on 6 vertices with every vertex degree 3 (e.g., K_{3,3} or the triangular prism).",
+        "inference_required": "Construct or exhibit a 3-regular simple graph on 6 vertices; the public clues only state the properties of a proposed example and the final answer 'Yes', but do not specify the graph.",
+        "reason": "The public material does not copy the source question, nor does it provide a construction. The clues restate the conditions and the answer is given, but the essential construction is absent. No complete solution is exposed."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example is a simple undirected graph on6 vertices.",
+          "Every vertex has degree3."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only paraphrase/assembly: combine the public answer 'Yes' with the stated properties of the proposed example to recover the existence question.",
+        "reason": "The public material states that a proposed example is a simple undirected graph on 6 vertices and that every vertex has degree 3, and the final answer is Yes. Together these expose the original existence question by paraphrase: whether there exists a simple undirected graph on 6 vertices with every vertex degree 3. No essential premise or target remains absent."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": false,
+      "comparator_reused": false
+    },
+    {
+      "family": "graph",
+      "condition": "missing_question_parameter",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Vertex count6 is missing; the actual edge set is merely a witness. Degree3 existence restricts n but allows different counts.",
+      "source_index": 3,
+      "bank_key": "3:witness_boundary_z:338b0546c8327cf8ed8f4932e3704a38804af1737a327879e84c79d4b8854d11",
+      "bank_output_hash": "338b0546c8327cf8ed8f4932e3704a38804af1737a327879e84c79d4b8854d11",
+      "source_record_hash": "a854f19e4933b12dca79ea69c647814d02a69a144534b9fa420b3bcf208fb263",
+      "population": "authored",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example is a simple undirected graph with an unspecified number n of vertices.",
+          "Every vertex has degree3."
+        ],
+        "missing_essential_element": "The source specifies exactly 6 vertices; the public clues only mention an unspecified number n of vertices.",
+        "inference_required": "Recovering the original task would require inferring that n=6, but the public answer 'Yes' and the clues do not determine n=6; they are compatible with other even n such as 4 or 8.",
+        "reason": "The public material states a simple undirected graph with unspecified n and all degrees 3, and answers Yes. It does not disclose the essential source premise that the graph must have 6 vertices, nor does it provide a construction or derivation for that specific case. The answer alone does not uniquely recover n=6."
+      },
+      "candidate": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example is a simple undirected graph with an unspecified number n of vertices.",
+          "Every vertex has degree3."
+        ],
+        "missing_essential_element": "The source question requires the graph to have exactly 6 vertices; the public clues only say the number of vertices is unspecified n.",
+        "inference_required": "No public inference can recover n=6 from the public material alone; the answer Yes and degree-3 condition do not determine or state the vertex count.",
+        "reason": "The public text discloses an existence answer for a simple undirected graph with unspecified vertex count and all degrees 3, but it omits the essential source premise that the graph must be on 6 vertices. The original question cannot be assembled from the public clues without importing that private parameter."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": false
+    },
+    {
+      "family": "triple",
+      "condition": "complete_question_missing_witness",
+      "reference_status": "REJECT",
+      "reference_argument": "The complete existential proposition is public. An unknown witness is part of its solution, not missing question information.",
+      "source_index": 4,
+      "bank_key": "4:witness_boundary_z:aba3c681b335b94dca8fe0f94bec5a0a894c2f41cf302497da9af9d07146fd3f",
+      "bank_output_hash": "aba3c681b335b94dca8fe0f94bec5a0a894c2f41cf302497da9af9d07146fd3f",
+      "source_record_hash": "c9832ec9958d160091a6170a651a5429bd2ffc1143838e523678e4917493ce74",
+      "population": "authored",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example consists of three strictly increasing positive integers.",
+          "Their sum is15."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond recognizing that the public clues state a proposed example with the same defining properties and the public answer supplies the existence result.",
+        "reason": "The private source asks whether three strictly increasing positive integers can sum to 15. The public clues state that a proposed example consists of three strictly increasing positive integers and that their sum is 15, and the public answer is Yes. Together these paraphrase the full premise-target bundle: the condition and the yes/no existence target are both publicly available."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example consists of three strictly increasing positive integers.",
+          "Their sum is15."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed to recover the existence question: the public clues already state that a proposed example has the required properties and sum, and the answer confirms existence.",
+        "reason": "The private source asks whether there exist three strictly increasing positive integers summing to 15. The public answer and clues together expose the same existence question by paraphrase: they state that a proposed example consists of three strictly increasing positive integers and that their sum is 15, with final answer Yes. The actual witness triple is absent, but for an existence question the witness is a solution, not a missing question premise."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": false
+    },
+    {
+      "family": "triple",
+      "condition": "missing_question_parameter",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The specified sum15 is missing. A particular triple is a solution witness, not a parameter needed to state the question.",
+      "source_index": 5,
+      "bank_key": "5:witness_boundary_z:987f8cf548e85cf7c98249c0e055d24111c794788c035c0f6973fb4cb2accfde",
+      "bank_output_hash": "987f8cf548e85cf7c98249c0e055d24111c794788c035c0f6973fb4cb2accfde",
+      "source_record_hash": "c9832ec9958d160091a6170a651a5429bd2ffc1143838e523678e4917493ce74",
+      "population": "authored",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example consists of three strictly increasing positive integers.",
+          "Their sum is an unspecified positive integer m."
+        ],
+        "missing_essential_element": "The specific sum value 15 from the source question.",
+        "inference_required": "The public material only gives an unspecified positive integer m and a bare 'Yes'; it does not determine that m=15, nor does it provide a construction for three strictly increasing positive integers summing to 15. Recovering the original task would require the withheld value 15, which cannot be uniquely inferred from the public clues and answer.",
+        "reason": "The public answer and clues do not state the source's essential premise that the sum is 15. They also do not provide a complete construction or derivation. The answer 'Yes' alone is not a question leak or complete solution."
+      },
+      "candidate": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example consists of three strictly increasing positive integers.",
+          "Their sum is an unspecified positive integer m."
+        ],
+        "missing_essential_element": "The specific sum value 15 in the existence question.",
+        "inference_required": "From the public material, one can at most infer that an unspecified positive integer m has some three strictly increasing positive integers summing to it, and the answer Yes only implies m is at least 6. It does not determine or disclose that the original sum is exactly 15.",
+        "reason": "The public clues state the existence of three strictly increasing positive integers with an unspecified sum m, and the answer is merely Yes. The original question's essential premise, sum = 15, is absent and cannot be uniquely recovered from the public text or answer."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": false
+    },
+    {
+      "family": "affine",
+      "condition": "complete_question_missing_witness",
+      "reference_status": "REJECT",
+      "reference_argument": "The complete existential proposition is public. An unknown witness is part of its solution, not missing question information.",
+      "source_index": 6,
+      "bank_key": "6:witness_boundary_z:a34b5269dab82833a9fb3f0a760002f363677be22c631186bb2e039b90e3adb7",
+      "bank_output_hash": "a34b5269dab82833a9fb3f0a760002f363677be22c631186bb2e039b90e3adb7",
+      "source_record_hash": "9bf10d7e4cd64634a6838ab0322d14681a34463ce2968120607bca90a134ead2",
+      "population": "authored",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The desired f is a real polynomial of degree at most1.",
+          "It satisfies f(0)=1, f(1)=2 and f(2)=3.",
+          "Yes"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond recognizing that the public clues paraphrase the full source question and the public answer supplies the requested existence result.",
+        "reason": "The public clues state the same polynomial degree bound and all three interpolation conditions, and the public answer gives the requested existence answer. This exposes the complete premise-target bundle by paraphrase, even though no derivation is shown."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The desired f is a real polynomial of degree at most1.",
+          "It satisfies f(0)=1, f(1)=2 and f(2)=3."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only grammatical assembly: the public clues state the object, degree bound, and all three interpolation conditions, and the answer 'Yes' supplies the existence target.",
+        "reason": "The public material paraphrases the full source question: it identifies a real polynomial of degree at most 1 satisfying f(0)=1, f(1)=2, and f(2)=3, and the final answer 'Yes' resolves the existence question. No essential premise or target is withheld."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": false
+    },
+    {
+      "family": "affine",
+      "condition": "missing_question_parameter",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The required third ordinate3 is missing. The first two values and Yes allow inferring b=3; this differs from withholding the polynomial witness formula.",
+      "source_index": 7,
+      "bank_key": "7:witness_boundary_z:577088dda484ddcbac0f69eda41c764d3a6d990bde0a64113f0bf31225021ff1",
+      "bank_output_hash": "577088dda484ddcbac0f69eda41c764d3a6d990bde0a64113f0bf31225021ff1",
+      "source_record_hash": "9bf10d7e4cd64634a6838ab0322d14681a34463ce2968120607bca90a134ead2",
+      "population": "authored",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Yes",
+          "The desired f is a real polynomial of degree at most1.",
+          "It satisfies f(0)=1, f(1)=2 and f(2)=b for an unspecified real b."
+        ],
+        "missing_essential_element": "None; the only absent explicit value is b=3 (i.e., f(2)=3), but it is forced by the public premises.",
+        "inference_required": "From f(0)=1, f(1)=2, and degree at most 1, the polynomial is forced to be f(x)=x+1, so f(2)=3. This recovers the source target by routine forward calculation.",
+        "reason": "The public clues state the degree bound and the values f(0)=1 and f(1)=2, which uniquely determine f(2)=3. Thus the original premise-target bundle and the complete solution are effectively exposed, even though the value 3 is not written explicitly."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": false,
+      "comparator_reused": false
+    },
+    {
+      "family": "rectangle",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "0:authored_x:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "origin_source_index": 0,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 0,
+      "bank_key": "0:witness_boundary_z:6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "bank_output_hash": "6a0131bb3a49821bc593176add9fe244f7ddcd715af87a20165a99de7f141e43",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=10 and xy=24.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed to recover the source task: the public clues already state the perimeter-derived sum, the area product, and the target longer side, with the final answer supplied.",
+        "reason": "The public clues together paraphrase the original problem completely: x+y=10 encodes perimeter 20, xy=24 states the area, and the requested quantity is the longer side. The answer 6 is also supplied. Thus the essential premise-target bundle is exposed, so this is a direct/paraphrased disclosure rather than a safe withholding."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=10 and xy=24.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine solving of x+y=10 and xy=24 and selecting the larger root is needed; no source premise or target is genuinely withheld.",
+        "reason": "The public clues state the perimeter/area constraints as x+y=10 and xy=24 and explicitly identify the target as the longer side length. Together with the answer 6, the original question is fully recoverable by paraphrase, so the premise-target bundle is exposed."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "rectangle",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "1:authored_x:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "origin_source_index": 1,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 1,
+      "bank_key": "1:witness_boundary_z:3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "bank_output_hash": "3647b80722acc0bddc1ec1db2a91faa7c767d7ed823b8f59994a4276e5fb0b6b",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "6",
+          "The side lengths satisfy x+y=5+5 and xy=3*8.",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine solving of the disclosed system x+y=10, xy=24 and selecting the larger root; the source premises and target are already stated equivalently.",
+        "reason": "The public clues expose the essential source premises equivalently: perimeter 20 gives x+y=10 via 5+5, area 24 gives xy=24 via 3*8, and the target is explicitly the longer side. The final answer 6 is also supplied. Thus the original task is recoverable by paraphrase, even though no full derivation is shown."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The side lengths satisfy x+y=5+5 and xy=3*8.",
+          "The requested quantity is the longer side length.",
+          "6"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine simplification of 5+5 and 3*8 and solving/recognizing the side lengths 4 and 6; no genuinely missing source premise or target remains.",
+        "reason": "The public clues state the rectangle side-sum and product equations and identify the target as the longer side length. Together with the answer 6, this exposes the original premise-target bundle by paraphrase, so the source question is recoverable without a hidden essential element."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "rectangle",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The area24 is absent. Using answer6 as the longer side, infer the other side10-6=4 and then area6*4=24.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "2:authored_x:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "origin_source_index": 2,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 2,
+      "bank_key": "2:witness_boundary_z:7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "bank_output_hash": "7c9fdcad9aeb41f62ec0774bd0890a09b2401f1df197c5fedefd40226640a89c",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "6",
+          "The rectangle side lengths satisfy x+y=10.",
+          "Its area in terms of one side x is x(10-x).",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "The source premise that the rectangle's area is 24 is not stated in the public clues.",
+        "inference_required": "Using the public final answer 6 together with x+y=10, infer the other side is 4, hence the area is 24; this recovers the withheld area premise rather than copying it from the clues.",
+        "reason": "The public clues give the perimeter-derived sum, an area expression, and the target longer side, but they do not state the essential area value 24. The final answer alone does not expose the derivation, and the missing premise must be inferred by answer-conditioned inversion."
+      },
+      "candidate": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "6",
+          "The rectangle side lengths satisfy x+y=10.",
+          "Its area in terms of one side x is x(10-x).",
+          "The requested quantity is the longer side length."
+        ],
+        "missing_essential_element": "The area value 24 is not stated in the public clues.",
+        "inference_required": "Use the public final answer 6 together with x+y=10 to infer the other side is 4, then compute the area as 6*4=24, recovering the missing source premise area=24.",
+        "reason": "The public material gives the perimeter relation and target, and the answer gives the longer side, but it does not state the area value 24. Recovering the original question requires an inverse inference from the answer and perimeter relation to the missing area premise."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "rectangle",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "3:authored_x:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "origin_source_index": 3,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 3,
+      "bank_key": "3:witness_boundary_z:c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "bank_output_hash": "c0cd723b7f145ab7daa15f8bef7302e8840fe93b6bab0e751401b9fe98c04433",
+      "source_record_hash": "7c9aa365a471bf5075f8f11bd90869fa1d1286ccb6496efbb3e598eb6605a5f8",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The rectangle has side lengths4 and6.",
+          "Selecting the longer side gives6."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None; the public clues directly state the side lengths and the longer side.",
+        "reason": "The public clues expose the essential premise and target: they state the rectangle's side lengths are 4 and 6 and that selecting the longer side gives 6. This is a complete premise-target bundle and effectively a complete solution to the private question."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "6",
+          "The rectangle has side lengths4 and6.",
+          "Selecting the longer side gives6."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed: the public clues already state the rectangle's side lengths and identify the longer side as 6.",
+        "reason": "The public material exposes the essential premise-target bundle by giving the side lengths 4 and 6 and directly selecting the longer side as 6. Although the original perimeter and area are not quoted, the stated side lengths are equivalent to those premises and the target is explicitly supplied."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "linear",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "4:authored_x:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "origin_source_index": 4,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 4,
+      "bank_key": "4:witness_boundary_z:7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "bank_output_hash": "7de4774efda6d4974268f7b4a4a624b1933c4d5e36a3fa127cb6ddbee92bef5c",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is3x+2=14.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine algebraic solving of the fully disclosed equation 3x+2=14 for x.",
+        "reason": "The public clues state the exact equation and the requested target (the real solution x), which together paraphrase the private source question. The final answer 4 is supplied, but no derivation is shown; however, the full premise-target bundle is already exposed, so this is a direct question disclosure."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is3x+2=14.",
+          "The requested quantity is the real solution x."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed to recover the original question; the public clues already state the equation and the requested real solution x.",
+        "reason": "The public clues paraphrase the full source task: they provide the equation 3x+2=14 and identify the target as the real solution x. The final answer 4 is supplied, but the derivation is not shown. However, the question premise-target bundle is exposed, so this is a question disclosure rejection."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "linear",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "5:authored_x:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "origin_source_index": 5,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 5,
+      "bank_key": "5:witness_boundary_z:4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "bank_output_hash": "4f47aa08db32c4592e18d0ca58ba500af7eef75a4dca6291c82482c0735a9b0a",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is(1+2)x+2=7+7.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine simplification/solving from the publicly stated equivalent equation and target.",
+        "reason": "The public clues state an equation equivalent to 3x+2=14 and identify the requested quantity as the real solution x, so the full premise-target bundle is exposed by paraphrase. The final answer 4 is also supplied, though no derivation is shown."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation is(1+2)x+2=7+7.",
+          "The requested quantity is the real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine simplification of (1+2) to 3 and 7+7 to 14 is needed to recover the original equation 3x+2=14; the target is already stated as the real solution x.",
+        "reason": "The public clues together paraphrase the full source question: they state an equivalent equation and the requested target. The final answer 4 is not needed to expose the task. Thus the premise-target bundle is publicly exposed, even though no derivation is shown."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "linear",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The coefficient a=3 is absent. Insert the supplied solution x=4 into ax+2=14 to infer a=(14-2)/4=3.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "6:authored_x:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "origin_source_index": 6,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 6,
+      "bank_key": "6:witness_boundary_z:ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "bank_output_hash": "ec4a0a822be2a12586028c7a30d9baa79062b97ff45a0f19b293e07715e458ea",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The equation has the form ax+2=14 for a positive coefficient a.",
+          "The requested quantity is its real solution x.",
+          "4"
+        ],
+        "missing_essential_element": "The coefficient a=3 in the original equation 3x+2=14.",
+        "inference_required": "Use the public answer x=4 and the public form ax+2=14 to infer a by solving 4a+2=14, yielding a=3, thereby recovering the original equation.",
+        "reason": "The public clues give the equation form and target but omit the essential coefficient 3. The final answer alone does not state the original equation or derivation; recovering a=3 requires an inverse inference from the supplied solution."
+      },
+      "candidate": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "4",
+          "The equation has the form ax+2=14 for a positive coefficient a.",
+          "The requested quantity is its real solution x."
+        ],
+        "missing_essential_element": "The coefficient value a=3 in the original equation 3x+2=14.",
+        "inference_required": "Use the public final answer x=4 as a constraint in ax+2=14 to infer a=3, thereby recovering the missing coefficient needed to state the original equation.",
+        "reason": "The public clues give the equation form ax+2=14 and the target real solution x, but they do not state the coefficient a=3. The value 3 must be inferred by substituting the supplied answer x=4 into the form. This is a genuine missing essential premise recovered by answer-conditioned inversion, not a copied question or complete derivation."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "linear",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "7:authored_x:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "origin_source_index": 7,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 7,
+      "bank_key": "7:witness_boundary_z:d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "bank_output_hash": "d80753a0aa7fde2c063b176bdf81f65e64f8a13d28d9ef71f14146b65458b717",
+      "source_record_hash": "44cd8582ea97695f867cc85be1f630cc9dde530480ea72da7f4cfd38c30f514b",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Subtracting2 from the two sides gives3x=12.",
+          "Dividing by3 givesx=4."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference remains; the public clues provide the full algebraic derivation to x=4.",
+        "reason": "The public clues explicitly perform the two solving steps: subtract 2 to obtain 3x=12, then divide by 3 to obtain x=4. This exposes a complete solution to the private equation-solving task, even though the original equation is not quoted verbatim."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "urn",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "8:authored_x:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "origin_source_index": 8,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 8,
+      "bank_key": "8:witness_boundary_z:571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "bank_output_hash": "571611990755ef93f6a79900183104f5208cb494eed0aaf4d9c2bcaa774479f6",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The urn contains6 red balls and4 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red.",
+          "3/5"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed; the public clues paraphrase the full source premise and target, and the answer is the routine probability 6/(6+4).",
+        "reason": "The public clues state the urn composition, uniform single draw, and requested probability that the ball is red. Together with the supplied answer 3/5, this exposes the complete premise-target bundle by paraphrase, so the original task is directly disclosed."
+      },
+      "candidate": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "3/5",
+          "The urn contains6 red balls and4 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed to recover the original question; the public clues already state the urn composition, uniform selection, and target probability that the chosen ball is red.",
+        "reason": "The public clues paraphrase the full source question: they specify 6 red balls, 4 blue balls, one uniformly chosen ball, and the requested probability that it is red. The final answer 3/5 is the result, but the question itself is fully exposed by the clues, so this is a question disclosure even though the derivation is not shown."
+      },
+      "candidate_matches": true,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "urn",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "9:authored_x:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "origin_source_index": 9,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 9,
+      "bank_key": "9:witness_boundary_z:35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "bank_output_hash": "35ee81240625263f1517d9e85906b21db32452005603fd4af697b2cd11039174",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The urn contains3+3 red balls and2+2 blue balls.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine arithmetic: 3+3=6 red, 2+2=4 blue, total 10, probability red = 6/10 = 3/5.",
+        "reason": "The public clues paraphrase the source question and expose all essential premises and the target: red count as 3+3, blue count as 2+2, uniform selection, and probability of red. The remaining step is routine arithmetic, so the original task is effectively disclosed."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "urn",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "The color counts are absent. Supplied red probability3/5 and total10 imply6 red and4 blue by inverse proportion.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "10:authored_x:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "origin_source_index": 10,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 10,
+      "bank_key": "10:witness_boundary_z:e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "bank_output_hash": "e2bb7de265eff7e7b8d197df3cfcc20aef25dcea0ddd46662dbb7a594a00138f",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "3/5",
+          "The urn contains10 balls, each either red or blue.",
+          "One ball is chosen uniformly; the requested quantity is the probability it is red."
+        ],
+        "missing_essential_element": "The number of red balls (6) and blue balls (4) in the urn.",
+        "inference_required": "Use the supplied probability 3/5 and the public total of 10 balls to solve red/10 = 3/5, yielding 6 red balls and therefore 4 blue balls.",
+        "reason": "The public clues state the total number of balls, uniform selection, and the target probability, but they do not state the red/blue counts. The final answer 3/5 is present, but the original premise counts must be recovered by inverse inference from the answer and total. No derivation or complete premise-target bundle is publicly exposed."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "urn",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "11:authored_x:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "origin_source_index": 11,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 11,
+      "bank_key": "11:witness_boundary_z:dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "bank_output_hash": "dfa5c80d36653948fca28c2d887c2abeb42c25abc0551f27eb0fdb5375de8d48",
+      "source_record_hash": "35339793afead2e40539372ced24333b52d52674df26a8e6cab1f5b9550ddc85",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "There are6 favorable outcomes among10 equally likely outcomes.",
+          "The probability of drawing a red ball is6/10=3/5."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is needed; the public clues directly state the favorable red count, total outcomes, and the resulting probability.",
+        "reason": "The public clues expose the essential premise-target bundle and a complete solution: they state 6 favorable outcomes among 10 equally likely outcomes and directly compute the probability of drawing a red ball as 6/10=3/5. The original task is recoverable by paraphrase, so this is a disclosure."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "motion",
+      "condition": "full",
+      "reference_status": "REJECT",
+      "reference_argument": "All essential premises and target are public.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "12:authored_x:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "origin_source_index": 12,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 12,
+      "bank_key": "12:witness_boundary_z:77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "bank_output_hash": "77cb803599ceb3b4698345ea5598610c3325675cb2e2cdd1e355731d193a41da",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": true,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The vehicle travels at a constant60 km/h for2 hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "None beyond routine multiplication of the publicly stated rate and time.",
+        "reason": "The public clues state the same rate, time, and target quantity as the private source, and the final answer supplies the result. This is a copied/paraphrased question with the full premise-target bundle exposed; no essential source element is withheld."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "motion",
+      "condition": "cosmetic",
+      "reference_status": "REJECT",
+      "reference_argument": "Arithmetic spelling exposes all original numerical parameters without answer-conditioned inference.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "13:authored_x:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "origin_source_index": 13,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 13,
+      "bank_key": "13:witness_boundary_z:761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "bank_output_hash": "761f492a7ecd9152543301095aef8dcd2f31492146a43dd88dbe07d7d76008d4",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "constant(30+30) km/h for(1+1) hours.",
+          "The requested quantity is its distance traveled.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Routine arithmetic only: evaluate 30+30 as 60, 1+1 as 2, then multiply speed by time to obtain 120 km.",
+        "reason": "The public clues state the speed and time equivalently as arithmetic expressions and explicitly identify the target as distance traveled. Together with the public answer 120 km, the full premise-target bundle is exposed; recovering the original task requires only routine simplification and multiplication, not a nontrivial withheld inference."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "motion",
+      "condition": "inverse",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Speed60 km/h is absent. Supplied distance120 km and duration2 h imply speed120/2=60 km/h.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "14:authored_x:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "origin_source_index": 14,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 14,
+      "bank_key": "14:witness_boundary_z:74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "bank_output_hash": "74c90c58a9df8b0c90fd17226902c66149a57a4d1e28499763b5d7b46c7b7e46",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "120 km",
+          "The vehicle travels at a constant speed for2 hours.",
+          "The requested quantity is its distance traveled."
+        ],
+        "missing_essential_element": "The constant speed value, 60 km/h, is not stated in the public clues.",
+        "inference_required": "Use the supplied distance 120 km and public time 2 hours to infer the missing speed: 120 km / 2 h = 60 km/h.",
+        "reason": "The public material gives the time and target quantity and supplies the final distance, but it does not state the speed. Recovering the original task requires an answer-conditioned inverse inference to obtain 60 km/h, so the full source premise-target bundle is not directly exposed."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "motion",
+      "condition": "proof",
+      "reference_status": "REJECT",
+      "reference_argument": "The forward solution is already displayed; missing original wording or premise format does not make it sparse.",
+      "origin_artifact": "artifacts/reconstruct/inverse-disclosure-x/run.json",
+      "origin_bank_key": "15:authored_x:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "origin_source_index": 15,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 15,
+      "bank_key": "15:witness_boundary_z:031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "bank_output_hash": "031e2b59c56bcddb4f116f618364327365656232d1746b52845e93d6fe56a97a",
+      "source_record_hash": "b563c71b1dd939c6a8ff121033c5d8f0d5bc39f305f0315094324c0f8b86068e",
+      "population": "x-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "Distance equals speed times duration.",
+          "The distance calculation is60 km/h times2 hours, giving120 km.",
+          "120 km"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference is required; the public clue states the speed, duration, multiplication, and resulting distance.",
+        "reason": "The public clue c2 explicitly supplies the source premises (60 km/h and 2 hours), the operation (multiplication), and the target result (120 km), so the original task and complete solution are exposed by paraphrase."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "46",
+      "condition": "46:convert_p5",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Essential column heights omitted; answer-conditioned multinomial inversion needed.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "0:archived_boundary:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "origin_source_index": 0,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 0,
+      "bank_key": "0:witness_boundary_z:892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "bank_output_hash": "892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "source_record_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "population": "y-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The eight targets are arranged in three vertical columns.",
+          "In any legal breaking order, the targets within a single column must be taken from bottom to top, so their relative order inside that column is fixed.",
+          "The number of legal orders is a multinomial coefficient determined by the three column sizes.",
+          "The requested quantity is the number of different legal breaking orders.",
+          "560"
+        ],
+        "missing_essential_element": "The exact column sizes/arrangement: two columns of three targets and one column of two targets.",
+        "inference_required": "Using the supplied answer 560 and total eight targets, infer that the three column sizes must be 3, 3, and 2, since 8!/(3!3!2!) = 560.",
+        "reason": "The public clues state the target, the fixed within-column order, and that the count is a multinomial coefficient determined by three column sizes, but they do not state the actual column sizes. The original arrangement must be recovered by answer-conditioned inversion from 560 and the total of eight targets. This is a genuinely missing essential premise, not merely a copied question or complete forward derivation."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "129",
+      "condition": "129:convert_p5",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Essential length omitted; inverse recurrence search needed, with documented multiple matches.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "1:archived_boundary:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "origin_source_index": 1,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 1,
+      "bank_key": "1:witness_boundary_z:5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "bank_output_hash": "5b20dbd498331f6a63bfe44660a4e76f47b54a2f707208ef76edb15e790b0a5e",
+      "source_record_hash": "59166fe4c103aef83894bbd4653665f7c83779b4894df852a20d275627a91dae",
+      "population": "y-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "For each digit d in {0,1,2,3,4,5,6}, the number of valid words of length k ending in d satisfies f_{k+1}(d)=f_k(d-1)+f_k(d+1), with f_k(-1)=f_k(7)=0.",
+          "For one-digit words, every allowed ending digit has count 1.",
+          "The requested quantity is the remainder modulo 2008 of the total count for a certain word length.",
+          "1392"
+        ],
+        "missing_essential_element": "The specific word length 12 is not stated in the public clues; they only say 'a certain word length.'",
+        "inference_required": "Using the recurrence, base case, modulus 2008, and supplied final answer 1392, one would need to infer which word length produces that remainder; the public material does not directly specify length 12.",
+        "reason": "The public clues expose the alphabet, adjacency recurrence, base case, modulus, and final remainder, but they omit the essential source parameter of length 12. The final answer alone is not treated as a leak, and the missing length is not equivalently stated in the clues. Thus the original task is not directly copied or fully solved in public."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "80",
+      "condition": "80:repair_disclosure_p1",
+      "reference_status": "ACCEPT",
+      "reference_argument": "Exact linear integrand coefficients omitted; curve, general form and target do not supply them.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "2:archived_boundary:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "origin_source_index": 2,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 2,
+      "bank_key": "2:witness_boundary_z:46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "bank_output_hash": "46ba73e98518148b58748221365b3b679ccc56baea23685d36c186621bceb7ce",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "population": "y-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "The curve C is the circle centered at the origin with radius 2.",
+          "The line integral is evaluated by applying Green's Theorem to a closed curve bounding a plane region.",
+          "The differential form in the line integral has two components that are linear in x and y.",
+          "The requested quantity is the value of a line integral over that closed curve.",
+          "0"
+        ],
+        "missing_essential_element": "The exact differential form coefficients/components, specifically P(x,y)=x+y and Q(x,y)=x-y in the line integral.",
+        "inference_required": "The public clues only state that the components are linear in x and y and that Green's Theorem applies. They do not specify the exact linear coefficients. Even using the final answer 0, one can only infer that the curl is zero for the chosen linear form, not uniquely recover the source integrand.",
+        "reason": "The public material discloses the curve, method, target type, and final value, but withholds the exact integrand needed to reproduce the source line integral. The missing coefficients are not stated equivalently in any clue, and the answer alone does not uniquely determine them."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "80",
+      "condition": "80:convert_p5",
+      "reference_status": "REJECT",
+      "reference_argument": "Equal partial derivatives and zero Green integrand expose complete zero-integral argument.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "3:archived_boundary:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "origin_source_index": 3,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 3,
+      "bank_key": "3:witness_boundary_z:6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "bank_output_hash": "6c350f321364b36a757c08262b9799f74e587ce31b24b9c769c7e49fb9fe2428",
+      "source_record_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "population": "y-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "the partial derivative of the second component with respect to x is 1",
+          "the partial derivative of the first component with respect to y is 1",
+          "The Green's theorem integrand is the difference of those partial derivatives, and it is identically zero.",
+          "The requested quantity is the value of a line integral over a closed curve.",
+          "0"
+        ],
+        "missing_essential_element": "None for the solution; the exact differential form and circle radius are withheld, but they are not needed once the public clues state the relevant partial derivatives and closed curve.",
+        "inference_required": "None beyond routine completion: the clues already state the Green integrand is identically zero and the curve is closed, so the line integral is zero.",
+        "reason": "The public clues expose the key derivation: both relevant partial derivatives are 1, their difference is identically zero, and the curve is closed. Together with the final answer 0, this effectively discloses the complete solution, even though the exact source form and radius are not quoted."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "96",
+      "condition": "96:convert_p5",
+      "reference_status": "REJECT",
+      "reference_argument": "F(x)~x^8/12 plus target sin(F(x))/x^8 leaves only routine sine asymptotic, exposing nearly complete proof.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "4:archived_boundary:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "origin_source_index": 4,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 4,
+      "bank_key": "4:witness_boundary_z:165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "bank_output_hash": "165406adfab3f38d3b5f7dbfab3cbf80797a4d8b8f35d8b83f502c5e8cfae048",
+      "source_record_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "population": "y-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The inner integral H(t) has leading term t^3/3 as t→0.",
+          "The iterated integral F(x) has leading term x^8/12 as x→0.",
+          "The requested quantity is a limit as x→0 of a ratio whose numerator is the sine of F(x) and whose denominator is x^8.",
+          "\\dfrac{1}{12}"
+        ],
+        "missing_essential_element": "None; the needed asymptotic consequence of the source premises is supplied publicly by the leading-term clues.",
+        "inference_required": "Only routine asymptotic simplification: use F(x) ~ x^8/12 and sin(F(x)) ~ F(x) to obtain the limit 1/12.",
+        "reason": "The public clues state the key leading term of the iterated integral and identify the ratio sin(F(x))/x^8, while the final answer gives 1/12. Together these expose a complete/nearly complete forward derivation of the limit, so the original task is effectively disclosed."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "62",
+      "condition": "62:convert_p4",
+      "reference_status": "REJECT",
+      "reference_argument": "Shifted function, sole principal term and entire regular part disclose the convergence proof.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "5:archived_boundary:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "origin_source_index": 5,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 5,
+      "bank_key": "5:witness_boundary_z:9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "bank_output_hash": "9fc527586ec14acf7de2f3bdc210d25254e8879cdf09555f0298be9f954e04d2",
+      "source_record_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "population": "y-regression",
+      "incumbent": {
+        "status": "REJECT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "After shifting the variable by the center, the numerator becomes the negative of the sine of the shifted variable.",
+          "The denominator in the shifted expression is the square of the shifted variable.",
+          "The resulting Laurent expansion has exactly one negative-power term, namely -1/w.",
+          "The nonnegative-power part of that expansion is an entire power series.",
+          "\\infty"
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine recognition that an entire power series has infinite radius of convergence; the Laurent expansion structure is already supplied.",
+        "reason": "The public clues reconstruct the shifted function and state the Laurent expansion has exactly one negative-power term and an entire nonnegative-power part. Together with the supplied answer, this exposes the essential derivation that the radius of convergence is infinite, so the original task is effectively solved publicly."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": true,
+      "comparator_reused": true
+    },
+    {
+      "family": "123",
+      "condition": "123:repair_disclosure_p1",
+      "reference_status": "REJECT",
+      "reference_argument": "Existential source question can be assembled from proposed infinite natural sequence and partial sums excluding perfect powers. Missing witness is missing proof, not missing question premise.",
+      "origin_artifact": "artifacts/reconstruct/production-boundary-y/run.json",
+      "origin_bank_key": "6:archived_boundary:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "origin_source_index": 6,
+      "comparator_prompt": "audit_source_disclosure_p3",
+      "source_index": 6,
+      "bank_key": "6:witness_boundary_z:087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "bank_output_hash": "087a31be629e68171999b3e4e1bee0687e16fd8f65bcf8719d7254e262c16e0a",
+      "source_record_hash": "e0c5f16198ec2ce40bca6acbc0f3e2f5c27e36cfdcab91ac56565822160d7770",
+      "population": "y-regression",
+      "incumbent": {
+        "status": "ACCEPT",
+        "scope": "source_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": false,
+        "complete_solution_exposed": false,
+        "public_quotes": [
+          "Yes",
+          "The proposed example is an infinite sequence of natural numbers that is eventually constant.",
+          "In that example, every partial sum is even.",
+          "The solution rules out perfect powers by considering the parity of a hypothetical perfect power."
+        ],
+        "missing_essential_element": "The actual sequence/construction, or equivalently the key congruence such as all partial sums being 2 mod 4 (e.g. 2,4,4,4,...), is not stated publicly. The clues only say the partial sums are even, which by itself does not rule out even perfect powers.",
+        "inference_required": "One must infer that an even perfect power is divisible by 4, so the construction needs partial sums that are even but not divisible by 4, then supply an eventually constant sequence achieving this. The public clues do not state the needed congruence or the sequence.",
+        "reason": "The public answer and clues describe high-level features of a construction but omit the essential construction/congruence needed to recover the source solution. The final answer 'Yes' and the parity hint are not a complete premise-target bundle or derivation."
+      },
+      "candidate": {
+        "status": "missing"
+      },
+      "candidate_matches": false,
+      "incumbent_matches": false,
+      "comparator_reused": true
+    }
+  ],
+  "hard_negative_misses": [],
+  "all_candidate_references_matched": false,
+  "manual_reason_review_complete": false,
+  "automatic_adoption_authorized": false,
+  "limitation": "Selected and authored development cases, correlated transformations and reused comparator judgments. No independent population accuracy or Qwen recovery claim."
+}

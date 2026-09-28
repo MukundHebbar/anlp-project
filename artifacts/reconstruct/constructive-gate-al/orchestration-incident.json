@@ -1,0 +1,8 @@
+{
+  "issue": "Attempted-job count was mistaken for completion; evaluate started while source113 local request remained in flight.",
+  "preservation": "Paused student client and judge controller; first evaluate batch completed for five existing responses. Saved full snapshot before resuming student; reuse exact five judgments, no repeated draws or paid scores.",
+  "affected_timing": "Source113 client elapsed includes pause; exclude its client elapsed from latency comparisons. Model server was not paused.",
+  "fix": "Require each scheduled job to have a response or terminal student failure before judging, math verification or reuse.",
+  "recovery_complete": true,
+  "restored_exact_judgments": 5
+}

@@ -1,0 +1,72 @@
+{
+  "reviewer": "Assistant analytic review; independent teacher judgments pending",
+  "eligibility_caveat": "These labels assess responses. Disclosure eligibility is separate: AW high-exposure5/16 rejected;54/67/113 accepted. Do not count source5 as an eligible task success.",
+  "rows": [
+    {
+      "response_key": "5:level2:0",
+      "source_index": 5,
+      "response_output_hash": "f6ba3686279437ad84513db6e00aa8357bc5f7c60c2386e6c00bf917591de160",
+      "evidence_hash": "9ff44789f026b0640f0beefb6e4a544c421cdffa049417d3873833c2fa78ae3e",
+      "semantic_equivalent": true,
+      "grounded_semantic_success": false,
+      "mathematical_verification_sound": true,
+      "reason": "Exact original task recovered with missing numerical premise inserted and target preserved; verification checked against symbolic relation and independent arithmetic.",
+      "grounded_response_before_disclosure": true
+    },
+    {
+      "response_key": "10:level2:0",
+      "source_index": 10,
+      "response_output_hash": "808e24d707912f08c950256fe2ff6ad90b1bacf1dabeb75a539c2f568e6ec1a6",
+      "evidence_hash": "e7c74ef730cdd48348b82fe6b23c6e8c4971eff1472326da50185827c13f2d0b",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "mathematical_verification_sound": false,
+      "reason": "Leaves factorial argument unspecified and assumes the requested remainder27 as a premise.",
+      "grounded_response_before_disclosure": false
+    },
+    {
+      "response_key": "16:level2:0",
+      "source_index": 16,
+      "response_output_hash": "b63b0d3b80b3c9d0c0f9127d192cbe7266f3ee37265a6711e58b2d3f7901b6fe",
+      "evidence_hash": "a821a4f7fd7ec5ef3f0fe7487d6ddd7dbda15cd7ecde4ca6dd171fca8251a7ec",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "mathematical_verification_sound": false,
+      "reason": "Infers k=3/N=2000 in verification but does not put it in the question; AX also inserts the answer98 into the premises.",
+      "grounded_response_before_disclosure": false
+    },
+    {
+      "response_key": "54:level2:0",
+      "source_index": 54,
+      "response_output_hash": "5fbef156299b7fbaccd77a64d9a5cc1985614cfb43e898ad6e59139b6e5d9268",
+      "evidence_hash": "ef12a663b292c0c094a84cc92f29d948001f90ad0187aa5edc44a8f355542865",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "mathematical_verification_sound": false,
+      "reason": "Infers R=10 in verification but question retains R and explicitly assumes the requested answer1/99.",
+      "grounded_response_before_disclosure": false
+    },
+    {
+      "response_key": "67:level2:0",
+      "source_index": 67,
+      "response_output_hash": "d85c770b2f61644b5ddfa367d0be0605bcfeacf2c702e79ee8342aa3282a9c94",
+      "evidence_hash": "26f1b8034c1dc48d3747f2ae860a2c157571353f57257f25d4df9f3c8103dd26",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "mathematical_verification_sound": false,
+      "reason": "Asks for c given inverse-entry sum1 instead of asking for the sum given c=1.",
+      "grounded_response_before_disclosure": false
+    },
+    {
+      "response_key": "113:level2:0",
+      "source_index": 113,
+      "response_output_hash": "9096b5d9b308f9b853aa77561e82c21cce026b9cdc6bd1588a494f1909bdee44",
+      "evidence_hash": "b6a4bdb15b22156e2e4f26b4f6bac7a4a0408e0ac04bfeb36f64115417255d22",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "mathematical_verification_sound": false,
+      "reason": "Keeps alpha unspecified; limit equals1/e only when alpha=1.",
+      "grounded_response_before_disclosure": false
+    }
+  ]
+}

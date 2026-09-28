@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "source_count": 100,
+  "bound_attempts": 452,
+  "accepted_records": 436,
+  "preserved_failures": 16,
+  "public_clue_count": 4,
+  "scope": "Structural/provenance verification, not independent mathematical truth or universal leakage accuracy."
+}

@@ -1,0 +1,529 @@
+{
+  "scoring_version": "RECONSTRUCT-PC-v1",
+  "independent_families": 6,
+  "responses": 18,
+  "arms": {
+    "zero": {
+      "all_diagnostic": {
+        "planned": 6,
+        "scored": 5,
+        "missing": 1,
+        "mean": 32.5,
+        "sample_variance": 2000.0,
+        "histogram_1_to_5": [
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        "middle_heavy_observed": null,
+        "planned_mean_bounds": [
+          30.208333333333332,
+          38.541666666666664
+        ]
+      },
+      "accepted_inputs": {
+        "planned": 6,
+        "scored": 5,
+        "missing": 1,
+        "mean": 32.5,
+        "sample_variance": 2000.0,
+        "histogram_1_to_5": [
+          3,
+          0,
+          0,
+          1,
+          1
+        ],
+        "middle_heavy_observed": null,
+        "planned_mean_bounds": [
+          30.208333333333332,
+          38.541666666666664
+        ]
+      },
+      "input_counts": {
+        "accepted": 6,
+        "rejected": 0,
+        "unresolved": 0
+      }
+    },
+    "one": {
+      "all_diagnostic": {
+        "planned": 6,
+        "scored": 6,
+        "missing": 0,
+        "mean": 30.208333333333332,
+        "sample_variance": 1240.8854166666667,
+        "histogram_1_to_5": [
+          3,
+          0,
+          2,
+          0,
+          1
+        ],
+        "middle_heavy_observed": false,
+        "planned_mean_bounds": [
+          30.208333333333332,
+          30.208333333333332
+        ]
+      },
+      "accepted_inputs": {
+        "planned": 4,
+        "scored": 4,
+        "missing": 0,
+        "mean": 31.25,
+        "sample_variance": 1536.4583333333333,
+        "histogram_1_to_5": [
+          2,
+          0,
+          1,
+          0,
+          1
+        ],
+        "middle_heavy_observed": false,
+        "planned_mean_bounds": [
+          31.25,
+          31.25
+        ]
+      },
+      "input_counts": {
+        "accepted": 4,
+        "rejected": 0,
+        "unresolved": 2
+      }
+    },
+    "two": {
+      "all_diagnostic": {
+        "planned": 6,
+        "scored": 6,
+        "missing": 0,
+        "mean": 64.58333333333333,
+        "sample_variance": 2510.4166666666665,
+        "histogram_1_to_5": [
+          2,
+          0,
+          0,
+          0,
+          4
+        ],
+        "middle_heavy_observed": false,
+        "planned_mean_bounds": [
+          64.58333333333333,
+          64.58333333333333
+        ]
+      },
+      "accepted_inputs": {
+        "planned": 3,
+        "scored": 3,
+        "missing": 0,
+        "mean": 62.5,
+        "sample_variance": 2929.6875,
+        "histogram_1_to_5": [
+          1,
+          0,
+          0,
+          0,
+          2
+        ],
+        "middle_heavy_observed": false,
+        "planned_mean_bounds": [
+          62.5,
+          62.5
+        ]
+      },
+      "input_counts": {
+        "accepted": 3,
+        "rejected": 3,
+        "unresolved": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "arm": "zero",
+      "source_index": 5,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 4,
+        "target_fidelity": 2,
+        "evidence_integration": 4,
+        "mathematical_validity": 2
+      },
+      "raw_dimension_total": 75.0,
+      "shortcut": false,
+      "score_100": 75.0,
+      "score_bounds": [
+        75.0,
+        75.0
+      ],
+      "reason": null,
+      "rating_1_to_5": 4
+    },
+    {
+      "arm": "zero",
+      "source_index": 10,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 2,
+        "evidence_integration": 2,
+        "mathematical_validity": 0
+      },
+      "raw_dimension_total": 37.5,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "zero",
+      "source_index": 16,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 2,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": 43.75,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "zero",
+      "source_index": 54,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": null,
+        "target_fidelity": null,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": null,
+      "shortcut": false,
+      "score_100": null,
+      "score_bounds": [
+        18.75,
+        68.75
+      ],
+      "reason": "unresolved_judgment",
+      "rating_1_to_5": null
+    },
+    {
+      "arm": "zero",
+      "source_index": 67,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 4,
+        "target_fidelity": 4,
+        "evidence_integration": 4,
+        "mathematical_validity": 2
+      },
+      "raw_dimension_total": 87.5,
+      "shortcut": false,
+      "score_100": 87.5,
+      "score_bounds": [
+        87.5,
+        87.5
+      ],
+      "reason": null,
+      "rating_1_to_5": 5
+    },
+    {
+      "arm": "zero",
+      "source_index": 113,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 4,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": 56.25,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "one",
+      "source_index": 5,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 2,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": 43.75,
+      "shortcut": false,
+      "score_100": 43.75,
+      "score_bounds": [
+        43.75,
+        43.75
+      ],
+      "reason": null,
+      "rating_1_to_5": 3
+    },
+    {
+      "arm": "one",
+      "source_index": 10,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 1,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": 37.5,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "one",
+      "source_index": 16,
+      "input_status": "unresolved",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 4,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": 56.25,
+      "shortcut": false,
+      "score_100": 56.25,
+      "score_bounds": [
+        56.25,
+        56.25
+      ],
+      "reason": null,
+      "rating_1_to_5": 3
+    },
+    {
+      "arm": "one",
+      "source_index": 54,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 4,
+        "target_fidelity": 4,
+        "evidence_integration": 3,
+        "mathematical_validity": 2
+      },
+      "raw_dimension_total": 81.25,
+      "shortcut": false,
+      "score_100": 81.25,
+      "score_bounds": [
+        81.25,
+        81.25
+      ],
+      "reason": null,
+      "rating_1_to_5": 5
+    },
+    {
+      "arm": "one",
+      "source_index": 67,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 2,
+        "evidence_integration": 2,
+        "mathematical_validity": 0
+      },
+      "raw_dimension_total": 37.5,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "one",
+      "source_index": 113,
+      "input_status": "unresolved",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 3,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": 50.0,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "two",
+      "source_index": 5,
+      "input_status": "rejected",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 4,
+        "target_fidelity": 4,
+        "evidence_integration": 4,
+        "mathematical_validity": 4
+      },
+      "raw_dimension_total": 100.0,
+      "shortcut": false,
+      "score_100": 100.0,
+      "score_bounds": [
+        100.0,
+        100.0
+      ],
+      "reason": null,
+      "rating_1_to_5": 5
+    },
+    {
+      "arm": "two",
+      "source_index": 10,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 2,
+        "evidence_integration": 1,
+        "mathematical_validity": 0
+      },
+      "raw_dimension_total": 31.25,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "two",
+      "source_index": 16,
+      "input_status": "rejected",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 2,
+        "target_fidelity": 2,
+        "evidence_integration": 2,
+        "mathematical_validity": 1
+      },
+      "raw_dimension_total": 43.75,
+      "shortcut": true,
+      "score_100": 0.0,
+      "score_bounds": [
+        0.0,
+        0.0
+      ],
+      "reason": "known_shortcut",
+      "rating_1_to_5": 1
+    },
+    {
+      "arm": "two",
+      "source_index": 54,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 4,
+        "target_fidelity": 4,
+        "evidence_integration": 4,
+        "mathematical_validity": 3
+      },
+      "raw_dimension_total": 93.75,
+      "shortcut": false,
+      "score_100": 93.75,
+      "score_bounds": [
+        93.75,
+        93.75
+      ],
+      "reason": null,
+      "rating_1_to_5": 5
+    },
+    {
+      "arm": "two",
+      "source_index": 67,
+      "input_status": "rejected",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 4,
+        "target_fidelity": 4,
+        "evidence_integration": 4,
+        "mathematical_validity": 4
+      },
+      "raw_dimension_total": 100.0,
+      "shortcut": false,
+      "score_100": 100.0,
+      "score_bounds": [
+        100.0,
+        100.0
+      ],
+      "reason": null,
+      "rating_1_to_5": 5
+    },
+    {
+      "arm": "two",
+      "source_index": 113,
+      "input_status": "accepted",
+      "version": "RECONSTRUCT-PC-v1",
+      "dimensions": {
+        "premise_fidelity": 4,
+        "target_fidelity": 4,
+        "evidence_integration": 3,
+        "mathematical_validity": 4
+      },
+      "raw_dimension_total": 93.75,
+      "shortcut": false,
+      "score_100": 93.75,
+      "score_bounds": [
+        93.75,
+        93.75
+      ],
+      "reason": null,
+      "rating_1_to_5": 5
+    }
+  ],
+  "limitations": [
+    "Saved p14 one-gap responses, not new outputs from the proposed PC-v1 converter/student prompt.",
+    "Six repeated families, not18 independent questions; no population-shape claim.",
+    "Judging failures and unresolved input validity remain explicit; no retries or score tuning.",
+    "Raw automated grades require review; no histogram-driven label correction.",
+    "Display bands differ from the old0–4 rubric and its plus-one display."
+  ]
+}

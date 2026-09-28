@@ -1,0 +1,26 @@
+{
+  "candidate": {
+    "public_counts": {
+      "ACCEPT": 7,
+      "REJECT": 3,
+      "NEEDS_REVIEW": 0
+    },
+    "unresolved": 1,
+    "maximum_full_gate_acceptance": 8,
+    "original_denominator": 12,
+    "coverage_upper_bound": 0.6666666666666666,
+    "can_reach_80_percent": false
+  },
+  "incumbent": {
+    "public_counts": {
+      "ACCEPT": 4,
+      "REJECT": 6,
+      "NEEDS_REVIEW": 0
+    },
+    "unresolved": 1,
+    "maximum_full_gate_acceptance": 5,
+    "original_denominator": 12,
+    "coverage_upper_bound": 0.4166666666666667,
+    "can_reach_80_percent": false
+  }
+}

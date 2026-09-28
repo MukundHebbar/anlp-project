@@ -1,0 +1,62 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-av.md",
+  "reviewer": "Assistant pre-student analytic review; independent teacher disclosure check pending",
+  "rows": [
+    {
+      "source_index": 21,
+      "evidence_hash": "1e0814f8678a60a5fc82810379aee0a61ee658485efd18416f1af74594ec5beb",
+      "support_pass": true,
+      "manual_candidate_pass": true,
+      "missing_essential_element": "Which residue property is counted; totient suggests but does not state generators.",
+      "reason": "Source supports coarse question family and named method. Complete target and final derivation remain absent. This is provisional manual review, not a teacher acceptance."
+    },
+    {
+      "source_index": 35,
+      "evidence_hash": "9ef17fe6556ac949bee155ec0834fe430eb184dd123b4a407aa62f2f50e16857",
+      "support_pass": true,
+      "manual_candidate_pass": true,
+      "missing_essential_element": "Exact regularity property and its quantifier distinction.",
+      "reason": "Source supports coarse question family and named method. Complete target and final derivation remain absent. This is provisional manual review, not a teacher acceptance."
+    },
+    {
+      "source_index": 54,
+      "evidence_hash": "af159ce6df72e5ffe5cf390b6359da685197970a7a10365e280cac4d40a18960",
+      "support_pass": true,
+      "manual_candidate_pass": true,
+      "missing_essential_element": "Exact extremal expression tan squared; slopes/discriminant suggest a method but do not state the target.",
+      "reason": "Source supports coarse question family and named method. Complete target and final derivation remain absent. This is provisional manual review, not a teacher acceptance."
+    },
+    {
+      "source_index": 68,
+      "evidence_hash": "98afcbd1ca1b3f5dc2aaa22bc013829b8d5cba2ddc439b3244b3fee28031a02f",
+      "support_pass": true,
+      "manual_candidate_pass": true,
+      "missing_essential_element": "Exact event, in particular determinant equal to minus one.",
+      "reason": "Source supports coarse question family and named method. Complete target and final derivation remain absent. This is provisional manual review, not a teacher acceptance."
+    },
+    {
+      "source_index": 113,
+      "evidence_hash": "b4688fb52a100ede243a0cee629c24ea759e1531b30a50420e5153ac14bbcce7",
+      "support_pass": true,
+      "manual_candidate_pass": true,
+      "missing_essential_element": "Normalization by n, which is absent from the input.",
+      "reason": "Source supports coarse question family and named method. Complete target and final derivation remain absent. This is provisional manual review, not a teacher acceptance."
+    },
+    {
+      "source_index": 114,
+      "evidence_hash": "c68b67920eaec3850f51ce3c8810601cf9fe95048ef7286338079ede64e825f6",
+      "support_pass": true,
+      "manual_candidate_pass": true,
+      "missing_essential_element": "Exact convergence quantity, rather than coefficient growth or boundary behavior.",
+      "reason": "Source supports coarse question family and named method. Complete target and final derivation remain absent. This is provisional manual review, not a teacher acceptance."
+    },
+    {
+      "source_index": 132,
+      "evidence_hash": "0f7426e294b24a18c4b47220c1112a6eb995c50ad93251b487173916f8839462",
+      "support_pass": true,
+      "manual_candidate_pass": true,
+      "missing_essential_element": "Minimum guaranteeing hand versus largest avoiding hand; no threshold value or full construction is supplied.",
+      "reason": "Source supports coarse question family and named method. Complete target and final derivation remain absent. This is provisional manual review, not a teacher acceptance."
+    }
+  ]
+}

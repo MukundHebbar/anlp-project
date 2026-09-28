@@ -1,0 +1,100 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "created_at": "2026-09-20T13:50:16.706089+00:00",
+  "before_student_calls": true,
+  "scope": "All returned AH banks reviewed before their matched SOLVE responses were inspected; source129 conversion failed before its SOLVE content was inspected.",
+  "rows": [
+    {
+      "source_index": 0,
+      "bank_hash": "8ab0e8f3be649f806243695d0cd013aef5f454133b8632e28ad8152a6f011b10",
+      "source_hash": "89b417d556cfb648f2f0292eb8e098edeecadaceb9e4858c97021744ac8e9428",
+      "manual_content_pass": true,
+      "reason": "Only target coefficient3 is hidden as k; the target form is retained. The public first moment is incomplete; square-moment calculation and answer-conditioned multiplication coefficient remain to infer. Independent certificate checks give k3.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 13,
+      "bank_hash": "6d34c17c8dab3233d3f24071cc2a8323a65e1aaf3cf4b051836a967af4a747f0",
+      "source_hash": "52b0d32d18195e1382b5f977a66c35997ebad82e2af325031450723047fe16fb",
+      "manual_content_pass": false,
+      "reason": "Converter NOT_SUITABLE; retain coverage failure. Its uniqueness requirement may be stronger than the allowed ambiguity policy; do not interpret rejection as proof no valid conversion exists.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 46,
+      "bank_hash": "905c3d0d8e02988b64a5e323903f6246ffe0a0091cdc767349c95d167a0094cc",
+      "source_hash": "ef1a447340a25c1f0caf0b33d054c9524d12d8c51a8971f17458eeedf566ea46",
+      "manual_content_pass": true,
+      "reason": "The equal-column count and height obey retained total kh=6, leaving one independent integer factor choice. The original column-arrangement premise is hidden; the public bank provides no multinomial formula. Exhaustive factor-pair evaluation gives uniquely k2,h3. This is one constrained arrangement premise, not two independent omitted degrees of freedom.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 62,
+      "bank_hash": "20ff54a10db969a526cdf36d0e2bee113715a3eb19f9407e49202d19b1078f79",
+      "source_hash": "dcb2b282f70baaaf0f1c9404f97bfa37cb8caa24bff31e96d6f45865e10786a6",
+      "manual_content_pass": false,
+      "reason": "Certificate and public clue c4 confuse a Laurent expansion with its Taylor/interior expansion. Center0 also admits an exterior Laurent annulus with outer radius infinity. The claimed unique recovery of pi is invalid. Repeating the answer in c5 also adds no observation.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 63,
+      "bank_hash": "77d0bbc0ec97461d5ec999256a63a98befd406c441c3177b64d52b5d70465ea8",
+      "source_hash": "f15efc1e7c16bfc117728be4698c80afe7687fa8834804c91ba240cad567600b",
+      "manual_content_pass": false,
+      "reason": "Converter NOT_SUITABLE; retain coverage failure. Its uniqueness requirement may be stronger than the allowed ambiguity policy; do not interpret rejection as proof no valid conversion exists.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 80,
+      "bank_hash": "fcd56ee143acbbd2a110940918a7acf9beb011f898e0ea5c2dea66c5da45726a",
+      "source_hash": "0d947eee33161ab0f2e833ec09aedc8dbe9a01992e73394d49366f4cd35f643d",
+      "manual_content_pass": false,
+      "reason": "Boundary uncertainty: Green reduction, one derivative and disk area expose nearly the complete method; only the other elementary derivative and substitution remain. Preserve the same conservative near-complete-solution boundary used for AF80; do not promote based on a potentially favorable student result.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 87,
+      "bank_hash": "d81ee1cf1ef0feff93fd73483aa810141818b074b638c4e8a1b6e4f1ce9351f3",
+      "source_hash": "e12aef0d3e7054ee762163d4824f9c7a61a952ca8ff805cf9e01e5c65da87c81",
+      "manual_content_pass": false,
+      "reason": "Full counterexample, its quotient and target expose the original limiting value0 without using the answer. This is near-complete solution exposure; repeated answer clue is padding.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 96,
+      "bank_hash": "ec6c5cf2037d6be7157720e37f93102a0e1356501ab26926391a94b9d52338b6",
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "manual_content_pass": true,
+      "reason": "Derivative value1 is withheld as a; target/domain and g0 condition remain. Only inner integral asymptotic is provided; outer integration and final limit a/12 must be computed to infer a1. Correct private certificate; mathematically similar exposure to AG96 despite different grouping.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 118,
+      "bank_hash": "2b87f1b5d0d866c87e1523d352d1bd37edd2676f8042dda9c096ab32ba44a171",
+      "source_hash": "4f81a31c55ce57ea3d7a92de1040d21e1fbcf2be1b335c2264dd5168439c6024",
+      "manual_content_pass": true,
+      "reason": "The missing denominator8 is a question premise, not merely an existential witness. Triangular-prime reasoning from witness5 forces24/d=3 and d8. Public clues omit that derivation and value. Private claim m=2 overlooks m=-3 for integer m; independent sign-symmetry argument fixes the proof without changing clues or inferred denominator. Record this certificate defect, not flawless teacher accuracy.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 120,
+      "bank_hash": "51e772bdfc45692dfc7ef134533379afa07cf8f0ee51e2deefad6c8d6edc768f",
+      "source_hash": "035a65ea0ae84987d47afea161e365fd549dd82ca9e523399f7e44e8f93aa373",
+      "manual_content_pass": false,
+      "reason": "Converter NOT_SUITABLE; retain coverage failure. Its uniqueness requirement may be stronger than the allowed ambiguity policy; do not interpret rejection as proof no valid conversion exists.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    },
+    {
+      "source_index": 137,
+      "bank_hash": "4583eaa43d6e05df6af3ddc20b76dfad14e375963d0da2cd54d11c296ab8d631",
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "manual_content_pass": false,
+      "reason": "Boundary uncertainty: both edge and complete degree-sum equations plus handshaking expose nearly the whole parameterized method, as in AF137. The inverse conclusion d5 is valid and realizability was previously certified; conservative full-method uncertainty still excludes this bank.",
+      "derived_transform_review": "Exact public bank and private inference checked before inspecting any matched SOLVE contents or any AH reconstruction output."
+    }
+  ],
+  "pending_conversion": [],
+  "conversion_failures": [
+    129
+  ]
+}

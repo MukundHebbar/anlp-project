@@ -1,0 +1,468 @@
+{
+  "protocol": "docs/plans/reconstruct-amendment-ae.md",
+  "cases": [
+    {
+      "source_index": 96,
+      "source": {
+        "source_index": 96,
+        "source_id": "deepmath-row-76751-6e239f7c8db2",
+        "question": "Determine whether the limit \\( \\lim_{x\\rightarrow0}\\frac{\\sin\\left(\\int\\limits _{x^{3}}^{x^{2}}\\left(\\int\\limits _{0}^{t}g\\left(s^{2}\\right)ds\\right)dt\\right)}{x^{8}} \\) converges, given that \\( g \\) is a function with a derivative defined for all \\( x \\) in the interval \\([-1, 1]\\), \\( g(0) = 0 \\), and \\( g'(0) = 1 \\).",
+        "final_answer": "\\dfrac{1}{12}",
+        "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+        "broad_topic": "Calculus",
+        "difficulty": 8.0,
+        "checked_solution": "Let  \n\\[\nF(x)=\\int_{x^3}^{x^2}\\left(\\int_0^t g(s^2)\\,ds\\right)dt.\n\\]\n\nSince \\(g(0)=0\\) and \\(g'(0)=1\\), Taylor’s formula gives\n\\[\ng(u)=u+o(u)\\qquad (u\\to 0).\n\\]\nThus, as \\(s\\to 0\\),\n\\[\ng(s^2)=s^2+o(s^2).\n\\]\n\nDefine\n\\[\nH(t)=\\int_0^t g(s^2)\\,ds.\n\\]\nFor small \\(t\\), using \\(|g(s^2)-s^2|\\le \\varepsilon s^2\\), we get\n\\[\n\\left|H(t)-\\frac{t^3}{3}\\right|\n=\\left|\\int_0^t \\bigl(g(s^2)-s^2\\bigr)\\,ds\\right|\n\\le \\int_0^{|t|}\\varepsilon s^2\\,ds\n=\\frac{\\varepsilon}{3}|t|^3.\n\\]\nHence\n\\[\nH(t)=\\frac{t^3}{3}+o(t^3)\\qquad (t\\to 0).\n\\]\n\nTherefore\n\\[\nF(x)=\\int_{x^3}^{x^2}\\frac{t^3}{3}\\,dt+R(x),\n\\]\nwhere the remainder satisfies\n\\[\n|R(x)|\\le \\frac{\\varepsilon}{3}\\int_{x^3}^{x^2}|t|^3\\,dt.\n\\]\nFor small \\(x\\),\n\\[\n\\int_{x^3}^{x^2}|t|^3\\,dt\\le \\frac{x^8+x^{12}}4\\le \\frac{x^8}{2}.\n\\]\nSo \\(R(x)=o(x^8)\\). Thus\n\\[\nF(x)=\\frac{x^8-x^{12}}{12}+o(x^8)\n=\\frac{x^8}{12}+o(x^8).\n\\]\nHence\n\\[\n\\frac{F(x)}{x^8}\\to \\frac{1}{12}.\n\\]\n\nSince \\(F(x)\\to 0\\), we also have\n\\[\n\\frac{\\sin F(x)}{F(x)}\\to 1.\n\\]\nTherefore\n\\[\n\\lim_{x\\to0}\\frac{\\sin F(x)}{x^8}\n=\n\\lim_{x\\to0}\\frac{\\sin F(x)}{F(x)}\\cdot \\frac{F(x)}{x^8}\n=\n\\frac{1}{12}.\n\\]\n\n<final_answer>1/12</final_answer>",
+        "solution_origin": "deepseek_verified_answer"
+      },
+      "bank_key": "96:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank": {
+        "source_index": 96,
+        "prompt": "convert_p6_rich",
+        "prompt_hash": "976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "reasoning_effort": "low",
+        "output": {
+          "status": "OK",
+          "clues": [
+            {
+              "id": "c1",
+              "sentence": "The expression under consideration is a limit as x approaches 0 of a quotient whose numerator is the sine of a double integral and whose denominator is x^8.",
+              "fragment": "lim_{x→0} sin(F(x))/x^8, where F(x) is a double integral.",
+              "hidden_support": "This is the outer form of the source limit expression."
+            },
+            {
+              "id": "c2",
+              "sentence": "The double integral F(x) has outer limits from x^3 to x^2 and inner limits from 0 to t, with integrand g(s^2) ds dt.",
+              "fragment": "F(x)=∫_{x^3}^{x^2} (∫_0^t g(s^2) ds) dt.",
+              "hidden_support": "This matches the nested integral in the source question."
+            },
+            {
+              "id": "c3",
+              "sentence": "The requested quantity is whether this limit converges and, if it does, what its value is.",
+              "fragment": "target = convergence and value of lim_{x→0} sin(F(x))/x^8.",
+              "hidden_support": "The source question asks to determine convergence of the given limit."
+            },
+            {
+              "id": "c4",
+              "sentence": "The function g is differentiable on the interval [-1,1] and satisfies g(0)=0.",
+              "fragment": "g is differentiable on [-1,1] and g(0)=0.",
+              "hidden_support": "These are stated hypotheses in the source question."
+            },
+            {
+              "id": "c5",
+              "sentence": "For small t, the inner integral H(t)=∫_0^t g(s^2) ds controls F(x), because F(x)=∫_{x^3}^{x^2} H(t) dt.",
+              "fragment": "H(t)=∫_0^t g(s^2) ds and F(x)=∫_{x^3}^{x^2} H(t) dt.",
+              "hidden_support": "This is just the definition of H and the outer integral."
+            },
+            {
+              "id": "c6",
+              "sentence": "If the double integral F(x) tends to 0 as x tends to 0, then the sine factor can be replaced by F(x) in the limit.",
+              "fragment": "sin(F(x)) ~ F(x) when F(x)→0.",
+              "hidden_support": "Standard small-angle limit sin(u)/u→1 as u→0."
+            }
+          ],
+          "withheld": "The essential missing premise is g'(0)=1. It is not already stated equivalently: differentiability on [-1,1] and g(0)=0 do not determine the derivative at 0. Given the final answer 1/12, if g'(0)=a, then g(s^2)=a s^2+o(s^2), so H(t)=a t^3/3+o(t^3), F(x)=a(x^8−x^12)/12+o(x^8), and the limit is a/12. Thus the answer 1/12 forces a=1, recovering the withheld premise g'(0)=1."
+        },
+        "request": {
+          "reasoning": "We need answer JSON only. Need create six observations for reconstructing original question from final answer. Need withhold one essential question premise/relation. Source question asks determine whether limit converges, given g derivative on [-1,1], g(0)=0, g'(0)=1. Final answer 1/12. Need observations informative but incomplete. Need preserve requested quantity role, mathematical objects, distinctive constraints. Withhold one essential premise. Which premise? Maybe withhold g'(0)=1? But answer 1/12 depends on g'(0)=1. If we state g(0)=0 and derivative defined, but not g'(0)=1, then answer 1/12 lets infer g'(0)=1? Let's see if g'(0)=a, then g(s^2)=a s^2 + o(s^2), H(t)=a t^3/3, F= a (x^8 - x^12)/12, limit a/12. Given answer 1/12 => a=1. So withhold g'(0)=1. That is an essential premise. We can include g(0)=0, derivative defined on [-1,1], limit expression, target convergence/value. Need six distinct observations. First three: object/target context and partial constraints. Last three: additional distinctive constraints/intermediate observations. Need not expose full derivation. We can mention nested integral, sin, denominator x^8, g derivative defined, g(0)=0. Maybe mention inner integral from 0 to t of g(s^2) ds. Outer integral from x^3 to x^2. Limit as x->0. Requested quantity is whether limit converges and its value if so. Need withhold g'(0)=1. But if we mention Taylor g(u)=u+o(u) that would reveal g'(0)=1. Avoid. We can mention g(0)=0 implies inner integrand small? But not g'(0). Need six observations. Need ensure not too complete. We can include intermediate observations like if H(t)=∫0^t g(s^2) ds, then F(x)=∫_{x^3}^{x^2} H(t) dt. That's just definition. Also for small t, H(t) is o(t^2)? Wait if g(0)=0 and derivative defined, g(s^2)=o(1)? Actually g(s^2)=o(1), so H(t)=o(t) maybe. But not enough. We can mention the denominator x^8 suggests need expansion of F to order x^8. That's a clue. But maybe too generic. Need last three additional distinctive constraints or intermediate observations. Could mention the outer integration interval endpoints are x^3 and x^2, so its length is x^2 - x^3. The inner variable t is integrated from 0 to t? Wait notation: ∫_0^t g(s^2) ds. Then outer ∫_{x^3}^{x^2} (inner) dt. Yes.\n\nNeed hidden_support for each fragment. The fragment expresses same proposition. We need JSON with clues array. Each clue: id, sentence, fragment, hidden_support. The \"fragment\" maybe the exact proposition? In example, sentence is observation, fragment expresses same proposition? Actually schema: {\"id\":\"c1\",\"sentence\":\"...\",\"fragment\":\"...\",\"hidden_support\":\"...\"}. They want each fragment expresses same proposition and hidden_support gives checked basis. So sentence is ordinary sentence, fragment maybe a concise formal fragment? We can do.\n\nNeed withheld: Exactly which essential QUESTION premise is absent, why not already stated equivalently, and how answer-conditioned inference can recover it. We'll say g'(0)=1 is absent. Not stated equivalently; g(0)=0 and differentiability don't determine derivative. Given answer 1/12, if g'(0)=a, limit is a/12, so a=1. Need be careful: if g'(0)=a, then g(s^2)=a s^2+o(s^2), H(t)=a t^3/3+o(t^3), F(x)=a(x^8-x^12)/12+o(x^8), sin F ~ F, limit a/12. So answer 1/12 implies a=1. Good.\n\nNeed six observations. Let's draft:\n\nc1: The expression under consideration is a limit as x approaches 0 of a quotient whose numerator is sin of a double integral and whose denominator is x^8. Fragment: lim_{x->0} sin(F(x))/x^8. Hidden: source expression.\n\nc2: The double integral F(x) has outer limits from x^3 to x^2 and inner limits from 0 to t, with integrand g(s^2) ds dt. Fragment: F(x)=∫_{x^3}^{x^2}∫_0^t g(s^2) ds dt. Hidden: source.\n\nc3: The requested quantity is whether this limit converges and, if it does, its value. Fragment: target = convergence/value of limit. Hidden: source question.\n\nc4: The function g is differentiable on [-1,1] and satisfies g(0)=0. Fragment: g∈C? derivative defined on [-1,1], g(0)=0. Hidden: source. Note derivative defined for all x in interval, not necessarily continuous. We can say differentiable.\n\nc5: For small t, the inner integral H(t)=∫_0^t g(s^2) ds is the quantity whose behavior controls F(x), since F(x)=∫_{x^3}^{x^2} H(t) dt. Fragment: H(t)=...; F=... Hidden: definition.\n\nc6: The denominator x^8 and the outer interval endpoints x^3, x^2 imply that the leading contribution to F(x) comes from integrating a cubic term in t over that interval, producing an x^8 term. Fragment: leading term of F is O(x^8). Hidden: checked solution. Is this too revealing? It hints H(t) ~ t^3/3, which would imply g(s^2) ~ s^2, i.e., g'(0)=1. That might expose missing premise? It says leading contribution from cubic term. If we say cubic term, that implies H(t) ~ t^3/3, which implies g(s^2) ~ s^2, so g'(0)=1. That would reveal missing premise. Avoid. Instead say denominator x^8 suggests expansion to order x^8 is needed. That's generic.\n\nc6: The sine factor can be replaced by its argument in the limit if the double integral tends to 0. Fragment: sin F(x) ~ F(x) if F(x)->0. Hidden: standard limit. This is intermediate. Does it reveal? No.\n\nNeed last three additional distinctive constraints or intermediate observations. We have c4, c5, c6. That's six. But c6 maybe okay. Need ensure not too complete. We withhold g'(0)=1. But c6 says sin F ~ F if F->0. That's fine.\n\nCould also mention g(0)=0 ensures H(0)=0? Actually H(0)=0. But not needed.\n\nNeed \"genuinely incomplete observations\" and \"withhold one essential question premise\". We have.\n\nCheck if any clue accidentally states g'(0)=1? No.\n\nNeed JSON only. Ensure valid JSON. Use escaped backslashes? We can use plain text with LaTeX. JSON strings need escape backslashes? In JSON, backslash must be escaped. We can avoid backslashes by using unicode or simple notation. But LaTeX has backslashes. We can write without backslashes? Use \"lim_{x->0}\" etc. For integrals, use ∫. That's fine. Avoid backslashes. Use unicode. JSON can contain unicode. So no escaping needed except quotes. We'll use ∫, →, etc.\n\nNeed \"fragment\" maybe same proposition. We'll write concise.\n\nLet's produce JSON. Ensure exactly six clues. Withheld string. No markdown.",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 2372,
+            "prompt_tokens": 1323,
+            "total_tokens": 3695,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": null,
+              "audio_tokens": null,
+              "reasoning_tokens": 1720,
+              "rejected_prediction_tokens": null,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": null,
+              "cached_tokens": 640,
+              "image_tokens": null,
+              "text_tokens": null
+            },
+            "estimated_cost": 0.0010945479999999999
+          },
+          "elapsed_seconds": 43.881
+        },
+        "raw_content": "{\"status\":\"OK\",\"clues\":[{\"id\":\"c1\",\"sentence\":\"The expression under consideration is a limit as x approaches 0 of a quotient whose numerator is the sine of a double integral and whose denominator is x^8.\",\"fragment\":\"lim_{x→0} sin(F(x))/x^8, where F(x) is a double integral.\",\"hidden_support\":\"This is the outer form of the source limit expression.\"},{\"id\":\"c2\",\"sentence\":\"The double integral F(x) has outer limits from x^3 to x^2 and inner limits from 0 to t, with integrand g(s^2) ds dt.\",\"fragment\":\"F(x)=∫_{x^3}^{x^2} (∫_0^t g(s^2) ds) dt.\",\"hidden_support\":\"This matches the nested integral in the source question.\"},{\"id\":\"c3\",\"sentence\":\"The requested quantity is whether this limit converges and, if it does, what its value is.\",\"fragment\":\"target = convergence and value of lim_{x→0} sin(F(x))/x^8.\",\"hidden_support\":\"The source question asks to determine convergence of the given limit.\"},{\"id\":\"c4\",\"sentence\":\"The function g is differentiable on the interval [-1,1] and satisfies g(0)=0.\",\"fragment\":\"g is differentiable on [-1,1] and g(0)=0.\",\"hidden_support\":\"These are stated hypotheses in the source question.\"},{\"id\":\"c5\",\"sentence\":\"For small t, the inner integral H(t)=∫_0^t g(s^2) ds controls F(x), because F(x)=∫_{x^3}^{x^2} H(t) dt.\",\"fragment\":\"H(t)=∫_0^t g(s^2) ds and F(x)=∫_{x^3}^{x^2} H(t) dt.\",\"hidden_support\":\"This is just the definition of H and the outer integral.\"},{\"id\":\"c6\",\"sentence\":\"If the double integral F(x) tends to 0 as x tends to 0, then the sine factor can be replaced by F(x) in the limit.\",\"fragment\":\"sin(F(x)) ~ F(x) when F(x)→0.\",\"hidden_support\":\"Standard small-angle limit sin(u)/u→1 as u→0.\"}],\"withheld\":\"The essential missing premise is g'(0)=1. It is not already stated equivalently: differentiability on [-1,1] and g(0)=0 do not determine the derivative at 0. Given the final answer 1/12, if g'(0)=a, then g(s^2)=a s^2+o(s^2), so H(t)=a t^3/3+o(t^3), F(x)=a(x^8−x^12)/12+o(x^8), and the limit is a/12. Thus the answer 1/12 forces a=1, recovering the withheld premise g'(0)=1.\"}"
+      },
+      "certificate": {
+        "missing": "gprime(0)=1",
+        "alternative_family": "g(x)=a*x on[-1,1], for arbitrary real a. Each is differentiable and g(0)=0. All six public observations hold for all a.",
+        "derivation": "H(t)=a*t^3/3; F(x)=a*(x^8-x^12)/12; since sin(F)/F tends to1, the requested limit is a/12. a=0 gives0, a=1 gives1/12. Therefore the public premises alone do not determine the question answer; using the supplied1/12 infers missing derivative a=1.",
+        "scope": "These computations are private and absent from the student clues."
+      },
+      "source_hash": "9d82ec82dca1c5d19230ee58d804ddd1970f981ea07fb106eebd4a955e0085f3",
+      "bank_hash": "f84caa7407cd7bda28ec0702e88f16acc39ce79cb397aa1b09fd546872d590ca"
+    },
+    {
+      "source_index": 137,
+      "source": {
+        "source_index": 137,
+        "source_id": "deepmath-row-80293-2c04d55796e6",
+        "question": "Determine the number of vertices $n$ in a maximal planar graph where $\\frac{1}{3}n$ vertices have degree $3$, $\\frac{1}{3}n$ have degree $4$, and $\\frac{1}{3}n$ have degree $5$. Use the formula for the number of edges in a maximal planar graph, $e = 3n - 6$, where $e$ is the number of edges.",
+        "final_answer": "6",
+        "topic": "Mathematics -> Discrete Mathematics -> Graph Theory",
+        "broad_topic": "Discrete Mathematics",
+        "difficulty": 5.0,
+        "checked_solution": "Let \\(n\\) be the number of vertices. Since the vertices are divided into three equal groups, there are \\(\\frac n3\\) vertices of each degree \\(3,4,5\\).\n\nBy the handshaking lemma,\n\n\\[\n\\sum_{v\\in V}\\deg(v)=2e.\n\\]\n\nThe total degree sum is\n\n\\[\n\\frac n3\\cdot 3+\\frac n3\\cdot 4+\\frac n3\\cdot 5\n= n+ \\frac{4n}{3}+\\frac{5n}{3}\n=4n.\n\\]\n\nFor a maximal planar graph,\n\n\\[\ne=3n-6.\n\\]\n\nTherefore,\n\n\\[\n4n=2e=2(3n-6)=6n-12.\n\\]\n\nSolving,\n\n\\[\n4n=6n-12\n\\]\n\n\\[\n12=2n\n\\]\n\n\\[\nn=6.\n\\]\n\nThis is consistent with the degree counts, since \\(\\frac n3=2\\) vertices of each degree are required.\n\n<final_answer>\\(n=6\\)</final_answer>",
+        "solution_origin": "deepseek_verified_answer"
+      },
+      "bank_key": "137:976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "bank": {
+        "source_index": 137,
+        "prompt": "convert_p6_rich",
+        "prompt_hash": "976b2b9fbc6bc9b574afae96aecd62e43255703cd620d46b9701c7ba3aa9f6ed",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "reasoning_effort": "low",
+        "output": {
+          "status": "OK",
+          "clues": [
+            {
+              "id": "c1",
+              "sentence": "The object under consideration is a maximal planar graph with n vertices.",
+              "fragment": "maximal planar graph with n vertices",
+              "hidden_support": "The source question specifies a maximal planar graph and asks for its number of vertices n."
+            },
+            {
+              "id": "c2",
+              "sentence": "The quantity to be determined is the number of vertices n.",
+              "fragment": "determine n",
+              "hidden_support": "The final answer is n=6, and the question asks for n."
+            },
+            {
+              "id": "c3",
+              "sentence": "For a maximal planar graph, the number of edges e satisfies e = 3n - 6.",
+              "fragment": "e = 3n - 6",
+              "hidden_support": "The source question explicitly provides this formula."
+            },
+            {
+              "id": "c4",
+              "sentence": "The handshaking lemma states that the sum of the degrees of all vertices equals twice the number of edges.",
+              "fragment": "sum of degrees = 2e",
+              "hidden_support": "Standard graph theory fact used in the solution."
+            },
+            {
+              "id": "c5",
+              "sentence": "The n vertices are divided into three equal-sized groups, and all vertices in each group have the same degree.",
+              "fragment": "three equal-sized degree groups",
+              "hidden_support": "The source question says 1/3 n vertices have degree 3, 1/3 n have degree 4, and 1/3 n have degree 5, so the groups are equal-sized and each has a constant degree."
+            },
+            {
+              "id": "c6",
+              "sentence": "The three common degrees of these groups are consecutive integers.",
+              "fragment": "consecutive integer degrees",
+              "hidden_support": "The original degrees 3, 4, and 5 are consecutive integers."
+            }
+          ],
+          "withheld": "The exact degree values assigned to the three equal-sized groups (namely 3, 4, and 5). This is not stated in the clues; only that the degrees are consecutive. Given the final answer n=6, the average degree is 2e/n = 2(3n-6)/n = 6 - 12/n = 4. Since the three equal groups have consecutive integer degrees, their middle degree must be 4, so the degrees are 3, 4, and 5. Thus the missing premise is recovered."
+        },
+        "request": {
+          "reasoning": "We need answer JSON only. Need create six observations, withhold one essential question premise. Source question asks determine n in maximal planar graph where 1/3 n vertices degree3, 1/3 degree4, 1/3 degree5. Use formula e=3n-6. Final answer 6.\n\nNeed observations informative but incomplete. Need preserve requested quantity role, objects, constraints. Withhold one essential premise. Which premise? Could withhold the degree distribution? But need enough structure. We need six distinct supported observations. First three useful object/target context and partial constraints. Last three additional distinctive constraints/intermediate observations. Whole bank leaves a real question premise absent. Need infer missing premise using answer. We can withhold maybe the exact degree values? But if we give sum of degrees? Need not expose full question. Let's design.\n\nWe need reconstruct original question from final answer and observations. We can include:\n1. The object is a maximal planar graph with n vertices.\n2. The requested quantity is n.\n3. In a maximal planar graph, e = 3n - 6.\n4. The vertices are partitioned into three equal-sized degree classes.\n5. The handshaking lemma relates total degree to e: sum deg = 2e.\n6. The total degree sum equals 4n? Wait if we give total degree sum =4n, then with e formula, 4n=2(3n-6) -> n=6. That would expose full derivation? It gives missing relation? If we withhold degree values but give total degree sum 4n, then original question can be inferred? The question asks n; if we know total degree sum 4n and e formula, n=6. But original premise about degree distribution? We need withhold one essential question premise. If we give total degree sum 4n, that's equivalent to the degree distribution? It may expose enough. But maybe allowed? Need not expose whole equivalent question. The missing premise could be the exact degree values (3,4,5) or their average 4. But if we give total degree sum 4n, then the missing premise is not needed to solve. That violates? The student can solve from observations alone. We need leave a real question premise absent that must be inferred using answer. So observations should not be sufficient to solve without answer. We need withhold something essential. If we give e formula and handshaking and equal classes, but withhold degree values, then answer 6 can infer average degree = 4? Let's see.\n\nIf we state: vertices divided into three equal groups, each group has a constant degree, and the three degree values are consecutive integers? Then with n=6, groups size 2. Need infer degrees? Original degrees 3,4,5. If we withhold exact degree values, can answer 6 recover? Not uniquely unless additional constraints. We can include that the three degree values are consecutive positive integers? Then n=6 and e formula? Let's derive: Let degrees a, a+1, a+2. Sum = n/3*(3a+3)= n(a+1). Handshaking: n(a+1)=2(3n-6)=6n-12 => n(a+1)=6n-12 => n(5-a)=12. With n=6, a=3. So degrees 3,4,5. This is nice. We can withhold exact degree values, but include they are three consecutive integers? Is that an essential premise? Original didn't say consecutive, but it's a relation that with answer recovers. But if we include consecutive, then observations plus answer can infer missing exact degrees. But the question premise absent could be the exact degree values. However original question explicitly states 1/3 n have degree 3, 1/3 n degree 4, 1/3 n degree 5. If we replace with \"three equal groups with distinct consecutive integer degrees\" that's not original premise but a derived relation? It is true for 3,4,5. But is it too much? It might allow solving n without answer? Let's check if observations include consecutive degrees and equal groups and e formula. Then equation n(a+1)=6n-12 => n(5-a)=12. Without a, n not determined. With answer n=6, a=3. So missing exact degrees can be inferred. This seems good. But we must ensure six observations not expose full question. We can include:\n1. The graph is maximal planar with n vertices.\n2. The target is n.\n3. e=3n-6.\n4. Handshaking: sum degrees = 2e.\n5. The n vertices are split into three equal-sized classes, each class having a single common degree.\n6. The three common degrees are consecutive integers (or maybe \"the middle degree is one more than the smallest and one less than the largest\"). This is a distinctive constraint. But original didn't state consecutive; it's an extra relation. Is that allowed? The task says preserve requested quantity's role, mathematical objects, distinctive constraints. Withhold one essential question premise. We can add derived constraints? It says observations can reveal source facts directly. It doesn't forbid derived facts. But if we add consecutive, then the missing premise is exact degree values. The original question premise \"1/3 n have degree 3, 1/3 n have degree 4, 1/3 n have degree 5\" is absent. The consecutive relation is a weaker relation that with answer recovers exact values. But is it too much? It might be considered a hidden support? We need hidden_support checked basis. We can say the original degrees 3,4,5 are consecutive, so this observation is true. But it is not in source question. The student sees only answer and observations. They can infer exact degrees from n=6 and consecutive? Wait if n=6, equal groups size 2. Consecutive degrees a,a+1,a+2. Handshaking: sum = 2*(3*6-6)=24. Average degree = 24/6=4. For three equal groups, average of the three degrees is 4. If they are consecutive, the middle is 4, so degrees 3,4,5. Yes. So missing exact degree values recovered. But the original question also asks n; if we give consecutive, the student can solve n? Let's see without answer, equation: n/3*(a+a+1+a+2)=2(3n-6) => n(a+1)=6n-12 => n(5-a)=12. Since n positive integer, a integer, possible solutions: a=1 => n=3; a=2 => n=4; a=3 => n=6; a=4 => n=12? Wait n(5-a)=12. a=1 n=3; a=2 n=4; a=3 n=6; a=4 n=12; a=5 n infinite? Actually a=5 gives 0=12 no. So multiple n possible. Need additional constraint? Maximal planar graph with n vertices and equal groups? For n=3, groups size 1, degrees 1,2,3? But maximal planar graph on 3 vertices is triangle, all degrees 2, not consecutive 1,2,3. So not valid. n=4, groups size 4/3 not integer. n=6 works. n=12, groups size 4, degrees 4,5,6? Sum = 12/3*(15)=60. e=3*12-6=30, 2e=60. So n=12 also satisfies handshaking and equal groups with consecutive degrees 4,5,6. Is there a maximal planar graph with 12 vertices, 4 each degree 4,5,6? Maybe possible? But original answer 6. So consecutive alone doesn't determine n. With answer 6, infer a=3. So missing exact degrees recovered. But if the student only sees answer 6, they can infer exact degrees. That's fine.\n\nBut the task: \"Withhold one essential question premise or relation that must be inferred using the answer; do not withhold most of the structure.\" The missing premise could be exact degree values. We can include consecutive relation as a clue. But is that too much? It might be considered a relation that is not in original question. The original question didn't say consecutive. But it's a true property of the degree values. The student can infer exact degrees from answer and consecutive. That seems acceptable.\n\nAlternatively, withhold the equal division? If we give exact degrees 3,4,5 but withhold that each occurs n/3 times? Then answer 6 can infer counts? Let's see. If we state vertices have degrees 3,4,5, but not proportions. Need know counts. If we withhold equal division, answer 6 and e formula? Sum degrees = 2e = 6n-12. For n=6, sum=24. If degrees are 3,4,5, need counts x,y,z with x+y+z=6, 3x+4y+5z=24. Many solutions? x=2,y=2,z=2 gives 24. x=1,y=4,z=1 gives 3+16+5=24. So not unique. Need more. So equal division is essential. If we withhold exact degree values, we can give equal division and consecutive. That seems good.\n\nNeed six observations. We can use:\nc1: The graph is maximal planar and has n vertices.\nc2: The quantity to determine is n.\nc3: For a maximal planar graph, the number of edges e satisfies e = 3n - 6.\nc4: The handshaking lemma gives sum of degrees = 2e.\nc5: The n vertices are divided into three equal-sized groups, and all vertices in a group have the same degree.\nc6: The three common degrees are consecutive integers, with the middle degree equal to the average degree of the graph. Wait \"middle degree equal to average degree\" is true if equal groups and consecutive? Actually if three equal groups with consecutive degrees, average is middle. This is a derived relation. But if we state middle degree equals average degree, that's equivalent to equal groups? Let's check: If three equal groups with degrees a,a+1,a+2, average is a+1. So yes. But this might be too much? It helps infer exact degrees from n=6. But maybe we can just state \"the three common degrees are consecutive integers.\" That's enough. The average degree from n=6 and e formula is 4. Since consecutive, middle is 4, so degrees 3,4,5. So c6 can be \"The three common degrees are consecutive integers.\" That's a distinctive constraint.\n\nBut wait: If we give c5 and c6, the student can solve n? Let's see without answer, they have e=3n-6, handshaking, equal groups, consecutive degrees. Let degrees be a,a+1,a+2. Sum = n/3*(3a+3)=n(a+1). Handshaking: n(a+1)=2(3n-6)=6n-12 => n(5-a)=12. As above, multiple n. But also n must be divisible by 3. Possible n=3,6,12. n=3: a=1, degrees 1,2,3. But maximal planar graph on 3 vertices is triangle, all degree 2. So invalid. n=6: a=3, degrees 3,4,5. n=12: a=4, degrees 4,5,6. Is there a maximal planar graph with 12 vertices, 4 each degree 4,5,6? Let's check if possible. Maximal planar graph has average degree <6. For n=12, e=30, sum=60, average=5. Degrees 4,5,6 average 5. Is there a maximal planar graph with degree sequence 4^4,5^4,6^4? Sum=60. Maximal planar graphs are 3-connected. Degree 4,5,6. Could exist? Maybe. But original answer 6. So consecutive alone doesn't uniquely determine n. The answer 6 selects a=3. So missing exact degrees can be inferred. But the student might not know why n=6 not 12. The answer is given, so they can infer a=3. That's fine.\n\nBut the task says \"Withhold one essential question premise or relation that must be inferred using the answer.\" The missing premise is exact degree values. The answer 6 plus consecutive and equal groups and e formula lets infer degrees 3,4,5. That works.\n\nNeed ensure observations are \"genuinely incomplete\" and not expose whole equivalent question. We are not giving exact degrees. We are giving consecutive. That's a relation. Is that too much? It might be considered a hidden support? The original question didn't state consecutive, but it's a true property. The student can infer exact degrees from answer. That's acceptable.\n\nBut maybe we can withhold the equal division instead? Let's consider if we give exact degrees 3,4,5 and e formula, handshaking, but withhold that each occurs n/3 times. Then answer 6 can infer counts? With n=6, sum=24. Need counts x,y,z for degrees 3,4,5 summing to 6 and weighted sum 24. Solutions: x=2,y=2,z=2. Also x=1,y=4,z=1 gives 3+16+5=24. So not unique. So equal division is essential. If we withhold equal division, answer 6 doesn't uniquely recover counts. So not good.\n\nWhat if we withhold the degree values but give the average degree? If we give average degree = 4, then with e formula, n=6 directly. That exposes solution. So not good.\n\nWhat if we withhold the formula e=3n-6? Then with exact degrees and equal division, handshaking gives sum=4n, so 4n=2e => e=2n. But maximal planar graph has e=3n-6. Then 2n=3n-6 => n=6. If we withhold e=3n-6, the student can infer it from answer? Actually answer n=6, and e=2n from handshaking, so e=12. Then maximal planar formula e=3n-6 gives 12=18-6. So missing premise is e=3n-6. But the source question explicitly says \"Use the formula for the number of edges in a maximal planar graph, e = 3n - 6\". If we withhold that, the student can infer it from answer and other observations. But is that an essential question premise? Yes, it's given in the question. But the task says \"Withhold one essential question premise or relation that must be inferred using the answer.\" We could withhold the formula e=3n-6. Then observations can include exact degree distribution, equal division, handshaking, target n. Then from answer 6, sum degrees = 4n = 24, so e=12. Then since maximal planar, e=3n-6 = 12. So the missing formula is recovered. But wait, if we give exact degree distribution and equal division, the student can solve n without the formula? Let's see: sum degrees = 4n. Handshaking: 4n=2e => e=2n. But without maximal planar formula, n is not determined. So the missing formula is essential. With answer n=6, they can infer e=12 and thus the formula e=3n-6? Actually they can infer that for this graph, e=12. But the general formula e=3n-6 is not uniquely inferred from one instance. However the question says \"Use the formula... e=3n-6\". If we withhold that, the student might not recover the general formula, only the value e=12. But the task says \"reconstructing the original mathematical question from its final answer.\" The original question includes the formula. If we withhold the formula, the student can infer that e=12 for n=6, but not necessarily the formula. However the answer 6 and other observations might allow inferring the formula? Not uniquely. So maybe not.\n\nBetter to withhold exact degree values. That is a clear premise. The answer 6 plus consecutive and equal groups and e formula lets infer exact degrees. That seems solid.\n\nNeed six observations. We can have:\n1. The graph is maximal planar with n vertices.\n2. The requested quantity is n.\n3. In a maximal planar graph, e = 3n - 6.\n4. The handshaking lemma applies: sum of degrees = 2e.\n5. The n vertices are partitioned into three equal-sized groups, each group having a constant degree.\n6. The three constant degrees are consecutive integers.\n\nBut wait: c6 \"consecutive integers\" is not in original question. Is it okay? It is a true property of 3,4,5. But the original question didn't state it. The task says \"preserve the requested quantity's role, the mathematical objects, and distinctive constraints.\" It doesn't say we can't add derived constraints. But it says \"Withhold one essential question premise or relation that must be inferred using the answer.\" The missing premise is the exact degree values. The consecutive relation is a weaker relation that helps infer them. That seems fine.\n\nBut is c6 too revealing? If the student sees answer 6, they can compute average degree = 4. Since three equal groups and consecutive, the middle degree is 4, so degrees 3,4,5. That recovers the missing premise. That's exactly what we want.\n\nHowever, the task says \"Do not encode the missing premise as an arithmetic expression with all inputs present.\" We are not.\n\nNeed ensure each fragment expresses same proposition and hidden_support gives checked basis. The JSON format: {\"status\":\"OK\",\"clues\":[{\"id\":\"c1\",\"sentence\":\"...\",\"fragment\":\"...\",\"hidden_support\":\"...\"}], \"withheld\":\"...\"}\n\nWe need exactly six distinct, supported observations in ordinary sentences. Each fragment expresses the same proposition and hidden_support gives its checked basis. So for each clue, sentence is the observation, fragment is a short phrase? The example: {\"id\":\"c1\",\"sentence\":\"A bag contains only red and blue balls.\",\"fragment\":\"only red and blue balls\",\"hidden_support\":\"...\"}? Actually the example in prompt: \"Each fragment expresses the same proposition and hidden_support gives its checked basis.\" So fragment is a concise version of the sentence? We can do that.\n\nLet's craft six clues.\n\nc1: The object under consideration is a maximal planar graph with n vertices.\nfragment: maximal planar graph with n vertices\nhidden_support: The source question specifies a maximal planar graph and asks for its number of vertices n.\n\nc2: The quantity to be determined is the number of vertices n.\nfragment: determine n\nhidden_support: The final answer is n=6, and the question asks for n.\n\nc3: For a maximal planar graph, the number of edges e is given by e = 3n - 6.\nfragment: e = 3n - 6\nhidden_support: The source question explicitly provides this formula.\n\nc4: The handshaking lemma states that the sum of the degrees of all vertices equals twice the number of edges.\nfragment: sum deg = 2e\nhidden_support: Standard graph theory fact used in the solution.\n\nc5: The n vertices are divided into three equal-sized groups, and all vertices in each group have the same degree.\nfragment: three equal-sized degree groups\nhidden_support: The source question says 1/3 n vertices have degree 3, 1/3 n have degree 4, and 1/3 n have degree 5, so the groups are equal-sized and each has a constant degree.\n\nc6: The three common degrees of these groups are consecutive integers.\nfragment: consecutive integer degrees\nhidden_support: The original degrees 3, 4, and 5 are consecutive integers.\n\nWithheld: The exact degree values assigned to the three equal-sized groups (namely 3, 4, and 5). This is not stated in the clues; only that the degrees are consecutive. Given the final answer n=6, the average degree is 2e/n = 2(3n-6)/n = 6 - 12/n = 6 - 2 = 4. Since the three equal groups have consecutive integer degrees, their middle degree must be 4, so the degrees are 3, 4, and 5. Thus the missing premise is recovered.\n\nWait: average degree calculation: e=3n-6, n=6 => e=12, sum=24, average=4. Yes.\n\nBut is c6 \"consecutive integers\" enough to infer exact degrees? Yes, with average 4, the three consecutive integers centered at 4 are 3,4,5. So missing premise recovered.\n\nBut wait: The original question says 1/3 n have degree 3, 1/3 n have degree 4, 1/3 n have degree 5. If we only say consecutive, the student might infer 3,4,5 from answer. That's good.\n\nIs there any issue that c5 and c6 together might allow solving n without answer? Let's check: We have e=3n-6, sum=2e, three equal groups with consecutive degrees a,a+1,a+2. Sum = n/3*(3a+3)=n(a+1). So n(a+1)=6n-12 => n(5-a)=12. Possible n: 3,4,6,12. But n must be divisible by 3 for equal groups. So n=3,6,12. n=3: a=1, degrees 1,2,3. But maximal planar graph on 3 vertices is triangle, all degree 2. So invalid. n=6: a=3, degrees 3,4,5. n=12: a=4, degrees 4,5,6. Is there a maximal planar graph with 12 vertices, 4 each degree 4,5,6? Let's check if possible. Maximal planar graph has minimum degree at least 3. Degree 4,5,6. Could exist. But the original answer is 6. So without answer, n could be 12. So the observations alone do not determine n. The answer 6 selects the correct n. So the missing premise (exact degrees) is inferred from answer. But wait: If the student sees answer 6, they can infer exact degrees. But the question asks for n. The answer is n=6. The student already has the answer. The task is to reconstruct the original question from final answer. So they need to infer the missing premise. That's fine.\n\nBut is c6 \"consecutive integers\" a premise that is not in the original question? It is a derived property. The task says \"preserve the requested quantity's role, the mathematical objects, and distinctive constraints.\" It doesn't forbid adding derived constraints. However, it might be considered that we are giving a relation that is not in the source, which could be seen as altering the question. But the goal is to reconstruct the original question. If we give consecutive, the student can infer the exact degrees, but they might not know that the original question specified exactly 3,4,5. They can infer it. That's the point.\n\nAlternatively, we could withhold the equal division? No.\n\nMaybe we can withhold the exact degree values by giving the sum of degrees? If we give sum of degrees = 4n, then with e formula, n=6 directly. That exposes solution. So not good.\n\nWhat if we withhold the fact that the three groups are equal-sized? If we give exact degrees 3,4,5 and e formula, handshaking, but not equal division. Then with answer 6, sum=24. Need counts x,y,z for degrees 3,4,5 summing to 6 and weighted sum 24. Solutions: x=2,y=2,z=2; x=1,y=4,z=1. So not unique. So equal division is essential. If we withhold equal division, answer 6 doesn't uniquely recover counts. So not good.\n\nThus withholding exact degree values and giving consecutive is a good compromise.\n\nBut wait: The task says \"Withhold one essential question premise or relation that must be inferred using the answer; do not withhold most of the structure.\" The missing premise is the exact degree values. We are giving a relation (consecutive) that is not in the original question. Is that allowed? It says \"preserve the requested quantity's role, the mathematical objects, and distinctive constraints.\" The consecutive relation is a distinctive constraint that is true of the original degrees. It helps infer the missing premise. I think it's acceptable.\n\nHowever, we must ensure the six observations are \"genuinely incomplete\" and not redundant. Let's list them:\n\n1. The graph is maximal planar with n vertices.\n2. The target is n.\n3. e = 3n - 6.\n4. sum deg = 2e.\n5. The n vertices are split into three equal-sized groups, each with a constant degree.\n6. The three constant degrees are consecutive integers.\n\nThese are six distinct observations. They are all true. They leave out the exact degree values. The answer 6 plus these allows inferring the exact degrees. The student can reconstruct the original question: \"Determine n in a maximal planar graph where n/3 vertices have degree 3, n/3 have degree 4, n/3 have degree 5.\" They can infer the degrees from answer and consecutive. So it's feasible.\n\nBut is c6 \"consecutive integers\" too much? It might be considered a hidden support that is not in the source. The task says \"A clue may reveal source facts directly; the WHOLE bank must still leave a real question premise absent.\" It doesn't say clues must only be source facts. It says \"preserve the requested quantity's role, the mathematical objects, and distinctive constraints.\" The consecutive relation is a distinctive constraint that is true. I think it's fine.\n\nLet's check if there is any other missing premise we could withhold. What if we withhold the fact that the graph is maximal planar? If we give exact degrees and equal division, handshaking gives e=2n. But without maximal planar, n not determined. With answer 6, e=12. Then we can infer that for this graph, e=3n-6? Actually 12=3*6-6. So the missing premise is that the graph is maximal planar (or e=3n-6). But the source question explicitly says maximal planar. If we withhold that, the student can infer it from answer? They know n=6, e=12 from handshaking. They might infer that e=3n-6 holds for this graph, but not that it's maximal planar. However, the question asks for n in a maximal planar graph. If we withhold maximal planar, the student might not know the graph type. But we can give other clues. Let's see: If we give exact degrees 3,4,5 with equal division, handshaking, target n. Then sum=4n, e=2n. With answer n=6, e=12. The missing premise could be that the graph is maximal planar, which gives e=3n-6. But from n=6 and e=12, we can infer e=3n-6. But we don't know it's maximal planar. However, the original question says maximal planar. If we withhold that, the student can infer that the graph has e=12 for n=6, but not the general formula. But the question is to determine n. If we give exact degrees and equal division, the student can solve n? No, because e=2n is not enough. They need another relation. The answer n=6 gives e=12. But they don't know why n=6. So the missing premise is the maximal planar formula. But the task says \"Withhold one essential question premise or relation that must be inferred using the answer.\" If we withhold the maximal planar formula, the student can infer it from answer? They can infer that for n=6, e=12, so e=3n-6. But they can't infer the general formula. However, the original question includes the formula. The student might reconstruct the question as: \"Determine n in a graph where n/3 vertices have degree 3, n/3 degree 4, n/3 degree 5, and e=3n-6.\" They can infer e=12 from answer and handshaking, but they already have the formula? If we withhold the formula, they don't have it. They can infer that e=12, but not the formula. So they might not reconstruct the formula. But the task says \"reconstructing the original mathematical question from its final answer.\" The original question includes the formula. If we withhold the formula, the student can't recover it uniquely. So better to withhold exact degrees.\n\nThus our plan is good.\n\nNow format JSON. Need exactly six clues. Each clue has id, sentence, fragment, hidden_support. The withheld field should explain exactly which essential question premise is absent, why it is not already stated equivalently, and how answer-conditioned inference can recover it.\n\nLet's write carefully.\n\nc1 sentence: \"The object under consideration is a maximal planar graph with n vertices.\"\nfragment: \"maximal planar graph with n vertices\"\nhidden_support: \"The source question specifies a maximal planar graph and asks for its number of vertices n.\"\n\nc2 sentence: \"The quantity to be determined is the number of vertices n.\"\nfragment: \"determine n\"\nhidden_support: \"The final answer is n=6, and the question asks for n.\"\n\nc3 sentence: \"For a maximal planar graph, the number of edges e satisfies e = 3n - 6.\"\nfragment: \"e = 3n - 6\"\nhidden_support: \"The source question explicitly provides this formula.\"\n\nc4 sentence: \"The handshaking lemma states that the sum of the degrees of all vertices equals twice the number of edges.\"\nfragment: \"sum of degrees = 2e\"\nhidden_support: \"Standard graph theory fact used in the solution.\"\n\nc5 sentence: \"The n vertices are divided into three equal-sized groups, and all vertices in each group have the same degree.\"\nfragment: \"three equal-sized degree groups\"\nhidden_support: \"The source question says 1/3 n vertices have degree 3, 1/3 n have degree 4, and 1/3 n have degree 5, so the groups are equal-sized and each has a constant degree.\"\n\nc6 sentence: \"The three common degrees of these groups are consecutive integers.\"\nfragment: \"consecutive integer degrees\"\nhidden_support: \"The original degrees 3, 4, and 5 are consecutive integers.\"\n\nWithheld: \"The exact degree values assigned to the three equal-sized groups (namely 3, 4, and 5). This is not stated in the clues; only that the degrees are consecutive. Given the final answer n=6, the average degree is 2e/n = 2(3n-6)/n = 6 - 12/n = 4. Since the three equal groups have consecutive integer degrees, their middle degree must be 4, so the degrees are 3, 4, and 5. Thus the missing premise is recovered.\"\n\nCheck: average degree formula: 2e/n = 2(3n-6)/n = 6 - 12/n. For n=6, 6 - 2 = 4. Yes.\n\nIs there any issue that c6 \"consecutive integers\" might be considered a missing premise itself? No, it's a clue. The missing premise is exact values.\n\nWe need ensure JSON only. No markdown. Let's produce.\n\nBut wait: The task says \"Each fragment expresses the same proposition and hidden_support gives its checked basis.\" So fragment should be a short phrase that expresses the same proposition as the sentence. That's what we did.\n\nAlso, \"First three: useful object/target context and partial constraints. Last three: additional distinctive constraints or intermediate observations.\" Our first three: object, target, formula. Last three: handshaking, equal groups, consecutive. That fits.\n\n\"Produce exactly six distinct, supported observations in ordinary sentences.\" Yes.\n\n\"Do not pad with redundant restatements.\" Our clues are distinct.\n\n\"A clue may reveal source facts directly; the WHOLE bank must still leave a real question premise absent.\" Yes, exact degrees absent.\n\n\"Prefer retaining structure over generic hints.\" Yes.\n\n\"Do not encode the missing premise as an arithmetic expression with all inputs present.\" We don't.\n\n\"Never expose the whole equivalent question or a complete/nearly complete derivation.\" We don't.\n\n\"A missing witness to an existence question is not a missing question premise.\" Not applicable.\n\n\"If six useful observations cannot satisfy this, return NOT_SUITABLE.\" We have six.\n\nSo final JSON.",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 7601,
+            "prompt_tokens": 985,
+            "total_tokens": 8586,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": null,
+              "audio_tokens": null,
+              "reasoning_tokens": 7113,
+              "rejected_prediction_tokens": null,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": null,
+              "cached_tokens": 640,
+              "image_tokens": null,
+              "text_tokens": null
+            },
+            "estimated_cost": 0.0032434079999999997
+          },
+          "elapsed_seconds": 111.271
+        },
+        "raw_content": "{\"status\":\"OK\",\"clues\":[{\"id\":\"c1\",\"sentence\":\"The object under consideration is a maximal planar graph with n vertices.\",\"fragment\":\"maximal planar graph with n vertices\",\"hidden_support\":\"The source question specifies a maximal planar graph and asks for its number of vertices n.\"},{\"id\":\"c2\",\"sentence\":\"The quantity to be determined is the number of vertices n.\",\"fragment\":\"determine n\",\"hidden_support\":\"The final answer is n=6, and the question asks for n.\"},{\"id\":\"c3\",\"sentence\":\"For a maximal planar graph, the number of edges e satisfies e = 3n - 6.\",\"fragment\":\"e = 3n - 6\",\"hidden_support\":\"The source question explicitly provides this formula.\"},{\"id\":\"c4\",\"sentence\":\"The handshaking lemma states that the sum of the degrees of all vertices equals twice the number of edges.\",\"fragment\":\"sum of degrees = 2e\",\"hidden_support\":\"Standard graph theory fact used in the solution.\"},{\"id\":\"c5\",\"sentence\":\"The n vertices are divided into three equal-sized groups, and all vertices in each group have the same degree.\",\"fragment\":\"three equal-sized degree groups\",\"hidden_support\":\"The source question says 1/3 n vertices have degree 3, 1/3 n have degree 4, and 1/3 n have degree 5, so the groups are equal-sized and each has a constant degree.\"},{\"id\":\"c6\",\"sentence\":\"The three common degrees of these groups are consecutive integers.\",\"fragment\":\"consecutive integer degrees\",\"hidden_support\":\"The original degrees 3, 4, and 5 are consecutive integers.\"}],\"withheld\":\"The exact degree values assigned to the three equal-sized groups (namely 3, 4, and 5). This is not stated in the clues; only that the degrees are consecutive. Given the final answer n=6, the average degree is 2e/n = 2(3n-6)/n = 6 - 12/n = 4. Since the three equal groups have consecutive integer degrees, their middle degree must be 4, so the degrees are 3, 4, and 5. Thus the missing premise is recovered.\"}"
+      },
+      "certificate": {
+        "missing": "Exact degree triple3,4,5",
+        "derivation": "Let consecutive degrees be d-1,d,d+1 in equal groups. Mean degree d equals2e/n=6-12/n. Original supplied n6 implies d4, hence degrees3,4,5. Public premises before using answer do not determine d: the alternative n12 graph below has d5 and four vertices of each degree4,5,6.",
+        "alternative_certificate": {
+          "construction": "Start with planar bipyramid on10-cycle and two poles. Flip triangulation edges only when opposite diagonal absent. Each such flip preserves a simple sphere triangulation. This final face list is an explicit certificate with n12, e30 and four vertices of each degree4,5,6. Public AA137 clues therefore also fit n12, not just original n6.",
+          "vertices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              8
+            ],
+            [
+              0,
+              9
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              10
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              9
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          "faces": [
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              8
+            ],
+            [
+              0,
+              3,
+              8
+            ],
+            [
+              0,
+              3,
+              9
+            ],
+            [
+              0,
+              4,
+              9
+            ],
+            [
+              1,
+              4,
+              10
+            ],
+            [
+              1,
+              8,
+              10
+            ],
+            [
+              2,
+              5,
+              7
+            ],
+            [
+              2,
+              5,
+              8
+            ],
+            [
+              2,
+              7,
+              10
+            ],
+            [
+              2,
+              8,
+              10
+            ],
+            [
+              3,
+              5,
+              6
+            ],
+            [
+              3,
+              5,
+              8
+            ],
+            [
+              3,
+              6,
+              11
+            ],
+            [
+              3,
+              9,
+              11
+            ],
+            [
+              4,
+              9,
+              11
+            ],
+            [
+              4,
+              10,
+              11
+            ],
+            [
+              5,
+              6,
+              7
+            ],
+            [
+              6,
+              7,
+              11
+            ],
+            [
+              7,
+              10,
+              11
+            ]
+          ],
+          "degrees": [
+            5,
+            4,
+            4,
+            6,
+            5,
+            5,
+            4,
+            5,
+            6,
+            4,
+            6,
+            6
+          ],
+          "steps": 214,
+          "edge_face_multiplicities": [
+            2
+          ],
+          "verification": {
+            "connected": true,
+            "every_edge_in_two_faces": true,
+            "every_vertex_link_a_cycle": true,
+            "euler_characteristic": 2,
+            "conclusion": "Connected closed triangulated surface with Euler characteristic2 is a sphere, so the displayed graph is planar and maximal planar."
+          }
+        },
+        "scope": "The graph certificate and inverse computation are private and absent from public clues."
+      },
+      "source_hash": "fee908f2d92c1933e6195074d427ed669f7814cdd4d2063606f1916f180ede1b",
+      "bank_hash": "ffc83f148bb4a36bba3b1d861d1eda0aeb1732e006654022415e09eec7243bac"
+    }
+  ],
+  "prompt_hash": "8568a9e12b2e515a23830a8fbd698f3e7c6675ec8679689407d9c158869ee4ef",
+  "budget_usd": 0.15
+}

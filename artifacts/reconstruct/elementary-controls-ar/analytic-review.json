@@ -1,0 +1,81 @@
+{
+  "reviewer": "Assistant exact arithmetic review; diagnostic only, not independent human gold",
+  "rows": [
+    {
+      "key": "distance:solve",
+      "condition": "solve",
+      "accepted_success": true,
+      "readable": true,
+      "response_or_failure_hash": "100d86c9f83fe9478a0f7d4456cc34bfe1d885fd9aa0e2d97f0c4cb631082ea9",
+      "reason": "15*4=60."
+    },
+    {
+      "key": "distance:missing_premise",
+      "condition": "missing_premise",
+      "accepted_success": true,
+      "readable": true,
+      "response_or_failure_hash": "319cb3e868c61eec1db7c044ae3d31538ecffdd9c318eea7dc1bd92a739bab13",
+      "reason": "Infers time4 and asks distance, preserving source;15*4=60."
+    },
+    {
+      "key": "distance:missing_target",
+      "condition": "missing_target",
+      "accepted_success": true,
+      "readable": true,
+      "response_or_failure_hash": "bba6b5d3b303885484a1fc243a53b32b8cfbf9d5468159f0607224424edd8017",
+      "reason": "Infers distance target with same speed/time;15*4=60."
+    },
+    {
+      "key": "urn:solve",
+      "condition": "solve",
+      "accepted_success": true,
+      "readable": true,
+      "response_or_failure_hash": "922dc618933880fac24a1acfd66fa632386d891faaa9239e1c87b0df9a4ced46",
+      "reason": "6/(6+4)=3/5."
+    },
+    {
+      "key": "urn:missing_premise",
+      "condition": "missing_premise",
+      "accepted_success": false,
+      "readable": true,
+      "response_or_failure_hash": "5e7d8502d2121cabf418eaba764d7d32f3848b8aa8a2922f878349c059e737c4",
+      "reason": "Infers5 red instead of6;5/9 is not3/5. Correct inverse5r=3(r+4) givesr6."
+    },
+    {
+      "key": "urn:missing_target",
+      "condition": "missing_target",
+      "accepted_success": true,
+      "readable": true,
+      "response_or_failure_hash": "3c7a64bfd9f226847dd20430a32c7a8fe98b6c37509b9e3fb487cfbca4ba0bcd",
+      "reason": "Probability of red is inferred correctly;6/10=3/5."
+    },
+    {
+      "key": "discount:solve",
+      "condition": "solve",
+      "accepted_success": true,
+      "readable": true,
+      "response_or_failure_hash": "9d42fc0943082c1a3252d68ce22dc54593d8e8373568e3d1d603cae04c6ccf81",
+      "reason": "80*(1-1/4)=60."
+    },
+    {
+      "key": "discount:missing_premise",
+      "condition": "missing_premise",
+      "accepted_success": false,
+      "readable": false,
+      "response_or_failure_hash": "def3eefa8a8f285d6040f4f770970dbd30b0b3adfadfc68c92c7dacafa119d75",
+      "reason": "Unreadable duplicate JSON objects. Visible question asks original price80, not reducedprice60; correct latent inverse does not recover the target."
+    },
+    {
+      "key": "discount:missing_target",
+      "condition": "missing_target",
+      "accepted_success": false,
+      "readable": false,
+      "response_or_failure_hash": "033abde63646432790d3ae577522fc37c5cccff41180730cd79d6ec20781366a",
+      "reason": "8192-token cap. Visible question asks reduction amount20; justification changes given25percent to75percent to force answer60, contradicting observations."
+    }
+  ],
+  "solve_correct": 3,
+  "missing_premise_correct": 1,
+  "missing_target_correct": 2,
+  "denominator_per_condition": 3
+}

@@ -1,0 +1,127 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "before_student_calls": true,
+  "created_at": "2026-09-20T16:54:31.116154+00:00",
+  "rows": [
+    {
+      "source_index": 5,
+      "bank_hash": "b7a8be17654fa728474ee56812027fdc3bd422af29c32bd945edcc089e5aa71f",
+      "source_hash": "cd7798c722b2c4133543396a480ecd3a5fd842f1a69251a6953cd9fd1a3c0d0f",
+      "manual_content_pass": true,
+      "reason": "Target count is not stated; cycle setup and combinatorial construction remain. Counting fixed-k cycles gives100!/k and summing gives the answer. Private certificate incorrectly lists greater-than50 as a different target; it is equivalent to at-least51. This does not invalidate public clues or count certificate.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 10,
+      "bank_hash": "b5d239a65d7a4f5514551bd5b792f29fea957ab43f261349c38cbb8616964f99",
+      "source_hash": "4a17cd5a1e9890fdeb24febfcb7153a3407d85bafb22dc287fc79564ece9a0b4",
+      "manual_content_pass": false,
+      "reason": "Public congruence51!*9! =1 mod61 plus9! =-9 exposes the residue problem and its nearly complete solution; only modular inversion remains.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 16,
+      "bank_hash": "9f02a15ca5ee0148023b365f350f6f55e5f7e37fdc668dc25c1f2ba32935012a",
+      "source_hash": "8cd5dacff5d3255057ea2f51be04a946c66eebf9a86f254b5af785d0fd1af95a",
+      "manual_content_pass": true,
+      "reason": "Integer hyperbola and transformed factorization are given, but requested count is absent. Inferring counting and deriving2*(6+1)^2=98 remain. Equivalent factor-pair counting with the explicit bijection is acceptable semantic reformulation.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 17,
+      "bank_hash": "f28d7669bfc1c7213c68e5d4beb7dc1fd7fe8ad1f2f5925224785d475e67d110",
+      "source_hash": "e92cbb7d0b39e72863f0d81ac006cd3d41c49173cc258da44027d48bf2ee8fd8",
+      "manual_content_pass": false,
+      "reason": "Per-factor linear coefficient equals constant coefficient plus product structure reveals nearly complete relationa1=k*a0; only summingk contributions remains. Also public polynomial specification is indirect and less clear than source.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 21,
+      "bank_hash": "ec21b81f5877687433b4e8b67cc49ee6d0bc9b201dca81627f211d8c1c63a638",
+      "source_hash": "075f73a794a7ee14c65df860cedb49e6d7211e54484aab342cf06a3c01636949",
+      "manual_content_pass": false,
+      "reason": "Number of generators phi(n) explicitly exposes the target through a synonym for primitive-root count, alongside actual cyclic-group order2^m; only totient evaluation remains.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 29,
+      "bank_hash": "07ca33dca0d741bbc92b7f182464500e1c69ada13a842bf4e340928aea02041d",
+      "source_hash": "a188040f904b45296a22694be88ec195eccc6808bb2b90dd8ff23c7bd4a103e9",
+      "manual_content_pass": true,
+      "reason": "Public witness factorization and FLT/CRT strategy do not state the universal exponent congruence or existence target. Inferring that target and showing n^561=n for alln modulo each prime, including nonunits, remains. Nonuniqueness must be acknowledged; witness facts alone are not a direct quoted question.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 35,
+      "bank_hash": "2544a7332f491ffa71fe64fd6b7ab2f699468b1584757874c70895af873ce02a",
+      "source_hash": "392018be5553aa3aad9ba96d9f46bd28df0a10256232c29204fdf53fc7a37c9b",
+      "manual_content_pass": false,
+      "reason": "MVT plus full global Lipschitz inequality exposes nearly the entire forward proof; uniform continuity follows by the routine delta=epsilon/M substitution. No substantive forward calculation remains under the retained partial-solution boundary.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 41,
+      "bank_hash": "ecb78605b611a2e2030519e62f70a6bee707f3777030626ffc1156901732f1a8",
+      "source_hash": "54ae7dbbcb5e184967a9a1c08c90f0d011da1d6892c1cf727a657816936d7a2e",
+      "manual_content_pass": false,
+      "reason": "Full series is public and derivative route through the n^2 generating series is described; evaluation of this exact expression is the exposed target rather than an independently missing question component.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 54,
+      "bank_hash": "32f550e028d8c19e30d6ae372b6babee8fb4be97224070a74b4927083499815b",
+      "source_hash": "d2dc95a27ec6b8983efb055a4b0c0dc477271ff6de9dd8796adc89fe4e23c69a",
+      "manual_content_pass": true,
+      "reason": "Premises, angle and circle setup are public, but target maximumtan^2 is absent. Relating the angle to slope and deriving tangent/discriminant bound1/99 remain; target is supported by the answer rather than explicitly supplied.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 59,
+      "bank_hash": "cc711e09381991146a18968f8266e2504c6fd02e922d06da4abd6b471b57f5c1",
+      "source_hash": "c1b3ccdf754b228faad9f01e2f4761c45cbe6125e4e372243f320bb34cfacce6",
+      "manual_content_pass": true,
+      "reason": "Function and partial local facts are public; singularity-classification request omitted. Supplied answer is semantically informative but intentionally public. Critical numerator noncancellation at denominator roots remains unchecked in clues: both roots<-1 since sqrt69<9, so reciprocal lies(-1,0), where sine is nonzero. Two simple poles and essential singularity0 follow. This is not a complete calculation.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 67,
+      "bank_hash": "26e9ebdfea77f9c0625e5534b053ff04b555d331e58c99337788fe1a8efaff27",
+      "source_hash": "26759297707af08212a06398d075cd18784e45cbed9306278d0e1bb91bae68db",
+      "manual_content_pass": true,
+      "reason": "Basis and inverse-vector relation are public, but sum-of-all-inverse-entries target is omitted. Must identify sum as1^T Ainv1 and useAe1=1 to get1. Invertibility is presupposed by inverse operator, matching source preflight.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 68,
+      "bank_hash": "576224b7de65117099669c1af7f085927f44e50e1cf4ba97d448f56d51396303",
+      "source_hash": "bebed2b43d07ec665a73fa73458c793031060a8ca0db3255a5f35251935bf0f0",
+      "manual_content_pass": false,
+      "reason": "Clues already forcebc=-1,a=d=0 anddet=-bc; determinant1 follows immediately. Probability of determinant-1 is then immediate; nearly entire forward solution is exposed.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 113,
+      "bank_hash": "9723504ffb680e3a75f595b3e8db27279d05401873465bbdfb8a1ae77ed3fa56",
+      "source_hash": "a5fc0c99366d2bb1812aead63a8641ac4af040b151d800a1a0e832e23b0da6e8",
+      "manual_content_pass": true,
+      "reason": "Sequence and quotient in a logarithmic intermediate are given, but limit target is not explicitly requested. Stirling/integral bounds and exponentiation remain substantial steps to1/e. Equivalent limit of(n!)^(1/n)/n is accepted; identity substitution alone does not supply the asymptotic answer.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 114,
+      "bank_hash": "026bb95bd31b6d93c89e46f0103a3731d2d8f3be6d831647492909fe9bee6266",
+      "source_hash": "fb44e1ab1462ac0f4c5019dd1cf3b13092fc3e4bcdf9fc7ff07200696c10855c",
+      "manual_content_pass": false,
+      "reason": "Full squeeze of coefficient nth roots to1 is exposed; only invoking reciprocal limsup radius formula remains. Nearly complete forward solution, although target radius is not named.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    },
+    {
+      "source_index": 132,
+      "bank_hash": "bb4bd2df1ef89f63f271715ee09f89c2a90dfea5ab6ba89552dd7dbb758f7ea6",
+      "source_hash": "b1dd6d7ac9608ef9e92930a971f3cd2405dea43ebd4d867b3d3665eef5692e55",
+      "manual_content_pass": false,
+      "reason": "Largest avoiding hand and next possible size explicitly paraphrase the guarantee target. Given achievable12 and boundary-next-size clue,13 is encoded directly; complete target/near-complete solution exposure.",
+      "derived_transform_review": "Exact public bank and private certificate reviewed before any AN student calls; no bank edits."
+    }
+  ]
+}

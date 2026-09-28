@@ -1,0 +1,65 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "rows": [
+    {
+      "response_key": "5:preserve_target:0",
+      "source_index": 5,
+      "response_output_hash": "92f3b702a77fe27a331dc5b587ca83e5c025fcf91841280f402dc40674403a7a",
+      "evidence_hash": "24a99c086e9282e9c177dd9210fbb16ca7cfa46edf779a18cfd55728366c37c8",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Threshold75 still wrong: count100!*(H100-H74), not supplied count withH50."
+    },
+    {
+      "response_key": "10:preserve_target:0",
+      "source_index": 10,
+      "response_output_hash": "357da6debaf3149c9db3f052b09b6848026a2bd64d9c607551271053d77cd5df",
+      "evidence_hash": "199eeecb75e20cdfe6eb933ba029c6ed8453b2cba31bb65d282362386e9e2d69",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Presupposes answer27; n is not recovered. This asks to repeat its premise."
+    },
+    {
+      "response_key": "16:preserve_target:0",
+      "source_index": 16,
+      "response_output_hash": "0df992660881a70f1d785b2ff59f49c48835c3adb2ac481a505d0f82a4553ae4",
+      "evidence_hash": "16b801c8bdcba34b94fc5c85497dfbafb912fbb11b2be09b0371da28add9ad0a",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Still asks for N instead of the point count. Additionally claims N80, which gives14*(2*1+1)=42 points, not98. Previous correct latent inference did not replicate."
+    },
+    {
+      "response_key": "54:preserve_target:0",
+      "source_index": 54,
+      "response_output_hash": "0b7f963f2562d9e32742613bf0eaa79f42dea84b67976ffe9d602091eaf69a36",
+      "evidence_hash": "ed20477e7afe2c774910d10a8588bdf7f547b57139302b05ab1fd608ba22e7fc",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Question leaves R unknown; assumptions infer99, also wrong. Correct relation1/(R^2-1) requiresR10."
+    },
+    {
+      "response_key": "67:preserve_target:0",
+      "source_index": 67,
+      "response_output_hash": "290de0446c7ffdc747677fcbe3024e7fafeac6c008207e4069da76eb98b0aced",
+      "evidence_hash": "d48e2d7a5074e2086cb7b158cf70c58c8c0816a479be9c9ef4814aa9300c0338",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Claims c is unnecessary. Inverse-entry sum is1/c, so c1 is essential."
+    },
+    {
+      "response_key": "113:preserve_target:0",
+      "source_index": 113,
+      "response_output_hash": "5dce6775974f1855ea05ab0e740397dbec08ef8b8eb808859060a4586def0528",
+      "evidence_hash": "4e1bbe8c3b15f27ef376307e5ecabf37859f788c067c753f95dd09efc3ccb319",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "latent_parameter_recovered": false,
+      "reason": "Leaves alpha unknown and invents cancellation by a root of1. Stirling gives e^(-1/alpha)*n^(1/alpha-1), so alpha1 is essential; alpha2 instead yields0."
+    }
+  ]
+}

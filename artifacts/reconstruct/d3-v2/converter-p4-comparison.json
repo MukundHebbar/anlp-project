@@ -1,0 +1,486 @@
+{
+  "incumbent": {
+    "converter": "convert_p3",
+    "original_sources": 12,
+    "source_eligible": 11,
+    "accepted": 6,
+    "potential_additional_acceptances": [
+      122
+    ],
+    "missing_conversions": [],
+    "upper_bound_interpretation": "All unresolved eligible conversions/audits could pass; known rejected and NOT_SUITABLE cases cannot pass without changing the procedure. This bound is not a forecast.",
+    "coverage_upper_bound": 0.5833333333333334,
+    "accepted_source_ids": [
+      8,
+      27,
+      33,
+      77,
+      112,
+      143
+    ],
+    "unresolved_eligible": 1,
+    "rows": [
+      {
+        "source_index": 8,
+        "bank_key": "8:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 2,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "Both observations are supported by the source solution and are distinct partial algebraic steps: the denominator factorizations and the choice of common denominator.",
+          "audit_public_p4": "The public observations give factorization and denominator facts, but they do not expose the target expression or operation. A meaningful target and relation remain to be inferred, so this is not a complete premise-and-target bundle or solution.",
+          "audit_source_disclosure_p2": "The public material gives the final value 1 and two intermediate denominator-factorization clues, but it does not state the original expression or the explicit condition, nor does it provide the full numerator simplification. The result alone is not a leak, and the clues do not constitute a complete solution or a premise-target bundle."
+        },
+        "withheld": "The original condition a+b+c=0, the exact numerators a^2, b^2, c^2 in the cyclic sum, and the target 'find P' are not stated. The student must infer the missing cyclic sum and its defining condition from the answer and the denominator factorization."
+      },
+      {
+        "source_index": 20,
+        "bank_key": null,
+        "clue_count": 0,
+        "bank_status": "source_ineligible",
+        "audit_status": {
+          "audit_support_p1": "unresolved",
+          "audit_public_p4": "unresolved",
+          "audit_source_disclosure_p2": "unresolved"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": null,
+          "audit_public_p4": null,
+          "audit_source_disclosure_p2": null
+        },
+        "withheld": null
+      },
+      {
+        "source_index": 27,
+        "bank_key": "27:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All three sentences are supported by the source solution, are interpretable as partial mathematical evidence, and describe distinct aspects of the squarefree-part grouping argument.",
+          "audit_public_p4": "The clues provide a method for grouping terms in a sum of square roots and note that m=1 is an integer constant, but they do not state what is being asked or compute the final count. The answer 60 is not derived or fully exposed by the observations alone.",
+          "audit_source_disclosure_p2": "The public clues explain simplifying square roots and combining terms by squarefree part, but they do not state the target count or enumerate the distinct squarefree parts. The final answer 60 is supplied, but by itself it is not a derivation or complete solution. Recovering the result requires the nontrivial counting step of squarefree integers up to 100 excluding 1."
+        },
+        "withheld": "The target 'least number of distinct square-root terms' and the positivity fact that every squarefree m with 2≤m≤100 must appear are absent. The clues show grouping by squarefree part and that m=1 is absorbed as an integer; with answer 60, one must infer the missing target is the count of squarefree integers m in [2,100]."
+      },
+      {
+        "source_index": 33,
+        "bank_key": "33:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 2,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "Both clue sentences are true, interpretable as partial evidence, and supported by the reference solution. They are distinct observations: one concerns continuity of f-g, and the other concerns the sign behavior of a zero-free continuous function.",
+          "audit_public_p4": "The public clues are general mathematical facts, but they do not expose a complete premise-and-target bundle or a full solution to a specified problem. The final answer Yes is detached from an explicit question, so meaningful structure remains to be inferred.",
+          "audit_source_disclosure_p2": "The public answer only gives the result 'Yes' and two generic continuity lemmas. It does not state the equal-maxima condition, the functions f,g, the target point c, or the sign-change construction needed to recover the source argument. The missing equal-maxima premise and target are essential and not supplied by the clues."
+        },
+        "withheld": "The equal maximum value premise and the target existence of c with f(c)=g(c) are absent. The clues only establish continuity of f-g and the sign behavior of a zero-free continuous function; one must infer that equal maxima force a zero of f-g."
+      },
+      {
+        "source_index": 77,
+        "bank_key": "77:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All three sentences are supported by the source solution and are readable as partial mathematical evidence. They describe the translation setup, the intersection condition, and the area formula without being redundant.",
+          "audit_public_p4": "The observations provide setup facts and an area formula, but they do not state the actual target or supply enough parameter relations to compute 1/2. The final value alone does not reveal the missing question structure.",
+          "audit_source_disclosure_p2": "The public clues state general structural facts and the final value, but they do not provide the actual cubic equation or the explicit distance-between-roots function needed to perform the maximization. The missing relation is not stated equivalently in the clues, so the original task and complete derivation are not publicly exposed."
+        },
+        "withheld": "The exact cubic f(x)=x^3-x and the maximum-area target are not stated. The student must infer that the area expression from the clues must be maximized over the allowed shift range and evaluated to obtain 1/2."
+      },
+      {
+        "source_index": 86,
+        "bank_key": "86:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "REJECT",
+          "audit_source_disclosure_p2": "REJECT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "All three observations are mathematically supported by the reference solution and are distinct partial assertions about the threshold, the left-side contribution, and the right-tail decay.",
+          "audit_public_p4": "The observations jointly with the final answer a expose the complete limiting argument: split at a, lower part tends to a, upper part vanishes. This is a nearly complete solution rather than a withheld target or constraint.",
+          "audit_source_disclosure_p2": "The public clues collectively describe the full solution: threshold at a, integrand approaches 1 below it, and the tail is dominated by (a/x)^n with O(1/n) contribution. Together with the answer a, this exposes the derivation, not merely the result."
+        },
+        "withheld": "The exact integrand 1/(1+(x/a)^n) and the full integration domain [0,∞) are not stated. The clues only reveal a threshold at a, a left-side limiting mass a, and a vanishing right tail; the student must infer the missing integrand/domain whose limiting integral is a."
+      },
+      {
+        "source_index": 112,
+        "bank_key": "112:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 2,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "Both clue sentences are supported by the source solution and provide distinct, interpretable partial mathematical evidence: the four-digit negative range and the congruence representation.",
+          "audit_public_p4": "The public observations do not state what is being asked and do not uniquely determine -1011. They expose premises and a candidate value, but not a complete premise-target bundle or solution.",
+          "audit_source_disclosure_p2": "The public clues expose the four-digit negative range and the congruence n = 23k + 1, and the final answer is -1011. However, the essential target 'largest' is absent. Without it, the public material does not uniquely identify the original task, since many four-digit negative integers satisfy the congruence. The missing selection criterion is not supplied equivalently by the clues or answer."
+        },
+        "withheld": "The source asks for the largest four-digit negative integer congruent to 1 mod 23. The public clues give the four-digit negative range and the congruence representation n=23k+1, but omit the extremal target 'largest'; the answer -1011 must be recognized as the maximum compatible n, not merely any solution."
+      },
+      {
+        "source_index": 122,
+        "bank_key": "122:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "unresolved",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "All three clue sentences are mathematically correct in the source setting, readable as partial evidence, and nonredundant.",
+          "audit_public_p4": null,
+          "audit_source_disclosure_p2": "The public clues mention q, the identity for m^3+n^3, a non-divisibility by 3 fact, and a necessary condition for the first divisibility expression. They do not state the second divisibility expression or the complete premise-target bundle. The final answer (2,2) is present, but no derivation or full source task is exposed."
+        },
+        "withheld": "The second required divisibility condition, namely that m^2-mn+n^2+1 also divides 3^{m^3+n^3}+m+n, and the target of determining all positive integer pairs are absent. The clues expose only the identity and consequences of the first divisibility condition; one must infer the missing second congruence and use it to force q+1=s+1 and then q=s, leading to (2,2)."
+      },
+      {
+        "source_index": 123,
+        "bank_key": "123:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 2,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "REJECT",
+          "audit_source_disclosure_p2": "REJECT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "Both clue sentences are mathematically supported by the source solution and are interpretable as partial evidence. They are distinct observations: one computes the partial sums, and the other states the modular obstruction to being a perfect power.",
+          "audit_public_p4": "The two clues jointly provide the full mathematical argument that the partial sums are not perfect powers, matching the supplied answer Yes. The missing exact question wording does not leave a meaningful mathematical relation to reconstruct.",
+          "audit_source_disclosure_p2": "The public clues provide an explicit infinite sequence and the modular obstruction needed to prove every finite partial sum is not a perfect power. Together with the final answer 'Yes', this exposes a complete construction and verification of the source task."
+        },
+        "withheld": "The original question asks whether an infinite natural-number sequence can have every finite partial sum not a perfect power. The clues omit that target property; the missing inference is that 4n-2 is congruent to 2 modulo 4, so the displayed sequence satisfies it."
+      },
+      {
+        "source_index": 136,
+        "bank_key": "136:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "REJECT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "All three observations are mathematically supported in the source setting and are readable as partial evidence. They are distinct: pairwise intersection size, existence of a common element, and the given set size.",
+          "audit_public_p4": "The clues describe a set family but do not state the requested quantity or a bound on the number of sets; 87429 cannot be derived from them alone.",
+          "audit_source_disclosure_p2": "The public clues state the essential structural facts: pairwise intersection exactly one, a common element in every set, and each set size 45. Together with the public answer 87429, the missing set count 1987 is recoverable by routine arithmetic. The key nontrivial lemma needed for the solution (existence of a common element) is already stated in the public clues, so the original task and a nearly complete solution are exposed."
+        },
+        "withheld": "The number of sets (1987) and the target union size are not stated. Using the final answer 87429, the common element, and the fact that all other elements are unique to their sets, one infers 87429 = 1 + n(45-1), so n=1987, recovering the missing set-count premise."
+      },
+      {
+        "source_index": 141,
+        "bank_key": "141:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "REJECT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "All three sentences are mathematically supported by the source solution and are interpretable as partial evidence for the bounded counting argument. They are distinct observations: the unbounded count, the exclusion subtraction, and the non-overlap of upper-bound violations.",
+          "audit_public_p4": "The public observations and final answer jointly expose the bounded count computation and its result. The clues state the unconstrained count, the subtraction amount, and the exclusion reasoning, leaving only routine arithmetic.",
+          "audit_source_disclosure_p2": "The public clues provide generic counting fragments and the final answer 204, but they do not state the original polynomial, the target exponent, or the lower bound needed to map the counting problem back to the source coefficient. The missing setup is essential and not recoverable from the public text alone without knowing the private source."
+        },
+        "withheld": "The original expression (x^3+x^4+...+x^10)^4 and the target coefficient of x^21 are absent. The clues imply a shifted four-part bounded count: 220 unbounded, 16 single-part exclusions, hence sum 9 with upper bound 7, i.e. the coefficient of x^9 in (1+x+...+x^7)^4; factoring x^12 connects this to the original coefficient."
+      },
+      {
+        "source_index": 143,
+        "bank_key": "143:669a8fcbe6ce59f7d0fcafbe8a7f2f585eb9324d038956312dfae6df82abb403:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All three clue sentences are mathematically supported by the reference solution and are readable as partial evidence. They describe distinct parts of the outer-pair reduction and inner-representation counting.",
+          "audit_public_p4": "The public input gives an answer and local facts about binomial coefficients, but no explicit target or complete premise-target bundle. A meaningful inference remains to determine what 13 answers.",
+          "audit_source_disclosure_p2": "The public clues provide partial combinatorial facts about binomial coefficients equaling 21 and representation counts, but omit the nested equation, variables, ordered-quadruple target, and cross-distinctness condition. The final answer 13 alone is not a solution, and no complete derivation is exposed."
+        },
+        "withheld": "The original nested binomial equation, the distinct positive integer quadruple condition, the count target, and the exact inner representations for 21 and 2 are absent. The student must infer that the outer pairs from c2 are paired with inner binomial representations, then apply distinctness to count 13."
+      }
+    ]
+  },
+  "candidate": {
+    "converter": "convert_p4",
+    "original_sources": 12,
+    "source_eligible": 11,
+    "accepted": 7,
+    "potential_additional_acceptances": [],
+    "missing_conversions": [],
+    "upper_bound_interpretation": "All unresolved eligible conversions/audits could pass; known rejected and NOT_SUITABLE cases cannot pass without changing the procedure. This bound is not a forecast.",
+    "coverage_upper_bound": 0.5833333333333334,
+    "accepted_source_ids": [
+      27,
+      33,
+      77,
+      112,
+      136,
+      141,
+      143
+    ],
+    "unresolved_eligible": 0,
+    "rows": [
+      {
+        "source_index": 8,
+        "bank_key": "8:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 2,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "REJECT",
+          "audit_source_disclosure_p2": "REJECT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "Both observations are mathematically supported by the source setting and are distinct partial steps: one gives the denominator factorization, and the other gives the common-denominator numerator equality.",
+          "audit_public_p4": "The public observations jointly expose the key simplification and the resulting value. Although the original expression is not quoted, the common-denominator setup, numerator-equals-denominator fact, and final answer 1 together disclose a complete/nearly complete solution to the implied evaluation.",
+          "audit_source_disclosure_p2": "The public clues expose the key derivation and final simplification, so the complete solution is effectively disclosed even though the original condition is not quoted verbatim."
+        },
+        "withheld": "The exact zero-sum premise a+b+c=0 and the full three-term sum P with its squared numerators are absent. The clues show the denominator factorization and the common-denominator equality; together with the supplied answer 1, one infers the missing expression is a three-term sum whose combined numerator equals its denominator under that zero-sum condition."
+      },
+      {
+        "source_index": 20,
+        "bank_key": null,
+        "clue_count": 0,
+        "bank_status": "source_ineligible",
+        "audit_status": {
+          "audit_support_p1": "unresolved",
+          "audit_public_p4": "unresolved",
+          "audit_source_disclosure_p2": "unresolved"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": null,
+          "audit_public_p4": null,
+          "audit_source_disclosure_p2": null
+        },
+        "withheld": null
+      },
+      {
+        "source_index": 27,
+        "bank_key": "27:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All three sentences are mathematically supported by the source solution and are interpretable as partial evidence. They describe distinct steps: rewriting radicals, combining like squarefree parts, and ensuring positive coefficients for direct squarefree terms.",
+          "audit_public_p4": "The public input gives a final numeric answer and general observations about squarefree decomposition and combining like radical terms, but it does not expose a complete premise-target bundle or a complete solution. The specific problem structure and target remain missing.",
+          "audit_source_disclosure_p2": "The public clues explain a general method for combining square roots by squarefree part, but they do not disclose the source's specific sum from 1 to 100 or the requested least number for that sum. The answer 60 alone does not reconstruct the original task or a complete derivation."
+        },
+        "withheld": "The original task asks for the least number of square-root terms needed to express sqrt(1)+sqrt(2)+...+sqrt(100) as an integer-linear combination of square roots. The public clues omit the upper bound 100 and the target count; one must infer that every squarefree m from 2 to 100 contributes a nonzero radical, while m=1 is absorbed into the constant term, and then count those squarefree integers to obtain 60."
+      },
+      {
+        "source_index": 33,
+        "bank_key": "33:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 2,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "Both clue sentences are mathematically correct in the continuous-function setting of the source and are distinct partial observations used in the proof.",
+          "audit_public_p4": "The observations provide general mathematical facts and a conditional statement, but they do not expose the actual question, target property, or a complete premise-and-target bundle. The answer Yes alone does not identify what is being affirmed.",
+          "audit_source_disclosure_p2": "The public clues provide useful intermediate facts and the final answer is merely 'Yes', but they do not state the equal-maxima condition or the original existence target. Recovering the full task requires supplying the missing premise and target and assembling the contradiction argument."
+        },
+        "withheld": "The premise that the two maxima are equal and the target existence of c with f(c)=g(c) are absent. The clues connect to them by contradiction: a hypothetical no-common-value would make f-g continuous and nonzero, and the dominance lemma would force unequal maxima."
+      },
+      {
+        "source_index": 77,
+        "bank_key": "77:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 4,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All four clue sentences are supported by the reference solution, readable as partial mathematical evidence, and represent distinct observations about the factorization, intersection roots, area objective, and root separation.",
+          "audit_public_p4": "The observations describe a setup and target but omit the exact quadratic/curves needed to compute the area. The final value 1/2 is exposed, but the derivation and essential premise are not, so meaningful inference remains.",
+          "audit_source_disclosure_p2": "The public material does not state the source curves y=x^3-x and y=(x-a)^3-(x-a), nor the explicit area integrand or maximization derivation. The final answer 1/2 alone is not a derivation. Thus the original task is not directly copied and no complete solution is exposed."
+        },
+        "withheld": "The exact cubic curves y=x^3-x and y=(x-a)^3-(x-a), the two-intersection condition 0<|a|<2, and the explicit area function A(a) are absent. The clues only identify the shifted-cubic difference factorization, its two intersection roots, their separation, and that the requested extremum is the area between the curves over that interval; the solver must recover the missing cubic/area relation to connect them to the answer 1/2."
+      },
+      {
+        "source_index": 86,
+        "bank_key": "86:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "REJECT",
+          "audit_source_disclosure_p2": "REJECT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "All three clue sentences are mathematically supported by the reference solution and are interpretable as distinct partial observations about the split, the left interval behavior, and the right-tail bound.",
+          "audit_public_p4": "The clues jointly expose the key proof ingredients for the integral limit, and the final answer a supplies the target value. The original wording is absent, but the solution structure is effectively disclosed.",
+          "audit_source_disclosure_p2": "The public clues expose a complete solution outline: split at x=a, use pointwise convergence on [0,a] to get contribution a, and use the tail bound (a/x)^n to show the remaining contribution vanishes. Although the exact integrand is not copied, the derivation and target result are effectively disclosed."
+        },
+        "withheld": "The exact integrand 1/(1+(x/a)^n) and the limit-of-integral target are absent from the public clues. The student must infer that the total integral's limit is the supplied answer a by combining the left-part limit a and the vanishing right tail."
+      },
+      {
+        "source_index": 112,
+        "bank_key": "112:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 2,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "Both clue sentences are supported by the source solution and are interpretable as partial mathematical evidence. They state distinct constraints: the four-digit negative range and the congruence form.",
+          "audit_public_p4": "The observations expose domain and congruence premises but not the requested target. The answer -1011 is only one of many values satisfying the stated constraints, so meaningful structure remains missing.",
+          "audit_source_disclosure_p2": "The public clues expose the interval and congruence condition, and the final answer gives -1011, but they do not state the original target of selecting the largest such integer. The maximality requirement remains an essential withheld element, so the original task is not fully disclosed by paraphrase or derivation."
+        },
+        "withheld": "The target is to find the largest such integer. The clues give the four-digit negative range and the congruence n=23k+1, but not that the requested value is the maximum; from the answer -1011 and the possible values, one infers it is the largest."
+      },
+      {
+        "source_index": 122,
+        "bank_key": "122:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "REJECT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "All three clues are supported by the source, readable as partial mathematical evidence, and represent distinct observations: the factorization identity, the parity consequence, and the lower bound on prime divisors of d.",
+          "audit_public_p4": "The public input supplies the final answer (2,2) together with the defining conditions on m,n (d odd, prime divisors of d > s), so the premise-target bundle is exposed.",
+          "audit_source_disclosure_p2": "The public answer gives the result (2,2), and the clues provide partial structural facts about s, q, d, parity, and prime divisors. However, the essential source premises—the two divisibility conditions involving the exponential/factorial expressions—are not publicly stated, and the clues do not constitute a complete derivation. Thus the original task is not directly disclosed or fully solved by the public material."
+        },
+        "withheld": "The original request to determine all positive integer pairs (m,n) and the two divisibility conditions by d=q+1 of 3^{m+n}+(m+n)! and 3^{m^3+n^3}+m+n are absent. The clues expose only the substitution identity and consequences of one divisibility condition; the missing second condition and target must be inferred to force p=s+1 and q=s, yielding (2,2)."
+      },
+      {
+        "source_index": 123,
+        "bank_key": "123:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "REJECT",
+          "audit_source_disclosure_p2": "REJECT"
+        },
+        "accepted": false,
+        "audit_reasons": {
+          "audit_support_p1": "All three clue sentences are mathematically supported by the source solution and are interpretable as partial evidence. They describe the construction, its partial-sum formula, and the resulting congruence, which are distinct observations.",
+          "audit_public_p4": "The clues jointly provide a concrete construction, its nth partial sum, and the target-like property that each partial sum is even but not divisible by 4. With the answer Yes, this exposes a complete or nearly complete construction and verification for the likely existence/property question.",
+          "audit_source_disclosure_p2": "The public answer and clues together give a specific infinite sequence, its partial-sum formula, and the key property that every partial sum is even but not divisible by 4. This is a complete/nearly complete construction and verification of the source existence question, leaving only a routine parity inference."
+        },
+        "withheld": "The original question asks whether an infinite sequence of natural numbers exists whose every finite partial sum is not a perfect power. The public clues omit the perfect-power condition and the universal existence target; the missing inference is that a perfect power with exponent at least 2 cannot be even but not divisible by 4."
+      },
+      {
+        "source_index": 136,
+        "bank_key": "136:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All three clue sentences are mathematically supported by the source solution, interpretable as partial evidence, and represent distinct observations: pairwise intersection size, the d_x sum identity, and the no-common-element bound d_x <= 44.",
+          "audit_public_p4": "The observations provide local structural facts and a conditional bound, but they do not state the requested target or the missing parameter needed to derive the final number. The answer alone does not expose a complete premise-target bundle or full solution.",
+          "audit_source_disclosure_p2": "The public material gives a derived pairwise-intersection fact and counting lemmas, plus the final numeric answer, but it does not state the original setup of 1987 sets of size 45 or the requested union size. The answer alone does not expose the missing premise-target bundle or a complete derivation."
+        },
+        "withheld": "The exact number of sets (1987), the common set size 45, the pairwise union size 89, the conclusion that a common element exists, and the requested union size are not stated. The inference is that the counting bound forces a common element, after which each set contributes 44 unique elements and the final answer determines the number of sets."
+      },
+      {
+        "source_index": 141,
+        "bank_key": "141:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All three clue sentences are mathematically supported by the source setting and are interpretable as partial evidence. They describe the factor exponent range, the x^3 factoring shift, and the bounded-exponent coefficient count, respectively.",
+          "audit_public_p4": "The observations describe the polynomial factors and reduce the coefficient to a bounded-composition count, but they omit the specific fixed sum/exponent being counted. Thus the original target is not fully reconstructible from the public clues.",
+          "audit_source_disclosure_p2": "The public material gives the range, a factoring step, and a counting formulation, but it withholds the specific target exponent/sum. The final answer 204 is present, but by itself it does not disclose the original target or a complete derivation."
+        },
+        "withheld": "The target exponent 21 and the exact coefficient request are absent. From the clues, one can recover the factor range and the shift by 3; the final answer 204 then identifies the missing sum as 9, so the original target is 4*3+9=21."
+      },
+      {
+        "source_index": 143,
+        "bank_key": "143:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+        "clue_count": 3,
+        "bank_status": "OK",
+        "audit_status": {
+          "audit_support_p1": "ACCEPT",
+          "audit_public_p4": "ACCEPT",
+          "audit_source_disclosure_p2": "ACCEPT"
+        },
+        "accepted": true,
+        "audit_reasons": {
+          "audit_support_p1": "All three clues are supported by the source, interpretable as partial mathematical evidence, and nonredundant.",
+          "audit_public_p4": "The answer 13 is shown, but the public observations only define X/Y and give local restrictions. They do not expose the actual target or a complete derivation, so meaningful structure remains to be inferred.",
+          "audit_source_disclosure_p2": "The public material gives the final count and some derived constraints, but it does not state the original nested binomial equation or the complete distinct-positive-integer premise. The answer alone is not treated as a leak, and the clues do not expose a complete premise-target bundle or derivation."
+        },
+        "withheld": "The exact outer equation C(C(a,b), C(c,d)) = 21 and the requested total number of ordered quadruples of distinct positive integers are not stated. The clues only give the X,Y setup, the possible upper inner binomial values, and the exclusion of Y=1; one must infer the missing outer equation and counting target."
+      }
+    ]
+  },
+  "common_accepted": [
+    27,
+    33,
+    77,
+    112,
+    143
+  ]
+}

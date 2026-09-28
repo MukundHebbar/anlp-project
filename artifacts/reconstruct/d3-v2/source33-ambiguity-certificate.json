@@ -1,0 +1,23 @@
+{
+  "source_index": 33,
+  "public_answer": "Yes",
+  "public_clues": [
+    "The difference of two continuous real-valued functions on [0,1] is continuous on [0,1].",
+    "A continuous real-valued function on [0,1] that is never zero cannot take both positive and negative values."
+  ],
+  "original_question": "For every pair of continuous functions $f,g:[0,1] \\rightarrow \\mathbb{R}$ such that \\(\\max\\{f(x):x \\in [0,1]\\} = \\max\\{g(x):x \\in [0,1]\\}\\), is there always a point $c \\in [0,1]$ such that $f(c) = g(c)$? Answer yes or no.",
+  "alternative_question": "For every pair of continuous real functions f,g on[0,1] with equal definite integrals over[0,1], must there be c in[0,1] with f(c)=g(c)?",
+  "alternative_answer": "Yes",
+  "proof": "h=f-g is continuous. If h never vanishes, the intermediate value theorem makes it strictly positive everywhere or strictly negative everywhere. Compactness gives a strictly positive minimum for h or -h, hence the integral of h is nonzero, contradicting the equal-integral premise.",
+  "clue_grounding": [
+    "The difference f-g is continuous in both problems.",
+    "Assuming no equality point makes f-g nonzero; the sign lemma applies in both proofs."
+  ],
+  "not_semantically_same": {
+    "equal_max_not_equal_integral": "f(x)=x, g(x)=x²: maxima both1, integrals1/2 and1/3.",
+    "equal_integral_not_equal_max": "f(x)=0, g(x)=x-1/2: integrals both0, maxima0 and1/2."
+  },
+  "mechanical_checks": "SymPy exact integrals verified; monotonic polynomial/linear maxima checked analytically.",
+  "interpretation": "The public clues do not logically identify the original premise. Source recovery depends on additional information or priors; valid grounding and original recovery must remain separate.",
+  "provenance": "assistant proof with exact symbolic integral checks; not human review or a model-generation result"
+}

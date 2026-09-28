@@ -1,0 +1,1163 @@
+{
+  "schema": "reconstruct_judge_fixtures_v1",
+  "split_role": "development_only",
+  "limitations": "30 new cases come from 10 families. Historical fixtures may also be related. Do not treat all cases as independent or as a held-out near-perfect-accuracy study.",
+  "fixtures": [
+    {
+      "id": "certified_pair_inverse_valid",
+      "family_id": "pair_inverse",
+      "category": "valid",
+      "final_answer": "6",
+      "clues": [
+        "Each unordered pair contributes one handshake.",
+        "For n people the number of pairs is n(n-1)/2."
+      ],
+      "student_response": {
+        "question": "Every pair of distinct people at a gathering shakes hands exactly once. There are 15 handshakes. How many people are present?",
+        "justification": "n(n-1)/2=15 gives (n-6)(n+5)=0. The positive solution is n=6, with each unordered pair counted once.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "6",
+        "certificate": {
+          "computed": "6",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "n(n-1)/2=15 gives (n-6)(n+5)=0. The positive solution is n=6, with each unordered pair counted once.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_pair_inverse_wrong_answer",
+      "family_id": "pair_inverse",
+      "category": "wrong_answer",
+      "final_answer": "7",
+      "clues": [
+        "Each unordered pair contributes one handshake.",
+        "For n people the number of pairs is n(n-1)/2."
+      ],
+      "student_response": {
+        "question": "Every pair of distinct people at a gathering shakes hands exactly once. There are 15 handshakes. How many people are present?",
+        "justification": "n(n-1)/2=15 gives (n-6)(n+5)=0. The positive solution is n=6, with each unordered pair counted once.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "6",
+        "certificate": {
+          "computed": "6",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "n(n-1)/2=15 gives (n-6)(n+5)=0. The positive solution is n=6, with each unordered pair counted once.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_pair_inverse_tautology",
+      "family_id": "pair_inverse",
+      "category": "tautology",
+      "final_answer": "6",
+      "clues": [
+        "Each unordered pair contributes one handshake.",
+        "For n people the number of pairs is n(n-1)/2."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 6?",
+        "justification": "The supplied number is 6.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "6",
+        "certificate": {
+          "computed": "6",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "n(n-1)/2=15 gives (n-6)(n+5)=0. The positive solution is n=6, with each unordered pair counted once.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_factorial_base_valid",
+      "family_id": "factorial_base",
+      "category": "valid",
+      "final_answer": "48",
+      "clues": [
+        "The exponent of 2 in the factorial is 97.",
+        "The exponent of 3 is 48.",
+        "Each base factor requires two factors of 2 and one of 3."
+      ],
+      "student_response": {
+        "question": "How many trailing zeros does 100! have in base 12?",
+        "justification": "Since 12=2^2*3, the required count is min(floor(v2(100!)/2),v3(100!))=min(floor(97/2),48)=48.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "48",
+        "certificate": {
+          "computed": "48",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Since 12=2^2*3, the required count is min(floor(v2(100!)/2),v3(100!))=min(floor(97/2),48)=48.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_factorial_base_wrong_answer",
+      "family_id": "factorial_base",
+      "category": "wrong_answer",
+      "final_answer": "49",
+      "clues": [
+        "The exponent of 2 in the factorial is 97.",
+        "The exponent of 3 is 48.",
+        "Each base factor requires two factors of 2 and one of 3."
+      ],
+      "student_response": {
+        "question": "How many trailing zeros does 100! have in base 12?",
+        "justification": "Since 12=2^2*3, the required count is min(floor(v2(100!)/2),v3(100!))=min(floor(97/2),48)=48.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "48",
+        "certificate": {
+          "computed": "48",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Since 12=2^2*3, the required count is min(floor(v2(100!)/2),v3(100!))=min(floor(97/2),48)=48.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_factorial_base_tautology",
+      "family_id": "factorial_base",
+      "category": "tautology",
+      "final_answer": "48",
+      "clues": [
+        "The exponent of 2 in the factorial is 97.",
+        "The exponent of 3 is 48.",
+        "Each base factor requires two factors of 2 and one of 3."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 48?",
+        "justification": "The supplied number is 48.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "48",
+        "certificate": {
+          "computed": "48",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Since 12=2^2*3, the required count is min(floor(v2(100!)/2),v3(100!))=min(floor(97/2),48)=48.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_quadratic_minimum_valid",
+      "family_id": "quadratic_minimum",
+      "category": "valid",
+      "final_answer": "5",
+      "clues": [
+        "Completing the square produces a square centered at x=3.",
+        "The square term is nonnegative and can vanish."
+      ],
+      "student_response": {
+        "question": "Find the minimum of x^2-6x+14 over real x.",
+        "justification": "x^2-6x+14=(x-3)^2+5. The square is nonnegative and is zero at x=3, so the attained minimum is 5.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "5",
+        "certificate": {
+          "computed": "5",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "x^2-6x+14=(x-3)^2+5. The square is nonnegative and is zero at x=3, so the attained minimum is 5.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_quadratic_minimum_wrong_answer",
+      "family_id": "quadratic_minimum",
+      "category": "wrong_answer",
+      "final_answer": "6",
+      "clues": [
+        "Completing the square produces a square centered at x=3.",
+        "The square term is nonnegative and can vanish."
+      ],
+      "student_response": {
+        "question": "Find the minimum of x^2-6x+14 over real x.",
+        "justification": "x^2-6x+14=(x-3)^2+5. The square is nonnegative and is zero at x=3, so the attained minimum is 5.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "5",
+        "certificate": {
+          "computed": "5",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "x^2-6x+14=(x-3)^2+5. The square is nonnegative and is zero at x=3, so the attained minimum is 5.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_quadratic_minimum_tautology",
+      "family_id": "quadratic_minimum",
+      "category": "tautology",
+      "final_answer": "5",
+      "clues": [
+        "Completing the square produces a square centered at x=3.",
+        "The square term is nonnegative and can vanish."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 5?",
+        "justification": "The supplied number is 5.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "5",
+        "certificate": {
+          "computed": "5",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "x^2-6x+14=(x-3)^2+5. The square is nonnegative and is zero at x=3, so the attained minimum is 5.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_lattice_paths_valid",
+      "family_id": "lattice_paths",
+      "category": "valid",
+      "final_answer": "35",
+      "clues": [
+        "There are seven steps in total.",
+        "Choosing the positions of the three right steps determines the path."
+      ],
+      "student_response": {
+        "question": "How many paths go from (0,0) to (3,4) using only unit steps right or up?",
+        "justification": "Every path has three right and four up steps. Choosing the three right-step positions among seven gives binomial(7,3)=35.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "35",
+        "certificate": {
+          "computed": "35",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Every path has three right and four up steps. Choosing the three right-step positions among seven gives binomial(7,3)=35.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_lattice_paths_wrong_answer",
+      "family_id": "lattice_paths",
+      "category": "wrong_answer",
+      "final_answer": "36",
+      "clues": [
+        "There are seven steps in total.",
+        "Choosing the positions of the three right steps determines the path."
+      ],
+      "student_response": {
+        "question": "How many paths go from (0,0) to (3,4) using only unit steps right or up?",
+        "justification": "Every path has three right and four up steps. Choosing the three right-step positions among seven gives binomial(7,3)=35.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "35",
+        "certificate": {
+          "computed": "35",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Every path has three right and four up steps. Choosing the three right-step positions among seven gives binomial(7,3)=35.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_lattice_paths_tautology",
+      "family_id": "lattice_paths",
+      "category": "tautology",
+      "final_answer": "35",
+      "clues": [
+        "There are seven steps in total.",
+        "Choosing the positions of the three right steps determines the path."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 35?",
+        "justification": "The supplied number is 35.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "35",
+        "certificate": {
+          "computed": "35",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Every path has three right and four up steps. Choosing the three right-step positions among seven gives binomial(7,3)=35.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_congruence_valid",
+      "family_id": "congruence",
+      "category": "valid",
+      "final_answer": "27",
+      "clues": [
+        "Writing x=2+5k converts the second congruence to k congruent to 5 modulo 6.",
+        "The moduli are coprime."
+      ],
+      "student_response": {
+        "question": "Find the integer x with 0<=x<30, x congruent to 2 modulo 5, and x congruent to 3 modulo 6.",
+        "justification": "2+5k is congruent to 3 modulo 6, so -k is congruent to 1 and k to 5 modulo 6. Hence x is congruent to 27 modulo 30; coprimality gives one solution in the specified interval, namely 27.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "27",
+        "certificate": {
+          "computed": "27",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "2+5k is congruent to 3 modulo 6, so -k is congruent to 1 and k to 5 modulo 6. Hence x is congruent to 27 modulo 30; coprimality gives one solution in the specified interval, namely 27.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_congruence_wrong_answer",
+      "family_id": "congruence",
+      "category": "wrong_answer",
+      "final_answer": "28",
+      "clues": [
+        "Writing x=2+5k converts the second congruence to k congruent to 5 modulo 6.",
+        "The moduli are coprime."
+      ],
+      "student_response": {
+        "question": "Find the integer x with 0<=x<30, x congruent to 2 modulo 5, and x congruent to 3 modulo 6.",
+        "justification": "2+5k is congruent to 3 modulo 6, so -k is congruent to 1 and k to 5 modulo 6. Hence x is congruent to 27 modulo 30; coprimality gives one solution in the specified interval, namely 27.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "27",
+        "certificate": {
+          "computed": "27",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "2+5k is congruent to 3 modulo 6, so -k is congruent to 1 and k to 5 modulo 6. Hence x is congruent to 27 modulo 30; coprimality gives one solution in the specified interval, namely 27.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_congruence_tautology",
+      "family_id": "congruence",
+      "category": "tautology",
+      "final_answer": "27",
+      "clues": [
+        "Writing x=2+5k converts the second congruence to k congruent to 5 modulo 6.",
+        "The moduli are coprime."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 27?",
+        "justification": "The supplied number is 27.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "27",
+        "certificate": {
+          "computed": "27",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "2+5k is congruent to 3 modulo 6, so -k is congruent to 1 and k to 5 modulo 6. Hence x is congruent to 27 modulo 30; coprimality gives one solution in the specified interval, namely 27.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_geometric_sum_valid",
+      "family_id": "geometric_sum",
+      "category": "valid",
+      "final_answer": "255",
+      "clues": [
+        "Multiplying the sum by two shifts all powers by one place.",
+        "Subtracting cancels every middle power."
+      ],
+      "student_response": {
+        "question": "Evaluate the sum 1+2+4+...+128.",
+        "justification": "Let S=1+2+...+128. Then 2S=2+4+...+256. Subtracting cancels the middle powers and gives S=256-1=255.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "255",
+        "certificate": {
+          "computed": "255",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Let S=1+2+...+128. Then 2S=2+4+...+256. Subtracting cancels the middle powers and gives S=256-1=255.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_geometric_sum_wrong_answer",
+      "family_id": "geometric_sum",
+      "category": "wrong_answer",
+      "final_answer": "256",
+      "clues": [
+        "Multiplying the sum by two shifts all powers by one place.",
+        "Subtracting cancels every middle power."
+      ],
+      "student_response": {
+        "question": "Evaluate the sum 1+2+4+...+128.",
+        "justification": "Let S=1+2+...+128. Then 2S=2+4+...+256. Subtracting cancels the middle powers and gives S=256-1=255.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "255",
+        "certificate": {
+          "computed": "255",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Let S=1+2+...+128. Then 2S=2+4+...+256. Subtracting cancels the middle powers and gives S=256-1=255.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_geometric_sum_tautology",
+      "family_id": "geometric_sum",
+      "category": "tautology",
+      "final_answer": "255",
+      "clues": [
+        "Multiplying the sum by two shifts all powers by one place.",
+        "Subtracting cancels every middle power."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 255?",
+        "justification": "The supplied number is 255.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "255",
+        "certificate": {
+          "computed": "255",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Let S=1+2+...+128. Then 2S=2+4+...+256. Subtracting cancels the middle powers and gives S=256-1=255.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_telescoping_rational_valid",
+      "family_id": "telescoping_rational",
+      "category": "valid",
+      "final_answer": "9/10",
+      "clues": [
+        "Each summand can be written as 1/k-1/(k+1).",
+        "All interior fractions cancel."
+      ],
+      "student_response": {
+        "question": "Evaluate the sum of 1/[k(k+1)] for integer k from 1 through 9.",
+        "justification": "Since 1/[k(k+1)]=1/k-1/(k+1), the sum telescopes to 1-1/10=9/10.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "9/10",
+        "certificate": {
+          "computed": "9/10",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Since 1/[k(k+1)]=1/k-1/(k+1), the sum telescopes to 1-1/10=9/10.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_telescoping_rational_wrong_answer",
+      "family_id": "telescoping_rational",
+      "category": "wrong_answer",
+      "final_answer": "19/10",
+      "clues": [
+        "Each summand can be written as 1/k-1/(k+1).",
+        "All interior fractions cancel."
+      ],
+      "student_response": {
+        "question": "Evaluate the sum of 1/[k(k+1)] for integer k from 1 through 9.",
+        "justification": "Since 1/[k(k+1)]=1/k-1/(k+1), the sum telescopes to 1-1/10=9/10.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "9/10",
+        "certificate": {
+          "computed": "9/10",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Since 1/[k(k+1)]=1/k-1/(k+1), the sum telescopes to 1-1/10=9/10.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_telescoping_rational_tautology",
+      "family_id": "telescoping_rational",
+      "category": "tautology",
+      "final_answer": "9/10",
+      "clues": [
+        "Each summand can be written as 1/k-1/(k+1).",
+        "All interior fractions cancel."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 9/10?",
+        "justification": "The supplied number is 9/10.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "9/10",
+        "certificate": {
+          "computed": "9/10",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "Since 1/[k(k+1)]=1/k-1/(k+1), the sum telescopes to 1-1/10=9/10.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_stars_bars_valid",
+      "family_id": "stars_bars",
+      "category": "valid",
+      "final_answer": "28",
+      "clues": [
+        "Six identical objects are separated into three groups.",
+        "Two separators can occupy any two of eight positions."
+      ],
+      "student_response": {
+        "question": "How many ordered triples of nonnegative integers (a,b,c) satisfy a+b+c=6?",
+        "justification": "A string with six objects and two separators specifies the ordered group sizes, including empty groups. Choose the two separator positions among eight: binomial(8,2)=28.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "28",
+        "certificate": {
+          "computed": "28",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "A string with six objects and two separators specifies the ordered group sizes, including empty groups. Choose the two separator positions among eight: binomial(8,2)=28.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_stars_bars_wrong_answer",
+      "family_id": "stars_bars",
+      "category": "wrong_answer",
+      "final_answer": "29",
+      "clues": [
+        "Six identical objects are separated into three groups.",
+        "Two separators can occupy any two of eight positions."
+      ],
+      "student_response": {
+        "question": "How many ordered triples of nonnegative integers (a,b,c) satisfy a+b+c=6?",
+        "justification": "A string with six objects and two separators specifies the ordered group sizes, including empty groups. Choose the two separator positions among eight: binomial(8,2)=28.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "28",
+        "certificate": {
+          "computed": "28",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "A string with six objects and two separators specifies the ordered group sizes, including empty groups. Choose the two separator positions among eight: binomial(8,2)=28.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_stars_bars_tautology",
+      "family_id": "stars_bars",
+      "category": "tautology",
+      "final_answer": "28",
+      "clues": [
+        "Six identical objects are separated into three groups.",
+        "Two separators can occupy any two of eight positions."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 28?",
+        "justification": "The supplied number is 28.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "28",
+        "certificate": {
+          "computed": "28",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "A string with six objects and two separators specifies the ordered group sizes, including empty groups. Choose the two separator positions among eight: binomial(8,2)=28.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_path_independent_sets_valid",
+      "family_id": "path_independent_sets",
+      "category": "valid",
+      "final_answer": "34",
+      "clues": [
+        "Including the last position excludes its neighbor.",
+        "The endpoint cases contribute 21 and 13."
+      ],
+      "student_response": {
+        "question": "How many subsets of seven positions in a row contain no adjacent positions, including the empty subset?",
+        "justification": "With F(0)=1 and F(1)=2, split on the last position to get F(n)=F(n-1)+F(n-2). Thus F(5)=13, F(6)=21 and F(7)=21+13=34. The first term counts excluding the last position; the second counts including it and excluding its neighbor.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "34",
+        "certificate": {
+          "computed": "34",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "With F(0)=1 and F(1)=2, split on the last position to get F(n)=F(n-1)+F(n-2). Thus F(5)=13, F(6)=21 and F(7)=21+13=34. The first term counts excluding the last position; the second counts including it and excluding its neighbor.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_path_independent_sets_wrong_answer",
+      "family_id": "path_independent_sets",
+      "category": "wrong_answer",
+      "final_answer": "35",
+      "clues": [
+        "Including the last position excludes its neighbor.",
+        "The endpoint cases contribute 21 and 13."
+      ],
+      "student_response": {
+        "question": "How many subsets of seven positions in a row contain no adjacent positions, including the empty subset?",
+        "justification": "With F(0)=1 and F(1)=2, split on the last position to get F(n)=F(n-1)+F(n-2). Thus F(5)=13, F(6)=21 and F(7)=21+13=34. The first term counts excluding the last position; the second counts including it and excluding its neighbor.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "34",
+        "certificate": {
+          "computed": "34",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "With F(0)=1 and F(1)=2, split on the last position to get F(n)=F(n-1)+F(n-2). Thus F(5)=13, F(6)=21 and F(7)=21+13=34. The first term counts excluding the last position; the second counts including it and excluding its neighbor.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_path_independent_sets_tautology",
+      "family_id": "path_independent_sets",
+      "category": "tautology",
+      "final_answer": "34",
+      "clues": [
+        "Including the last position excludes its neighbor.",
+        "The endpoint cases contribute 21 and 13."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 34?",
+        "justification": "The supplied number is 34.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "34",
+        "certificate": {
+          "computed": "34",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "With F(0)=1 and F(1)=2, split on the last position to get F(n)=F(n-1)+F(n-2). Thus F(5)=13, F(6)=21 and F(7)=21+13=34. The first term counts excluding the last position; the second counts including it and excluding its neighbor.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "certified_divisor_sum_valid",
+      "family_id": "divisor_sum",
+      "category": "valid",
+      "final_answer": "56",
+      "clues": [
+        "The prime factorization has a squared factor 2 and a single factor 7.",
+        "Choosing the prime exponents independently factors the divisor sum."
+      ],
+      "student_response": {
+        "question": "What is the sum of all positive divisors of 28?",
+        "justification": "28=2^2*7. Every divisor is 2^a*7^b with 0<=a<=2 and 0<=b<=1, so their sum is (1+2+4)(1+7)=7*8=56.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "56",
+        "certificate": {
+          "computed": "56",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "28=2^2*7. Every divisor is 2^a*7^b with 0<=a<=2 and 0<=b<=1, so their sum is (1+2+4)(1+7)=7*8=56.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_divisor_sum_wrong_answer",
+      "family_id": "divisor_sum",
+      "category": "wrong_answer",
+      "final_answer": "57",
+      "clues": [
+        "The prime factorization has a squared factor 2 and a single factor 7.",
+        "Choosing the prime exponents independently factors the divisor sum."
+      ],
+      "student_response": {
+        "question": "What is the sum of all positive divisors of 28?",
+        "justification": "28=2^2*7. Every divisor is 2^a*7^b with 0<=a<=2 and 0<=b<=1, so their sum is (1+2+4)(1+7)=7*8=56.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "56",
+        "certificate": {
+          "computed": "56",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "28=2^2*7. Every divisor is 2^a*7^b with 0<=a<=2 and 0<=b<=1, so their sum is (1+2+4)(1+7)=7*8=56.",
+        "human_reviewed": false,
+        "label_reason": "Certified true answer; supplied answer is increased by one for the negative control."
+      }
+    },
+    {
+      "id": "certified_divisor_sum_tautology",
+      "family_id": "divisor_sum",
+      "category": "tautology",
+      "final_answer": "56",
+      "clues": [
+        "The prime factorization has a squared factor 2 and a single factor 7.",
+        "Choosing the prime exponents independently factors the divisor sum."
+      ],
+      "student_response": {
+        "question": "What is the supplied number 56?",
+        "justification": "The supplied number is 56.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "reference": {
+        "provenance": "assistant-authored plus independently executed exact calculation",
+        "expected_question_answer": "56",
+        "certificate": {
+          "computed": "56",
+          "method": "Python exact arithmetic/enumeration",
+          "passed": true
+        },
+        "derivation": "28=2^2*7. Every divisor is 2^a*7^b with 0<=a<=2 and 0<=b<=1, so their sum is (1+2+4)(1+7)=7*8=56.",
+        "human_reviewed": false,
+        "label_reason": "The question copies the answer and does not use the mathematical observations."
+      }
+    },
+    {
+      "id": "valid_exact",
+      "category": "valid",
+      "final_answer": "4",
+      "clues": [
+        "All four sides have equal length.",
+        "The area is the square of one side length."
+      ],
+      "student_response": {
+        "question": "What is the area of a square with side length 2?",
+        "justification": "A square has four equal sides, and its area is the square of its side length, so 2^2=4.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "family_id": "historical_valid_exact",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "valid_alternative",
+      "category": "valid_alternative",
+      "final_answer": "5",
+      "clues": [
+        "One prime-exponent count has contributions 6, 3, and 1.",
+        "A second has contributions 4 and 1.",
+        "The first total is halved before taking a minimum."
+      ],
+      "student_response": {
+        "question": "How many trailing zeros does 13! have when written in base 12?",
+        "justification": "Since 12=2^2*3, v_2(13!)=6+3+1=10 and v_3(13!)=4+1=5. The number is min(floor(10/2),5)=5.",
+        "assumptions": [
+          "I selected 13! and base 12 as a coherent realization of the clues."
+        ]
+      },
+      "acceptable_scores": [
+        4
+      ],
+      "family_id": "historical_valid_alternative",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "minor_implicit",
+      "category": "minor_omission",
+      "final_answer": "21",
+      "clues": [
+        "Selecting the final position excludes its neighbour.",
+        "The two endpoint cases contribute 13 and 8."
+      ],
+      "student_response": {
+        "question": "How many subsets of six positions in a row have no adjacent positions?",
+        "justification": "Split according to whether the last position is selected. The two cases contribute 13 and 8, for 21.",
+        "assumptions": [
+          "The empty subset is included."
+        ]
+      },
+      "acceptable_scores": [
+        3,
+        4
+      ],
+      "family_id": "historical_minor_implicit",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "insufficient_proof",
+      "category": "insufficient",
+      "final_answer": "21",
+      "clues": [
+        "Selecting the final position excludes its neighbour.",
+        "The two endpoint cases contribute 13 and 8."
+      ],
+      "student_response": {
+        "question": "How many subsets of six positions in a row have no adjacent positions?",
+        "justification": "The answer is 21 by a recurrence.",
+        "assumptions": [
+          "The empty subset is included."
+        ]
+      },
+      "acceptable_scores": [
+        2
+      ],
+      "family_id": "historical_insufficient_proof",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "valid_reconstruction_incomplete_verification",
+      "category": "valid_incomplete_verification",
+      "final_answer": "12",
+      "clues": [
+        "There are 36 unordered pairs of vertices.",
+        "Each selected triple uses three distinct pairs.",
+        "No pair may occur in two selected triples."
+      ],
+      "student_response": {
+        "question": "What is the maximum number of edge-disjoint triangles in the complete graph on 9 vertices?",
+        "justification": "Each triangle consumes three of the 36 edges and edge-disjointness prevents reuse, so there can be at most 36/3=12 triangles. The supplied answer asserts that this bound is attained.",
+        "assumptions": [
+          "Triangles are selected as unordered vertex triples."
+        ]
+      },
+      "acceptable_scores": [
+        3
+      ],
+      "family_id": "historical_valid_reconstruction_incomplete_verification",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "wrong_answer",
+      "category": "wrong",
+      "final_answer": "4",
+      "clues": [
+        "The two terms are 2 and 3."
+      ],
+      "student_response": {
+        "question": "What is 2+3?",
+        "justification": "Adding gives 5.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "family_id": "historical_wrong_answer",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "violated_clue",
+      "category": "violated_clue",
+      "final_answer": "4",
+      "clues": [
+        "The figure has three sides.",
+        "Its area is the square of one side length."
+      ],
+      "student_response": {
+        "question": "What is the area of a square with side length 2?",
+        "justification": "Its area is 2^2=4.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1
+      ],
+      "family_id": "historical_violated_clue",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "decorative_clue",
+      "category": "unsupported_grounding",
+      "final_answer": "4",
+      "clues": [
+        "A separate sequence begins 1, 1, 2, 3."
+      ],
+      "student_response": {
+        "question": "What is 2+2?",
+        "justification": "2+2=4. The listed sequence is also mathematically interesting.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0,
+        1,
+        2
+      ],
+      "family_id": "historical_decorative_clue",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "tautology",
+      "category": "shortcut",
+      "final_answer": "4",
+      "clues": [
+        "A calculation uses two equal positive integers."
+      ],
+      "student_response": {
+        "question": "What number is equal to 4?",
+        "justification": "The number is 4 by the question.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0
+      ],
+      "family_id": "historical_tautology",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "ill_posed",
+      "category": "ill_posed",
+      "final_answer": "4",
+      "clues": [
+        "The area is the square of a side length."
+      ],
+      "student_response": {
+        "question": "What is the area of the square?",
+        "justification": "It is 4.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        1,
+        2
+      ],
+      "family_id": "historical_ill_posed",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    },
+    {
+      "id": "unrelated",
+      "category": "unrelated",
+      "final_answer": "4",
+      "clues": [
+        "The derivative vanishes at the interior maximum."
+      ],
+      "student_response": {
+        "question": "How many sides does a square have?",
+        "justification": "A square has four sides.",
+        "assumptions": []
+      },
+      "acceptable_scores": [
+        0,
+        1,
+        2
+      ],
+      "family_id": "historical_unrelated",
+      "reference": {
+        "provenance": "historical authored fixture; not independently machine-certified",
+        "human_reviewed": false
+      }
+    }
+  ]
+}

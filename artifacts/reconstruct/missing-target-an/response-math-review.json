@@ -1,0 +1,23 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "rows": [
+    {
+      "response_key": "54:missing_target:0",
+      "source_index": 54,
+      "response_output_hash": "fa878388457611ec99c016d7a75bec2fdec8cddc9e04f8770f07a4976aed1f44",
+      "evidence_hash": "84b4a3a6334c6ac16c0acf1f46d23e421766eeb1a6c53e9e4c89728c0ed6b60f",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Proposed magnitude lies in[0.9,1.1] by reverse/ordinary triangle inequalities, so cannot equal1/99. With z10, omega1 gives0.9 while omega-1 gives1.1: quantity not fixed. Original target is maximumtan^2theta."
+    },
+    {
+      "response_key": "67:missing_target:0",
+      "source_index": 67,
+      "response_output_hash": "21f6924c3a99ca012deaafe6a673c8db7014588967c349112afb73ea48b095f9",
+      "evidence_hash": "da4c54dea15f2850cf6a55a2abf90ac73bf7a0752a09d1543ee3afaeb6ea4434",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "reason": "Candidate asks for vectorAinv1=e1, not scalar entry sum1. Forn2, e1=(1,0) is not scalar1."
+    }
+  ]
+}

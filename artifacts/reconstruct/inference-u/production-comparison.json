@@ -1,0 +1,417 @@
+{
+  "summaries": {
+    "Qwen/Qwen3-4B": {
+      "saved_responses": 17,
+      "planned_student_draws": 18,
+      "new_scored": 17,
+      "old_saved_mean": 30.88235294117647,
+      "new_scored_mean": 16.176470588235293,
+      "planned_mean_bounds": [
+        15.277777777777779,
+        20.833333333333332
+      ],
+      "changed_responses": 6,
+      "zero_scores": 6
+    },
+    "deepseek-ai/DeepSeek-V4.1-Flash": {
+      "saved_responses": 8,
+      "planned_student_draws": 9,
+      "new_scored": 7,
+      "old_saved_mean": 87.5,
+      "new_scored_mean": 78.57142857142857,
+      "planned_mean_bounds": [
+        61.111111111111114,
+        83.33333333333333
+      ],
+      "changed_responses": 2,
+      "zero_scores": 1
+    }
+  },
+  "rows": [
+    {
+      "source": 8,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The condition a+b+c=0 and the target of simplifying the two-term expression are inferred from the observations.",
+        "reason": "The observations only state a factorization and identify the second denominator; the student supplies the missing sum condition and simplification target."
+      },
+      "reason": "The reconstruction is substantive and the question is well-posed, but the claimed final answer 1 is false. For example, with a=1,b=2,c=-3, the expression equals -1/4+1/5=-1/20, not 1.",
+      "response_key": "8:b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 27,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The student supplies specific radicands 18, 72, 98, 32, and 128, which are not present in the observations.",
+        "reason": "Choosing specific integers is substantive missing content, but the resulting expression simplifies to 28 sqrt(2), not 60; the final answer is asserted despite contradicting the computation."
+      },
+      "reason": "The proposed question is well-posed, but its correct simplified form is 28 sqrt(2), not the given final answer 60. The justification contains a direct mathematical contradiction by computing 28 sqrt(2) and then declaring 60 correct.",
+      "response_key": "27:71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 33,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 3,
+      "new_score": 0,
+      "status": "scored",
+      "inference": {
+        "status": "copy_only",
+        "essential_content": "None; the question merely turns the supplied observation about pointwise strict inequality implying strict maximum inequality into a yes/no question.",
+        "reason": "The continuity domain and the strict maximum conclusion are already present in the observations, so no essential mathematical premise, parameter, target, or relation is reconstructed."
+      },
+      "reason": "The reconstructed question is a copy-only restatement of the supplied observation, so it earns score 0 despite having a correct answer.",
+      "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 77,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The student supplies specific curves y=a x^2 and y=sqrt(3)x and a maximum-area target, which are not fully stated in the observations.",
+        "reason": "This is not a mere restatement, but the inferred curves conflict with observation 4 and lead to an ill-posed or incorrect optimization."
+      },
+      "reason": "The proposed question is not well-posed: if a is fixed, there is no maximum over a; if a varies, the area for the proposed curves is sqrt(3)/(2a^2), which is unbounded as a→0. The student's derivation also contradicts the given horizontal-distance observation and does not correctly yield 1/2.",
+      "response_key": "77:9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 86,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 1,
+      "new_score": 0,
+      "status": "scored",
+      "inference": {
+        "status": "copy_only",
+        "essential_content": "No essential mathematical content is supplied beyond the observations; the actual integrand or limiting value is not reconstructed.",
+        "reason": "The question merely turns the vague observations into a question about the same unspecified integral and does not infer a concrete function, parameter relation, or verifiable target."
+      },
+      "reason": "The reconstruction is copy-only and ill-posed: f is unspecified, so the limit is not determined, and the claimed answer 'a' is unsupported.",
+      "response_key": "86:a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 112,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 1,
+      "new_score": 0,
+      "status": "scored",
+      "inference": {
+        "status": "copy_only",
+        "essential_content": "No essential mathematical content is supplied by reconstruction; the range and congruence condition are already given in the observations, and the question merely turns them into an imperative.",
+        "reason": "The proposed question restates the two observations and asks for an n satisfying them. It does not infer a missing premise, parameter, uniqueness condition, or target such as 'largest' or 'smallest'."
+      },
+      "reason": "The question is ill-posed because many integers in the given range satisfy n ≡ 1 mod 23, so -1011 is only one valid example, not the unique answer. The reconstruction is also copy-only: it simply converts the supplied observations into a question without adding essential mathematical content.",
+      "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 136,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction chooses the target 'maximum number of sets', but it fails to infer the essential finite bound from observation 3, namely that each element of a fixed set is contained in at most 44 other sets.",
+        "reason": "Choosing a target is substantive, but the omitted bound makes the reconstructed question ill-posed and the answer 87429 unsupported."
+      },
+      "reason": "The reconstructed question omits the key bound needed to make the maximum finite. As stated, pairwise intersection exactly one with no universal element does not bound the number of sets; projective planes of arbitrary order give arbitrarily large examples. Thus the proposed answer 87429 is not correct for the stated question.",
+      "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 143,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 0,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "uncertain",
+        "essential_content": "The reconstruction needed to supply the actual constraints on X and Y and the counting target; it supplies only a vague count target and leaves the conditions undefined.",
+        "reason": "The question references 'given conditions' but does not state them, so the observations are not integrated into a well-defined problem."
+      },
+      "reason": "The proposed question is ill-posed: the 'given conditions' are undefined, and the observations about X being 21 or 7 and Y not being 1 are not incorporated. The answer 13 cannot be independently verified from the stated question.",
+      "response_key": "143:721a7c2e305ecacdb9b24c57e68a0a2df6d0c4b61c0ff28a98187b2f764b785c:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:9adc841316089d386acaa340ed9567469327b20dd5a0151ff644782af036bfe2"
+    },
+    {
+      "source": 8,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction adds the essential condition a+b+c=0 and the target of simplifying the two-term expression; these are not present in the observations alone.",
+        "reason": "The observations only identify denominators/factorization, while the proposed question supplies the key constraint and asks for a simplification."
+      },
+      "reason": "The question is well-posed and the reconstruction is substantive, but the student's final answer 1 is false for the proposed expression. The algebra also contains an incorrect factorization of 2b^2+ca, and the derived expression does not simplify to 1.",
+      "response_key": "8:b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 27,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The student supplies a specific radical expression and exponent, namely (sqrt(2)+sqrt(3)+sqrt(5)+sqrt(7))^3, which is not present in the observations.",
+        "reason": "This is a genuine attempted reconstruction, but it does not produce the required final answer 60."
+      },
+      "reason": "The proposed question is well-posed, but its correct answer is not 60. For (sqrt(2)+sqrt(3)+sqrt(5)+sqrt(7))^3, the distinct squarefree parts correspond to parity vectors with either 1 or 3 odd exponents, giving 4+4=8 distinct terms. The student's justification is also internally inconsistent: it first counts 16 terms, then asserts 60 without a valid derivation.",
+      "response_key": "27:71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 33,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 3,
+      "new_score": 0,
+      "status": "scored",
+      "inference": {
+        "status": "copy_only",
+        "essential_content": "No essential mathematical content is supplied by reconstruction; the question merely turns the supplied observation into a yes/no question.",
+        "reason": "The observation already states that if one continuous function is strictly larger at every point, its maximum is strictly larger. The student's question is a direct specialization/restatement of that assertion."
+      },
+      "reason": "The proposed question is well-posed and the answer is correct, but it is a copy-only restatement of the given observation rather than a substantive reconstruction of missing mathematical content.",
+      "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 77,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction supplies specific curves y=a x^2 and y=sqrt(3)x and the target maximum area between their intersection points, but these curves are incompatible with the stated distance clue.",
+        "reason": "A genuine missing-content reconstruction was attempted, but the chosen curves do not satisfy the observations and the resulting maximization is ill-posed/unbounded."
+      },
+      "reason": "The proposed question is ill-posed and inconsistent with the horizontal-distance observation. For y=a x^2 and y=sqrt(3)x, the area is sqrt(3)/(2a^2), which is unbounded as a approaches 0, so the claimed maximum 1/2 is not correct.",
+      "response_key": "77:9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 86,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction attempts to infer a scaled integral with parameter a and a limit as n→∞, but it replaces the exponent-threshold structure with f(x/a^n), which does not match the essential missing content.",
+        "reason": "It is not a mere restatement, but the inferred integrand and limiting behavior are incompatible with the observations and do not yield the claimed answer a."
+      },
+      "reason": "The question is ill-posed for an arbitrary bounded f, the claimed answer a is not justified, and the key observation about the exponent n creating a threshold at x=a is violated. The substitution argument also incorrectly treats boundedness as implying finiteness over [0,∞).",
+      "response_key": "86:a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 112,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction supplies the target: finding the smallest integer n satisfying the two given constraints.",
+        "reason": "The observations provide the range and congruence condition but not the extremal target; choosing that target is a mathematical reconstruction, though the resulting answer is wrong."
+      },
+      "reason": "The question is well-posed and uses both observations, but the proposed answer -1011 is the largest such integer, not the smallest. The smallest integer in the range satisfying n ≡ 1 (mod 23) is -9981, so the answer is incorrect.",
+      "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 136,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 0,
+      "status": "scored",
+      "inference": {
+        "status": "copy_only",
+        "essential_content": "The missing essential premise is a bound on set size (e.g., every set has 45 elements) or an equivalent condition that forces the 44 bound and makes the maximum finite.",
+        "reason": "The question merely restates the pairwise-intersection and no-common-element conditions from the observations and asks for a maximum; it does not infer the additional premise needed for the answer 87429."
+      },
+      "reason": "The reconstructed question is ill-posed as stated: without a set-size bound, the maximum number of sets is unbounded (e.g., projective planes of arbitrarily large order). The answer 87429 is not correct for the stated question, and the reconstruction is a copy-only restatement of the given conditions.",
+      "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 141,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 1,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction supplies the target exponent 17, which is not explicitly present in the observations; the polynomial form itself is largely restated from the observations.",
+        "reason": "Choosing a coefficient target is substantive missing content, but the chosen target is inconsistent with the given final answer 204."
+      },
+      "reason": "The question is well-posed, but its answer is wrong. For (x^3+x^4+...+x^10)^4, the coefficient of x^17 is the number of nonnegative solutions y1+...+y4=5, namely C(8,3)=56, not 204. The value 204 would correspond to a different coefficient, such as x^21.",
+      "response_key": "141:73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 143,
+      "model": "Qwen/Qwen3-4B",
+      "seed": 1,
+      "old_score": 1,
+      "new_score": 0,
+      "status": "scored",
+      "inference": {
+        "status": "copy_only",
+        "essential_content": "No essential mathematical content is supplied: the conditions defining valid quadruples and the binomial-coefficient constraints are missing.",
+        "reason": "The proposed question merely asks for a count of valid quadruples satisfying unspecified 'given conditions' and does not reconstruct the missing premises or relations."
+      },
+      "reason": "The reconstruction is not a usable well-posed question. It references unspecified conditions and does not supply the mathematical content needed to determine the count, so the answer 13 is unsupported.",
+      "response_key": "143:721a7c2e305ecacdb9b24c57e68a0a2df6d0c4b61c0ff28a98187b2f764b785c:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:Qwen/Qwen3-4B:70f87d44653961ec34ce79c3470208eff31963f156db395cc982bd8fa0acf8f3"
+    },
+    {
+      "source": 33,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 4,
+      "new_score": 0,
+      "status": "scored",
+      "inference": {
+        "status": "copy_only",
+        "essential_content": "No essential mathematical premise, parameter, target, or relation is inferred beyond restating the second observation as a yes/no question.",
+        "reason": "The question is essentially the observation 'If one function is strictly larger at every point, then its maximum is strictly larger' turned into a question, so it is a copy-only shortcut."
+      },
+      "reason": "The student correctly proves the assertion, but the reconstructed question merely restates a supplied observation rather than constructing missing mathematical content.",
+      "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    },
+    {
+      "source": 27,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 4,
+      "new_score": 4,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction supplies the summation range n=2..100 and the target count of distinct positive radical terms c sqrt(m) with m>1 squarefree, which are not present in the observations.",
+        "reason": "The observations are general radical-combination facts; the student constructs a concrete counting question whose answer is 60 and verifies the positivity and range conditions."
+      },
+      "reason": "The proposed question is well-posed, the answer 60 is correct, and the observations are substantively used. The count of squarefree integers ≤100 excluding 1 is correctly applied, and the positivity argument is valid.",
+      "response_key": "27:71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    },
+    {
+      "source": 86,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 3,
+      "new_score": 3,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The exact integrand family and the limit target are supplied by the reconstruction; the observations only describe a generic family of integrals with a threshold at x=a.",
+        "reason": "The observations do not specify the integrand formula, so choosing 1/(1+(x/a)^n) and asking for the n→∞ limit adds essential mathematical content rather than merely restating a supplied assertion."
+      },
+      "reason": "The reconstructed question is well-posed and its answer a is correct. The observations are substantively connected, but the justification omits a proof of the remaining standard limit ∫0∞ 1/(1+t^n) dt→1, so verification is slightly incomplete.",
+      "response_key": "86:a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    },
+    {
+      "source": 8,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 4,
+      "new_score": 3,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction supplies the full symmetric sum expression, the condition a+b+c=0, and the target value 1; the observations only identify a denominator factorization and the second denominator.",
+        "reason": "The observations do not themselves state the full expression or target, so constructing the identity problem is substantive rather than a copy-only restatement."
+      },
+      "reason": "The question is well-posed and the answer 1 is correct. The reconstruction is substantive and the clues are connected, but the final Lagrange interpolation identity is asserted without proof, leaving a remaining verification step omitted.",
+      "response_key": "8:b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    },
+    {
+      "source": 112,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 4,
+      "new_score": 4,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The observations give the interval and congruence condition but do not specify the target. The reconstruction supplies the essential target of finding the greatest integer satisfying both conditions.",
+        "reason": "Choosing the extremal target 'greatest integer' is a genuine mathematical target absent from the observations, not merely restating a supplied assertion."
+      },
+      "reason": "The reconstructed question is well-posed, the answer -1011 is correct, both observations are explicitly and substantively used, and the verification fully derives and checks the greatest valid integer.",
+      "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    },
+    {
+      "source": 77,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 4,
+      "new_score": 4,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The observations do not specify the actual cubic curves or the parameter domain; the student reconstructs a valid family of curves and domain satisfying the stated factorization, intersection, area, and root-distance properties.",
+        "reason": "The specific curves and parameter range are essential missing mathematical content supplied by the reconstruction, not merely a restatement."
+      },
+      "reason": "The reconstructed question is well-posed, the maximum area is independently verified as 1/2, all observations are substantively grounded, and the solution is sufficiently justified.",
+      "response_key": "77:9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    },
+    {
+      "source": 141,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 4,
+      "new_score": 4,
+      "status": "scored",
+      "inference": {
+        "status": "substantive",
+        "essential_content": "The reconstruction supplies the polynomial expression and the target coefficient x^21, which are not explicitly present in the observations.",
+        "reason": "The observations describe the factor structure and counting interpretation, but the actual expansion and coefficient target must be inferred. The chosen target is valid and yields the given answer 204."
+      },
+      "reason": "The reconstructed question is well-posed, the coefficient is correctly computed as 204, all observations are coherently used, and the missing polynomial/target content is substantively inferred rather than merely restated.",
+      "response_key": "141:73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    },
+    {
+      "source": 136,
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "seed": null,
+      "old_score": 1,
+      "new_score": null,
+      "status": "missing",
+      "inference": null,
+      "reason": null,
+      "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f"
+    }
+  ],
+  "failures": 3,
+  "recorded_cost_usd": 0.0352329656,
+  "interpretation": "Same saved outputs under different rubric versions; this measures an evaluator change, not improved student performance.",
+  "aggregation": "Resolved response means; two Qwen draws per source except one missing. Planned bounds include failed student draws and unresolved judgments. Not a confirmation estimate.",
+  "independent_review_sensitivity": {
+    "review": "artifacts/reconstruct/inference-u/production-score-error-136.json",
+    "raw_judgments_preserved": true,
+    "Qwen_mean_with_one_reference_correction": 17.647058823529413,
+    "Qwen_planned_bounds_with_one_reference_correction": [
+      16.666666666666668,
+      22.22222222222222
+    ],
+    "note": "A demonstrated scoring error: a new but mathematically invalid maximization target is substantive, not copy-only. Other raw judgments remain unmodified; not a fully independently relabeled test set."
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "scope": "Source-blind feasibility on the same nine p1 inputs; different model/reasoning/compute, not a Qwen release result",
+  "planned_families": 9,
+  "responses": 8,
+  "grounding_judgments": 8,
+  "semantic_judgments": 8,
+  "raw_grounded_semantic_successes": 6,
+  "clear_checked_feasibility_witnesses": 5,
+  "qualified_equivalence_source": 77,
+  "qwen_primary_confirmed_grounded_semantic_successes": 0,
+  "qwen_primary_eligible_families": 9,
+  "review_provenance": "Assistant mathematical review with symbolic/integer checks, not independent human calibration",
+  "cases": [
+    {
+      "source_index": 33,
+      "response_key": "33:cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 4,
+      "semantic_score": 1,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": false,
+      "clear_checked_feasibility_witness": false,
+      "review_status": "different_question",
+      "first_attempt_response": true
+    },
+    {
+      "source_index": 27,
+      "response_key": "27:71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 4,
+      "semantic_score": 2,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": true,
+      "clear_checked_feasibility_witness": true,
+      "review_status": "verified_equivalent_formulation",
+      "first_attempt_response": true
+    },
+    {
+      "source_index": 86,
+      "response_key": "86:a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 3,
+      "semantic_score": 2,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": true,
+      "clear_checked_feasibility_witness": true,
+      "review_status": "verified_original_with_minor_proof_omission",
+      "first_attempt_response": true
+    },
+    {
+      "source_index": 8,
+      "response_key": "8:b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 4,
+      "semantic_score": 2,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": true,
+      "clear_checked_feasibility_witness": true,
+      "review_status": "verified_original",
+      "first_attempt_response": true
+    },
+    {
+      "source_index": 112,
+      "response_key": "112:29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 4,
+      "semantic_score": 2,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": true,
+      "clear_checked_feasibility_witness": true,
+      "review_status": "verified_original",
+      "first_attempt_response": true
+    },
+    {
+      "source_index": 77,
+      "response_key": "77:9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 4,
+      "semantic_score": 2,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": true,
+      "clear_checked_feasibility_witness": false,
+      "review_status": "equivalence_requires_domain_review",
+      "first_attempt_response": true
+    },
+    {
+      "source_index": 141,
+      "response_key": "141:73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 4,
+      "semantic_score": 2,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": true,
+      "clear_checked_feasibility_witness": true,
+      "review_status": "verified_original",
+      "first_attempt_response": true
+    },
+    {
+      "source_index": 136,
+      "response_key": "136:bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8:1dd75099aa4a93ec8ae9e5e360776ffd80e696c76232561d592fe07f2a9b67a0:deepseek-ai/DeepSeek-V4.1-Flash:6d0c917615859cee9266d9093d7a29fb8ceb6117ad35e2850261dee9df5b525f",
+      "score": 1,
+      "semantic_score": 0,
+      "bindings_verified": true,
+      "raw_grounded_semantic_success": false,
+      "clear_checked_feasibility_witness": false,
+      "review_status": "wrong_answer_and_different_question",
+      "first_attempt_response": false
+    }
+  ],
+  "unresolved_generation_source": 143,
+  "generation_attempts": 11
+}

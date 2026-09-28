@@ -1,0 +1,45 @@
+{
+  "source46": {
+    "method": "Enumerate all positive factor pairs kh=6, derived from retained total8 and one height2 column.",
+    "counts": [
+      {
+        "k": 1,
+        "h": 6,
+        "orders": 28
+      },
+      {
+        "k": 2,
+        "h": 3,
+        "orders": 560
+      },
+      {
+        "k": 3,
+        "h": 2,
+        "orders": 2520
+      },
+      {
+        "k": 6,
+        "h": 1,
+        "orders": 20160
+      }
+    ]
+  },
+  "source0": {
+    "moments": {
+      "sum": "2",
+      "square_sum": "8/3",
+      "product": "2/3",
+      "difference_squared": "4/3"
+    },
+    "inverse": "k*(4/3)=4 implies k=3"
+  },
+  "source62_counterexample": {
+    "center": 0,
+    "annulus": "pi<|z|<infinity",
+    "proof": "f(z)=-1/(z-pi)+G(z) for an entire G. Expanding the pole in negative powers of z converges for |z|>pi, while the entire part converges everywhere. Thus a Laurent expansion about0 also has infinite outer radius. Clue c4 incorrectly assumes the Taylor/interior region."
+  },
+  "source118": {
+    "inference": "For nonnegative triangular index m, the only triangular prime is3 at m2. Negative m gives the same values under m -> -m-1, including m=-3 for3. With witness k5,24/d=3 forces d8.",
+    "teacher_certificate_defect": "Its assertion that primality forces m=2 omits m=-3 under its public integer domain. The denominator conclusion remains independently verifiable; do not claim a flawless certificate."
+  }
+}

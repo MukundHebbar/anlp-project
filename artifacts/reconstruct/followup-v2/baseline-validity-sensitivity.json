@@ -1,0 +1,31 @@
+{
+  "review_status": "teacher public-disclosure audit plus assistant review of rejected source; not independently validated accuracy",
+  "accepted_sources": [
+    11,
+    22,
+    30,
+    40,
+    49,
+    50,
+    73,
+    95,
+    105,
+    134,
+    144
+  ],
+  "rejected_sources": [
+    131
+  ],
+  "coverage": 0.9166666666666666,
+  "all_source_baseline": {
+    "mean": 31.25,
+    "grounded_successes": 2,
+    "responses": 24
+  },
+  "accepted_source_baseline": {
+    "mean": 26.136363636363637,
+    "grounded_successes": 0,
+    "responses": 22
+  },
+  "interpretation": "Post-audit validity sensitivity, not a new independently chosen benchmark. Do not overwrite the twelve-source historical outcomes."
+}

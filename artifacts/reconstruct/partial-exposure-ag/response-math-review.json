@@ -1,0 +1,45 @@
+{
+  "reviewer": "Assistant analytic review; not human gold",
+  "rows": [
+    {
+      "response_key": "0:prefix3:0",
+      "response_output_hash": "5ebc3b79405604aa8aecaa0c6e51124cec54ad8a4ca4be8aa861d5f8ae45fbb7",
+      "evidence_hash": "e2770f364de10e145dd78cadb4a381e9dbb364080404ece17b5b12d0285c8dc0",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Invents a universal integral equal to4 and changes the target to L. Taking f=0 refutes the integral premise immediately; original target and quadrature identity are absent."
+    },
+    {
+      "response_key": "96:prefix3:0",
+      "response_output_hash": "dacc91b665bc459f3ae83a83688cfa0ecb805dcf32edc81e64641507920dd305",
+      "evidence_hash": "be83e2da1c511539978ddd02ea36b1c39264f057be0461885af9f359f02884e1",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Leaves a=g derivative at0 unspecified, whereas the original requires a=1. Correct integration yields F(x)=a(x^8-x^12)/12+o(x^8), hence limit a/12. The claimed antiderivatives/exponents are wrong and no inference of a=1 is supplied."
+    },
+    {
+      "response_key": "129:prefix3:0",
+      "response_output_hash": "3e4f1a927f18f1bcae442cb231ed28aac2dc3f5578615f2d476370970275d47f",
+      "evidence_hash": "ce6aeb9a1b88b7e4c09b63d54388370616f3a260828b65a5d4783f222a274bee",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Changes original length12 and remainder modulo2008 to a six-digit count. The supplied recurrence and independent exhaustive enumeration give136 words of length6, not1392. Leading-zero exclusion for numbers gives126, also not1392."
+    },
+    {
+      "response_key": "137:prefix3:0",
+      "response_output_hash": "aa1e089d9b2329a9b133beff1d83abd483edab11ab0bf5849e1426075e9ccba9",
+      "evidence_hash": "c5753b9c0e601313ef55fdbd561c13821177ffdc62a9b2f2cc31ca147b6e02ae",
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "grounded_semantic_success": false,
+      "reason": "Changes the original vertex-count target with degrees3,4,5 to a degree target at invented n=9. Its own handshake calculation concludes d=7, whereas the supplied answer is6. This is neither an equivalent question nor an answer-compatible reconstruction. Further, the proposed graph cannot exist: the handshake lemma forces three degree7 vertices among nine. Each such vertex misses at most one of the six others; at least three of those six are adjacent to all three high-degree vertices, giving a forbidden K3,3 subgraph."
+    }
+  ],
+  "unparsed_scheduled_draws": [
+    "13:prefix3:0"
+  ],
+  "unparsed_count_as_success": false
+}

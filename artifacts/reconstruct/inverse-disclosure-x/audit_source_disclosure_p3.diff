@@ -1,0 +1,11 @@
+--- audit_source_disclosure_p2
++++ audit_source_disclosure_p3
+@@ -8,6 +8,8 @@
+ 
+ Example: private question asks the longer side of a rectangle with perimeter20 and area24. Public answer6 and clues x+y=10, area=x(10-x) leave the area24 and target absent: potential ACCEPT. If the public clues also specify area24 and selecting the larger root, REJECT: the full task is available by paraphrase. An invented replacement task such as "solve x²=36" is not source recovery.
+ 
++Boundary clarification: direct exposure and inverse-inference difficulty are separate. A genuinely absent essential premise may have to be inferred by using the supplied final answer as a constraint. This can be a legitimate inverse task even when the calculation is elementary or uniquely identifies that premise. Do not reject solely because answer-conditioned inversion is easy or unique. In contrast, a value already given as an arithmetic expression with all operands public is exposed; simplifying it is merely routine completion. Withholding an essential value is not enough if other clues state it equivalently or display a complete/nearly complete forward derivation. Continue rejecting complete premise-target bundles, copied questions and complete solutions. Identify the actual missing premise and the inverse inference; do not grant acceptance merely because the word "unknown" appears. This clarifies "routine arithmetic" above: forward simplification of disclosed values does not count as withholding, while using the answer to infer a genuinely missing essential premise can count.
++
+ Return JSON only:
+ {"status":"ACCEPT|REJECT|NEEDS_REVIEW","scope":"source_disclosure","direct_question_copy":false,"premise_target_bundle_exposed":false,"complete_solution_exposed":false,"public_quotes":["Exact nonempty substrings from public answer/clues only"],"missing_essential_element":"Specific source element genuinely withheld, or none","inference_required":"Inference needed beyond copying/paraphrase/routine calculation","reason":"..."}
+ 

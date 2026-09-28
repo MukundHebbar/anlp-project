@@ -1,0 +1,115 @@
+{
+  "objective": "At least2–3 verified semantic recoveries using a controlled richer-information search",
+  "achieved": true,
+  "planned_families": 6,
+  "disclosure_and_copy_eligible": 3,
+  "verified_source_indices": [
+    54,
+    113
+  ],
+  "verified_recoveries": 2,
+  "fully_automatic_recoveries": 1,
+  "all_scheduled_rate": 0.3333333333333333,
+  "conditional_eligible_rate": 0.6666666666666666,
+  "mean_raw_quality_100": 66.66666666666667,
+  "rating_counts_1_to_5": [
+    2,
+    0,
+    0,
+    0,
+    4
+  ],
+  "rows": [
+    {
+      "source_index": 5,
+      "source_disclosure": "REJECT",
+      "copy_status": "no_direct_reconstruction",
+      "eligible": false,
+      "semantic": true,
+      "quality_score_100": 100,
+      "raw_math_status": "valid",
+      "adjudicated_math_pass": true,
+      "fully_automatic_pass": false,
+      "verified_recovery": false,
+      "evidence_hash": "9ff44789f026b0640f0beefb6e4a544c421cdffa049417d3873833c2fa78ae3e",
+      "response_hash": "be658e8f2b984e687d2be61714d9efe638378aacd8d469d300b2132f2cfb275d"
+    },
+    {
+      "source_index": 10,
+      "source_disclosure": "ACCEPT",
+      "copy_status": "no_direct_reconstruction",
+      "eligible": true,
+      "semantic": false,
+      "quality_score_100": 0,
+      "raw_math_status": "validation_failure",
+      "adjudicated_math_pass": false,
+      "fully_automatic_pass": false,
+      "verified_recovery": false,
+      "evidence_hash": "e7c74ef730cdd48348b82fe6b23c6e8c4971eff1472326da50185827c13f2d0b",
+      "response_hash": "754a1cb972d2db271d1ffab518c4ac5696dd1ed20926604d48b41eb590b701bc"
+    },
+    {
+      "source_index": 16,
+      "source_disclosure": "REJECT",
+      "copy_status": "no_direct_reconstruction",
+      "eligible": false,
+      "semantic": false,
+      "quality_score_100": 0,
+      "raw_math_status": "invalid",
+      "adjudicated_math_pass": false,
+      "fully_automatic_pass": false,
+      "verified_recovery": false,
+      "evidence_hash": "a821a4f7fd7ec5ef3f0fe7487d6ddd7dbda15cd7ecde4ca6dd171fca8251a7ec",
+      "response_hash": "ad65db3924c88060c621ffcccb0fc78b5a51d19eeccb05028cb5f5309f96c8b8"
+    },
+    {
+      "source_index": 54,
+      "source_disclosure": "ACCEPT",
+      "copy_status": "no_direct_reconstruction",
+      "eligible": true,
+      "semantic": true,
+      "quality_score_100": 100,
+      "raw_math_status": "valid",
+      "adjudicated_math_pass": true,
+      "fully_automatic_pass": true,
+      "verified_recovery": true,
+      "evidence_hash": "ef12a663b292c0c094a84cc92f29d948001f90ad0187aa5edc44a8f355542865",
+      "response_hash": "509192655e67ee73077b1db23fdb59b9fd1bf3aa7ee0ca27ed136ae7d53e4de7"
+    },
+    {
+      "source_index": 67,
+      "source_disclosure": "ACCEPT",
+      "copy_status": "direct_candidate",
+      "eligible": false,
+      "semantic": true,
+      "quality_score_100": 100,
+      "raw_math_status": "valid",
+      "adjudicated_math_pass": true,
+      "fully_automatic_pass": false,
+      "verified_recovery": false,
+      "evidence_hash": "26f1b8034c1dc48d3747f2ae860a2c157571353f57257f25d4df9f3c8103dd26",
+      "response_hash": "c7bd46e2a0f6aeb10ff2e3fd172c42552e85c14ace5a9148251d2fe9c1746d17"
+    },
+    {
+      "source_index": 113,
+      "source_disclosure": "ACCEPT",
+      "copy_status": "no_direct_reconstruction",
+      "eligible": true,
+      "semantic": true,
+      "quality_score_100": 100,
+      "raw_math_status": "invalid",
+      "adjudicated_math_pass": true,
+      "fully_automatic_pass": false,
+      "verified_recovery": true,
+      "evidence_hash": "b6a4bdb15b22156e2e4f26b4f6bac7a4a0408e0ac04bfeb36f64115417255d22",
+      "response_hash": "d4acd8a5ba077bf2e211eed21683bbb32896d67d2ce93a612ddf8c8950f63d42"
+    }
+  ],
+  "adjudication": "113 raw mathematical rejection preserved; its sole disputed inverse implication is proved analytically and confirmed by a once-only four-implication independent check. No student regeneration or output edit.",
+  "limitations": [
+    "Six adaptively reused development families, not independent confirmation.",
+    "2/6 counts end-to-end scheduled successes; among three eligible inputs the rate is2/3. Do not confuse these denominators.",
+    "The raw fully automatic gate passes only54;113 passes after disclosed adjudication.",
+    "Middle-heavy ratings, near-perfect teacher reliability,5/25 confirmation and training transfer are not established."
+  ]
+}

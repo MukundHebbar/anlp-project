@@ -1,0 +1,50 @@
+{
+  "54:onegap:0": {
+    "source_index": 54,
+    "arm": "onegap",
+    "bank_key": "54:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{99}",
+      "clues": [
+        "The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.",
+        "The complex number omega is constrained to have modulus 1.",
+        "The complex number z has an unreported positive modulus R.",
+        "For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.",
+        "If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2."
+      ],
+      "rendered_clues": "- The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.\n- The complex number omega is constrained to have modulus 1.\n- The complex number z has an unreported positive modulus R.\n- For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.\n- If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "ed20477e7afe2c774910d10a8588bdf7f547b57139302b05ab1fd608ba22e7fc",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: \\dfrac{1}{99}\nOBSERVATIONS:\n- The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.\n- The complex number omega is constrained to have modulus 1.\n- The complex number z has an unreported positive modulus R.\n- For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.\n- If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2.",
+    "rendered_input_hash": "96bb6f7d57ca223e3ded9922c7b09b5bb430e04ab6687c18dbe339cc39e41e97"
+  },
+  "67:onegap:0": {
+    "source_index": 67,
+    "arm": "onegap",
+    "bank_key": "67:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.",
+        "The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.",
+        "If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.",
+        "There is an unreported scalar c such that T(v1)=c(v1+...+vn).",
+        "The first column of A is therefore c times the all-ones vector."
+      ],
+      "rendered_clues": "- The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.\n- The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.\n- If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.\n- There is an unreported scalar c such that T(v1)=c(v1+...+vn).\n- The first column of A is therefore c times the all-ones vector.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "d48e2d7a5074e2086cb7b158cf70c58c8c0816a479be9c9ef4814aa9300c0338",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Verify your proposed question mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"The supplied longer-side answer6 and side sum10 imply the other side4, so the missing area is24. For the reconstructed question, x(10-x)=24 has roots4 and6; the longer side is6. All three observations describe this setup.\",\"assumptions\":[\"I inferred the missing area constraint24 using the answer, rather than leaving the rectangle's area unspecified.\"]}\n\nReturn JSON only:\n{\"question\":\"...\",\"justification\":\"...\",\"assumptions\":[\"...\"]}\n\nFINAL ANSWER: 1\nOBSERVATIONS:\n- The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.\n- The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.\n- If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.\n- There is an unreported scalar c such that T(v1)=c(v1+...+vn).\n- The first column of A is therefore c times the all-ones vector.",
+    "rendered_input_hash": "7b083dd02f17d2b4e0487ac63d4ecdcf3ace21299c1888f8deeca8cf963d3e46"
+  }
+}

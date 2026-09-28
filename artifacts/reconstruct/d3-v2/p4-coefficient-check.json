@@ -1,0 +1,43 @@
+{
+  "provenance": "Exact integer polynomial convolution; assistant interpretation",
+  "polynomial": "(1+x+...+x^7)^4",
+  "coefficient_9": 204,
+  "coefficient_19": 204,
+  "original_exponents_after_shift": [
+    21,
+    31
+  ],
+  "interpretation": "The supplied answer204 does not uniquely identify the requested exponent. Complementing all four exponents gives a bijection, so this is not by itself evidence against semantic equivalence under permitted mathematical correspondences.",
+  "related_bank_review": "p4-initial-content-review.json",
+  "coefficient_vector": [
+    1,
+    4,
+    10,
+    20,
+    35,
+    56,
+    84,
+    120,
+    161,
+    204,
+    246,
+    284,
+    315,
+    336,
+    344,
+    336,
+    315,
+    284,
+    246,
+    204,
+    161,
+    120,
+    84,
+    56,
+    35,
+    20,
+    10,
+    4,
+    1
+  ]
+}

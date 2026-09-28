@@ -1,0 +1,162 @@
+{
+  "8": {
+    "bank_key": "8:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "For the variable a, the denominator 2a^2+bc factors as (a-b)(a-c).",
+        "The second denominator in the expression is 2b^2+ca."
+      ],
+      "rendered_clues": "- For the variable a, the denominator 2a^2+bc factors as (a-b)(a-c).\n- The second denominator in the expression is 2b^2+ca.",
+      "style": "sentence",
+      "clue_count": 2,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "b0a3f2588d22cd58970a1404be35bcb43c34699556ae93db7fd60ca7a8e80441"
+  },
+  "27": {
+    "bank_key": "27:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "60",
+      "clues": [
+        "Writing an integer n as s^2 m with m squarefree turns sqrt(n) into s sqrt(m).",
+        "Terms with the same squarefree part m combine by adding their integer multipliers.",
+        "If a squarefree m is itself one of the summed integers, then sqrt(m) appears with a positive coefficient because the direct term sqrt(m) is present."
+      ],
+      "rendered_clues": "- Writing an integer n as s^2 m with m squarefree turns sqrt(n) into s sqrt(m).\n- Terms with the same squarefree part m combine by adding their integer multipliers.\n- If a squarefree m is itself one of the summed integers, then sqrt(m) appears with a positive coefficient because the direct term sqrt(m) is present.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "71e58937a61ba1cf1896189a42ddd9ed2f3b6711dc13f58ab395c5025418dea6"
+  },
+  "33": {
+    "bank_key": "33:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "Yes",
+      "clues": [
+        "For continuous f and g on [0,1], the difference h=f-g is continuous on [0,1].",
+        "If one of the two functions is strictly larger than the other at every point of [0,1], then its maximum is strictly larger than the other's maximum."
+      ],
+      "rendered_clues": "- For continuous f and g on [0,1], the difference h=f-g is continuous on [0,1].\n- If one of the two functions is strictly larger than the other at every point of [0,1], then its maximum is strictly larger than the other's maximum.",
+      "style": "sentence",
+      "clue_count": 2,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "cf68686dafa2f3ee9e224a52859020fc2d209d8657b50f28ba0f8dd90ffe8847"
+  },
+  "77": {
+    "bank_key": "77:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{2}",
+      "clues": [
+        "For the two curves, the vertical difference at a common x factors as a times a quadratic in x.",
+        "The x-coordinates of the two intersection points are the two roots of that quadratic.",
+        "The quantity to be maximized is the area between the curves over the interval between those two intersection x-coordinates.",
+        "The horizontal distance between the two intersection x-coordinates is sqrt(4-a^2)/sqrt(3)."
+      ],
+      "rendered_clues": "- For the two curves, the vertical difference at a common x factors as a times a quadratic in x.\n- The x-coordinates of the two intersection points are the two roots of that quadratic.\n- The quantity to be maximized is the area between the curves over the interval between those two intersection x-coordinates.\n- The horizontal distance between the two intersection x-coordinates is sqrt(4-a^2)/sqrt(3).",
+      "style": "sentence",
+      "clue_count": 4,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "9bc5d7eb637ffed2ccb8d9bc4cbffa5df4b761948ea70cd844559c1f9dbd55cd"
+  },
+  "86": {
+    "bank_key": "86:98ec4961800f1d9eb80d5856ba94ef4d6fc982ff4a78a2c0f8b2296cf374e81c:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "a",
+      "clues": [
+        "The problem concerns a family of integrals over [0,∞) depending on a positive scale parameter a and an integer n that tends to infinity.",
+        "The integrand is bounded between 0 and 1 for all x≥0 and n>0.",
+        "The exponent n makes the scale point x=a a natural threshold for the integrand's behavior."
+      ],
+      "rendered_clues": "- The problem concerns a family of integrals over [0,∞) depending on a positive scale parameter a and an integer n that tends to infinity.\n- The integrand is bounded between 0 and 1 for all x≥0 and n>0.\n- The exponent n makes the scale point x=a a natural threshold for the integrand's behavior.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "a9fbff657a93eea7c6de7e284aea95c5098e92130c60b9a6226ea679d21dd26d"
+  },
+  "112": {
+    "bank_key": "112:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "-1011",
+      "clues": [
+        "The integer n under consideration lies between -9999 and -1000 inclusive.",
+        "The congruence condition on n is equivalent to writing n as 23k + 1 for some integer k."
+      ],
+      "rendered_clues": "- The integer n under consideration lies between -9999 and -1000 inclusive.\n- The congruence condition on n is equivalent to writing n as 23k + 1 for some integer k.",
+      "style": "sentence",
+      "clue_count": 2,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "29528dfb0b99d2d0234404125883159ac82e541e6f131486b919ce0480c42428"
+  },
+  "136": {
+    "bank_key": "136:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "87429",
+      "clues": [
+        "Any two distinct sets in the family have exactly one common element.",
+        "For a fixed set S, if d_x counts the other sets containing an element x of S, then the sum of d_x over x in S equals the number of sets other than S.",
+        "If no element is common to all sets, then for a fixed set S, each element of S is contained in at most 44 of the other sets."
+      ],
+      "rendered_clues": "- Any two distinct sets in the family have exactly one common element.\n- For a fixed set S, if d_x counts the other sets containing an element x of S, then the sum of d_x over x in S equals the number of sets other than S.\n- If no element is common to all sets, then for a fixed set S, each element of S is contained in at most 44 of the other sets.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "bfb7694ba3025074c4f727ce107da08668d554d27ab4e969335424a710fe17c8"
+  },
+  "141": {
+    "bank_key": "141:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "204",
+      "clues": [
+        "In each of the four identical factors, the exponent of x ranges from 3 through 10.",
+        "Factoring the smallest power out of every factor leaves a polynomial whose exponents run from 0 through 7.",
+        "The requested coefficient is a count of four bounded nonnegative exponents summing to a fixed value."
+      ],
+      "rendered_clues": "- In each of the four identical factors, the exponent of x ranges from 3 through 10.\n- Factoring the smallest power out of every factor leaves a polynomial whose exponents run from 0 through 7.\n- The requested coefficient is a count of four bounded nonnegative exponents summing to a fixed value.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "73b94636774069e0e6a4d5d1e682a9434da7ecafa73ed56cfccf62293b8c8e87"
+  },
+  "143": {
+    "bank_key": "143:0aec83b9af1f79a9940b9dddd1ea3eeafb718f5d7c7f5dd1f7779f92d2a0dfa5:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "evidence": {
+      "condition": "bank",
+      "final_answer": "13",
+      "clues": [
+        "Let X be the binomial coefficient formed from the first two variables and Y the binomial coefficient formed from the last two variables.",
+        "In every valid quadruple, the upper inner binomial coefficient X is either 21 or 7.",
+        "The lower inner binomial coefficient Y cannot equal 1 in any valid quadruple, because that would require the last two variables to be equal or to include 0."
+      ],
+      "rendered_clues": "- Let X be the binomial coefficient formed from the first two variables and Y the binomial coefficient formed from the last two variables.\n- In every valid quadruple, the upper inner binomial coefficient X is either 21 or 7.\n- The lower inner binomial coefficient Y cannot equal 1 in any valid quadruple, because that would require the last two variables to be equal or to include 0.",
+      "style": "sentence",
+      "clue_count": 3,
+      "selection_policy": "bank_order",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "721a7c2e305ecacdb9b24c57e68a0a2df6d0c4b61c0ff28a98187b2f764b785c"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "dataset": "judge_data/judge-high-confidence-public.jsonl",
+  "items": 78,
+  "qwen_model": "Qwen/Qwen3-4B",
+  "sampling": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "max_tokens": 8192,
+    "seed": 0
+  },
+  "rater_model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "rater_prompt": "data/prompts/judge/judge_eval_p1.md",
+  "rating_boundaries": [
+    18.75,
+    43.75,
+    56.25,
+    75
+  ],
+  "qwen_failures": 0,
+  "rater_failures": 0,
+  "scored": 78,
+  "mean_score": 57.37,
+  "median_score": 75.0,
+  "rating_histogram": {
+    "1": 27,
+    "2": 7,
+    "3": 0,
+    "4": 3,
+    "5": 41
+  },
+  "dimension_means": {
+    "V": 2.62,
+    "L": 2.18,
+    "E": 1.92,
+    "M": 2.46
+  },
+  "parsed_verdict_accuracy": 0.679,
+  "parsed_first_step_accuracy_on_incorrect": 0.479,
+  "unparseable_qwen_responses": 0,
+  "deepseek_verdict_agrees_with_parse": "76/78",
+  "by_key_label": {
+    "correct": {
+      "n": 30,
+      "verdict_accuracy": 0.633,
+      "mean_score": 63.54
+    },
+    "incorrect": {
+      "n": 48,
+      "verdict_accuracy": 0.708,
+      "mean_score": 53.52
+    }
+  },
+  "by_error_position": {
+    "None": {
+      "n": 30,
+      "verdict_accuracy": 0.633,
+      "mean_score": 63.54
+    },
+    "early": {
+      "n": 14,
+      "verdict_accuracy": 0.571,
+      "mean_score": 42.86
+    },
+    "late": {
+      "n": 16,
+      "verdict_accuracy": 0.875,
+      "mean_score": 59.77
+    },
+    "middle": {
+      "n": 18,
+      "verdict_accuracy": 0.667,
+      "mean_score": 56.25
+    }
+  },
+  "rater_cost_usd": 0.0348
+}

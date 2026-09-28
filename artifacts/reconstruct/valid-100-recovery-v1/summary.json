@@ -1,0 +1,89 @@
+{
+  "terminal": true,
+  "target_met": true,
+  "selected": 100,
+  "calibration": {
+    "n": 47,
+    "mean": 44.41489361702128,
+    "histogram": {
+      "1": 3,
+      "2": 12,
+      "3": 18,
+      "4": 12,
+      "5": 2
+    },
+    "semantic_matches": 1,
+    "provisional_grounded": 0,
+    "median": 50.0,
+    "sample_stddev": 16.026580892290543,
+    "sample_variance": 256.85129509713227,
+    "minimum": 0.0,
+    "maximum": 75.0,
+    "reviewed_grounded_successes": 0
+  },
+  "extension": {
+    "n": 53,
+    "mean": 44.81132075471698,
+    "histogram": {
+      "1": 6,
+      "2": 11,
+      "3": 14,
+      "4": 19,
+      "5": 3
+    },
+    "semantic_matches": 1,
+    "provisional_grounded": 0,
+    "median": 50.0,
+    "sample_stddev": 20.97158710087897,
+    "sample_variance": 439.80746552975324,
+    "minimum": 0.0,
+    "maximum": 87.5,
+    "reviewed_grounded_successes": 0
+  },
+  "combined": {
+    "n": 100,
+    "mean": 44.625,
+    "histogram": {
+      "1": 9,
+      "2": 23,
+      "3": 32,
+      "4": 31,
+      "5": 5
+    },
+    "semantic_matches": 2,
+    "provisional_grounded": 0,
+    "median": 50.0,
+    "sample_stddev": 18.718829309202825,
+    "sample_variance": 350.3945707070707,
+    "minimum": 0.0,
+    "maximum": 87.5,
+    "reviewed_grounded_successes": 0
+  },
+  "extension_sources_attempted": 162,
+  "extension_input_dispositions": {
+    "rejected": 71,
+    "accepted": 65,
+    "unresolved": 16,
+    "null": 10
+  },
+  "extension_complete": 55,
+  "overflow": 2,
+  "failed_calls": 46,
+  "recorded_cost_usd": 3.4863498368,
+  "limitations": [
+    "Automatic gate/completion validity is not answer correctness or independent certification.",
+    "47 rows calibrated the rating scale; added rows are a new source frame, not a matched confirmation of the original pool.",
+    "No rating thresholds or prompts changed for the extension."
+  ],
+  "failures_by_stage": {
+    "audit": 27,
+    "copy": 17,
+    "convert": 162,
+    "student": 13,
+    "judge_validity": 8,
+    "judge_fidelity": 1
+  },
+  "transport_history_count": 182,
+  "unique_sources_attempted_all_phases": 178,
+  "returned_usage_cost_usd": 1.0144840552
+}

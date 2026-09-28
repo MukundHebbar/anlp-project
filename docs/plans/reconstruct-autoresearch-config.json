@@ -1,0 +1,94 @@
+{
+  "status": "planned_not_validated",
+  "protocol": "docs/plans/reconstruct-autoresearch.md",
+  "current_execution_plan": "docs/plans/reconstruct-next-session.md",
+  "semantic_recovery_amendment": "docs/plans/reconstruct-semantic-recovery-gates.md",
+  "grounded_semantic_recovery": {
+    "required": true,
+    "minimum_confirmed_successes": 5,
+    "preselected_source_families": 25,
+    "primary_decoding_seed": 0,
+    "one_primary_response_per_source": true,
+    "require_grounded_success": true,
+    "require_source_recovery_score": 2,
+    "require_non_leaking_supported_input": true,
+    "count_valid_alternative_as_semantic_recovery": false,
+    "denominator_includes_conversion_and_operational_failures": true,
+    "confirmation_manifest_status": "C25_extension_must_be_frozen_before_confirmation",
+    "population_lower_bound_claim": false
+  },
+  "strict_disclosure": {
+    "known_direct_leaks_tolerated_in_release": 0,
+    "minimum_withheld_essential_elements": 1,
+    "missing_element_alone_sufficient": false,
+    "audit_exact_answer_plus_clues": true,
+    "source_aware_span_review_and_source_blind_review": true,
+    "direct_copy_challenge_required": true,
+    "unresolved_disagreement_blocks_acceptance": true,
+    "student_outcome_based_clue_selection_forbidden": true,
+    "status": "per_item_validation_and_confirmation_count_component_tested_full_release_integration_and_independent_validation_pending"
+  },
+  "user_target": {
+    "metric": "mean_normalized_rubric_score",
+    "normalization": "25 * score_0_to_4",
+    "range_inclusive": [20, 75],
+    "unit_of_analysis": "source_family",
+    "aggregate_seeds_within_source_first": true,
+    "confirmation_interval": "95% source-cluster bootstrap",
+    "grounded_success_rate_is_separate": true
+  },
+  "quality_goals": {
+    "status": "proposed_preregistered_targets_not_achieved",
+    "accepted_bank_validity_point_min": 0.98,
+    "accepted_bank_validity_lower95_min": 0.95,
+    "leakage_point_max": 0.02,
+    "conversion_coverage_min": 0.80,
+    "judge_binary_accuracy_point_min": 0.98,
+    "judge_binary_accuracy_lower95_min": 0.95,
+    "judge_resolved_fraction_min": 0.95,
+    "judge_mean_absolute_score_error_max_on_0_to_4": 0.25,
+    "independent_reference_required": true,
+    "same_teacher_rejudgment_is_not_independent_gold": true
+  },
+  "runtime_defaults": {
+    "student": "Qwen/Qwen3-4B",
+    "quantization": "official GGUF Q4_K_M",
+    "thinking": false,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "max_tokens": 8192,
+    "effective_backend_defaults_must_be_recorded": true,
+    "teacher": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "teacher_reasoning_effort": "low",
+    "teacher_max_tokens": 8192,
+    "status": "initial_controls_not_proven_optima"
+  },
+  "cycle": {
+    "smoke_sources": [4, 8],
+    "matched_development_sources": [12, 24],
+    "development_seeds": [0, 1],
+    "candidate_budget_per_comparison": "predeclare",
+    "one_primary_hypothesis_per_cycle": true,
+    "root_cause_review_after_same_component_inconclusive_cycles": 3,
+    "practical_score_difference_initial": 5,
+    "candidate_decisions": ["adopt_provisionally", "reject", "inconclusive"],
+    "no_success_based_item_replacement": true,
+    "no_poor_response_retries": true,
+    "freeze_before_confirmation_conversion": true,
+    "spent_test_set_becomes_development": true
+  },
+  "resources": {
+    "session_provider_cap_usd": 5,
+    "global_paid_call_concurrency_max": 4,
+    "imported_costs_recorded_separately": true,
+    "technical_retry_max_per_request": 1,
+    "retry_same_prompt_and_sampling": true
+  },
+  "release": {
+    "require_all_declared_gates": true,
+    "do_not_relax_thresholds_after_test_results": true,
+    "checkpoint_when_budget_or_reference_data_missing": true,
+    "best_claim_scope": "best supported among explicitly tested procedures"
+  }
+}

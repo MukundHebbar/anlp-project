@@ -1,0 +1,7 @@
+# AO: match the student demonstration to missing-target reconstruction
+
+Registered after AN audits froze eligible54/67, before any AN or AO Qwen outputs. AN changes conversion to withholding the target, but incumbent p13 demonstrates recovering a missing premise. Compare p13 against p17, which changes only its one demonstration to missing-target inference on the fixed arithmetic data2,3,7 with answer4. The new example is already in the AN converter; disclose that shared demonstration, which is not an evaluated source. No source-specific answer, number or method from54/67 enters p17.
+
+Use every AN-eligible input with exact public evidence, same original nonthinking Qwen/seed0/0.7/0.8/20/8192, one draw each. Freeze both lists before generation, run AN then AO sequentially. No output-based selection or retries. Same p3/p2 judgments and independent mathematics/analytic review. Report all16 allocated sources and2 eligible sources separately, missingness and five-level score histograms. This is a small adaptive development demonstration-package comparison; no new confirmation or claim of general superiority.
+
+Cap$.10 additional within global$5, at most2 local draws,4 primary/semantic calls and2 math checks; paid concurrency<=4 across studies. Keep independent writes sequential within each study. No prompt adoption without credible positive evidence, leak-control validation and fresh confirmation. This comparison is registered before results rather than selected after seeing one favorable response.

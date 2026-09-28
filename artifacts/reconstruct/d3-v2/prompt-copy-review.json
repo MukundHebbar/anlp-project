@@ -1,0 +1,43 @@
+{
+  "scope": "development readiness, not independent final release certification",
+  "rows": [
+    {
+      "source_index": 8,
+      "evidence_hash": "ad6c3795faf44f7fb31fe110cb1f093107ea551905e567e5b90f43be9d0cd86b",
+      "copy_record_key": "8:13ca0584ec35dfb430d3cfa3e2f3c1f3fb9730721685b9bb4aa1763206466a63:7bcff55c22846b18d02aaf46e7baef2630fe67fccb79415e026fefa900d395a1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "copy_output_hash": "be02253c12606dd5a8bb1faad3422c9b16ed749d59f48468490658704dcaff62",
+      "no_direct_source_recovery": true,
+      "reason": "No direct question. The numerator choices and cyclic-sum target are absent; constructing that sum introduces mathematical relations, not grammatical copying.",
+      "review_provenance": "assistant inspection of all clues, candidate, original and mathematics; not human annotation"
+    },
+    {
+      "source_index": 27,
+      "evidence_hash": "c7fa7f8a97f8f724e0a66ea02fb0bfaf52499f2c6453b8421f9aaa8661f08120",
+      "copy_record_key": "27:e96b8d7cd754ede3ebd90ef2389fe7250023a8fe411cafdd63fc20c497598b5e:7bcff55c22846b18d02aaf46e7baef2630fe67fccb79415e026fefa900d395a1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "copy_output_hash": "16544d2a9ce9e06627b8428972ce7575fbf81eba6a9e81b304c14a5d58dfb081",
+      "no_direct_source_recovery": true,
+      "reason": "No direct question. The count/minimality target is absent. The teacher explanation incorrectly overlooks the disclosed sum limit100; that error is retained and not used as evidence of missing parameters.",
+      "review_provenance": "assistant inspection of all clues, candidate, original and mathematics; not human annotation"
+    },
+    {
+      "source_index": 33,
+      "evidence_hash": "901268f3ca005f82e5785cfce5fa5388308b8b493f68df7b82780302f6058c8f",
+      "copy_record_key": "33:ff573d9f4b2bd307e1c1b9faa0c00d53dea9f1093bf859d913be17ca7e10f2ef:7bcff55c22846b18d02aaf46e7baef2630fe67fccb79415e026fefa900d395a1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "copy_output_hash": "d02235b1aaab6f7c8ea1050bddd89e9b01ae03b7f668e99bb9309685ff19783d",
+      "no_direct_source_recovery": true,
+      "reason": "The copied continuity proposition is a different question from existence of an equality point under equal maxima. It does not recover the source, and it omits substantive use of the sign clue.",
+      "review_provenance": "assistant inspection of all clues, candidate, original and mathematics; not human annotation"
+    },
+    {
+      "source_index": 77,
+      "evidence_hash": "722def55517549140ad97c2ad3c0559e6adf04c34a072c056952fe6ddbb592b6",
+      "copy_record_key": "77:c4f1b92d4e82017d2823d212a082aeae36ecc72f7b8420dee54828b179232efc:7bcff55c22846b18d02aaf46e7baef2630fe67fccb79415e026fefa900d395a1:deepseek-ai/DeepSeek-V4.1-Flash:low",
+      "copy_output_hash": "e151a1fbbf3c8ec6a4811159b653e8ead17702b28073c20a6b49fc38fb91b02c",
+      "no_direct_source_recovery": true,
+      "reason": "No direct question. The exact cubic and maximum-area target are absent; adding them is an inference, not a copied asking verb.",
+      "review_provenance": "assistant inspection of all clues, candidate, original and mathematics; not human annotation"
+    }
+  ],
+  "technical_failures_retained": 1,
+  "source27_explanation_defect_retained": true
+}

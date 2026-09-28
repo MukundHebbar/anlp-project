@@ -1,0 +1,20 @@
+{
+  "stage": "before student generation",
+  "rows": [
+    {
+      "source_index": 63,
+      "public_decision": "REJECT",
+      "source_decision": "ACCEPT",
+      "status": "unresolved_disagreement_blocks_acceptance",
+      "interpretation": "Public review treats the full inside/boundary/outside convergence analysis as a complete proof; source-aware review instead emphasizes that the original factorial-exponent series is absent. Distinct series with n! or n\u00b2 exponents satisfy these qualitative clues; this demonstrates missing source identity, not absence of complete-solution disclosure."
+    },
+    {
+      "source_index": 120,
+      "public_decision": "ACCEPT",
+      "source_decision": "REJECT",
+      "status": "unresolved_disagreement_blocks_acceptance",
+      "interpretation": "The source-aware reviewer sees the two modular facts as the hard parts of the original proof; the public-only reviewer sees no target proposition. Missing question identity and exposed proof content are distinct criteria, and the disagreement is retained."
+    }
+  ],
+  "action": "Do not admit either bank or repair from Qwen outcomes. The registered R repair requires both teacher disclosure reviewers to reject, so these banks currently have no authorized repair slot."
+}

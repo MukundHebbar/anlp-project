@@ -1,0 +1,1145 @@
+{
+  "sources": {},
+  "partitions": {
+    "D1": []
+  },
+  "failures": [],
+  "judge_fixtures": {
+    "linear-substantive:e92610b573abe9d1ba9914ccaa1fce186294781bc89267df95a158de585db468:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The solution subtracts the constant 5 before dividing by the coefficient 2, matching the observation."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed equation is well-posed, the supplied answer x=3 is correct, and the displayed observation is explicitly used in the complete solution."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate. We have final answer 3, observations: \"Subtract the constant term before dividing by coefficient.\" Student response question solve 2x+5=11, justification subtract 5 get 2x=6 divide 2 x=3. Need score. Need verify proposed question and answer. Well-posed yes. Answer correct 3. Clue observation compatible? It says subtract constant term before dividing by coefficient. In solution subtract 5 then divide by 2. Grounding explicit? Yes. Justification sufficient? It fully solves simple equation. Score 4. Need JSON fields. clue_checks index 1 compatible true grounding explicit reason. shortcut false. status scored. well_posed true answer_correct true. justification sufficient. score 4. Reason concise. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 281,
+          "prompt_tokens": 536,
+          "total_tokens": 817,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 169,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00014091279999999998
+        },
+        "elapsed_seconds": 15.043
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The solution subtracts the constant 5 before dividing by the coefficient 2, matching the observation.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed equation is well-posed, the supplied answer x=3 is correct, and the displayed observation is explicitly used in the complete solution.\"}"
+    },
+    "linear-wrong:b93df24ee72858dddde4c5dfd66df29f1f1d9a59811ad6541d21fb354ed7c3f3:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation says to subtract the constant before dividing by the coefficient, and the student explicitly does this for 2x+5=13 by subtracting 5 and then dividing by 2."
+          }
+        ],
+        "justification": "incorrect",
+        "shortcut": false,
+        "score": 1,
+        "reason": "The proposed equation 2x+5=13 is well-posed, but its correct solution is x=4, not the final answer 3. The student's justification even derives x=4 and then incorrectly claims it matches 3, creating a mathematical contradiction."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate. We have final answer 3, observations: \"Subtract the constant term before dividing by coefficient.\" Student response question solve 2x+5=13, justification subtract 5 divide by 2 x=4, claim matches 3. Need score. We need infer reconstructed question? Primary object reconstructed question. Final answer is 3. Observations clue: subtract constant before dividing. Student proposes question solve 2x+5=13, answer x=4, but final answer says 3. Mismatch. Need evaluate using final answer, observations, student response. We don't know source question. Independently verify proposed question and accept valid alternatives.\n\nWe need determine if proposed question valid with final answer 3? The question \"Solve 2x+5=13 over reals\" has answer 4, not 3. So answer_correct false. Observation says subtract constant before dividing, which is compatible with solving linear equation, but final answer 3 not correct for proposed equation. Student response claims x=4 matches 3, contradiction. Score likely 1: substantive attempt with demonstrated wrong answer/mathematical contradiction. Need JSON fields.\n\nNeed include clue_checks index 1 compatible? Observation: \"Subtract the constant term before dividing by coefficient.\" For proposed question 2x+5=13, yes compatible: subtract 5 then divide by 2. Grounding explicit? Student justification explicitly says subtract 5 and divide by 2. But final answer 3 is wrong. The clue is compatible with method but not final answer. Need status scored, well_posed? The question is well-posed (linear equation) but answer supplied incorrect. answer_correct false. clue_checks compatible true, grounding explicit. justification? Student justification has mathematical error: x=4, claims matches 3. So \"incorrect\" maybe. Shortcut false. Score 1. Reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 556,
+          "prompt_tokens": 534,
+          "total_tokens": 1090,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 401,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002561328
+        },
+        "elapsed_seconds": 18.335
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation says to subtract the constant before dividing by the coefficient, and the student explicitly does this for 2x+5=13 by subtracting 5 and then dividing by 2.\"}],\"justification\":\"incorrect\",\"shortcut\":false,\"score\":1,\"reason\":\"The proposed equation 2x+5=13 is well-posed, but its correct solution is x=4, not the final answer 3. The student's justification even derives x=4 and then incorrectly claims it matches 3, creating a mathematical contradiction.\"}"
+    },
+    "linear-copy:7e714005969c915b7e281aa07590f6d237c0d2d891ef9fc412dde342db402c63:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation states the same claim as the reconstructed question: for ax+b=0 with nonzero a, there is exactly one real solution."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed under the intended reading that a is nonzero. The supplied answer Yes is correct, and the justification explicitly solves ax+b=0 by subtracting b and dividing by nonzero a to obtain the unique solution -b/a."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer Yes. Observations: \"Every real equation ax+b=0 with a nonzero has exactly one real solution.\" Student response question: \"Does every real equation ax+b=0 with a nonzero have exactly one real solution?\" justification subtract b divide by nonzero a unique solution -b/a.\n\nNeed score. Need determine well-posed? The phrase \"with a nonzero\" ambiguous: likely \"with a nonzero\" missing \"a\"? Observation says \"with a nonzero\" maybe means a nonzero? It says \"Every real equation ax+b=0 with a nonzero has exactly one real solution.\" Student question same. It likely intended \"with a nonzero\" maybe \"with a nonzero [coefficient a]\"? The equation ax+b=0 with a nonzero has exactly one real solution. Yes. But if \"with a nonzero\" could mean b nonzero? Actually \"with a nonzero\" incomplete. Observation: \"Every real equation ax+b=0 with a nonzero has exactly one real solution.\" It might be \"with a nonzero\" referring to a? The student response says \"divide by nonzero a\". So reconstructs as a nonzero. Need evaluate.\n\nQuestion: Does every real equation ax+b=0 with a nonzero have exactly one real solution? If a nonzero, yes. If b? If b nonzero and a? If a=0, b nonzero no solution. But observation says \"with a nonzero\" maybe \"a nonzero\" as adjective? The phrase \"with a nonzero\" is ungrammatical; likely \"with a nonzero [a]\"? Student justification explicitly \"divide by nonzero a\". So okay.\n\nNeed JSON. Clue checks index 1 compatible true grounding explicit? Observation is exactly the question/answer. Student response connects via solving. Justification sufficient? It gives proof: subtract b and divide by nonzero a unique solution -b/a. That's sufficient for simple question. Score 4. Need include well_posed true, answer_correct true, clue_checks. shortcut false. reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 556,
+          "prompt_tokens": 540,
+          "total_tokens": 1096,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 417,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00025697279999999995
+        },
+        "elapsed_seconds": 18.358
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation states the same claim as the reconstructed question: for ax+b=0 with nonzero a, there is exactly one real solution.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed under the intended reading that a is nonzero. The supplied answer Yes is correct, and the justification explicitly solves ax+b=0 by subtracting b and dividing by nonzero a to obtain the unique solution -b/a.\"}"
+    },
+    "probability-substantive:2ac1cba8bf5d2ac18f7b6c163c00ce3f4bc089c3fc3dc5ece96afb3adc70b336:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The response partitions the event {1,2,3} into disjoint pieces {1} and {2,3}, computes their probabilities as 1/6 and 2/6, and adds them to get 1/2."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the supplied answer 1/2 is correct, and the displayed observation is explicitly and substantively grounded in the partition-and-add calculation."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate reconstruction. We have final answer 1/2. Observation: event partitioned into two disjoint pieces and probabilities added. Student question: fair die probability rolling 1,2,3. Justification: disjoint pieces {1} and {2,3} probabilities 1/6 and 2/6 sum 1/2. Need score. Well-posed yes. Answer correct yes. Clue checks index 1 compatible true grounding explicit? Observation says event partitioned into two disjoint pieces and probabilities added. Student explicitly partitions {1} and {2,3}, adds. So explicit. Justification sufficient? It fully verifies. Score 4. Need JSON. Ensure fields. shortcut false. reason.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 297,
+          "prompt_tokens": 561,
+          "total_tokens": 858,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 151,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00015113279999999998
+        },
+        "elapsed_seconds": 9.281
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The response partitions the event {1,2,3} into disjoint pieces {1} and {2,3}, computes their probabilities as 1/6 and 2/6, and adds them to get 1/2.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the supplied answer 1/2 is correct, and the displayed observation is explicitly and substantively grounded in the partition-and-add calculation.\"}"
+    },
+    "linear-decorated_copy:57358473cd723f39cb0528368fd860fcc52dffc92e4b87e38191e468fe55c256:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "linear-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question directly asks whether every real equation ax+b=0 with nonzero a has exactly one real solution, matching the observation, and the justification derives the unique solution -b/a by subtracting b and dividing by nonzero a."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the sole observation is explicitly connected to the question and verified by the algebraic solution."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer Yes. Observations: Every real equation ax+b=0 with a nonzero has exactly one real solution. Student response reconstructs question: \"A student named Mira asks on Tuesday: Does every real equation ax+b=0 with a nonzero have exactly one real solution?\" Justification: Subtract b and divide by nonzero a: unique solution -b/a.\n\nNeed score. Need determine well-posed, answer correct, clue checks. There is one observation. Proposed question includes extraneous \"student named Mira asks on Tuesday\" not in observation. But primary object reconstructed question. Does it match? Observation is statement. Final answer Yes. Student question asks same yes/no. Justification sufficient? It explains unique solution. Need check \"with a nonzero\" ambiguous: likely \"with a nonzero\" missing \"a\"? Observation says \"with a nonzero\" maybe means a nonzero? It says \"Every real equation ax+b=0 with a nonzero has exactly one real solution.\" Student question same. It is well-posed? It asks \"Does every real equation ax+b=0 with a nonzero have exactly one real solution?\" The phrase \"with a nonzero\" is grammatically incomplete but likely means \"with a nonzero [coefficient a]\"? In observation, \"with a nonzero\" maybe \"with a nonzero a\"? It says \"with a nonzero\" no noun. But student response copies. Need evaluate.\n\nThe final answer Yes is correct if a nonzero. Justification subtract b divide by nonzero a. Good. Clue 1 compatible, grounding explicit? The question includes observation exactly. Justification connects. Score likely 4? Need consider extraneous Mira Tuesday. Does that violate? It adds irrelevant context not in observation. But reconstructed question can include extra? The task: evaluate reconstruction using final answer, observations, student response. Independently verify proposed question and accept valid alternatives. The primary object is reconstructed question. The justification must make observations substantive parts of one coherent solution. Extra \"Mira asks on Tuesday\" is decorative, not harmful. But if source question unknown, maybe observation is a clue. Proposed question is essentially the observation turned into question. Answer Yes. Justification sufficient. Score 4.\n\nNeed output JSON only. Fields: status scored, well_posed true, answer_correct true, clue_checks array index 1 compatible true grounding explicit reason. justification sufficient. shortcut false. score 4. reason.\n\nNeed ensure no mathematical contradiction. \"Every real equation ax+b=0 with a nonzero\" maybe if \"a nonzero\" means \"a nonzero [constant?]\" Hmm. If a nonzero? If a=0? The phrase \"with a nonzero\" could be \"with a nonzero\" maybe \"with a nonzero a\" omitted. The observation itself says \"with a nonzero\" maybe typo. Student question same. If interpreted as \"with a nonzero\" maybe \"with a nonzero [coefficient]\"? It is well-posed enough? The final answer Yes. If a nonzero, exactly one real solution. If b any real. If a=0 and b=0 infinite, if b\u22600 none. The condition \"with a nonzero\" likely means a nonzero. The justification says divide by nonzero a. So yes.\n\nNeed final JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 807,
+          "prompt_tokens": 548,
+          "total_tokens": 1355,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 668,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0003635127999999999
+        },
+        "elapsed_seconds": 27.828
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question directly asks whether every real equation ax+b=0 with nonzero a has exactly one real solution, matching the observation, and the justification derives the unique solution -b/a by subtracting b and dividing by nonzero a.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstruction is well-posed, the supplied answer Yes is correct, and the sole observation is explicitly connected to the question and verified by the algebraic solution.\"}"
+    },
+    "graph-copy:c2d3e85c8af8a8433129d9627166bb1d5ce75dfb0d8e0ee49edf0500600034c2:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question asks exactly whether the sum of vertex degrees equals twice the number of edges in every finite simple undirected graph, matching the observation."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the justification explicitly grounds the observation via the standard edge-counting argument."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate. We have final answer Yes. Observations: handshaking lemma. Student response proposes question: \"In every finite simple undirected graph, is the sum of vertex degrees twice the number of edges?\" justification. Need score. Well-posed yes. Answer correct yes. Clue checks: only observation index 1 compatible? It is exactly the statement. Grounding explicit? Student justification connects each edge contributes two. The observation is the theorem. Proposed question asks yes/no. Answer Yes. Justification sufficient? It gives proof. Score 4 likely. Need JSON fields. Ensure \"clue_checks\" index 1 compatible true grounding explicit reason. justification sufficient. shortcut false. score 4. Reason concise.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 273,
+          "prompt_tokens": 549,
+          "total_tokens": 822,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 152,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00013937279999999997
+        },
+        "elapsed_seconds": 5.923
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question asks exactly whether the sum of vertex degrees equals twice the number of edges in every finite simple undirected graph, matching the observation.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstruction is well-posed, the supplied answer Yes is correct, and the justification explicitly grounds the observation via the standard edge-counting argument.\"}"
+    },
+    "probability-copy:4603070c6db4ad6a271dcf6723fb0c68bc68c6cf61f1e09866954fdc87a0a3e8:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation states exactly the additivity property for disjoint events, and the proposed question asks whether that property holds."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the answer Yes is correct, and the justification explicitly grounds it in the probability additivity axiom."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate reconstruction. We have final answer Yes. Observations: For disjoint events E and F, P(E union F)=P(E)+P(F). Student response question exactly asks that, justification says probability additivity axiom. Need score. Well-posed yes. Answer correct yes. Clue checks index 1 compatible true grounding explicit? Observation is the statement itself. Proposed question asks if statement true. Justification connects via additivity axiom. This is essentially tautological? Need assess. The primary object reconstructed question. It is a basic axiom. Final answer Yes. Observations substantive? The observation is exactly the answer. Student response question is same as observation. Justification \"probability additivity axiom gives displayed equality\" is bare assertion? It references axiom. For score 3? Need determine.\n\nThe instruction: \"A bare assertion such as 'the answer follows by a recurrence/formula' does not ground displayed observations and is score 2. To earn score 3, response must explicitly or implicitly connect every observation to proposed question; only remaining completion omitted.\" Here justification explicitly says additivity axiom gives equality. That's a direct grounding. But is it sufficient verification? It is a known axiom. Score 4? Well-posed, correct, every clue grounded, sufficient verification. The question is trivial but valid. The observation is the same as question. Is that tautological answer-copying? Score 0 for tautological answer-copying? Hmm \"no usable question, tautological answer-copying, or essentially unrelated output.\" Here question is \"For disjoint events E and F, is P(E union F)=P(E)+P(F)?\" Observation is same statement. Student response just asks the observation as question and says axiom. This is essentially a yes/no question whose answer is the observation. But it's a valid reconstruction? The source question unknown. The final answer Yes. Observations: one fact. Student response reconstructs question exactly from observation. This is tautological? It may be too trivial but not necessarily invalid. Need score maybe 4? Let's parse rubric.\n\nWe evaluate reconstruction using final answer, observations, student response. We don't know source question. Independently verify proposed question and accept valid alternatives. The primary object is reconstructed question, not full solution. Justification must make observations substantive parts of one coherent solution and contain no contradiction. It may omit remaining routine calculation etc.\n\nHere proposed question: \"For disjoint events E and F, is P(E union F)=P(E)+P(F)?\" Answer Yes. Observation: \"For disjoint events E and F, P(E union F)=P(E)+P(F).\" This is exactly the proposition. Justification: \"The probability additivity axiom gives the displayed equality for disjoint events.\" This is correct. It connects observation to question. It is sufficient? It cites axiom. Since the question asks if equality holds, the axiom directly verifies. Score 4 likely. But maybe \"bare assertion such as answer follows by recurrence/formula\" not here; it names axiom. It is a standard axiom. No omitted calculation. So score 4.\n\nNeed output JSON with fields. clue_checks index 1 compatible true grounding explicit reason. justification sufficient. shortcut false. score 4. reason concise.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 785,
+          "prompt_tokens": 540,
+          "total_tokens": 1325,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 673,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00035315279999999997
+        },
+        "elapsed_seconds": 20.416
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation states exactly the additivity property for disjoint events, and the proposed question asks whether that property holds.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the answer Yes is correct, and the justification explicitly grounds it in the probability additivity axiom.\"}"
+    },
+    "probability-wrong:50b57a1d5ef3b1070ce7e67a8d3bd6f1695a0eef75595b348f66d9df53d57c3c:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The event of rolling 1 or 2 is partitioned into the disjoint outcomes {1} and {2}, and the student explicitly adds their probabilities."
+          }
+        ],
+        "justification": "incorrect",
+        "shortcut": false,
+        "score": 1,
+        "reason": "The proposed question is well-posed, but the supplied final answer 1/2 is incorrect for rolling 1 or 2 on a fair six-sided die; the correct probability is 1/3. The student's own justification computes 1/3 and then contradicts the final answer by claiming it matches 1/2."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate. We have final answer 1/2. Observations: event partitioned into two disjoint pieces and probabilities added. Student response question: fair die probability rolling 1 or 2. Justification says probabilities 1/6 each totaling 1/3, claim matches 1/2. This is contradiction. Final answer 1/2, but correct for proposed question is 1/3. Also observation about partition into two disjoint pieces and add probabilities is compatible with question (rolling 1 or 2) but supplied answer wrong. Need score? Well-posed question yes. answer_correct false. Clue checks index 1 compatible? Observation: event partitioned into two disjoint pieces and probabilities added. For question rolling 1 or 2, yes event {1,2} partitioned into {1},{2}, probabilities add. Grounding explicit? Student says disjoint singleton pieces probabilities 1/6 each totaling 1/3. It connects. But final answer 1/2 contradicts. Justification incorrect. Score 1? \"substantive attempt with demonstrated wrong answer, ill-posed question, violated clue, or mathematical contradiction.\" Yes wrong answer and contradiction. Score 1. Need JSON fields. status scored. well_posed true. answer_correct false. clue_checks array. shortcut false. reason. justification \"incorrect\". Need maybe \"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"...\"}]. Score 1.\n\nNeed ensure final answer only JSON.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 480,
+          "prompt_tokens": 553,
+          "total_tokens": 1033,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 320,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00022687279999999998
+        },
+        "elapsed_seconds": 9.645
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The event of rolling 1 or 2 is partitioned into the disjoint outcomes {1} and {2}, and the student explicitly adds their probabilities.\"}],\"justification\":\"incorrect\",\"shortcut\":false,\"score\":1,\"reason\":\"The proposed question is well-posed, but the supplied final answer 1/2 is incorrect for rolling 1 or 2 on a fair six-sided die; the correct probability is 1/3. The student's own justification computes 1/3 and then contradicts the final answer by claiming it matches 1/2.\"}"
+    },
+    "graph-substantive:820f681ae2274860365ea1edd87c576b493807fdd4c3386cf333bec85e386fe7:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The student response directly uses the handshaking fact that each edge contributes two to the total vertex degree sum."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the supplied answer 6 is correct, and the observation is explicitly connected to the calculation 12/2=6."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate. We have final answer 6, observations: handshaking lemma. Student response reconstructs question: finite simple undirected graph degree sum 12, how many edges? Justification. Need score. Well-posed? Yes. Answer correct? 6. Clue checks: observation index 1 compatible explicit? It is exactly used. Justification sufficient? It states each edge contributes two, edges=12/2=6. That's complete. Score 4. Need JSON. Ensure fields.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 227,
+          "prompt_tokens": 544,
+          "total_tokens": 771,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 110,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0001193528
+        },
+        "elapsed_seconds": 6.669
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The student response directly uses the handshaking fact that each edge contributes two to the total vertex degree sum.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the supplied answer 6 is correct, and the observation is explicitly connected to the calculation 12/2=6.\"}"
+    },
+    "graph-decorated_copy:a5e35679e76f27b28bdcb12cf85fc5bbbc28e00aaccd6c1a97eecc2ce1235939:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation is exactly the graph-theoretic statement being asked about, and the student's justification directly explains it via edge endpoint counting."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the supplied answer Yes is correct, and the observation is explicitly grounded by the handshake lemma justification."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate reconstruction. We have final answer Yes. Observations: In finite simple undirected graph, sum degrees twice edges. Student response question: \"A student named Mira asks on Tuesday: In every finite simple undirected graph, is the sum of vertex degrees twice the number of edges?\" justification: Each edge has two endpoints contributes one to each endpoint degree, hence two total.\n\nNeed score. Need determine well-posed, answer correct. Proposed question asks yes/no theorem. Answer Yes correct. Observation is exactly theorem. Justification sufficient? It explains handshake lemma. Clue? There is only observation index 1. It is compatible and explicit grounding. The student response includes extraneous \"Mira asks on Tuesday\" but irrelevant. Does that matter? The primary object reconstructed question. It is well-posed. Answer correct. Justification sufficient. Score 4 likely. Need JSON with fields. clue_checks index 1 compatible true grounding explicit reason. justification sufficient. shortcut false. score 4. reason.\n\nNeed ensure no issue: The observation is the statement itself, and question asks if it's true. Justification proves. Yes. Return JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 358,
+          "prompt_tokens": 557,
+          "total_tokens": 915,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 241,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00017619279999999998
+        },
+        "elapsed_seconds": 9.492
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation is exactly the graph-theoretic statement being asked about, and the student's justification directly explains it via edge endpoint counting.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the supplied answer Yes is correct, and the observation is explicitly grounded by the handshake lemma justification.\"}"
+    },
+    "graph-wrong:7690d0095cc32fb4820dc9b97134f41e0dca70abff8322133419a83549cd5f4d:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "graph-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The handshaking observation is directly applicable: if the degree sum is 14, then the number of edges is 14/2=7."
+          }
+        ],
+        "justification": "incorrect",
+        "shortcut": false,
+        "score": 1,
+        "reason": "The proposed question is well-posed, but the supplied final answer 6 contradicts the handshaking lemma and the student's own calculation 14/2=7. The correct answer is 7, so the response has a demonstrated wrong answer."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate. We have final answer 6. Observations: handshaking lemma. Student response question: graph degree sum 14, how many edges? Correct answer 7, but final answer says 6. Student justification says 14/2=7, claim matches 6. Contradiction. Need score? Well-posed question yes. Answer correct? supplied final answer 6 incorrect. Clue compatible? Observation each edge contributes two to total vertex degrees. For question degree sum 14, edges =7. Observation compatible with question but contradicts answer. Justification incorrect. Score 1? substantive attempt with demonstrated wrong answer/mathematical contradiction. Need JSON. clue_checks index 1 compatible true? The observation is compatible with proposed question, grounding explicit? It is used in justification. But answer wrong. status scored. well_posed true. answer_correct false. justification incorrect. shortcut false. score 1. Reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 344,
+          "prompt_tokens": 545,
+          "total_tokens": 889,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 201,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00016863280000000002
+        },
+        "elapsed_seconds": 10.343
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The handshaking observation is directly applicable: if the degree sum is 14, then the number of edges is 14/2=7.\"}],\"justification\":\"incorrect\",\"shortcut\":false,\"score\":1,\"reason\":\"The proposed question is well-posed, but the supplied final answer 6 contradicts the handshaking lemma and the student's own calculation 14/2=7. The correct answer is 7, so the response has a demonstrated wrong answer.\"}"
+    },
+    "probability-decorated_copy:31fab88beafa5d75aa2181dbc3dbce84550308fccf4c86313a91b5c9f8f1eb8e:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "probability-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The observation states the finite additivity equality for disjoint events, which is exactly what the proposed question asks about."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the answer Yes is correct, and the justification correctly grounds the equality in the probability additivity axiom."
+      },
+      "request": {
+        "reasoning": "We need answer JSON only. Need evaluate reconstruction. We have final answer Yes. Observations: For disjoint events E and F, P(E union F)=P(E)+P(F). Student response question: \"A student named Mira asks on Tuesday: For disjoint events E and F, is P(E union F)=P(E)+P(F)?\" justification: probability additivity axiom gives displayed equality for disjoint events.\n\nNeed score. We don't know source question. Need independently verify proposed question and accept alternatives. Primary object reconstructed question. Observations substantive parts coherent solution. Final answer Yes. Proposed question asks exactly whether equality holds for disjoint events. Answer yes. Justification cites additivity axiom. Clue? Observation is same as question/answer. Is that tautological? The observation is the statement. Student response question is essentially the observation turned into question. Justification says axiom. Is this valid? Need assess.\n\nWe need return JSON with status scored|needs_review, well_posed, answer_correct, clue_checks, justification, shortcut, score, reason.\n\nPotential issue: The \"question\" includes irrelevant details \"student named Mira asks on Tuesday\" not grounded. But maybe harmless. The observation is exactly the proposition. The final answer Yes. The justification is sufficient? It says additivity axiom. For disjoint events, probability measure is countably additive, so finite additivity follows. This is correct. The question is well-posed. Every clue? There is one observation. It is compatible and grounded explicitly? The question asks if equality holds; observation states equality. The justification connects via additivity axiom. It is essentially tautological answer-copying? The observation is the same as the question. But the task: \"A bare assertion such as 'the answer follows by a recurrence/formula' does not ground displayed observations and is score 2. To earn score 3, response must explicitly or implicitly connect every observation to proposed question; only remaining completion may be omitted.\" Here justification explicitly connects observation to question by axiom. But is it too trivial? The question is just asking the observation. It may be a valid reconstruction. Score 4? Well-posed, correct answer, every clue substantively grounded, sufficient verification. The justification is one sentence citing axiom. Is that sufficient? For a basic probability axiom, yes. But maybe \"probability additivity axiom\" is enough. The observation is the equality itself. The question asks if equality. The answer yes. This is almost tautological. But score 0 for tautological answer-copying? \"no usable question, tautological answer-copying, or essentially unrelated output.\" Here the question is usable and not just answer-copying? It is exactly the observation. The final answer is Yes. The observation is the statement. The question is \"is [observation]?\" That is a valid question. But it's extremely trivial. The scoring rubric: Score 4 if well-posed, correct, every clue substantively grounded, sufficient verification. The justification cites axiom. I'd lean score 4. But need consider \"decorative clue mentions\" no. The extra \"Mira asks on Tuesday\" is irrelevant but not a clue? It's in question, not observation. It doesn't affect. Could be considered unsupported? The observation doesn't mention Mira/Tuesday. But the question includes them. The reconstruction may be over-specific with irrelevant details. Does that matter? The primary object is reconstructed question. If source question likely was just \"For disjoint events E and F, is P(E union F)=P(E)+P(F)?\" The student added Mira/Tuesday. That is not grounded by observations. But the core question is valid. The rubric says every observation must connect to proposed question. It doesn't say every part of question must be grounded by observations. But if question has extraneous details, maybe not well-posed? It is still well-posed. The answer is yes. The justification is correct. Score 4? Or 3 because no remaining proof? The justification is sufficient for axiom. I'd give 4.\n\nNeed output JSON only. clue_checks index 1 compatible true grounding explicit reason. justification sufficient. shortcut false. score 4. reason concise.\n\nEnsure JSON valid.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 981,
+          "prompt_tokens": 548,
+          "total_tokens": 1529,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 868,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00043659279999999997
+        },
+        "elapsed_seconds": 29.543
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The observation states the finite additivity equality for disjoint events, which is exactly what the proposed question asks about.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the answer Yes is correct, and the justification correctly grounds the equality in the probability additivity axiom.\"}"
+    },
+    "geometric-copy:3b7a3fbeeacb9728b3aa01b230c62619fa3ea8d42ccc37f358282988f2c99d49:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-copy",
+      "category": "authored_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question asks exactly whether the finite geometric sum equals a(1-r^n)/(1-r), and the student's subtraction derivation directly establishes this identity under the stated conditions."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the displayed observation is explicitly grounded by the proposed question and the student's valid derivation."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess. We have final answer Yes. Observation formula. Student response proposes question exactly formula? \"For real a and r with r not equal to 1 and positive integer n, is a+ar+...+ar^(n-1)=a(1-r^n)/(1-r)?\" Justification derivation. Need score. Well-posed yes. Answer correct yes. Clue checks: only observation index 1: formula. Compatible true, grounding explicit? Student question is formula, justification derives. It connects. Justification sufficient? It gives derivation: Set S, subtract rS, cancel, (1-r)S=a-ar^n, divide. This is sufficient for formula. Need maybe edge cases? r !=1, n positive. If n=0? positive integer n, okay. If n=1, sum a, RHS a(1-r)/(1-r)=a. Derivation works. If r? real. Good. Score 4. Shortcut false. Return JSON. Ensure fields.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 345,
+          "prompt_tokens": 599,
+          "total_tokens": 944,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 215,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00017661279999999998
+        },
+        "elapsed_seconds": 9.978
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question asks exactly whether the finite geometric sum equals a(1-r^n)/(1-r), and the student's subtraction derivation directly establishes this identity under the stated conditions.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstruction is well-posed, the supplied answer Yes is correct, and the displayed observation is explicitly grounded by the proposed question and the student's valid derivation.\"}"
+    },
+    "geometric-decorated_copy:c312c1bd54d267ca96b57a5495932f386274acec5bf574b6f2366af93fc37faa:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-decorated_copy",
+      "category": "authored_decorated_copy",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question asks exactly whether the finite geometric sum equals a(1-r^n)/(1-r), and the justification derives this by subtracting rS from S and dividing by 1-r."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstruction is well-posed, the supplied answer Yes is correct, and the displayed observation is explicitly connected to the proposed question through a valid derivation of the finite geometric series formula."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess reconstruction. We have final answer Yes. Observation formula. Student response question asks exactly formula for real a,r r !=1 positive integer n. Justification subtract rS etc. Need verify. This is standard geometric sum. Well-posed? Yes. Answer correct? Yes. Clue checks: only observation index 1 formula. Compatible true, grounding explicit? Student question includes formula, justification derives. Need score? It seems complete enough. Need check if any issue: For real a,r, n positive integer, r !=1. Formula holds. Justification: S = a+ar+...+ar^{n-1}. rS = ar+...+ar^n. S-rS = a - ar^n. (1-r)S = a(1-r^n). Divide by 1-r. Correct. No omitted? It is sufficient. Score 4. Need JSON with fields. \"shortcut\": false. \"justification\":\"sufficient\". \"clue_checks\" array. reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 355,
+          "prompt_tokens": 607,
+          "total_tokens": 962,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 218,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.00018193279999999997
+        },
+        "elapsed_seconds": 9.409
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question asks exactly whether the finite geometric sum equals a(1-r^n)/(1-r), and the justification derives this by subtracting rS from S and dividing by 1-r.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstruction is well-posed, the supplied answer Yes is correct, and the displayed observation is explicitly connected to the proposed question through a valid derivation of the finite geometric series formula.\"}"
+    },
+    "geometric-wrong:896e64fda13b4df7bfccfb3962fd540bd5e3336c60adc7c459696ad98d6beef5:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-wrong",
+      "category": "authored_wrong",
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": false,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The student uses the geometric-series cancellation idea by computing 2S-S=16-1, which is compatible with the proposed sum 1+2+4+8."
+          }
+        ],
+        "justification": "incorrect",
+        "shortcut": false,
+        "score": 1,
+        "reason": "The proposed question asks for 1+2+4+8, whose sum is 15, not 31. The student's own computation gives 15 but then incorrectly claims it matches 31, creating a mathematical contradiction."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer 31. Observations: Multiplying finite sum by common ratio and subtracting cancels intermediate terms. Student response question: \"Find the sum 1+2+4+8.\" justification: With S sum, 2S-S=16-1=15, which I claim matches 31.\n\nWe need score. Need independently verify proposed question and accept valid alternatives. Primary object reconstructed question. Final answer 31. Observations about geometric series. Student question asks sum 1+2+4+8 = 15, not 31. Justification says 2S-S=16-1=15, which I claim matches 31. Contradiction. So answer incorrect relative to question. Also final answer 31 doesn't match. Score likely 1. Need JSON.\n\nNeed include clue_checks index 1 compatible? Observation: Multiplying finite sum by common ratio and subtracting cancels intermediate terms. For question 1+2+4+8, common ratio 2, yes compatible. Grounding explicit? Student uses 2S-S=16-1=15. It connects. But final answer 31 wrong. well_posed? The question is well-posed (sum finite) but answer supplied 31 incorrect. answer_correct false. justification? It has mathematical contradiction: says 15 matches 31. So incorrect. score 1. Need reason.\n\nNeed ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 439,
+          "prompt_tokens": 541,
+          "total_tokens": 980,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 295,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002079728
+        },
+        "elapsed_seconds": 7.612
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":false,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The student uses the geometric-series cancellation idea by computing 2S-S=16-1, which is compatible with the proposed sum 1+2+4+8.\"}],\"justification\":\"incorrect\",\"shortcut\":false,\"score\":1,\"reason\":\"The proposed question asks for 1+2+4+8, whose sum is 15, not 31. The student's own computation gives 15 but then incorrectly claims it matches 31, creating a mathematical contradiction.\"}"
+    },
+    "geometric-substantive:12aadbb190ff9653717bb7e97da004d4d05c7a627ae0b2d6d1d0d8f214a41ca0:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "geometric-substantive",
+      "category": "authored_substantive",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question is a finite geometric sum with common ratio 2, and the response explicitly uses multiplying by 2 and subtracting to cancel intermediate terms."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the supplied answer 31 is correct, and the observation about multiplying by the common ratio and subtracting is explicitly and correctly connected to the geometric-series cancellation."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer 31. Observations: \"Multiplying the finite sum by its common ratio and subtracting cancels the intermediate terms.\" Student response question: \"Find the sum 1+2+4+8+16.\" justification: Let S be sum. Then 2S-S=32-1, so S=31; intermediate terms cancel.\n\nNeed evaluate reconstruction using final answer, observations, student response. Need independently verify proposed question and accept valid alternatives. Need JSON.\n\nWe need determine if well-posed, answer correct, clue checks. There is one observation index 1. It says multiplying finite sum by common ratio and subtracting cancels intermediate terms. Proposed question sum geometric series 1+2+4+8+16. Justification uses 2S-S=32-1. This is correct. Observation compatible and grounding explicit? It mentions common ratio, finite sum, cancellation. Student response explicitly says intermediate terms cancel. Yes.\n\nNeed score? Well-posed question, answer 31 correct. Every clue substantively grounded. Sufficient verification? The justification is concise but complete enough: Let S=1+2+4+8+16. 2S=2+4+8+16+32. 2S-S=32-1, S=31. It states intermediate terms cancel. This is sufficient. Score 4.\n\nNeed JSON only. Ensure fields. clue_checks array with index 1 compatible true grounding explicit reason. justification sufficient. shortcut false. score 4. reason.\n\nNeed maybe \"well_posed\": true, \"answer_correct\": true. status scored. final.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 471,
+          "prompt_tokens": 545,
+          "total_tokens": 1016,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 340,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0002219728
+        },
+        "elapsed_seconds": 7.919
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question is a finite geometric sum with common ratio 2, and the response explicitly uses multiplying by 2 and subtracting to cancel intermediate terms.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the supplied answer 31 is correct, and the observation about multiplying by the common ratio and subtracting is explicitly and correctly connected to the geometric-series cancellation.\"}"
+    },
+    "stronger-33-copy:fe5137f7c2763fd4e07d94fc98011b76d2f68acc16ee9a2add6cc5eef135b3f3:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "stronger-33-copy",
+      "category": "production_diagnostic",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The response defines h=f-g and uses continuity of f and g to conclude h is continuous on [0,1]."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The response proves the strict maximum inequality by using the positive minimum of h and evaluating f at a maximizer of g."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the answer Yes is correct, and the justification fully verifies the claim using compactness, continuity of h, and the positive minimum of h."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need output JSON only. Need assess. We have final answer Yes. Observations: continuous difference, if one strictly larger everywhere then max strictly larger. Student question matches. Justification uses h continuous positive, attains positive min m>0. Let x0 max g M. f(x0)=g(x0)+h(x0) \u2265 M+m > M. Thus max f \u2265 f(x0)>M. Correct. Need score 4? Need verify every observation grounded. Obs1 h continuous used. Obs2 \"If one strictly larger at every point, max strictly larger\" is essentially conclusion, but student proves via min h. It connects. Well-posed. Answer correct. Justification sufficient. Score 4. Need JSON with clue_checks index 1,2. compatible true, grounding explicit/implicit. For obs1 explicit. Obs2? The observation is general statement; student's proof grounds it by h min. It is implicit? It directly proves. We can say explicit? The observation says if one strictly larger everywhere then max strictly larger. Student uses h positive min to show. It's the target. Grounding explicit maybe. Need include shortcut false. status scored. well_posed true, answer_correct true. justification sufficient. score 4. Reason concise.\n\nEnsure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 437,
+          "prompt_tokens": 783,
+          "total_tokens": 1220,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 270,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 768,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0001888656
+        },
+        "elapsed_seconds": 14.876
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The response defines h=f-g and uses continuity of f and g to conclude h is continuous on [0,1].\"},{\"index\":2,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The response proves the strict maximum inequality by using the positive minimum of h and evaluating f at a maximizer of g.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the answer Yes is correct, and the justification fully verifies the claim using compactness, continuity of h, and the positive minimum of h.\"}"
+    },
+    "stronger-112-target:dcc8db489d78e292e23c909b00d10577c4499033377abd16a878a9c6110de666:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "stronger-112-target",
+      "category": "production_diagnostic",
+      "expected": [
+        4
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question explicitly includes the interval -9999 \u2264 n \u2264 -1000, matching the first observation."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question includes n \u2261 1 (mod 23), and the justification explicitly rewrites this as n = 23k + 1."
+          }
+        ],
+        "justification": "sufficient",
+        "shortcut": false,
+        "score": 4,
+        "reason": "The reconstructed question is well-posed, the supplied answer -1011 is correct, and the justification fully verifies the interval and congruence conditions while identifying the greatest valid integer."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess. We have final answer -1011. Observations: n between -9999 and -1000 inclusive. congruence n \u22611 mod23 equivalent n=23k+1. Student question: Find greatest integer n such that interval and congruence. Justification computes k range. Let's verify.\n\nInterval -9999 \u2264 n \u2264 -1000. n=23k+1. Then -10000 \u2264 23k \u2264 -1001. Divide: -10000/23 \u2248 -434.7826, -1001/23 \u2248 -43.5217. k integer between -434.78 and -43.52 inclusive: k \u2208 {-434,...,-44}. Greatest k = -44. n=23*(-44)+1=-1012+1=-1011. Check interval yes. Congruence yes. Is it greatest n? Since n increasing with k, greatest k gives greatest n. Yes.\n\nNeed score. Well-posed, answer correct. Clues: observation 1 compatible explicit? Student question includes interval. Observation 2 compatible explicit in justification. Justification sufficient? It fully solves. Score 4. Need JSON with fields. clue_checks index 1 and 2. \"grounding\": explicit. Justification sufficient. shortcut false. reason. Ensure JSON only.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 445,
+          "prompt_tokens": 734,
+          "total_tokens": 1179,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 277,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.000202748
+        },
+        "elapsed_seconds": 19.393
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question explicitly includes the interval -9999 \u2264 n \u2264 -1000, matching the first observation.\"},{\"index\":2,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question includes n \u2261 1 (mod 23), and the justification explicitly rewrites this as n = 23k + 1.\"}],\"justification\":\"sufficient\",\"shortcut\":false,\"score\":4,\"reason\":\"The reconstructed question is well-posed, the supplied answer -1011 is correct, and the justification fully verifies the interval and congruence conditions while identifying the greatest valid integer.\"}"
+    },
+    "qwen-33-copy:32e1bcf2be919e832c25799c72988ffd65dde771238e72f29d775630b434f56a:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "qwen-33-copy",
+      "category": "production_diagnostic",
+      "expected": [
+        0
+      ],
+      "passed": false,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": true,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The response explicitly defines h=f-g and uses continuity of f and g to conclude h is continuous on [0,1]."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "implicit",
+            "reason": "The conclusion is exactly the stated comparison of maxima under strict pointwise inequality. The response does not explicitly invoke this observation or the maximizer of g, but the missing step is routine and compatible."
+          }
+        ],
+        "justification": "minor_omission",
+        "shortcut": false,
+        "score": 3,
+        "reason": "The proposed question is well-posed and the answer Yes is correct. The first observation is explicitly used. The second observation is compatible and essentially the desired conclusion, but the supplied justification has a minor gap: from max(f-g)>0 one still needs to argue, e.g. by evaluating at a maximizer of g, that max f > max g. This is a routine omitted step, so the reconstruction is valid but not fully verified."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need JSON only. Need assess. We have final answer Yes. Observations: h continuous; if one strictly larger at every point then max strictly larger. Student question: If f,g continuous [0,1], f>g all x, is max f > max g? Justification: h=f-g continuous, h>0, EVT max h positive. Therefore max f > max g. Is this valid? Need check: max h positive implies max(f-g)>0. Does that imply max f > max g? Yes? Let's verify. Let M_f=max f, M_g=max g. max(f-g) <= M_f - min g? Actually max(f-g) = max_x (f(x)-g(x)). If positive, there exists x0 with f(x0)>g(x0). Then M_f >= f(x0)>g(x0). But M_g >= g(x0), so M_f > g(x0) but not necessarily > M_g? Wait if M_g could be larger at another point. Need prove max f > max g given f>g pointwise. Is it always true? Let's test f(x)=x+0.1, g(x)=x on [0,1]. max f=1.1, max g=1 yes. f(x)=0.5 constant, g(x)=x? f>g? at x=1, 0.5>1 false. Need f>g all. Since at x where g attains max, f(x)>g(x)=M_g, so M_f >= f(x)>M_g. Yes. The justification's \"max h positive therefore max f > max g\" is a bit incomplete: max h positive only gives some x with f>g, not directly max f > max g. But can be completed by evaluating at argmax g. The student omitted that. Observations include second: If one function strictly larger at every point, then its maximum is strictly larger than other's maximum. That is exactly the conclusion. The justification uses h max positive, but not explicitly connects to second observation? It says therefore max f > max g. Is that a gap? Need score. The final answer Yes correct. Question well-posed. Clue checks: observations? There are two observations. Need map to proposed question. Observation 1 h continuous: used. Observation 2 if one strictly larger at every point then max strictly larger: This is essentially the theorem to prove; student's justification doesn't explicitly use it? It states conclusion. But maybe implicit: h>0 and max h positive? Wait observation 2 is not about h max positive; it's about f and g. The student's justification attempts to prove via h but has a logical gap: max h positive does not by itself imply max f > max g. However, the conclusion is true and can be proven by considering point where g attains max. The observation 2 is exactly the desired conclusion, but if used as a premise it's circular. The prompt says \"The justification must make the observations substantive parts of one coherent solution and contain no mathematical contradiction. It may omit a remaining routine calculation...\" Need evaluate reconstruction using final answer, observations, student response. We don't know source question. Need independently verify proposed question and accept valid alternatives.\n\nWe need decide score. The student response includes question and justification. It has a minor omission: from max h positive to max f > max g not fully justified. But observation 2 can fill: since f>g everywhere, by observation 2 max f > max g. Actually observation 2 is a general fact. The student's justification doesn't explicitly invoke it, but the conclusion follows directly from observation 2. The first observation h continuous is used to show h>0 and EVT max positive, but that route is incomplete. However, the second observation alone suffices. The prompt: \"To earn score 3, response must explicitly or implicitly connect every observation to proposed question; only remaining completion of proof may be omitted.\" Here observation 2 is not connected? It is the conclusion. The justification says \"Therefore max f > max g\" after max h positive. That is not logically valid without extra step. But the extra step is routine: let x0 maximize g, then f(x0)>g(x0)=max g, so max f>max g. This is a remaining routine calculation. So score 3 likely. Need check if any mathematical contradiction? No. Well-posed yes. Answer correct yes. Clue checks: index 1 h continuous: compatible, explicit. index 2 if one strictly larger at every point then max strictly larger: compatible, implicit? The student's conclusion is exactly that, but not used as observation? It is the target. The observation is a general lemma. The justification doesn't explicitly mention it, but the final \"Therefore\" implicitly relies? Actually it relies on max h positive, not on observation 2. But observation 2 is compatible and substantively connected as the desired result. Could mark implicit. Justification sufficient? There is a minor omission. Score 3. Shortcut false. Need JSON.\n\nNeed ensure \"final answer: Yes\" correct. Yes.\n\nLet's craft JSON. Need include clue_checks array with index 1 and 2. For index 1 compatible true grounding explicit reason. Index 2 compatible true grounding implicit? Reason: The conclusion is exactly the lemma; the proof omits the step applying it or evaluating at maximizer of g. But is that \"implicit\"? The student's justification doesn't use observation 2, but the observation is the statement to prove. Hmm.\n\nMaybe score 2? Let's think. The prompt says \"A bare assertion such as 'the answer follows by a recurrence/formula' does not ground displayed observations and is score 2. To earn score 3, the response must explicitly or implicitly connect every observation to the proposed question; only the remaining completion of the proof may be omitted.\" The student's justification: h continuous, h>0, EVT max h positive, therefore max f > max g. This is a substantive gap: max h positive does not imply max f > max g. But the gap is easily filled by observation 2. Is observation 2 connected? The final conclusion is exactly observation 2. The proof could be: Since f>g everywhere, by observation 2, max f > max g. That's a one-line proof. The student didn't say that, but the observation is in the prompt. The response's justification is not fully coherent because the \"therefore\" is invalid as stated. However, the prompt allows \"may omit a remaining routine calculation... record incomplete verification without rejecting\". The missing step is routine. So score 3.\n\nNeed maybe mention \"The supplied justification's final inference is incomplete; one must use the point where g attains its maximum (or the second observation) to conclude max f > max g.\" That is minor omission. Score 3.\n\nNeed JSON only. Ensure valid.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1688,
+          "prompt_tokens": 759,
+          "total_tokens": 2447,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1451,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 640,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0007283079999999999
+        },
+        "elapsed_seconds": 62.312
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":true,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The response explicitly defines h=f-g and uses continuity of f and g to conclude h is continuous on [0,1].\"},{\"index\":2,\"compatible\":true,\"grounding\":\"implicit\",\"reason\":\"The conclusion is exactly the stated comparison of maxima under strict pointwise inequality. The response does not explicitly invoke this observation or the maximizer of g, but the missing step is routine and compatible.\"}],\"justification\":\"minor_omission\",\"shortcut\":false,\"score\":3,\"reason\":\"The proposed question is well-posed and the answer Yes is correct. The first observation is explicitly used. The second observation is compatible and essentially the desired conclusion, but the supplied justification has a minor gap: from max(f-g)>0 one still needs to argue, e.g. by evaluating at a maximizer of g, that max f > max g. This is a routine omitted step, so the reconstruction is valid but not fully verified.\"}"
+    },
+    "scale-86-copy:fb7b546e7292394d9e50e8393aa47ae455ef3b7533ffce3adf8fdeb5fced5f88:9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2:deepseek-ai/DeepSeek-V4.1-Flash:low": {
+      "fixture_id": "scale-86-copy",
+      "category": "production_diagnostic",
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "prompt": "evaluate_p2",
+      "prompt_hash": "9890fdd9ad675047f3a0c3bdb46451ddbc3cef3d5831e5553032abcd357baff2",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "reasoning_effort": "low",
+      "output": {
+        "status": "scored",
+        "well_posed": false,
+        "answer_correct": true,
+        "clue_checks": [
+          {
+            "index": 1,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The proposed question includes the family of integrals over [0,\u221e) with positive scale parameter and integer n, but this only frames the tautological prompt."
+          },
+          {
+            "index": 2,
+            "compatible": true,
+            "grounding": "unsupported",
+            "reason": "The boundedness 0\u2264integrand\u22641 is not used or connected to asking for the scale point."
+          },
+          {
+            "index": 3,
+            "compatible": true,
+            "grounding": "explicit",
+            "reason": "The question directly repeats that x=a is the natural threshold and then asks for that scale point, making the answer a tautological restatement."
+          }
+        ],
+        "justification": "insufficient",
+        "shortcut": true,
+        "score": 0,
+        "reason": "The reconstruction is not a genuine problem; it asks for a value already stated in the observation, so it is tautological answer-copying. The answer a is correct only by restatement."
+      },
+      "request": {
+        "reasoning": "We need answer evaluate. Need parse. We have final answer: a. Observations. Student response reconstructs question: \"For a family of integrals over [0,\u221e) depending on a positive scale parameter and an integer n, where exponent n makes a scale point a natural threshold for integrand's behavior, what is that scale point?\" justification says clues state scale point x=a. Need score.\n\nWe need determine if reconstruction valid? We don't know source question. Need independently verify proposed question and accept alternatives. Primary object reconstructed question. Observations: problem concerns family integrals over [0,\u221e) depending on positive scale parameter a and integer n tends infinity. Integrand bounded between 0 and1 for all x\u22650 and n>0. Exponent n makes scale point x=a natural threshold. Final answer a.\n\nStudent question essentially asks \"what is that scale point?\" Answer a. It is tautological? It copies observation \"scale point x=a\" and asks for it. The observations include \"scale point x=a\" explicitly. The question is not really reconstructing original problem; it's just asking for a from clue. It may be tautological answer-copying? Need score.\n\nWe need evaluate using only final answer, observations, student response. We don't know source. The proposed question: \"For a family of integrals ... where exponent n makes a scale point a natural threshold ... what is that scale point?\" This is essentially a fill-in from observation. It doesn't specify actual integral family. It is well-posed? It asks for scale point, answer a. But it's tautological: the observation says scale point x=a. The question includes \"scale point a\" in wording? It says \"where exponent n makes a scale point a natural threshold\" then asks what is that scale point. Answer a. This is answer-copying. Score 0? The rubric: Score 0: no usable question, tautological answer-copying, or essentially unrelated output. This seems tautological answer-copying. But maybe it's a valid reconstruction? Need decide.\n\nThe final answer is a. Observations: \"The exponent n makes the scale point x=a a natural threshold\" directly gives answer. Student response question asks \"what is that scale point?\" It is not a mathematical problem; it's just asking to identify a from clue. It doesn't connect integrand bounded etc. The justification says public clues directly state. This is not a coherent solution; it's a restatement. So likely score 0 or 1? Need JSON.\n\nNeed include clue_checks for observations? There are 3 observations. We need check compatibility with proposed question. Observation 1: family integrals over [0,\u221e) depending on positive scale parameter a and integer n tends infinity. Proposed question mentions family integrals over [0,\u221e) depending on positive scale parameter and integer n, exponent n threshold. Compatible, but not used? It is in question. Grounding explicit? The question includes it. Observation 2: integrand bounded between 0 and1 for all x\u22650 and n>0. Proposed question does not mention boundedness. Is it compatible? It could be compatible but not connected. The question asks scale point; boundedness irrelevant. Grounding unsupported? It is not used. Observation 3: exponent n makes scale point x=a natural threshold. Proposed question explicitly uses it and answer. Grounding explicit but tautological.\n\nNeed status scored. well_posed? The question is well-posed? It is a question with answer a, but it's tautological. \"well-posed\" maybe false? It is not a meaningful reconstruction. But if we score 0, well_posed maybe false? The JSON fields: well_posed true/false, answer_correct true/false. For score 0, answer_correct? The supplied answer a is correct relative to question, but question is tautological. We can set well_posed false? Hmm.\n\nNeed follow rubric. \"Score 0: no usable question, tautological answer-copying, or essentially unrelated output.\" This is tautological answer-copying. So score 0. well_posed false? The question is technically well-posed but tautological. Maybe well_posed true? But score 0 due tautological. The field well_posed likely about question. It is well-posed in trivial sense? It asks \"what is that scale point?\" with answer a. But it's not a valid reconstruction. I'd set well_posed false? The question is not a genuine problem; it's a prompt whose answer is embedded. But \"well-posed\" means has unique answer. It does. However score 0 can still have well_posed true? The rubric says score 0 no usable question. I'd set well_posed false to reflect no usable question. answer_correct true? The answer a matches. But if question invalid, answer_correct maybe true? The field \"answer_correct\" likely supplied answer. It is correct. But score 0. Need be consistent.\n\nClue checks:\n1 compatible true, grounding explicit? The question includes family integrals and parameters. Reason: included in proposed question but not used to derive answer.\n2 compatible true? The boundedness is compatible with such integrals but not mentioned/used. Grounding unsupported. Reason: no role in question/answer.\n3 compatible true, grounding explicit? It directly states scale point x=a and asks for it. But this is tautological. Maybe grounding explicit but tautological. Or violated? No.\n\nJustification: \"sufficient|minor_omission|insufficient|incorrect|absent|uncertain\". The justification is insufficient? It just restates clue. It doesn't provide mathematical verification. It is tautological. I'd say insufficient or absent? It has a justification but not substantive. \"insufficient\" because no mathematical grounding beyond restatement. Shortcut: true? It uses clue to answer directly. The \"shortcut\" field maybe if answer obtained by shortcut? It is tautological. Set shortcut true? The rubric mentions shortcut? It asks \"shortcut\": false. In score 4? Not defined. Maybe shortcut indicates answer via trivial clue? I'd set true? Hmm.\n\nNeed final JSON only. Need reason concise.\n\nLet's craft:\nstatus scored, well_posed false? answer_correct true? score 0.\nclue_checks:\n1 compatible true, grounding explicit, reason: proposed question includes family of integrals over [0,\u221e) with positive scale parameter and integer n, but this only frames the tautological prompt.\n2 compatible true, grounding unsupported, reason: boundedness 0\u2264integrand\u22641 is not used or connected to asking for scale point.\n3 compatible true, grounding explicit, reason: the question directly repeats that x=a is the threshold and asks for it, making answer a tautological.\n\njustification: insufficient, shortcut true, score 0, reason: The reconstruction is not a genuine problem; it asks for a value already stated in the observation, so it is tautological answer-copying. The answer a is correct only by restatement.\n\nNeed ensure JSON valid.",
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1695,
+          "prompt_tokens": 652,
+          "total_tokens": 2347,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 1476,
+            "rejected_prediction_tokens": null,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": null,
+            "cached_tokens": 384,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "estimated_cost": 0.0007510328
+        },
+        "elapsed_seconds": 60.517
+      },
+      "raw_content": "{\"status\":\"scored\",\"well_posed\":false,\"answer_correct\":true,\"clue_checks\":[{\"index\":1,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The proposed question includes the family of integrals over [0,\u221e) with positive scale parameter and integer n, but this only frames the tautological prompt.\"},{\"index\":2,\"compatible\":true,\"grounding\":\"unsupported\",\"reason\":\"The boundedness 0\u2264integrand\u22641 is not used or connected to asking for the scale point.\"},{\"index\":3,\"compatible\":true,\"grounding\":\"explicit\",\"reason\":\"The question directly repeats that x=a is the natural threshold and then asks for that scale point, making the answer a tautological restatement.\"}],\"justification\":\"insufficient\",\"shortcut\":true,\"score\":0,\"reason\":\"The reconstruction is not a genuine problem; it asks for a value already stated in the observation, so it is tautological answer-copying. The answer a is correct only by restatement.\"}"
+    }
+  },
+  "metadata": {
+    "fixtures_hash": "a96bed77b3fabe611c5d05d56e08f470fea4324407e6a7de680e446a66f5368a",
+    "prompt_hash": "6e6b39c2d1d4697fecd29b1e299b8f9847f80811b89ac360651f61e9ef9de537",
+    "planned_calls": 20
+  },
+  "banks": {}
+}

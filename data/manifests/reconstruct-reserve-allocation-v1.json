@@ -1,0 +1,616 @@
+{
+  "schema": "reconstruct_reserve_allocation_v1",
+  "allocation_seed": 20260922,
+  "source_content_sha256": "791bc95b9c28a4cfc7cd5934c96d59fc5ad3fd82b6b9c999a35d352dc315af08",
+  "rule": "Three D3 and six R sources per broad topic, seeded shuffle; all others contingency. Quarantine reserve members of flagged lexical pairs before allocation.",
+  "roles": {
+    "D3": "fresh development replication; becomes development once inspected",
+    "R": "untouched replication reserved until candidate freeze",
+    "contingency": "unused replacement/expansion pool; no performance-based substitution"
+  },
+  "partitions": {
+    "D3": [
+      8,
+      20,
+      27,
+      33,
+      77,
+      86,
+      112,
+      122,
+      123,
+      136,
+      141,
+      143
+    ],
+    "R": [
+      3,
+      7,
+      18,
+      24,
+      28,
+      52,
+      55,
+      65,
+      69,
+      72,
+      76,
+      94,
+      97,
+      99,
+      101,
+      110,
+      111,
+      117,
+      121,
+      124,
+      126,
+      135,
+      139,
+      145
+    ],
+    "contingency": [
+      0,
+      1,
+      5,
+      10,
+      13,
+      16,
+      17,
+      21,
+      29,
+      35,
+      41,
+      45,
+      46,
+      54,
+      59,
+      62,
+      63,
+      67,
+      68,
+      80,
+      87,
+      96,
+      113,
+      114,
+      118,
+      120,
+      129,
+      132,
+      137
+    ]
+  },
+  "quarantined": [],
+  "existing_partitions_unchanged": {
+    "D1": [
+      31,
+      34,
+      47,
+      58,
+      66,
+      71,
+      83,
+      100,
+      108,
+      119,
+      125,
+      140
+    ],
+    "D2": [
+      11,
+      22,
+      30,
+      40,
+      49,
+      50,
+      73,
+      95,
+      105,
+      131,
+      134,
+      144
+    ],
+    "C": [
+      12,
+      32,
+      36,
+      38,
+      39,
+      42,
+      51,
+      53,
+      56,
+      57,
+      60,
+      61,
+      78,
+      79,
+      82,
+      85,
+      93,
+      103,
+      107,
+      109,
+      115,
+      128,
+      130,
+      146
+    ]
+  },
+  "screen": {
+    "threshold": 0.8,
+    "threshold_status": "conservative design choice, not empirically validated",
+    "flagged_pairs": [],
+    "highest_overlap_pairs": [
+      {
+        "sources": [
+          62,
+          93
+        ],
+        "jaccard": 0.4421768707482993
+      },
+      {
+        "sources": [
+          34,
+          141
+        ],
+        "jaccard": 0.3619047619047619
+      },
+      {
+        "sources": [
+          63,
+          114
+        ],
+        "jaccard": 0.27702702702702703
+      },
+      {
+        "sources": [
+          94,
+          99
+        ],
+        "jaccard": 0.2719298245614035
+      },
+      {
+        "sources": [
+          105,
+          143
+        ],
+        "jaccard": 0.2694300518134715
+      },
+      {
+        "sources": [
+          82,
+          95
+        ],
+        "jaccard": 0.24193548387096775
+      },
+      {
+        "sources": [
+          32,
+          131
+        ],
+        "jaccard": 0.23484848484848486
+      },
+      {
+        "sources": [
+          78,
+          86
+        ],
+        "jaccard": 0.22033898305084745
+      },
+      {
+        "sources": [
+          10,
+          111
+        ],
+        "jaccard": 0.21296296296296297
+      },
+      {
+        "sources": [
+          63,
+          79
+        ],
+        "jaccard": 0.2080536912751678
+      },
+      {
+        "sources": [
+          79,
+          114
+        ],
+        "jaccard": 0.20725388601036268
+      },
+      {
+        "sources": [
+          103,
+          109
+        ],
+        "jaccard": 0.19834710743801653
+      },
+      {
+        "sources": [
+          79,
+          93
+        ],
+        "jaccard": 0.19662921348314608
+      },
+      {
+        "sources": [
+          109,
+          122
+        ],
+        "jaccard": 0.18181818181818182
+      },
+      {
+        "sources": [
+          62,
+          79
+        ],
+        "jaccard": 0.17989417989417988
+      },
+      {
+        "sources": [
+          10,
+          39
+        ],
+        "jaccard": 0.1793103448275862
+      },
+      {
+        "sources": [
+          110,
+          145
+        ],
+        "jaccard": 0.17777777777777778
+      },
+      {
+        "sources": [
+          86,
+          95
+        ],
+        "jaccard": 0.17647058823529413
+      },
+      {
+        "sources": [
+          32,
+          103
+        ],
+        "jaccard": 0.175
+      },
+      {
+        "sources": [
+          63,
+          93
+        ],
+        "jaccard": 0.1736111111111111
+      }
+    ],
+    "limitations": "Lexical overlap and digit masking miss paraphrases and related mathematical families. Semantic family review is required before claiming source-family-independent confirmation."
+  },
+  "source_metadata": {
+    "8": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Algebra -> Algebraic Expressions",
+      "difficulty": 5.5
+    },
+    "20": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 7.5
+    },
+    "27": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "difficulty": 6.0
+    },
+    "33": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 5.5
+    },
+    "77": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Applications of Integrals",
+      "difficulty": 6.5
+    },
+    "86": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 6.0
+    },
+    "112": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    "122": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Divisibility",
+      "difficulty": 8.0
+    },
+    "123": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Other",
+      "difficulty": 8.0
+    },
+    "136": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    "141": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    "143": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    "3": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    "7": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    "18": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Algorithms",
+      "difficulty": 6.0
+    },
+    "24": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "difficulty": 5.5
+    },
+    "28": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Applications of Derivatives",
+      "difficulty": 7.5
+    },
+    "52": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Algebra -> Equations and Inequalities",
+      "difficulty": 6.0
+    },
+    "55": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Quadratic Functions",
+      "difficulty": 5.5
+    },
+    "65": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Other",
+      "difficulty": 6.0
+    },
+    "69": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 6.0
+    },
+    "72": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Algebra -> Equations and Inequalities",
+      "difficulty": 7.5
+    },
+    "76": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 6.0
+    },
+    "94": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 5.5
+    },
+    "97": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 8.0
+    },
+    "99": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 7.5
+    },
+    "101": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 7.0
+    },
+    "110": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 5.5
+    },
+    "111": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.5
+    },
+    "117": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.5
+    },
+    "121": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 6.0
+    },
+    "124": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 8.0
+    },
+    "126": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    "135": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Graph Theory",
+      "difficulty": 5.5
+    },
+    "139": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Other",
+      "difficulty": 6.5
+    },
+    "145": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.0
+    },
+    "0": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 5.5
+    },
+    "1": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Other",
+      "difficulty": 6.0
+    },
+    "5": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 6.5
+    },
+    "10": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    "13": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.0
+    },
+    "16": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 5.5
+    },
+    "17": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
+      "difficulty": 5.0
+    },
+    "21": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 6.5
+    },
+    "29": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Congruences",
+      "difficulty": 6.5
+    },
+    "35": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 6.0
+    },
+    "41": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 5.0
+    },
+    "45": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    "46": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.0
+    },
+    "54": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 6.0
+    },
+    "59": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 5.5
+    },
+    "62": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
+      "difficulty": 5.0
+    },
+    "63": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions",
+      "difficulty": 6.0
+    },
+    "67": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Linear Transformations",
+      "difficulty": 6.0
+    },
+    "68": {
+      "broad_topic": "Algebra",
+      "topic": "Mathematics -> Algebra -> Linear Algebra -> Matrices",
+      "difficulty": 5.0
+    },
+    "80": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Multi-variable",
+      "difficulty": 5.0
+    },
+    "87": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Differential Calculus -> Derivatives",
+      "difficulty": 6.0
+    },
+    "96": {
+      "broad_topic": "Calculus",
+      "topic": "Mathematics -> Calculus -> Integral Calculus -> Techniques of Integration -> Single-variable",
+      "difficulty": 8.0
+    },
+    "113": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 6.5
+    },
+    "114": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Factorization",
+      "difficulty": 5.5
+    },
+    "118": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    "120": {
+      "broad_topic": "Number Theory",
+      "topic": "Mathematics -> Number Theory -> Prime Numbers",
+      "difficulty": 5.0
+    },
+    "129": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.5
+    },
+    "132": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Combinatorics",
+      "difficulty": 5.5
+    },
+    "137": {
+      "broad_topic": "Discrete Mathematics",
+      "topic": "Mathematics -> Discrete Mathematics -> Graph Theory",
+      "difficulty": 5.0
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "schema": "reconstruct_judge_fixtures_v1",
+  "fixtures": [
+    {
+      "id": "valid_exact",
+      "category": "valid",
+      "final_answer": "4",
+      "clues": ["All four sides have equal length.", "The area is the square of one side length."],
+      "student_response": {
+        "question": "What is the area of a square with side length 2?",
+        "justification": "A square has four equal sides, and its area is the square of its side length, so 2^2=4.",
+        "assumptions": []
+      },
+      "acceptable_scores": [4]
+    },
+    {
+      "id": "valid_alternative",
+      "category": "valid_alternative",
+      "final_answer": "5",
+      "clues": ["One prime-exponent count has contributions 6, 3, and 1.", "A second has contributions 4 and 1.", "The first total is halved before taking a minimum."],
+      "student_response": {
+        "question": "How many trailing zeros does 13! have when written in base 12?",
+        "justification": "Since 12=2^2*3, v_2(13!)=6+3+1=10 and v_3(13!)=4+1=5. The number is min(floor(10/2),5)=5.",
+        "assumptions": ["I selected 13! and base 12 as a coherent realization of the clues."]
+      },
+      "acceptable_scores": [4]
+    },
+    {
+      "id": "minor_implicit",
+      "category": "minor_omission",
+      "final_answer": "21",
+      "clues": ["Selecting the final position excludes its neighbour.", "The two endpoint cases contribute 13 and 8."],
+      "student_response": {
+        "question": "How many subsets of six positions in a row have no adjacent positions?",
+        "justification": "Split according to whether the last position is selected. The two cases contribute 13 and 8, for 21.",
+        "assumptions": ["The empty subset is included."]
+      },
+      "acceptable_scores": [3, 4]
+    },
+    {
+      "id": "insufficient_proof",
+      "category": "insufficient",
+      "final_answer": "21",
+      "clues": ["Selecting the final position excludes its neighbour.", "The two endpoint cases contribute 13 and 8."],
+      "student_response": {
+        "question": "How many subsets of six positions in a row have no adjacent positions?",
+        "justification": "The answer is 21 by a recurrence.",
+        "assumptions": ["The empty subset is included."]
+      },
+      "acceptable_scores": [2]
+    },
+    {
+      "id": "valid_reconstruction_incomplete_verification",
+      "category": "valid_incomplete_verification",
+      "final_answer": "12",
+      "clues": ["There are 36 unordered pairs of vertices.", "Each selected triple uses three distinct pairs.", "No pair may occur in two selected triples."],
+      "student_response": {
+        "question": "What is the maximum number of edge-disjoint triangles in the complete graph on 9 vertices?",
+        "justification": "Each triangle consumes three of the 36 edges and edge-disjointness prevents reuse, so there can be at most 36/3=12 triangles. The supplied answer asserts that this bound is attained.",
+        "assumptions": ["Triangles are selected as unordered vertex triples."]
+      },
+      "acceptable_scores": [3]
+    },
+    {
+      "id": "wrong_answer",
+      "category": "wrong",
+      "final_answer": "4",
+      "clues": ["The two terms are 2 and 3."],
+      "student_response": {
+        "question": "What is 2+3?",
+        "justification": "Adding gives 5.",
+        "assumptions": []
+      },
+      "acceptable_scores": [1]
+    },
+    {
+      "id": "violated_clue",
+      "category": "violated_clue",
+      "final_answer": "4",
+      "clues": ["The figure has three sides.", "Its area is the square of one side length."],
+      "student_response": {
+        "question": "What is the area of a square with side length 2?",
+        "justification": "Its area is 2^2=4.",
+        "assumptions": []
+      },
+      "acceptable_scores": [1]
+    },
+    {
+      "id": "decorative_clue",
+      "category": "unsupported_grounding",
+      "final_answer": "4",
+      "clues": ["A separate sequence begins 1, 1, 2, 3."],
+      "student_response": {
+        "question": "What is 2+2?",
+        "justification": "2+2=4. The listed sequence is also mathematically interesting.",
+        "assumptions": []
+      },
+      "acceptable_scores": [0, 1, 2]
+    },
+    {
+      "id": "tautology",
+      "category": "shortcut",
+      "final_answer": "4",
+      "clues": ["A calculation uses two equal positive integers."],
+      "student_response": {
+        "question": "What number is equal to 4?",
+        "justification": "The number is 4 by the question.",
+        "assumptions": []
+      },
+      "acceptable_scores": [0]
+    },
+    {
+      "id": "ill_posed",
+      "category": "ill_posed",
+      "final_answer": "4",
+      "clues": ["The area is the square of a side length."],
+      "student_response": {
+        "question": "What is the area of the square?",
+        "justification": "It is 4.",
+        "assumptions": []
+      },
+      "acceptable_scores": [1, 2]
+    },
+    {
+      "id": "unrelated",
+      "category": "unrelated",
+      "final_answer": "4",
+      "clues": ["The derivative vanishes at the interior maximum."],
+      "student_response": {
+        "question": "How many sides does a square have?",
+        "justification": "A square has four sides.",
+        "assumptions": []
+      },
+      "acceptable_scores": [0, 1, 2]
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "status": "development; 18 clear controls plus6 unlabeled production boundaries",
+  "fixtures": [
+    {
+      "id": "dice-sparse",
+      "family": "dice",
+      "question": "Roll two independent fair six-sided dice. What is the probability their sum is7?",
+      "answer": "1/6",
+      "clues": [
+        "Conditioning on the first die partitions the sample space into six equally probable cases."
+      ],
+      "expected": "ACCEPT",
+      "reference_reason": "Essential source premises/target remain absent",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "dice-full",
+      "family": "dice",
+      "question": "Roll two independent fair six-sided dice. What is the probability their sum is7?",
+      "answer": "1/6",
+      "clues": [
+        "Two independent fair six-sided dice are rolled; the event is that their sum is7."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "dice-superset",
+      "family": "dice",
+      "question": "Roll two independent fair six-sided dice. What is the probability their sum is7?",
+      "answer": "1/6",
+      "clues": [
+        "Two independent fair six-sided dice are rolled; the event is that their sum is7.",
+        "There are36 equally likely ordered outcomes."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "derivative-sparse",
+      "family": "derivative",
+      "question": "Find the derivative of f(x)=x³ at x=2.",
+      "answer": "12",
+      "clues": [
+        "Differentiation uses the power rule."
+      ],
+      "expected": "ACCEPT",
+      "reference_reason": "Essential source premises/target remain absent",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "derivative-full",
+      "family": "derivative",
+      "question": "Find the derivative of f(x)=x³ at x=2.",
+      "answer": "12",
+      "clues": [
+        "The function is f(x)=x³ and the required quantity is its derivative at x=2."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "derivative-superset",
+      "family": "derivative",
+      "question": "Find the derivative of f(x)=x³ at x=2.",
+      "answer": "12",
+      "clues": [
+        "The function is f(x)=x³ and the required quantity is its derivative at x=2.",
+        "The derivative function is3x²."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "modular-sparse",
+      "family": "modular",
+      "question": "Find the least positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "answer": "8",
+      "clues": [
+        "One divisibility condition can be written n=3k+2 for integer k."
+      ],
+      "expected": "ACCEPT",
+      "reference_reason": "Essential source premises/target remain absent",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "modular-full",
+      "family": "modular",
+      "question": "Find the least positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "answer": "8",
+      "clues": [
+        "The integer n is positive, n≡2(mod3), n≡3(mod5), and the smallest such n is required."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "modular-superset",
+      "family": "modular",
+      "question": "Find the least positive integer n with n≡2(mod3) and n≡3(mod5).",
+      "answer": "8",
+      "clues": [
+        "The integer n is positive, n≡2(mod3), n≡3(mod5), and the smallest such n is required.",
+        "Every common solution is congruent to8 modulo15."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "integral-sparse",
+      "family": "integral",
+      "question": "Evaluate the definite integral of2x from0 to1.",
+      "answer": "1",
+      "clues": [
+        "An antiderivative differs from another by an arbitrary constant on the interval."
+      ],
+      "expected": "ACCEPT",
+      "reference_reason": "Essential source premises/target remain absent",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "integral-full",
+      "family": "integral",
+      "question": "Evaluate the definite integral of2x from0 to1.",
+      "answer": "1",
+      "clues": [
+        "The integrand is2x, the integration limits are0 and1, and the target is the definite integral."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "integral-superset",
+      "family": "integral",
+      "question": "Evaluate the definite integral of2x from0 to1.",
+      "answer": "1",
+      "clues": [
+        "The integrand is2x, the integration limits are0 and1, and the target is the definite integral.",
+        "The integral equals[x²] evaluated at1 minus its value at0."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "graph-sparse",
+      "family": "graph",
+      "question": "How many spanning trees does K4 on four labelled vertices have?",
+      "answer": "16",
+      "clues": [
+        "Removing a leaf and its incident edge from a tree reduces its vertex count by one."
+      ],
+      "expected": "ACCEPT",
+      "reference_reason": "Essential source premises/target remain absent",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "graph-full",
+      "family": "graph",
+      "question": "How many spanning trees does K4 on four labelled vertices have?",
+      "answer": "16",
+      "clues": [
+        "Count the spanning trees of the complete graph on four labelled vertices."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "graph-superset",
+      "family": "graph",
+      "question": "How many spanning trees does K4 on four labelled vertices have?",
+      "answer": "16",
+      "clues": [
+        "Count the spanning trees of the complete graph on four labelled vertices.",
+        "Cayley’s formula gives4 to the power4-2."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "sequence-sparse",
+      "family": "sequence",
+      "question": "Let a1=2 and a(n+1)=3a(n). Find a5.",
+      "answer": "162",
+      "clues": [
+        "Each successive term is three times its predecessor."
+      ],
+      "expected": "ACCEPT",
+      "reference_reason": "Essential source premises/target remain absent",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "sequence-full",
+      "family": "sequence",
+      "question": "Let a1=2 and a(n+1)=3a(n). Find a5.",
+      "answer": "162",
+      "clues": [
+        "The sequence starts at2, each successive term is three times its predecessor, and its fifth term is required."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "sequence-superset",
+      "family": "sequence",
+      "question": "Let a1=2 and a(n+1)=3a(n). Find a5.",
+      "answer": "162",
+      "clues": [
+        "The sequence starts at2, each successive term is three times its predecessor, and its fifth term is required.",
+        "The fifth term is2 times3 to the fourth power."
+      ],
+      "expected": "REJECT",
+      "reference_reason": "Complete source premise-target bundle appears explicitly",
+      "reference_provenance": "assistant-authored development control"
+    },
+    {
+      "id": "production-123-k1",
+      "family": "production-123",
+      "question": "Is there an infinite sequence of natural numbers such that any finite partial sum of this sequence is not a perfect power?",
+      "answer": "Yes",
+      "clues": [
+        "The nth partial sum of the sequence 2,4,4,... is 2+4(n−1)."
+      ],
+      "expected": null,
+      "reference_reason": "Boundary diagnostic: no frozen binary gold label",
+      "reference_provenance": "existing D3 exact public prefix, not independent validation"
+    },
+    {
+      "id": "production-141-k1",
+      "family": "production-141",
+      "question": "Find the coefficient of \\(x^{21}\\) in the expansion of \\((x^3 + x^4 + x^5 + \\ldots + x^{10})^4\\).",
+      "answer": "204",
+      "clues": [
+        "The coefficient of \\(x^9\\) in \\((1+x+\\cdots+x^7)^4\\) counts quadruples \\((a_1,a_2,a_3,a_4)\\) with \\(0\\le a_i\\le 7\\) and \\(a_1+a_2+a_3+a_4=9\\)."
+      ],
+      "expected": null,
+      "reference_reason": "Boundary diagnostic: no frozen binary gold label",
+      "reference_provenance": "existing D3 exact public prefix, not independent validation"
+    },
+    {
+      "id": "production-8-k3",
+      "family": "production-8",
+      "question": "Let \\( a, b, \\) and \\( c \\) be real numbers such that \\( a + b + c = 0 \\). Find the value of the expression:\n\\[\nP = \\frac{a^2}{2a^2+bc} + \\frac{b^2}{2b^2+ca} + \\frac{c^2}{2c^2+ab}.\n\\]",
+      "answer": "1",
+      "clues": [
+        "Using the common denominator D=(a-b)(a-c)(b-c), the three fractions become a^2(b-c)/D, -b^2(a-c)/D, and c^2(a-b)/D.",
+        "Because a+b+c=0, the denominator 2a^2+bc factors as (a-b)(a-c).",
+        "The denominators 2b^2+ca and 2c^2+ab factor as (b-c)(b-a) and (c-a)(c-b), respectively."
+      ],
+      "expected": null,
+      "reference_reason": "Boundary diagnostic: no frozen binary gold label",
+      "reference_provenance": "existing D3 exact public prefix, not independent validation"
+    },
+    {
+      "id": "production-33-k3",
+      "family": "production-33",
+      "question": "For every pair of continuous functions $f,g:[0,1] \\rightarrow \\mathbb{R}$ such that \\(\\max\\{f(x):x \\in [0,1]\\} = \\max\\{g(x):x \\in [0,1]\\}\\), is there always a point $c \\in [0,1]$ such that $f(c) = g(c)$? Answer yes or no.",
+      "answer": "Yes",
+      "clues": [
+        "In the case f>g everywhere, evaluating f at a point where g attains M gives f>M.",
+        "If no point c satisfies f(c)=g(c), then h=f-g is continuous and never zero on [0,1].",
+        "Let M be the common maximum value of f and g."
+      ],
+      "expected": null,
+      "reference_reason": "Boundary diagnostic: no frozen binary gold label",
+      "reference_provenance": "existing D3 exact public prefix, not independent validation"
+    },
+    {
+      "id": "production-112-k3",
+      "family": "production-112",
+      "question": "What is the largest four-digit negative integer congruent to $1 \\pmod{23}?$",
+      "answer": "-1011",
+      "clues": [
+        "Dividing -10000 ≤ 23k ≤ -1001 by 23 gives -10000/23 ≤ k ≤ -1001/23.",
+        "The congruence n ≡ 1 mod 23 is equivalent to n = 23k + 1 for some integer k.",
+        "A four-digit negative integer n satisfies -9999 ≤ n ≤ -1000."
+      ],
+      "expected": null,
+      "reference_reason": "Boundary diagnostic: no frozen binary gold label",
+      "reference_provenance": "existing D3 exact public prefix, not independent validation"
+    },
+    {
+      "id": "production-86-k3",
+      "family": "production-86",
+      "question": "Evaluate the limit: $$\\lim_{n\\to\\infty} \\int^\\infty_0 \\frac{1}{1+\\left(\\frac{x}{a}\\right)^n} dx$$ where $a$ is a positive constant.",
+      "answer": "a",
+      "clues": [
+        "For x≥a, the denominator 1+(x/a)^n is at least (x/a)^n, so the integrand is bounded above by (a/x)^n.",
+        "For 0≤x<a, the factor (x/a)^n tends to 0, so the integrand tends to 1, while at x=a the integrand equals 1/2.",
+        "For n>1, the comparison integral ∫_a^∞ (a/x)^n dx evaluates to a/(n-1)."
+      ],
+      "expected": null,
+      "reference_reason": "Boundary diagnostic: no frozen binary gold label",
+      "reference_provenance": "existing D3 exact public prefix, not independent validation"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "reviewer": "Assistant analytic review; not independent human gold",
+  "primary_endpoint": "Unchanged standalone question; user clarification pending",
+  "rows": [
+    {
+      "response_key": "21:seed1:1",
+      "source_index": 21,
+      "response_output_hash": "0e5d4d6f42868e3749d341719d57c0ddb94a72d0a8986840b2a62a1f19fad9d4",
+      "evidence_hash": "822913ee1ed4f06b47437c91b92bb47d30b3169366a1bf511c9b9e8dc0d86f43",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "contextual_grounding_diagnostic": false,
+      "reason": "Asks order of arbitraryg rather than number of primitive roots. Atp5,m2,g1 hasorder1,g2 hasorder4 andg5 is not a unit; answer2 cannot hold for arbitraryg."
+    },
+    {
+      "response_key": "35:seed1:1",
+      "source_index": 35,
+      "response_output_hash": "934456ba8fb789deedb6d553f6117a96ec84377a627c74205490e414164470a1",
+      "evidence_hash": "718c0fde6312e409d4c5e73d5cd0ef4576b0bd89adae78ddff1cd92f63c45df8",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": true,
+      "contextual_semantic_equivalence_diagnostic": true,
+      "contextual_grounding_diagnostic": true,
+      "reason": "Identifies uniform-continuity target and gives the appropriate bounded-derivative/MVT argument, but question only says the function without stating necessary premises. Current standalone endpoint fails. Contextual equivalence is a separate diagnostic pending user definition; no retroactive primary success. Seed1 has a sound contextual argument; seed2 again incorrectly calls the Lipschitz inequality the definition of uniform continuity."
+    },
+    {
+      "response_key": "54:seed1:1",
+      "source_index": 54,
+      "response_output_hash": "bf392414664e13c5b94864e3057350ebed60a2d28bdb8d932753b2530e36d200",
+      "evidence_hash": "a32a48da8255fdb8e42504cb9d14ec17c8f0b8a59cff938bc3ccf5b4ee44bedc",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "contextual_grounding_diagnostic": false,
+      "reason": "Asks angle itself, not maximumtan^2. Forz10,omega1 andomegai give different arguments. Reu<0 also contradicts the claimed small positive arctan(1/99)."
+    },
+    {
+      "response_key": "113:seed1:1",
+      "source_index": 113,
+      "response_output_hash": "582df71c0f93a5c7ed7a351bf321e68f89e5615ef17f019c058fd777ce4f1d1b",
+      "evidence_hash": "987f9e489162491ff9fd690aeafa2e3498722257249799607bf908a49c739767",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "contextual_grounding_diagnostic": false,
+      "reason": "Candidate asks limit of(n!)^(1/n), which diverges rather than tendingto1/e; normalization byn is missing."
+    },
+    {
+      "response_key": "114:seed1:1",
+      "source_index": 114,
+      "response_output_hash": "60a2be297a3729a23773fdf61b3723953eed0d4b31e89a287178fc8cc979f3d3",
+      "evidence_hash": "fc5ab5de39d74f1e31f12c7a7c6d6bca78bffbff3d83ef84c2d2cc9eb29d1875",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "contextual_grounding_diagnostic": false,
+      "reason": "Series has no constant term (starts atn1), and atZ1 it diverges since everycoefficient>=1. Neither interpretation gives1; original target is convergence radius."
+    },
+    {
+      "response_key": "132:seed1:1",
+      "source_index": 132,
+      "response_output_hash": "7c9b7d7db2e978034a793608a00d90b6dbf1c33a7b05f8beadfa419e38d27c04",
+      "evidence_hash": "0f1863c963fce270a3e5994e5c8a06be0f0c4ddb3266466af69c074a01bfa44c",
+      "semantic_equivalent": false,
+      "grounded_semantic_success": false,
+      "target_identified": false,
+      "contextual_semantic_equivalence_diagnostic": false,
+      "contextual_grounding_diagnostic": false,
+      "reason": "Asks largest avoiding hand, whose maximum across allowed arrangements is12, not guaranteed-hand threshold13. A13-card avoiding hand leaves5 cards with atmost20incidences, insufficient to meet24triples."
+    }
+  ]
+}

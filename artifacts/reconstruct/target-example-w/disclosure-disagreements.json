@@ -1,0 +1,104 @@
+{
+  "reviewer": "assistant diagnostic, no override",
+  "rows": [
+    {
+      "source_index": 46,
+      "bank_output_hash": "892361210dbc77084c0cecca059fde719bcfba6774afbfab566c61e5c169154e",
+      "reviews": {
+        "audit_public_p4": {
+          "output": {
+            "status": "REJECT",
+            "scope": "public_disclosure",
+            "direct_question_copy": false,
+            "premise_target_bundle_exposed": true,
+            "complete_solution_exposed": true,
+            "public_quotes": [
+              "The eight targets are arranged in three vertical columns.",
+              "In any legal breaking order, the targets within a single column must be taken from bottom to top, so their relative order inside that column is fixed.",
+              "The number of legal orders is a multinomial coefficient determined by the three column sizes.",
+              "The requested quantity is the number of different legal breaking orders.",
+              "560"
+            ],
+            "missing_essential_element": "none",
+            "inference_required": "Only reverse-inferring the column sizes from the supplied answer 560 and the multinomial relation; no nontrivial problem structure remains.",
+            "reason": "The target is explicitly the number of legal breaking orders, the answer 560 is supplied, and the multinomial relation with eight targets in three columns uniquely determines column sizes 3,3,2, exposing the complete counting setup and result."
+          },
+          "output_hash": "84f07471db9bfbce2b20cafc80cb4f0f0d12af9d59654e117eef0fbc4154016b"
+        },
+        "audit_source_disclosure_p2": {
+          "output": {
+            "status": "ACCEPT",
+            "scope": "source_disclosure",
+            "direct_question_copy": false,
+            "premise_target_bundle_exposed": false,
+            "complete_solution_exposed": false,
+            "public_quotes": [
+              "The eight targets are arranged in three vertical columns.",
+              "In any legal breaking order, the targets within a single column must be taken from bottom to top, so their relative order inside that column is fixed.",
+              "The number of legal orders is a multinomial coefficient determined by the three column sizes.",
+              "The requested quantity is the number of different legal breaking orders.",
+              "560"
+            ],
+            "missing_essential_element": "The column sizes: two columns of three targets and one column of two targets, i.e. the multiset {3,3,2}.",
+            "inference_required": "To compute the answer, one must know the three column sizes and then evaluate the multinomial coefficient 8!/(3!3!2!). The public clues only say there are three columns and that the count is a multinomial coefficient determined by their sizes; the actual sizes are not stated. Recovering {3,3,2} would require reverse-engineering from the supplied answer 560, not from a publicly specified premise.",
+            "reason": "The public material paraphrases the general setup, rule, and target, but withholds the essential column-size distribution. Without the sizes {3,3,2}, the multinomial coefficient cannot be determined from the public clues alone. The final answer 560 is present, but its presence alone does not expose the missing premise or the derivation."
+          },
+          "output_hash": "b1f062f7c96013d620aef26d8d669316f7a8ac0eede585a9adf8047d88fddbae"
+        }
+      },
+      "decision": "excluded from W; no automatic repair because rejection is not corroborated by both reviewers",
+      "interpretation": "Inverse inference versus direct disclosure boundary"
+    },
+    {
+      "source_index": 87,
+      "bank_output_hash": "c362b2cbb814c2e970072ee012bae446f01d1f1744c625c3c3b48a3adf67111a",
+      "reviews": {
+        "audit_public_p4": {
+          "output": {
+            "status": "REJECT",
+            "scope": "public_disclosure",
+            "direct_question_copy": false,
+            "premise_target_bundle_exposed": true,
+            "complete_solution_exposed": true,
+            "public_quotes": [
+              "No",
+              "For the sequence x_n=1/n, the assigned value is f(x_n)=1/n^3.",
+              "For each n, there is a punctured neighborhood of 1/n on which f is identically 0.",
+              "At every point 1/n, the function f is discontinuous."
+            ],
+            "missing_essential_element": "Exact target question wording is absent, but the discontinuity conclusion is explicitly exposed.",
+            "inference_required": "No nontrivial inference remains: c1 and c2 already imply c3, and c3 directly supports the No answer to a continuity-at-1/n target.",
+            "reason": "The observations state the value at 1/n and that f is identically 0 on punctured neighborhoods, so the limit is 0 while the value is nonzero; c3 explicitly states discontinuity at every 1/n. With final answer No, this exposes the complete solution to a likely continuity question."
+          },
+          "output_hash": "4f12c95f2e262274b4275c9b92d78ba1d9f90c94ea8d0888565e1de21fc5d9fc"
+        },
+        "audit_source_disclosure_p2": {
+          "output": {
+            "status": "ACCEPT",
+            "scope": "source_disclosure",
+            "direct_question_copy": false,
+            "premise_target_bundle_exposed": false,
+            "complete_solution_exposed": false,
+            "public_quotes": [
+              "No",
+              "For the sequence x_n=1/n, the assigned value is f(x_n)=1/n^3.",
+              "For each n, there is a punctured neighborhood of 1/n on which f is identically 0.",
+              "At every point 1/n, the function f is discontinuous."
+            ],
+            "missing_essential_element": "The source premise that f satisfies lim_{x->0} f(x)/x^2 = 0, together with a global definition of f ensuring that limit, is not stated in the public clues.",
+            "inference_required": "One must supply the missing limit condition and extend the described local assignments to a full function on R (e.g., zero elsewhere), then verify f(x)/x^2 -> 0 and connect the discontinuities at 1/n to failure of differentiability in every neighborhood of 0.",
+            "reason": "The public answer only says 'No', and the clues describe local values and discontinuities at 1/n. They do not state the original limit premise or a complete global construction satisfying it, so the source task is not directly disclosed or fully solved by the public material alone."
+          },
+          "output_hash": "db3dae6f6976c95ec38be416be062d486fe42d455dff8a2c33487d25416157c1"
+        }
+      },
+      "decision": "excluded from W; no automatic repair because rejection is not corroborated by both reviewers",
+      "interpretation": "Complete proof of a different local continuity claim versus incomplete source differentiability problem"
+    }
+  ],
+  "initial_joint_accepts": 7,
+  "maximum_after_registered_repairs": 9,
+  "original_denominator": 12,
+  "production_80pct_possible_this_round": false,
+  "minimum_eight_family_student_screen_still_possible": true
+}

@@ -1,0 +1,82 @@
+{
+  "reviewer": "Assistant mathematical review before DeepSeek judgments; not human gold",
+  "rows": [
+    {
+      "response_key": "46:dense3:0",
+      "response_output_hash": "06b14581b86e98893827726843195af1c853a196a1e4a5542fe11c03f39eb789",
+      "evidence_hash": "fa8645279ae9cc0325b9a963de4ff11b8a1350ceacc8cd52c46501e95c0dfe76",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question omits the column-height multiset. Heights[3,3,2] give560 but[6,1,1] give56, and both satisfy eight total and unequal columns with fixed within-column orders. The multinomial formula alone does not specify the source question or its answer."
+    },
+    {
+      "response_key": "46:rich6:0",
+      "response_output_hash": "86f629b43f6560c6bd912434ab66098fe3fdde126d20632d52fd669f0efe1f28",
+      "evidence_hash": "f93f435753e368daba762241a1d59a493bd7aba16f6059ecb54ec92c8a1b37bf",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question omits the column-height multiset. Heights[3,3,2] give560 but[6,1,1] give56, and both satisfy eight total and unequal columns with fixed within-column orders. The multinomial formula alone does not specify the source question or its answer."
+    },
+    {
+      "response_key": "62:sparse3:0",
+      "response_output_hash": "39e2ae0bcf0ba465cfa0ebe705fb7ea5e4245dc40ea07eb0fcd87838425dc96d",
+      "evidence_hash": "962d977ff0c648aa69fbc4c5497e0ffa9d37b8456d53af7d34cdee432a193ecf",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question leaves center c unspecified instead of pi and does not specify a Laurent annulus. The justification both calls |c-pi| the radius and calls it infinite; for finite c!=pi the distance is finite. For c=0 an interior Taylor expansion has radius pi and an exterior Laurent annulus has outer radius infinity. This is not a self-contained equivalent original question."
+    },
+    {
+      "response_key": "62:rich6:0",
+      "response_output_hash": "08dfe038023ad62b8e56b9590b328fcbb1fac2083489fc02e22b7708a67b5587",
+      "evidence_hash": "394af1cc7f9d66680343c931f12835abb04465b0f4603ba65319e8134adbdaff",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question leaves center c unspecified instead of pi and does not specify a Laurent annulus. The justification both calls |c-pi| the radius and calls it infinite; for finite c!=pi the distance is finite. For c=0 an interior Taylor expansion has radius pi and an exterior Laurent annulus has outer radius infinity. This is not a self-contained equivalent original question."
+    },
+    {
+      "response_key": "62:dense3:0",
+      "response_output_hash": "ecdc0900910505e027a21c65745795ab11749eb3f1132e3948ffc83b3ca0f2ba",
+      "evidence_hash": "1d1cd29dee58fd5eba0b4b94fa080e7386220341a1a3ef90de69fca2a823c990",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question leaves center c unspecified instead of pi and does not specify a Laurent annulus. The justification both calls |c-pi| the radius and calls it infinite; for finite c!=pi the distance is finite. For c=0 an interior Taylor expansion has radius pi and an exterior Laurent annulus has outer radius infinity. This is not a self-contained equivalent original question."
+    },
+    {
+      "response_key": "129:rich6:0",
+      "response_output_hash": "88468705c58b03158640601c5db38e18fb6559d3bcb8332e14a3b1897d1bb78b",
+      "evidence_hash": "8654cb367fc73eded30c75d707332e36adb82ab1d3037d27d633f22cf7ba27c0",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question leaves word length unspecified below20. Counts differ, e.g. length1 has7 and length2 has12, so no unique remainder is determined. Original length12 is missing. Summing counts over all lengths1..19 is a different task and not the stated fixed-length count."
+    },
+    {
+      "response_key": "129:dense3:0",
+      "response_output_hash": "9c863a0d168ef4f5fff3a663e71a5bdf22c7480ed2627472edde17530b2915cf",
+      "evidence_hash": "5d86b58062bc3f5544a3843e84bae6b96ed8fbaa37a176036014db6fb4ea16d3",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The question leaves word length unspecified below20. Counts differ, e.g. length1 has7 and length2 has12, so no unique remainder is determined. Original length12 is missing. Summing counts over all lengths1..19 is a different task and not the stated fixed-length count. The total over lengths1..19 is1115 modulo2008, not1392."
+    },
+    {
+      "response_key": "129:sparse3:0",
+      "response_output_hash": "cc4b43d53303ef2e2607777c02fbc3402e9e7afb2517810262c3a1cebb6e5cd4",
+      "evidence_hash": "66289e32d47cfe40cbfb5dcfc4650c1e1fd2f38bdd56404ef0fbf5af91dfb492",
+      "grounded_semantic_success": false,
+      "semantic_equivalent": false,
+      "grounded_valid": false,
+      "reason": "The candidate substitutes word length6 for source length12. Direct recurrence gives a6=136, not1392. Its scalar Fibonacci recurrence is not the seven-state path-walk recurrence. Essential parameter changed and answer false."
+    }
+  ],
+  "failed_scheduled_draws": [
+    "46:sparse3:0"
+  ],
+  "failure_handling": "Unparseable cap-hit raw completion retained in student.json failures; not a successful reconstruction.",
+  "arithmetic_verification": "All digit-word counts checked against analytic-checks.json; initial draft typo168 corrected to exact recurrence value136 before reporting."
+}

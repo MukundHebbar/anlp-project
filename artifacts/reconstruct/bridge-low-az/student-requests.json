@@ -1,0 +1,144 @@
+{
+  "5:zero_bridge:0": {
+    "source_index": 5,
+    "arm": "zero_bridge",
+    "bank_key": "5:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "100! \\left( H_{100} - H_{50} \\right)",
+      "clues": [
+        "The requested quantity is the number of permutations in the symmetric group S_100.",
+        "The permutations counted must contain at least one cycle whose length is at least an unreported integer t.",
+        "The unreported threshold t is greater than 50.",
+        "For this threshold, a permutation cannot contain two distinct cycles that both meet the condition."
+      ],
+      "rendered_clues": "- The requested quantity is the number of permutations in the symmetric group S_100.\n- The permutations counted must contain at least one cycle whose length is at least an unreported integer t.\n- The unreported threshold t is greater than 50.\n- For this threshold, a permutation cannot contain two distinct cycles that both meet the condition.",
+      "style": "sentence",
+      "clue_count": 4,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "24a99c086e9282e9c177dd9210fbb16ca7cfa46edf779a18cfd55728366c37c8",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Infer the missing details before writing the question. The returned question must ask for the ORIGINAL requested quantity, whose answer is the supplied final answer; do not instead ask the reader to find your missing premise. State the concrete inferred premises briefly in assumptions first, then write the complete question, then verify it mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"assumptions\":[\"The supplied longer side6 and side sum10 imply other side4 and missing area24.\"],\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"For this reconstructed question, x(10-x)=24 gives sides4 and6, so the longer side is6. All observations describe this setup. The requested answer is6; area24 is an inferred premise, not the question target.\"}\n\nReturn JSON only:\n{\"assumptions\":[\"Concrete inferred premise(s), with brief support\"],\"question\":\"...\",\"justification\":\"...\"}\n\nFINAL ANSWER: 100! \\left( H_{100} - H_{50} \\right)\nOBSERVATIONS:\n- The requested quantity is the number of permutations in the symmetric group S_100.\n- The permutations counted must contain at least one cycle whose length is at least an unreported integer t.\n- The unreported threshold t is greater than 50.\n- For this threshold, a permutation cannot contain two distinct cycles that both meet the condition.",
+    "rendered_input_hash": "1c62a7164749489937acdfd9cd6b49c45e9bd50858be7d7dfb54a56232380fa5"
+  },
+  "10:zero_bridge:0": {
+    "source_index": 10,
+    "arm": "zero_bridge",
+    "bank_key": "10:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "27",
+      "clues": [
+        "The requested quantity is the least nonnegative remainder of n! modulo 61, where n is an unreported positive integer.",
+        "The modulus 61 is prime, so Wilson’s theorem applies to the factorial 60!.",
+        "The final remainder is 27, so n! is a nonzero residue modulo 61.",
+        "Writing 60! as n! times the product of the integers from n+1 through 60, that tail product is congruent to (-1)^{60-n}(60-n)! modulo 61.",
+        "Combining Wilson’s congruence with the nonzero remainder gives a congruence involving n! and the complementary factorial."
+      ],
+      "rendered_clues": "- The requested quantity is the least nonnegative remainder of n! modulo 61, where n is an unreported positive integer.\n- The modulus 61 is prime, so Wilson’s theorem applies to the factorial 60!.\n- The final remainder is 27, so n! is a nonzero residue modulo 61.\n- Writing 60! as n! times the product of the integers from n+1 through 60, that tail product is congruent to (-1)^{60-n}(60-n)! modulo 61.\n- Combining Wilson’s congruence with the nonzero remainder gives a congruence involving n! and the complementary factorial.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "199eeecb75e20cdfe6eb933ba029c6ed8453b2cba31bb65d282362386e9e2d69",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Infer the missing details before writing the question. The returned question must ask for the ORIGINAL requested quantity, whose answer is the supplied final answer; do not instead ask the reader to find your missing premise. State the concrete inferred premises briefly in assumptions first, then write the complete question, then verify it mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"assumptions\":[\"The supplied longer side6 and side sum10 imply other side4 and missing area24.\"],\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"For this reconstructed question, x(10-x)=24 gives sides4 and6, so the longer side is6. All observations describe this setup. The requested answer is6; area24 is an inferred premise, not the question target.\"}\n\nReturn JSON only:\n{\"assumptions\":[\"Concrete inferred premise(s), with brief support\"],\"question\":\"...\",\"justification\":\"...\"}\n\nFINAL ANSWER: 27\nOBSERVATIONS:\n- The requested quantity is the least nonnegative remainder of n! modulo 61, where n is an unreported positive integer.\n- The modulus 61 is prime, so Wilson’s theorem applies to the factorial 60!.\n- The final remainder is 27, so n! is a nonzero residue modulo 61.\n- Writing 60! as n! times the product of the integers from n+1 through 60, that tail product is congruent to (-1)^{60-n}(60-n)! modulo 61.\n- Combining Wilson’s congruence with the nonzero remainder gives a congruence involving n! and the complementary factorial.",
+    "rendered_input_hash": "efb5fad54754119c7960ccac7e1b12188426b2075fa055c409abde870ca4a524"
+  },
+  "16:zero_bridge:0": {
+    "source_index": 16,
+    "arm": "zero_bridge",
+    "bank_key": "16:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "98",
+      "clues": [
+        "The requested quantity is the number of integral points (x,y) on a hyperbola x^2 - y^2 = N^2, where N is an unreported positive integer.",
+        "The unreported integer N is known to have the form 2^4 * 5^k for some positive integer k.",
+        "For an integral point, the substitutions u=x-y and v=x+y require u and v to have the same parity.",
+        "Since N^2 is even, the same-parity condition forces u and v to be even, so the count is the number of ordered integer factor pairs (a,b) with ab=N^2/4.",
+        "For a positive product, ordered integer factor pairs come in positive and negative sign choices, so the count is twice the number of positive divisors of N^2/4."
+      ],
+      "rendered_clues": "- The requested quantity is the number of integral points (x,y) on a hyperbola x^2 - y^2 = N^2, where N is an unreported positive integer.\n- The unreported integer N is known to have the form 2^4 * 5^k for some positive integer k.\n- For an integral point, the substitutions u=x-y and v=x+y require u and v to have the same parity.\n- Since N^2 is even, the same-parity condition forces u and v to be even, so the count is the number of ordered integer factor pairs (a,b) with ab=N^2/4.\n- For a positive product, ordered integer factor pairs come in positive and negative sign choices, so the count is twice the number of positive divisors of N^2/4.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "16b801c8bdcba34b94fc5c85497dfbafb912fbb11b2be09b0371da28add9ad0a",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Infer the missing details before writing the question. The returned question must ask for the ORIGINAL requested quantity, whose answer is the supplied final answer; do not instead ask the reader to find your missing premise. State the concrete inferred premises briefly in assumptions first, then write the complete question, then verify it mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"assumptions\":[\"The supplied longer side6 and side sum10 imply other side4 and missing area24.\"],\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"For this reconstructed question, x(10-x)=24 gives sides4 and6, so the longer side is6. All observations describe this setup. The requested answer is6; area24 is an inferred premise, not the question target.\"}\n\nReturn JSON only:\n{\"assumptions\":[\"Concrete inferred premise(s), with brief support\"],\"question\":\"...\",\"justification\":\"...\"}\n\nFINAL ANSWER: 98\nOBSERVATIONS:\n- The requested quantity is the number of integral points (x,y) on a hyperbola x^2 - y^2 = N^2, where N is an unreported positive integer.\n- The unreported integer N is known to have the form 2^4 * 5^k for some positive integer k.\n- For an integral point, the substitutions u=x-y and v=x+y require u and v to have the same parity.\n- Since N^2 is even, the same-parity condition forces u and v to be even, so the count is the number of ordered integer factor pairs (a,b) with ab=N^2/4.\n- For a positive product, ordered integer factor pairs come in positive and negative sign choices, so the count is twice the number of positive divisors of N^2/4.",
+    "rendered_input_hash": "f3d8fcffd13b00338731a6ff3eea5ecda0cb6a766ed724c1342867355b1f394e"
+  },
+  "54:zero_bridge:0": {
+    "source_index": 54,
+    "arm": "zero_bridge",
+    "bank_key": "54:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{99}",
+      "clues": [
+        "The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.",
+        "The complex number omega is constrained to have modulus 1.",
+        "The complex number z has an unreported positive modulus R.",
+        "For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.",
+        "If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2."
+      ],
+      "rendered_clues": "- The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.\n- The complex number omega is constrained to have modulus 1.\n- The complex number z has an unreported positive modulus R.\n- For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.\n- If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "ed20477e7afe2c774910d10a8588bdf7f547b57139302b05ab1fd608ba22e7fc",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Infer the missing details before writing the question. The returned question must ask for the ORIGINAL requested quantity, whose answer is the supplied final answer; do not instead ask the reader to find your missing premise. State the concrete inferred premises briefly in assumptions first, then write the complete question, then verify it mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"assumptions\":[\"The supplied longer side6 and side sum10 imply other side4 and missing area24.\"],\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"For this reconstructed question, x(10-x)=24 gives sides4 and6, so the longer side is6. All observations describe this setup. The requested answer is6; area24 is an inferred premise, not the question target.\"}\n\nReturn JSON only:\n{\"assumptions\":[\"Concrete inferred premise(s), with brief support\"],\"question\":\"...\",\"justification\":\"...\"}\n\nFINAL ANSWER: \\dfrac{1}{99}\nOBSERVATIONS:\n- The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.\n- The complex number omega is constrained to have modulus 1.\n- The complex number z has an unreported positive modulus R.\n- For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.\n- If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2.",
+    "rendered_input_hash": "72a6f89396fa88376c5489afa76eab2bbe014f45e435cfd4dfb5c230e88b56de"
+  },
+  "67:zero_bridge:0": {
+    "source_index": 67,
+    "arm": "zero_bridge",
+    "bank_key": "67:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.",
+        "The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.",
+        "If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.",
+        "There is an unreported scalar c such that T(v1)=c(v1+...+vn).",
+        "The first column of A is therefore c times the all-ones vector."
+      ],
+      "rendered_clues": "- The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.\n- The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.\n- If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.\n- There is an unreported scalar c such that T(v1)=c(v1+...+vn).\n- The first column of A is therefore c times the all-ones vector.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "d48e2d7a5074e2086cb7b158cf70c58c8c0816a479be9c9ef4814aa9300c0338",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Infer the missing details before writing the question. The returned question must ask for the ORIGINAL requested quantity, whose answer is the supplied final answer; do not instead ask the reader to find your missing premise. State the concrete inferred premises briefly in assumptions first, then write the complete question, then verify it mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"assumptions\":[\"The supplied longer side6 and side sum10 imply other side4 and missing area24.\"],\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"For this reconstructed question, x(10-x)=24 gives sides4 and6, so the longer side is6. All observations describe this setup. The requested answer is6; area24 is an inferred premise, not the question target.\"}\n\nReturn JSON only:\n{\"assumptions\":[\"Concrete inferred premise(s), with brief support\"],\"question\":\"...\",\"justification\":\"...\"}\n\nFINAL ANSWER: 1\nOBSERVATIONS:\n- The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.\n- The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.\n- If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.\n- There is an unreported scalar c such that T(v1)=c(v1+...+vn).\n- The first column of A is therefore c times the all-ones vector.",
+    "rendered_input_hash": "77cc59be4bb355568baad9c29ee96fc5be616ad55f4ee08093beab3e4988c0c6"
+  },
+  "113:zero_bridge:0": {
+    "source_index": 113,
+    "arm": "zero_bridge",
+    "bank_key": "113:37b7e2ec1d594f3c01f0e6b8f8ea2a63230b7c981543f9d50325afdceb6f827d:deepseek-ai/DeepSeek-V4.1-Flash:low",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{e}",
+      "clues": [
+        "The requested quantity is the limit as n tends to infinity of x_n divided by n, with n an integer at least 2.",
+        "For each n, x_n is the (α n)-th root of 1 plus the sum from k=2 to n of (k-1)(k-1)!, where α is an unreported positive real number.",
+        "The summand (k-1)(k-1)! can be rewritten as k!-(k-1)!.",
+        "Consequently, the sum from k=2 to n telescopes to n!-1."
+      ],
+      "rendered_clues": "- The requested quantity is the limit as n tends to infinity of x_n divided by n, with n an integer at least 2.\n- For each n, x_n is the (α n)-th root of 1 plus the sum from k=2 to n of (k-1)(k-1)!, where α is an unreported positive real number.\n- The summand (k-1)(k-1)! can be rewritten as k!-(k-1)!.\n- Consequently, the sum from k=2 to n telescopes to n!-1.",
+      "style": "sentence",
+      "clue_count": 4,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "evidence_hash": "4e1bbe8c3b15f27ef376307e5ecabf37859f788c067c753f95dd09efc3ccb319",
+    "rendered_prompt": "Reconstruct the original mathematical question from its final answer and partial observations. Return one fully specified question whose solution has that answer and substantively uses all observations. Equivalent mathematical formulations are welcome.\n\nUse the answer as a constraint to infer missing premises, parameters, or the requested target. Put those inferred details into the question itself. Do not simply rephrase the observations while leaving an essential count, length, center, or condition unspecified. If several reconstructions fit, choose one plausible coherent version and state your assumptions; do not claim uniqueness. Do not insert the answer as an assumed premise or invent an unrelated question with the same answer. Infer the missing details before writing the question. The returned question must ask for the ORIGINAL requested quantity, whose answer is the supplied final answer; do not instead ask the reader to find your missing premise. State the concrete inferred premises briefly in assumptions first, then write the complete question, then verify it mathematically in a concise justification.\n\nExample:\nFinal answer: 6.\nObservations: A rectangle has side lengths summing to10. The requested quantity is the longer side. Area in terms of side x is x(10-x).\nOutput: {\"assumptions\":[\"The supplied longer side6 and side sum10 imply other side4 and missing area24.\"],\"question\":\"A rectangle has perimeter20 and area24. What is its longer side length?\",\"justification\":\"For this reconstructed question, x(10-x)=24 gives sides4 and6, so the longer side is6. All observations describe this setup. The requested answer is6; area24 is an inferred premise, not the question target.\"}\n\nReturn JSON only:\n{\"assumptions\":[\"Concrete inferred premise(s), with brief support\"],\"question\":\"...\",\"justification\":\"...\"}\n\nFINAL ANSWER: \\dfrac{1}{e}\nOBSERVATIONS:\n- The requested quantity is the limit as n tends to infinity of x_n divided by n, with n an integer at least 2.\n- For each n, x_n is the (α n)-th root of 1 plus the sum from k=2 to n of (k-1)(k-1)!, where α is an unreported positive real number.\n- The summand (k-1)(k-1)! can be rewritten as k!-(k-1)!.\n- Consequently, the sum from k=2 to n telescopes to n!-1.",
+    "rendered_input_hash": "19fc51d2345d9a52df3390c824cc4d2960989c3f8255df56b1812a5febf497a0"
+  }
+}

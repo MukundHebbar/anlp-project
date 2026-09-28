@@ -1,0 +1,167 @@
+[
+  {
+    "source_index": 5,
+    "source_question": "How many permutations in the symmetric group $S_{100}$ contain at least one cycle of length 51 or more?",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "100! \\left( H_{100} - H_{50} \\right)",
+      "clues": [
+        "The requested quantity is the number of permutations in the symmetric group S_100.",
+        "The permutations counted must contain at least one cycle whose length is at least an unreported integer t.",
+        "The unreported threshold t is greater than 50.",
+        "For this threshold, a permutation cannot contain two distinct cycles that both meet the condition."
+      ],
+      "rendered_clues": "- The requested quantity is the number of permutations in the symmetric group S_100.\n- The permutations counted must contain at least one cycle whose length is at least an unreported integer t.\n- The unreported threshold t is greater than 50.\n- For this threshold, a permutation cannot contain two distinct cycles that both meet the condition.",
+      "style": "sentence",
+      "clue_count": 4,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "student_output": {
+      "question": "What is the number of permutations in the symmetric group $ S_{100} $ that contain at least one cycle of length at least 75 but no two distinct cycles of such length?",
+      "justification": "The final answer $ 100! \\left( H_{100} - H_{50} \\right) $ suggests a relationship involving harmonic numbers and permutations. The observations indicate that the question is about counting permutations in $ S_{100} $ with specific cycle properties. The threshold $ t = 75 $ is greater than 50, and the condition that a permutation cannot contain two distinct cycles of such length implies a unique cycle count. The harmonic numbers $ H_{100} $ and $ H_{50} $ are used to calculate the number of such permutations, which is given by the final answer. The structure of the answer suggests that the difference in harmonic numbers is multiplied by $ 100! $, which is the total number of permutations in $ S_{100} $, and this product represents the count of permutations meeting the specified cycle conditions.",
+      "assumptions": [
+        "The threshold $ t $ is inferred as 75 based on the condition that it is greater than 50 and the structure of the answer.",
+        "The answer is derived from the difference in harmonic numbers multiplied by $ 100! $, which is the total number of permutations in $ S_{100} $."
+      ]
+    },
+    "failure": null
+  },
+  {
+    "source_index": 10,
+    "source_question": "Find the remainder when $51!$ is divided by $61$. Express your answer as an integer.",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "27",
+      "clues": [
+        "The requested quantity is the least nonnegative remainder of n! modulo 61, where n is an unreported positive integer.",
+        "The modulus 61 is prime, so Wilson’s theorem applies to the factorial 60!.",
+        "The final remainder is 27, so n! is a nonzero residue modulo 61.",
+        "Writing 60! as n! times the product of the integers from n+1 through 60, that tail product is congruent to (-1)^{60-n}(60-n)! modulo 61.",
+        "Combining Wilson’s congruence with the nonzero remainder gives a congruence involving n! and the complementary factorial."
+      ],
+      "rendered_clues": "- The requested quantity is the least nonnegative remainder of n! modulo 61, where n is an unreported positive integer.\n- The modulus 61 is prime, so Wilson’s theorem applies to the factorial 60!.\n- The final remainder is 27, so n! is a nonzero residue modulo 61.\n- Writing 60! as n! times the product of the integers from n+1 through 60, that tail product is congruent to (-1)^{60-n}(60-n)! modulo 61.\n- Combining Wilson’s congruence with the nonzero remainder gives a congruence involving n! and the complementary factorial.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "student_output": {
+      "question": "Find the least nonnegative remainder of n! modulo 61, where n is a positive integer such that n! ≡ 27 mod 61 and 61 is prime.",
+      "justification": "The given answer 27 and the modulus 61 being prime implies Wilson’s theorem applies to 60! ≡ -1 mod 61. The observations indicate that n! is a nonzero residue modulo 61, and the tail product from n+1 to 60 is congruent to (-1)^{60-n}(60-n)! mod 61. Combining Wilson’s theorem with the nonzero remainder and the given answer leads to the specific value of n! ≡ 27 mod 61. The question is reconstructed to include the missing parameters and the target value 27 as a constraint.",
+      "assumptions": [
+        "I inferred the missing parameters n and the target value 27 as a constraint using the answer and the observations about Wilson’s theorem and modular arithmetic."
+      ]
+    },
+    "failure": null
+  },
+  {
+    "source_index": 16,
+    "source_question": "Determine the number of integral points on the hyperbola \\(x^2 - y^2 = (2000)^2\\). An integral point is a point where both coordinates are integers.",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "98",
+      "clues": [
+        "The requested quantity is the number of integral points (x,y) on a hyperbola x^2 - y^2 = N^2, where N is an unreported positive integer.",
+        "The unreported integer N is known to have the form 2^4 * 5^k for some positive integer k.",
+        "For an integral point, the substitutions u=x-y and v=x+y require u and v to have the same parity.",
+        "Since N^2 is even, the same-parity condition forces u and v to be even, so the count is the number of ordered integer factor pairs (a,b) with ab=N^2/4.",
+        "For a positive product, ordered integer factor pairs come in positive and negative sign choices, so the count is twice the number of positive divisors of N^2/4."
+      ],
+      "rendered_clues": "- The requested quantity is the number of integral points (x,y) on a hyperbola x^2 - y^2 = N^2, where N is an unreported positive integer.\n- The unreported integer N is known to have the form 2^4 * 5^k for some positive integer k.\n- For an integral point, the substitutions u=x-y and v=x+y require u and v to have the same parity.\n- Since N^2 is even, the same-parity condition forces u and v to be even, so the count is the number of ordered integer factor pairs (a,b) with ab=N^2/4.\n- For a positive product, ordered integer factor pairs come in positive and negative sign choices, so the count is twice the number of positive divisors of N^2/4.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "student_output": {
+      "question": "Find the value of N such that the number of integral points (x,y) on the hyperbola x^2 - y^2 = N^2 is 98, where N is of the form 2^4 * 5^k for some positive integer k.",
+      "justification": "The final answer is 98, which is the number of integral points on the hyperbola. The number of integral points is twice the number of positive divisors of N^2/4. Given that N = 2^4 * 5^k, N^2/4 = (2^8 * 5^{2k}) / 4 = 2^6 * 5^{2k}. The number of positive divisors of 2^6 * 5^{2k} is (6+1)(2k+1) = 7(2k+1). Therefore, twice this is 14(2k+1) = 98. Solving 14(2k+1) = 98 gives 2k+1 = 7, so k = 3. Thus, N = 2^4 * 5^3 = 16 * 125 = 2000.",
+      "assumptions": [
+        "The form of N is given as 2^4 * 5^k.",
+        "The number of integral points on the hyperbola is twice the number of positive divisors of N^2/4.",
+        "The parity condition and substitutions u = x - y, v = x + y lead to the requirement that u and v are even, hence N^2/4 must be an integer."
+      ]
+    },
+    "failure": null
+  },
+  {
+    "source_index": 54,
+    "source_question": "Let \\( \\omega \\) and \\( z \\) be complex numbers such that \\( |\\omega| = 1 \\) and \\( |z| = 10 \\). Define \\( \\theta = \\arg\\left(\\frac{\\omega - z}{z}\\right) \\). Determine the maximum possible value of \\( \\tan^2 \\theta \\).",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{99}",
+      "clues": [
+        "The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.",
+        "The complex number omega is constrained to have modulus 1.",
+        "The complex number z has an unreported positive modulus R.",
+        "For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.",
+        "If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2."
+      ],
+      "rendered_clues": "- The requested quantity is the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z.\n- The complex number omega is constrained to have modulus 1.\n- The complex number z has an unreported positive modulus R.\n- For u = (omega - z)/z, the identity u + 1 = omega/z places u on a circle centered at -1 with radius 1/R.\n- If u = X + iY and X is nonzero, then tan^2(theta) equals Y^2/X^2.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "student_output": {
+      "question": "Find the maximum possible value of tan^2(theta), where theta is the argument of (omega - z)/z for complex numbers omega and z, given that omega has modulus 1, z has modulus R > 0, and u = (omega - z)/z satisfies u + 1 = omega/z, placing u on a circle centered at -1 with radius 1/R.",
+      "justification": "The maximum tan^2(theta) corresponds to the maximum Y^2/X^2 where u = X + iY lies on the circle centered at -1 with radius 1/R. The maximum value of Y^2/X^2 occurs when Y is maximized relative to X, which happens when the point on the circle is farthest in the imaginary direction. This maximum value is 1/99 as derived from the geometric constraints and the relationship between X and Y.",
+      "assumptions": [
+        "The maximum tan^2(theta) is determined by the geometry of the circle and the relationship between X and Y.",
+        "The modulus R is inferred to be such that the circle's radius 1/R allows the maximum Y^2/X^2 to be 1/99."
+      ]
+    },
+    "failure": null
+  },
+  {
+    "source_index": 67,
+    "source_question": "Let $B = \\{ v_i \\}_{i=1}^n$ be a basis of a vector space $V$, and let $T: V \\rightarrow V$ be a linear operator such that $T(v_1) = \\sum_{i=1}^n v_i$. Find the sum of the elements of the matrix $[T^{-1}]_B$, where $[T^{-1}]_B$ is the matrix representation of the inverse of $T$ with respect to the basis $B$. Provide your answer as a single number.",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "1",
+      "clues": [
+        "The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.",
+        "The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.",
+        "If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.",
+        "There is an unreported scalar c such that T(v1)=c(v1+...+vn).",
+        "The first column of A is therefore c times the all-ones vector."
+      ],
+      "rendered_clues": "- The setting is a vector space V with an ordered basis B=(v1,...,vn), and T is an invertible linear operator on V.\n- The requested quantity is the sum of all entries of the matrix of T^{-1} with respect to B.\n- If A is the matrix of T with respect to B, then the matrix of T^{-1} with respect to B is A^{-1}.\n- There is an unreported scalar c such that T(v1)=c(v1+...+vn).\n- The first column of A is therefore c times the all-ones vector.",
+      "style": "sentence",
+      "clue_count": 5,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "student_output": {
+      "question": "Let V be a vector space with an ordered basis B = (v1, ..., vn). Let T be an invertible linear operator on V such that T(v1) = c(v1 + ... + vn) for some scalar c. Let A be the matrix of T with respect to B. What is the sum of all entries of A^{-1}?",
+      "justification": "The given observations indicate that the first column of A is c times the all-ones vector. Since A is the matrix of T with respect to B, the matrix of T^{-1} with respect to B is A^{-1}. The sum of all entries of A^{-1} is requested. Given that the first column of A is c times the all-ones vector, and knowing that the sum of all entries of A^{-1} is 1, this implies that the matrix A^{-1} has a specific structure that results in the sum of its entries being 1. The setup and the answer together confirm that the sum of all entries of A^{-1} is 1.",
+      "assumptions": [
+        "I inferred the missing scalar c and the structure of A based on the given observations and the answer.",
+        "I assumed that the sum of all entries of A^{-1} is 1 as given in the final answer."
+      ]
+    },
+    "failure": null
+  },
+  {
+    "source_index": 113,
+    "source_question": "Compute the limit \\( \\lim_{n\\rightarrow \\infty }\\frac{x_{n}}{n} \\) for the sequence \\((x_{n})_{n\\geq 2}\\) defined by \\(x_{n}=\\sqrt[n]{1+\\sum_{k=2}^{n}(k-1)(k-1)!}\\).",
+    "public_evidence": {
+      "condition": "bank",
+      "final_answer": "\\dfrac{1}{e}",
+      "clues": [
+        "The requested quantity is the limit as n tends to infinity of x_n divided by n, with n an integer at least 2.",
+        "For each n, x_n is the (α n)-th root of 1 plus the sum from k=2 to n of (k-1)(k-1)!, where α is an unreported positive real number.",
+        "The summand (k-1)(k-1)! can be rewritten as k!-(k-1)!.",
+        "Consequently, the sum from k=2 to n telescopes to n!-1."
+      ],
+      "rendered_clues": "- The requested quantity is the limit as n tends to infinity of x_n divided by n, with n an integer at least 2.\n- For each n, x_n is the (α n)-th root of 1 plus the sum from k=2 to n of (k-1)(k-1)!, where α is an unreported positive real number.\n- The summand (k-1)(k-1)! can be rewritten as k!-(k-1)!.\n- Consequently, the sum from k=2 to n telescopes to n!-1.",
+      "style": "sentence",
+      "clue_count": 4,
+      "selection_policy": "frozen_onegap",
+      "disclosure": "medium"
+    },
+    "student_output": null,
+    "failure": "ValueError: Student response is neither valid JSON nor a readable question/justification response"
+  }
+]

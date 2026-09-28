@@ -1,0 +1,78 @@
+{
+  "rows": [
+    {
+      "source_index": 21,
+      "audit_output_hash": "35e79c24e565f7ca9bfccbda1a1edb2cc9278e8e8929f2c82f05a6d1467525bb",
+      "output": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The requested quantity is the number of primitive roots modulo an odd integer p, counted among representatives 1 through p.",
+          "The modulus p is given by p=2^m+1 for a positive integer m.",
+          "For a prime modulus p, the multiplicative group of units is cyclic of order p-1, and the number of primitive roots is \u03c6(p-1).",
+          "The final count is stated as 2^{m-1}."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "No nontrivial inference remains: the target quantity, modulus relation, relevant theorem, and final count are all supplied.",
+        "reason": "The observations jointly expose the requested target, the setup p=2^m+1, the primitive-root counting theorem, and the final answer 2^{m-1}. This is a complete or nearly complete premise-target/solution bundle, so it must be rejected."
+      },
+      "analytic_assessment": "Task-definition disagreement: public answer/inverse recovery is treated as leakage; original withheld threshold, factorial index, or primality still requires inference. See independent inverse certificates.",
+      "action": "Preserve verdict; compare global gate ablation AL, no re-judgment"
+    },
+    {
+      "source_index": 5,
+      "audit_output_hash": "236daa420cab225e7d508a0776e33b86363f6e543f868a40b9604766ec3cdb24",
+      "output": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "FINAL ANSWER: 100! \\left( H_{100} - H_{50} \\right)",
+          "The requested quantity is the number of permutations in the symmetric group S_100.",
+          "The permutations counted must contain at least one cycle whose length is at least an unreported integer t.",
+          "The unreported threshold t is greater than 50.",
+          "For this threshold, a permutation cannot contain two distinct cycles that both meet the condition."
+        ],
+        "missing_essential_element": "none",
+        "inference_required": "Only routine recognition that the given expression corresponds to t=51; the requested count is already fully supplied.",
+        "reason": "The observations provide the domain, counting constraint, and target quantity, while the final answer directly supplies the requested count. The only withheld parameter is recoverable from the answer, so no meaningful missing structure remains."
+      },
+      "analytic_assessment": "Task-definition disagreement: public answer/inverse recovery is treated as leakage; original withheld threshold, factorial index, or primality still requires inference. See independent inverse certificates.",
+      "action": "Preserve verdict; compare global gate ablation AL, no re-judgment"
+    },
+    {
+      "source_index": 10,
+      "audit_output_hash": "6de78a193b8cf6150b7ca39c836d8dadf40eebad1da4ff83add68cac2d8f943e",
+      "output": {
+        "status": "REJECT",
+        "scope": "public_disclosure",
+        "direct_question_copy": false,
+        "premise_target_bundle_exposed": true,
+        "complete_solution_exposed": true,
+        "public_quotes": [
+          "The requested quantity is the least nonnegative remainder of n! modulo 61, where n is an unreported positive integer.",
+          "The final remainder is 27, so n! is a nonzero residue modulo 61."
+        ],
+        "missing_essential_element": "none; n is unreported, but the requested remainder is already supplied as 27",
+        "inference_required": "No nontrivial inference remains: c1 defines the target as the remainder of n! modulo 61, and c3 directly supplies that final remainder as 27.",
+        "reason": "The observations jointly expose the requested quantity and its final value. Although n is not reported, the target is the remainder itself, so the answer is directly disclosed rather than requiring an inverse inference."
+      },
+      "analytic_assessment": "Task-definition disagreement: public answer/inverse recovery is treated as leakage; original withheld threshold, factorial index, or primality still requires inference. See independent inverse certificates.",
+      "action": "Preserve verdict; compare global gate ablation AL, no re-judgment"
+    }
+  ],
+  "not_independent_human_gold": true,
+  "additional_error": {
+    "source_index": 54,
+    "audit": "audit_public_p5",
+    "verdict": "ACCEPT",
+    "incorrect_claim": "R^2=99",
+    "correction": "Maximum slope squared is 1/(R^2-1); answer 1/99 implies R^2=100 and R=10. Acceptance does not certify mathematical correctness of its rationale.",
+    "certificate": "analytic-inverse-certificates.json"
+  }
+}
