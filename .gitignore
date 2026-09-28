@@ -4,6 +4,7 @@ __pycache__/
 build/
 dist/
 wheelhouse/
+wheelhouse
 wheels/
 *.egg-info
 .pytest_cache/
@@ -17,6 +18,7 @@ htmlcov/
 
 # Local data, archives, and generated runs
 data/datasets/
+data/datasets
 local/
 logs/
 *.log
@@ -24,6 +26,10 @@ slurm-*.out
 slurm-*.err
 data/legacy-*/
 docs/guides/turing.md
+
+# The final dataset is tracked as .jsonl.gz: the raw train files exceed GitHub's 100 MB limit.
+data/manifests/final-v3/*.jsonl
+data/manifests/final-v3.zip
 
 .env
 **/.env

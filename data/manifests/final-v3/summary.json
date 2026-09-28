@@ -1,0 +1,248 @@
+{
+  "version": "FINAL-v3",
+  "seed": 20260928,
+  "total_per_task": 4000,
+  "test_per_task": 400,
+  "parquet_sha256": {
+    "train-00000-of-00010.parquet": "d6412432f30425e848a224dc641e681eb1ed51b970d52536eda7daefc01d8c8b",
+    "train-00001-of-00010.parquet": "eef9d3012456239eb0f4cd462ac7bebb7d6c4f675c41329c680ef8a506ded512",
+    "train-00002-of-00010.parquet": "20e4dc6527d94c2057a9b727f8b58994395de602e284b3294f7d2451f75d681a",
+    "train-00003-of-00010.parquet": "c5b20135f93e7890da191973ad77d88e67c95144ccc169ec592489f044e7c38a",
+    "train-00004-of-00010.parquet": "4153e531d78ca278d2e12e6d08099b66126b26b99ca6a92b3d6f95c156818749",
+    "train-00005-of-00010.parquet": "110586bdc6f35b0434bccbd582f1e97e8328da0752ccd36590a50178885f0360",
+    "train-00006-of-00010.parquet": "e39c00ed42a6a1af74ddc042840884a59adcb9139a23f535e399ddf0c292ef76",
+    "train-00007-of-00010.parquet": "fdeb213b5c2d0bb50f1081ae48b7ce4fa38147efe623de5d6d836a32f4044dad",
+    "train-00008-of-00010.parquet": "d8e5b1417f0364312896d259efbea0600c1fac22eacb2f71187c5b0e9704f388",
+    "train-00009-of-00010.parquet": "67639c6620cabce348e91c2cc331c4877307ed1a5d8fbd1c0d7dcca561cea8df"
+  },
+  "judge_reduction": {
+    "start": 4604,
+    "removed_shared_with_reconstruct": [
+      2939,
+      17249,
+      48698,
+      50411
+    ],
+    "removed_internal_duplicates": [
+      49025
+    ],
+    "removed_5_step": 343,
+    "removed_6_step": {
+      "correct": 184,
+      "incorrect": 72
+    },
+    "final": 4000,
+    "final_labels": {
+      "correct": 2000,
+      "incorrect": 2000
+    }
+  },
+  "judge": {
+    "train": 3600,
+    "test": 400,
+    "by_topic": {
+      "train": {
+        "Number Theory": 1011,
+        "Algebra": 870,
+        "Calculus": 899,
+        "Discrete Mathematics": 820
+      },
+      "test": {
+        "Number Theory": 113,
+        "Discrete Mathematics": 91,
+        "Calculus": 99,
+        "Algebra": 97
+      }
+    },
+    "by_difficulty": {
+      "train": {
+        "5.0": 726,
+        "5.5": 660,
+        "6.0": 775,
+        "6.5": 347,
+        "7.0": 376,
+        "7.5": 252,
+        "8.0": 464
+      },
+      "test": {
+        "5.0": 81,
+        "5.5": 74,
+        "6.0": 87,
+        "6.5": 38,
+        "7.0": 40,
+        "7.5": 28,
+        "8.0": 52
+      }
+    },
+    "labels": {
+      "train": {
+        "correct": 1800,
+        "incorrect": 1800
+      },
+      "test": {
+        "incorrect": 200,
+        "correct": 200
+      }
+    },
+    "steps": {
+      "train": {
+        "6": 2219,
+        "7": 1295,
+        "8": 86
+      },
+      "test": {
+        "6": 316,
+        "7": 76,
+        "8": 8
+      }
+    },
+    "error_position_incorrect": {
+      "train": {
+        "middle": 639,
+        "late": 668,
+        "early": 493
+      },
+      "test": {
+        "middle": 65,
+        "early": 62,
+        "late": 73
+      }
+    }
+  },
+  "reconstruct": {
+    "train": 3600,
+    "test": 400,
+    "by_topic": {
+      "train": {
+        "Algebra": 919,
+        "Calculus": 922,
+        "Discrete Mathematics": 865,
+        "Number Theory": 894
+      },
+      "test": {
+        "Algebra": 101,
+        "Calculus": 102,
+        "Discrete Mathematics": 97,
+        "Number Theory": 100
+      }
+    },
+    "by_difficulty": {
+      "train": {
+        "5.0": 765,
+        "5.5": 652,
+        "6.0": 767,
+        "6.5": 323,
+        "7.0": 370,
+        "7.5": 250,
+        "8.0": 473
+      },
+      "test": {
+        "5.0": 85,
+        "5.5": 73,
+        "6.0": 84,
+        "6.5": 36,
+        "7.0": 41,
+        "7.5": 28,
+        "8.0": 53
+      }
+    }
+  },
+  "solve_build": {
+    "target_cells": {
+      "Algebra|5.0": 210,
+      "Algebra|5.5": 159,
+      "Algebra|6.0": 210,
+      "Algebra|6.5": 82,
+      "Algebra|7.0": 98,
+      "Algebra|7.5": 67,
+      "Algebra|8.0": 166,
+      "Calculus|5.0": 176,
+      "Calculus|5.5": 191,
+      "Calculus|6.0": 237,
+      "Calculus|6.5": 107,
+      "Calculus|7.0": 107,
+      "Calculus|7.5": 83,
+      "Calculus|8.0": 108,
+      "Discrete Mathematics|5.0": 186,
+      "Discrete Mathematics|5.5": 158,
+      "Discrete Mathematics|6.0": 187,
+      "Discrete Mathematics|6.5": 88,
+      "Discrete Mathematics|7.0": 117,
+      "Discrete Mathematics|7.5": 72,
+      "Discrete Mathematics|8.0": 130,
+      "Number Theory|5.0": 256,
+      "Number Theory|5.5": 221,
+      "Number Theory|6.0": 223,
+      "Number Theory|6.5": 94,
+      "Number Theory|7.0": 92,
+      "Number Theory|7.5": 58,
+      "Number Theory|8.0": 117
+    },
+    "tightest_supply": [
+      [
+        1.47,
+        "Number Theory|5.5"
+      ],
+      [
+        1.63,
+        "Discrete Mathematics|7.0"
+      ],
+      [
+        1.8,
+        "Number Theory|8.0"
+      ]
+    ],
+    "discarded_question_groups": {
+      "outside_strata": 34849,
+      "excluded_or_empty": 10727,
+      "ambiguous_option_answer": 32,
+      "missing_answer_or_solution": 2
+    }
+  },
+  "solve": {
+    "train": 3600,
+    "test": 400,
+    "by_topic": {
+      "train": {
+        "Algebra": 893,
+        "Calculus": 908,
+        "Discrete Mathematics": 844,
+        "Number Theory": 955
+      },
+      "test": {
+        "Algebra": 99,
+        "Calculus": 101,
+        "Discrete Mathematics": 94,
+        "Number Theory": 106
+      }
+    },
+    "by_difficulty": {
+      "train": {
+        "5.0": 746,
+        "5.5": 656,
+        "6.0": 771,
+        "6.5": 334,
+        "7.0": 372,
+        "7.5": 252,
+        "8.0": 469
+      },
+      "test": {
+        "5.0": 82,
+        "5.5": 73,
+        "6.0": 86,
+        "6.5": 37,
+        "7.0": 42,
+        "7.5": 28,
+        "8.0": 52
+      }
+    }
+  },
+  "runner_sha256": "393080944b6856dd3193ce223e6ad43b5f90a0556b7c10215c77da1fa81b1005",
+  "derived_from": "FINAL-v2 (rows unchanged; adds the training block)",
+  "training_block": {
+    "solve": "question -> r1_solution_1 + final_answer",
+    "judge": "public (problem + proposed solution + instruction) -> teacher_target_response (no CoT)",
+    "reconstruct": "public_input (answer + 4 clues) -> r1_solution_1 + original question"
+  },
+  "v3_runner_sha256": "bd9b0c70d4149174be18c4efb97816e36a03fa0f57e961706c8bd62b76ecdfaf"
+}
