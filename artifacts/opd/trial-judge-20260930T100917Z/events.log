@@ -1,0 +1,14 @@
+10:13:41 student server ready in 255.1 s
+10:13:57 trainer loaded: 62.5M LoRA parameters; teacher server ready in 0.0 s
+10:17:26 step 1: loss -0.6310 rkl 0.344 gap 0.014 len 1431 trunc 0.00 {'rollout': 41.9, 'teacher': 5.9, 'train': 151.5, 'sync': 7.8}
+10:19:30 step 2: loss -0.6081 rkl 0.309 gap 0.014 len 3093 trunc 0.00 {'rollout': 63.8, 'teacher': 10.6, 'train': 38.5, 'sync': 8.7}
+10:21:03 step 3: loss -0.6213 rkl 0.329 gap 0.013 len 2028 trunc 0.00 {'rollout': 60.2, 'teacher': 7.4, 'train': 16.8, 'sync': 6.6}
+10:23:19 step 4: loss -0.3591 rkl 0.218 gap 0.012 len 5297 trunc 0.03 {'rollout': 71.2, 'teacher': 16.7, 'train': 40.9, 'sync': 5.4}
+10:25:02 step 5: loss -0.2869 rkl 0.221 gap 0.010 len 3396 trunc 0.06 {'rollout': 66.2, 'teacher': 11.4, 'train': 18.2, 'sync': 5.9}
+10:26:49 step 6: loss -0.2917 rkl 0.210 gap 0.010 len 3180 trunc 0.03 {'rollout': 70.3, 'teacher': 10.6, 'train': 18.2, 'sync': 5.8}
+10:28:47 step 7: loss -0.1996 rkl 0.197 gap 0.008 len 5590 trunc 0.09 {'rollout': 71.1, 'teacher': 17.6, 'train': 22.1, 'sync': 5.4}
+10:30:32 step 8: loss -0.2724 rkl 0.182 gap 0.009 len 3436 trunc 0.06 {'rollout': 66.9, 'teacher': 11.6, 'train': 18.7, 'sync': 5.5}
+10:31:46 step 9: loss -0.2411 rkl 0.184 gap 0.009 len 2463 trunc 0.00 {'rollout': 39.1, 'teacher': 8.3, 'train': 16.0, 'sync': 8.8}
+10:33:26 step 10: loss -0.2309 rkl 0.183 gap 0.008 len 3041 trunc 0.03 {'rollout': 66.2, 'teacher': 10.0, 'train': 17.3, 'sync': 5.3}
+10:35:13 step 11: loss -0.2038 rkl 0.183 gap 0.008 len 3570 trunc 0.03 {'rollout': 67.7, 'teacher': 11.8, 'train': 18.5, 'sync': 6.8}
+10:36:56 step 12: loss -0.2232 rkl 0.195 gap 0.009 len 2766 trunc 0.00 {'rollout': 68.6, 'teacher': 9.5, 'train': 17.6, 'sync': 5.2}

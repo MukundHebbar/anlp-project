@@ -1,0 +1,8 @@
+14:01:55 student server ready in 230.1 s
+14:02:08 trainer loaded: 62.5M LoRA parameters; teacher server ready in 0.0 s
+14:05:31 step 1: loss -0.5965 rkl 0.353 gap 0.016 len 2548 trunc 0.00 rep 0.05 used 32 anchor None {'rollout': 36.8, 'teacher': 9.0, 'train': 151.0, 'sync': 4.5}
+14:08:13 step 2: loss -0.4895 rkl 0.273 gap 0.015 len 6043 trunc 0.09 rep 0.17 used 29 anchor None {'rollout': 77.1, 'teacher': 18.9, 'train': 59.7, 'sync': 4.8}
+14:10:17 step 3: loss -0.5183 rkl 0.289 gap 0.015 len 7502 trunc 0.31 rep 0.40 used 22 anchor None {'rollout': 81.3, 'teacher': 23.2, 'train': 13.7, 'sync': 4.6}
+14:12:33 step 4: loss -0.4018 rkl 0.208 gap 0.013 len 9496 trunc 0.53 rep 0.61 used 15 anchor None {'rollout': 88.5, 'teacher': 29.2, 'train': 7.2, 'sync': 8.9}
+14:15:03 step 5: loss -0.4445 rkl 0.214 gap 0.011 len 12633 trunc 0.75 rep 0.76 used 8 anchor None {'rollout': 95.4, 'teacher': 38.5, 'train': 3.9, 'sync': 11.1}
+14:15:05 AUTO-STOP: repetition above 0.5 for 2 steps (0.76)

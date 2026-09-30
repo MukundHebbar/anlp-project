@@ -1,0 +1,18 @@
+03:33:01 student server ready in 255.1 s
+03:33:18 trainer loaded: 62.5M LoRA parameters; teacher server ready in 0.0 s
+03:38:34 step 1: loss -0.2000 rkl 0.154 gap 0.009 len 8693 trunc 0.03 {'rollout': 68.2, 'teacher': 26.4, 'train': 209.6, 'sync': 9.8}
+03:40:55 step 2: loss -0.1858 rkl 0.141 gap 0.009 len 7736 trunc 0.06 {'rollout': 79.1, 'teacher': 23.4, 'train': 28.5, 'sync': 8.2}
+03:43:25 step 3: loss -0.1103 rkl 0.126 gap 0.007 len 9168 trunc 0.31 {'rollout': 82.8, 'teacher': 28.0, 'train': 31.3, 'sync': 6.0}
+03:45:40 step 4: loss -0.1244 rkl 0.105 gap 0.007 len 7388 trunc 0.16 {'rollout': 77.8, 'teacher': 22.5, 'train': 27.1, 'sync': 5.6}
+03:47:47 step 5: loss -0.1332 rkl 0.093 gap 0.008 len 6519 trunc 0.03 {'rollout': 75.2, 'teacher': 20.0, 'train': 24.8, 'sync': 5.3}
+03:50:02 step 6: loss -0.1395 rkl 0.102 gap 0.008 len 7450 trunc 0.09 {'rollout': 77.7, 'teacher': 22.7, 'train': 27.0, 'sync': 6.2}
+03:52:13 step 7: loss -0.1362 rkl 0.106 gap 0.008 len 6964 trunc 0.03 {'rollout': 75.8, 'teacher': 21.3, 'train': 25.6, 'sync': 5.8}
+03:54:24 step 8: loss -0.1558 rkl 0.116 gap 0.008 len 6606 trunc 0.06 {'rollout': 76.0, 'teacher': 20.2, 'train': 25.0, 'sync': 8.5}
+03:56:31 step 9: loss -0.1446 rkl 0.120 gap 0.008 len 6285 trunc 0.03 {'rollout': 75.2, 'teacher': 19.3, 'train': 24.7, 'sync': 6.4}
+03:58:41 step 10: loss -0.1499 rkl 0.126 gap 0.008 len 5848 trunc 0.03 {'rollout': 74.6, 'teacher': 17.9, 'train': 24.2, 'sync': 10.5}
+04:00:41 step 11: loss -0.1506 rkl 0.133 gap 0.008 len 5428 trunc 0.06 {'rollout': 73.5, 'teacher': 16.7, 'train': 21.9, 'sync': 6.5}
+04:02:47 step 12: loss -0.1592 rkl 0.135 gap 0.008 len 6327 trunc 0.09 {'rollout': 75.2, 'teacher': 19.4, 'train': 23.7, 'sync': 5.4}
+04:05:02 step 13: loss -0.1442 rkl 0.128 gap 0.008 len 7310 trunc 0.03 {'rollout': 76.5, 'teacher': 22.2, 'train': 25.8, 'sync': 9.4}
+04:07:23 step 14: loss -0.1444 rkl 0.125 gap 0.009 len 8542 trunc 0.03 {'rollout': 79.0, 'teacher': 25.8, 'train': 28.8, 'sync': 5.1}
+04:10:02 step 15: loss -0.1311 rkl 0.110 gap 0.008 len 10767 trunc 0.16 {'rollout': 83.7, 'teacher': 32.6, 'train': 34.6, 'sync': 6.8}
+04:12:37 step 16: loss -0.1427 rkl 0.113 gap 0.008 len 9077 trunc 0.09 {'rollout': 80.9, 'teacher': 27.4, 'train': 31.0, 'sync': 13.8}

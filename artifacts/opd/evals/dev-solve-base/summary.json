@@ -1,0 +1,23 @@
+{
+ "adapter": null,
+ "sampling": {
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "solve": {
+  "n": 200,
+  "token_cap_rate": 0.095,
+  "think_markup_rate": 0.0,
+  "mean_completion_tokens": 8046.27,
+  "accuracy": 0.57,
+  "status_counts": {
+   "correct": 114,
+   "incorrect": 36,
+   "unverified": 30,
+   "missing": 20
+  }
+ }
+}

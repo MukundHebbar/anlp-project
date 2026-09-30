@@ -1,0 +1,58 @@
+{
+ "judge_model": "deepseek-ai/DeepSeek-V4.1-Flash",
+ "judge": {
+  "n": 100,
+  "scored": 98,
+  "missing": 2,
+  "mean": 50.12755102040816,
+  "median": 34.375,
+  "mean_counting_missing_as_0": 49.125,
+  "rating_histogram_1_to_5": [
+   40,
+   11,
+   1,
+   4,
+   42
+  ],
+  "dimension_means": {
+   "V": 2.326530612244898,
+   "L": 1.836734693877551,
+   "E": 1.7244897959183674,
+   "M": 2.13265306122449
+  }
+ },
+ "reconstruct": {
+  "n": 100,
+  "scored": 81,
+  "missing": 19,
+  "mean": 50.385802469135804,
+  "median": 56.25,
+  "mean_counting_missing_as_0": 40.8125,
+  "rating_histogram_1_to_5": [
+   4,
+   21,
+   11,
+   36,
+   9
+  ],
+  "dimension_means": {
+   "premise_fidelity": 2.3625,
+   "target_fidelity": 2.65,
+   "evidence_integration": 2.2222222222222223,
+   "mathematical_validity": 1.123456790123457
+  },
+  "unusable_responses": 9,
+  "unresolved_judgments": 10,
+  "shortcuts": 4,
+  "semantic_equivalent": 5,
+  "provisional_grounded_recoveries": 2
+ },
+ "judge_calls": {
+  "keys": 282,
+  "valid": 270,
+  "validation_failures": 9,
+  "unresolved_transport_failures": 3,
+  "transport_failures_retried": 5,
+  "estimated_cost_usd": 0.3391
+ }
+}

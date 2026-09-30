@@ -1,0 +1,5 @@
+11:40:48 student server ready in 355.1 s
+11:41:15 trainer loaded: 62.5M LoRA parameters; teacher server ready in 0.0 s
+11:41:20 resumed from trial-judge-20260930T100917Z/adapters/step12 at step 12; optimizer state restarts
+11:46:36 step 13: loss -0.2310 rkl 0.175 gap 0.009 len 2992 trunc 0.00 {'rollout': 75.1, 'teacher': 10.6, 'train': 217.8, 'sync': 10.7}
+11:49:26 step 14: loss -0.2660 rkl 0.207 gap 0.009 len 2388 trunc 0.03 {'rollout': 99.6, 'teacher': 8.7, 'train': 50.0, 'sync': 10.7}

@@ -1,0 +1,23 @@
+{
+ "adapter": "trial-solve-20260930T032839Z/adapters/step16",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "solve": {
+  "n": 200,
+  "token_cap_rate": 0.005,
+  "think_markup_rate": 0.02,
+  "mean_completion_tokens": 6646.305,
+  "accuracy": 0.615,
+  "status_counts": {
+   "correct": 123,
+   "incorrect": 48,
+   "unverified": 26,
+   "missing": 3
+  }
+ }
+}

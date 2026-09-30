@@ -1,0 +1,21 @@
+{
+ "adapter": "trial-judge-20260930T100917Z-resume12/adapters/step14",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "judge": {
+  "n": 200,
+  "token_cap_rate": 0.015,
+  "think_markup_rate": 0.01,
+  "mean_completion_tokens": 2262.395,
+  "parse_rate": 1.0,
+  "verdict_accuracy": 0.6,
+  "verdict_accuracy_on_correct": 0.631578947368421,
+  "verdict_accuracy_on_incorrect": 0.5581395348837209,
+  "first_step_accuracy_on_incorrect": 0.2558139534883721
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "Qwen/Qwen3.8-27B",
+ "model_key": "qwen3.8-27b",
+ "split": "test",
+ "tasks": [
+  "solve",
+  "judge",
+  "reconstruct"
+ ],
+ "run_key": "qwen3.8-27b-final",
+ "protocol": "v2",
+ "n_prompts": 1200,
+ "limit": 0,
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "chat_template_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 40960,
+ "max_num_seqs": 256,
+ "prompt_files": {
+  "solve": "data/prompts/solve/solve_no_reference.md",
+  "judge": "data/prompts/judge/judge_student_p1.md",
+  "reconstruct": "data/prompts/reconstruct/final_v1/student.md"
+ },
+ "prompt_file_sha256": {
+  "solve": "45dadecf62fc534e24054a1f7f9e98de026dcd4ed4027df758893597c2b09eda",
+  "judge": "f35441098dc7af1048eddfff54f4cbfd43b95e4bdcdb9068bf7fed4b0df262f2",
+  "reconstruct": "eb903d62c4415aad5e73535a7db40c712943870967104d198d1f910152f002e7"
+ },
+ "modal": {
+  "app": "anlp-final-v3-baseline",
+  "gpu": "H100",
+  "volume": "anlp-final-v3-hf-cache"
+ },
+ "run_name": "test-qwen3.8-27b-final-20260930T072051Z",
+ "started_utc": "2026-09-30T07:20:51.997829+00:00",
+ "finished_utc": "2026-09-30T07:54:24.302456+00:00",
+ "vllm": "0.30.0",
+ "text_only_mode": "language_model_only",
+ "gpu": "NVIDIA H100 80GB HBM3, 76351 MiB, 81559 MiB",
+ "load_seconds": 230.4,
+ "generate_seconds": 1750.4,
+ "volume_copy": "outputs/test-qwen3.8-27b-final-20260930T072051Z.json"
+}

@@ -1,0 +1,42 @@
+{
+ "judge_model": "deepseek-ai/DeepSeek-V4.1-Flash",
+ "judge": {
+  "n": 0,
+  "scored": 0,
+  "missing": 0
+ },
+ "reconstruct": {
+  "n": 200,
+  "scored": 109,
+  "missing": 91,
+  "mean": 30.33256880733945,
+  "median": 31.25,
+  "mean_counting_missing_as_0": 16.53125,
+  "rating_histogram_1_to_5": [
+   27,
+   47,
+   16,
+   16,
+   3
+  ],
+  "dimension_means": {
+   "premise_fidelity": 1.7155963302752293,
+   "target_fidelity": 1.7706422018348624,
+   "evidence_integration": 1.385321100917431,
+   "mathematical_validity": 0.47706422018348627
+  },
+  "unusable_responses": 77,
+  "unresolved_judgments": 14,
+  "shortcuts": 19,
+  "semantic_equivalent": 9,
+  "provisional_grounded_recoveries": 0
+ },
+ "judge_calls": {
+  "keys": 246,
+  "valid": 232,
+  "validation_failures": 14,
+  "unresolved_transport_failures": 0,
+  "transport_failures_retried": 2,
+  "estimated_cost_usd": 0.3299
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "solve": {
+  "n": 200,
+  "token_cap_rate": 0.015,
+  "think_markup_rate": 0.06,
+  "mean_completion_tokens": 3626.245,
+  "accuracy": 0.79,
+  "status_counts": {
+   "correct": 158,
+   "incorrect": 9,
+   "unverified": 31,
+   "missing": 2
+  }
+ }
+}

@@ -1,0 +1,194 @@
+{
+ "judge": {
+  "n": 78,
+  "dimensions": [
+   {
+    "dimension": "V",
+    "n": 78,
+    "exact": 0.9871794871794872,
+    "within_1": 0.9871794871794872,
+    "mode_baseline_exact": 0.6538461538461539,
+    "qwk": 0.9719222462203023,
+    "spearman_weighted": 0.9723055853282467,
+    "mae": 0.05128205128205128,
+    "deepseek_mean": 2.6153846153846154,
+    "jev_mean": 2.5641025641025643
+   },
+   {
+    "dimension": "L",
+    "n": 78,
+    "exact": 0.9743589743589743,
+    "within_1": 0.9743589743589743,
+    "mode_baseline_exact": 0.5384615384615384,
+    "qwk": 0.9670886075949368,
+    "spearman_weighted": 0.8719950586290509,
+    "mae": 0.07692307692307693,
+    "deepseek_mean": 2.1794871794871793,
+    "jev_mean": 2.1538461538461537
+   },
+   {
+    "dimension": "E",
+    "n": 78,
+    "exact": 0.8974358974358975,
+    "within_1": 0.9358974358974359,
+    "mode_baseline_exact": 0.4358974358974359,
+    "qwk": 0.9486600846262342,
+    "spearman_weighted": 0.9119979419166047,
+    "mae": 0.1794871794871795,
+    "deepseek_mean": 1.9230769230769231,
+    "jev_mean": 1.9487179487179487
+   },
+   {
+    "dimension": "M",
+    "n": 78,
+    "exact": 0.6410256410256411,
+    "within_1": 0.8589743589743589,
+    "mode_baseline_exact": 0.46153846153846156,
+    "qwk": 0.7483870967741936,
+    "spearman_weighted": 0.8801135757177786,
+    "mae": 0.5384615384615384,
+    "deepseek_mean": 2.4615384615384617,
+    "jev_mean": 3.0
+   }
+  ],
+  "total": {
+   "pearson": 0.9780746678174173,
+   "spearman_weighted": 0.9323302315803701,
+   "mae": 4.967948717948718,
+   "deepseek_mean": 57.37179487179487,
+   "jev_mean": 60.416666666666664
+  },
+  "rating_exact": 0.9230769230769231,
+  "decision_vs_parser": 0.9230769230769231,
+  "step_vs_parser": 1.0,
+  "verdict_accuracy": {
+   "parser": 0.6794871794871795,
+   "deepseek_V4": 0.6538461538461539,
+   "jev_V4": 0.6410256410256411
+  }
+ },
+ "reconstruct_validity": {
+  "n": 100,
+  "dimensions": [
+   {
+    "dimension": "P",
+    "n": 100,
+    "exact": 0.68,
+    "within_1": 0.89,
+    "mode_baseline_exact": 0.66,
+    "qwk": 0.40944881889763785,
+    "spearman_weighted": 0.505372867697911,
+    "mae": 0.45,
+    "deepseek_mean": 2.2,
+    "jev_mean": 2.05
+   },
+   {
+    "dimension": "T",
+    "n": 100,
+    "exact": 0.43,
+    "within_1": 0.81,
+    "mode_baseline_exact": 0.47,
+    "qwk": 0.5408767772511849,
+    "spearman_weighted": 0.6338787501229721,
+    "mae": 0.78,
+    "deepseek_mean": 2.76,
+    "jev_mean": 2.46
+   },
+   {
+    "dimension": "E",
+    "n": 100,
+    "exact": 0.72,
+    "within_1": 0.86,
+    "mode_baseline_exact": 0.74,
+    "qwk": 0.4102780117944397,
+    "spearman_weighted": 0.4643761934384183,
+    "mae": 0.42,
+    "deepseek_mean": 2.17,
+    "jev_mean": 2.45
+   },
+   {
+    "dimension": "M",
+    "n": 100,
+    "exact": 0.76,
+    "within_1": 1.0,
+    "mode_baseline_exact": 0.48,
+    "qwk": 0.7823326682387085,
+    "spearman_weighted": 0.752206230811211,
+    "mae": 0.24,
+    "deepseek_mean": 0.61,
+    "jev_mean": 0.67
+   }
+  ],
+  "total": {
+   "pearson": 0.7745721756876353,
+   "spearman_weighted": 0.6567289335860805,
+   "mae": 8.125,
+   "deepseek_mean": 44.625,
+   "jev_mean": 44.5
+  },
+  "rating_exact": 0.53,
+  "shortcut": {
+   "deepseek_true": 9,
+   "jev_true": 8,
+   "both_true": 8,
+   "agree": 0.99
+  },
+  "equivalence": {
+   "deepseek_true": 2,
+   "jev_true": 14,
+   "both_true": 2,
+   "jev_p4t4_true": 4,
+   "both_p4t4": 2
+  }
+ },
+ "reconstruct_validity_ref": {
+  "n": 100,
+  "dimensions": [
+   {
+    "dimension": "E",
+    "n": 100,
+    "exact": 0.63,
+    "within_1": 0.8,
+    "mode_baseline_exact": 0.74,
+    "qwk": 0.23869234214061796,
+    "spearman_weighted": 0.41290823003526145,
+    "mae": 0.58,
+    "deepseek_mean": 2.17,
+    "jev_mean": 2.53
+   },
+   {
+    "dimension": "M",
+    "n": 100,
+    "exact": 0.72,
+    "within_1": 0.99,
+    "mode_baseline_exact": 0.48,
+    "qwk": 0.7032924961715161,
+    "spearman_weighted": 0.628756607525036,
+    "mae": 0.29,
+    "deepseek_mean": 0.61,
+    "jev_mean": 0.66
+   }
+  ],
+  "total": {
+   "pearson": 0.7756549515324258,
+   "spearman_weighted": 0.6143374997742528,
+   "mae": 9.0625,
+   "deepseek_mean": 44.625,
+   "jev_mean": 44.6875
+  },
+  "rating_exact": 0.45,
+  "shortcut": {
+   "deepseek_true": 9,
+   "jev_true": 9,
+   "both_true": 9,
+   "agree": 1.0
+  },
+  "equivalence": {
+   "deepseek_true": 2,
+   "jev_true": 14,
+   "both_true": 2,
+   "jev_p4t4_true": 4,
+   "both_p4t4": 2
+  }
+ }
+}
