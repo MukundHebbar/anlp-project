@@ -1,3 +1,9 @@
+> **Superseded where it conflicts with [FINAL-v3](../../data/manifests/final-v3/README.md)
+> (2026-09-28).** The topic paths below still describe the pool. The final splits are
+> 3,600 train / 400 test per task, and each task uses different questions. Test questions are
+> allocated in proportion to (topic, difficulty) cell size, not about 1,024 / 256 per topic. The upper band
+> 7.0–8.0 makes up about 30% of each task, not 20%. See "Final sampling" at the end.
+
 ## Topic Selection and Sampling
 
 We will restrict the DeepMath subset to the following topic paths.
@@ -58,3 +64,17 @@ For the **4,096-example training set**, we sample approximately **1,024 source p
 Within each broad topic, subtopics are sampled roughly in proportion to their natural frequency rather than equally. Train and test should maintain similar subtopic proportions and similar mean difficulty.
 
 Across both splits, we target approximately **80% of problems from difficulty 5–7 and 20% from difficulty 7–8**.
+
+## Final sampling (FINAL-v3)
+
+The paragraphs above were the original plan. What was built:
+
+- **Per task:** 4,000 questions, 3,600 train / 400 test, chosen for compute constraints. There
+  is no development split.
+- **Different questions per task.** No DeepMath question, counting duplicates, appears in more
+  than one task.
+- **Matched distribution.** Cells are (broad topic, difficulty 5.0–8.0 in 0.5 steps). The test
+  set is allocated to cells in proportion to cell size. Difficulty shares agree across tasks to
+  within about one percentage point; about 30% of each task is in the upper band (7.0–8.0).
+  Topic shares agree to within about three points; JUDGE has the most Number Theory.
+- Full composition tables are in the [FINAL-v3 README](../../data/manifests/final-v3/README.md).

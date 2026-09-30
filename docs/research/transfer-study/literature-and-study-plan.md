@@ -8,10 +8,20 @@ roughly 25 additional papers found by web search on 2026-09-25, read at abstract
 unless stated; it is not a systematic review, and every "gap" below means "not found in this
 search", not "proven absent".
 
+**Design update (2026-09-28).** Three decisions are now final and override earlier text in this
+review (details in the [study framing](../../design/reasoning-transfer-study.md#fixed-design-decisions)):
+- Each task uses **different DeepMath questions**. The tasks are matched by topic buckets,
+  difficulty range and difficulty shares, not by item. The datasets will not be regenerated.
+- The splits are **3,600 train / 400 test per task** ([FINAL-v3](../../../data/manifests/final-v3/README.md)).
+- **On-policy distillation (reverse KL) is the only training method.** There is no SFT arm.
+
+The sections below have been revised to match these decisions.
+
 ## 1. What the three tasks are
 
 All three tasks are built from the same kind of source: a math problem with a known answer and
-a reference solution. They differ in what the model is given and what it must produce.
+a reference solution. Each task uses its own questions, drawn from the same topic and
+difficulty distribution. The tasks differ in what the model is given and what it must produce.
 
 | | SOLVE | JUDGE | RECONSTRUCT |
 |---|---|---|---|
@@ -23,10 +33,11 @@ a reference solution. They differ in what the model is given and what it must pr
 | Failure mode | Wrong derivation | Accepting a flaw / inventing one | Inventing an unsupported or answer-copying question |
 
 **How to read the three together.** They are three *information regimes* over the same
-mathematics. JUDGE has the most information but needs the finest discrimination; SOLVE needs a
-path to be constructed; RECONSTRUCT needs structure to be inferred from too little. A clean
-study holds the mathematics fixed and varies only the regime, so any difference in transfer is
-about the reasoning demand, not the topic.
+distribution of mathematics. JUDGE has the most information but needs the finest discrimination;
+SOLVE needs a path to be constructed; RECONSTRUCT needs structure to be inferred from too little.
+The study holds the topic and difficulty distribution fixed and varies the regime. This removes
+topic and difficulty mix as an explanation for differences in transfer. Item-level differences
+between the question sets remain, so report per-topic and per-difficulty results.
 
 **Why transfer is plausible in each direction** (hypotheses to test, not claims):
 
@@ -67,7 +78,7 @@ A help", which is where real insight comes from.
 | Work | Finding | What it means for us |
 |---|---|---|
 | **RevThink** ([Chen et al., NAACL 2025](https://aclanthology.org/2025.naacl-long.434/)) | Distilling forward reasoning + backward question generation + backward reasoning lifts Mistral-7B's 8-task average from 50.6 to 63.2. | Backward training helps forward reasoning, but the backward generator sees the original question, and backward is always mixed with forward. We isolate it. |
-| **Absolute Zero** ([Zhao et al., 2025](https://arxiv.org/abs/2505.03335)) | RL self-play over three task types: deduction, abduction (infer an input from program + output), induction. Removing abduction/induction significantly drops math performance. | The strongest precedent that abduction matters for math transfer. But it is code, RL, self-proposed tasks, and ablation-only (no train-X-evaluate-Y matrix). Our natural-language, content-matched matrix is distinct. |
+| **Absolute Zero** ([Zhao et al., 2025](https://arxiv.org/abs/2505.03335)) | RL self-play over three task types: deduction, abduction (infer an input from program + output), induction. Removing abduction/induction significantly drops math performance. | The strongest precedent that abduction matters for math transfer. But it is code, RL, self-proposed tasks, and ablation-only (no train-X-evaluate-Y matrix). Our natural-language, distribution-matched matrix is distinct. |
 | **ALIVE** ([Duan et al., 2026](https://arxiv.org/abs/2602.05472)) | Unified posing, solving and judging with masked content in training. | The three-role combination is precedented; we cannot claim it. The distinction is the controlled matrix and matched information regimes. |
 | **LogiDynamics** ([Zheng et al., EMNLP 2025](https://aclanthology.org/2025.emnlp-main.1045/)) | Compares inductive vs abductive/deductive inference in a controlled environment. | Inference-time comparison, not training transfer. |
 | Earlier RECONSTRUCT lineage | Blanking (Ranaldi & Pucci 2025), Trace Inversion (Gourabathina et al. 2026), Reverse QA (Balepur et al. 2025), FOBAR, Fill-in-the-Blank | See the [RECONSTRUCT review](../reconstruct/literature-review.md): the task itself is not new; the controlled sparse-evidence version and its use as a *training* signal are what we add. |
@@ -76,9 +87,9 @@ A help", which is where real insight comes from.
 
 | Work | Finding | What it means for us |
 |---|---|---|
-| **Does Math Reasoning Improve General Capabilities?** ([Huan et al., 2025](https://arxiv.org/abs/2507.00432)) | Across 20+ models, RL-trained math models transfer to other domains; SFT-trained ones mostly do not. SFT causes large drift in latent and output space; RL preserves feature geometry. | Two things. (1) Our main arm is SFT, so modest transfer is the expected default; we should say so and ideally add a small RL arm. (2) Their latent-drift and token-distribution analyses are tools we can reuse (section 5). |
-| **Does Learning Math Problem-Solving Generalize?** ([2507.04391](https://arxiv.org/abs/2507.04391)) | Short-CoT instruction tuning gives limited or negative transfer; long CoT with self-reflection generalizes much better. | The *form* of the training traces matters as much as the task. Trace length must be controlled or varied deliberately. |
-| **GURU** ([2506.14965](https://arxiv.org/abs/2506.14965)) | 92K RL examples across six domains; training on each domain yields a different transfer profile over the others. | A published train-X-evaluate-Y matrix, but across *domains*. Ours varies the *reasoning regime* with content fixed. |
+| **Does Math Reasoning Improve General Capabilities?** ([Huan et al., 2025](https://arxiv.org/abs/2507.00432)) | Across 20+ models, RL-trained math models transfer to other domains; SFT-trained ones mostly do not. SFT causes large drift in latent and output space; RL preserves feature geometry. | Two things. (1) We train only with on-policy distillation. Like RL, it learns from the student's own samples, so it may behave more like RL than SFT here. That is a hypothesis, not something these papers test, and there is no SFT or RL arm to compare against. (2) Their latent-drift and token-distribution analyses are tools we can reuse (section 5). |
+| **Does Learning Math Problem-Solving Generalize?** ([2507.04391](https://arxiv.org/abs/2507.04391)) | Short-CoT instruction tuning gives limited or negative transfer; long CoT with self-reflection generalizes much better. | The *form* of the training traces matters as much as the task. Under OPD the traces are the student's own, so fix the maximum generation length across arms and report response lengths. |
+| **GURU** ([2506.14965](https://arxiv.org/abs/2506.14965)) | 92K RL examples across six domains; training on each domain yields a different transfer profile over the others. | A published train-X-evaluate-Y matrix, but across *domains*. Ours varies the *reasoning regime* with the topic and difficulty distribution fixed. |
 | **TAC curriculum** ([2606.25178](https://arxiv.org/abs/2606.25178)) | Uses gradient-cosine between domains as a transferability signal; reports math updates as idiosyncratic, weakly aligned with other domains. | Gradient alignment is a cheap predictor we can compute and test against our matrix. |
 | **Exploring and Predicting Transferability** ([Vu et al., EMNLP 2020](https://aclanthology.org/2020.emnlp-main.635/)) | Transfer across 33 NLP tasks depends on data size and task similarity; task embeddings predict it. | Methodological ancestor of the transfer-matrix design. |
 | **Learning Task Mixtures from Task Affinities** ([2507.12612](https://arxiv.org/abs/2507.12612)) | Models pairwise task affinities to choose SFT mixtures. | A way to predict mixture results from single-task results. |
@@ -88,7 +99,7 @@ A help", which is where real insight comes from.
 | Work | Finding | What it means for us |
 |---|---|---|
 | **Small Models Struggle to Learn from Strong Reasoners** ([Li et al., ACL Findings 2025](https://aclanthology.org/2025.findings-acl.1301/)) | Models of about 3B and below do not reliably benefit from long CoT distillation; mixing long and short chains helps. | Qwen3-4B sits near this boundary. Transfer may depend on student size, so size must be a factor, and teacher trace length matters. |
-| **Not All Correct Answers Are Equal** ([Tian et al., 2025](https://arxiv.org/abs/2505.14464)) | With the same 1.89M queries, the teacher that generated the traces changes student results substantially. | Teacher identity is a variable. Holding the teacher fixed (DeepSeek) is a control; varying it is an experiment. |
+| **Not All Correct Answers Are Equal** ([Tian et al., 2025](https://arxiv.org/abs/2505.14464)) | With the same 1.89M queries, the teacher that generated the traces changes student results substantially. | Teacher identity is a variable. Holding the OPD teacher fixed is a control; varying it is an experiment. OPD needs a teacher that shares the student's tokenizer, so DeepSeek (used through the API) is the rater, not the teacher. |
 | **Not All Synthetic Data Is Yours to Learn From** ([2605.31126](https://arxiv.org/abs/2605.31126)) | Synthetic data transfers best within the same model lineage; cross-family transfer is much worse; per-token likelihood and semantic similarity fail to predict which data helps. | Cross-model transfer of task data is not automatic. A second student family is needed to know whether our findings are about the tasks or about Qwen. |
 | **Local naturalness for selecting teacher data** ([2510.03988](https://arxiv.org/abs/2510.03988)) | Selecting teacher traces that are locally natural to the student improves distillation. | Student-side perplexity is a candidate explanation for why a format distills well into one family and not another. |
 | **Reasoning that Travels** ([2605.28913](https://arxiv.org/abs/2605.28913)) | Studies one model's chain-of-thought being used by another (provider → receiver); transfer mechanism is task-dependent. | Inference-time cross-model transfer; a template for our end-to-end chain analysis. |
@@ -110,20 +121,22 @@ A help", which is where real insight comes from.
 
 Ranked by how defensible they are against the literature above.
 
-1. **A content-matched transfer matrix across three information regimes, including abduction
-   from sparse evidence.** Closest work either varies domains (GURU), pairs only two regimes
-   (self-verification, CFT, GenRM), ablates task types without a full matrix (Absolute Zero), or
-   mixes backward with forward training (RevThink). Holding the source problems fixed and
-   crossing all three regimes with full train-X-evaluate-Y cells was not found. *Main
-   contribution; defensible if content matching is real (see section 6).*
+1. **A distribution-matched on-policy-distillation transfer matrix across three information
+   regimes, including abduction from sparse evidence.** Closest work either varies domains
+   (GURU), pairs only two regimes (self-verification, CFT, GenRM), ablates task types without a
+   full matrix (Absolute Zero), or mixes backward with forward training (RevThink). Holding the
+   topic and difficulty distribution fixed, training with OPD, and crossing all three regimes
+   with full train-X-evaluate-Y cells was not found. *Main contribution.* The task datasets use
+   different questions, so claims are about regimes over matched distributions, not about the
+   same problems presented three ways.
 2. **Component-level transfer.** Existing papers report aggregate accuracy. Decomposing each
    target into its parts shows *which* skill moves. For JUDGE: verdict, localization,
    explanation. For RECONSTRUCT: fidelity vs validity. For SOLVE: error type. For example, "JUDGE
    training improves SOLVE only on self-checkable errors", or "RECONSTRUCT training improves
    JUDGE localization but not verdicts". *Strong insight value, low extra cost.*
-3. **Task format as a distillation lever.** Same teacher, same problems, three formats: which
-   format transfers the teacher's knowledge best into a small student, and does the ranking
-   change with student family and size? CFT shows critique beats imitation for one pair; the
+3. **Task format as a distillation lever.** Same teacher, same problem distribution, three
+   formats: which format transfers the teacher's knowledge best into a small student under OPD,
+   and does the ranking change with student size? CFT shows critique beats imitation for one pair; the
    three-format comparison under a learnability-gap lens (2502.12143) was not found.
 4. **Does the transfer structure survive a change of student?** Repeating the core matrix on a
    second model family tests whether transfer is a property of the *tasks* or of *Qwen*. Given
@@ -131,8 +144,8 @@ Ranked by how defensible they are against the literature above.
 5. **Mechanistic prediction of the matrix.** Test whether gradient alignment, task-vector cosine
    or representation drift, all measured cheaply, predict the observed transfer matrix. Prior
    work uses these tools but not to explain regime-level transfer.
-6. **End-to-end chains.** Does a student trained on JUDGE become a better filter or teacher for
-   another model's SOLVE data? This links transfer to a practical pipeline (section 4, E6).
+6. ~~**End-to-end chains.**~~ Dropped: E6 needs SFT on filtered samples, and the study uses OPD
+   only.
 
 **What not to claim:** the first answer-to-question task, the first solve/pose/judge
 combination (ALIVE), the first generation–verification asymmetry result (self-verification),
@@ -145,19 +158,23 @@ the fixed metric for task j. Transfer Δ(i→j) = score_j(M_i) − score_j(M0), 
 framing. Always compare within a target column (same metric, same test set).
 
 ### E0 — Baselines (no training)
-M0 on all three test sets; the teacher (DeepSeek) on all three as an upper reference; an
+M0 on all three test sets; the OPD teacher on all three as an upper reference (DeepSeek
+optionally as a second reference); an
 answer-only RECONSTRUCT baseline and a full-solution RECONSTRUCT baseline (from the
 RECONSTRUCT review). *Answers: where each model starts, how much headroom exists.*
 
 ### E1 — The core transfer matrix
-Train M_S, M_J, M_R from the same checkpoint with the same method (LoRA SFT), the same
-hyperparameters, and a matched **training-token budget** (not example count; task lengths
-differ). Evaluate each on all three tests. At least 3 training seeds per cell.
+Train M_S, M_J, M_R from the same checkpoint with reverse-KL on-policy distillation, using
+the same teacher, the same hyperparameters, the same maximum generation length, and a
+predeclared **budget** (optimizer steps or prompts processed). Each arm draws its prompts from
+its own task's 3,600 training questions (`training.input`). Report student-generated and
+teacher-scored tokens per arm, because response lengths differ by task. Evaluate each checkpoint
+on all three 400-question test sets. At least 3 training seeds per cell.
 *Answers RQ1: which directions transfer, and are they asymmetric?*
 
 Include two controls, or the matrix cannot be interpreted:
-- **Format-only placebo:** train on the same token count of unrelated, non-mathematical
-  instruction data. This separates "any fine-tuning shifts outputs" from real transfer.
+- **Format-only placebo:** run OPD with the same budget on unrelated, non-mathematical
+  instruction prompts. This separates "any distillation shifts outputs" from real transfer.
 - **Format compliance:** report parse and format failures separately from reasoning scores,
   because a model trained on task A can fail task B's output format without being worse at the
   reasoning.
@@ -178,42 +195,31 @@ combined, or crowd each other out?* If compute allows only one mixture, run S+J+
 the claim to "joint vs single".
 
 ### E4 — Distillation format (teacher knowledge in three formats)
-The teacher's knowledge about the same problems is delivered as SOLVE traces, JUDGE critiques,
-or RECONSTRUCT completions. E1 already provides this comparison if all training data comes
-from one teacher. Add two factors:
-- **Trace length:** short vs long teacher traces for the SOLVE format, testing the learnability
-  gap on a 4B model.
-- **Teacher identity (optional):** a second teacher for one format.
+The teacher's knowledge about the same problem distribution is delivered through its token-level
+feedback on SOLVE, JUDGE or RECONSTRUCT rollouts. E1 already provides this comparison, because
+all arms use one teacher. Optional factor:
+- **Teacher identity:** a second teacher, which must also share the student's tokenizer, for one
+  format.
 
-*Answers RQ4: which format distills best, and why?* Use student perplexity on each format's
-training data as a candidate explanation (local-naturalness line).
+*Answers RQ4: which format distills best, and why?* A candidate explanation is the initial
+student–teacher reverse KL on each format's training prompts, which is the OPD analogue of the
+local-naturalness line.
 
 ### E5 — Cross-model transfer (does the structure generalize across students?)
 Repeat E0 + E1 (single tasks only, fewer seeds) on:
-- **A second family of similar size,** e.g. a Llama-3.2-3B or Gemma-class model, to test task
-  vs model.
-- **A smaller same-family model** (e.g. Qwen3-1.7B), to test size and learnability.
+- **A smaller same-family model** (e.g. Qwen3-1.7B), to test size and learnability. It can
+  reuse the same teacher.
+- **A second family of similar size** (optional), e.g. a Llama-3.2-3B or Gemma-class model, to
+  test task vs model. OPD then needs a teacher from that family with a shared tokenizer, so this
+  also changes the teacher.
 
 Report the matrix per student and a rank-correlation between matrices. *Answers RQ5: are
 the transfer directions a property of the tasks?*
 
-### E6 — End-to-end distillation chain
-A practical pipeline test:
-1. DeepSeek generates SOLVE samples for training problems.
-2. Candidate filters decide which samples to keep: none, the answer key, M0 as a judge, M_J as a
-   judge, and M_R-as-judge.
-3. A fresh student is trained on each filtered set.
-4. Everything is evaluated on SOLVE.
-
-*Answers: does a model trained on JUDGE (or RECONSTRUCT) become a useful component in
-another model's training?* This is where "cross-model transfer, end to end" becomes concrete:
-the transfer is measured through a second model's learning, not just the first model's scores.
-
-### E7 — Optional: RL arm
-Huan et al. report that RL transfers where SFT does not. A small GRPO run on SOLVE (answer
-reward) and JUDGE (verdict/step reward) for M0 would show whether the E1 conclusions depend on
-the training method. RECONSTRUCT has no cheap verifiable reward, which is itself worth noting.
-Run only if compute remains after E1–E5.
+### E6, E7 — Dropped
+The end-to-end filtering chain (E6) trained fresh students on filtered teacher samples, which is
+SFT. The RL/GRPO arm (E7) is a second training method. The study uses OPD only, so both are out
+of scope. Conclusions are therefore scoped to on-policy distillation.
 
 ## 5. Evaluation and analysis
 
@@ -233,11 +239,11 @@ show improvement, so the partial-credit score should be the headline RECONSTRUCT
 recovery reported as secondary.
 
 ### Statistics
-- **Test size:** with 500 test sources per task, a single rate is good to about ±4 points; a
-  paired difference of about 5–6 points is detectable at 80% power (assuming two checkpoints
-  disagree on about 20% of items). Transfer effects smaller than that need more test items or
-  more seeds.
-- **Uncertainty:** paired bootstrap over *source problems*, not over individual generations.
+- **Test size:** with 400 test questions per task, a single rate near 50% is good to about ±5
+  points (95% interval). A paired difference of about 6 points is detectable at 80% power,
+  assuming two checkpoints disagree on about 20% of items. Transfer effects smaller than that
+  need more seeds.
+- **Uncertainty:** paired bootstrap over *test questions*, not over individual generations.
   McNemar's test for binary paired outcomes.
 - **Main model:** a mixed-effects logistic regression with random effects for item and training
   seed and a fixed effect for the training condition, which pools seeds correctly.
@@ -249,8 +255,8 @@ recovery reported as secondary.
 ### Mechanistic analysis (cheap, run on existing checkpoints)
 1. **Gradient alignment:** at M0, average gradients on each task's training data and compute
    pairwise cosines. Does alignment predict the E1 matrix?
-2. **Task-vector similarity:** cosine and principal-angle overlap between the LoRA updates of
-   M_S, M_J and M_R.
+2. **Task-vector similarity:** cosine and principal-angle overlap between the weight updates
+   (or adapters, if OPD uses LoRA) of M_S, M_J and M_R.
 3. **Representation drift:** hidden-state PCA or CKA on each test set, before vs after
    training, as in Huan et al.
 4. **Token-distribution shift:** KL divergence of next-token distributions on held-out inputs,
@@ -266,55 +272,57 @@ recovery reported as secondary.
 
 | Need | Status |
 |---|---|
-| RECONSTRUCT train/test inputs | **Done:** v1.2, 3,500 / 500, stratified |
-| RECONSTRUCT training targets | **Missing:** validated completions from public inputs only (SKILL.md §8) |
-| SOLVE train/test on the **same** 5,000 sources | **Missing.** Existing SOLVE runs used the separate 113/146-problem pilot pool, which the RECONSTRUCT pool excludes. DeepMath provides `r1_solution_1` for every source, a candidate SOLVE target, but it is long CoT and needs a length decision (E4). |
-| JUDGE train/test on the same sources | **Missing.** The 78-item JUDGE set is test-only, and **0 of its 78 problems are in the RECONSTRUCT pool**. JUDGE items (correct and flawed solutions with labeled first errors) must be built for the same 3,500 train / 500 test sources. |
-| Evaluation pipelines | SOLVE verifier exists; JUDGE evaluator exists (`scripts/evaluate_judge_qwen.py`); RECONSTRUCT judges exist |
-| Training code | **Missing:** a LoRA SFT runner (Turing cluster) with token-budget matching and seeds |
+| SOLVE, JUDGE, RECONSTRUCT train/test | **Done:** [FINAL-v3](../../../data/manifests/final-v3/README.md), 3,600 / 400 per task. Different questions per task, matched on topic buckets and difficulty shares. Final; will not be regenerated. |
+| Training targets | **Not needed for OPD.** Only `training.input` is used as a prompt. The stored chain-of-thought and target fields are unused for training. |
+| Evaluation pipelines | SOLVE verifier exists; JUDGE evaluator exists (`scripts/evaluate_judge_qwen.py`); RECONSTRUCT judges exist. None is wired to the FINAL-v3 test files yet. |
+| Fixed evaluation prompts | **Missing** for SOLVE and RECONSTRUCT: `training.input` has no instructions or output format. |
+| Training code | **Missing:** an OPD runner (Turing cluster) with a teacher that shares the student's tokenizer, a fixed budget, and seeds |
 
-**Content matching is the most important item.** Without SOLVE and JUDGE items built from the
-same sources as RECONSTRUCT, the study cannot separate "which regime" from "which problems", and
-the core contribution in section 3 does not hold. The 78-item JUDGE set remains useful as an
-external JUDGE check alongside ProcessBench.
+The 78-item JUDGE set remains useful as an external JUDGE check alongside ProcessBench.
 
 ### Rough cost and scale
 
 These are estimates to plan with, not measurements.
-- **Data creation:** SOLVE targets from DeepMath (free) or regenerated shorter (about $7);
-  JUDGE train items (generate plus audit, about $15–25); RECONSTRUCT targets (about $15–30).
+- **Data creation:** done (FINAL-v3).
 - **Evaluation:** about $2–4 per checkpoint via DeepSeek, most of it RECONSTRUCT. E0–E3 on
   Qwen3-4B with 3 seeds is about 20–25 checkpoints, so about $50–100.
-- **Training:** about 20–35 LoRA runs of a few thousand examples each on the Turing cluster,
-  depending on how much of E3/E5 is run.
+- **Training:** about 20–35 OPD runs on the Turing cluster, depending on how much of E3/E5 is
+  run. Each OPD step needs student generation plus a teacher forward pass, so an OPD run costs
+  more than an SFT run over the same number of prompts.
 
 **Minimum viable paper:** E0 + E1 + E2 on Qwen3-4B with 3 seeds, plus the placebo control.
-**Strong paper:** add E3 (all mixtures), E5 (one second family), and the mechanistic analyses.
-**Extended:** E4 trace-length, E6, E7.
+**Strong paper:** add E3 (all mixtures), E5 (a smaller Qwen3 student), and the mechanistic analyses.
+**Extended:** E4 second teacher, E5 second family.
 
 ## 7. Threats to validity
 
 - **Format learning masquerading as transfer.** Use the placebo control and report format
   failures separately.
-- **Unequal training exposure.** Match training tokens, and also report example counts and
-  unique sources.
+- **Unequal training exposure.** Fix the OPD budget, and report prompts, unique questions,
+  student-generated tokens and teacher-scored tokens per arm.
+- **Different questions per task.** The tasks match on topic buckets and difficulty shares but
+  not on items. Some row differences may come from the question sets rather than the task form.
+  Report per-topic and per-difficulty results; JUDGE's topic mix is the least even.
 - **Judge bias.** DeepSeek generated the RECONSTRUCT clues and also rates outputs. Calibrate
   against human labels, and prefer deterministic metrics.
 - **Selection effects in data.** RECONSTRUCT gating changed the difficulty mix in v1. Stratified
   splits and per-stratum reporting keep this visible.
-- **Small effects vs test size.** 500 items resolve roughly 5–6-point differences; do not
-  interpret smaller ones without more seeds or items.
-- **SFT-specific conclusions.** Transfer may differ under RL (Huan et al.); scope claims to SFT
-  unless E7 is run.
+- **Small effects vs test size.** 400 items resolve roughly 6-point differences; do not
+  interpret smaller ones without more seeds.
+- **OPD-specific conclusions.** Transfer may differ under SFT or RL. Scope claims to on-policy
+  distillation with the chosen teacher.
+- **No development split.** Tune only on training questions; touching the test sets before the
+  final evaluation invalidates them.
 
 ## 8. Suggested positioning
 
 > We study how learning transfers across three mathematical reasoning regimes: constructing a
 > solution from a problem, judging a supplied solution, and reconstructing a problem from sparse
-> evidence. The source problems are held fixed across regimes and training budgets are
-> matched. We measure the full train-by-evaluate matrix, decompose each effect into the sub-skill
-> it changes, test whether the transfer structure holds across student models, and ask which
-> task format best distills a teacher's knowledge into a small student.
+> evidence. Each regime uses its own questions drawn from the same topic and difficulty
+> distribution. Every model is trained with on-policy distillation under a matched budget. We
+> measure the full train-by-evaluate matrix, decompose each effect into the sub-skill it
+> changes, test whether the transfer structure holds across student sizes, and ask which task
+> format best distills a teacher's knowledge into a small student.
 
 ## References (added in this review)
 

@@ -174,9 +174,11 @@ Use two decoding seeds per condition, keeping each input fixed across the seeds.
 
 ## 8. Training handoff
 
-After confirmation, freeze the converter, public prompt, evidence policy, rubric, and model versions. Construct training data from a separate source split. Generate one teacher completion from the same public evidence only, using the student prompt; validate it with the primary evaluator and human spot checks. The hidden Q/W can be consulted by an auditor but must not enter the teacher-completion prompt or student training input. Do not automatically use Q as the reconstruction target: that rewards recovery of information absent from the evidence.
+**Updated 2026-09-28.** The training data is fixed: the [FINAL-v3](../../../data/manifests/final-v3/README.md) RECONSTRUCT split (3,600 train / 400 test, four clues plus the final answer). RECONSTRUCT uses its own DeepMath questions, disjoint from SOLVE and JUDGE and matched to them by topic bucket and difficulty share. The datasets will not be regenerated.
 
-Use valid grounded completions for SFT. If RL is later selected, its reward must implement the same mathematical contract; do not turn source similarity into the sole reward. Keep training method fixed across task arms and evaluate all checkpoints using the same RECONSTRUCT policy. Report training example acceptance and any source-pool changes across the matched three-task dataset. A separate training protocol sets corpus sizes and compute budgets.
+The only training method is reverse-KL on-policy distillation (OPD). The student generates a response to the public training input with the fixed student prompt, and the teacher supplies next-token probabilities along that response. There are no imitation targets. In particular, `training.final_answer` (the original question) is not used as a reconstruction target, which avoids rewarding recovery of information absent from the evidence. The teacher receives the same public evidence and prompt as the student. The hidden Q/W can be consulted by an auditor but must not enter the teacher's or the student's context.
+
+Keep the OPD setup (teacher, budget, maximum generation length, decoding) fixed across task arms, and evaluate all checkpoints using the same RECONSTRUCT policy and PC-v4 judges. The study framing sets budgets and seeds: [reasoning-transfer-study.md](../reasoning-transfer-study.md#fixed-design-decisions).
 
 ## 9. Minimal record and artifacts
 

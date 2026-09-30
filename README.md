@@ -7,8 +7,10 @@ tools for DeepMath SOLVE, JUDGE, and RECONSTRUCT tasks.
 
 [`data/manifests/final-v3/`](data/manifests/final-v3/README.md) holds the training and testing data
 for all three tasks: **4,000 questions each, 3,600 train / 400 test**. The three tasks use completely
-separate DeepMath-103K questions, and every row has a `training` block
-(`input`, `chain_of_thought`, `final_answer`). The files are stored as `.jsonl.gz`. Check them with
+separate DeepMath-103K questions, matched by topic and difficulty distribution rather than by
+item, and every row has a `training` block (`input`, `chain_of_thought`, `final_answer`).
+Training uses on-policy distillation only; see the
+[study design](docs/design/reasoning-transfer-study.md#fixed-design-decisions). The files are stored as `.jsonl.gz`. Check them with
 `.venv/bin/python scripts/audit_final_dataset.py`; this needs the DeepMath parquet files in
 `data/datasets/deepmath-103k/`, which are re-downloadable from HuggingFace `zwhe99/DeepMath-103K`.
 
@@ -152,8 +154,15 @@ repository baseline.
 
 ## Current evaluation evidence
 
-The retained SOLVE results and their non-identical evaluation denominators are
-summarized in [artifacts/solve-evaluation-summary.md](artifacts/solve-evaluation-summary.md).
+**Zero-training baselines on FINAL-v3** for the student (Qwen3.5-4B) and teacher
+(Qwen3.8-27B), with all three tasks scored by the repository pipelines, are in
+[artifacts/baselines/final-v3/REPORT.md](artifacts/baselines/final-v3/REPORT.md). The method is in
+[README.md](artifacts/baselines/final-v3/README.md) and every decision and incident is in
+[RUN_LOG.md](artifacts/baselines/final-v3/RUN_LOG.md).
+
+The earlier results below use Qwen3-4B on pilot pools, not FINAL-v3. The retained SOLVE
+results and their non-identical evaluation denominators are summarized in
+[artifacts/solve-evaluation-summary.md](artifacts/solve-evaluation-summary.md).
 
 - DeepSeek V4 Flash SOLVE: full 146-problem manifest, verifier-v2 results and
   report under `artifacts/deepseek-v4-flash/solve/146/`.

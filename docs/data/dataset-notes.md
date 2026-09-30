@@ -1,5 +1,11 @@
-train: 4096 questions
-test: 1024 questions
+> **Superseded (2026-09-28).** These are early planning notes. The final data is
+> [FINAL-v3](../../data/manifests/final-v3/README.md). It has the tasks SOLVE, JUDGE and
+> RECONSTRUCT (PLAN was replaced by RECONSTRUCT), 3,600 train / 400 test questions per task, and
+> different questions per task, matched by topic and difficulty distribution. Topics are Algebra,
+> Calculus, Discrete Mathematics and Number Theory, with difficulty 5.0–8.0.
+
+train: ~~4096 questions~~ → 3,600 per task (FINAL-v3)
+test: ~~1024 questions~~ → 400 per task (FINAL-v3)
 
 how do we split the dataset?
 ## Making a smaller dataset

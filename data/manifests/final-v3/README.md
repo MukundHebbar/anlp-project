@@ -5,6 +5,13 @@ The final dataset for training and testing. Three tasks, **4,000 questions each:
 tasks, counting every DeepMath copy of a question. Every row carries a `training` block with
 input, chain of thought and final answer.
 
+Using different questions per task is deliberate and final; the datasets will not be regenerated.
+The tasks are matched by distribution rather than by item: the same four topic buckets, the same
+filters, and difficulty shares within about one percentage point (Composition, below). The
+3,600 / 400 split was chosen for compute. There is no separate development split. Training uses
+on-policy distillation only, so only `training.input` serves as a training prompt. See the
+[study design](../../../docs/design/reasoning-transfer-study.md#fixed-design-decisions).
+
 **Check:** `.venv/bin/python scripts/audit_final_dataset.py` → `PROBLEMS: none`. It needs only this
 folder and the DeepMath parquet files in the git-ignored `data/datasets/deepmath-103k/`
 (re-downloadable from HuggingFace `zwhe99/DeepMath-103K`).
