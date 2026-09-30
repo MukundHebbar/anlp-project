@@ -46,6 +46,11 @@ class SolutionVerificationTests(unittest.TestCase):
         self.assertEqual(compare_answers(r"\tau(n)", r"\tau(n)=\prod_{p^\alpha\parallel n}(\alpha+1)"), "unverified")
         self.assertEqual(compare_answers(r"C_3", "For every n >= 3, take G=C_n."), "unverified")
 
+    def test_sentence_that_breaks_sympy_is_unverified_not_a_crash(self):
+        # Qwen3.8-27B test answer; sympy raised IndexError while parsing it.
+        answer = "Yes, the prime number 2 can be expressed as the sum of two sixth powers of integers (e.g., $1^6 + 1^6 = 2$)."
+        self.assertIn(compare_answers("2", answer), ("unverified", "incorrect", "correct"))
+
     def test_unsafe_expression_is_not_evaluated(self):
         result = compare_answer_detailed("x", "__import__('os').system('id')")
         self.assertEqual(result["answer_status"], "unverified")

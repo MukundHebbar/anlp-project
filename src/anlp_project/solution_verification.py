@@ -311,7 +311,8 @@ def _sympy_expression(text: str) -> sp.Expr | None:
             evaluate=True,
         )
         return expression if isinstance(expression, sp.Basic) else None
-    except (AttributeError, NameError, TypeError, SyntaxError, ValueError, sp.SympifyError):
+    except (AttributeError, IndexError, NameError, TypeError, SyntaxError, ValueError, sp.SympifyError):
+        # IndexError: sympy's implicit-multiplication pass on some collapsed sentences.
         return None
 
 

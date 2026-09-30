@@ -14,7 +14,7 @@ wheels/
 htmlcov/
 
 # Virtual environments
-.venv/
+.venv
 
 # Local data, archives, and generated runs
 data/datasets/
@@ -38,3 +38,9 @@ data/manifests/final-v3.zip
 .ipynb_checkpoints/
 .DS_Store
 .vscode/
+
+# Raw model responses and judge calls are tracked gzipped (.jsonl.gz), for the reported runs only.
+artifacts/**/responses.jsonl
+artifacts/**/judgments.jsonl
+# OPD run logs are records.
+!artifacts/opd/**/*.log
