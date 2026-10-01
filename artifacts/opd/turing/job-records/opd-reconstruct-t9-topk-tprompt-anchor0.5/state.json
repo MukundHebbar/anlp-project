@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-t9-topk-tprompt-anchor0.5",
+ "job_id": 40923,
+ "gpus": 3,
+ "hours": 2.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-t9-topk-tprompt-anchor0.5",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --loss topk --set kl_anchor_beta=0.5 --teacher-instruction anti_repetition --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-t9-topk-tprompt-anchor0.5",
+ "submitted": "2026-10-01T03:22:06Z",
+ "status": "reserved"
+}

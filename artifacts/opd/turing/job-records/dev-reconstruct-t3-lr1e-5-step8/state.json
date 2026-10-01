@@ -1,0 +1,11 @@
+{
+ "name": "dev-reconstruct-t3-lr1e-5-step8",
+ "job_id": 40890,
+ "gpus": 1,
+ "hours": 1.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/dev-reconstruct-t3-lr1e-5-step8",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --adapter /scratch/$USER/anlp-opd/runs/opd-reconstruct-base-kl0.5-ol1.0-tprompt-lr1e-5/adapters/step8 --out /scratch/$USER/anlp-opd/runs/dev-reconstruct-t3-lr1e-5-step8",
+ "submitted": "2026-09-30T21:58:19Z",
+ "status": "reserved"
+}

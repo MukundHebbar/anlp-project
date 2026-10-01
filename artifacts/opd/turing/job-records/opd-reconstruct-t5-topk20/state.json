@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-t5-topk20",
+ "job_id": 40896,
+ "gpus": 3,
+ "hours": 2.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-t5-topk20",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 8 --loss topk --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-t5-topk20",
+ "submitted": "2026-09-30T22:43:34Z",
+ "status": "reserved"
+}

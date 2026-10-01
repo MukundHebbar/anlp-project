@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-sft470-plain-anchor0.5-ol1.0-tprompt",
+ "job_id": 41106,
+ "gpus": 3,
+ "hours": 1.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain-anchor0.5-ol1.0-tprompt",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --init-adapter /scratch/$USER/anlp-opd/runs/sft-reconstruct-n470/adapter --set kl_anchor_beta=0.5 --set overlong_penalty=1.0 --teacher-instruction anti_repetition --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain-anchor0.5-ol1.0-tprompt",
+ "submitted": "2026-10-01T07:39:48Z",
+ "status": "reserved"
+}

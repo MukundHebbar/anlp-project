@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-t4-soft4k",
+ "job_id": 40893,
+ "gpus": 3,
+ "hours": 2.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-t4-soft4k",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 8 --set kl_anchor_beta=0.5 --set overlong_penalty=1.0 --soft-length 4096:1.0 --teacher-instruction anti_repetition --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-t4-soft4k",
+ "submitted": "2026-09-30T22:18:44Z",
+ "status": "reserved"
+}

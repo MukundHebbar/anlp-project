@@ -1,0 +1,36 @@
+{
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-sft470-plain-sftmix1.0/adapters/step16",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 17,
+  "cap_rate": 0.085,
+  "mean_tokens": 5544.19,
+  "mean_repetition": 0.16105899099203647,
+  "repetition_above_0.5": 16,
+  "seconds": {
+   "load": 50,
+   "generate": 553
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.085,
+  "think_markup_rate": 0.085,
+  "mean_completion_tokens": 5544.19,
+  "parse_rate": 0.885,
+  "strict_json_rate": 0.44,
+  "extraction_counts": {
+   "strict": 88,
+   "repaired": 5,
+   "lenient": 84,
+   "null": 23
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-t8-t2-gate8k",
+ "job_id": 40918,
+ "gpus": 3,
+ "hours": 2.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-t8-t2-gate8k",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 8 --set kl_anchor_beta=0.5 --set overlong_penalty=1.0 --gate 8192 --teacher-instruction anti_repetition --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-t8-t2-gate8k",
+ "submitted": "2026-10-01T03:03:19Z",
+ "status": "reserved"
+}

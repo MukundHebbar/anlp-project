@@ -1,0 +1,36 @@
+{
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-sft470-topk-anchorsft1.0/adapters/step8",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 2,
+  "cap_rate": 0.01,
+  "mean_tokens": 2358.05,
+  "mean_repetition": 0.07431256321870804,
+  "repetition_above_0.5": 3,
+  "seconds": {
+   "load": 49,
+   "generate": 337
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.01,
+  "think_markup_rate": 0.06,
+  "mean_completion_tokens": 2358.05,
+  "parse_rate": 0.93,
+  "strict_json_rate": 0.475,
+  "extraction_counts": {
+   "strict": 95,
+   "repaired": 9,
+   "lenient": 82,
+   "null": 14
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

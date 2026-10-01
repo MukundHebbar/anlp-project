@@ -1,0 +1,36 @@
+{
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/runs/sft-reconstruct-n256/adapter",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 4,
+  "cap_rate": 0.02,
+  "mean_tokens": 4422.8,
+  "mean_repetition": 0.08276914150210478,
+  "repetition_above_0.5": 4,
+  "seconds": {
+   "load": 76,
+   "generate": 426
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.02,
+  "think_markup_rate": 0.13,
+  "mean_completion_tokens": 4422.8,
+  "parse_rate": 0.9,
+  "strict_json_rate": 0.23,
+  "extraction_counts": {
+   "strict": 46,
+   "repaired": 13,
+   "lenient": 121,
+   "null": 20
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

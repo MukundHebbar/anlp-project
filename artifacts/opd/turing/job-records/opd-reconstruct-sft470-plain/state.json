@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-sft470-plain",
+ "job_id": 40948,
+ "gpus": 3,
+ "hours": 2.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --init-adapter /scratch/$USER/anlp-opd/runs/sft-reconstruct-n470/adapter --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain",
+ "submitted": "2026-10-01T04:56:54Z",
+ "status": "reserved"
+}

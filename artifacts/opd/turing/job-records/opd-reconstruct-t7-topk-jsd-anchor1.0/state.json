@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-t7-topk-jsd-anchor1.0",
+ "job_id": 40914,
+ "gpus": 3,
+ "hours": 2.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-t7-topk-jsd-anchor1.0",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --loss topk --divergence jsd --set kl_anchor_beta=1.0 --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-t7-topk-jsd-anchor1.0",
+ "submitted": "2026-10-01T02:36:21Z",
+ "status": "reserved"
+}

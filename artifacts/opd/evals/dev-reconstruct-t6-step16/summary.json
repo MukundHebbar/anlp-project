@@ -1,0 +1,36 @@
+{
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-t6-topk-anchor1.0/adapters/step16",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 1,
+  "cap_rate": 0.005,
+  "mean_tokens": 2187.295,
+  "mean_repetition": 0.07620807977308719,
+  "repetition_above_0.5": 5,
+  "seconds": {
+   "load": 49,
+   "generate": 337
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.005,
+  "think_markup_rate": 0.1,
+  "mean_completion_tokens": 2187.295,
+  "parse_rate": 0.94,
+  "strict_json_rate": 0.425,
+  "extraction_counts": {
+   "strict": 85,
+   "repaired": 19,
+   "lenient": 84,
+   "null": 12
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

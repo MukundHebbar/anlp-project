@@ -1,0 +1,11 @@
+{
+ "name": "gen-reconstruct-w512",
+ "job_id": 40693,
+ "gpus": 2,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/gen-reconstruct-w512",
+ "command": "python scripts/turing/teacher_gen.py --task reconstruct --n 512 --samples 2 --out /scratch/$USER/anlp-opd/runs/gen-reconstruct-w512",
+ "submitted": "2026-09-30T18:52:07Z",
+ "status": "reserved"
+}

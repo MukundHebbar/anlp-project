@@ -1,0 +1,11 @@
+{
+ "name": "dev-reconstruct-sft470-topk-step16",
+ "job_id": 40979,
+ "gpus": 1,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470-topk-step16",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --adapter /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-topk-anchorsft1.0/adapters/step16 --out /scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470-topk-step16",
+ "submitted": "2026-10-01T06:59:47Z",
+ "status": "reserved"
+}

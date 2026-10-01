@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-sft256",
+ "job_id": 40711,
+ "gpus": 3,
+ "hours": 4.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-sft256",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --init-adapter /scratch/$USER/anlp-opd/runs/sft-reconstruct-n256/adapter --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft256",
+ "submitted": "2026-09-30T19:45:21Z",
+ "status": "reserved"
+}

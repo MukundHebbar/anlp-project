@@ -38,3 +38,12 @@ Protocol v2: T 1.0, top_p 1.0, top_k off, 32k cap, one sample. Each task has 200
 | `dev-solve-base`, `dev-solve-trial-step16` | The same SOLVE pair under the superseded protocol v1 (T 0.7, top_p 0.8, top_k 20) |
 
 `responses.jsonl` and `judgments.jsonl` are stored gzipped. Run `gunzip -k` on them before re-scoring or re-judging with `scripts/judge_baseline.py --split dev`.
+
+## RECONSTRUCT follow-up trials on Turing (2026-10-01)
+
+`turing/<run>/` holds every Turing run: SFT warm-ups, OPD trials and teacher-prompt probes. Each has its config, per-step metrics, the event log and the vLLM logs. Rollout texts are kept on the Turing node and locally, not in git. Also here:
+- `turing/job-records/`: each job's Slurm script and state record.
+- `turing/turing_budget.json`: the GPU-hour ledger.
+- `turing/gen-reconstruct-w512/filter.json`: the teacher-answer filter counts. The 470 kept answers are not in git; their question IDs are in `evals/teacher-warmup-470/scores.jsonl`.
+
+The judged evaluations are in `evals/dev-reconstruct-*` (200 dev questions), `evals/x200-reconstruct-*` (200 held-out questions) and `evals/teacher-warmup-470` (the teacher answers, with `golden-uids.json`). For these folders git has only per-question scores (`scores.jsonl`, `judged-scores.jsonl`) and summaries; the answers and raw judge calls stay local. The trials and results are summarised in [reconstruct-opd-trials.md](../../docs/research/transfer-study/reconstruct-opd-trials.md).

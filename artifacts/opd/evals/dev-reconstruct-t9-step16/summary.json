@@ -1,0 +1,36 @@
+{
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-t9-topk-tprompt-anchor0.5/adapters/step16",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 1,
+  "cap_rate": 0.005,
+  "mean_tokens": 1739.27,
+  "mean_repetition": 0.050331441125830274,
+  "repetition_above_0.5": 0,
+  "seconds": {
+   "load": 50,
+   "generate": 318
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.005,
+  "think_markup_rate": 0.12,
+  "mean_completion_tokens": 1739.27,
+  "parse_rate": 0.905,
+  "strict_json_rate": 0.35,
+  "extraction_counts": {
+   "strict": 70,
+   "repaired": 19,
+   "lenient": 92,
+   "null": 19
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

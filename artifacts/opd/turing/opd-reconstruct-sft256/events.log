@@ -1,0 +1,9 @@
+01:17:54 student server ready in 150.0 s
+01:18:03 trainer loaded: 62.5M LoRA parameters (fresh optimiser); teacher server ready in 0.0 s
+01:18:03 starting from adapter /scratch/mukund.hebbar/anlp-opd/runs/sft-reconstruct-n256/adapter at step 0
+01:23:16 step 1: loss -0.4334 rkl 0.246 gap 0.014 len 5277 trunc 0.03 rep 0.07 used 32 anchor None {'rollout': 163.3, 'teacher': 48.6, 'train': 99.8, 'sync': 1.2}
+01:27:15 step 2: loss -0.3973 rkl 0.236 gap 0.013 len 4362 trunc 0.06 rep 0.14 used 32 anchor None {'rollout': 157.5, 'teacher': 40.8, 'train': 38.8, 'sync': 1.1}
+01:31:57 step 3: loss -0.3477 rkl 0.226 gap 0.012 len 6098 trunc 0.25 rep 0.28 used 32 anchor None {'rollout': 171.1, 'teacher': 55.9, 'train': 54.4, 'sync': 1.1}
+01:36:01 step 4: loss -0.3445 rkl 0.226 gap 0.012 len 4412 trunc 0.19 rep 0.25 used 32 anchor None {'rollout': 160.7, 'teacher': 41.3, 'train': 40.2, 'sync': 1.1}
+01:40:33 step 5: loss -0.2854 rkl 0.233 gap 0.009 len 5448 trunc 0.28 rep 0.36 used 32 anchor None {'rollout': 171.4, 'teacher': 50.4, 'train': 50.0, 'sync': 1.0}
+01:40:33 AUTO-STOP: truncation rose from 0.03 to 0.28

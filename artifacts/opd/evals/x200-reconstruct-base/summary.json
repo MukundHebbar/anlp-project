@@ -1,0 +1,36 @@
+{
+ "adapter": null,
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 0,
+  "cap_rate": 0.0,
+  "mean_tokens": 2790.18,
+  "mean_repetition": 0.05433944807001987,
+  "repetition_above_0.5": 1,
+  "seconds": {
+   "load": 33,
+   "generate": 175
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.0,
+  "think_markup_rate": 0.24,
+  "mean_completion_tokens": 2790.18,
+  "parse_rate": 0.92,
+  "strict_json_rate": 0.17,
+  "extraction_counts": {
+   "strict": 34,
+   "repaired": 34,
+   "lenient": 116,
+   "null": 16
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

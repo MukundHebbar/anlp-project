@@ -1,0 +1,11 @@
+{
+ "name": "sft-reconstruct-n470",
+ "job_id": 40705,
+ "gpus": 1,
+ "hours": 2.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/sft-reconstruct-n470",
+ "command": "python scripts/turing/sft.py --data /scratch/$USER/anlp-opd/runs/gen-reconstruct-w512/sft.jsonl --n 470 --out /scratch/$USER/anlp-opd/runs/sft-reconstruct-n470",
+ "submitted": "2026-09-30T19:41:43Z",
+ "status": "reserved"
+}

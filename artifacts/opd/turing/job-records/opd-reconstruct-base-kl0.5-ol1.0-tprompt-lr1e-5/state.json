@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-base-kl0.5-ol1.0-tprompt-lr1e-5",
+ "job_id": 40887,
+ "gpus": 3,
+ "hours": 2.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-base-kl0.5-ol1.0-tprompt-lr1e-5",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 8 --set kl_anchor_beta=0.5 --set overlong_penalty=1.0 --set optimizer.lr=1e-5 --teacher-instruction anti_repetition --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-base-kl0.5-ol1.0-tprompt-lr1e-5",
+ "submitted": "2026-09-30T21:31:40Z",
+ "status": "reserved"
+}

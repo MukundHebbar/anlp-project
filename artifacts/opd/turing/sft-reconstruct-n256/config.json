@@ -1,0 +1,35 @@
+{
+ "examples": 256,
+ "epochs": 1,
+ "batch_size": 16,
+ "lr": 0.0001,
+ "min_lr": 1e-05,
+ "warmup_steps": 3,
+ "weight_decay": 0.0,
+ "betas": [
+  0.9,
+  0.999
+ ],
+ "grad_clip": 1.0,
+ "shuffle_seed": 20261001,
+ "logprob_chunk_tokens": 1024,
+ "lora": {
+  "r": 64,
+  "alpha": 64,
+  "dropout": 0.0,
+  "target_modules": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "in_proj_qkv",
+   "in_proj_z",
+   "out_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ]
+ },
+ "student": "Qwen/Qwen3.5-2B",
+ "data": "/scratch/mukund.hebbar/anlp-opd/runs/gen-reconstruct-w512/sft.jsonl"
+}

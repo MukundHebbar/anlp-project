@@ -1,0 +1,11 @@
+{
+ "name": "dev-reconstruct-t6-step16",
+ "job_id": 40908,
+ "gpus": 1,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/dev-reconstruct-t6-step16",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --adapter /scratch/$USER/anlp-opd/runs/opd-reconstruct-t6-topk-anchor1.0/adapters/step16 --out /scratch/$USER/anlp-opd/runs/dev-reconstruct-t6-step16",
+ "submitted": "2026-10-01T01:27:38Z",
+ "status": "reserved"
+}

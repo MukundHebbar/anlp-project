@@ -1,0 +1,21 @@
+04:14:23 student server ready in 45.0 s
+04:14:33 trainer loaded: 62.5M LoRA parameters (fresh optimiser); teacher server ready in 0.0 s
+04:17:21 step 1: loss 0.2935 rkl 0.356 gap 0.017 len 3238 trunc 0.00 rep 0.07 used 32 anchor None topk-kl 0.29350200155749917 stop-adv 0.0 stop-teacher-lp -0.4918306166630373 {'rollout': 96.4, 'teacher': 38.9, 'train': 31.3, 'sync': 1.0}
+04:21:20 step 2: loss 0.2398 rkl 0.284 gap 0.015 len 3807 trunc 0.12 rep 0.13 used 32 anchor None topk-kl 0.23975287354551256 stop-adv 0.0 stop-teacher-lp -0.04788021560061192 {'rollout': 158.2, 'teacher': 43.4, 'train': 37.0, 'sync': 1.0}
+04:25:45 step 3: loss 0.2075 rkl 0.245 gap 0.012 len 4707 trunc 0.19 rep 0.25 used 32 anchor None topk-kl 0.20749977370724082 stop-adv 0.0 stop-teacher-lp -0.5170830563436609 {'rollout': 165.3, 'teacher': 51.9, 'train': 45.9, 'sync': 1.0}
+04:29:35 step 4: loss 0.1858 rkl 0.220 gap 0.012 len 3034 trunc 0.16 rep 0.27 used 32 anchor None topk-kl 0.18578206544043496 stop-adv 0.0 stop-teacher-lp -0.011632173035406123 {'rollout': 155.9, 'teacher': 42.5, 'train': 31.1, 'sync': 0.9}
+04:32:41 step 5: loss 0.1995 rkl 0.236 gap 0.012 len 1257 trunc 0.03 rep 0.17 used 32 anchor None topk-kl 0.1995266347657889 stop-adv 0.0 stop-teacher-lp -0.5693904001750378 {'rollout': 143.7, 'teacher': 25.5, 'train': 15.1, 'sync': 0.9}
+04:37:00 step 6: loss 0.1413 rkl 0.177 gap 0.010 len 4531 trunc 0.19 rep 0.35 used 32 anchor None topk-kl 0.14126423792913556 stop-adv 0.0 stop-teacher-lp -0.8485421001794118 {'rollout': 162.6, 'teacher': 53.0, 'train': 42.6, 'sync': 0.9}
+04:41:26 step 7: loss 0.1640 rkl 0.201 gap 0.012 len 4775 trunc 0.19 rep 0.27 used 32 anchor None topk-kl 0.16404505295213312 stop-adv 0.0 stop-teacher-lp -0.546035761379139 {'rollout': 166.2, 'teacher': 53.5, 'train': 45.6, 'sync': 0.9}
+04:45:08 step 8: loss 0.1681 rkl 0.194 gap 0.014 len 3000 trunc 0.06 rep 0.13 used 32 anchor None topk-kl 0.16814059996977448 stop-adv 0.0 stop-teacher-lp -0.011022219206764324 {'rollout': 151.3, 'teacher': 41.1, 'train': 28.2, 'sync': 0.9}
+04:54:22 student server ready in 45.0 s
+04:54:33 trainer loaded: 62.5M LoRA parameters (optimiser state restored); teacher server ready in 0.0 s
+04:54:34 starting from adapter /scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-t5-topk20/adapters/step8 at step 8
+04:57:59 step 9: loss 0.1852 rkl 0.224 gap 0.014 len 2362 trunc 0.03 rep 0.07 used 32 anchor None topk-kl 0.18518600868992507 stop-adv 0.0 stop-teacher-lp -0.5078978299133591 {'rollout': 147.9, 'teacher': 31.8, 'train': 24.2, 'sync': 1.1}
+05:01:03 step 10: loss 0.1821 rkl 0.231 gap 0.015 len 1501 trunc 0.03 rep 0.08 used 32 anchor None topk-kl 0.18205567449331284 stop-adv 0.0 stop-teacher-lp -0.004858178930619268 {'rollout': 144.3, 'teacher': 23.8, 'train': 15.3, 'sync': 0.9}
+05:01:50 step 11: loss 0.1916 rkl 0.241 gap 0.015 len 842 trunc 0.00 rep 0.04 used 32 anchor None topk-kl 0.1915911347605288 stop-adv 0.0 stop-teacher-lp -0.02446358580840524 {'rollout': 20.8, 'teacher': 14.8, 'train': 9.9, 'sync': 0.9}
+05:03:20 step 12: loss 0.2051 rkl 0.270 gap 0.015 len 753 trunc 0.00 rep 0.04 used 32 anchor None topk-kl 0.20506570977158844 stop-adv 0.0 stop-teacher-lp -0.0002549741931261451 {'rollout': 61.5, 'teacher': 16.3, 'train': 11.0, 'sync': 0.8}
+05:05:16 step 13: loss 0.2075 rkl 0.260 gap 0.016 len 866 trunc 0.00 rep 0.03 used 32 anchor None topk-kl 0.207452297443524 stop-adv 0.0 stop-teacher-lp -0.6069759173296774 {'rollout': 86.9, 'teacher': 17.4, 'train': 11.6, 'sync': 0.9}
+05:06:05 step 14: loss 0.2107 rkl 0.266 gap 0.017 len 642 trunc 0.00 rep 0.01 used 32 anchor None topk-kl 0.21066125482320786 stop-adv 0.0 stop-teacher-lp -0.003847645648221487 {'rollout': 24.4, 'teacher': 13.9, 'train': 9.5, 'sync': 0.8}
+05:07:33 step 15: loss 0.1863 rkl 0.245 gap 0.016 len 914 trunc 0.00 rep 0.04 used 32 anchor None topk-kl 0.18627526424825191 stop-adv 0.0 stop-teacher-lp -0.05289598990265176 {'rollout': 56.6, 'teacher': 18.2, 'train': 11.9, 'sync': 0.9}
+05:08:17 step 16: loss 0.1897 rkl 0.246 gap 0.017 len 632 trunc 0.00 rep 0.03 used 32 anchor None topk-kl 0.18973856302909553 stop-adv 0.0 stop-teacher-lp -0.23909470957461565 {'rollout': 20.4, 'teacher': 13.8, 'train': 9.4, 'sync': 0.9}

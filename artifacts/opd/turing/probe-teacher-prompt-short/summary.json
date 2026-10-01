@@ -1,0 +1,34 @@
+{
+ "teacher_system": "Do not repeat yourself. If you notice you are going in circles, commit to your best answer and finish the output.",
+ "span": 32,
+ "max_tokens": 6144,
+ "seconds": 260,
+ "looping": {
+  "answers": 60,
+  "loop_token_share": 0.8022406684027777,
+  "loop_tokens_mean_teacher_lp": {
+   "task_prompt": -0.084,
+   "anti_repetition": -0.1204,
+   "answers": 58
+  },
+  "other_tokens_mean_teacher_lp": {
+   "task_prompt": -0.8214,
+   "anti_repetition": -0.8154,
+   "answers": 60
+  }
+ },
+ "normal": {
+  "answers": 60,
+  "loop_token_share": 0.44100192958823314,
+  "loop_tokens_mean_teacher_lp": {
+   "task_prompt": -0.0659,
+   "anti_repetition": -0.0754,
+   "answers": 37
+  },
+  "other_tokens_mean_teacher_lp": {
+   "task_prompt": -0.9843,
+   "anti_repetition": -0.9744,
+   "answers": 60
+  }
+ }
+}

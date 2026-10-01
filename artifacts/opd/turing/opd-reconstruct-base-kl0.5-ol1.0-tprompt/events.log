@@ -1,0 +1,10 @@
+02:27:45 student server ready in 45.0 s
+02:27:55 trainer loaded: 62.5M LoRA parameters (fresh optimiser); teacher server ready in 0.0 s
+02:30:26 step 1: loss -0.5814 rkl 0.342 gap 0.017 len 3206 trunc 0.00 rep 0.06 used 32 anchor 0.0 stop-adv 0.0759623694975744 stop-teacher-lp -0.4549240641990764 {'rollout': 81.8, 'teacher': 31.8, 'train': 35.7, 'sync': 1.1}
+02:33:40 step 2: loss -0.4557 rkl 0.276 gap 0.016 len 3751 trunc 0.00 rep 0.07 used 32 anchor 0.0065503991427249275 stop-adv 0.15396559711007285 stop-teacher-lp -0.32786477148755466 {'rollout': 116.0, 'teacher': 36.1, 'train': 40.2, 'sync': 1.0}
+02:38:01 step 3: loss -0.8965 rkl 0.357 gap 0.014 len 4715 trunc 0.12 rep 0.23 used 32 anchor 0.036347653443954187 stop-adv 0.21286242077725806 stop-teacher-lp -0.20305779802259036 {'rollout': 163.1, 'teacher': 44.9, 'train': 52.3, 'sync': 1.0}
+02:41:56 step 4: loss -0.5255 rkl 0.256 gap 0.012 len 3662 trunc 0.12 rep 0.24 used 32 anchor 0.06133994886477012 stop-adv 0.023568086958091174 stop-teacher-lp -0.2543919581735606 {'rollout': 157.0, 'teacher': 35.7, 'train': 41.7, 'sync': 1.0}
+02:46:53 step 5: loss -0.9348 rkl 0.373 gap 0.011 len 5921 trunc 0.28 rep 0.35 used 32 anchor 0.05094878704403527 stop-adv 0.3372709961284114 stop-teacher-lp -0.06554943974966275 {'rollout': 175.0, 'teacher': 55.2, 'train': 65.2, 'sync': 0.9}
+02:51:29 step 6: loss -0.4286 rkl 0.274 gap 0.012 len 5161 trunc 0.19 rep 0.31 used 32 anchor 0.06465361077425769 stop-adv 0.41777825380603856 stop-teacher-lp -0.2785039462770118 {'rollout': 168.8, 'teacher': 48.5, 'train': 57.4, 'sync': 0.9}
+02:57:02 step 7: loss -0.3415 rkl 0.285 gap 0.009 len 7580 trunc 0.34 rep 0.44 used 32 anchor 0.05378353084961418 stop-adv 0.5232108388362187 stop-teacher-lp -0.09043325225669226 {'rollout': 183.4, 'teacher': 68.7, 'train': 80.0, 'sync': 0.9}
+03:01:09 step 8: loss -0.3872 rkl 0.216 gap 0.013 len 4406 trunc 0.06 rep 0.17 used 32 anchor 0.056726736918790266 stop-adv 0.35366644280438775 stop-teacher-lp -0.09248686830851512 {'rollout': 158.1, 'teacher': 41.6, 'train': 46.8, 'sync': 0.9}

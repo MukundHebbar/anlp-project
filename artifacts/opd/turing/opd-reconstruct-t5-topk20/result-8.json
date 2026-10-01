@@ -1,0 +1,331 @@
+{
+ "ok": true,
+ "steps_done": 8,
+ "history": [
+  {
+   "step": 9,
+   "loss": 0.18518600868992507,
+   "reverse_kl": 0.223541195737198,
+   "mean_abs_logprob_gap": 0.014439374150242656,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.5078978299133591,
+    "student_lp": -0.04146966482151202,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.18518600868992507,
+   "tokens": 75571,
+   "grad_norm": 0.19162708520889282,
+   "mean_len": 2361.59375,
+   "max_len": 16384,
+   "truncation_rate": 0.03125,
+   "stopped": 31,
+   "eos_appended": 0,
+   "repetition": 0.06641939839372796,
+   "seconds": {
+    "rollout": 147.9,
+    "teacher": 31.8,
+    "train": 24.2,
+    "sync": 1.1
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29162 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 10,
+   "loss": 0.18205567449331284,
+   "reverse_kl": 0.23149987612850964,
+   "mean_abs_logprob_gap": 0.01506467635408626,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.004858178930619268,
+    "student_lp": -0.003200965338985571,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.18205567449331284,
+   "tokens": 48045,
+   "grad_norm": 0.20244191586971283,
+   "mean_len": 1501.40625,
+   "max_len": 16384,
+   "truncation_rate": 0.03125,
+   "stopped": 31,
+   "eos_appended": 0,
+   "repetition": 0.08043514870532188,
+   "seconds": {
+    "rollout": 144.3,
+    "teacher": 23.8,
+    "train": 15.3,
+    "sync": 0.9
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29162 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 11,
+   "loss": 0.1915911347605288,
+   "reverse_kl": 0.2412171419709921,
+   "mean_abs_logprob_gap": 0.015271240030415356,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.02446358580840524,
+    "student_lp": -0.06254174120863354,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.1915911347605288,
+   "tokens": 26938,
+   "grad_norm": 0.17794804275035858,
+   "mean_len": 841.8125,
+   "max_len": 2167,
+   "truncation_rate": 0.0,
+   "stopped": 32,
+   "eos_appended": 0,
+   "repetition": 0.04134775841500364,
+   "seconds": {
+    "rollout": 20.8,
+    "teacher": 14.8,
+    "train": 9.9,
+    "sync": 0.9
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29164 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 12,
+   "loss": 0.20506570977158844,
+   "reverse_kl": 0.2700297285337001,
+   "mean_abs_logprob_gap": 0.015280226536560804,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.0002549741931261451,
+    "student_lp": -6.934442853889777e-05,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.20506570977158844,
+   "tokens": 24081,
+   "grad_norm": 0.23483313620090485,
+   "mean_len": 752.53125,
+   "max_len": 7001,
+   "truncation_rate": 0.0,
+   "stopped": 32,
+   "eos_appended": 0,
+   "repetition": 0.0444432152381409,
+   "seconds": {
+    "rollout": 61.5,
+    "teacher": 16.3,
+    "train": 11.0,
+    "sync": 0.8
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29164 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 13,
+   "loss": 0.207452297443524,
+   "reverse_kl": 0.2603870932944119,
+   "mean_abs_logprob_gap": 0.015582368418108672,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.6069759173296774,
+    "student_lp": -0.09664141615996868,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.207452297443524,
+   "tokens": 27698,
+   "grad_norm": 0.22490999102592468,
+   "mean_len": 865.5625,
+   "max_len": 9937,
+   "truncation_rate": 0.0,
+   "stopped": 32,
+   "eos_appended": 0,
+   "repetition": 0.034485600421525556,
+   "seconds": {
+    "rollout": 86.9,
+    "teacher": 17.4,
+    "train": 11.6,
+    "sync": 0.9
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29164 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 14,
+   "loss": 0.21066125482320786,
+   "reverse_kl": 0.2659303122200072,
+   "mean_abs_logprob_gap": 0.01689155347412452,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.003847645648221487,
+    "student_lp": -0.028972419813158012,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.21066125482320786,
+   "tokens": 20553,
+   "grad_norm": 0.23871248960494995,
+   "mean_len": 642.28125,
+   "max_len": 2617,
+   "truncation_rate": 0.0,
+   "stopped": 32,
+   "eos_appended": 0,
+   "repetition": 0.01470841414927308,
+   "seconds": {
+    "rollout": 24.4,
+    "teacher": 13.9,
+    "train": 9.5,
+    "sync": 0.8
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29164 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 15,
+   "loss": 0.18627526424825191,
+   "reverse_kl": 0.24480889504775405,
+   "mean_abs_logprob_gap": 0.016080435161711648,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.05289598990265176,
+    "student_lp": -0.0010095567122050397,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.18627526424825191,
+   "tokens": 29257,
+   "grad_norm": 0.19913345575332642,
+   "mean_len": 914.28125,
+   "max_len": 6374,
+   "truncation_rate": 0.0,
+   "stopped": 32,
+   "eos_appended": 0,
+   "repetition": 0.03675265348669849,
+   "seconds": {
+    "rollout": 56.6,
+    "teacher": 18.2,
+    "train": 11.9,
+    "sync": 0.9
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29206 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 16,
+   "loss": 0.18973856302909553,
+   "reverse_kl": 0.24578336160629988,
+   "mean_abs_logprob_gap": 0.017184797558002174,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "stop_token": {
+    "advantage": 0.0,
+    "teacher_lp": -0.23909470957461565,
+    "student_lp": -0.08128144680676996,
+    "last16_advantage": 0.0
+   },
+   "mean_advantage": 0.0,
+   "topk_kl": 0.18973856302909553,
+   "tokens": 20225,
+   "grad_norm": 0.1903112530708313,
+   "mean_len": 632.03125,
+   "max_len": 2147,
+   "truncation_rate": 0.0,
+   "stopped": 32,
+   "eos_appended": 0,
+   "repetition": 0.028712418240628167,
+   "seconds": {
+    "rollout": 20.4,
+    "teacher": 13.8,
+    "train": 9.4,
+    "sync": 0.9
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "29206 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB",
+    "43583 MiB, 46068 MiB"
+   ]
+  }
+ ],
+ "events": [
+  "04:54:22 student server ready in 45.0 s",
+  "04:54:33 trainer loaded: 62.5M LoRA parameters (optimiser state restored); teacher server ready in 0.0 s",
+  "04:54:34 starting from adapter /scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-t5-topk20/adapters/step8 at step 8",
+  "04:57:59 step 9: loss 0.1852 rkl 0.224 gap 0.014 len 2362 trunc 0.03 rep 0.07 used 32 anchor None topk-kl 0.18518600868992507 stop-adv 0.0 stop-teacher-lp -0.5078978299133591 {'rollout': 147.9, 'teacher': 31.8, 'train': 24.2, 'sync': 1.1}",
+  "05:01:03 step 10: loss 0.1821 rkl 0.231 gap 0.015 len 1501 trunc 0.03 rep 0.08 used 32 anchor None topk-kl 0.18205567449331284 stop-adv 0.0 stop-teacher-lp -0.004858178930619268 {'rollout': 144.3, 'teacher': 23.8, 'train': 15.3, 'sync': 0.9}",
+  "05:01:50 step 11: loss 0.1916 rkl 0.241 gap 0.015 len 842 trunc 0.00 rep 0.04 used 32 anchor None topk-kl 0.1915911347605288 stop-adv 0.0 stop-teacher-lp -0.02446358580840524 {'rollout': 20.8, 'teacher': 14.8, 'train': 9.9, 'sync': 0.9}",
+  "05:03:20 step 12: loss 0.2051 rkl 0.270 gap 0.015 len 753 trunc 0.00 rep 0.04 used 32 anchor None topk-kl 0.20506570977158844 stop-adv 0.0 stop-teacher-lp -0.0002549741931261451 {'rollout': 61.5, 'teacher': 16.3, 'train': 11.0, 'sync': 0.8}",
+  "05:05:16 step 13: loss 0.2075 rkl 0.260 gap 0.016 len 866 trunc 0.00 rep 0.03 used 32 anchor None topk-kl 0.207452297443524 stop-adv 0.0 stop-teacher-lp -0.6069759173296774 {'rollout': 86.9, 'teacher': 17.4, 'train': 11.6, 'sync': 0.9}",
+  "05:06:05 step 14: loss 0.2107 rkl 0.266 gap 0.017 len 642 trunc 0.00 rep 0.01 used 32 anchor None topk-kl 0.21066125482320786 stop-adv 0.0 stop-teacher-lp -0.003847645648221487 {'rollout': 24.4, 'teacher': 13.9, 'train': 9.5, 'sync': 0.8}",
+  "05:07:33 step 15: loss 0.1863 rkl 0.245 gap 0.016 len 914 trunc 0.00 rep 0.04 used 32 anchor None topk-kl 0.18627526424825191 stop-adv 0.0 stop-teacher-lp -0.05289598990265176 {'rollout': 56.6, 'teacher': 18.2, 'train': 11.9, 'sync': 0.9}",
+  "05:08:17 step 16: loss 0.1897 rkl 0.246 gap 0.017 len 632 trunc 0.00 rep 0.03 used 32 anchor None topk-kl 0.18973856302909553 stop-adv 0.0 stop-teacher-lp -0.23909470957461565 {'rollout': 20.4, 'teacher': 13.8, 'train': 9.4, 'sync': 0.9}"
+ ]
+}

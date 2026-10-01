@@ -1,0 +1,11 @@
+{
+ "name": "dev-reconstruct-sft470-plain-step8",
+ "job_id": 40969,
+ "gpus": 1,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470-plain-step8",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --adapter /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain/adapters/step8 --out /scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470-plain-step8",
+ "submitted": "2026-10-01T05:57:32Z",
+ "status": "reserved"
+}

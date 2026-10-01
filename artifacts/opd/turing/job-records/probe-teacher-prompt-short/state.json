@@ -1,0 +1,11 @@
+{
+ "name": "probe-teacher-prompt-short",
+ "job_id": 40783,
+ "gpus": 2,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/probe-teacher-prompt-short",
+ "command": "python scripts/turing/teacher_prompt_probe.py --responses artifacts/opd/evals/dev-reconstruct-trial-step5/responses.jsonl --n 60 --out /scratch/$USER/anlp-opd/runs/probe-teacher-prompt-short --system \"Do not repeat yourself. If you notice you are going in circles, commit to your best answer and finish the output.\"",
+ "submitted": "2026-09-30T20:18:00Z",
+ "status": "reserved"
+}

@@ -1,0 +1,36 @@
+{
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-base-kl0.5-ol1.0-tprompt-lr1e-5/adapters/step8",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 16,
+  "cap_rate": 0.08,
+  "mean_tokens": 5933.885,
+  "mean_repetition": 0.17103641026004254,
+  "repetition_above_0.5": 21,
+  "seconds": {
+   "load": 49,
+   "generate": 555
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.08,
+  "think_markup_rate": 0.325,
+  "mean_completion_tokens": 5933.885,
+  "parse_rate": 0.87,
+  "strict_json_rate": 0.19,
+  "extraction_counts": {
+   "strict": 38,
+   "repaired": 25,
+   "lenient": 111,
+   "null": 26
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

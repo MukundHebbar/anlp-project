@@ -1,0 +1,7 @@
+03:49:33 student server ready in 45.0 s
+03:49:44 trainer loaded: 62.5M LoRA parameters (fresh optimiser); teacher server ready in 0.0 s
+03:52:39 step 1: loss -0.6340 rkl 0.334 gap 0.017 len 3289 trunc 0.00 rep 0.07 used 32 anchor 0.0 stop-adv 0.20192056578525808 stop-teacher-lp -0.16609184429239576 {'rollout': 104.1, 'teacher': 32.2, 'train': 36.7, 'sync': 0.9}
+03:56:44 step 2: loss -0.5570 rkl 0.320 gap 0.015 len 4205 trunc 0.06 rep 0.13 used 32 anchor 0.008359891397049068 stop-adv -0.019964948909667633 stop-teacher-lp -0.08471191687591878 {'rollout': 157.9, 'teacher': 40.2, 'train': 46.0, 'sync': 1.0}
+04:01:02 step 3: loss -0.8847 rkl 0.318 gap 0.013 len 4570 trunc 0.16 rep 0.23 used 32 anchor 0.039164239115052624 stop-adv 0.24271340137002645 stop-teacher-lp -0.08395054895663634 {'rollout': 162.7, 'teacher': 43.5, 'train': 50.6, 'sync': 0.9}
+04:05:55 step 4: loss -0.4786 rkl 0.303 gap 0.010 len 5786 trunc 0.28 rep 0.40 used 32 anchor 0.05993291695631342 stop-adv 0.4082072523382047 stop-teacher-lp -0.1545308753565737 {'rollout': 174.3, 'teacher': 53.8, 'train': 64.1, 'sync': 0.9}
+04:10:58 step 5: loss -1.0110 rkl 0.377 gap 0.011 len 6195 trunc 0.31 rep 0.45 used 32 anchor 0.05633312524150824 stop-adv -0.1875207835639065 stop-teacher-lp -0.7968951703338792 {'rollout': 176.5, 'teacher': 57.3, 'train': 68.5, 'sync': 0.9}

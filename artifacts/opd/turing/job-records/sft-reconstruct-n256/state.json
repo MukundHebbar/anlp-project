@@ -1,0 +1,11 @@
+{
+ "name": "sft-reconstruct-n256",
+ "job_id": 40704,
+ "gpus": 1,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/sft-reconstruct-n256",
+ "command": "python scripts/turing/sft.py --data /scratch/$USER/anlp-opd/runs/gen-reconstruct-w512/sft.jsonl --n 256 --out /scratch/$USER/anlp-opd/runs/sft-reconstruct-n256",
+ "submitted": "2026-09-30T19:38:11Z",
+ "status": "reserved"
+}

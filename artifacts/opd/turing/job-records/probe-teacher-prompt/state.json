@@ -1,0 +1,11 @@
+{
+ "name": "probe-teacher-prompt",
+ "job_id": 40781,
+ "gpus": 2,
+ "hours": 1.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/probe-teacher-prompt",
+ "command": "python scripts/turing/teacher_prompt_probe.py --responses artifacts/opd/evals/dev-reconstruct-trial-step5/responses.jsonl --n 60 --out /scratch/$USER/anlp-opd/runs/probe-teacher-prompt",
+ "submitted": "2026-09-30T20:11:07Z",
+ "status": "reserved"
+}

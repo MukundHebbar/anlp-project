@@ -1,0 +1,88 @@
+{
+ "task": "reconstruct",
+ "steps": 16,
+ "platform": "turing-l40s",
+ "gpus": [
+  "0",
+  "1",
+  "2"
+ ],
+ "overrides": [
+  "optimizer.warmup_steps=3",
+  "kl_anchor_beta=0.5"
+ ],
+ "prompts": "warmup",
+ "init_adapter": null,
+ "resume_from": null,
+ "start_step": 0,
+ "student": "Qwen/Qwen3.5-2B",
+ "teacher": "Qwen/Qwen3.8-27B",
+ "objective": "per-token reverse KL, sampled-token estimator, discount 0",
+ "loss_normalization": "token mean per rollout, then mean over rollouts",
+ "importance_sampling_cap": 2.0,
+ "lora": {
+  "r": 64,
+  "alpha": 64,
+  "dropout": 0.0,
+  "target_modules": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "in_proj_qkv",
+   "in_proj_z",
+   "out_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ]
+ },
+ "optimizer": {
+  "name": "adamw",
+  "lr": 5e-05,
+  "betas": [
+   0.9,
+   0.999
+  ],
+  "weight_decay": 0.0,
+  "warmup_steps": 3,
+  "grad_clip": 1.0
+ },
+ "prompts_per_step": 32,
+ "samples_per_prompt": 1,
+ "updates_per_step": 1,
+ "rollout": {
+  "temperature": 1.0,
+  "top_p": 1.0
+ },
+ "rollout_max_tokens": {
+  "solve": 16384,
+  "judge": 16384,
+  "reconstruct": 16384
+ },
+ "logprob_chunk_tokens": 1024,
+ "auto_stop": {
+  "truncation_rise": 0.15,
+  "truncation_ceiling": 0.35,
+  "patience": 3,
+  "max_mean_abs_logprob_gap": 0.5,
+  "repetition_threshold": 0.5,
+  "repetition_patience": 2
+ },
+ "drop_truncated": false,
+ "kl_anchor_beta": 0.5,
+ "overlong_penalty": 0.0,
+ "soft_length_penalty": null,
+ "teacher_system_prompt": null,
+ "loss": "sampled",
+ "teacher_signal_max_len": null,
+ "sft_mix": {
+  "data": "/home/mukund.hebbar/anlp-opd-shared/teacher-warmup-470.jsonl",
+  "per_step": 16,
+  "weight": 1.0,
+  "paired": true,
+  "keep_uids": "/home/mukund.hebbar/anlp-opd-shared/golden-uids.json"
+ },
+ "topk_k": 20,
+ "topk_divergence": "reverse"
+}

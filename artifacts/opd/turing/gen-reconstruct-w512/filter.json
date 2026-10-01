@@ -1,0 +1,25 @@
+{
+ "task": "reconstruct",
+ "questions": 512,
+ "samples": 2,
+ "filter": {
+  "max_tokens": 8192,
+  "max_repetition": 0.2
+ },
+ "kept": 470,
+ "no_passing_sample": 42,
+ "per_sample": {
+  "cut_off": 0,
+  "unparsed": 179,
+  "repetitive": 26,
+  "too_long": 2,
+  "ok": 817
+ },
+ "mean_tokens": 1735.59765625,
+ "max_tokens": 15444,
+ "seconds": {
+  "load": 298,
+  "generate": 2410
+ },
+ "generated_tokens": 1777252
+}

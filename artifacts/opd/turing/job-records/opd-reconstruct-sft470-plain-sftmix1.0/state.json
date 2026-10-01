@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-sft470-plain-sftmix1.0",
+ "job_id": 41128,
+ "gpus": 3,
+ "hours": 1.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain-sftmix1.0",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --init-adapter /scratch/$USER/anlp-opd/runs/sft-reconstruct-n470/adapter --sft-mix /scratch/$USER/anlp-opd/runs/gen-reconstruct-w512/sft.jsonl --sft-per-step 16 --sft-weight 1.0 --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain-sftmix1.0",
+ "submitted": "2026-10-01T11:11:15Z",
+ "status": "reserved"
+}

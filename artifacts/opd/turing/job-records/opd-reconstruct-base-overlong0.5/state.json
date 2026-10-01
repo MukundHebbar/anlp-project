@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-base-overlong0.5",
+ "job_id": 40784,
+ "gpus": 3,
+ "hours": 2.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-base-overlong0.5",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 8 --set overlong_penalty=0.5 --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-base-overlong0.5",
+ "submitted": "2026-09-30T20:24:07Z",
+ "status": "reserved"
+}

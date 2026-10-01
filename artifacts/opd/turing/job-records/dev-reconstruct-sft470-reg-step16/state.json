@@ -1,0 +1,11 @@
+{
+ "name": "dev-reconstruct-sft470-reg-step16",
+ "job_id": 41108,
+ "gpus": 1,
+ "hours": 0.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470-reg-step16",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --adapter /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain-anchor0.5-ol1.0-tprompt/adapters/step16 --out /scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470-reg-step16",
+ "submitted": "2026-10-01T08:30:48Z",
+ "status": "reserved"
+}

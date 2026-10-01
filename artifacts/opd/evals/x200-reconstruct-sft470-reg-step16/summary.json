@@ -1,0 +1,36 @@
+{
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/runs/opd-reconstruct-sft470-plain-anchor0.5-ol1.0-tprompt/adapters/step16",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "loop_check": {
+  "cap_hits": 4,
+  "cap_rate": 0.02,
+  "mean_tokens": 2797.905,
+  "mean_repetition": 0.10000085046728391,
+  "repetition_above_0.5": 5,
+  "seconds": {
+   "load": 49,
+   "generate": 365
+  }
+ },
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.02,
+  "think_markup_rate": 0.065,
+  "mean_completion_tokens": 2797.905,
+  "parse_rate": 0.91,
+  "strict_json_rate": 0.555,
+  "extraction_counts": {
+   "strict": 111,
+   "repaired": 6,
+   "lenient": 65,
+   "null": 18
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

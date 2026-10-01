@@ -1,0 +1,172 @@
+{
+ "ok": true,
+ "steps_done": 5,
+ "history": [
+  {
+   "step": 1,
+   "loss": -0.43335949582979083,
+   "reverse_kl": 0.24643011949956417,
+   "mean_abs_logprob_gap": 0.014177321616443805,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "tokens": 168853,
+   "grad_norm": 0.6779138445854187,
+   "mean_len": 5276.65625,
+   "max_len": 16384,
+   "truncation_rate": 0.03125,
+   "stopped": 31,
+   "eos_appended": 0,
+   "repetition": 0.07144533148683485,
+   "seconds": {
+    "rollout": 163.3,
+    "teacher": 48.6,
+    "train": 99.8,
+    "sync": 1.2
+   },
+   "trainer_peak_gib": 9.9,
+   "gpu_memory": [
+    "28020 MiB, 46068 MiB",
+    "43741 MiB, 46068 MiB",
+    "43739 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 2,
+   "loss": -0.39731940790079534,
+   "reverse_kl": 0.2363329759100452,
+   "mean_abs_logprob_gap": 0.012750288784445729,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "tokens": 139569,
+   "grad_norm": 0.42355936765670776,
+   "mean_len": 4361.53125,
+   "max_len": 16384,
+   "truncation_rate": 0.0625,
+   "stopped": 30,
+   "eos_appended": 0,
+   "repetition": 0.13867589970210487,
+   "seconds": {
+    "rollout": 157.5,
+    "teacher": 40.8,
+    "train": 38.8,
+    "sync": 1.1
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "28024 MiB, 46068 MiB",
+    "43741 MiB, 46068 MiB",
+    "43739 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 3,
+   "loss": -0.34768592508044094,
+   "reverse_kl": 0.22594596643466502,
+   "mean_abs_logprob_gap": 0.011840528222819557,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "tokens": 195142,
+   "grad_norm": 0.37336793541908264,
+   "mean_len": 6098.1875,
+   "max_len": 16384,
+   "truncation_rate": 0.25,
+   "stopped": 24,
+   "eos_appended": 0,
+   "repetition": 0.27612637491478786,
+   "seconds": {
+    "rollout": 171.1,
+    "teacher": 55.9,
+    "train": 54.4,
+    "sync": 1.1
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "28026 MiB, 46068 MiB",
+    "43745 MiB, 46068 MiB",
+    "43743 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 4,
+   "loss": -0.3444716141675599,
+   "reverse_kl": 0.22605906368698925,
+   "mean_abs_logprob_gap": 0.011579659176277346,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "tokens": 141191,
+   "grad_norm": 0.3817473351955414,
+   "mean_len": 4412.21875,
+   "max_len": 16384,
+   "truncation_rate": 0.1875,
+   "stopped": 26,
+   "eos_appended": 0,
+   "repetition": 0.2506495876878913,
+   "seconds": {
+    "rollout": 160.7,
+    "teacher": 41.3,
+    "train": 40.2,
+    "sync": 1.1
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "28026 MiB, 46068 MiB",
+    "43745 MiB, 46068 MiB",
+    "43743 MiB, 46068 MiB"
+   ]
+  },
+  {
+   "step": 5,
+   "loss": -0.28540009682183154,
+   "reverse_kl": 0.23284727544523776,
+   "mean_abs_logprob_gap": 0.009412610304252667,
+   "is_clipped_tokens": 0,
+   "rollouts_used": 32,
+   "rollouts_dropped": 0,
+   "update_skipped": false,
+   "anchor_kl": null,
+   "tokens": 174341,
+   "grad_norm": 0.4485643208026886,
+   "mean_len": 5448.15625,
+   "max_len": 16384,
+   "truncation_rate": 0.28125,
+   "stopped": 23,
+   "eos_appended": 0,
+   "repetition": 0.36027036432800097,
+   "seconds": {
+    "rollout": 171.4,
+    "teacher": 50.4,
+    "train": 50.0,
+    "sync": 1.0
+   },
+   "trainer_peak_gib": 10.4,
+   "gpu_memory": [
+    "28026 MiB, 46068 MiB",
+    "43745 MiB, 46068 MiB",
+    "43743 MiB, 46068 MiB"
+   ]
+  }
+ ],
+ "events": [
+  "01:17:54 student server ready in 150.0 s",
+  "01:18:03 trainer loaded: 62.5M LoRA parameters (fresh optimiser); teacher server ready in 0.0 s",
+  "01:18:03 starting from adapter /scratch/mukund.hebbar/anlp-opd/runs/sft-reconstruct-n256/adapter at step 0",
+  "01:23:16 step 1: loss -0.4334 rkl 0.246 gap 0.014 len 5277 trunc 0.03 rep 0.07 used 32 anchor None {'rollout': 163.3, 'teacher': 48.6, 'train': 99.8, 'sync': 1.2}",
+  "01:27:15 step 2: loss -0.3973 rkl 0.236 gap 0.013 len 4362 trunc 0.06 rep 0.14 used 32 anchor None {'rollout': 157.5, 'teacher': 40.8, 'train': 38.8, 'sync': 1.1}",
+  "01:31:57 step 3: loss -0.3477 rkl 0.226 gap 0.012 len 6098 trunc 0.25 rep 0.28 used 32 anchor None {'rollout': 171.1, 'teacher': 55.9, 'train': 54.4, 'sync': 1.1}",
+  "01:36:01 step 4: loss -0.3445 rkl 0.226 gap 0.012 len 4412 trunc 0.19 rep 0.25 used 32 anchor None {'rollout': 160.7, 'teacher': 41.3, 'train': 40.2, 'sync': 1.1}",
+  "01:40:33 step 5: loss -0.2854 rkl 0.233 gap 0.009 len 5448 trunc 0.28 rep 0.36 used 32 anchor None {'rollout': 171.4, 'teacher': 50.4, 'train': 50.0, 'sync': 1.0}",
+  "01:40:33 AUTO-STOP: truncation rose from 0.03 to 0.28"
+ ]
+}

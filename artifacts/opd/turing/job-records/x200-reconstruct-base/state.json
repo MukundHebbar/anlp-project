@@ -1,0 +1,11 @@
+{
+ "name": "x200-reconstruct-base",
+ "job_id": 41110,
+ "gpus": 1,
+ "hours": 0.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/x200-reconstruct-base",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --questions extra200 --out /scratch/$USER/anlp-opd/runs/x200-reconstruct-base",
+ "submitted": "2026-10-01T09:13:21Z",
+ "status": "reserved"
+}

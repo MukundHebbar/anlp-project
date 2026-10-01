@@ -1,0 +1,11 @@
+{
+ "name": "dev-reconstruct-t9-step8",
+ "job_id": 40939,
+ "gpus": 1,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/dev-reconstruct-t9-step8",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --adapter /scratch/$USER/anlp-opd/runs/opd-reconstruct-t9-topk-tprompt-anchor0.5/adapters/step8 --out /scratch/$USER/anlp-opd/runs/dev-reconstruct-t9-step8",
+ "submitted": "2026-10-01T04:03:05Z",
+ "status": "reserved"
+}

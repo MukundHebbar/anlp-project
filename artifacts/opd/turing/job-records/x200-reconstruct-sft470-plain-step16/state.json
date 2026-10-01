@@ -1,0 +1,11 @@
+{
+ "name": "x200-reconstruct-sft470-plain-step16",
+ "job_id": 41112,
+ "gpus": 1,
+ "hours": 0.5,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/x200-reconstruct-sft470-plain-step16",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --questions extra200 --adapter /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-plain/adapters/step16 --out /scratch/$USER/anlp-opd/runs/x200-reconstruct-sft470-plain-step16",
+ "submitted": "2026-10-01T09:13:21Z",
+ "status": "reserved"
+}

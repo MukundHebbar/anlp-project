@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-stableopd-base",
+ "job_id": 41174,
+ "gpus": 3,
+ "hours": 1.75,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-stableopd-base",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --prompts warmup --set optimizer.warmup_steps=3 --set kl_anchor_beta=0.5 --sft-mix /home/mukund.hebbar/anlp-opd-shared/teacher-warmup-470.jsonl --sft-paired --sft-keep /home/mukund.hebbar/anlp-opd-shared/golden-uids.json --sft-weight 1.0 --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-stableopd-base",
+ "submitted": "2026-10-01T14:23:43Z",
+ "status": "reserved"
+}

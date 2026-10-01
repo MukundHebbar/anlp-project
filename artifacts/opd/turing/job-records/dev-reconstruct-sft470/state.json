@@ -1,0 +1,11 @@
+{
+ "name": "dev-reconstruct-sft470",
+ "job_id": 40941,
+ "gpus": 1,
+ "hours": 1.0,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470",
+ "command": "python scripts/turing/dev_generate.py --task reconstruct --adapter /scratch/$USER/anlp-opd/runs/sft-reconstruct-n470/adapter --out /scratch/$USER/anlp-opd/runs/dev-reconstruct-sft470",
+ "submitted": "2026-10-01T04:03:05Z",
+ "status": "reserved"
+}

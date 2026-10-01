@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-sft470-topk-anchorsft1.0",
+ "job_id": 40971,
+ "gpus": 3,
+ "hours": 2.3,
+ "node": "node07",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-topk-anchorsft1.0",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 16 --init-adapter /scratch/$USER/anlp-opd/runs/sft-reconstruct-n470/adapter --loss topk --set kl_anchor_beta=1.0 --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-topk-anchorsft1.0",
+ "submitted": "2026-10-01T06:12:02Z",
+ "status": "reserved"
+}

@@ -1,0 +1,11 @@
+{
+ "name": "opd-reconstruct-sft470-topk-forward-12-warm3",
+ "job_id": 41141,
+ "gpus": 3,
+ "hours": 1.25,
+ "node": "node11",
+ "out": "/scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-topk-forward-12-warm3",
+ "command": "python scripts/turing/opd_run.py --task reconstruct --steps 12 --set optimizer.warmup_steps=3 --init-adapter /home/mukund.hebbar/anlp-opd-shared/sft470-adapter --loss topk --divergence forward --out /scratch/$USER/anlp-opd/runs/opd-reconstruct-sft470-topk-forward-12-warm3",
+ "submitted": "2026-10-01T11:59:02Z",
+ "status": "reserved"
+}
