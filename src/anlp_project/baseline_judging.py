@@ -122,10 +122,14 @@ def reconstruct_prompts(row: dict[str, Any], response: dict[str, Any]) -> dict[s
 def _resolve(split: str, key: str) -> tuple[Path, dict[str, dict[str, Any]]]:
     """Run folder and question rows. ``split="dev"`` means an OPD dev evaluation, artifacts/opd/evals/<key>."""
     if split == "dev":
-        from .opd import slice_rows
+        from .opd import extra_manifest, extra_rows, slice_rows
         from .paths import ARTIFACTS_DIR
 
         rows = {r["uid"]: r for t in ("judge", "reconstruct") for r in slice_rows(t, "dev")}
+        if extra_manifest("reconstruct").exists():  # extra held-out RECONSTRUCT questions
+            rows.update({r["uid"]: r for r in extra_rows("reconstruct", 200)})
+        from .opd import warmup_rows  # SFT warm-up questions (to judge the teacher's demonstrations)
+        rows.update({r["uid"]: r for r in warmup_rows("reconstruct")})
         return ARTIFACTS_DIR / "opd" / "evals" / key, rows
     return output_dir(split, key), {x["uid"]: x for x in rows_for(split, ("judge", "reconstruct"))}
 

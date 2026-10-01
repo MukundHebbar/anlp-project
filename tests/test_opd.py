@@ -36,6 +36,9 @@ class OpdTests(unittest.TestCase):
         self.assertIn("truncation", should_stop([ok, high, high, high], cfg))
         self.assertIn("gap", should_stop([ok, {**ok, "mean_abs_logprob_gap": 0.9}], cfg))
         self.assertIn("NaN", should_stop([ok, {**ok, "loss": float("nan")}], cfg))
+        # a plateau near 20% truncation is not a collapse (ceiling 0.35)
+        plateau = {**ok, "truncation_rate": 0.22}
+        self.assertIsNone(should_stop([{**ok, "truncation_rate": 0.03}, plateau, plateau, plateau], cfg))
 
     def test_repetition_stop_matches_the_observed_runs(self):
         cfg = opd.TRIAL_CONFIG

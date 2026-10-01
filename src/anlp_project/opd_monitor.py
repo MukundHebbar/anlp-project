@@ -29,7 +29,8 @@ def should_stop(history: list[dict[str, Any]], config: dict[str, Any]) -> str | 
     if threshold is not None and len(tail) == patience and all(h.get("repetition", 0) > threshold for h in tail):
         return f"repetition above {threshold} for {patience} steps ({tail[-1]['repetition']:.2f})"
     base = history[0]["truncation_rate"]
+    limit = max(base + rule["truncation_rise"], rule.get("truncation_ceiling", 0.0))
     recent = history[-rule["patience"]:]
-    if len(recent) == rule["patience"] and all(h["truncation_rate"] > base + rule["truncation_rise"] for h in recent):
+    if len(recent) == rule["patience"] and all(h["truncation_rate"] > limit for h in recent):
         return f"truncation rose from {base:.2f} to {recent[-1]['truncation_rate']:.2f}"
     return None

@@ -44,3 +44,9 @@ artifacts/**/responses.jsonl
 artifacts/**/judgments.jsonl
 # OPD run logs are records.
 !artifacts/opd/**/*.log
+
+# Working copy of the Turing GPU-hour ledger (scripts/turing/launch.py); its record is artifacts/opd/turing/turing_budget.json.
+/turing_budget.json
+# Turing trial outputs (model text) stay local; only ids, scores, configs and metrics are tracked.
+artifacts/opd/turing/**/rollouts/
+artifacts/opd/turing/**/*.jsonl.gz
