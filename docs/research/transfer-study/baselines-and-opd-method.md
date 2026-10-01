@@ -305,6 +305,57 @@ Modal costs are from the workspace billing meter and include start-up, compilati
 
 DeepSeek judging for the JUDGE and RECONSTRUCT dev evaluations cost $1.33.
 
+### 5.7 RECONSTRUCT follow-up trials on Turing (1 October 2026)
+
+**Setup.**
+- **Hardware:** IIIT Turing, node07, L40S GPUs. The teacher runs on 2 GPUs (tensor parallel); the student's vLLM and the trainer share 1.
+- **Code:** the same loop as Modal, moved into [opd_train.py](../../../src/anlp_project/opd_train.py). Turing scripts are in [scripts/turing/](../../../scripts/turing/).
+- **Trials:** same questions and seeds as the Modal RECONSTRUCT trial, 8 steps each unless noted.
+- **Evaluation:** protocol v2 on the 200 RECONSTRUCT dev questions, run on Turing. The untrained student gives the same result there as on Modal: 1 capped answer, 2,930 tokens on average.
+- **Judging:** PC-v4 is paired against the untrained student's dev answers, with unusable answers counted as 0. Questions with an unresolved judgment in either run are dropped, so n is about 140–165.
+- **Records:** in `artifacts/opd/turing/` (configs, per-step metrics, every rollout's text, logs, job scripts, GPU-hour ledger) and `artifacts/opd/evals/dev-reconstruct-*`.
+
+**Results.**
+
+| Trial | Changes from plain OPD | Training: truncated / repetition by step 5 | Dev capped | Dev mean length (tokens) | PC-v4 paired diff [95% CI] | Unusable / shortcuts |
+|---|---|---|---:|---:|---|---|
+| Untrained | — | — | 1 | 2,930 | — | 15 / 11 |
+| Modal plain OPD | none | 50% / 0.58, stopped at step 5 | 85 | 15,025 | −18.6 [−23.0, −14.3] | 77 / 19 |
+| SFT-256 only | SFT on 256 filtered teacher answers | — | 4 | 4,423 | not judged | — |
+| SFT-256 + OPD | warm-up | 28% / 0.36, stopped at step 5 | — | — | — | — |
+| T1 | overlong penalty 0.5 | 28% / 0.38 (41–44% at steps 4 and 6), stopped at step 7 | — | — | — | — |
+| T2 | anchor β 0.5 + overlong 1.0 + teacher instruction | 28% / 0.35, then 6–34% | 11 | 6,361 | −2.3 [−7.0, +2.4] | 24 / 16 |
+| T3 | T2 with LR 1e-5 | 0% / 0.07 | 16 | 5,934 | −8.6 [−13.3, −3.9] | 26 / 18 |
+| T4 | T2 + soft length penalty from 4k | 31% / 0.45, cancelled at step 5 | — | — | — | — |
+| T5 | **top-K loss** (K 20), 16 steps | 3% / 0.17 | 0 (step 16) | 829 | −5.0 [−9.4, −0.7] | 6 / 26 |
+| T6 | **top-K + top-K anchor to the base model, β 1**, 16 steps | 0% / 0.09 | 1 (step 8), 1 (step 16) | 1,752 / 2,187 | **−1.7 [−6.0, +2.3]** (step 8), −4.1 [−9.2, +0.8] (step 16) | 7 / 14, 12 / 14 |
+| T7 | T6 with JSD instead of reverse KL | 0% / 0.04, stopped at step 8 (barely moved from the base) | not evaluated | | | |
+| T8 | T2 + teacher signal only for rollouts ≤ 8k tokens | 28% / 0.41 at step 4, cancelled | — | — | — | — |
+| T9 | top-K + teacher instruction + top-K anchor β 0.5, 16 steps | 6% / 0.15 | 0 (step 8), 1 (step 16) | 1,215 / 1,739 | **+2.1 [−2.1, +6.5]** (step 8), −5.9 [−10.5, −1.6] (step 16) | 8 / 18, 19 / 13 |
+| T10 | T6 recipe on 1,024 prompts | 6% / 0.11; 0% truncated from step 6; stopped at step 12 | not evaluated | | | |
+| SFT-470 only | SFT on all 470 filtered teacher answers | — | 2 | 3,575 | +2.3 [−3.0, +7.4] | 20 / 17 |
+| **SFT-470 + plain OPD** | warm-up, then the standard sampled-token OPD, 16 steps | 9% / 0.20; plateau 6–25%, never ran away | 33 (step 8), **17 (step 16)** | 6,893 / 4,391 | **+5.9 [+1.3, +10.5]** (step 16) | 14 / 12 |
+| SFT-470 + top-K + anchor to SFT | see below | | | | | |
+
+**Diagnosis.**
+1. **The loops are not an end-of-turn problem.** At the stop token the teacher's advantage is positive (+0.08 to +0.5). In 13 of the 14 capped rollouts inspected, the JSON never closed. Loops start mid-reasoning, after bland, low-content statements.
+2. **Likelihood hacking under the sampled-token reverse KL.**
+   - Generic, predictable text has high teacher probability, so loop tokens get a positive advantage.
+   - Penalties on length, a KL anchor and a teacher instruction only slow this down.
+   - The teacher instruction ("Be concise. Never repeat …") lowers the teacher's log-prob on loop tokens by 0.13 nats and on other tokens by under 0.02. The shorter version lowers it by only 0.04.
+3. **The estimator is the cause.** Replacing it with the teacher top-K local-support KL ([Revisiting OPD](https://arxiv.org/abs/2603.25562)) removes the loops on dev: 0–1 capped answers out of 200. No penalty is needed.
+4. **Imitation transfers form, not content.**
+   - Every method that pulls the 2B towards the teacher makes it adopt the teacher's style: SFT made answers 40% longer and more exploratory, and top-K made them short and committal.
+   - The content doesn't come with it. Plain top-K doubled shortcuts (26 vs 11) and lowered mathematical validity from 0.84 to 0.46. The teacher takes 5 shortcuts on 400 test questions and has mathematical validity 2.5.
+   - A top-K anchor to the base model keeps shortcuts at the base level, but quality is still not above the base.
+   - Across trials, more pull towards the teacher scores worse: β 0 below β 1, and step 16 below step 8.
+5. **Per-step training truncation is too noisy to judge a run.** With 32 rollouts, a true rate of about 8% often shows as 0 or 1 of 32. Dev generation at 32k is the reliable check.
+
+**Cost.**
+- GPU-hours by stage are in the ledger `artifacts/opd/turing/turing_budget.json`; all jobs are listed with sacct-charged time.
+- Teacher answers: 1.5 GPU-h. SFT: 0.13 GPU-h. Each OPD trial: 1.3–2.6 GPU-h. Each dev check: 0.1–0.2 GPU-h.
+- DeepSeek judging: about $0.5 per judged adapter.
+
 ## 6. Earlier protocol (for reference)
 
 The first baselines used **Qwen3.5-4B at an 8,192-token cap.** Test set, 400 per task:
