@@ -1,0 +1,20 @@
+[
+ {
+  "step": 66,
+  "rolling_reward": 0.69092,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/anlp-opd/v3/solve-p1-lr1e-5/adapters/best-step66"
+ },
+ {
+  "step": 57,
+  "rolling_reward": 0.69043,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/anlp-opd/v3/solve-p1-lr1e-5/adapters/best-step57"
+ },
+ {
+  "step": 63,
+  "rolling_reward": 0.68994,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/anlp-opd/v3/solve-p1-lr1e-5/adapters/best-step63"
+ }
+]

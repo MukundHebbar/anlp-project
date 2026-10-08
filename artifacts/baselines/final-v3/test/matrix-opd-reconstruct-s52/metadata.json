@@ -1,0 +1,57 @@
+{
+ "name": "opd-reconstruct-s52",
+ "adapter": "/home/aryama.murthy/anlp-project/runs-out/opd-reconstruct-matrix/adapters/step52",
+ "split": "test",
+ "student": "Qwen/Qwen3.5-2B",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "answers capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "continued": 11,
+   "cap_hits_final": 5,
+   "mean_repetition": 0.16513767546003755,
+   "seconds": {
+    "load": 51,
+    "first_pass": 531,
+    "continuation": 184
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "continued": 1,
+   "cap_hits_final": 1,
+   "mean_repetition": 0.06373726642649805,
+   "seconds": {
+    "load": 50,
+    "first_pass": 228,
+    "continuation": 142
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "continued": 11,
+   "cap_hits_final": 9,
+   "mean_repetition": 0.10299362521565385,
+   "seconds": {
+    "load": 51,
+    "first_pass": 292,
+    "continuation": 216
+   }
+  }
+ }
+}

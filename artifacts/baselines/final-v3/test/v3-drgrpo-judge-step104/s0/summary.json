@@ -1,0 +1,41 @@
+{
+ "solve": {
+  "n": 400,
+  "token_cap_rate": 0.0775,
+  "think_markup_rate": 0.005,
+  "mean_completion_tokens": 7192.7625,
+  "accuracy": 0.4675,
+  "status_counts": {
+   "correct": 187,
+   "incorrect": 95,
+   "unverified": 71,
+   "missing": 47
+  }
+ },
+ "judge": {
+  "n": 400,
+  "token_cap_rate": 0.0225,
+  "think_markup_rate": 0.0075,
+  "mean_completion_tokens": 3288.76,
+  "parse_rate": 0.95,
+  "verdict_accuracy": 0.725,
+  "verdict_accuracy_on_correct": 0.9,
+  "verdict_accuracy_on_incorrect": 0.55,
+  "first_step_accuracy_on_incorrect": 0.415
+ },
+ "reconstruct": {
+  "n": 400,
+  "token_cap_rate": 0.1075,
+  "think_markup_rate": 0.08,
+  "mean_completion_tokens": 8751.525,
+  "parse_rate": 0.75,
+  "strict_json_rate": 0.22,
+  "extraction_counts": {
+   "strict": 88,
+   "repaired": 72,
+   "lenient": 140,
+   "null": 100
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

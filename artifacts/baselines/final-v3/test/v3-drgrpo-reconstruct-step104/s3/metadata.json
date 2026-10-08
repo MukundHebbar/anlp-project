@@ -1,0 +1,65 @@
+{
+ "name": "drgrpo-reconstruct-test-step104",
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/v3/v3-drgrpo-reconstruct/adapters/step104",
+ "split": "test",
+ "model": "Qwen/Qwen3.5-2B",
+ "prompts": "v2",
+ "samples": 4,
+ "samples_tasks": "solve",
+ "limit": null,
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "samples": 4,
+   "continued": 3,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.0964782223772395,
+   "seconds": {
+    "load": 51,
+    "first_pass": 1566,
+    "continuation": 30
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "samples": 1,
+   "continued": 3,
+   "cap_hits_final": 2,
+   "mean_repetition": 0.0857958782653881,
+   "seconds": {
+    "load": 50,
+    "first_pass": 420,
+    "continuation": 150
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "samples": 1,
+   "continued": 0,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.029551235526234686,
+   "seconds": {
+    "load": 51,
+    "first_pass": 143,
+    "continuation": 0
+   }
+  }
+ },
+ "sample": 3
+}

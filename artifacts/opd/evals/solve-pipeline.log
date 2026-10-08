@@ -1,0 +1,4 @@
+2026-10-07 13:37 waiting for job 42787 to save the step after 8, then switching to overlapped rollouts
+2026-10-07 13:40 job 42787 cancelled after step 9
+2026-10-07 13:40 training chunk: resume from step 9, 81 steps
+2026-10-07 13:40 training job 42791

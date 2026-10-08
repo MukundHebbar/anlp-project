@@ -1,0 +1,13 @@
+{
+ "judge": {
+  "n": 200,
+  "token_cap_rate": 0.005,
+  "think_markup_rate": 0.03,
+  "mean_completion_tokens": 3238.29,
+  "parse_rate": 1.0,
+  "verdict_accuracy": 0.55,
+  "verdict_accuracy_on_correct": 0.41228070175438597,
+  "verdict_accuracy_on_incorrect": 0.7325581395348837,
+  "first_step_accuracy_on_incorrect": 0.3488372093023256
+ }
+}

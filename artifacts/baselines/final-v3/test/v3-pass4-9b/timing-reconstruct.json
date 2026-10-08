@@ -1,0 +1,13 @@
+{
+ "task": "reconstruct",
+ "n": 400,
+ "samples": 4,
+ "continued": 8,
+ "cap_hits_final": 2,
+ "mean_repetition": 0.09338108798940085,
+ "seconds": {
+  "load": 138,
+  "first_pass": 4652,
+  "continuation": 487
+ }
+}

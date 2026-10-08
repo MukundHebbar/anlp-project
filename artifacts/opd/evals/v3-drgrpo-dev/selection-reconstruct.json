@@ -1,0 +1,18 @@
+{
+ "rule": "best own-task dev score among steps 26/52/78/104; ties -> later step",
+ "reconstruct": {
+  "selected_step": 104,
+  "dev_scores": {
+   "26": 56.5625,
+   "52": 62.15625,
+   "78": 60.71875,
+   "104": 63.0625
+  },
+  "n": {
+   "26": 200,
+   "52": 200,
+   "78": 200,
+   "104": 200
+  }
+ }
+}

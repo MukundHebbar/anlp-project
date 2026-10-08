@@ -1,0 +1,159 @@
+{
+ "judge": {
+  "n_both": 3190,
+  "jev_only": 10,
+  "truncated": 4,
+  "dimensions": [
+   {
+    "dimension": "V",
+    "n": 3190,
+    "exact": 0.9373040752351097,
+    "within_1": 0.9373040752351097,
+    "mode_baseline_exact": 0.5896551724137931,
+    "qwk": 0.8732689189838789,
+    "spearman_weighted": 0.8798044512328635,
+    "mae": 0.2507836990595611,
+    "deepseek_mean": 2.3586206896551722,
+    "jev_mean": 2.1178683385579937
+   },
+   {
+    "dimension": "L",
+    "n": 3190,
+    "exact": 0.9056426332288401,
+    "within_1": 0.9056426332288401,
+    "mode_baseline_exact": 0.5517241379310345,
+    "qwk": 0.847890392640338,
+    "spearman_weighted": 0.8027530550582327,
+    "mae": 0.31347962382445144,
+    "deepseek_mean": 1.7203761755485893,
+    "jev_mean": 1.5373040752351097
+   },
+   {
+    "dimension": "E",
+    "n": 3190,
+    "exact": 0.8109717868338558,
+    "within_1": 0.8692789968652037,
+    "mode_baseline_exact": 0.538871473354232,
+    "qwk": 0.8038631772463595,
+    "spearman_weighted": 0.784504993961605,
+    "mae": 0.4489028213166144,
+    "deepseek_mean": 1.5683385579937303,
+    "jev_mean": 1.5438871473354232
+   },
+   {
+    "dimension": "M",
+    "n": 3190,
+    "exact": 0.48746081504702193,
+    "within_1": 0.8206896551724138,
+    "mode_baseline_exact": 0.3304075235109718,
+    "qwk": 0.6233689531142302,
+    "spearman_weighted": 0.7907078089079126,
+    "mae": 0.7169278996865204,
+    "deepseek_mean": 1.8626959247648902,
+    "jev_mean": 2.447962382445141
+   }
+  ],
+  "total": {
+   "pearson": 0.8734763167425585,
+   "spearman_weighted": 0.8745023538804422,
+   "mae": 10.170454545454545,
+   "deepseek_mean": 46.93769592476489,
+   "jev_mean": 47.793887147335425
+  },
+  "rating_exact": 0.7934169278996865,
+  "checkpoint_kendall": 0.7142857142857143,
+  "pairwise": {
+   "pairs": 8489,
+   "concordant": 0.5733301920131936,
+   "discordant": 0.07303569325008835,
+   "jev_tie": 0.35363411473671813,
+   "close_pairs": 4130,
+   "close_concordant": 0.3898305084745763,
+   "close_discordant": 0.09200968523002422
+  }
+ },
+ "reconstruct": {
+  "n_both": 2380,
+  "jev_only": 550,
+  "truncated": 36,
+  "dimensions": [
+   {
+    "dimension": "P",
+    "n": 2378,
+    "exact": 0.6959629941126998,
+    "within_1": 0.9091673675357443,
+    "mode_baseline_exact": 0.4112699747687132,
+    "qwk": 0.6593070052984642,
+    "spearman_weighted": 0.781527831695224,
+    "mae": 0.4108494533221194,
+    "deepseek_mean": 1.952901597981497,
+    "jev_mean": 1.7001682085786376
+   },
+   {
+    "dimension": "T",
+    "n": 2378,
+    "exact": 0.5853658536585366,
+    "within_1": 0.8557611438183347,
+    "mode_baseline_exact": 0.3334735071488646,
+    "qwk": 0.6843978054425477,
+    "spearman_weighted": 0.7914127277068079,
+    "mae": 0.5710681244743482,
+    "deepseek_mean": 2.257359125315391,
+    "jev_mean": 1.998317914213625
+   },
+   {
+    "dimension": "E",
+    "n": 2380,
+    "exact": 0.6138655462184874,
+    "within_1": 0.9004201680672269,
+    "mode_baseline_exact": 0.5966386554621849,
+    "qwk": 0.5508293606362471,
+    "spearman_weighted": 0.6361518973648,
+    "mae": 0.4861344537815126,
+    "deepseek_mean": 1.8592436974789917,
+    "jev_mean": 2.0672268907563027
+   },
+   {
+    "dimension": "M",
+    "n": 2380,
+    "exact": 0.7201680672268908,
+    "within_1": 0.9487394957983193,
+    "mode_baseline_exact": 0.6357142857142857,
+    "qwk": 0.6270319805104423,
+    "spearman_weighted": 0.6906992577801485,
+    "mae": 0.36554621848739494,
+    "deepseek_mean": 0.9441176470588235,
+    "jev_mean": 1.1172268907563025
+   }
+  ],
+  "total": {
+   "pearson": 0.7742868135677027,
+   "spearman_weighted": 0.8045458293517402,
+   "mae": 9.658613445378151,
+   "deepseek_mean": 40.898109243697476,
+   "jev_mean": 41.444327731092436
+  },
+  "rating_exact": 0.5630252100840336,
+  "shortcut": {
+   "deepseek": 218,
+   "jev": 104,
+   "agree": 0.9378151260504202
+  },
+  "same_question": {
+   "deepseek": 173,
+   "jev_P4T4": 144,
+   "jev_noul": 252,
+   "both_P4T4": 115
+  },
+  "checkpoint_kendall": 0.6428571428571429,
+  "pairwise": {
+   "pairs": 5327,
+   "concordant": 0.6949502534259433,
+   "discordant": 0.1392904073587385,
+   "jev_tie": 0.16575933921531819,
+   "close_pairs": 2313,
+   "close_concordant": 0.5382619974059663,
+   "close_discordant": 0.21314310419368784
+  }
+ }
+}

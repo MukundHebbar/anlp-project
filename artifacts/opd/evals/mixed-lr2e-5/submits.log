@@ -1,0 +1,13 @@
+{
+ "name": "mixed-lr2e-5-from0",
+ "job_id": 43044,
+ "gpus": 2,
+ "hours": 14.0,
+ "node": "node07",
+ "out": "/home/aryama.murthy/anlp-project/runs-out/mixed-lr2e-5-from0",
+ "command": "env PYTHONFAULTHANDLER=1 python scripts/turing/opd_run.py --task mixed --config grpo --steps 90 --keep-steps 90 --set prompts_per_step=30 --set optimizer.lr=2e-5 --set optimizer.warmup_steps=5 --set async_rollouts=true --set best_window=8 --set best_keep=3 --student-port 8470 --out /scratch/mukund.hebbar/anlp-opd/v3/mixed-lr2e-5",
+ "after": null,
+ "submitted": "2026-10-07T19:15:06Z",
+ "status": "reserved"
+}
+remaining after reservation: 260.653 GPU-h

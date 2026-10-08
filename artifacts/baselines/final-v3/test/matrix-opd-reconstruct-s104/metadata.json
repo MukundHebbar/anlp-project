@@ -1,0 +1,57 @@
+{
+ "name": "opd-reconstruct-s104",
+ "adapter": "/home/aryama.murthy/anlp-project/runs-out/opd-reconstruct-r65/final-step104",
+ "split": "test",
+ "student": "Qwen/Qwen3.5-2B",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "answers capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "continued": 14,
+   "cap_hits_final": 2,
+   "mean_repetition": 0.1688563317246584,
+   "seconds": {
+    "load": 126,
+    "first_pass": 596,
+    "continuation": 177
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "continued": 2,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.05428530342036011,
+   "seconds": {
+    "load": 54,
+    "first_pass": 240,
+    "continuation": 54
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "continued": 13,
+   "cap_hits_final": 13,
+   "mean_repetition": 0.09483310942931901,
+   "seconds": {
+    "load": 49,
+    "first_pass": 286,
+    "continuation": 240
+   }
+  }
+ }
+}

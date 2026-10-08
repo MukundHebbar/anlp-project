@@ -1,0 +1,57 @@
+{
+ "name": "sft-judge",
+ "adapter": "/home/aryama.murthy/anlp-project/runs-out/sft-judge-8k/adapter",
+ "split": "test",
+ "student": "Qwen/Qwen3.5-2B",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "answers capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "continued": 19,
+   "cap_hits_final": 2,
+   "mean_repetition": 0.13446122292937893,
+   "seconds": {
+    "load": 50,
+    "first_pass": 697,
+    "continuation": 183
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "continued": 8,
+   "cap_hits_final": 1,
+   "mean_repetition": 0.05638189953359232,
+   "seconds": {
+    "load": 51,
+    "first_pass": 297,
+    "continuation": 150
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "continued": 12,
+   "cap_hits_final": 9,
+   "mean_repetition": 0.08676435230626936,
+   "seconds": {
+    "load": 50,
+    "first_pass": 382,
+    "continuation": 217
+   }
+  }
+ }
+}

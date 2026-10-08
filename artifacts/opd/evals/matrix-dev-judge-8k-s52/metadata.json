@@ -1,0 +1,33 @@
+{
+ "name": "dev-judge-8k-s52",
+ "adapter": "/home/aryama.murthy/anlp-project/runs-out/opd-teacher-judge/opd-judge-matrix/adapters/step52",
+ "split": "dev",
+ "student": "Qwen/Qwen3.5-2B",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "answers capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "judge": {
+   "task": "judge",
+   "n": 200,
+   "continued": 1,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.09631700072295032,
+   "seconds": {
+    "load": 50,
+    "first_pass": 199,
+    "continuation": 3
+   }
+  }
+ }
+}

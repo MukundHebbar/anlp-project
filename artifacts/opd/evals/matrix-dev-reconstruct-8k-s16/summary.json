@@ -1,0 +1,17 @@
+{
+ "reconstruct": {
+  "n": 200,
+  "token_cap_rate": 0.04,
+  "think_markup_rate": 0.03,
+  "mean_completion_tokens": 3243.22,
+  "parse_rate": 0.965,
+  "strict_json_rate": 0.685,
+  "extraction_counts": {
+   "strict": 137,
+   "repaired": 2,
+   "lenient": 54,
+   "null": 7
+  },
+  "note": "Quality scores need the PC-v4 judges; not computed here."
+ }
+}

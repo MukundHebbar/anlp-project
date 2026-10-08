@@ -1,0 +1,38 @@
+{
+ "reconstruct": {
+  "n": 507,
+  "failed": 46,
+  "deepseek_shortcuts": 33,
+  "deepseek_shortcuts_failed": 19,
+  "rules": {
+   "answer_in_question": 32,
+   "monologue": 31,
+   "no_question": 1
+  },
+  "format_flag_several_drafts": 121
+ },
+ "judge": {
+  "n": 500,
+  "failed": 160,
+  "failed_but_scored_correct_today": 59,
+  "rules": {
+   "several_steps": 119,
+   "several_decisions": 87,
+   "decision_step_mismatch": 22
+  }
+ },
+ "solve": {
+  "n": 500,
+  "failed": 19,
+  "failed_but_scored_correct_today": 4,
+  "rules": {
+   "several_answers": 19
+  },
+  "answer_status": {
+   "correct": 255,
+   "incorrect": 117,
+   "unverified": 111,
+   "missing": 17
+  }
+ }
+}

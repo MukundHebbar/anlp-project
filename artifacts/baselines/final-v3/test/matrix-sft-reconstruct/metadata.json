@@ -1,0 +1,57 @@
+{
+ "name": "sft-reconstruct",
+ "adapter": "/home/aryama.murthy/anlp-project/runs-out/sft-reconstruct-8k/adapter",
+ "split": "test",
+ "student": "Qwen/Qwen3.5-2B",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "answers capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "continued": 5,
+   "cap_hits_final": 1,
+   "mean_repetition": 0.12303467089046757,
+   "seconds": {
+    "load": 51,
+    "first_pass": 587,
+    "continuation": 144
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "continued": 2,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.05919618934730098,
+   "seconds": {
+    "load": 50,
+    "first_pass": 285,
+    "continuation": 22
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "continued": 5,
+   "cap_hits_final": 2,
+   "mean_repetition": 0.07879415279731054,
+   "seconds": {
+    "load": 50,
+    "first_pass": 332,
+    "continuation": 158
+   }
+  }
+ }
+}

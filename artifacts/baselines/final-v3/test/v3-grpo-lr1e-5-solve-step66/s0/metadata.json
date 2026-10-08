@@ -1,0 +1,52 @@
+{
+ "name": "test-jr-solve-lr1e-5-66",
+ "adapter": "/home/aryama.murthy/anlp-project/runs-out/solve-lr1e-5-step66-adapter",
+ "split": "test",
+ "model": "Qwen/Qwen3.5-2B",
+ "prompts": "v2",
+ "samples": 1,
+ "samples_tasks": "solve,judge,reconstruct",
+ "limit": null,
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "samples": 1,
+   "continued": 9,
+   "cap_hits_final": 2,
+   "mean_repetition": 0.10646289537299367,
+   "seconds": {
+    "load": 62,
+    "first_pass": 519,
+    "continuation": 162
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "samples": 1,
+   "continued": 7,
+   "cap_hits_final": 2,
+   "mean_repetition": 0.09300883022843454,
+   "seconds": {
+    "load": 60,
+    "first_pass": 507,
+    "continuation": 157
+   }
+  }
+ },
+ "sample": 0
+}

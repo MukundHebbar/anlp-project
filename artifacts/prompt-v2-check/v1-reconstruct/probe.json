@@ -1,0 +1,16 @@
+{
+ "model": "Qwen/Qwen3.5-2B",
+ "prompts": "v1",
+ "questions": 10,
+ "samples": 8,
+ "max_tokens": 16384,
+ "reconstruct": {
+  "format_rate": 0.8625,
+  "gate_rate": 0.2875,
+  "mean_tokens": 2529.525,
+  "cap_rate": 0,
+  "repetition_mean": 0.04902689464216923,
+  "looping_rate": 0,
+  "mixed_format_groups": 0.7
+ }
+}

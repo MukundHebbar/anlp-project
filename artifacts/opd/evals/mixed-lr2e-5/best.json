@@ -1,0 +1,20 @@
+[
+ {
+  "step": 75,
+  "rolling_reward": 0.17385,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/anlp-opd/v3/mixed-lr2e-5/adapters/best-step75"
+ },
+ {
+  "step": 74,
+  "rolling_reward": 0.168,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/anlp-opd/v3/mixed-lr2e-5/adapters/best-step74"
+ },
+ {
+  "step": 76,
+  "rolling_reward": 0.16486,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/anlp-opd/v3/mixed-lr2e-5/adapters/best-step76"
+ }
+]

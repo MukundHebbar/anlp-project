@@ -1,0 +1,64 @@
+{
+ "name": "v3-pass4-2b-test",
+ "adapter": null,
+ "split": "test",
+ "model": "Qwen/Qwen3.5-2B",
+ "prompts": "v2",
+ "samples": 4,
+ "limit": null,
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "samples": 4,
+   "continued": 42,
+   "cap_hits_final": 2,
+   "mean_repetition": 0.12732967630750633,
+   "seconds": {
+    "load": 36,
+    "first_pass": 2519,
+    "continuation": 179
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "samples": 4,
+   "continued": 65,
+   "cap_hits_final": 22,
+   "mean_repetition": 0.10169837678591348,
+   "seconds": {
+    "load": 35,
+    "first_pass": 1582,
+    "continuation": 344
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "samples": 4,
+   "continued": 22,
+   "cap_hits_final": 13,
+   "mean_repetition": 0.09285303775267437,
+   "seconds": {
+    "load": 36,
+    "first_pass": 1607,
+    "continuation": 222
+   }
+  }
+ },
+ "sample": 2
+}

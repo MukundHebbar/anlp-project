@@ -1,0 +1,28 @@
+{
+ "rule": "best dev accuracy, ties -> later step",
+ "selected_step": 66,
+ "early_stop": false,
+ "patience": 3,
+ "min_delta": 0.5,
+ "base_dev_acc": 52.37500000000001,
+ "steps": {
+  "8": {
+   "dev_acc": 56.125,
+   "delta": 3.75,
+   "ci": [
+    -0.25,
+    7.625
+   ],
+   "n": 200
+  },
+  "66": {
+   "dev_acc": 72.375,
+   "delta": 20.0,
+   "ci": [
+    15.875,
+    24.125
+   ],
+   "n": 200
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "name": "opd-solve-s52",
+ "adapter": "/scratch/mukund.hebbar/anlp-opd/matrix-adapters/opd-solve-A-r34/step52",
+ "split": "test",
+ "student": "Qwen/Qwen3.5-2B",
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "answers capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "continued": 6,
+   "cap_hits_final": 1,
+   "mean_repetition": 0.1663332347190168,
+   "seconds": {
+    "load": 50,
+    "first_pass": 582,
+    "continuation": 150
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "continued": 0,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.06898548373961448,
+   "seconds": {
+    "load": 50,
+    "first_pass": 279,
+    "continuation": 0
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "continued": 12,
+   "cap_hits_final": 9,
+   "mean_repetition": 0.08957213940702868,
+   "seconds": {
+    "load": 50,
+    "first_pass": 297,
+    "continuation": 217
+   }
+  }
+ }
+}

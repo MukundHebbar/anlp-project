@@ -1,0 +1,39 @@
+{
+ "name": "test-solve-lr1e-5-66",
+ "adapter": "/home/aryama.murthy/anlp-project/runs-out/solve-lr1e-5-step66-adapter",
+ "split": "test",
+ "model": "Qwen/Qwen3.5-2B",
+ "prompts": "v2",
+ "samples": 4,
+ "samples_tasks": "solve",
+ "limit": null,
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "samples": 4,
+   "continued": 72,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.13338547013731838,
+   "seconds": {
+    "load": 73,
+    "first_pass": 2876,
+    "continuation": 211
+   }
+  }
+ },
+ "sample": 2
+}
