@@ -1,0 +1,44 @@
+{
+ "version": "qwen27b-eval-v1",
+ "model": "Qwen/Qwen3.8-27B",
+ "created": "2026-10-06",
+ "description": "Cutoffs on the 27B judge's probability-weighted level (see qwen_judging.py), fitted as in calibration-v1.json on the same samples.",
+ "cutoffs": {
+  "judge.M": [
+   0.5,
+   1.8,
+   3.2,
+   3.7
+  ],
+  "judge.E": [
+   0.8,
+   2.2,
+   2.4,
+   3.2
+  ],
+  "reconstruct.P": [
+   0.2,
+   0.9,
+   1.9,
+   2.6
+  ],
+  "reconstruct.T": [
+   0.2,
+   1.3,
+   2.0,
+   2.8
+  ],
+  "reconstruct.E": [
+   1.0,
+   1.5,
+   2.4,
+   2.8
+  ],
+  "reconstruct.M": [
+   0.7,
+   2.2,
+   2.8,
+   3.2
+  ]
+ }
+}

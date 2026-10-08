@@ -183,11 +183,12 @@ def load_prompt(name: str, prompt_dir: Path = DEFAULT_PROMPT_DIR) -> str:
 
 
 def render_template(template: str, values: dict[str, Any]) -> str:
+    # Check the template's own placeholders: inserted values may contain text like LaTeX "{{5}}".
+    missing = sorted(set(re.findall(r"\{\{([A-Z0-9_]+)\}\}", template)) - set(values))
     rendered = template
     for key, value in values.items():
         replacement = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False, indent=2)
         rendered = rendered.replace("{{" + key + "}}", replacement)
-    missing = sorted(set(re.findall(r"\{\{([A-Z0-9_]+)\}\}", rendered)))
     if missing:
         raise ValueError(f"Missing template values: {missing}")
     return rendered

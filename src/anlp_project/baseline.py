@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from .paths import ARTIFACTS_DIR, MANIFESTS_DIR, PROMPTS_DIR
-from .reconstruct import parse_student_response, render_template
+from .reconstruct import parse_student_response, render_template, repair_json_backslashes
 from .solution_verification import compare_answer_detailed, extract_final_answer
 
 TASKS = ("solve", "judge", "reconstruct")
@@ -27,11 +27,21 @@ BASELINE_DIR = ARTIFACTS_DIR / "baselines" / "final-v3"
 PILOT_SIZE = 100
 PILOT_SEED = 20260929
 
-PROMPT_FILES = {
+# Student prompts v1: every run up to the 2026-10 transfer matrix. Kept to reproduce those runs.
+PROMPT_FILES_V1 = {
     "solve": PROMPTS_DIR / "solve" / "solve_no_reference.md",
     "judge": PROMPTS_DIR / "judge" / "judge_student_p1.md",
     "reconstruct": PROMPTS_DIR / "reconstruct" / "final_v1" / "student.md",
 }
+# Student prompts v2 (default from 2026-10-06): JUDGE ends with one final block written once (no hedging);
+# RECONSTRUCT reasons before a single final JSON whose question field holds only the question; both state the
+# strict-gate rules (strict_gates.py) that score violations 0. SOLVE is unchanged.
+PROMPT_FILES = {
+    **PROMPT_FILES_V1,
+    "judge": PROMPTS_DIR / "judge" / "judge_student_p2.md",
+    "reconstruct": PROMPTS_DIR / "reconstruct" / "final_v2" / "student.md",
+}
+PROMPT_VERSIONS = {"v1": PROMPT_FILES_V1, "v2": PROMPT_FILES}
 
 # Protocol v1 (earlier runs): Qwen's general non-thinking defaults. Kept for the recorded runs.
 SAMPLING = {"temperature": 0.7, "top_p": 0.8, "top_k": 20, "seed": 0, "max_tokens": 8192}
@@ -93,9 +103,9 @@ def rows_for(split: str, tasks: Iterable[str] = TASKS, limit: int = 0) -> list[d
     return out
 
 
-def render_prompt(row: dict[str, Any]) -> str:
+def render_prompt(row: dict[str, Any], version: str = "v2") -> str:
     task = row["task"]
-    template = PROMPT_FILES[task].read_text(encoding="utf-8").strip()
+    template = PROMPT_VERSIONS[version][task].read_text(encoding="utf-8").strip()
     if task == "solve":
         return render_template(template, {"QUESTION": row["question"]})
     if task == "judge":
@@ -270,3 +280,67 @@ def score_dir(split: str, model_key: str) -> dict[str, Any]:
     summary = summarize(scores)
     (directory / "summary.json").write_text(json.dumps(summary, indent=1) + "\n")
     return summary
+
+
+# ------------------------------------------------------------------ strict scoring (2026-10-06)
+
+_OBJECT_START = re.compile(r"\{\s*\"")
+
+
+def extract_reconstruction_last(text: str) -> tuple[dict[str, Any] | None, str | None]:
+    """The LAST complete JSON object with a non-empty ``question``: the student's final answer.
+
+    ``extract_reconstruction`` takes the first parseable object, the first fenced block or the first
+    ``"question"`` field, which grades an early draft when the response holds several, and fails when
+    reasoning before the JSON contains braces. This scans object starts from the end instead. If no object
+    parses, the last ``"question"`` / ``"justification"`` strings are used (method ``lenient_last``).
+    """
+    s = text or ""
+    decoder = json.JSONDecoder()
+    for match in reversed(list(_OBJECT_START.finditer(s))):
+        tail = s[match.start():]
+        for candidate, method in ((tail, "last_json"), (repair_json_backslashes(tail), "last_json_repaired")):
+            try:
+                obj, _ = decoder.raw_decode(candidate)
+            except ValueError:
+                continue
+            if isinstance(obj, dict) and isinstance(obj.get("question"), str) and obj["question"].strip():
+                assumptions = obj.get("assumptions", [])
+                return {"assumptions": [str(a) for a in (assumptions if isinstance(assumptions, list) else [assumptions])],
+                        "question": obj["question"].strip(),
+                        "justification": str(obj.get("justification") or "").strip()}, method
+    questions = list(_FIELD_RE["question"].finditer(s))
+    if not questions or not questions[-1].group(1).strip():
+        return None, None
+    last = questions[-1]
+    justification = _FIELD_RE["justification"].search(s, last.end())
+    return {"assumptions": [], "question": _json_string(last.group(1)).strip(),
+            "justification": _json_string(justification.group(1)).strip() if justification else ""}, "lenient_last"
+
+
+def score_response_strict(row: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
+    """``score_response`` plus the strict gates (anlp_project.strict_gates) and the last-object extractor.
+
+    A response that fails a gate scores as wrong (SOLVE, JUDGE) or is ``gated`` (RECONSTRUCT: score 0, never
+    sent to a judge). ``format_flags`` are reported only.
+    """
+    from .strict_gates import judge_gate, reconstruct_format_flags, reconstruct_gate, solve_gate
+
+    out = score_response(row, response)
+    text = response.get("text") or ""
+    task = row["task"]
+    if task == "solve":
+        out["gate"] = solve_gate(text)
+        out["correct_strict"] = out["answer_status"] == "correct" and not out["gate"]
+    elif task == "judge":
+        out["gate"] = judge_gate(text)
+        out["verdict_correct_strict"] = out["verdict_correct"] and not out["gate"]
+        out["step_correct_strict"] = out["step_correct"] and not out["gate"]
+    else:
+        reconstruction, method = extract_reconstruction_last(text)
+        out.update(extraction_strict=method, parsed_strict=reconstruction is not None,
+                   reconstructed_question_strict=(reconstruction or {}).get("question"),
+                   gate=reconstruct_gate(row["public_input"]["final_answer"], (reconstruction or {}).get("question"))
+                   if reconstruction else ["unparseable"],
+                   format_flags=reconstruct_format_flags(text))
+    return out
