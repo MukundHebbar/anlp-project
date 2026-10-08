@@ -57,3 +57,5 @@ wandb/
 *.aux
 *.toc
 *.out
+# Final LoRA adapters (250 MB each; copies on Turing at ~/anlp-project/final-adapters)
+final-adapters/
