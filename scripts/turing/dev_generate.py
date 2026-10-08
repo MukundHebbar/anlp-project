@@ -23,6 +23,7 @@ def main():
     ap.add_argument("--task", default="reconstruct")
     ap.add_argument("--out", required=True)
     ap.add_argument("--adapter", default="")
+    ap.add_argument("--prompts", default="v2", choices=["v1", "v2"], help="student prompt version (baseline.PROMPT_VERSIONS); v1 reproduces earlier runs")
     ap.add_argument("--questions", default="dev", choices=["dev", "extra200"],
                     help="dev slice, or the first 200 of opd-extra-<task>.json (held out from every trial)")
     a = ap.parse_args()
@@ -31,7 +32,7 @@ def main():
         raise SystemExit(f"{out} already has responses")
     out.mkdir(parents=True, exist_ok=True)
     rows = opd.slice_rows(a.task, "dev") if a.questions == "dev" else opd.extra_rows(a.task, 200)
-    prompts = [baseline.render_prompt(r) for r in rows]
+    prompts = [baseline.render_prompt(r, a.prompts) for r in rows]
     s = dict(baseline.EVAL_SAMPLING)  # protocol v2: T 1.0, top_p 1.0, top_k off, 32k, seed 0
 
     from huggingface_hub import snapshot_download
@@ -66,7 +67,7 @@ def main():
                   "mean_tokens": sum(x["completion_tokens"] for x in results) / n,
                   "mean_repetition": sum(reps) / n, "repetition_above_0.5": sum(r > 0.5 for r in reps),
                   "seconds": {"load": round(t1 - t0), "generate": round(t2 - t1)}}
-    (out / "summary.json").write_text(json.dumps({"adapter": a.adapter or None, "sampling": s, "loop_check": loop_check,
+    (out / "summary.json").write_text(json.dumps({"adapter": a.adapter or None, "prompts": a.prompts, "sampling": s, "loop_check": loop_check,
                                                   **summary}, indent=1))
     print(json.dumps({"loop_check": loop_check, **summary}, indent=1))
 

@@ -6,6 +6,9 @@
         --resume-from <run dir>/adapters/step8 --start-step 8        # continue after a time limit
 
 Same loop and configuration as the Modal trials (src/anlp_project/opd_train.py, TRIAL_CONFIG).
+--config matrix uses opd.MATRIX_CONFIG and the transfer-matrix prompt order (opd.matrix_prompts).
+With --teacher-port P --external-teacher, the run uses a teacher already serving on port P and
+needs only one GPU (scripts/turing/opd_shared.py starts that teacher for several runs).
 """
 
 import argparse
@@ -21,7 +24,8 @@ from anlp_project.opd_train import run_opd  # noqa: E402
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--task", default="reconstruct")
+    ap.add_argument("--task", default="reconstruct", help="solve, judge, reconstruct, or mixed (equal thirds)")
+    ap.add_argument("--mixed-per-task", type=int, default=1134, help="questions per task in the mixed pool")
     ap.add_argument("--out", required=True)
     ap.add_argument("--steps", type=int, default=16)
     ap.add_argument("--init-adapter", default="")
@@ -41,7 +45,15 @@ def main():
     ap.add_argument("--sft-paired", action="store_true",
                     help="Stable-OPD pairing: each step's SFT term uses the demonstrations for that step's questions")
     ap.add_argument("--sft-keep", default="", help="JSON list of uids whose demonstrations are kept (judge filter)")
-    ap.add_argument("--prompts", default="trial", choices=["trial", "warmup"],
+    ap.add_argument("--config", default="trial", choices=["trial", "matrix", "opd9b", "grpo"],
+                    help="opd9b: OPD from Qwen3.5-9B; grpo: GRPO with anlp_project.rewards (no teacher, 1 GPU)")
+    ap.add_argument("--cap", type=int, default=0, help="rollout cap for every task (overrides the config)")
+    ap.add_argument("--keep-steps", default="", help="comma-separated steps whose adapters are kept, e.g. 52,104")
+    ap.add_argument("--student-port", type=int, default=8000)
+    ap.add_argument("--teacher-port", type=int, default=8001)
+    ap.add_argument("--external-teacher", action="store_true")
+    ap.add_argument("--teacher-host", default="127.0.0.1", help="host of an external teacher (another node)")
+    ap.add_argument("--prompts", default="trial", choices=["trial", "warmup", "matrix"],
                     help="OPD training questions: the trial slice, or the SFT warm-up questions (paired demonstrations)")
     ap.add_argument("--gate", type=int, default=0, help="teacher signal only for rollouts up to this many tokens")
     ap.add_argument("--soft-length", default="", metavar="START:MAX",
@@ -53,9 +65,20 @@ def main():
     from huggingface_hub import snapshot_download
 
     gpus = os.environ.get("CUDA_VISIBLE_DEVICES", "0,1,2").split(",")
-    if len(gpus) < 3:
-        raise SystemExit(f"need 3 GPUs, have {gpus}")
-    cfg = json.loads(json.dumps(opd.TRIAL_CONFIG))
+    configs = {"trial": opd.TRIAL_CONFIG, "matrix": opd.MATRIX_CONFIG, "opd9b": opd.OPD9B_CONFIG, "grpo": opd.GRPO_CONFIG}
+    cfg = json.loads(json.dumps(configs[a.config]))
+    need = 1 if (a.external_teacher or a.config == "grpo") else (2 if a.config == "opd9b" else 3)
+    # GRPO with 2 visible GPUs: vLLM rollouts on the first, the trainer on the second. The trainer's GPU is
+    # set here, before anything imports torch: transformers/peft initialise CUDA on import, after which a
+    # change to CUDA_VISIBLE_DEVICES is ignored (the first try put the trainer next to vLLM and ran out of
+    # memory). The vLLM server always gets its GPU explicitly (opd_train.serve).
+    split = a.config == "grpo" and len(gpus) >= 2
+    if split:
+        os.environ["CUDA_VISIBLE_DEVICES"] = gpus[1]
+    if len(gpus) < need:
+        raise SystemExit(f"need {need} GPUs, have {gpus}")
+    if a.config != "trial":
+        a.prompts = "matrix"
     for item in a.set:
         key, value = item.split("=", 1)
         *parents, leaf = key.split(".")
@@ -65,6 +88,8 @@ def main():
         if leaf not in node:
             raise SystemExit(f"unknown config key {key}")
         node[leaf] = json.loads(value)
+    if a.cap:
+        cfg["rollout_max_tokens"] = {t: a.cap for t in cfg["rollout_max_tokens"]}
     cfg["loss"] = a.loss
     if a.sft_mix:
         cfg["sft_mix"] = {"data": a.sft_mix, "per_step": a.sft_per_step, "weight": a.sft_weight,
@@ -78,15 +103,28 @@ def main():
     if a.teacher_instruction:
         cfg["teacher_system_prompt"] = opd.TEACHER_INSTRUCTIONS[a.teacher_instruction]
     B = cfg["prompts_per_step"]
-    base_pool = opd.warmup_prompts(a.task) if a.prompts == "warmup" else opd.slice_prompts(a.task, "train")
-    pool = base_pool + (opd.extra_prompts(a.task) if a.extra_prompts else [])
+    if a.task == "mixed":  # equal thirds of the three tasks, interleaved (opd.mixed_prompts)
+        pool = opd.mixed_prompts(a.mixed_per_task)
+    elif a.prompts == "matrix":
+        pool = opd.matrix_prompts(a.task, (a.start_step + a.steps) * B)
+    else:
+        base_pool = opd.warmup_prompts(a.task) if a.prompts == "warmup" else opd.slice_prompts(a.task, "train")
+        pool = base_pool + (opd.extra_prompts(a.task) if a.extra_prompts else [])
     prompts = pool[a.start_step * B:(a.start_step + a.steps) * B]
     res = run_opd(a.task, prompts, cfg, Path(a.out), snapshot_download(cfg["student"], local_files_only=True),
-                  snapshot_download(cfg["teacher"], local_files_only=True), steps=a.steps,
-                  meta={"platform": "turing-l40s", "gpus": gpus, "overrides": a.set, "prompts": a.prompts}, teacher_gpus=f"{gpus[1]},{gpus[2]}", teacher_tp=2,
-                  student_gpu=gpus[0], student_mem=0.35, teacher_mem=0.90,
+                  snapshot_download(cfg["teacher"], local_files_only=True) if cfg.get("teacher") else None, steps=a.steps,
+                  meta={"platform": "turing-l40s", "gpus": gpus, "overrides": a.set, "prompts": a.prompts,
+                        "config_name": a.config, "external_teacher": a.external_teacher},
+                  teacher_gpus=("" if a.external_teacher or a.config == "grpo" else
+                                gpus[1] if a.config == "opd9b" else f"{gpus[1]},{gpus[2]}"),
+                  teacher_tp=1 if a.config == "opd9b" else 2,
+                  student_gpu=gpus[0], student_mem=0.88 if split else 0.35, teacher_mem=0.90,
+                  trainer_gpu=gpus[1] if split else None,
                   init_adapter=a.init_adapter or None, resume_from=a.resume_from or None,
-                  start_step=a.start_step, save_optimizer=True)
+                  start_step=a.start_step, save_optimizer=True, student_port=a.student_port,
+                  teacher_port=a.teacher_port, external_teacher=a.external_teacher,
+                  teacher_host=a.teacher_host,
+                  keep_steps=tuple(int(x) for x in a.keep_steps.split(",") if x))
     (Path(a.out) / f"result-{a.start_step}.json").write_text(json.dumps(res, indent=1))
     print("\n".join(res.get("events", [])))
     if not res["ok"]:

@@ -7,23 +7,27 @@ Run on the login node, from the repository root:
         python scripts/turing/teacher_gen.py --task reconstruct --out {out}
     python3 scripts/turing/launch.py reconcile
 
-{out} becomes /scratch/$USER/anlp-opd/runs/<name> on the node. The job script, the command and a
+{out} becomes <repo>/runs-out/<name> (home, visible on every node), so adapters made on one node can be
+used on another. The environment and model caches stay on the node-local scratch. The job script, the command and a
 state record are kept in runs/<name>/ in the repository copy. The ledger is turing_budget.json.
 """
 
 import argparse
 import json
 import os
+import shlex
 import subprocess
 import sys
 import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-LEDGER = REPO / "turing_budget.json"
+LEDGER = REPO / "artifacts" / "opd" / "turing" / "turing_budget.json"
 NODE = "node07"
-MAX_CONCURRENT_GPUS = 6  # user approval: one 3-GPU OPD job per node, on two nodes at once (2026-10-01)
-SCRATCH = "/scratch/$USER/anlp-opd"
+# User approval 2026-10-01 (transfer matrix): every free GPU on node07 and node11 for 14-16 hours.
+MAX_CONCURRENT_GPUS = 4  # user limit (2026-10-07): never more than 4 GPUs at once, queued jobs included
+SCRATCH = "/scratch/mukund.hebbar/anlp-opd"  # shared env and caches (writable for this account on both nodes)
+OUT_ROOT = REPO / "runs-out"
 
 HEADER = """#!/bin/bash
 #SBATCH --job-name={name}
@@ -37,7 +41,7 @@ HEADER = """#!/bin/bash
 #SBATCH --mem={mem}G
 #SBATCH --time={walltime}
 #SBATCH --output={rundir}/slurm-%j.out
-
+{dependency}
 set -euo pipefail
 ROOT={scratch}
 export HF_HOME=$ROOT/hf_cache HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false PYTHONUNBUFFERED=1
@@ -58,7 +62,10 @@ def load():
 
 
 def save(ledger):
-    LEDGER.write_text(json.dumps(ledger, indent=1) + "\n")
+    # Atomic: write a temporary file, then rename. Two launchers writing at once once left the ledger empty.
+    tmp = LEDGER.with_suffix(f".tmp{os.getpid()}")
+    tmp.write_text(json.dumps(ledger, indent=1) + "\n")
+    os.replace(tmp, LEDGER)
 
 
 def sh(*cmd):
@@ -105,16 +112,18 @@ def submit(a, command):
         raise SystemExit(f"{rundir} exists; choose a new name")
     rundir.mkdir(parents=True)
     node = a.node or NODE
-    out = f"{SCRATCH}/runs/{a.name}"
+    out = f"{OUT_ROOT}/{a.name}"
     limit = int(a.hours * 3600) - 300  # internal timeout below the scheduler limit
     walltime = time.strftime("%H:%M:%S", time.gmtime(int(a.hours * 3600)))
-    cmd = " ".join(c.replace("{out}", out) for c in command)
+    cmd = shlex.join(c.replace("{out}", out) for c in command)  # keeps arguments that contain spaces
     script = HEADER.format(name=a.name, node=node, gpus=a.gpus, cpus=8 * a.gpus, mem=48 * a.gpus, walltime=walltime,
-                           rundir=rundir, scratch=SCRATCH, repo=REPO, out=out, limit=limit, command=cmd)
+                           rundir=rundir, scratch=SCRATCH, repo=REPO, out=out, limit=limit, command=cmd,
+                           dependency=(f"#SBATCH --dependency={a.after if a.after.startswith('after') else 'afterok:' + a.after}\n"
+                                       if a.after else ""))
     (rundir / "job.sbatch").write_text(script)
     job_id = sh("sbatch", "--parsable", str(rundir / "job.sbatch")).strip().split(";")[0]
     rec = {"name": a.name, "job_id": int(job_id), "gpus": a.gpus, "hours": a.hours, "node": node, "out": out,
-           "command": cmd, "submitted": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "status": "reserved"}
+           "command": cmd, "after": a.after or None, "submitted": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "status": "reserved"}
     (rundir / "state.json").write_text(json.dumps(rec, indent=1) + "\n")
     ledger["jobs"].append(rec)
     save(reconcile(ledger))
@@ -133,6 +142,7 @@ def main():
     ap.add_argument("--name")
     ap.add_argument("--gpus", type=int)
     ap.add_argument("--hours", type=float)
+    ap.add_argument("--after", default="", help="start only after these job ids succeed (Slurm afterok, e.g. 123:124)")
     ap.add_argument("--node", default="", help=f"compute node (default {NODE}); it needs the env and weights on its scratch")
     a = ap.parse_args(argv)
     if a.action == "reconcile":
