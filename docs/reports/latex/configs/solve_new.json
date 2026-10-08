@@ -1,0 +1,97 @@
+{
+ "task": "solve",
+ "steps": 81,
+ "platform": "turing-l40s",
+ "gpus": [
+  "0",
+  "1"
+ ],
+ "overrides": [
+  "prompts_per_step=32",
+  "optimizer.lr=1e-5",
+  "optimizer.warmup_steps=5",
+  "async_rollouts=true",
+  "best_window=8",
+  "best_keep=3"
+ ],
+ "prompts": "matrix",
+ "config_name": "grpo",
+ "external_teacher": false,
+ "init_adapter": null,
+ "resume_from": "/scratch/mukund.hebbar/anlp-opd/v3/solve-p1-lr1e-5/adapters/step9",
+ "start_step": 9,
+ "student": "Qwen/Qwen3.5-2B",
+ "teacher": null,
+ "objective": "per-token reverse KL, sampled-token estimator, discount 0",
+ "loss_normalization": "token mean per rollout, then mean over rollouts",
+ "importance_sampling_cap": 2.0,
+ "lora": {
+  "r": 64,
+  "alpha": 64,
+  "dropout": 0.0,
+  "target_modules": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "in_proj_qkv",
+   "in_proj_z",
+   "out_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ]
+ },
+ "optimizer": {
+  "name": "adamw",
+  "lr": 1e-05,
+  "betas": [
+   0.9,
+   0.999
+  ],
+  "weight_decay": 0.0,
+  "warmup_steps": 5,
+  "grad_clip": 1.0
+ },
+ "prompts_per_step": 32,
+ "samples_per_prompt": 8,
+ "updates_per_step": 1,
+ "rollout": {
+  "temperature": 1.0,
+  "top_p": 1.0
+ },
+ "rollout_max_tokens": {
+  "solve": 16384,
+  "judge": 16384,
+  "reconstruct": 16384
+ },
+ "logprob_chunk_tokens": 1024,
+ "auto_stop": {
+  "truncation_rise": 0.15,
+  "truncation_ceiling": 0.35,
+  "patience": 3,
+  "max_mean_abs_logprob_gap": 0.5,
+  "repetition_threshold": 0.5,
+  "repetition_patience": 2
+ },
+ "drop_truncated": false,
+ "kl_anchor_beta": 0.0,
+ "overlong_penalty": 0.0,
+ "soft_length_penalty": null,
+ "teacher_system_prompt": null,
+ "loss": "sampled",
+ "teacher_signal_max_len": null,
+ "sft_mix": null,
+ "verdict_reward": null,
+ "topk_k": 20,
+ "topk_divergence": "reverse",
+ "train_micro_tokens": 16384,
+ "keep_adapters_every": 8,
+ "method": "grpo",
+ "variant": "dr_grpo",
+ "norm_tokens": 16384,
+ "reward_timeout_s": 180,
+ "async_rollouts": true,
+ "best_window": 8,
+ "best_keep": 3
+}
