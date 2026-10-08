@@ -3,11 +3,20 @@
 from __future__ import annotations
 
 import json
+import logging
+import multiprocessing
+import os
 import re
+import signal
+import threading
+from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import TimeoutError as FuturesTimeout
+from concurrent.futures.process import BrokenProcessPool
 from fractions import Fraction
 from typing import Any
 
 import sympy as sp
+from tokenize import TokenError
 from sympy.parsing.sympy_parser import (
     implicit_multiplication_application,
     parse_expr,
@@ -145,13 +154,39 @@ def _strip_redundant_outer_parentheses(text: str) -> str:
     return text
 
 
+def _replace_roots(text: str) -> str:
+    """``\\sqrt[n]{x}`` -> ``(x)^(1/(n))``; plain ``\\sqrt{x}`` is left for the sympy ``sqrt``."""
+    pattern = re.compile(r"\\sqrt\s*\[([^\[\]]+)\]\s*\{")
+    while True:
+        match = pattern.search(text)
+        if not match:
+            return text
+        radicand = _balanced_brace(text, match.end() - 1)
+        if radicand is None:
+            return text
+        text = text[: match.start()] + f"({radicand[0]})^(1/({match.group(1)}))" + text[radicand[1] :]
+
+
 def normalize_answer(value: str) -> str:
     """Normalize harmless formatting without claiming symbolic equivalence."""
     text = str(value).strip().strip("`")
+    text = re.sub(r"(?:\\\\|\\)+\s*$", "", text).strip()  # a stray trailing "\\" or "\"
     text = text.replace("$$", "")
     text = re.sub(r"\\\(|\\\)|\\\[|\\\]", "", text)
-    text = text.replace("\\dfrac", "\\frac")
+    text = text.replace("\\dfrac", "\\frac").replace("\\tfrac", "\\frac")
     text = _replace_fractions(text)
+    text = _replace_roots(text)
+    text = re.sub(r"\^\s*\{?\\circ\}?|°", "", text)  # degrees: 150^\circ == 150
+    text = re.sub(r"\\(?:geqslant|geq|ge)(?![a-zA-Z])|≥", ">=", text)
+    text = re.sub(r"\\(?:leqslant|leq|le)(?![a-zA-Z])|≤", "<=", text)
+    text = re.sub(r"\\(?:neq|ne)(?![a-zA-Z])|≠", "!=", text)
+    text = re.sub(r"\\bmod(?![a-zA-Z])", " mod ", text)
+    # "\ln 2", "\cos 2": a function applied to one bare token keeps its argument once spaces go.
+    text = re.sub(r"(?<![A-Za-z])\\?(ln|log|sin|cos|tan|exp)\s+([0-9]+(?:\.[0-9]+)?|[a-zA-Z])(?![a-zA-Z0-9])",
+                  r"\\\1(\2)", text)  # with or without the backslash
+    text = re.sub(r"\\ln(?![a-zA-Z])", r"\\log", text)
+    text = re.sub(r"\|([^|]+)\|", r"abs(\1)", text)  # |x| -> abs(x), unnested only
+    text = re.sub(r"^\s*\+\s*(?=\\infty|∞|infinity)", "", text)  # "+\infty" == "\infty"
     text = re.sub(r"\\(?:mathbb|mathcal|mathfrak)\s+([A-Za-z])", r"\1", text)
     for command in ("boxed", "text", "mathrm", "mathbb", "mathcal", "mathfrak"):
         text = _unwrap_command(text, command)
@@ -169,6 +204,8 @@ def normalize_answer(value: str) -> str:
     text = text.replace("$", "")
     text = re.sub(r"\s+", "", text).casefold()
     text = text.strip(".,;:")
+    if text in {"infinite", "+infinity", "positiveinfinity"}:
+        text = "infinity"
     return _strip_redundant_outer_parentheses(text)
 
 
@@ -242,8 +279,10 @@ def _numeric_value(text: str) -> Fraction | None:
 
 def _candidate_variants(candidate_normalized: str) -> list[str]:
     variants = [candidate_normalized]
-    if "=" in candidate_normalized and candidate_normalized.count("=") == 1:
-        variants.append(candidate_normalized.rsplit("=", 1)[1].strip(". ,;:"))
+    # A plain "=" only: "a!=3" or "n>=28" must not turn into "3" / "28".
+    plain = re.findall(r"(?<![!<>=])=(?!=)", candidate_normalized)
+    if len(plain) == 1 and not re.search(r"!=|<=|>=", candidate_normalized):
+        variants.append(re.split(r"(?<![!<>=])=(?!=)", candidate_normalized)[1].strip(". ,;:"))
     return list(dict.fromkeys(variants))
 
 
@@ -252,8 +291,11 @@ def _is_simple_text(text: str) -> bool:
 
 
 def _leading_boolean(candidate: str) -> str | None:
-    match = re.match(r"^(?:[(:\[]\s*)?(yes|no)\b", candidate)
-    return match.group(1) if match else None
+    """"yes"/"no", or "true"/"false" (the statement holds / does not), at the start of the answer."""
+    match = re.match(r"^(?:[(:\[]\s*)?(yes|no|true|false)\b", candidate)
+    if not match:
+        return None
+    return {"true": "yes", "false": "no"}.get(match.group(1), match.group(1))
 
 
 def _leading_choice(candidate: str) -> str | None:
@@ -311,8 +353,9 @@ def _sympy_expression(text: str) -> sp.Expr | None:
             evaluate=True,
         )
         return expression if isinstance(expression, sp.Basic) else None
-    except (AttributeError, IndexError, NameError, TypeError, SyntaxError, ValueError, sp.SympifyError):
+    except (AttributeError, IndexError, NameError, TypeError, SyntaxError, ValueError, sp.SympifyError, TokenError):
         # IndexError: sympy's implicit-multiplication pass on some collapsed sentences.
+        # TokenError: Python's tokenizer on text such as "2nd" (invalid decimal literal).
         return None
 
 
@@ -343,8 +386,8 @@ def _same_expression(left: str, right: str) -> bool | None:
         return None
 
 
-def compare_answer_detailed(expected: str, candidate: str | None) -> dict[str, Any]:
-    """Compare answers and return an auditable deterministic decision."""
+def _compare_rules(expected: str, candidate: str | None) -> dict[str, Any]:
+    """The rule layer: normalised exact match, booleans, choices, exact arithmetic, sympy."""
     if candidate is None or not str(candidate).strip():
         return {
             "answer_status": "missing",
@@ -366,10 +409,11 @@ def compare_answer_detailed(expected: str, candidate: str | None) -> dict[str, A
     if expected_normalized == candidate_normalized:
         return {**result_base, "answer_status": "correct", "verification_method": "normalized_exact"}
 
-    if expected_normalized in {"yes", "no"}:
+    expected_boolean = _leading_boolean(expected_normalized) if expected_normalized in {"yes", "no", "true", "false"} else None
+    if expected_boolean is not None:
         candidate_boolean = _leading_boolean(candidate_normalized)
         if candidate_boolean is not None:
-            status = "correct" if candidate_boolean == expected_normalized else "incorrect"
+            status = "correct" if candidate_boolean == expected_boolean else "incorrect"
             return {
                 **result_base,
                 "answer_status": status,
@@ -459,6 +503,334 @@ def compare_answer_detailed(expected: str, candidate: str | None) -> dict[str, A
         "verification_method": "no_safe_equivalence_rule",
         "verification_reason": reason,
     }
+
+
+# --- Layers on top of the rules (verifier v3) -----------------------------------------------------------
+#
+# Every layer can only turn a non-correct decision into "correct" on evidence that cannot be gamed by
+# hedging: a cleaned answer must not drop words such as "or"/"not", numeric closeness needs the gold's
+# precision, and math-verify only sees answers that are pure mathematics (no prose, where it would pick
+# any number out of "It does not converge to 0").
+
+HEDGE_WORDS = re.compile(
+    r"\b(?:or|either|maybe|possibly|perhaps|probably|otherwise|unless|not|except|alternatively|also|"
+    r"approximately|approx|roughly|about|guess)\b",
+    re.I,
+)
+_QUALIFIER = re.compile(
+    r"(?:\\(?:quad|qquad|,|;|:)|,|\s)\s*(?:\\text\s*\{\s*|\(\s*(?:\\text\s*\{\s*)?)"
+    r"(?:for|where|when|whenever|if|with|i\.e\.|since|as|in|because|so|which|that|is|are|the)\b.*$",
+    re.S,
+)
+_TRAILING_TEXT = re.compile(r"\s*\\text\s*\{[^{}]*\}\s*[.]?\s*$")
+_VARIABLE = r"(?:[A-Za-z](?:_\{?[A-Za-z0-9]+\}?)?|\\[A-Za-z]+(?:_\{?[A-Za-z0-9]+\}?)?)"
+_ASSIGN = re.compile(rf"^\s*(?:{_VARIABLE}|\(\s*{_VARIABLE}(?:\s*,\s*{_VARIABLE})+\s*\))\s*(?:=|\\in)\s*(.+)$", re.S)
+_ASSIGN_LIST = re.compile(rf"^\s*{_VARIABLE}\s*=\s*([^,=]+?)(?:\s*,\s*{_VARIABLE}\s*=\s*([^,=]+?))+\s*$", re.S)
+_MATH_WORDS = {
+    "sin", "cos", "tan", "cot", "sec", "csc", "arcsin", "arccos", "arctan", "sinh", "cosh", "tanh", "log",
+    "ln", "exp", "sqrt", "lim", "max", "min", "sup", "inf", "mod", "bmod", "pmod", "gcd", "lcm", "det",
+    "frac", "dfrac", "tfrac", "cdot", "times", "infty", "pi", "left", "right", "mathbb", "mathcal",
+    "mathrm", "operatorname", "binom", "choose", "sum", "prod", "int", "cup", "cap", "emptyset",
+    "varnothing", "leq", "geq", "neq", "le", "ge", "ne", "pm", "mp", "alpha", "beta", "gamma", "delta",
+    "epsilon", "varepsilon", "theta", "lambda", "mu", "sigma", "omega", "phi", "varphi", "psi", "rho",
+    "tau", "zeta", "eta", "kappa", "nu", "xi", "chi", "circ", "displaystyle", "boxed", "mathbf", "vec",
+    "overline", "hat", "dots", "ldots", "cdots", "quad", "qquad", "begin", "end", "pmatrix", "bmatrix",
+    "matrix", "Gamma", "Delta", "Theta", "Lambda", "Sigma", "Omega", "Phi", "Psi", "to", "rightarrow",
+}
+
+
+def _is_clean_math(text: str) -> bool:
+    """Pure mathematics: no \\text, no English words, short. math-verify is only trusted on these."""
+    text = str(text or "")
+    if not text.strip() or len(text) > 200 or "\\text" in text or "\n" in text.strip():
+        return False
+    if re.search(r"\\(?:aleph|beth|mathfrak)", text):  # cardinals: math-verify equates 2^{2^{a}} with 2^{a}
+        return False
+    for word in re.findall(r"\\?[A-Za-z]{2,}", text):
+        if word.lstrip("\\") not in _MATH_WORDS:
+            return False
+    return True
+
+
+def _top_level_commas(text: str) -> int:
+    """Commas outside (), [], {}: "n = 0, 2" lists two values; "(1, 2)" is one tuple."""
+    depth, count = 0, 0
+    for character in re.sub(r"\\[{}]", "", str(text)):
+        if character in "([{":
+            depth += 1
+        elif character in ")]}":
+            depth = max(0, depth - 1)
+        elif character == "," and depth == 0:
+            count += 1
+    return count
+
+
+def _several_values(form: str, gold: str) -> bool:
+    """The answer lists more values than the key: never accepted by the lenient layers.
+
+    Also a key with no comma at all against a tuple-like answer ("(2)" vs "(4, 2+2\\sqrt{-5})"), except an
+    interval reaching infinity ("(-\\infty, \\infty)" for \\mathbb{R}).
+    """
+    if _top_level_commas(form) > _top_level_commas(gold):
+        return True
+    commas = lambda t: len(re.findall(r"(?<!\\!),(?!\d{3}\b)", re.sub(r"\{,\}", "", str(t))))
+    if commas(gold) == 0 and commas(form) > 0:
+        return not re.fullmatch(r"\s*\$?\s*(?:\\left)?\s*[(\[].*(?:\\infty|∞).*[)\]]\s*\$?\s*", str(form), re.S)
+    return False
+
+
+def _cleaned_variants(candidate: str) -> list[tuple[str, str]]:
+    """Answer forms the model meant, with what was removed. Hedged removals are refused."""
+    raw = re.sub(r"(?:\\\\|\\)+\s*$", "", str(candidate)).strip().strip("$").strip()
+    out: list[tuple[str, str]] = []
+
+    def add(value: str, removed: str, how: str) -> None:
+        value = value.strip().rstrip(".,;:").strip()
+        if value and value != raw and not HEDGE_WORDS.search(re.sub(r"\\[A-Za-z]+", " ", removed)):
+            out.append((value, how))
+
+    # "2^k \text{ for } k \ge 1", "13^m \quad (\text{for some } m)", "n! \text{ is larger.}"
+    # What is left must be pure mathematics, so a sentence is never cut down to a fragment that matches.
+    match = _QUALIFIER.search(raw)
+    if match and match.start() > 0 and _is_clean_math(raw[: match.start()]):
+        add(raw[: match.start()], raw[match.start() :], "qualifier_removed")
+    match = _TRAILING_TEXT.search(raw)
+    if match and match.start() > 0 and _is_clean_math(raw[: match.start()]):
+        add(raw[: match.start()], match.group(0), "trailing_text_removed")
+    stems = [raw] + [value for value, _ in out]
+    for stem in stems:
+        # "n = 2^k", "(p, q) = (2, 2)", "a \in [-4, 4]": the value after a variable.
+        match = _ASSIGN.match(stem)
+        if match and "=" not in match.group(1):
+            add(match.group(1), "", "assignment_value")
+        # "x=0, y=0, z=0" -> "(0, 0, 0)"
+        if _ASSIGN_LIST.match(stem):
+            values = [part.split("=", 1)[1].strip() for part in stem.split(",")]
+            add("(" + ", ".join(values) + ")", "", "assignment_tuple")
+    return list(dict.fromkeys(out))
+
+
+def _gold_variants(expected: str) -> list[str]:
+    """The key itself, and its value when written as "(a, b) = (1, 1)" (a constant after variables)."""
+    out = [expected]
+    match = _ASSIGN.match(str(expected))
+    if match and not re.search(r"[A-Za-z]", re.sub(r"\\(?:frac|dfrac|sqrt|pi|infty)", "", match.group(1))):
+        out.append(match.group(1).strip())
+    return out
+
+
+def _equation_chain(candidate: str) -> list[str]:
+    """"\\mathbb{F}_{2^6} = \\mathbb{F}_{64}": the sides of an equation chain without prose."""
+    raw = str(candidate).strip().strip("$")
+    if not _is_clean_math(raw) or raw.count("=") < 1 or re.search(r"[<>]|\\[lgn]e", raw) or _top_level_commas(raw):
+        return []
+    sides = [side.strip() for side in raw.split("=")]
+    return sides if all(sides) else []
+
+
+def _decimal_places(text: str) -> int | None:
+    match = re.fullmatch(r"-?\d+\.(\d+)", text)
+    return len(match.group(1)) if match else None
+
+
+def _numeric_close(expected_normalized: str, candidate_normalized: str) -> bool | None:
+    """Equal values written differently: e^{4.5} vs e^{9/2}, \\pi vs 3.141592653, 0.832293673 vs 2|cos 2|.
+
+    A decimal key fixes the precision: the answer must agree to the key's last place and give at least
+    all but one of its decimals. Otherwise the two values must agree to 1e-9 (relative), and a decimal
+    answer needs 6 significant digits.
+    """
+    left = _sympy_expression(expected_normalized)
+    right = _sympy_expression(candidate_normalized)
+    if left is None or right is None or left.free_symbols or right.free_symbols:
+        return None
+    if any(e.has(sp.oo, -sp.oo, sp.zoo, sp.nan) for e in (left, right)):
+        return None  # infinities are compared exactly by the rules, never numerically (oo - 1 == oo)
+    if not left.has(sp.Float) and not right.has(sp.Float):
+        # Exact on both sides: 10^{101} + 1 and 100 * 10^{99} differ by 1, which no relative tolerance sees.
+        if left.is_Rational and right.is_Rational:
+            return left == right
+        try:
+            difference = sp.N(left - right, 60)
+            return bool(difference.is_number and abs(complex(difference)) <= 1e-40 * max(1.0, abs(complex(sp.N(left, 60)))))
+        except (TypeError, ValueError, OverflowError):
+            return None
+    try:
+        a = complex(sp.N(left, 30))
+        b = complex(sp.N(right, 30))
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if any(map(lambda z: z != z or abs(z) == float("inf"), (a, b))):
+        return None
+    gold_places = _decimal_places(expected_normalized)
+    cand_places = _decimal_places(candidate_normalized)
+    if gold_places is not None and gold_places >= 4:  # a rounded numeric key; "0.5" stays exact
+        if cand_places is not None and cand_places < gold_places - 1:
+            return False
+        places = gold_places if cand_places is None else min(gold_places, cand_places)
+        return abs(a - b) <= 0.5 * 10 ** (-places) * (1 + 1e-9)
+    if cand_places is not None and len(re.sub(r"\D", "", candidate_normalized).lstrip("0")) < 6:
+        return False
+    return abs(a - b) <= 1e-9 * max(1.0, abs(a))
+
+
+def _math_verify_equal(expected: str, candidate: str) -> bool | None:
+    try:
+        from math_verify import ExprExtractionConfig, LatexExtractionConfig, parse, verify
+    except ImportError as error:  # a hard dependency: fail loudly rather than silently weaken the checker
+        raise RuntimeError("math-verify is required by the SOLVE checker (uv sync)") from error
+    # Its own timeouts are off (they would cancel ours); it warns about that on every call.
+    logging.getLogger("math_verify").setLevel(logging.ERROR)
+    config = [LatexExtractionConfig(boxed_match_priority=0), ExprExtractionConfig()]
+
+    def wrap(text: str) -> str:
+        text = str(text).strip()
+        return text if "$" in text else f"${text}$"
+
+    gold = parse(wrap(expected), extraction_config=config, parsing_timeout=None)
+    answer = parse(wrap(candidate), extraction_config=config, parsing_timeout=None)
+    if not gold or not answer:
+        return None
+    return bool(verify(gold, answer, timeout_seconds=None))
+
+
+def _compare_full(expected: str, candidate: str | None) -> dict[str, Any]:
+    base = _compare_rules(expected, candidate)
+    if base["answer_status"] in ("correct", "missing"):
+        return base
+    candidate = str(candidate)
+
+    def upgraded(method: str, used: str) -> dict[str, Any]:
+        return {**base, "answer_status": "correct", "verification_method": method,
+                "verification_reason": None, "canonical_candidate": used}
+
+    golds = _gold_variants(expected)
+    # 1. The rules on cleaned forms of the answer (and of a "(a, b) = (1, 1)" key).
+    forms = [(candidate, "as_written")] + _cleaned_variants(candidate)
+    for gold in golds:
+        for form, how in forms:
+            if (gold, form) == (expected, candidate) or (how != "as_written" and _several_values(form, gold)):
+                continue
+            result = _compare_rules(gold, form)
+            if result["answer_status"] == "correct":
+                return upgraded(f"{how}+{result['verification_method']}", form)
+    # 2. An equation chain "A = B = value": the last side is the answer; the first side counts only when
+    #    every other side is a plain number ("2^6 = 64"), never "\tau(n) = <some formula>".
+    sides = _equation_chain(candidate)
+    if len(sides) >= 2:
+        for gold in golds:
+            verdicts = [_compare_rules(gold, side)["answer_status"] for side in sides]
+            if "incorrect" in verdicts:
+                continue
+            numbers = all(_numeric_value(normalize_answer(side)) is not None for side in sides[1:])
+            if verdicts[-1] == "correct" or (verdicts[0] == "correct" and numbers):
+                return upgraded("equation_chain", candidate)
+    # 3. Numeric closeness.
+    for gold in golds:
+        for form, how in forms:
+            if _numeric_close(normalize_answer(gold), normalize_answer(form)):
+                return upgraded(f"{how}+numeric_close", form)
+    # 4. DeepMath's official checker pair (their reward accepts if either says equal): OpenMathInstruct's
+    #    math_equal, then math-verify. math_equal strips \text{...}, so it never sees a hedged answer
+    #    ("3 \text{ or } 5" would become "3"); its percentage rule (50 == 0.5) is off.
+    if not HEDGE_WORDS.search(re.sub(r"\\[A-Za-z]+", " ", candidate)):
+        from .third_party.omi_math_equal import math_equal
+
+        for gold in golds:
+            for form, how in forms:
+                if not _is_clean_math(form) or _several_values(form, gold):
+                    continue
+                if normalize_answer(form) in {"true", "false", "yes", "no"}:  # Python: True == 1
+                    continue
+                try:
+                    # tolerance 1e-9, not DeepMath's 1e-4: that accepts 88327 for 88329 (relative 2e-5).
+                    same = math_equal(form, gold, include_percentage=False, tolerance=1e-9, check_antlr_version=False)
+                except _CheckTimeout:
+                    raise
+                except Exception:
+                    same = False
+                if same:
+                    return upgraded(f"{how}+omi_math_equal", form)
+    # 5. math-verify, on pure mathematics only, and only where the rules could not decide.
+    if base["answer_status"] == "unverified":
+        for gold in golds:
+            for form, how in forms:
+                if (_is_clean_math(gold) and _is_clean_math(form) and not _several_values(form, gold)
+                        and _math_verify_equal(gold, form)):
+                    return upgraded(f"{how}+math_verify", form)
+    return base
+
+
+# --- Time limit ---------------------------------------------------------------------------------------
+#
+# sympy can run for minutes on adversarial input, and rewards are scored from trainer threads, where a
+# SIGALRM cannot be used. The main thread uses an alarm directly; other threads hand the check to a small
+# process pool whose workers run it in their own main thread under the same alarm.
+
+CHECK_SECONDS = 10
+_POOL: Any = None
+_POOL_LOCK = threading.Lock()
+
+
+class _CheckTimeout(Exception):
+    pass
+
+
+def _timed_out(expected: str, candidate: str | None, why: str) -> dict[str, Any]:
+    return {
+        "answer_status": "unverified",
+        "verification_method": "timeout",
+        "verification_reason": why,
+        "normalized_expected": normalize_answer(expected),
+        "normalized_candidate": None if candidate is None else normalize_answer(candidate),
+        "canonical_candidate": None,
+    }
+
+
+def _compare_with_alarm(expected: str, candidate: str | None) -> dict[str, Any]:
+    def handler(signum: int, frame: Any) -> None:
+        raise _CheckTimeout
+
+    previous = signal.signal(signal.SIGALRM, handler)
+    signal.setitimer(signal.ITIMER_REAL, CHECK_SECONDS)
+    try:
+        return _compare_full(expected, candidate)
+    except _CheckTimeout:
+        return _timed_out(expected, candidate, f"check_exceeded_{CHECK_SECONDS}s")
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous)
+
+
+def _pool() -> Any:
+    global _POOL
+    with _POOL_LOCK:
+        if _POOL is None:
+            _POOL = ProcessPoolExecutor(max_workers=min(8, os.cpu_count() or 1),
+                                        mp_context=multiprocessing.get_context("spawn"))
+        return _POOL
+
+
+def _reset_pool() -> None:
+    global _POOL
+    with _POOL_LOCK:
+        if _POOL is not None:
+            _POOL.shutdown(wait=False, cancel_futures=True)
+        _POOL = None
+
+
+def compare_answer_detailed(expected: str, candidate: str | None) -> dict[str, Any]:
+    """Compare answers and return an auditable deterministic decision (time-limited, thread-safe)."""
+    if threading.current_thread() is threading.main_thread():
+        return _compare_with_alarm(expected, candidate)
+    future = _pool().submit(_compare_with_alarm, expected, candidate)
+    try:
+        return future.result(timeout=6 * CHECK_SECONDS)
+    except FuturesTimeout:
+        return _timed_out(expected, candidate, "worker_unresponsive")
+    except BrokenProcessPool:
+        _reset_pool()
+        return _timed_out(expected, candidate, "worker_crashed")
 
 
 def compare_answers(expected: str, candidate: str | None) -> str:

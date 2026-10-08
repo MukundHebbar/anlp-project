@@ -50,3 +50,10 @@ artifacts/**/judgments.jsonl
 # Turing trial outputs (model text) stay local; only ids, scores, configs and metrics are tracked.
 artifacts/opd/turing/**/rollouts/
 artifacts/opd/turing/**/*.jsonl.gz
+
+# Experiment-tracking logs (local)
+wandb/
+# LaTeX build files
+*.aux
+*.toc
+*.out

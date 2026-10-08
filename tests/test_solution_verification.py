@@ -96,3 +96,38 @@ class SolutionVerificationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CheckerV3Tests(unittest.TestCase):
+    """Cases from the 2026-10-07 audit of 7,465 (key, answer) pairs: recovered forms and the false positives
+    each guard exists for."""
+
+    def test_recovered_equivalent_forms(self):
+        for key, answer in [
+            ("2^k", r"n = 2^k \text{ for } k \ge 1"), (r"\infty", "+\\infty"), (r"\infty", "Infinite"),
+            ("Yes", "True"), ("No", "False"), (r"\ln 2", r"\ln(2)"), (r"\ln 3", "ln 3"), ("(2, 2)", "(p, q) = (2, 2)"),
+            ("(0, 0, 0)", "x=0, y=0, z=0"), (r"e^{\frac{9}{2}}", "e^{4.5}"), ("3.141592653", "3.14159265"),
+            (r"2|\cos 2|", r"-2\cos(2)"), (r"\mathbb{R}", r"(-\infty, \infty)"), (r"m \bmod p", r"m \pmod p"),
+            (r"n \geq 2", r"n \geqslant 2"), (r"e^{\frac{1}{3}}", r"\sqrt[3]{e}"), ("1{,}008{,}016", "1008016"),
+        ]:
+            self.assertEqual(compare_answers(key, answer), "correct", (key, answer))
+
+    def test_audit_false_positives_stay_rejected(self):
+        for key, answer in [
+            ("88329", "88327"), ("501500", "501501"),            # DeepMath math_equal's 1e-4 tolerance
+            (r"10^{101} + 1", r"100 \times 10^{99}"),            # exact numbers differ by 1
+            (r"\infty", "1"), (r"-\infty", "+\\infty"),         # oo - 1 == oo
+            ("3", r"a \neq 3"), ("1", "True"), ("0", "False"),  # "!=" split; Python True == 1
+            ("2", "n = 0, 2"), ("2", "2, 2"),                    # several values
+            ("(2)", r"(4, 2+2\sqrt{-5})"),                       # a tuple for a single-value key
+            ("0", "It does not converge to 0"), ("0", "Does not converge to 0"),  # prose
+            ("3", r"3 \text{ or } 5"),                           # hedge
+            (r"2^{\aleph_0}", r"2^{2^{\aleph_0}}"),              # math-verify on cardinals
+        ]:
+            self.assertNotEqual(compare_answers(key, answer), "correct", (key, answer))
+
+    def test_checks_from_threads_use_the_process_pool(self):
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(4) as pool:
+            out = list(pool.map(lambda pair: compare_answers(*pair), [("2^k", "n = 2^k"), ("4", "5")] * 4))
+        self.assertEqual(out, ["correct", "incorrect"] * 4)
