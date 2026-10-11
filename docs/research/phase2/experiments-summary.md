@@ -93,12 +93,23 @@ the other 400)
 | 10% | 48% | 52% |
 | 20% | 56% | 68% |
 
-**Takeaway.** On short, step-numbered solutions both specialists are useful. JUDGE handles false steps;
-RECONSTRUCT adds wrong-question cases JUDGE misses and can tell the student which question they answered.
+**Held-out check.** The thresholds above were read off the full set. Re-done properly: pick the threshold on a random
+half of the solutions (a correct solution and the wrong-question item made from it stay in the same half), measure on
+the other half, 50 random splits in both directions (`scripts/phase2/tutor_calibrate.py`). Mean ± sd:
 
-**Caveats.** The wrong-question solutions were made by the 27B, not by real students. The detection threshold was
-picked on the test set and needs a separate tuning set. "Closer to what the student solved" is the 27B's
-judgement, not an exact match.
+| Threshold tuned for | Team | Wrong-question caught: JUDGE alone | JUDGE + RECONSTRUCT | Correct flagged: JUDGE alone | JUDGE + RECONSTRUCT |
+|---|---|---|---|---|---|
+| 5% false alarms | Specialists | 69.6 ± 4.4% | 78.2 ± 4.5% | 4.5 ± 1.4% | 8.8 ± 2.9% |
+| 5% false alarms | Mixed | 73.6 ± 4.6% | 81.3 ± 4.1% | 4.0 ± 1.6% | 10.0 ± 3.0% |
+| 10% false alarms | Specialists | 69.6 ± 4.4% | 83.1 ± 4.3% | 4.5 ± 1.4% | 15.2 ± 4.1% |
+| 10% false alarms | Mixed | 73.6 ± 4.6% | 83.5 ± 4.5% | 4.0 ± 1.6% | 14.2 ± 4.0% |
+
+**Takeaway.** On short, step-numbered solutions both specialists are useful. JUDGE handles false steps;
+RECONSTRUCT adds 8–14 points of wrong-question detection on top of JUDGE (held out), at the cost of 5–10 points more
+false alarms on correct work, and can tell the student which question they answered.
+
+**Caveats.** The wrong-question solutions were made by the 27B, not by real students. "Closer to what the student
+solved" is the 27B's judgement, not an exact match.
 
 ---
 
