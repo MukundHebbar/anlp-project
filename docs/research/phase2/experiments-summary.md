@@ -152,11 +152,52 @@ them in long solutions the model wrote itself. Drift without a false step was es
 
 ---
 
+## 4. JUDGE on natural errors (ProcessBench)
+
+**Question.** The JUDGE training data has *injected* errors. Does the learned checking work on real mistakes that
+other models made?
+
+**Method.** ProcessBench: 3,400 step-split solutions written by other models to GSM8K, MATH, OlympiadBench and
+Omni-MATH problems, each labelled with its first wrong step (or none). Every model marks every solution with the JUDGE
+prompt; the synthetic JUDGE test set (400) is re-marked the same way. Score: F1 of "exact first wrong step on wrong
+solutions" and "says correct on correct solutions" (ProcessBench's metric; our prompt and sampling, so not directly
+comparable with published numbers).
+
+| Model | Synthetic errors F1 | ProcessBench avg F1 | GSM8K | MATH | OlympiadBench | Omni-MATH |
+|---|---|---|---|---|---|---|
+| Untrained 2B | 44.7 | 41.1 | 48.0 | 45.7 | 38.6 | 32.3 |
+| SOLVE-trained | 52.0 | 45.5 | 51.8 | 51.4 | 42.8 | 36.2 |
+| JUDGE-trained | 68.9 | 54.6 | 64.2 | 58.7 | 53.5 | 41.9 |
+| RECONSTRUCT-trained | 50.4 | 55.2 | 64.3 | 57.7 | 51.4 | 47.4 |
+| Mixed | 79.5 | **59.8** | 67.8 | 69.9 | 55.1 | 46.4 |
+| Qwen3.5-9B (reference) | 84.1 | 74.5 | 82.7 | 80.5 | 70.9 | 64.1 |
+
+**Gain over the untrained 2B**
+
+| Model | On synthetic errors | On natural errors | Share kept |
+|---|---|---|---|
+| SOLVE-trained | +7.3 | +4.4 | 60% |
+| JUDGE-trained | +24.2 | +13.5 | 56% |
+| RECONSTRUCT-trained | +5.7 | +14.1 | — |
+| Mixed | +34.8 | +18.7 | 54% |
+
+**Takeaway.**
+- Checking skill learned on injected errors **does transfer** to real errors in step-split solutions, but only about
+  half of the gain survives.
+- RECONSTRUCT training transfers to natural error-finding as well as JUDGE training does (55.2 vs 54.6). It flags
+  more solutions as wrong: more real errors found, more false alarms on correct ones.
+- Mixed training is again best among the 2B models.
+- All models get worse on harder problems (GSM8K → Omni-MATH).
+
+---
+
 ## Overall
 
-| Input | Example | Specialists work? |
+| Input | Example | Checking works? |
 |---|---|---|
-| Short, step-numbered solutions | Tutor test set | Yes |
-| Long solutions the model wrote itself | Always-wrong problems, drift checks | No (near coin flip) |
+| Short, step-numbered solutions with injected errors | Tutor test set, synthetic JUDGE test | Yes |
+| Short, step-split solutions with real errors by other models | ProcessBench | Partly (about half the trained gain) |
+| Long, unstructured solutions the model wrote itself | Always-wrong problems, drift checks | No (near coin flip) |
 
-Next step: confirm this gap on an external benchmark of natural solutions with labelled errors (ProcessBench).
+The failures in experiments 1 and 3 are therefore not about errors being natural. They come from long solutions
+that are not split into clean steps, written by the checked model itself.

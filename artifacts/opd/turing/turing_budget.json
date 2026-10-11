@@ -1,9 +1,9 @@
 {
  "description": "GPU-hour ledger for assistant-launched Turing jobs (scripts/turing/launch.py). Approved by the user on 2026-10-01: SFT warm-up + OPD trial for RECONSTRUCT, node07, at most 3 GPUs at once. Raised 2026-10-01 for the transfer matrix: all free GPUs on node07 and node11 for up to 16 hours (+128 GPU-h). Raised 2026-10-06 for transfer study v3 (+120 GPU-h, at most 6 GPUs at once). Raised 2026-10-06 to 500 GPU-h total at the user's request. Rebuilt 2026-10-06 ~20:00 from the 18:21 copy plus runs/*/state.json, after a write on a full home directory left it empty. 2026-10-11: Phase-2 experiments (hint pilot, tutor, drift) run with sbatch from the yashas.kotre account, recorded by hand from sacct.",
  "approved_gpu_hours": 500.0,
- "used_gpu_hours": 254.244,
+ "used_gpu_hours": 263.762,
  "reserved_gpu_hours": 0,
- "remaining_gpu_hours": 245.756,
+ "remaining_gpu_hours": 236.238,
  "jobs": [
   {
    "name": "gen-reconstruct-w512",
@@ -2414,6 +2414,21 @@
    "status": "completed",
    "charged_gpu_hours": 1.01,
    "elapsed_s": 1212,
+   "account_user": "yashas.kotre"
+  },
+  {
+   "name": "p2-processbench",
+   "job_id": 43937,
+   "gpus": 3,
+   "hours": null,
+   "node": "node07",
+   "out": "/home/yashas.kotre/anlp-project-phase2/runs-out/processbench",
+   "command": "sbatch scripts/phase2/processbench.sbatch",
+   "after": "43936",
+   "submitted": "2026-10-11",
+   "status": "completed",
+   "charged_gpu_hours": 9.518,
+   "elapsed_s": 11422,
    "account_user": "yashas.kotre"
   }
  ],
