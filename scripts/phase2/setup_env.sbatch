@@ -36,7 +36,7 @@ else
 fi
 "$ROOT/venv/bin/python" -c "$CHECK" && echo "venv ok"
 
-for repo in Qwen/Qwen3.5-2B Qwen/Qwen3.8-27B; do
+for repo in ${REPOS:-Qwen/Qwen3.5-2B Qwen/Qwen3.8-27B}; do  # e.g. REPOS=Qwen/Qwen3.5-9B sbatch ...
     timeout 5400 "$ROOT/venv/bin/hf" download "$repo" --exclude "*.pth" --exclude "original/*" >/dev/null
     echo "cached $repo"
 done
