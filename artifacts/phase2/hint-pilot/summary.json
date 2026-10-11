@@ -1,0 +1,101 @@
+{
+ "census": {
+  "problems": 750,
+  "samples": 6000,
+  "histogram_correct_of_8": {
+   "0": 85,
+   "1": 36,
+   "2": 30,
+   "3": 39,
+   "4": 34,
+   "5": 56,
+   "6": 62,
+   "7": 117,
+   "8": 291
+  },
+  "dead_hard": 85,
+  "dead_easy": 291
+ },
+ "agents": {
+  "eligible_dead": 39,
+  "judge_flagged_a_step": 0,
+  "judge_said_correct_majority": 14,
+  "recon_any_valid_question": 38,
+  "recon_certified_wrong_answer": 27,
+  "recon_best_has_true_answer": 1,
+  "hints_dropped_for_leak": 0
+ },
+ "arms": {
+  "none": {
+   "problems": 39,
+   "mean_accuracy": 0.060897435897435896,
+   "solved_at_least_once": 8,
+   "learnable_1_to_7": 8,
+   "always_solved": 0
+  },
+  "recon": {
+   "problems": 27,
+   "mean_accuracy": 0.05092592592592592,
+   "solved_at_least_once": 6,
+   "learnable_1_to_7": 6,
+   "always_solved": 0
+  },
+  "wrong_only": {
+   "problems": 39,
+   "mean_accuracy": 0.11858974358974358,
+   "solved_at_least_once": 15,
+   "learnable_1_to_7": 15,
+   "always_solved": 0
+  },
+  "judge16k": {
+   "problems": 5,
+   "mean_accuracy": 0.0,
+   "solved_at_least_once": 0,
+   "learnable_1_to_7": 0,
+   "always_solved": 0
+  }
+ },
+ "paired_problems": 27,
+ "paired_accuracy": {
+  "none": 0.037037037037037035,
+  "wrong_only": 0.1388888888888889,
+  "recon": 0.05092592592592592
+ },
+ "paired_solved_at_least_once": {
+  "none": 4,
+  "wrong_only": 11,
+  "recon": 6
+ },
+ "paired_by_answer_type": {
+  "binary_answer": {
+   "problems": 4,
+   "none": {
+    "correct": 2,
+    "solved_at_least_once": 1
+   },
+   "wrong_only": {
+    "correct": 23,
+    "solved_at_least_once": 4
+   },
+   "recon": {
+    "correct": 9,
+    "solved_at_least_once": 4
+   }
+  },
+  "other_answer": {
+   "problems": 23,
+   "none": {
+    "correct": 6,
+    "solved_at_least_once": 3
+   },
+   "wrong_only": {
+    "correct": 7,
+    "solved_at_least_once": 7
+   },
+   "recon": {
+    "correct": 2,
+    "solved_at_least_once": 2
+   }
+  }
+ }
+}
