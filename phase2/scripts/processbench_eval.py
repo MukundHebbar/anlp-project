@@ -11,9 +11,9 @@ Prediction: "Decision: correct" -> -1; "Decision: incorrect" with "First wrong s
 (unparsed, gated, capped) counts as wrong. Metrics as in ProcessBench: accuracy on erroneous solutions (exact first
 error), accuracy on correct solutions, and their harmonic mean (F1), per subset.
 
-    python scripts/phase2/processbench_eval.py prepare --pb-dir <dir with gsm8k.json ...> --out <dir>
-    python scripts/phase2/processbench_eval.py run --out <dir> --models judge,mixed --base <2B path> [--big9 <9B path>]
-    python scripts/phase2/processbench_eval.py report --out <dir>
+    python phase2/scripts/processbench_eval.py prepare --pb-dir <dir with gsm8k.json ...> --out <dir>
+    python phase2/scripts/processbench_eval.py run --out <dir> --models judge,mixed --base <2B path> [--big9 <9B path>]
+    python phase2/scripts/processbench_eval.py report --out <dir>
 """
 
 from __future__ import annotations

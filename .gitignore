@@ -59,6 +59,3 @@ wandb/
 *.out
 # Final LoRA adapters (250 MB each; copies on Turing at ~/anlp-project/final-adapters)
 final-adapters/
-
-# Downloaded external benchmarks (ProcessBench); fetched by the job notes, not tracked
-data/external/

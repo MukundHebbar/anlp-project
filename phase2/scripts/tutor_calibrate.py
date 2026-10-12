@@ -8,7 +8,7 @@ false-step solutions are flagged) and evaluated on the other half. A correct sol
 made from it share the same worked solution, so both stay in the same half. Repeated over `--splits` random 50/50
 splits, both directions each; mean and spread are reported. CPU only, reads the curated results.
 
-    python scripts/phase2/tutor_calibrate.py [--false-alarm 0.10] [--splits 50]
+    python phase2/scripts/tutor_calibrate.py [--false-alarm 0.10] [--splits 50]
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ import statistics as st
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-RES = REPO / "artifacts" / "phase2" / "functional"
+RES = REPO / "phase2" / "results" / "functional"
 TEAMS = ("spec", "mixed")
 
 

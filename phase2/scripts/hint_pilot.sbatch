@@ -1,6 +1,6 @@
 #!/bin/bash
 # Phase-2 hint pilot on one node with 4 GPUs: census (4 shards) -> agents (1 GPU) -> test (4 shards) -> report.
-#   sbatch scripts/phase2/hint_pilot.sbatch            (from the repository copy in $HOME on Turing)
+#   sbatch phase2/scripts/hint_pilot.sbatch            (from the repository copy in $HOME on Turing)
 #SBATCH --job-name=p2-hint-pilot
 #SBATCH --account=priyesh.shukla
 #SBATCH --partition=u22
@@ -11,20 +11,20 @@
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=192G
 #SBATCH --time=04:00:00
-#SBATCH --output=runs-out/slurm-%x-%j.out
+#SBATCH --output=phase2/runs/slurm-%x-%j.out
 
 set -euo pipefail
-ENVROOT=${ENVROOT:-/scratch/$USER/anlp-env}   # built by scripts/phase2/setup_env.sbatch
+ENVROOT=${ENVROOT:-/scratch/$USER/anlp-env}   # built by phase2/scripts/setup_env.sbatch
 MINE=/scratch/$USER/phase2
 mkdir -p "$MINE"
 export PATH=$ENVROOT/venv/bin:$PATH HF_HOME=$MINE/hf_home HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false PYTHONUNBUFFERED=1
 export VLLM_CACHE_ROOT=$MINE/vllm_cache TRITON_CACHE_DIR=$MINE/triton_cache TORCHINDUCTOR_CACHE_DIR=$MINE/inductor_cache
 export XDG_CACHE_HOME=$MINE/xdg_cache FLASHINFER_WORKSPACE_BASE=$MINE/flashinfer
 BASE=$(ls -d $ENVROOT/hf_cache/hub/models--Qwen--Qwen3.5-2B/snapshots/*/ | head -1)
-OUT=${OUT:-runs-out/hint-pilot}   # smoke: OUT=runs-out/hint-smoke POOL=6 AGENT_ARGS=--any-wrong sbatch --gres=gpu:1 ...
+OUT=${OUT:-phase2/runs/hint-pilot}   # smoke: OUT=phase2/runs/hint-smoke POOL=6 AGENT_ARGS=--any-wrong sbatch --gres=gpu:1 ...
 POOL=${POOL:-750}
 GPUS=(${CUDA_VISIBLE_DEVICES//,/ })
-P="python scripts/phase2/hint_pilot.py --out $OUT --base $BASE --pool $POOL"
+P="python phase2/scripts/hint_pilot.py --out $OUT --base $BASE --pool $POOL"
 mkdir -p $OUT/logs
 echo "job $SLURM_JOB_ID on $(hostname) gpus $CUDA_VISIBLE_DEVICES start $(date -u +%FT%TZ) base $BASE"
 nvidia-smi --query-gpu=index,name,memory.total --format=csv,noheader

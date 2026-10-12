@@ -1,15 +1,15 @@
 # Phase-2 results
 
 Curated outputs of the Phase-2 experiments; the write-up is
-[docs/research/phase2/experiments-summary.md](../../docs/research/phase2/experiments-summary.md).
+[../docs/experiments-summary.md](../docs/experiments-summary.md).
 Generated texts (full solutions, agent reasoning) are removed; the complete runs are on Turing under
-`/home/yashas.kotre/anlp-project-phase2/runs-out/`.
+`/home/yashas.kotre/anlp-project-phase2/runs-out/` (generated texts, about 140 MB compressed).
 
 | Folder | Experiment | Code | Jobs |
 |---|---|---|---|
-| `hint-pilot/` | Census of the mixed model's seen SOLVE pool; specialist hints for always-wrong problems | `scripts/phase2/hint_pilot.py` | 43854, 43879 |
-| `functional/` | Tutor (`tutor-*`) and self-checking solver with drift detection (`drift-*`) | `scripts/phase2/functional.py` | 43914, 43921 |
-| `processbench/` | JUDGE on ProcessBench (natural errors) vs the synthetic JUDGE test set, six models | `scripts/phase2/processbench_eval.py` | 43937 |
+| `hint-pilot/` | Census of the mixed model's seen SOLVE pool; specialist hints for always-wrong problems | `../scripts/hint_pilot.py` | 43854, 43879 |
+| `functional/` | Tutor (`tutor-*`) and self-checking solver with drift detection (`drift-*`) | `../scripts/functional.py` | 43914, 43921 |
+| `processbench/` | JUDGE on ProcessBench (natural errors) vs the synthetic JUDGE test set, six models | `../scripts/processbench_eval.py` | 43937 |
 
 Each folder has `summary.json` and the generated report(s). Records are gzipped JSONL:
 

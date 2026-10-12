@@ -1,0 +1,3 @@
+# Job outputs and downloaded benchmarks stay local
+runs/
+data/

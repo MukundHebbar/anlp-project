@@ -1,7 +1,7 @@
 #!/bin/bash
-# JUDGE on synthetic vs natural errors (scripts/phase2/processbench_eval.py): base 2B, the three specialists, the
-# mixed model and Qwen3.5-9B on ProcessBench and the FINAL-v3 JUDGE test set. Needs data/external/processbench/*.json
-# and Qwen3.5-9B in our model cache (REPOS=Qwen/Qwen3.5-9B sbatch scripts/phase2/setup_env.sbatch).
+# JUDGE on synthetic vs natural errors (phase2/scripts/processbench_eval.py): base 2B, the three specialists, the
+# mixed model and Qwen3.5-9B on ProcessBench and the FINAL-v3 JUDGE test set. Needs phase2/data/processbench/*.json
+# and Qwen3.5-9B in our model cache (REPOS=Qwen/Qwen3.5-9B sbatch phase2/scripts/setup_env.sbatch).
 #SBATCH --job-name=p2-processbench
 #SBATCH --account=priyesh.shukla
 #SBATCH --partition=u22
@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task=24
 #SBATCH --mem=160G
 #SBATCH --time=05:00:00
-#SBATCH --output=runs-out/slurm-%x-%j.out
+#SBATCH --output=phase2/runs/slurm-%x-%j.out
 
 set -euo pipefail
 ENVROOT=${ENVROOT:-/scratch/$USER/anlp-env}
@@ -22,11 +22,11 @@ export VLLM_CACHE_ROOT=$MINE/vllm_cache TRITON_CACHE_DIR=$MINE/triton_cache TORC
 export XDG_CACHE_HOME=$MINE/xdg_cache FLASHINFER_WORKSPACE_BASE=$MINE/flashinfer
 BASE=$(ls -d $ENVROOT/hf_cache/hub/models--Qwen--Qwen3.5-2B/snapshots/*/ | head -1)
 BIG9=$(ls -d $ENVROOT/hf_cache/hub/models--Qwen--Qwen3.5-9B/snapshots/*/ | head -1)
-OUT=${OUT:-runs-out/processbench}
-P="python scripts/phase2/processbench_eval.py --out $OUT --base $BASE --big9 $BIG9"
+OUT=${OUT:-phase2/runs/processbench}
+P="python phase2/scripts/processbench_eval.py --out $OUT --base $BASE --big9 $BIG9"
 mkdir -p $OUT/logs
 echo "job $SLURM_JOB_ID on $(hostname) gpus $CUDA_VISIBLE_DEVICES start $(date -u +%FT%TZ)"
-[ -f $OUT/items.jsonl ] || $P prepare --pb-dir data/external/processbench
+[ -f $OUT/items.jsonl ] || $P prepare --pb-dir phase2/data/processbench
 GPUS=(${CUDA_VISIBLE_DEVICES//,/ })
 # Three GPUs: two 2B models each on the first two; RECONSTRUCT then the 9B (own process) on the third.
 CUDA_VISIBLE_DEVICES=${GPUS[0]} $P run --models base,judge > $OUT/logs/run-0.log 2>&1 &

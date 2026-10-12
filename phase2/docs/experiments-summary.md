@@ -95,7 +95,7 @@ the other 400)
 
 **Held-out check.** The thresholds above were read off the full set. Re-done properly: pick the threshold on a random
 half of the solutions (a correct solution and the wrong-question item made from it stay in the same half), measure on
-the other half, 50 random splits in both directions (`scripts/phase2/tutor_calibrate.py`). Mean ± sd:
+the other half, 50 random splits in both directions (`phase2/scripts/tutor_calibrate.py`). Mean ± sd:
 
 | Threshold tuned for | Team | Wrong-question caught: JUDGE alone | JUDGE + RECONSTRUCT | Correct flagged: JUDGE alone | JUDGE + RECONSTRUCT |
 |---|---|---|---|---|---|

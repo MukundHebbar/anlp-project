@@ -1,7 +1,7 @@
 #!/bin/bash
 # CPU-only: our own vLLM environment and model cache on node07's local scratch, with the same pins as
 # scripts/turing/setup_env.sbatch (the shared copy under /scratch/mukund.hebbar was purged on 2026-10-11).
-#   sbatch scripts/phase2/setup_env.sbatch
+#   sbatch phase2/scripts/setup_env.sbatch
 #SBATCH --job-name=p2-setup
 #SBATCH --account=priyesh.shukla
 #SBATCH --partition=u22
@@ -11,7 +11,7 @@
 #SBATCH --cpus-per-task=2   # >2 CPUs on a CPU-only job adds gpu:1 billing
 #SBATCH --mem=16G
 #SBATCH --time=03:00:00
-#SBATCH --output=runs-out/slurm-%x-%j.out
+#SBATCH --output=phase2/runs/slurm-%x-%j.out
 
 set -euo pipefail
 ROOT="/scratch/$USER/anlp-env"
