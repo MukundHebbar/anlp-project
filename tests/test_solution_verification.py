@@ -131,3 +131,13 @@ class CheckerV3Tests(unittest.TestCase):
         with ThreadPoolExecutor(4) as pool:
             out = list(pool.map(lambda pair: compare_answers(*pair), [("2^k", "n = 2^k"), ("4", "5")] * 4))
         self.assertEqual(out, ["correct", "incorrect"] * 4)
+
+    def test_nested_factorials_return_without_hanging(self):
+        # "23!!" hung AIME scoring: SymPy read it as (23!)! inside math-verify, where the alarm cannot interrupt.
+        import time
+        for answer in ("23!!", r"\frac{24!}{2^{12} 12!} = 23!!", "(5!)!", "12345!"):
+            start = time.time()
+            self.assertEqual(compare_answers("113", answer), "unverified", answer)
+            self.assertLess(time.time() - start, 5, answer)
+        for key, answer in (("120", "5!"), ("3628800", "10!"), ("n!", "n!")):  # ordinary factorials still verify
+            self.assertEqual(compare_answers(key, answer), "correct", (key, answer))
