@@ -53,6 +53,9 @@ def main():
     ap.add_argument("--teacher-port", type=int, default=8001)
     ap.add_argument("--external-teacher", action="store_true")
     ap.add_argument("--teacher-host", default="127.0.0.1", help="host of an external teacher (another node)")
+    ap.add_argument("--prompts-file", default="",
+                    help="jsonl of {uid, prompt, task}: exactly --steps x prompts_per_step prompts for this run, in order "
+                         "(overrides --task/--prompts selection; use --task mixed when it holds several tasks)")
     ap.add_argument("--prompts", default="trial", choices=["trial", "warmup", "matrix"],
                     help="OPD training questions: the trial slice, or the SFT warm-up questions (paired demonstrations)")
     ap.add_argument("--gate", type=int, default=0, help="teacher signal only for rollouts up to this many tokens")
@@ -103,7 +106,12 @@ def main():
     if a.teacher_instruction:
         cfg["teacher_system_prompt"] = opd.TEACHER_INSTRUCTIONS[a.teacher_instruction]
     B = cfg["prompts_per_step"]
-    if a.task == "mixed":  # equal thirds of the three tasks, interleaved (opd.mixed_prompts)
+    if a.prompts_file:  # an explicit prompt list for exactly this run (start_step only numbers the steps)
+        pool = [json.loads(line) for line in open(a.prompts_file)]
+        if len(pool) != a.steps * B:
+            raise SystemExit(f"--prompts-file has {len(pool)} prompts; expected steps x prompts_per_step = {a.steps * B}")
+        pool = [None] * (a.start_step * B) + pool
+    elif a.task == "mixed":  # equal thirds of the three tasks, interleaved (opd.mixed_prompts)
         pool = opd.mixed_prompts(a.mixed_per_task)
     elif a.prompts == "matrix":
         pool = opd.matrix_prompts(a.task, (a.start_step + a.steps) * B)
@@ -113,7 +121,7 @@ def main():
     prompts = pool[a.start_step * B:(a.start_step + a.steps) * B]
     res = run_opd(a.task, prompts, cfg, Path(a.out), snapshot_download(cfg["student"], local_files_only=True),
                   snapshot_download(cfg["teacher"], local_files_only=True) if cfg.get("teacher") else None, steps=a.steps,
-                  meta={"platform": "turing-l40s", "gpus": gpus, "overrides": a.set, "prompts": a.prompts,
+                  meta={"platform": "turing-l40s", "gpus": gpus, "overrides": a.set, "prompts": a.prompts_file or a.prompts,
                         "config_name": a.config, "external_teacher": a.external_teacher},
                   teacher_gpus=("" if a.external_teacher or a.config == "grpo" else
                                 gpus[1] if a.config == "opd9b" else f"{gpus[1]},{gpus[2]}"),

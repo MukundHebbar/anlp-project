@@ -232,6 +232,13 @@ GRPO_CONFIG: dict[str, Any] = {
     # (adapters/best-step<k>, out/best.json). 0 = off.
     "best_window": 0,
     "best_keep": 3,
+    # Judge for the JUDGE explanation and RECONSTRUCT rewards: "jev" (the Jev API) or "qwen" (Qwen3.8-27B logit judge,
+    # qwen_judging.QwenJudge, already serving on reward_judge_port; it answers Jev's questions in Jev's shape).
+    "reward_judge": "jev",
+    "reward_judge_port": 8002,
+    # Optional jsonl of extra answer-key rows (FINAL-v3 row format) for prompts outside the train split, such as
+    # auxiliary items built during training (phase2/failure_driven).
+    "extra_reward_rows": None,
 }
 
 

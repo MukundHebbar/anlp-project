@@ -231,7 +231,23 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
             from .jev_judging import Jev
             tasks_here = sorted(set(task_of.values()))
             reward_rows = {r_["uid"]: r_ for t_ in tasks_here for r_ in load_rows(t_, "train")}
-            jev = Jev() if any(t_ != "solve" for t_ in tasks_here) else None
+            if cfg.get("extra_reward_rows"):  # answer keys for prompts outside the train split
+                for line in open(cfg["extra_reward_rows"]):
+                    r_ = json.loads(line)
+                    if r_["uid"] in reward_rows:
+                        raise ValueError(f"extra reward row {r_['uid']} collides with a train-split uid")
+                    reward_rows[r_["uid"]] = r_
+            missing = [u for u in task_of if u not in reward_rows]
+            if missing:
+                raise ValueError(f"{len(missing)} prompts have no answer-key row, e.g. {missing[:3]}")
+            jev = None
+            if any(t_ != "solve" for t_ in tasks_here):
+                if cfg.get("reward_judge", "jev") == "qwen":
+                    from huggingface_hub import snapshot_download as _snap
+                    from .qwen_judging import MODEL as _QMODEL, QwenJudge
+                    jev = QwenJudge(_snap(_QMODEL, local_files_only=True), port=cfg.get("reward_judge_port", 8002))
+                else:
+                    jev = Jev()
             G = cfg["samples_per_prompt"]
 
         eos_ids = {tok.convert_tokens_to_ids(t) for t in ("<|im_end|>", "<|endoftext|>")}

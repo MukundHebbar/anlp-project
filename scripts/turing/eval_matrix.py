@@ -27,9 +27,23 @@ from anlp_project import baseline, opd  # noqa: E402
 from anlp_project.opd_monitor import repetition_score  # noqa: E402
 
 
+UIDS_FILE = ""  # --uids-file, for --split uids
+ROWS_FILE = ""  # --rows-file: answer-key rows for --split uids outside the train split
+
+
 def rows_for(split: str, task: str) -> list[dict]:
     if split == "test":
         return baseline.rows_for("test", [task])
+    if split == "uids":  # chosen train-split questions, in the file's order (e.g. a failure buffer's halves)
+        wanted = json.loads(Path(UIDS_FILE).read_text())
+        if ROWS_FILE:  # e.g. the failure-driven pool's SOLVE rows (phase2/failure_driven/data/solve_rows.jsonl)
+            by_uid = {r["uid"]: r for r in map(json.loads, open(ROWS_FILE)) if r["task"] == task}
+        else:
+            by_uid = {r["uid"]: r for r in baseline.load_rows(task, "train")}
+        missing = [u for u in wanted if u not in by_uid]
+        if missing:
+            raise SystemExit(f"{len(missing)} uids not in the {task} rows, e.g. {missing[:3]}")
+        return [by_uid[u] for u in wanted]
     return opd.slice_rows(task, "dev")
 
 
@@ -133,7 +147,9 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--adapter", default="")
     ap.add_argument("--model", default="", help="model to evaluate (default: the student, opd.TRIAL_CONFIG)")
-    ap.add_argument("--split", default="test", choices=["test", "dev"])
+    ap.add_argument("--split", default="test", choices=["test", "dev", "uids"])
+    ap.add_argument("--uids-file", default="", help="--split uids: JSON list of train-split uids to evaluate")
+    ap.add_argument("--rows-file", default="", help="--split uids: jsonl rows to take them from (default: train split)")
     ap.add_argument("--tasks", default="solve,judge,reconstruct")
     ap.add_argument("--first-cap", type=int, default=16384)
     ap.add_argument("--max-cap", type=int, default=32768)
@@ -143,6 +159,10 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="only the first N questions per task (smoke test)")
     ap.add_argument("--worker", default="", help=argparse.SUPPRESS)
     a = ap.parse_args()
+    global UIDS_FILE, ROWS_FILE
+    UIDS_FILE, ROWS_FILE = a.uids_file, a.rows_file
+    if a.split == "uids" and not a.uids_file:
+        raise SystemExit("--split uids needs --uids-file")
     out = Path(a.out)
     tasks = a.tasks.split(",")
     if a.worker:
@@ -162,7 +182,7 @@ def main():
                 cmd = [sys.executable, __file__, "--name", a.name, "--out", str(out), "--adapter", a.adapter,
                        "--model", a.model, "--samples", str(a.samples), "--samples-tasks", a.samples_tasks,
                        "--limit", str(a.limit),
-                       "--split", a.split, "--tasks", a.tasks, "--first-cap", str(a.first_cap), "--max-cap",
+                       "--split", a.split, "--uids-file", a.uids_file, "--rows-file", a.rows_file, "--tasks", a.tasks, "--first-cap", str(a.first_cap), "--max-cap",
                        str(a.max_cap), "--worker", t]
                 out.mkdir(parents=True, exist_ok=True)
                 running[g] = (t, subprocess.Popen(cmd, env={**os.environ, "CUDA_VISIBLE_DEVICES": g},
