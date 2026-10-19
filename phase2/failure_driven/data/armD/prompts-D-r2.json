@@ -1,0 +1,8 @@
+{
+ "round": 2,
+ "prompts": 256,
+ "solve": 192,
+ "replay_slots": 64,
+ "distinct_replayed": 28,
+ "max_uses_per_question": 3
+}
