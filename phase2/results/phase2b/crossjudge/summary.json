@@ -1,0 +1,50 @@
+{
+ "own (mixed, step format)": {
+  "attempts": 740,
+  "accuracy": 68.9,
+  "mean_tokens": 6317,
+  "mean_steps": 16.5,
+  "spec_auroc": 0.583,
+  "spec_d_prime": 0.526,
+  "spec_criterion": 1.443,
+  "mixed_auroc": 0.537,
+  "mixed_d_prime": 0.201,
+  "mixed_criterion": 1.259
+ },
+ "untrained 2B": {
+  "attempts": 729,
+  "accuracy": 43.2,
+  "mean_tokens": 4662,
+  "mean_steps": 21.3,
+  "spec_auroc": 0.55,
+  "spec_d_prime": 0.304,
+  "spec_criterion": 0.732,
+  "mixed_auroc": 0.49,
+  "mixed_d_prime": 0.084,
+  "mixed_criterion": 0.56
+ },
+ "Qwen3.5-9B": {
+  "attempts": 795,
+  "accuracy": 78.0,
+  "mean_tokens": 1902,
+  "mean_steps": 14.1,
+  "spec_auroc": 0.628,
+  "spec_d_prime": 0.568,
+  "spec_criterion": 1.203,
+  "mixed_auroc": 0.59,
+  "mixed_d_prime": 0.725,
+  "mixed_criterion": 0.925
+ },
+ "own, condensed by 9B": {
+  "attempts": 634,
+  "accuracy": 71.6,
+  "mean_tokens": 482,
+  "mean_steps": 6.1,
+  "spec_auroc": 0.665,
+  "spec_d_prime": 0.861,
+  "spec_criterion": 0.889,
+  "mixed_auroc": 0.586,
+  "mixed_d_prime": 0.657,
+  "mixed_criterion": 0.881
+ }
+}

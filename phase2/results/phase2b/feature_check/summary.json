@@ -1,0 +1,81 @@
+{
+ "steps": 8587,
+ "first_error": 801,
+ "clean": 5133,
+ "layers": {
+  "L12": {
+   "position_only_test_auroc": 0.4937,
+   "relative_position_only_test_auroc": 0.5097,
+   "length_only_test_auroc": 0.6743,
+   "latents": [
+    {
+     "latent": 6926,
+     "direction": "higher on first errors",
+     "test_auroc": 0.7309,
+     "test_auroc_excl_last_and_final_answer_steps": 0.7181,
+     "test_auroc_within_wrong_solutions_first_error_vs_earlier": 0.7038,
+     "test_auroc_stratified_by_step_index": 0.7314,
+     "controls_only_test_auroc": 0.6926,
+     "controls_plus_feature_test_auroc": 0.7857
+    },
+    {
+     "latent": 1695,
+     "direction": "higher on first errors",
+     "test_auroc": 0.691,
+     "test_auroc_excl_last_and_final_answer_steps": 0.684,
+     "test_auroc_within_wrong_solutions_first_error_vs_earlier": 0.6494,
+     "test_auroc_stratified_by_step_index": 0.6881,
+     "controls_only_test_auroc": 0.6926,
+     "controls_plus_feature_test_auroc": 0.7452
+    },
+    {
+     "latent": 3232,
+     "direction": "higher on first errors",
+     "test_auroc": 0.6971,
+     "test_auroc_excl_last_and_final_answer_steps": 0.6852,
+     "test_auroc_within_wrong_solutions_first_error_vs_earlier": 0.692,
+     "test_auroc_stratified_by_step_index": 0.6979,
+     "controls_only_test_auroc": 0.6926,
+     "controls_plus_feature_test_auroc": 0.7532
+    }
+   ]
+  },
+  "L18": {
+   "position_only_test_auroc": 0.4937,
+   "relative_position_only_test_auroc": 0.5097,
+   "length_only_test_auroc": 0.6743,
+   "latents": [
+    {
+     "latent": 6596,
+     "direction": "higher on first errors",
+     "test_auroc": 0.8029,
+     "test_auroc_excl_last_and_final_answer_steps": 0.7952,
+     "test_auroc_within_wrong_solutions_first_error_vs_earlier": 0.798,
+     "test_auroc_stratified_by_step_index": 0.8009,
+     "controls_only_test_auroc": 0.6926,
+     "controls_plus_feature_test_auroc": 0.8205
+    },
+    {
+     "latent": 7495,
+     "direction": "higher on first errors",
+     "test_auroc": 0.7486,
+     "test_auroc_excl_last_and_final_answer_steps": 0.75,
+     "test_auroc_within_wrong_solutions_first_error_vs_earlier": 0.7231,
+     "test_auroc_stratified_by_step_index": 0.7473,
+     "controls_only_test_auroc": 0.6926,
+     "controls_plus_feature_test_auroc": 0.7977
+    },
+    {
+     "latent": 4270,
+     "direction": "higher on first errors",
+     "test_auroc": 0.7415,
+     "test_auroc_excl_last_and_final_answer_steps": 0.7356,
+     "test_auroc_within_wrong_solutions_first_error_vs_earlier": 0.7272,
+     "test_auroc_stratified_by_step_index": 0.7347,
+     "controls_only_test_auroc": 0.6926,
+     "controls_plus_feature_test_auroc": 0.795
+    }
+   ]
+  }
+ }
+}
