@@ -1,7 +1,7 @@
 """GRPO rewards in [0, 1] for one rollout. A rollout that fails a strict gate or hits the cap earns 0.
 
 - SOLVE: 1 if the single final answer matches the key (verifier v2), else 0. Unverified answers earn 0.
-- JUDGE: 0.5 for the right verdict, 0.25 more for the right first wrong step ("none" for a correct
+- JUDGE: rows marked ``verdict_only`` earn 1 for the right verdict, else 0. Otherwise 0.5 for the right verdict, 0.25 more for the right first wrong step ("none" for a correct
   solution), 0.25 more for Jev's explanation and soundness, (E + M) / 8 on the probability-weighted levels,
   when the verdict is right.
 - RECONSTRUCT: the Jev pipeline's probability-weighted score / 100 (gate -> few-shot shortcut stage ->
@@ -32,6 +32,8 @@ def judge_reward(row: dict[str, Any], text: str, finish: str, jev: jj.Jev | None
         return 0.0
     key = row["private"]
     decision, step = parse_judge_response(text)
+    if key.get("verdict_only"):  # labels without a first-error step (e.g. the policy's own attempts): verdict only
+        return float(decision == key["label"])
     if decision != key["label"]:
         return 0.0
     key_step = key["first_error_step_id"] if key["label"] == "incorrect" else "none"

@@ -242,9 +242,115 @@
    "command": "--nodelist=node07 phase2/next/transplant3c.sbatch",
    "elapsed_s": 2980,
    "charged_gpu_hours": 1.656
+  },
+  {
+   "name": "p2b-select",
+   "job_id": 47348,
+   "gpus": 2,
+   "walltime_h": 2.5,
+   "reserved_gpu_hours": 5.0,
+   "status": "cancelled",
+   "submitted": "2026-10-21T17:59:53",
+   "command": "--nodelist=node14 phase2/next/select.sbatch",
+   "elapsed_s": 94,
+   "charged_gpu_hours": 0.052
+  },
+  {
+   "name": "p2b-select2",
+   "job_id": 47349,
+   "gpus": 2,
+   "walltime_h": 3.0,
+   "reserved_gpu_hours": 6.0,
+   "status": "cancelled",
+   "submitted": "2026-10-21T18:01:57",
+   "command": "--nodelist=node14 phase2/next/select.sbatch",
+   "elapsed_s": 8586,
+   "charged_gpu_hours": 4.77
+  },
+  {
+   "name": "p2c-sj-gen",
+   "job_id": 47426,
+   "gpus": 4,
+   "walltime_h": 1.5,
+   "reserved_gpu_hours": 6.0,
+   "status": "failed",
+   "submitted": "2026-10-21T20:44:30",
+   "command": "--nodelist=node14 phase2/selfjudge/gen.sbatch",
+   "elapsed_s": 2400,
+   "charged_gpu_hours": 2.667
+  },
+  {
+   "name": "p2c-sj-train",
+   "job_id": 47434,
+   "gpus": 2,
+   "walltime_h": 4.0,
+   "reserved_gpu_hours": 8.0,
+   "status": "failed",
+   "submitted": "2026-10-21T21:26:56",
+   "command": "--nodelist=node07 --gres=gpu:2 --time=04:00:00 phase2/selfjudge/train.sbatch",
+   "elapsed_s": 157,
+   "charged_gpu_hours": 0.087
+  },
+  {
+   "name": "p2c-sj-train2",
+   "job_id": 47435,
+   "gpus": 2,
+   "walltime_h": 4.0,
+   "reserved_gpu_hours": 8.0,
+   "status": "cancelled",
+   "submitted": "2026-10-21T21:31:28",
+   "command": "--nodelist=node07 --gres=gpu:2 --time=04:00:00 phase2/selfjudge/train.sbatch",
+   "elapsed_s": 250,
+   "charged_gpu_hours": 0.139
+  },
+  {
+   "name": "p2c-sj-train3",
+   "job_id": 47436,
+   "gpus": 2,
+   "walltime_h": 4.0,
+   "reserved_gpu_hours": 8.0,
+   "status": "completed",
+   "submitted": "2026-10-21T21:35:47",
+   "command": "--nodelist=node07 --gres=gpu:2 --time=04:00:00 phase2/selfjudge/train.sbatch",
+   "elapsed_s": 12685,
+   "charged_gpu_hours": 7.047
+  },
+  {
+   "name": "p2c-sj-eval16",
+   "job_id": 47460,
+   "gpus": 1,
+   "walltime_h": 3.0,
+   "reserved_gpu_hours": 3.0,
+   "status": "completed",
+   "submitted": "2026-10-21T23:28:00",
+   "command": "--nodelist=node14 --gres=gpu:1 --time=03:00:00 phase2/selfjudge/evaluate.sbatch",
+   "elapsed_s": 4663,
+   "charged_gpu_hours": 1.295
+  },
+  {
+   "name": "p2c-sj-eval32",
+   "job_id": 47492,
+   "gpus": 1,
+   "walltime_h": 1.5,
+   "reserved_gpu_hours": 1.5,
+   "status": "completed",
+   "submitted": "2026-10-22T01:08:01",
+   "command": "--nodelist=node07 --gres=gpu:1 --time=01:30:00 phase2/selfjudge/evaluate.sbatch",
+   "elapsed_s": 1152,
+   "charged_gpu_hours": 0.32
+  },
+  {
+   "name": "p2c-sj-evaltest",
+   "job_id": 47503,
+   "gpus": 1,
+   "walltime_h": 3.0,
+   "reserved_gpu_hours": 3.0,
+   "status": "submitted",
+   "submitted": "2026-10-22T01:28:43",
+   "command": "--nodelist=node07 --gres=gpu:1 --time=03:00:00 --export=ALL,SPLIT=test,STEPS=32 phase2/selfjudge/evaluate.sbatch"
   }
  ],
- "charged_gpu_hours": 39.882,
- "reserved_gpu_hours": 0,
- "remaining_gpu_hours": 40.118
+ "charged_gpu_hours": 56.259,
+ "reserved_gpu_hours": 3.0,
+ "remaining_gpu_hours": 20.741
 }

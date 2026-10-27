@@ -172,7 +172,7 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
     # task "mixed": every prompt carries its own task (opd.mixed_prompts); one cap for all of them.
     cap = max(cfg["rollout_max_tokens"].values()) if task == "mixed" else cfg["rollout_max_tokens"][task]
     task_of = {p_["uid"]: p_.get("task", task) for p_ in prompts}
-    max_len = cap + 4096
+    max_len = cap + cfg.get("prompt_max_tokens", 4096)  # room for the prompt (long for judging own attempts)
     r = cfg["lora"]["r"]
     procs = []
     try:
@@ -241,7 +241,7 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
             if missing:
                 raise ValueError(f"{len(missing)} prompts have no answer-key row, e.g. {missing[:3]}")
             jev = None
-            if any(t_ != "solve" for t_ in tasks_here):
+            if any(t_ != "solve" for t_ in tasks_here) and cfg.get("reward_judge", "jev") != "none":
                 if cfg.get("reward_judge", "jev") == "qwen":
                     from huggingface_hub import snapshot_download as _snap
                     from .qwen_judging import MODEL as _QMODEL, QwenJudge
