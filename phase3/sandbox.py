@@ -1,10 +1,13 @@
 """Run model-written Python programs for evidence.py (program checks and program-of-thought).
 
 Each program runs in its own temporary directory with `python -I`, an empty environment, CPU/memory/file-size limits and
-a 10 s wall clock, inside unprivileged user + mount + network namespaces (`unshare -rmn`): no network, and empty tmpfs
-mounts cover all of $HOME, the repository, /scratch, /tmp and the model cache. Only the Python install and the venv
-(read-only) and the program's own temporary directory are bound back. The regex denylist is only a first filter
-(status "blocked"); the namespaces are the isolation boundary. Missing `unshare` or /mnt is an error, not a fallback.
+a 10 s wall clock, inside unprivileged user + mount + network + PID namespaces (`unshare -rmnpf --mount-proc`): no
+network, a private /proc, and empty tmpfs mounts over all of $HOME, the repository, /scratch, /tmp, /var/tmp, /run,
+/var/run, /dev/shm and the model cache (no host files or Unix sockets there). Only the Python install and the venv
+(read-only) and the program's own temporary directory are bound back. Python then starts with an empty capability
+bounding set and no_new_privs (`setpriv`), so the program cannot unmount or remount anything. The regex denylist is
+only a first filter (status "blocked"); the namespaces are the isolation boundary. Missing `unshare`, `setpriv` or
+/mnt is an error, not a fallback.
 Results are added in place to each completion: {code, status, last_line}.
 status: ok | no_code | blocked | timeout | error | no_output
 """
@@ -25,16 +28,19 @@ _BLOCK = re.compile(r"\b(import\s+(os|subprocess|shutil|socket|requests|urllib|p
                     r"\b(os|subprocess|shutil|socket|pathlib|ctypes)\s*[,.]|,\s*(os|subprocess|shutil|socket)\b)")
 TIMEOUT = 10
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HIDE = [os.path.expanduser("~"), ROOT, "/scratch", "/tmp", os.environ.get("HF_HOME", "/nonexistent")]
+HIDE = [os.path.expanduser("~"), ROOT, "/scratch", "/tmp", "/var/tmp", "/run", "/var/run", "/dev/shm",
+        os.environ.get("HF_HOME", "/nonexistent")]
 KEEP = sorted({os.path.realpath(p) for p in (sys.prefix, sys.base_prefix)})  # read-only, bound back after hiding
-# $1 = program dir. Stage the kept dirs on a tmpfs at /mnt, cover every HIDE path with an empty tmpfs, then bind the
-# kept dirs (read-only) and the program dir back at their own paths.
+# $1 = program dir. Stage the kept dirs on a tmpfs at /mnt, cover every HIDE path with an empty tmpfs, bind the kept
+# dirs (read-only) and the program dir back at their own paths, drop the staging mount, then drop every capability.
 _JAIL = ("set -e; d=$1; shift; mount -t tmpfs none /mnt; i=0; for k in \"$d\" \"$@\"; do "
          'mkdir /mnt/$i; mount --bind "$k" /mnt/$i; i=$((i+1)); done; '
-         "for p in " + " ".join(f"'{p}'" for p in HIDE) + '; do [ -d "$p" ] && mount -t tmpfs none "$p"; done; '
+         "for p in " + " ".join(f"'{p}'" for p in HIDE) + '; do if [ -d "$p" ] && [ ! -L "$p" ]; then '
+         'mount -t tmpfs none "$p"; fi; done; '
          'i=0; for k in "$d" "$@"; do mkdir -p "$k"; mount --bind /mnt/$i "$k"; '
-         '[ $i -gt 0 ] && mount -o remount,bind,ro "$k"; i=$((i+1)); done; '
-         'cd "$d"; exec "$PY" -I prog.py')
+         'if [ $i -gt 0 ]; then mount -o remount,bind,ro "$k"; fi; i=$((i+1)); done; '
+         'umount -l /mnt; cd "$d"; '
+         'exec setpriv --no-new-privs --inh-caps=-all --ambient-caps=-all --bounding-set=-all "$PY" -I prog.py')
 
 
 def extract(text):
@@ -59,8 +65,8 @@ def run(code):
         with open(path, "w") as fh:
             fh.write(code)
         try:
-            p = subprocess.run(["unshare", "-rmn", "sh", "-c", _JAIL, "jail", d, *KEEP], cwd=d, capture_output=True,
-                               text=True, timeout=TIMEOUT,
+            p = subprocess.run(["unshare", "-rmnpf", "--mount-proc", "sh", "-c", _JAIL, "jail", d, *KEEP], cwd=d,
+                               capture_output=True, text=True, timeout=TIMEOUT,
                                env={"PATH": "/usr/bin:/bin", "PY": sys.executable, "OMP_NUM_THREADS": "1",
                                     "OPENBLAS_NUM_THREADS": "1"},
                                preexec_fn=_limits, stdin=subprocess.DEVNULL)
