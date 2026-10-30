@@ -1,0 +1,19 @@
+\begin{abstract}
+Training a 2B model to judge its own mathematical attempts raised its AUROC from 0.57 to 0.67, yet picking among its
+answers did not improve. We show this is predicted, not anomalous. Three measurement illusions hide what a
+self-verifier can do:
+(i) a lenient judge looks near chance under sampled verdicts even when its underlying score discriminates;
+(ii) on a typical pool, 99.9\% of the pairs behind an AUROC compare different questions, while selection and repair
+provably use only within-question information; and
+(iii) majority vote saturates, and before that point verification cannot beat it at equal compute.
+
+A five-parameter model fitted only to 4-attempt aggregates predicts the 16-attempt scaling curves of 16,000 new
+attempts to within a point. Reading verdict probabilities instead of sampling verdicts raises the judge's AUROC by 0.07
+to 0.09 (paired 95\% CIs exclude zero). Judge-free trace features match the trained judge's pooled AUROC yet are at
+chance on contested questions, exactly as the theory requires.
+
+The theory predicts a procedure, contest-adaptive verification, that spends judgement only where sampled answers
+disagree. In a pre-registered test on 800 questions it beats majority vote at equal compute by $+1.6$ points
+$[+0.5, +2.6]$ and passes the plateau that voting and adaptive-consistency share, close to the $\approx+1.3$ the
+model predicted before judging.
+\end{abstract}

@@ -1,0 +1,54 @@
+\section{A Model of Self-Verified Answer Selection}
+\label{sec:model}
+
+\paragraph{Solver.}
+For a question $x$ the solver draws attempts $y_1,\dots,y_N$ independently. Each attempt is right ($Z_i=1$) with
+probability $p_x$, and right attempts share the true answer. A wrong attempt gives the question's \emph{attractor}
+wrong answer with probability $\rho$, and otherwise a wrong answer of its own. Solve rates are heterogeneous:
+$p_x\sim\mathrm{Beta}(a,b)$. Majority vote picks the most common answer and breaks ties uniformly.
+
+\paragraph{Judge.}
+The judge sees one attempt at a time. It has a latent score
+\begin{equation}
+u_i = c_0 + \gamma z_x + d\,Z_i + \eta_i,\qquad \eta_i\sim\mathcal N(0,1),
+\label{eq:judge}
+\end{equation}
+and each sampled verdict says ``correct'' with probability $\Phi(u_i)$. Here $z_x$ is the standardised logit of
+$p_x$, so $\gamma$ is a \emph{between-question} (difficulty) signal, $d$ is the \emph{within-question} signal, and
+$c_0$ is the judge's leniency. Optionally $\eta$ is shared, with weight $\rho_s$, by attempts that give the same
+answer. With $V$ sampled verdicts, $q_i$ is the share of ``correct'' verdicts.
+
+\paragraph{Calibration.}
+Three numbers per split fit $(a,b,\rho)$ exactly: single-attempt accuracy, pass@4 and majority@4. On the test split
+($67.4$, $82.8$, $74.0$) this gives $\mathrm{Beta}(0.46, 0.22)$ and $\rho=0.37$. The fit is U-shaped: questions are
+mostly almost-always-right or almost-always-wrong.
+
+The model is checked on numbers that were not used to fit it (Table~\ref{tab:validation}):
+\begin{itemize}
+\item the share of training questions answered right (or wrong) in all of 8 tries;
+\item the accuracy gain from regenerating the attempts the mixed judge flagged;
+\item the AUROC of the untrained judge with four sampled verdicts (\S\ref{sec:lenient});
+\item majority vote and pass@$N$ at 16 attempts per question.
+\end{itemize}
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Quantity (not used in fitting) & Model & Measured \\
+\midrule
+Always right in 8 tries & 0.43 & 0.39 \\
+Always wrong in 8 tries & 0.12 & 0.11 \\
+Repair gain, mixed-judge flags (pts) & +0.30 & +0.38 \\
+Judge AUROC, 4 sampled verdicts & 0.568 & 0.568 \\
+Dev majority@8 / @16 (\%) & 81.6 / 82.5 & 80.2 / 81.3 \\
+Dev pass@16 (\%) & 94.1 & 92.0 \\
+Test majority@8 / @16 (\%) & 77.5 / 78.2 & 77.5 / 78.7 \\
+Test pass@16 (\%) & 90.8 & 90.2 \\
+\bottomrule
+\end{tabular}
+\caption{Out-of-sample checks of the model, fitted only to the Phase-2 4-attempt aggregates. Rows 1--3 use the
+Phase-2 report. Row 4 uses a judge fitted only to single-verdict flag rates (\S\ref{sec:lenient}). Rows 5--8 use the
+16-attempt pools of this paper.}
+\label{tab:validation}
+\end{table}

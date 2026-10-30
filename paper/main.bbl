@@ -1,0 +1,154 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Aggarwal et~al.(2023)Aggarwal, Madaan, Yang, and
+  Mausam}]{aggarwal2023adaptive}
+Pranjal Aggarwal, Aman Madaan, Yiming Yang, and Mausam. 2023.
+\newblock Let's sample step by step: Adaptive-consistency for efficient
+  reasoning and coding with {LLM}s.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
+  Natural Language Processing}.
+
+\bibitem[{Berend and Kontorovich(2014)}]{berend2014consistency}
+Daniel Berend and Aryeh Kontorovich. 2014.
+\newblock Consistency of weighted majority votes.
+\newblock \emph{arXiv preprint arXiv:1312.0451}.
+
+\bibitem[{Brown et~al.(2024)Brown, Juravsky, Ehrlich, Clark, Le, R{\'e}, and
+  Mirhoseini}]{brown2024monkeys}
+Bradley Brown, Jordan Juravsky, Ryan Ehrlich, Ronald Clark, Quoc~V. Le,
+  Christopher R{\'e}, and Azalia Mirhoseini. 2024.
+\newblock Large language monkeys: Scaling inference compute with repeated
+  sampling.
+\newblock \emph{arXiv preprint arXiv:2407.21787}.
+
+\bibitem[{Bulut(2026)}]{bulut2026problem}
+Yigit~Utku Bulut. 2026.
+\newblock It's the problem, not the path: Budget and difficulty confounds in
+  {LLM} reasoning trajectories.
+\newblock \emph{arXiv preprint arXiv:2609.03436}.
+
+\bibitem[{Cacioli(2026)}]{sdt2026signal}
+Cacioli. 2026.
+\newblock {LLMs} as signal detectors: Sensitivity, bias, and the
+  temperature-criterion analogy.
+\newblock \emph{arXiv preprint arXiv:2603.14893}.
+
+\bibitem[{Chen et~al.(2024)Chen, Davis, Hanin, Bailis, Stoica, Zaharia, and
+  Zou}]{chen2024morecalls}
+Lingjiao Chen, Jared~Quincy Davis, Boris Hanin, Peter Bailis, Ion Stoica, Matei
+  Zaharia, and James Zou. 2024.
+\newblock Are more {LLM} calls all you need? towards the scaling properties of
+  compound {AI} systems.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Cobbe et~al.(2021)Cobbe, Kosaraju, Bavarian, Chen, Jun, Kaiser,
+  Plappert, Tworek, Hilton, Nakano, Hesse, and Schulman}]{cobbe2021gsm8k}
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz
+  Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano,
+  Christopher Hesse, and John Schulman. 2021.
+\newblock Training verifiers to solve math word problems.
+\newblock \emph{arXiv preprint arXiv:2110.14168}.
+
+\bibitem[{He et~al.(2026)He, Liang, Xu, Liu, Chen, Wang, Song, Yu, Liang, Wang,
+  Zhang, Wang, Tu, Mi, and Yu}]{he2026deepmath}
+Zhiwei He, Tian Liang, Jiahao Xu, Qiuzhi Liu, Xingyu Chen, Yue Wang, Linfeng
+  Song, Dian Yu, Zhenwen Liang, Wenxuan Wang, Zhuosheng Zhang, Rui Wang,
+  Zhaopeng Tu, Haitao Mi, and Dong Yu. 2026.
+\newblock \href {https://arxiv.org/abs/2504.11456} {{DeepMath-103K}: A
+  large-scale, challenging, decontaminated, and verifiable mathematical dataset
+  for advancing reasoning}.
+\newblock In \emph{The Fourteenth International Conference on Learning
+  Representations}.
+
+\bibitem[{Huang et~al.(2024)Huang, Chen, Mishra, Zheng, Yu, Song, and
+  Zhou}]{huang2024cannot}
+Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu~Steven Zheng, Adams~Wei Yu,
+  Xinying Song, and Denny Zhou. 2024.
+\newblock Large language models cannot self-correct reasoning yet.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Kadavath et~al.(2022)}]{kadavath2022know}
+Saurav Kadavath et~al. 2022.
+\newblock Language models (mostly) know what they know.
+\newblock \emph{arXiv preprint arXiv:2207.05221}.
+
+\bibitem[{Lightman et~al.(2023)Lightman, Kosaraju, Burda, Edwards, Baker, Lee,
+  Leike, Schulman, Sutskever, and Cobbe}]{lightman2023verify}
+Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy
+  Lee, Jan Leike, John Schulman, Ilya Sutskever, and Karl Cobbe. 2023.
+\newblock Let's verify step by step.
+\newblock \emph{arXiv preprint arXiv:2305.20050}.
+
+\bibitem[{Liu et~al.(2025)}]{liu2025drgrpo}
+Zichen Liu et~al. 2025.
+\newblock Understanding {R1-Zero}-like training: A critical perspective.
+\newblock \emph{arXiv preprint arXiv:2503.20783}.
+
+\bibitem[{Miller(2024)}]{miller2024errorbars}
+Evan Miller. 2024.
+\newblock Adding error bars to evals: A statistical approach to language model
+  evaluations.
+\newblock \emph{arXiv preprint arXiv:2411.00640}.
+
+\bibitem[{Nitzan and Paroush(1982)}]{nitzan1982optimal}
+Shmuel Nitzan and Jacob Paroush. 1982.
+\newblock Optimal decisive rules in uncertain dichotomous choice situations.
+\newblock \emph{International Economic Review}, 23(2):289--297.
+
+\bibitem[{Saad-Falcon et~al.(2025)}]{saadfalcon2025weaver}
+Jon Saad-Falcon et~al. 2025.
+\newblock Weaver: Shrinking the generation-verification gap with weak
+  verifiers.
+\newblock \emph{arXiv preprint}.
+
+\bibitem[{Schaeffer et~al.(2025)}]{schaeffer2025monkeys}
+Rylan Schaeffer et~al. 2025.
+\newblock How do large language monkeys get their power (laws)?
+\newblock In \emph{International Conference on Machine Learning}.
+
+\bibitem[{Snell et~al.(2024)Snell, Lee, Xu, and Kumar}]{snell2024scaling}
+Charlie Snell, Jaehoon Lee, Kelvin Xu, and Aviral Kumar. 2024.
+\newblock Scaling {LLM} test-time compute optimally can be more effective than
+  scaling model parameters.
+\newblock \emph{arXiv preprint arXiv:2408.03314}.
+
+\bibitem[{Song et~al.(2025)Song, Zhang, Eisenach, Kakade, Foster, and
+  Ghai}]{song2025mindthegap}
+Yuda Song, Hanlin Zhang, Carson Eisenach, Sham Kakade, Dean Foster, and Udaya
+  Ghai. 2025.
+\newblock Mind the gap: Examining the self-improvement capabilities of large
+  language models.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Stechly et~al.(2025)Stechly, Valmeekam, and
+  Kambhampati}]{stechly2025selfverification}
+Kaya Stechly, Karthik Valmeekam, and Subbarao Kambhampati. 2025.
+\newblock On the self-verification limitations of large language models on
+  reasoning and planning tasks.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Stroebl et~al.(2026)Stroebl, Kapoor, and
+  Narayanan}]{stroebl2026limits}
+Benedikt Stroebl, Sayash Kapoor, and Arvind Narayanan. 2026.
+\newblock The limits of inference scaling through resampling.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery,
+  and Zhou}]{wang2023selfconsistency}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed~Chi, Sharan Narang,
+  Aakanksha Chowdhery, and Denny Zhou. 2023.
+\newblock Self-consistency improves chain of thought reasoning in language
+  models.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Zheng et~al.(2025)Zheng, Zhang, Zhang, Lin, Lu, Yu, Liu, Zhou, and
+  Lin}]{zheng2025processbench}
+Chujie Zheng, Zhenru Zhang, Beichen Zhang, Runji Lin, Keming Lu, Bowen Yu,
+  Dayiheng Liu, Jingren Zhou, and Junyang Lin. 2025.
+\newblock \href {https://aclanthology.org/2025.acl-long.50/} {{ProcessBench}:
+  Identifying process errors in mathematical reasoning}.
+\newblock In \emph{Proceedings of the 63rd Annual Meeting of the Association
+  for Computational Linguistics}.
+
+\end{thebibliography}

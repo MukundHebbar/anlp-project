@@ -1,0 +1,156 @@
+[
+ {
+  "d": 0.0,
+  "rho_s": 0.3,
+  "within_auroc": 0.48613584329687104,
+  "contested_within_auroc": 0.5058275058275058,
+  "cav_acc": 0.8085499999999999,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": -0.0011570440000001625,
+  "beta": 2.0
+ },
+ {
+  "d": 0.25,
+  "rho_s": 0.3,
+  "within_auroc": 0.5451539048588145,
+  "contested_within_auroc": 0.5967365967365967,
+  "cav_acc": 0.8222,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.012492956,
+  "beta": 1.0
+ },
+ {
+  "d": 0.5,
+  "rho_s": 0.3,
+  "within_auroc": 0.6621724751971508,
+  "contested_within_auroc": 0.6794871794871795,
+  "cav_acc": 0.8227500000000001,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.01304295600000005,
+  "beta": 0.0
+ },
+ {
+  "d": 0.75,
+  "rho_s": 0.3,
+  "within_auroc": 0.6853218010684304,
+  "contested_within_auroc": 0.6783216783216783,
+  "cav_acc": 0.8389,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.029192955999999937,
+  "beta": 2.0
+ },
+ {
+  "d": 1.0,
+  "rho_s": 0.3,
+  "within_auroc": 0.7514627321292292,
+  "contested_within_auroc": 0.796037296037296,
+  "cav_acc": 0.84005,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.03034295599999992,
+  "beta": 1.0
+ },
+ {
+  "d": 1.5,
+  "rho_s": 0.3,
+  "within_auroc": 0.8496565759348766,
+  "contested_within_auroc": 0.8519813519813519,
+  "cav_acc": 0.86725,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.05754295599999992,
+  "beta": -2.0
+ },
+ {
+  "d": 2.0,
+  "rho_s": 0.3,
+  "within_auroc": 0.9051132027473925,
+  "contested_within_auroc": 0.9009324009324009,
+  "cav_acc": 0.87865,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.068942956,
+  "beta": -2.0
+ },
+ {
+  "d": 0.0,
+  "rho_s": 0.6,
+  "within_auroc": 0.5398117527346731,
+  "contested_within_auroc": 0.6095571095571095,
+  "cav_acc": 0.8210500000000001,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.011342956000000015,
+  "beta": 3.0
+ },
+ {
+  "d": 0.25,
+  "rho_s": 0.6,
+  "within_auroc": 0.5174255914525566,
+  "contested_within_auroc": 0.5477855477855478,
+  "cav_acc": 0.81435,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.004642955999999976,
+  "beta": 3.0
+ },
+ {
+  "d": 0.5,
+  "rho_s": 0.6,
+  "within_auroc": 0.6245230221317731,
+  "contested_within_auroc": 0.6783216783216783,
+  "cav_acc": 0.8272499999999999,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.017542955999999887,
+  "beta": 3.0
+ },
+ {
+  "d": 0.75,
+  "rho_s": 0.6,
+  "within_auroc": 0.6789620961587383,
+  "contested_within_auroc": 0.7377622377622378,
+  "cav_acc": 0.8412000000000001,
+  "cost": 11.101645000000001,
+  "majority_at_cost": 0.809660502125,
+  "gain": 0.0315394978750001,
+  "beta": 0.0
+ },
+ {
+  "d": 1.0,
+  "rho_s": 0.6,
+  "within_auroc": 0.7657084711269397,
+  "contested_within_auroc": 0.6655011655011654,
+  "cav_acc": 0.8347999999999999,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.025092955999999833,
+  "beta": 0.0
+ },
+ {
+  "d": 1.5,
+  "rho_s": 0.6,
+  "within_auroc": 0.8361740015263291,
+  "contested_within_auroc": 0.7307692307692307,
+  "cav_acc": 0.84465,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.03494295599999997,
+  "beta": -2.0
+ },
+ {
+  "d": 2.0,
+  "rho_s": 0.6,
+  "within_auroc": 0.951157466293564,
+  "contested_within_auroc": 0.9662004662004662,
+  "cav_acc": 0.8698500000000001,
+  "cost": 11.10256,
+  "majority_at_cost": 0.809707044,
+  "gain": 0.06014295600000008,
+  "beta": -1.0
+ }
+]

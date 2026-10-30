@@ -1,0 +1,134 @@
+\appendix
+
+\section{Proofs}
+\label{app:proofs}
+
+\paragraph{Pair-share identity.}
+A pooled AUROC averages $\mathbb 1[s_w>s_r]$ (ties $\frac12$) over all wrong--right pairs. Partitioning the
+$K(QN-K)$ pairs into the $\sum_x k_x(N-k_x)$ same-question pairs and the rest gives the stated convex combination.
+For the expectation, use $\mathbb E[k_x(N-k_x)]=N(N-1)\,\mathbb E[p(1-p)]$ and $K\approx QN\bar p$.
+
+\paragraph{Theorem 1.}
+\emph{Repair.} A fresh draw for question $x$ is right with probability $p_x$, so replacing attempt $i$ changes
+expected accuracy by $p_x-Z_i$, and a flag $f_i$ contributes $f_i(p_x-Z_i)$. Since
+$\mathbb E[Z\mid x]=p_x$,
+\[
+\mathbb E[f(p_x-Z)\mid x]=-\mathrm{Cov}(f,Z\mid x).
+\]
+If $f$ depends only on $x$, this covariance is $0$.
+
+The optimal flag sets $f=1$ exactly when $\mathbb E[p_x-Z\mid x,s]>0$, that is, when $P(Z{=}1\mid x,s)<p_x$.
+
+\emph{Selection.} Given the answers and the scores, the posterior that answer group $C_a$ is right is proportional to
+$\pi(\text{answers}\mid a\text{ right})\prod_{i\in C_a}f_1(s_i\mid x)\prod_{i\notin C_a}f_0(s_i\mid x)$. Dividing by
+$\prod_i f_0(s_i\mid x)$ leaves $\pi(\cdot)\prod_{i\in C_a}\Lambda_x(s_i)$. If $f_1=f_0$ given $x$, then
+$\Lambda\equiv1$ and only the vote pattern remains. $\square$
+
+\paragraph{Proposition 1.}
+Majority vote and the lexicographic rule differ only in tied configurations.
+\begin{itemize}
+\item \emph{Four singletons, one of them right:} the rule is right iff the right attempt has the top score, with
+  probability $M_4(d)=\int\phi(t-d)\Phi(t)^3dt$, against $\frac14$ for a random tie-break.
+\item \emph{Two groups of two:} the rule compares group means, which differ by $\mathcal N(d,1)$, so it is right with
+  probability $\Phi(d)$, against $\frac12$.
+\end{itemize}
+Both increments are non-negative for $d\ge0$.
+
+\paragraph{Overturn probability.}
+Write the log-likelihood ratio of a score as $\ell(s)=ds-d^2/2$. Then $\ell$ is $\mathcal N(d^2/2,d^2)$ for a right
+attempt and $\mathcal N(-d^2/2,d^2)$ for a wrong one. For a right group of size $k$ against a wrong group of size $m$,
+the score difference is
+\[
+\begin{gathered}
+(k-m)\beta+\textstyle\sum_{C}\ell-\sum_{W}\ell\\
+\sim\ \mathcal N\big((k-m)\beta+(k+m)d^2/2,\ (k+m)d^2\big).
+\end{gathered}
+\]
+
+\paragraph{Proposition 2.}
+By the law of large numbers, $\frac1N\sum_{i\in C_a}\ell_i\to\pi(a)\,\mathbb E[\ell\mid Z_a]$, with
+$\mathbb E[\ell\mid Z{=}1]=\mathrm{KL}(f_1\Vert f_0)$ and $\mathbb E[\ell\mid Z{=}0]=-\mathrm{KL}(f_0\Vert f_1)$.
+
+With group-shared noise of correlation $\rho_s$, a group mean keeps variance $\rho_s+(1-\rho_s)/n\to\rho_s$, which gives
+the stated cap.
+
+For argmax with scores quantised to $V$ verdicts, the top bin is reached with positive probability by both right and
+wrong attempts. The rule therefore converges to $P(Z{=}1\mid\text{top bin})$.
+
+\paragraph{Proposition 3.}
+Within a question $z_x$ is constant, so a right and a wrong attempt differ in score by $\theta_w d$ plus noise of
+variance $2(\theta_b^2+\theta_w^2)$.
+
+Under per-question balance, $x_b$ is independent of $Z$ given $x$, and also marginally, since $P(Z\mid x)=\frac12$.
+The pointwise-optimal weight on it is therefore zero. At initialisation, the logistic gradient on any feature
+$\varphi(x)$ is $\mathbb E[(\sigma(0)-Z)\varphi(x)]=\mathbb E[(\frac12-\frac12)\varphi(x)]=0$.
+
+\paragraph{Length law.}
+Suppose step scores are Gumbel and $m$ of $T$ steps are shifted by $\log L$. The maximum of independent Gumbels with
+locations $\mu_i$ is Gumbel with location $\log\sum_ie^{\mu_i}$, and two independent Gumbels compare logistically.
+Hence the solution-level AUROC of a max-pooled detector is
+\[
+\frac{T-m+mL}{2T-m+mL}.
+\]
+A step-level AUROC of $0.80$ ($L=4$) gives $0.51$--$0.53$ at $T=100$--$200$, the level of the hidden-state error
+feature on own attempts in Phase~2.
+
+\section{Robustness of CAV in the model}
+\label{app:robust}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Scenario & $d=0.5$ & $d=1.0$ \\
+\midrule
+Baseline ($\rho$ constant, $\rho_s=0.3$) & +2.4 & +5.3 \\
+Judge weaker on hard questions & +1.8 & +4.2 \\
+Shared judge errors, $\rho_s=0.6$ & +1.7 & +4.1 \\
+Variable attractor strength & +1.8 to +2.2 & +3.1 to +4.1 \\
+\bottomrule
+\end{tabular}
+\caption{CAV ($N_1=16$, $m=8$, probability scoring) minus majority vote at equal average cost ($\approx11$ units), in
+points, in the calibrated model.}
+\end{table}
+
+\section{Experimental details}
+\label{app:details}
+
+\paragraph{Question sets.}
+\begin{itemize}
+\item \emph{test}: the 400-question FINAL-v3 SOLVE test split.
+\item \emph{dev}: the 200-question development slice used in Phase~2, used here only for tuning.
+\item \emph{extra}: 400 SOLVE training questions that no run of the mixed adapter could have seen (all 1,134 SOLVE
+  questions of its GRPO manifest and the trial slices are excluded).
+\item \emph{train}: 450 further such questions for Stage 2.
+\end{itemize}
+Sets are fixed by a seeded script before any generation.
+
+\paragraph{Sampling.}
+Attempts use the SOLVE prompt with temperature $1.0$, no top-$p$/top-$k$ truncation and a 16,384-token cap. An attempt is
+correct if it finishes, passes the strict format gates and its last final-answer tag matches the key under the
+project's rule-based checker. Answers are grouped by checker equivalence.
+
+\paragraph{Judging.}
+Each answered attempt is split into steps: paragraphs, with display maths and very short paragraphs merged into the
+previous step, plus a final step ``The final answer is $X$''. The judge prompt is the v2 JUDGE prompt.
+\begin{itemize}
+\item A reasoning chain (temperature $1.0$, 8,192-token cap) stops at ``Decision:''.
+\item The verdict probability is read from the top-20 next-token log-probabilities after appending ``Decision:'',
+  taking the first of up to four forced positions that shows a verdict token. Chains that were cut off or never
+  reached the label get a probability too.
+\item The \emph{direct} probability appends ``Decision:'' right after the prompt, with no reasoning.
+\item Test attempts 0--3 get four chains each; all other attempts one.
+\end{itemize}
+
+\paragraph{Costs and statistics.}
+Unit costs (pre-registered): attempt $=1$, chain $=0.3$, direct read $=0.05$ (added after the smoke test). Decoded-token
+costs count attempt and chain tokens and exclude prefill. Every rule is averaged over 100 random orders of each
+question's 16 attempts. Majority at a fractional cost mixes the two neighbouring $N$. 95\% intervals use 1,000--2,000
+bootstrap resamples of questions; within-question AUROCs are bootstrapped over questions (cluster bootstrap).
+
+\paragraph{Pre-registration.}
+\texttt{phase3/PREREGISTRATION.md} fixed the sets, sampling, judging, primary rule, primary comparison and success
+criterion before any attempt was generated. It also records three deviations and the semi-synthetic gain predictions
+made before any judging, each with its hash.

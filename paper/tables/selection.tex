@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering\small
+\resizebox{\linewidth}{!}{\begin{tabular}{@{}lccc@{}}
+\toprule
+Rule & Acc. (\%) & Cost & Tokens \\
+\midrule
+Majority, $N=4$ & 76.0 & 4.00 & 35.7k \\
+Majority, $N=8$ & 78.7 & 8.00 & 71.4k \\
+Majority, $N=12$ & 79.5 & 12.00 & 107.1k \\
+Majority, $N=16$ & 79.8 & 16.00 & 142.8k \\
+pass@16 (oracle) & 91.4 & 16.00 & 142.8k \\
+Adaptive-consistency, $t=0.8$ & 79.1 & 4.01 & 40.5k \\
+Adaptive-consistency, $t=0.9$ & 79.7 & 6.41 & 64.0k \\
+Adaptive-consistency, $t=0.99$ & 79.8 & 10.39 & 99.6k \\
+Bayes aggregation, $N=4$ & 76.7 & 5.12 & 47.5k \\
+Bayes aggregation, $N=16$ & 80.9 & 20.49 & 189.7k \\
+Best-of-$N$ argmax, $N=4$ & 75.3 & 5.12 & 47.5k \\
+Best-of-$N$ argmax, $N=16$ & 76.7 & 20.49 & 189.7k \\
+CAV (chain), $N_1=8$, $m=4$ & 79.0 & 6.70 & 65.2k \\
+CAV (direct), $N_1=8$, $m=4$ & 79.2 & 6.09 & 56.1k \\
+CAV (combo-cheap), $N_1=8$, $m=4$ & 79.0 & 6.09 & 56.1k \\
+CAV (direct), $N_1=12$, $m=4$ & 79.7 & 8.08 & 76.5k \\
+CAV (chain), $N_1=12$, $m=8$ & 80.3 & 9.15 & 91.1k \\
+CAV (direct), $N_1=16$, $m=4$ & 80.1 & 10.06 & 96.8k \\
+CAV (chain), $N_1=16$, $m=8$$^\star$ & 81.0 & 11.31 & 113.9k \\
+CAV (combo), $N_1=16$, $m=8$ & 79.6 & 11.31 & 113.9k \\
+\bottomrule
+\end{tabular}}
+\caption{Selection on test $\cup$ extra (800 questions), settings tuned on dev. Cost: attempt $=1$, judge chain $=0.3$, direct read $=0.05$; tokens: decoded tokens per question. $^\star$: pre-registered primary rule.}
+\label{tab:selection}
+\end{table}

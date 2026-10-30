@@ -1,0 +1,45 @@
+\section{When Verification Pays}
+\label{sec:scaling}
+
+\paragraph{Majority vote saturates.}
+As $N\to\infty$, majority vote is right on question $x$ if and only if $p_x$ exceeds the mass of every wrong answer;
+in the model, iff $p_x>\rho(1-p_x)$. That probability is $78.3\%$ on the test calibration, while pass@$N\to100\%$.
+Simulated majority accuracy reaches $77.7$, $78.2$ and $78.8$ at $N=8$, $16$ and $64$, a plateau also reported for
+large-sample voting \citep{brown2024monkeys}.
+
+\paragraph{Proposition 2 (aggregation is consistent, argmax is not).}
+Score each answer group $C_a$ by $\sum_{i\in C_a}\log\Lambda(s_i)$, and suppose judge errors are conditionally
+independent. Then the score divided by $N$ converges to
+\[
+\begin{gathered}
+\pi(a)\,\mathrm{KL}(f_1\Vert f_0)>0 \text{ for the right answer},\\
+-\pi(a)\,\mathrm{KL}(f_0\Vert f_1)<0 \text{ for a wrong one},
+\end{gathered}
+\]
+so accuracy tends to $P(p_x>0)$ for \emph{any} judge with $d>0$. Picking the single top-scored attempt instead
+converges to the precision of the top score bin, the imperfect-verifier ceiling of \citet{stroebl2026limits}.
+
+If judge errors are shared within an answer group (correlation $\rho_s$), a right-versus-wrong group comparison is
+capped at $\Phi(d/\sqrt{2\rho_s})$.
+
+\paragraph{The compute crossover.}
+Charge an attempt 1 unit and a judge verdict $0.3$. In the model, verification cannot beat majority vote at equal
+compute for budgets of 8 units or fewer, even with within-question AUROC $0.78$. It wins only after majority vote
+saturates: $+0.6$ to $+3.0$ points at 16 units and $+1.9$ to $+6.1$ at 32. Phase~2 tested picking at 4 attempts with
+4 verdicts each, inside the region where verification must lose.
+
+\paragraph{Contest-adaptive verification (CAV).}
+These results suggest a simple procedure:
+\begin{enumerate}
+\item Sample 4 attempts. If all four give the same answer, stop: about $50\%$ of questions, right $99.4\%$ of the
+  time in the model.
+\item Otherwise sample up to $N_1$ attempts.
+\item Judge only the attempts in the two largest answer groups, at most $m$ per group.
+\item Pick the group maximising $n_g\,(\beta+\overline{\mathrm{logit}\,P(\text{correct})})$, where $n_g$ is the group
+  size and $\beta$ is a vote weight tuned on development data.
+\end{enumerate}
+Adaptive stopping alone \citep{aggarwal2023adaptive} reaches the majority plateau with less compute, but cannot pass
+it; only the judge can. In the model CAV gains $+1.7$ to $+5.3$ points over majority vote at equal average cost
+($\approx11$ units). The gain holds when attractor strength varies across questions, when the judge is weaker on hard
+questions, and when judge errors are shared within answer groups (Appendix~\ref{app:robust}).
+Section~\ref{sec:stage1} tests CAV on the model's own attempts.

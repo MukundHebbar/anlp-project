@@ -47,6 +47,14 @@ def judge_reward(row: dict[str, Any], text: str, finish: str, jev: jj.Jev | None
     return reward + 0.25 * min(8.0, e + m) / 8
 
 
+def selfjudge_reward(row: dict[str, Any], text: str, finish: str) -> float:
+    """Phase-3 self-judge (own attempts, answer-checker label in ``row["label"]``): 1 for the right verdict, else 0.
+    Cut-off answers and strict-gate violations earn 0. The first wrong step is not rewarded (no step labels)."""
+    if finish != "stop" or judge_gate(text):
+        return 0.0
+    return float(parse_judge_response(text)[0] == row["label"])
+
+
 def reconstruct_reward(row: dict[str, Any], text: str, finish: str, jev: jj.Jev) -> float | None:
     if finish != "stop":
         return 0.0
@@ -64,4 +72,6 @@ def reward(task: str, row: dict[str, Any], text: str, finish: str, jev: jj.Jev |
         return solve_reward(row, text, finish)
     if task == "judge":
         return judge_reward(row, text, finish, jev)
+    if task == "selfjudge":
+        return selfjudge_reward(row, text, finish)
     return reconstruct_reward(row, text, finish, jev)

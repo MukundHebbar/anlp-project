@@ -172,7 +172,7 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
     # task "mixed": every prompt carries its own task (opd.mixed_prompts); one cap for all of them.
     cap = max(cfg["rollout_max_tokens"].values()) if task == "mixed" else cfg["rollout_max_tokens"][task]
     task_of = {p_["uid"]: p_.get("task", task) for p_ in prompts}
-    max_len = cap + 4096
+    max_len = cap + cfg.get("prompt_max_tokens", 4096)  # self-judge prompts hold a whole own attempt (up to ~17k)
     r = cfg["lora"]["r"]
     procs = []
     try:
@@ -230,8 +230,9 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
             from .baseline import load_rows
             from .jev_judging import Jev
             tasks_here = sorted(set(task_of.values()))
-            reward_rows = {r_["uid"]: r_ for t_ in tasks_here for r_ in load_rows(t_, "train")}
-            jev = Jev() if any(t_ != "solve" for t_ in tasks_here) else None
+            reward_rows = {r_["uid"]: r_ for t_ in tasks_here if t_ != "selfjudge" for r_ in load_rows(t_, "train")}
+            reward_rows.update({p_["uid"]: p_ for p_ in prompts if task_of[p_["uid"]] == "selfjudge"})  # label inside
+            jev = Jev() if any(t_ not in ("solve", "selfjudge") for t_ in tasks_here) else None
             G = cfg["samples_per_prompt"]
 
         eos_ids = {tok.convert_tokens_to_ids(t) for t in ("<|im_end|>", "<|endoftext|>")}

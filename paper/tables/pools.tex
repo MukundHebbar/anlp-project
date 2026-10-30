@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering\small
+\resizebox{\linewidth}{!}{\begin{tabular}{@{}lcclccc@{}}
+\toprule
+Set & Single attempt & Score & Pooled AUROC & Within-question AUROC & Contested within-question AUROC \\
+\midrule
+dev & 0.698 & chain & 0.692 & 0.620 [0.578, 0.660] & 0.612 [0.508, 0.712] \\
+ & & direct & 0.730 & 0.634 [0.576, 0.692] & 0.596 [0.460, 0.732] \\
+ & & length & 0.699 & 0.580 [0.537, 0.623] & -- \\
+test & 0.670 & chain & 0.682 & 0.611 [0.573, 0.645] & 0.511 [0.423, 0.604] \\
+ & & direct & 0.718 & 0.614 [0.566, 0.658] & 0.469 [0.375, 0.575] \\
+ & & length & 0.655 & 0.573 [0.541, 0.606] & -- \\
+extra & 0.682 & chain & 0.713 & 0.668 [0.638, 0.700] & 0.631 [0.561, 0.703] \\
+ & & direct & 0.746 & 0.661 [0.622, 0.699] & 0.641 [0.551, 0.731] \\
+ & & length & 0.688 & 0.596 [0.568, 0.627] & -- \\
+\bottomrule
+\end{tabular}}
+\caption{Judging own attempts (16 per question; first chain). ``Length'' scores an attempt by its token count. Brackets: 95\% question-cluster bootstrap intervals.}
+\label{tab:pools}
+\end{table*}

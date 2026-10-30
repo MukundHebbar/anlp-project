@@ -55,6 +55,8 @@ def main():
     ap.add_argument("--teacher-host", default="127.0.0.1", help="host of an external teacher (another node)")
     ap.add_argument("--prompts", default="trial", choices=["trial", "warmup", "matrix"],
                     help="OPD training questions: the trial slice, or the SFT warm-up questions (paired demonstrations)")
+    ap.add_argument("--prompts-file", default="",
+                    help="JSONL of {uid, prompt, label} training prompts (task selfjudge, phase3/build_selfjudge.py)")
     ap.add_argument("--gate", type=int, default=0, help="teacher signal only for rollouts up to this many tokens")
     ap.add_argument("--soft-length", default="", metavar="START:MAX",
                     help="soft length penalty, e.g. 4096:1.0 (rises linearly from START tokens to the cap)")
@@ -103,7 +105,12 @@ def main():
     if a.teacher_instruction:
         cfg["teacher_system_prompt"] = opd.TEACHER_INSTRUCTIONS[a.teacher_instruction]
     B = cfg["prompts_per_step"]
-    if a.task == "mixed":  # equal thirds of the three tasks, interleaved (opd.mixed_prompts)
+    if a.task == "selfjudge":
+        cfg["rollout_max_tokens"]["selfjudge"] = a.cap or 8192
+        cfg["prompt_max_tokens"] = 17408  # judge prompts carry a whole own attempt (16k cap)
+    if a.prompts_file:  # self-judge prompts carry their own label; order as written
+        pool = [{**json.loads(line), "task": a.task} for line in open(a.prompts_file)]
+    elif a.task == "mixed":  # equal thirds of the three tasks, interleaved (opd.mixed_prompts)
         pool = opd.mixed_prompts(a.mixed_per_task)
     elif a.prompts == "matrix":
         pool = opd.matrix_prompts(a.task, (a.start_step + a.steps) * B)

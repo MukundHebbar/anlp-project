@@ -1,0 +1,191 @@
+{
+ "F0.1": {
+  "judge chain": {
+   "right_vs_attractor": 0.6274965164886205,
+   "pairs_attractor": 8612,
+   "right_vs_oneoff": 0.6589661482159195,
+   "pairs_oneoff": 6558,
+   "contested_right_vs_attractor": 0.5552135436706426,
+   "contested_right_vs_oneoff": 0.6784140969162996
+  },
+  "judge direct": {
+   "right_vs_attractor": 0.6338500694123091,
+   "pairs_attractor": 8644,
+   "right_vs_oneoff": 0.645941015506233,
+   "pairs_oneoff": 6578,
+   "contested_right_vs_attractor": 0.5450364124185512,
+   "contested_right_vs_oneoff": 0.6373626373626373
+  },
+  "length": {
+   "right_vs_attractor": 0.5599838037945396,
+   "pairs_attractor": 8644,
+   "right_vs_oneoff": 0.618425053207662,
+   "pairs_oneoff": 6578,
+   "contested_right_vs_attractor": 0.4906094288999617,
+   "contested_right_vs_oneoff": 0.654945054945055
+  },
+  "self-corrections": {
+   "right_vs_attractor": 0.5367306802406293,
+   "pairs_attractor": 8644,
+   "right_vs_oneoff": 0.5740346609911827,
+   "pairs_oneoff": 6578,
+   "contested_right_vs_attractor": 0.4994250670755079,
+   "contested_right_vs_oneoff": 0.6494505494505495
+  },
+  "guess phrases": {
+   "right_vs_attractor": 0.5845094863489125,
+   "pairs_attractor": 8644,
+   "right_vs_oneoff": 0.585816357555488,
+   "pairs_oneoff": 6578,
+   "contested_right_vs_attractor": 0.5634342660022997,
+   "contested_right_vs_oneoff": 0.6263736263736264
+  }
+ },
+ "F0.2": {
+  "judge chain": {
+   "right": 0.019888811352129096,
+   "right_groups": 702,
+   "wrong": 0.219738699839882,
+   "wrong_groups": 534
+  },
+  "judge direct": {
+   "right": 0.28155299792406835,
+   "right_groups": 702,
+   "wrong": 0.7489105438451843,
+   "wrong_groups": 535
+  }
+ },
+ "F0.4_pooled_within_contested": {
+  "judge chain": {
+   "pooled": 0.6973820481033353,
+   "within": 0.6411008569545155,
+   "contested": 0.5735342286275794
+  },
+  "judge direct": {
+   "pooled": 0.7317699430466033,
+   "within": 0.6390750229930364,
+   "contested": 0.5587467362924282
+  },
+  "length": {
+   "pooled": 0.6716666902343543,
+   "within": 0.5852384706346078,
+   "contested": 0.5150130548302873
+  },
+  "self-corrections": {
+   "pooled": 0.6547896091728768,
+   "within": 0.5528511365129418,
+   "contested": 0.5217036553524804
+  },
+  "guess phrases": {
+   "pooled": 0.6670180851503328,
+   "within": 0.58507423466036,
+   "contested": 0.5727806788511749
+  },
+  "difficulty only (LOO solve rate)": {
+   "pooled": 0.9059343576127652,
+   "within": 0.5,
+   "contested": 0.5
+  }
+ },
+ "F0.3": {
+  "pooled_auroc_difficulty_only": 0.9059300999061567,
+  "pooled_auroc_judge_chain": 0.6974040589197217,
+  "pooled_auroc_judge_direct": 0.7319791048155772,
+  "difficulty+chain": 0.913929536457075,
+  "difficulty+direct": 0.9145726486988861,
+  "difficulty+chain+direct": 0.9166004603563985
+ },
+ "F0.6_free_baselines": {
+  "CISC-P(True) N=4 (T=2.0)": {
+   "acc": 0.7729375,
+   "cost": 4.187251874999992,
+   "vs_majority_same_cost": [
+    0.01041632664062507,
+    [
+     0.0047146846716797555,
+     0.01651590055429693
+    ]
+   ],
+   "vs_majority_same_N": [
+    0.012124999999999999,
+    [
+     0.006499999999999999,
+     0.018337812499999998
+    ]
+   ]
+  },
+  "CISC-P(True) N=8 (T=2.0)": {
+   "acc": 0.7951750000000001,
+   "cost": 8.374561249999989,
+   "vs_majority_same_cost": [
+    0.006564967421875023,
+    [
+     -0.0002947079578124725,
+     0.013702751718359385
+    ]
+   ],
+   "vs_majority_same_N": [
+    0.007337499999999999,
+    [
+     0.0006099999999999999,
+     0.014550312499999999
+    ]
+   ]
+  },
+  "CISC-P(True) N=16 (T=2.0)": {
+   "acc": 0.8075,
+   "cost": 16.749062499999983,
+   "vs_majority_same_cost": [
+    0.009537499999999999,
+    [
+     0.0005250000000000005,
+     0.0196878125
+    ]
+   ],
+   "vs_majority_same_N": [
+    0.009537499999999999,
+    [
+     0.0005250000000000005,
+     0.0196878125
+    ]
+   ]
+  },
+  "ESC window 2": {
+   "acc": 0.7906,
+   "cost": 4.201625,
+   "vs_majority_same_cost": [
+    0.027947671874999996,
+    [
+     0.0213523237109375,
+     0.03497213259765624
+    ]
+   ]
+  },
+  "ESC window 4": {
+   "acc": 0.7975500000000001,
+   "cost": 8.735,
+   "vs_majority_same_cost": [
+    0.0081965625,
+    [
+     0.0026666195312500013,
+     0.013994433593749992
+    ]
+   ]
+  },
+  "ESC window 8": {
+   "acc": 0.7971875,
+   "cost": 12.8828,
+   "vs_majority_same_cost": [
+    0.0009249624999999998,
+    [
+     -0.0023037466250000007,
+     0.004232820999999998
+    ]
+   ]
+  },
+  "majority@16": {
+   "acc": 0.7979625,
+   "cost": 16.0
+  }
+ }
+}

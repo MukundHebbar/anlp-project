@@ -1,0 +1,12 @@
+# Raw run data (~1 GB): kept locally and on Turing (~/anlp-project/runs-out), not in git.
+runs/main/
+runs/ev/
+runs/ev_smoke/
+runs/selfjudge/
+runs/selfjudge_smoke/
+runs/selfjudge_v1_overlong/
+runs/smoke/
+runs/graded_partial/
+runs/*.log
+runs/*.err
+__pycache__/

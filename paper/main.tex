@@ -1,0 +1,147 @@
+\documentclass[11pt]{article}
+
+\usepackage{acl-style/acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\title{Better Judges, Same Answers:\\When Self-Verification Can and Cannot Improve Mathematical Reasoning}
+
+\author{Aryama V Murthy \\ Mukund Hebbar \\ Yashas Nataraj Kotre \\ Anivarth Varma Penumetcha \\ IIIT Hyderabad}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+A model that can check its own work should be able to pick its best answer. We trained a 2B-parameter model,
+Qwen3.5-2B, to judge its own mathematical attempts with answer-checker labels. Its AUROC on its own attempts rose from
+$0.57$ to $0.67$, and the gain replicated on a held-out test set. Yet picking one of four answers with the trained
+judge was no better than majority vote ($75.2\%$ either way), and flagging and regenerating attempts recovered $0.4$ of
+the $7$ points that perfect flags would have recovered. Every off-the-shelf judge we tried looked ``near chance'' on
+the model's own attempts.
+
+We show that these outcomes are what the mathematics predicts. They come from three measurement illusions:
+\begin{enumerate}
+\item \textbf{Leniency.} A judge that almost always says ``correct'' has a near-chance AUROC under sampled verdicts,
+  even when its underlying score discriminates (\S\ref{sec:lenient}).
+\item \textbf{Pooled AUROC.} On a typical evaluation pool, $99.9\%$ of the pairs behind an AUROC compare
+  \emph{different} questions. Picking and repair use only within-question information, exactly
+  (Theorem~1, \S\ref{sec:pooled}).
+\item \textbf{The compute regime.} Majority vote saturates. Verification cannot beat majority vote at equal compute
+  before that point, and can after it (\S\ref{sec:scaling}).
+\end{enumerate}
+
+A model with five parameters reproduces the measured numbers, including three it was not fitted to
+(Table~\ref{tab:validation}). It also predicts a simple procedure, \emph{contest-adaptive verification} (CAV), and a
+training change (per-question balance), both of which we test on the model's own attempts
+(\S\ref{sec:results}).
+
+\paragraph{Contributions.}
+\begin{itemize}
+\item A calibrated model of self-verified answer selection.
+\item An invariance theorem with an exact repair identity, a closed form for the gain from tie-breaking, and a
+  saturation-and-consistency account of when verification pays.
+\item Measurements of judge leniency and within-question discrimination on 16 own attempts per question.
+\item CAV, evaluated against majority vote and adaptive-consistency at equal compute.
+\item A proposition and an experiment on training judges for selection rather than for verdict accuracy.
+\end{itemize}
+
+\section{Setting}
+\label{sec:setting}
+
+\paragraph{Models and data.}
+The solver and the judge are the same model: Qwen3.5-2B with a LoRA adapter trained by Dr.~GRPO \citep{liu2025drgrpo}
+on equal thirds of three tasks: solving, judging injected errors, and reconstructing questions. Questions come from
+DeepMath-103K \citep{he2026deepmath}: the 400-question test split, a 200-question development slice, and 400 held-out
+training questions that the adapter never saw.
+
+\paragraph{Protocol.}
+For each question we sample 16 attempts (temperature $1.0$, 16k-token cap). Answers are graded by a rule-based checker.
+The judge sees an attempt split into numbered steps and writes a verdict after optional reasoning (8k cap).
+
+We read two scores:
+\begin{itemize}
+\item the probability of the verdict token after a reasoning chain;
+\item a \emph{direct} probability, read right after the prompt with no reasoning \citep{kadavath2022know}.
+\end{itemize}
+Selection rules are averaged over 100 random orders of each question's attempts. Differences are bootstrapped over
+questions \citep{miller2024errorbars}. The protocol was pre-registered before any attempt was generated
+(\texttt{phase3/PREREGISTRATION.md}).
+
+\input{sections/model}
+\input{sections/illusions}
+\input{sections/scaling}
+\input{sections/training}
+\input{sections/results}
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Verifiers and selection.}
+Outcome verifiers for best-of-$N$ \citep{cobbe2021gsm8k}, process supervision \citep{lightman2023verify} and step-level
+benchmarks \citep{zheng2025processbench} measure verifier quality per solution. We instead measure what selection and
+repair can use.
+
+Weighted voting with log-odds weights is classical \citep{nitzan1982optimal,berend2014consistency}. Combinations of
+weak verifiers \citep{saadfalcon2025weaver} and resampling limits under imperfect verifiers \citep{stroebl2026limits}
+bound what verification can add. Compute-optimal test-time scaling \citep{snell2024scaling}, adaptive stopping for
+self-consistency \citep{wang2023selfconsistency,aggarwal2023adaptive} and scaling models of voting systems
+\citep{chen2024morecalls,brown2024monkeys} motivate our compute-matched comparisons.
+
+\paragraph{Explaining aggregate behaviour with per-problem heterogeneity.}
+\citet{schaeffer2025monkeys} explain power-law scaling of repeated sampling with a heavy-tailed distribution of
+per-problem success rates. Our Beta-distributed solve rates play the same role for verification.
+
+\paragraph{Self-verification and its limits.}
+Self-correction without external feedback often fails \citep{huang2024cannot,stechly2025selfverification}.
+\citet{song2025mindthegap} formalise a generation--verification gap that governs self-improvement. Our governing
+quantity is within-question discrimination on contested questions.
+
+\citet{bulut2026problem} show that pooled probe AUROCs can come entirely from difficulty. We extend this to verifiers
+used for selection and repair, where it becomes an invariance theorem. Signal-detection analyses of LLM judges
+separate sensitivity from criterion \citep{sdt2026signal}. We show that verdict sampling turns a lenient criterion into
+a near-chance AUROC.
+
+\section{Limitations and Conclusion}
+\label{sec:conclusion}
+
+\paragraph{Limitations.}
+\begin{itemize}
+\item We study one solver family at 2B parameters and one judge (the same adapter).
+\item Labels come from an answer checker, so an attempt with flawed reasoning and a right answer counts as right.
+\item The step conversion of attempts is our own: Phase~2's converter was lost.
+\item The CAV gain is modest ($+1.6$ points) because the judge's discrimination on contested questions is weak.
+\item The length and liveness mechanisms (Appendix~\ref{app:proofs}) predict judging degrades with length and
+  self-corrections. Within the 4k--16k-token range of our attempts we see no such degradation; only the premise that
+  almost every right trace contains self-corrections is confirmed.
+\item Costs are counted in units and decoded tokens, not wall-clock time.
+\end{itemize}
+
+\paragraph{Conclusion.}
+How good a self-verifier looks depends on what is measured.
+\begin{itemize}
+\item Sampled verdicts hide a lenient judge's signal: probabilities recover $0.07$--$0.09$ AUROC.
+\item Pooled AUROC rewards knowing which questions are hard. Trace features alone match a trained judge pooled and are
+  at chance where picking happens.
+\item Small-$N$ picking puts verification where it cannot win.
+\end{itemize}
+A small model of these effects, fitted to 4-attempt aggregates, predicts 16-attempt behaviour to within a point.
+Measured within questions, scored by probability, and spent only on contested questions after self-consistency
+saturates, a 2B model's judgement of its own work beats compute-matched majority vote and adaptive-consistency.
+
+\bibliography{references}
+
+\input{sections/appendix}
+
+\end{document}

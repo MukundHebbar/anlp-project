@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering\small
+\resizebox{\linewidth}{!}{\begin{tabular}{@{}llcccc@{}}
+\toprule
+Set & Trace feature & Pooled AUROC & Within-question & Contested within & Mean (right / wrong) \\
+\midrule
+dev & Length (tokens) & 0.700 & 0.580 & 0.495 & 7521.8 / 10005.3 \\
+dev & Self-corrections (``wait'', ``actually'', \dots) & 0.677 & 0.563 & 0.477 & 23.8 / 34.9 \\
+dev & Guess phrases (``let's assume'', \dots) & 0.680 & 0.611 & 0.577 & 1.0 / 2.4 \\
+dev & Final-answer tags & 0.529 & 0.549 & 0.488 & 1.0 / 1.2 \\
+test & Length (tokens) & 0.655 & 0.573 & 0.486 & 7977.9 / 9750.5 \\
+test & Self-corrections (``wait'', ``actually'', \dots) & 0.648 & 0.553 & 0.514 & 26.0 / 36.0 \\
+test & Guess phrases (``let's assume'', \dots) & 0.656 & 0.576 & 0.568 & 1.1 / 2.3 \\
+test & Final-answer tags & 0.526 & 0.536 & 0.509 & 1.0 / 1.1 \\
+\bottomrule
+\end{tabular}}
+\caption{Judge-free trace features. They reach the pooled AUROC of the Phase-2 trained self-judge (0.665) because hard questions produce long, hesitant attempts, but are near chance on contested questions, where picking happens. Almost every right attempt contains self-corrections.}
+\label{tab:trace}
+\end{table*}

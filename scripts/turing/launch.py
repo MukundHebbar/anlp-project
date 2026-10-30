@@ -117,7 +117,7 @@ def submit(a, command):
     walltime = time.strftime("%H:%M:%S", time.gmtime(int(a.hours * 3600)))
     cmd = shlex.join(c.replace("{out}", out) for c in command)  # keeps arguments that contain spaces
     script = HEADER.format(name=a.name, node=node, gpus=a.gpus, cpus=8 * a.gpus, mem=48 * a.gpus, walltime=walltime,
-                           rundir=rundir, scratch=SCRATCH, repo=REPO, out=out, limit=limit, command=cmd,
+                           rundir=rundir, scratch=a.scratch or SCRATCH, repo=REPO, out=out, limit=limit, command=cmd,
                            dependency=(f"#SBATCH --dependency={a.after if a.after.startswith('after') else 'afterok:' + a.after}\n"
                                        if a.after else ""))
     (rundir / "job.sbatch").write_text(script)
@@ -144,6 +144,7 @@ def main():
     ap.add_argument("--hours", type=float)
     ap.add_argument("--after", default="", help="start only after these job ids succeed (Slurm afterok, e.g. 123:124)")
     ap.add_argument("--node", default="", help=f"compute node (default {NODE}); it needs the env and weights on its scratch")
+    ap.add_argument("--scratch", default="", help=f"node-local env and cache root (default {SCRATCH})")
     a = ap.parse_args(argv)
     if a.action == "reconcile":
         ledger = reconcile(load())

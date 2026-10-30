@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering\small
+\resizebox{\linewidth}{!}{\begin{tabular}{@{}lcc@{}}
+\toprule
+Test attempts 0--3, 4 chains each & Measured & Model \\
+\midrule
+Share of ``incorrect'' verdicts (sampled) & 0.154 & 0.04 (Phase 2 dev) \\
+Hit rate $H$ / false-alarm rate $F$ & 0.255 / 0.125 & 0.074 / 0.022 \\
+$d'=z(H)-z(F)$ & 0.49 & 0.57 \\
+AUROC, 1 sampled verdict & 0.565 & 0.526 \\
+AUROC, share of 4 sampled verdicts & 0.635 & 0.568 \\
+AUROC, verdict probability, 1 chain & 0.689 & -- \\
+AUROC, verdict probability, mean of 4 chains & 0.694 & $\le$0.715 \\
+AUROC, direct probability (no reasoning) & 0.717 & -- \\
+$P$(4 of 4 ``incorrect'' $\mid$ wrong), observed & 0.0422 & 0.005 \\
+\quad same, if verdicts were independent & 0.00352 & 0.00003 \\
+Chains reaching a verdict & 0.902 & 0.89 (Phase 2) \\
+\bottomrule
+\end{tabular}}
+\caption{Stage 0: the untrained mixed judge on its own test attempts (1486 answered attempts, 28.7\% wrong). ``Model'' is the latent judge fitted to Phase-2 single-verdict flag rates (\S\ref{sec:lenient}).}
+\label{tab:stage0}
+\end{table}
