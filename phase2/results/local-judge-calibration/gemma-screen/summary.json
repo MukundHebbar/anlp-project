@@ -1,0 +1,154 @@
+{
+  "model": "gemma-screen",
+  "fit_arms": [
+    "base",
+    "opd-judge-s52",
+    "opd-reconstruct-s52",
+    "sft-judge"
+  ],
+  "heldout_arms": [
+    "opd-judge-s104",
+    "opd-reconstruct-s104",
+    "opd-solve-s52",
+    "sft-reconstruct"
+  ],
+  "requests": 449,
+  "failed_requests": 13,
+  "dimensions": {
+    "judge.M": {
+      "n": 95,
+      "heldout_n": 48,
+      "raw_kappa": 0.4382978723404256,
+      "calibrated_kappa": 0.5133531157270028
+    },
+    "judge.E": {
+      "n": 62,
+      "heldout_n": 29,
+      "raw_kappa": 0.5651499482936918,
+      "calibrated_kappa": 0.5805633088048718
+    },
+    "reconstruct.P": {
+      "n": 83,
+      "heldout_n": 40,
+      "raw_kappa": 0.4017094017094017,
+      "calibrated_kappa": 0.5081967213114753
+    },
+    "reconstruct.T": {
+      "n": 83,
+      "heldout_n": 40,
+      "raw_kappa": 0.6706827309236947,
+      "calibrated_kappa": 0.7207547169811321
+    },
+    "reconstruct.E": {
+      "n": 83,
+      "heldout_n": 40,
+      "raw_kappa": 0.34184675834970524,
+      "calibrated_kappa": 0.39862542955326463
+    },
+    "reconstruct.M": {
+      "n": 83,
+      "heldout_n": 40,
+      "raw_kappa": 0.5660377358490566,
+      "calibrated_kappa": 0.5336322869955157
+    }
+  },
+  "cutoffs": {
+    "judge.M": [
+      1.0,
+      2.5,
+      3.9,
+      4.0
+    ],
+    "judge.E": [
+      0.3,
+      3.5,
+      3.6,
+      3.9
+    ],
+    "reconstruct.P": [
+      0.1,
+      1.0,
+      2.0,
+      2.1
+    ],
+    "reconstruct.T": [
+      1.0,
+      1.1,
+      1.7,
+      2.0
+    ],
+    "reconstruct.E": [
+      1.5,
+      1.6,
+      3.5,
+      4.0
+    ],
+    "reconstruct.M": [
+      0.7,
+      2.7,
+      2.8,
+      3.9
+    ]
+  },
+  "heldout_cutoffs": {
+    "judge.M": [
+      1.1,
+      2.2,
+      3.9,
+      4.0
+    ],
+    "judge.E": [
+      0.3,
+      3.5,
+      3.6,
+      3.7
+    ],
+    "reconstruct.P": [
+      0.1,
+      1.1,
+      2.0,
+      3.9
+    ],
+    "reconstruct.T": [
+      0.9,
+      1.0,
+      1.9,
+      3.0
+    ],
+    "reconstruct.E": [
+      0.8,
+      1.9,
+      2.2,
+      4.0
+    ],
+    "reconstruct.M": [
+      0.8,
+      1.2,
+      2.1,
+      3.9
+    ]
+  },
+  "heldout_total_scores": {
+    "judge": {
+      "n": 48,
+      "pearson_r": 0.9088807819870348,
+      "mae": 11.458333333333334,
+      "reference_mean": 52.994791666666664,
+      "model_mean": 49.869791666666664
+    },
+    "reconstruct": {
+      "n": 40,
+      "pearson_r": 0.8468934333490439,
+      "mae": 8.75,
+      "reference_mean": 40.3125,
+      "model_mean": 43.75
+    }
+  },
+  "heldout_shortcuts": {
+    "n": 40,
+    "reference_positive": 3,
+    "caught": 1,
+    "false_positive": 0
+  },
+  "eligible_for_both_training_tasks": true
+}

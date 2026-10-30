@@ -1,0 +1,41 @@
+{
+  "name": "ministral-instruct-bf16-solve-test",
+  "adapter": null,
+  "split": "test",
+  "model": "mistralai/Ministral-3-3B-Instruct-2512-BF16",
+  "prompts": "v2",
+  "samples": 4,
+  "model_path": "/scratch/mukund.hebbar/ministral-baseline/model",
+  "model_format": "mistral",
+  "chat_mode": "instruct",
+  "samples_tasks": "solve",
+  "limit": null,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "seed": 0,
+    "max_tokens": 32768
+  },
+  "two_pass": {
+    "first_cap": 16384,
+    "max_cap": 32768,
+    "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+  },
+  "platform": "turing-l40s",
+  "timing": {
+    "solve": {
+      "task": "solve",
+      "n": 400,
+      "samples": 4,
+      "continued": 12,
+      "cap_hits_final": 8,
+      "mean_repetition": 0.06168365845517431,
+      "seconds": {
+        "load": 16,
+        "first_pass": 1683,
+        "continuation": 729
+      }
+    }
+  }
+}

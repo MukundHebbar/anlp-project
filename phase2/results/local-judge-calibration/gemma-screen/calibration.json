@@ -1,0 +1,43 @@
+{
+  "version": "gemma-screen-historical-v1",
+  "model": "google/gemma-4-12B-it",
+  "eligible_for_both_training_tasks": true,
+  "cutoffs": {
+    "judge.M": [
+      1.0,
+      2.5,
+      3.9,
+      4.0
+    ],
+    "judge.E": [
+      0.3,
+      3.5,
+      3.6,
+      3.9
+    ],
+    "reconstruct.P": [
+      0.1,
+      1.0,
+      2.0,
+      2.1
+    ],
+    "reconstruct.T": [
+      1.0,
+      1.1,
+      1.7,
+      2.0
+    ],
+    "reconstruct.E": [
+      1.5,
+      1.6,
+      3.5,
+      4.0
+    ],
+    "reconstruct.M": [
+      0.7,
+      2.7,
+      2.8,
+      3.9
+    ]
+  }
+}

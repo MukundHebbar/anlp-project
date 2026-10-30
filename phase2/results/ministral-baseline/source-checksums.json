@@ -1,0 +1,10 @@
+{
+  "local/ministral-baseline/test/s0/scores.jsonl": "2aa3694cb57536c78e50cbb53fd42d36ff4f9dd386fc4812039b48a23180655c",
+  "local/ministral-baseline/test/s1/scores.jsonl": "2453ec6ddefea5237b2537017823818ccad596a5496f66f79cc43af50c4f6116",
+  "local/ministral-baseline/test/s2/scores.jsonl": "506f2ba8ca55d094575fc37624fe354a5b44c4841e71eea39f38768f3e037e78",
+  "local/ministral-baseline/test/s3/scores.jsonl": "651178313194ecbb97ba04ccf47d47964b8503f11ba832649553b3e3f4ec45d7",
+  "artifacts/baselines/final-v3/test/v3-pass4-2b/s0/scores.jsonl": "eaa7ec0a8e82e1c35437ec63f0d84290bc82f084c91702da263b3925cd63a1e0",
+  "artifacts/baselines/final-v3/test/v3-pass4-2b/s1/scores.jsonl": "0fe244f6e05f8b1c49f4e581e074fd00e755260769028573e024a28054fb371a",
+  "artifacts/baselines/final-v3/test/v3-pass4-2b/s2/scores.jsonl": "422840cc318c2bd1f48d19ba8486b4af3aeda6404e6b06c69d927651ae22404d",
+  "artifacts/baselines/final-v3/test/v3-pass4-2b/s3/scores.jsonl": "84d071a020669d6f3ab4c0c3b53a1cd8a10197e374512821cfd0e6c1f5588be1"
+}

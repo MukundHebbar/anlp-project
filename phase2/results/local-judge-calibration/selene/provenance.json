@@ -1,0 +1,27 @@
+{
+  "branch": "phase2-failure-driven",
+  "commit": "c71f10bbde8e91fd48db0eb0cb36b106412d4336",
+  "job_id": 52341,
+  "node": "node08",
+  "gpu_hours": 0.083,
+  "jev_api_calls": 0,
+  "deepseek_api_calls": 0,
+  "file_sha256": {
+    "phase2/local_judge_calibration/infer.py": "6f8b8e87af2f07c91b056213d0d0cfd4d4fe1bd36d74c6543b70c37561ce61fc",
+    "phase2/local_judge_calibration/fit.py": "599e279bb4c70c70875bdc1be49c025e759183cfbdbf01a4d1e2f4b9975cf6a9",
+    "scripts/qwen_judge_calibration.py": "9af4d2e6ad9defc7e67a9324fdadc9b7847a0d14169db6f24fb2b41549e2b54e",
+    "src/anlp_project/jev_judging.py": "9a71095d7ad52a8717dd992f6ead78b0fbc1c776814fa40a77e93842078ee72f",
+    "src/anlp_project/qwen_judging.py": "ee390f3b7a979a4aca6d7ee0950487d7615e5bcff80841eef6acd53ebde44534",
+    "artifacts/qwen-judge-calibration/requests.jsonl": "d44b7460331eb215bb6f4c65a4b2cebaa2381121864e47d9f4303d03d4dda87d",
+    "artifacts/jev-recon-v2/sample.json": "dce3816ed36c240f46b7f7486a366b7e58dc88b1f679b2606ad60957f85608af",
+    "artifacts/jev-recon-v2/judge-sample.json": "6867cedd85f5b849ef6f3913a014cbbca6a2cafc42253cf0349f8e305beb3dd0",
+    "artifacts/baselines/final-v3/test/matrix-base/judged-scores.jsonl": "3b50df614ee069ce7e8234bf3cc91d8996edc48d99434d1df4835e492c10f907",
+    "artifacts/baselines/final-v3/test/matrix-opd-judge-s104/judged-scores.jsonl": "80424818791b4ed11ba1cecfc71751f888ea4f1869f887f136ae42f956d79b8f",
+    "artifacts/baselines/final-v3/test/matrix-opd-judge-s52/judged-scores.jsonl": "db537f966c023ed8fceb032cde6713c337bed97bda6abf42fe552c5595b7cf3c",
+    "artifacts/baselines/final-v3/test/matrix-opd-reconstruct-s104/judged-scores.jsonl": "d35a8e7f43dcbff26b49d6edeb78cf234178e0f64720c6b010598cea1551c1ee",
+    "artifacts/baselines/final-v3/test/matrix-opd-reconstruct-s52/judged-scores.jsonl": "1edc3b405df0fcb338878d4e1940998c17f6a7bed3f8e744cf296a8bfd95261c",
+    "artifacts/baselines/final-v3/test/matrix-opd-solve-s52/judged-scores.jsonl": "4f89d46b21e60ff2591f41940fd51ffd2c46a6adfd48cfec3212fb0f1611c697",
+    "artifacts/baselines/final-v3/test/matrix-sft-judge/judged-scores.jsonl": "2a9923385e5abf7e44c8cd2a6c1917de35c612efdff62c2311f4fbfb6a72f9fb",
+    "artifacts/baselines/final-v3/test/matrix-sft-reconstruct/judged-scores.jsonl": "cf7481faa41456f35b502860e1fa7e924883136b734675f4304f4e680fc46e55"
+  }
+}
