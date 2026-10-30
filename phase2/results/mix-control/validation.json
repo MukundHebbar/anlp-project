@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "raw_scores": 11200,
+  "sample_score_sets": 56,
+  "validation_questions": 348,
+  "dev_questions": 199,
+  "val200_questions": 149,
+  "control_learning_rates": [
+    "2e-5",
+    "1e-5",
+    "6.7e-6"
+  ],
+  "control_seeds_per_learning_rate": [
+    0,
+    1
+  ],
+  "mixed_training_seeds": 1,
+  "paired_outcomes_match": true,
+  "published_means_match": true,
+  "decision_output_matches_exactly": true,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 0,
+  "new_training_or_api_calls": false,
+  "decision_code_sha256": {
+    "phase2/mix_control/decide.py": "2002ee57309f1d824d3f34577347e61885999ebd49cfea7c5dffad34e9d8abe0",
+    "phase2/mix_control/decide_lr.py": "d41459cafd2e1d0280c68027152481fecc1983928d62cde4f3d78a7cf4c759fd"
+  }
+}

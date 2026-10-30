@@ -1,0 +1,127 @@
+{
+  "training_config": {
+    "task": "solve",
+    "steps": 75,
+    "platform": "turing-l40s",
+    "gpus": [
+      "0",
+      "1"
+    ],
+    "overrides": [
+      "prompts_per_step=10",
+      "optimizer.lr=1e-5",
+      "optimizer.warmup_steps=5",
+      "async_rollouts=true",
+      "best_window=8",
+      "best_keep=3",
+      "seed=1"
+    ],
+    "prompts": "phase2/mix_control/data/prompts-solve75.jsonl",
+    "config_name": "grpo",
+    "external_teacher": false,
+    "init_adapter": null,
+    "resume_from": null,
+    "start_step": 0,
+    "student": "Qwen/Qwen3.5-2B",
+    "teacher": null,
+    "objective": "per-token reverse KL, sampled-token estimator, discount 0",
+    "loss_normalization": "token mean per rollout, then mean over rollouts",
+    "importance_sampling_cap": 2.0,
+    "lora": {
+      "r": 64,
+      "alpha": 64,
+      "dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "in_proj_qkv",
+        "in_proj_z",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
+    },
+    "optimizer": {
+      "name": "adamw",
+      "lr": 1e-05,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "warmup_steps": 5,
+      "grad_clip": 1.0
+    },
+    "prompts_per_step": 10,
+    "samples_per_prompt": 8,
+    "updates_per_step": 1,
+    "rollout": {
+      "temperature": 1.0,
+      "top_p": 1.0
+    },
+    "rollout_max_tokens": {
+      "solve": 16384,
+      "judge": 16384,
+      "reconstruct": 16384
+    },
+    "logprob_chunk_tokens": 1024,
+    "auto_stop": {
+      "truncation_rise": 0.15,
+      "truncation_ceiling": 0.35,
+      "patience": 3,
+      "max_mean_abs_logprob_gap": 0.5,
+      "repetition_threshold": 0.5,
+      "repetition_patience": 2
+    },
+    "drop_truncated": false,
+    "kl_anchor_beta": 0.0,
+    "overlong_penalty": 0.0,
+    "soft_length_penalty": null,
+    "teacher_system_prompt": null,
+    "loss": "sampled",
+    "teacher_signal_max_len": null,
+    "sft_mix": null,
+    "verdict_reward": null,
+    "topk_k": 20,
+    "topk_divergence": "reverse",
+    "train_micro_tokens": 16384,
+    "keep_adapters_every": 8,
+    "method": "grpo",
+    "variant": "dr_grpo",
+    "norm_tokens": 16384,
+    "reward_timeout_s": 180,
+    "async_rollouts": true,
+    "best_window": 8,
+    "best_keep": 3,
+    "reward_judge": "jev",
+    "reward_judge_port": 8002,
+    "extra_reward_rows": null,
+    "seed": 1
+  },
+  "training_metrics_rows": 75,
+  "checkpoint_sha256": {
+    "adapter_model.safetensors": "64a047804251e7c124bd5297fc401a7c8fabcf545826fc00e6ae9f2d91c64d90",
+    "adapter_config.json": "adac2924ec61a3c70544cd4c41a246ed65a2d40368baa476abe5a3ffb264bc2d"
+  },
+  "response_sha256": {
+    "dev": "b332075dbc7695c04470dc9a4bbb65f430351ae9d7d88c34dc2ce1c4718d34c9",
+    "val200": "40e29005a1c762fe8644372b25e669a6e4817392b802693ef790239ad05476c9"
+  },
+  "source_sha256": {
+    "scripts/turing/eval_matrix.py": "c00cadbd44156a7504331a01840943ad79b4acdd2a2d3a963a7765aa1238d0de",
+    "phase2/failure_driven/scripts/env.sh": "9e81c0bc1372c593ef20ff3c8d12915cbf76c93b76960ef3ff89979b9e4ab56c",
+    "phase2/failure_driven/scripts/ready_env.sh": "e2d2f02c6e3c5e80d44f640e4baf8c488fed09bd29e99f359aaaa8973439dd82",
+    "phase2/failure_driven/data/val_uids.json": "7329466908257bef518343f53e56f0b2b2570f43fec7c9912acad0c8848b817e",
+    "phase2/mix_control/data/mixed_solve_uids.json": "19933235a5cea5c79d3226f40b90d79dce9156f7006baa662799bf8e10c2e458"
+  },
+  "slurm_accounting": [
+    "51700|mc-ctrl-lr1e-5-s1|priyesh.shukla|COMPLETED|0:0|18117|node07|billing=60,cpu=16,gres/gpu=2,mem=96G,node=1",
+    "51980|mc-dev-ctrl-lr1e-5-s1-step75-n07|priyesh.shukla|FAILED|2:0|1|node07|billing=30,cpu=8,gres/gpu=1,mem=48G,node=1",
+    "52200|mc-dev-ctrl-lr1e-5-s1-step75-recovery-20261027|priyesh.shukla|FAILED|2:0|1|node07|billing=30,cpu=8,gres/gpu=1,mem=48G,node=1",
+    "52201|mc-dev-ctrl-lr1e-5-s1-step75-recovery2-20261027|priyesh.shukla|COMPLETED|0:0|1581|node07|billing=30,cpu=8,gres/gpu=1,mem=48G,node=1",
+    "52202|mc-val200-ctrl-lr1e-5-s1-step75-recovery2-20261027|priyesh.shukla|COMPLETED|0:0|1642|node07|billing=30,cpu=8,gres/gpu=1,mem=48G,node=1"
+  ]
+}

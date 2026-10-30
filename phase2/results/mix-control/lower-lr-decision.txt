@@ -1,0 +1,12 @@
+348 validation questions, step 75
+  mixed75            avg@4 71.0  pass@4 85.3
+  ctrl-s0            avg@4 63.1  pass@4 83.9
+  ctrl-s1            avg@4 68.2  pass@4 87.4
+  ctrl-lr1e-5-s0     avg@4 62.9  pass@4 83.9
+  ctrl-lr1e-5-s1     avg@4 63.1  pass@4 84.2
+  ctrl-lr6.7e-6-s0   avg@4 62.1  pass@4 84.8
+  ctrl-lr6.7e-6-s1   avg@4 61.3  pass@4 84.8
+  lr 2e-5  : mixed - mean(seeds) +5.4 [+3.0, +7.8]; seed spread +5.1 [+2.3, +8.0] -> mixed beats it
+  lr 1e-5  : mixed - mean(seeds) +8.0 [+5.6, +10.5]; seed spread +0.3 [-2.5, +3.0] -> mixed beats it
+  lr 6.7e-6: mixed - mean(seeds) +9.3 [+6.9, +11.8]; seed spread -0.9 [-3.7, +2.0] -> mixed beats it
+Transfer by content supported: mixed beats the SOLVE-only control at every lr

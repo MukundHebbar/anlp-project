@@ -1,3 +1,11 @@
 # Job outputs and downloaded benchmarks stay local
 runs/
 data/
+
+# Frozen inputs required to reproduce the published task-mixture control and exclusions.
+!mix_control/data/
+!mix_control/data/mixed_solve_uids.json
+!mix_control/data/prompts-solve75.jsonl
+!failure_driven/data/
+!failure_driven/data/eval_duplicates.json
+!failure_driven/data/val_uids.json
