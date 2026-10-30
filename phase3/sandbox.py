@@ -2,8 +2,8 @@
 
 Each program runs in its own temporary directory with `python -I`, an empty environment, CPU/memory/file-size limits and
 a 10 s wall clock, inside unprivileged user + mount + network + PID namespaces
-(`unshare -rmnpf --mount-proc --kill-child`): no network, a private /proc, and empty tmpfs mounts over all of $HOME, the repository, /scratch, /tmp, /var/tmp, /run,
-/var/run, /dev/shm and the model cache (no host files or Unix sockets there). Only the Python install and the venv
+(`unshare -rmnpf --mount-proc --kill-child`): no network, a private /proc, and empty tmpfs mounts over all of $HOME,
+the repository, /scratch, /tmp, /var/tmp, /run, /var/run, /dev/shm and the model cache (no host files or Unix sockets there). Only the Python install and the venv
 (read-only) and the program's own temporary directory are bound back. Python then starts with an empty capability
 bounding set and no_new_privs (`setpriv`), so the program cannot unmount or remount anything. The regex denylist is
 only a first filter (status "blocked"); the namespaces are the isolation boundary. Missing `unshare`, `setpriv` or
