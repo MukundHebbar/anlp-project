@@ -1,8 +1,8 @@
 """Run model-written Python programs for evidence.py (program checks and program-of-thought).
 
 Each program runs in its own temporary directory with `python -I`, an empty environment, CPU/memory/file-size limits and
-a 10 s wall clock, inside unprivileged user + mount + network + PID namespaces (`unshare -rmnpf --mount-proc`): no
-network, a private /proc, and empty tmpfs mounts over all of $HOME, the repository, /scratch, /tmp, /var/tmp, /run,
+a 10 s wall clock, inside unprivileged user + mount + network + PID namespaces
+(`unshare -rmnpf --mount-proc --kill-child`): no network, a private /proc, and empty tmpfs mounts over all of $HOME, the repository, /scratch, /tmp, /var/tmp, /run,
 /var/run, /dev/shm and the model cache (no host files or Unix sockets there). Only the Python install and the venv
 (read-only) and the program's own temporary directory are bound back. Python then starts with an empty capability
 bounding set and no_new_privs (`setpriv`), so the program cannot unmount or remount anything. The regex denylist is
@@ -65,8 +65,8 @@ def run(code):
         with open(path, "w") as fh:
             fh.write(code)
         try:
-            p = subprocess.run(["unshare", "-rmnpf", "--mount-proc", "sh", "-c", _JAIL, "jail", d, *KEEP], cwd=d,
-                               capture_output=True, text=True, timeout=TIMEOUT,
+            p = subprocess.run(["unshare", "-rmnpf", "--mount-proc", "--kill-child", "sh", "-c", _JAIL, "jail", d,
+                                *KEEP], cwd=d, capture_output=True, text=True, timeout=TIMEOUT,
                                env={"PATH": "/usr/bin:/bin", "PY": sys.executable, "OMP_NUM_THREADS": "1",
                                     "OPENBLAS_NUM_THREADS": "1"},
                                preexec_fn=_limits, stdin=subprocess.DEVNULL)
