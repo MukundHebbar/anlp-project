@@ -6,6 +6,7 @@
   when the verdict is right.
 - RECONSTRUCT: the Jev pipeline's probability-weighted score / 100 (gate -> few-shot shortcut stage ->
   P/T/E/M; jev_judging), minus 0.1 for several question drafts in one response.
+- REPAIR (failure-driven arm F): 0.75 for a correct corrected final answer + 0.25 for the right first wrong step.
 
 ``None`` means a Jev call failed: the caller drops the rollout from the step rather than guessing.
 """
@@ -56,14 +57,29 @@ def reconstruct_reward(row: dict[str, Any], text: str, finish: str, jev: jj.Jev)
         rec = jj.reconstruct_answer(row, text, jev, None)
     except Exception:
         return None
-    out = jj.score_record(row, text, rec, jj._cutoffs())
+    cutoffs = jev.cutoffs if hasattr(jev, 'cutoffs') else jj._cutoffs()
+    out = jj.score_record(row, text, rec, cutoffs)
     penalty = 0.1 if reconstruct_format_flags(text) else 0.0
     return max(0.0, out["score_weighted"] / 100 - penalty)
+
+
+def repair_reward(row: dict[str, Any], text: str, finish: str) -> float:
+    """REPAIR (phase2/failure_driven arm F): the student's own failed attempt is shown; it names the first wrong step
+    and writes a corrected solution. 0.75 if the corrected final answer is right (SOLVE checker and strict gate),
+    + 0.25 if the named first wrong step is the key's."""
+    if finish != "stop" or solve_gate(text):
+        return 0.0
+    _, step = parse_judge_response(text)
+    answer = extract_solve_answer(text)[0]
+    right = answer is not None and compare_answer_detailed(row["final_answer"], answer)["answer_status"] == "correct"
+    return 0.75 * right + 0.25 * (step == row["private"]["first_error_step_id"])
 
 
 def reward(task: str, row: dict[str, Any], text: str, finish: str, jev: jj.Jev | None) -> float | None:
     if task == "solve":
         return solve_reward(row, text, finish)
+    if task == "repair":
+        return repair_reward(row, text, finish)
     if task == "judge":
         return judge_reward(row, text, finish, jev)
     return reconstruct_reward(row, text, finish, jev)

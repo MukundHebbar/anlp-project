@@ -25,7 +25,7 @@ REPO = Path(__file__).resolve().parents[2]
 LEDGER = REPO / "artifacts" / "opd" / "turing" / "turing_budget.json"
 NODE = "node07"
 # User approval 2026-10-01 (transfer matrix): every free GPU on node07 and node11 for 14-16 hours.
-MAX_CONCURRENT_GPUS = 4  # user limit (2026-10-07): never more than 4 GPUs at once, queued jobs included
+MAX_CONCURRENT_GPUS = 6  # user limit: 4 from 2026-10-07, raised to 6 on 2026-10-25 (mixed-run control); queued jobs included
 SCRATCH = "/scratch/mukund.hebbar/anlp-opd"  # shared env and caches (writable for this account on both nodes)
 OUT_ROOT = REPO / "runs-out"
 

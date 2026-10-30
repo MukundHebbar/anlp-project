@@ -241,6 +241,8 @@ GRPO_CONFIG: dict[str, Any] = {
     # Optional jsonl of extra answer-key rows (FINAL-v3 row format) for prompts outside the train split, such as
     # auxiliary items built during training (phase2/failure_driven).
     "extra_reward_rows": None,
+    # Repeat runs: shifts the rollout sampling seeds and seeds the LoRA initialisation. 0 = the original runs.
+    "seed": 0,
 }
 
 

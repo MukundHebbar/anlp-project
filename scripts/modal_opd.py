@@ -96,6 +96,7 @@ def _train(task: str, prompts: list[dict], cfg: dict, run_name: str, steps: int,
 
 _SRC = Path(__file__).resolve().parents[1] / "src" / "anlp_project"
 opd_image = (gpu_image.add_local_file(_SRC / "opd_monitor.py", "/root/opd_monitor.py")
+             .add_local_file(_SRC / "student_models.py", "/root/student_models.py")
              .add_local_file(_SRC / "opd_train.py", "/root/opd_train.py"))
 
 
