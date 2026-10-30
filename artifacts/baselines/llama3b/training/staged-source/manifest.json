@@ -1,0 +1,26 @@
+{
+  "note": "Staged source collected on 2026-10-30; frozen per-run manifests are kept separately and not rewritten.",
+  "files": {
+    "node03": {
+      "src/anlp_project/opd.py": "92f952f3dfbd8fcce0e6fb9cb6edd89c83c4d35328f272bfb58e68220187ad2b",
+      "src/anlp_project/opd_train.py": "7f2974fd54b2310490ded618cde5c659c7d62b9d11ad5fd81a5c992fa4558609",
+      "src/anlp_project/rewards.py": "52de88122cb8537584736955b46e05c9a4e1ef0a0e34ca58df61c2b868160e47",
+      "src/anlp_project/student_models.py": "b88909ed0f00bba30782033a87016df49bb9e801a8260d68480f037b7869530b",
+      "src/anlp_project/gemma_judging.py": "dd66c6d2d4ae688b259232337227aef900f2d76a15299b5a2770dcc4407ad8e8",
+      "src/anlp_project/qwen_judging.py": "ee390f3b7a979a4aca6d7ee0950487d7615e5bcff80841eef6acd53ebde44534",
+      "phase2/llama_transfer/run.py": "1384a131b6ebb9f004e21a3e54b9b48f755d1de8f07952b20b92e55a25e5967e",
+      "phase2/llama_transfer/arm.py": "afa0d8af4a1446a82fac9150e9e49dc5d7d3f9fc5c952edc771de323787c9513",
+      "phase2/llama_transfer/probes.py": "556a1ea84bfc2e52dee968d529c262da1c246d547d7fc5a024b62e06b34d92c8"
+    },
+    "node08": {
+      "src/anlp_project/opd.py": "92f952f3dfbd8fcce0e6fb9cb6edd89c83c4d35328f272bfb58e68220187ad2b",
+      "src/anlp_project/opd_train.py": "7f2974fd54b2310490ded618cde5c659c7d62b9d11ad5fd81a5c992fa4558609",
+      "src/anlp_project/rewards.py": "52de88122cb8537584736955b46e05c9a4e1ef0a0e34ca58df61c2b868160e47",
+      "src/anlp_project/student_models.py": "b88909ed0f00bba30782033a87016df49bb9e801a8260d68480f037b7869530b",
+      "src/anlp_project/gemma_judging.py": "dd66c6d2d4ae688b259232337227aef900f2d76a15299b5a2770dcc4407ad8e8",
+      "phase2/llama_transfer/run.py": "1384a131b6ebb9f004e21a3e54b9b48f755d1de8f07952b20b92e55a25e5967e",
+      "phase2/llama_transfer/arm.py": "cf3568d66b0d45ff5ef5b3d3664daf905190c92bdf811ed6739823e9e06851c6",
+      "phase2/llama_transfer/probes.py": "556a1ea84bfc2e52dee968d529c262da1c246d547d7fc5a024b62e06b34d92c8"
+    }
+  }
+}

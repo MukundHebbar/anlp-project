@@ -1,0 +1,13 @@
+{
+ "task": "solve",
+ "n": 200,
+ "samples": 4,
+ "continued": 0,
+ "cap_hits_final": 0,
+ "mean_repetition": 0.07953558911058896,
+ "seconds": {
+  "load": 30,
+  "first_pass": 865,
+  "continuation": 0
+ }
+}

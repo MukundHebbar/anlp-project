@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "models": {
+    "llama3b-base": {
+      "solve_responses": 1600,
+      "mean_strict_solve_accuracy": 0.09,
+      "final_qwen_scored": 800
+    },
+    "llama3b-grpo-judge-step104": {
+      "solve_responses": 1600,
+      "mean_strict_solve_accuracy": 0.091875,
+      "final_qwen_scored": 800
+    },
+    "llama3b-grpo-judge-step78": {
+      "solve_responses": 1600,
+      "mean_strict_solve_accuracy": 0.084375,
+      "final_qwen_scored": 800
+    },
+    "llama3b-grpo-reconstruct-step104": {
+      "solve_responses": 1600,
+      "mean_strict_solve_accuracy": 0.14875,
+      "final_qwen_scored": 800
+    },
+    "llama3b-grpo-solve-step106": {
+      "solve_responses": 1600,
+      "mean_strict_solve_accuracy": 0.29125,
+      "final_qwen_scored": 800
+    }
+  },
+  "training": {
+    "solve": {
+      "updates": 106,
+      "train_questions": 3392,
+      "dev_questions": 200,
+      "selected_step": 106
+    },
+    "judge": {
+      "updates": 104,
+      "train_questions": 832,
+      "dev_questions": 200,
+      "selected_step": 78
+    },
+    "reconstruct": {
+      "updates": 104,
+      "train_questions": 832,
+      "dev_questions": 200,
+      "selected_step": 104
+    }
+  },
+  "probe_mean_dev_accuracy": {
+    "1e-5": 0.08875,
+    "2e-5": 0.1075
+  },
+  "new_training_or_api_calls": false
+}

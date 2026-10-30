@@ -1,0 +1,18 @@
+{
+ "rule": "best own-task dev score among steps 26/52/78/104; ties -> later step; RECONSTRUCT scored by the Gemma reward judge",
+ "reconstruct": {
+  "selected_step": 104,
+  "dev_scores": {
+   "26": 46.53125,
+   "52": 53.21875,
+   "78": 56.21875,
+   "104": 59.5625
+  },
+  "n": {
+   "26": 200,
+   "52": 200,
+   "78": 200,
+   "104": 200
+  }
+ }
+}

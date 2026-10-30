@@ -1,0 +1,13 @@
+{
+ "task": "judge",
+ "n": 200,
+ "samples": 1,
+ "continued": 0,
+ "cap_hits_final": 0,
+ "mean_repetition": 0.016194735601225127,
+ "seconds": {
+  "load": 36,
+  "first_pass": 18,
+  "continuation": 0
+ }
+}
