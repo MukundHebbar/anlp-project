@@ -28,15 +28,16 @@ _BLOCK = re.compile(r"\b(import\s+(os|subprocess|shutil|socket|requests|urllib|p
                     r"\b(os|subprocess|shutil|socket|pathlib|ctypes)\s*[,.]|,\s*(os|subprocess|shutil|socket)\b)")
 TIMEOUT = 10
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HIDE = [os.path.expanduser("~"), ROOT, "/scratch", "/tmp", "/var/tmp", "/run", "/var/run", "/dev/shm",
-        os.environ.get("HF_HOME", "/nonexistent")]
+# resolved, so a symlinked $HOME, repository or cache is covered at its real location (/var/run -> /run dedups)
+HIDE = sorted({os.path.realpath(p) for p in (os.path.expanduser("~"), ROOT, "/scratch", "/tmp", "/var/tmp", "/run",
+                                             "/var/run", "/dev/shm", os.environ.get("HF_HOME", "/nonexistent"))})
 KEEP = sorted({os.path.realpath(p) for p in (sys.prefix, sys.base_prefix)})  # read-only, bound back after hiding
 # $1 = program dir. Stage the kept dirs on a tmpfs at /mnt, cover every HIDE path with an empty tmpfs, bind the kept
 # dirs (read-only) and the program dir back at their own paths, drop the staging mount, then drop every capability.
 _JAIL = ("set -e; d=$1; shift; mount -t tmpfs none /mnt; i=0; for k in \"$d\" \"$@\"; do "
          'mkdir /mnt/$i; mount --bind "$k" /mnt/$i; i=$((i+1)); done; '
-         "for p in " + " ".join(f"'{p}'" for p in HIDE) + '; do if [ -d "$p" ] && [ ! -L "$p" ]; then '
-         'mount -t tmpfs none "$p"; fi; done; '
+         "for p in " + " ".join(f"'{p}'" for p in HIDE) + '; do if [ -d "$p" ]; then mount -t tmpfs none "$p"; fi; '
+         'done; '
          'i=0; for k in "$d" "$@"; do mkdir -p "$k"; mount --bind /mnt/$i "$k"; '
          'if [ $i -gt 0 ]; then mount -o remount,bind,ro "$k"; fi; i=$((i+1)); done; '
          'umount -l /mnt; cd "$d"; '
