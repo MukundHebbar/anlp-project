@@ -1,10 +1,10 @@
 """Run model-written Python programs for evidence.py (program checks and program-of-thought).
 
 Each program runs in its own temporary directory with `python -I`, an empty environment, CPU/memory/file-size limits and
-a 10 s wall clock, inside unprivileged user + mount + network namespaces (`unshare -rmn`): no network, and tmpfs mounts
-hide the repository, the run outputs, ~/.ssh, ~/.cache, ~/.config and the model cache. The regex denylist is only a
-first filter (status "blocked"); the namespaces are the isolation boundary. Missing `unshare` is an error, not a
-fallback.
+a 10 s wall clock, inside unprivileged user + mount + network namespaces (`unshare -rmn`): no network, and empty tmpfs
+mounts cover all of $HOME, the repository, /scratch, /tmp and the model cache. Only the Python install and the venv
+(read-only) and the program's own temporary directory are bound back. The regex denylist is only a first filter
+(status "blocked"); the namespaces are the isolation boundary. Missing `unshare` or /mnt is an error, not a fallback.
 Results are added in place to each completion: {code, status, last_line}.
 status: ok | no_code | blocked | timeout | error | no_output
 """
@@ -24,11 +24,17 @@ _BLOCK = re.compile(r"\b(import\s+(os|subprocess|shutil|socket|requests|urllib|p
                     r"\bopen\s*\(|\beval\s*\(|\bexec\s*\(|\bcompile\s*\(|input\s*\(|"
                     r"\b(os|subprocess|shutil|socket|pathlib|ctypes)\s*[,.]|,\s*(os|subprocess|shutil|socket)\b)")
 TIMEOUT = 10
-HOME = os.path.expanduser("~")
-HIDE = [f"{HOME}/anlp-project", f"{HOME}/.ssh", f"{HOME}/.cache", f"{HOME}/.config",
-        os.environ.get("HF_HOME", "/nonexistent")]
-_JAIL = ("for p in " + " ".join(f"'{p}'" for p in HIDE) + "; do [ -d \"$p\" ] && mount -t tmpfs none \"$p\"; done; "
-         'exec "$0" -I prog.py')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HIDE = [os.path.expanduser("~"), ROOT, "/scratch", "/tmp", os.environ.get("HF_HOME", "/nonexistent")]
+KEEP = sorted({os.path.realpath(p) for p in (sys.prefix, sys.base_prefix)})  # read-only, bound back after hiding
+# $1 = program dir. Stage the kept dirs on a tmpfs at /mnt, cover every HIDE path with an empty tmpfs, then bind the
+# kept dirs (read-only) and the program dir back at their own paths.
+_JAIL = ("set -e; d=$1; shift; mount -t tmpfs none /mnt; i=0; for k in \"$d\" \"$@\"; do "
+         'mkdir /mnt/$i; mount --bind "$k" /mnt/$i; i=$((i+1)); done; '
+         "for p in " + " ".join(f"'{p}'" for p in HIDE) + '; do [ -d "$p" ] && mount -t tmpfs none "$p"; done; '
+         'i=0; for k in "$d" "$@"; do mkdir -p "$k"; mount --bind /mnt/$i "$k"; '
+         '[ $i -gt 0 ] && mount -o remount,bind,ro "$k"; i=$((i+1)); done; '
+         'cd "$d"; exec "$PY" -I prog.py')
 
 
 def extract(text):
@@ -53,8 +59,10 @@ def run(code):
         with open(path, "w") as fh:
             fh.write(code)
         try:
-            p = subprocess.run(["unshare", "-rmn", "sh", "-c", _JAIL, sys.executable], cwd=d, capture_output=True, text=True, timeout=TIMEOUT,
-                               env={"PATH": "/usr/bin:/bin", "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1"},
+            p = subprocess.run(["unshare", "-rmn", "sh", "-c", _JAIL, "jail", d, *KEEP], cwd=d, capture_output=True,
+                               text=True, timeout=TIMEOUT,
+                               env={"PATH": "/usr/bin:/bin", "PY": sys.executable, "OMP_NUM_THREADS": "1",
+                                    "OPENBLAS_NUM_THREADS": "1"},
                                preexec_fn=_limits, stdin=subprocess.DEVNULL)
         except subprocess.TimeoutExpired:
             return "timeout", None
