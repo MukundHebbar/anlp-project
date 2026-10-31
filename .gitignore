@@ -64,3 +64,13 @@ wandb/
 *.out
 # Final LoRA adapters (250 MB each; copies on Turing at ~/anlp-project/final-adapters)
 final-adapters/
+
+# LaTeX build output
+paper/*.aux
+paper/*.blg
+paper/*.log
+paper/*.out
+docs/reports/**/source/*.aux
+docs/reports/**/source/*.blg
+docs/reports/**/source/*.log
+docs/reports/**/source/*.out

@@ -1,6 +1,6 @@
 # Phase 3: theory of the verification–selection gap, and a plan for a positive result
 
-October 2026. Builds on `phase2-full-report.md` and the external research roadmap. Every number here comes either
+October 2026. Builds on `phase2/docs/phase2-full-report.md` and the external research roadmap. Every number here comes either
 from the Phase-2 report or from the model in `model/`. Each `m*.py` runs in seconds to a minute with numpy and scipy;
 its output is saved next to it as `m*.out`. `make_figures.py` draws `figures/`. No GPU was used.
 

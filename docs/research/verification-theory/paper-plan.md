@@ -1,6 +1,6 @@
 # Paper plan: from `theory-and-plan.md` to a paper
 
-October 2026. Format: ACL style (the template in `sub-report/`): 8 pages plus references and an unlimited appendix.
+October 2026. Format: ACL style (the template in `docs/reports/mid-submission/source/`): 8 pages plus references and an unlimited appendix.
 Status markers: ✅ done (proof, model or Phase-2 data), 🧪 needs a Stage 0–2 run, ✂️ appendix candidate.
 
 ---
@@ -172,5 +172,5 @@ adaptive-consistency at matched average cost) and the significance test (paired 
 | 6 | Optional Stage 2 → §6 | Stage 1 |
 | 7 | Limitations, abstract, title; internal review against §8 | all |
 
-Reuse: the ACL template and `references.bib` in `sub-report/`, the figure script in `model/make_figures.py`, and the
+Reuse: the ACL template and `references.bib` in `docs/reports/mid-submission/source/`, the figure script in `model/make_figures.py`, and the
 Phase-2 report for the appendix.

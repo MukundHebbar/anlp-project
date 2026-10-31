@@ -1,191 +1,135 @@
-# ANLP Mathematical Reasoning Evaluation
+# Specialization, Transfer and Composition of Mathematical Skills with GRPO
 
-This repository contains reproducible generation, verification, and evaluation
-tools for DeepMath SOLVE, JUDGE, and RECONSTRUCT tasks.
+Aryama V Murthy, Mukund Hebbar, Yashas Nataraj Kotre, Anivarth Varma Penumetcha. Advanced NLP, Monsoon 2026, IIIT
+Hyderabad.
 
-## Final dataset
+We train Qwen3.5-2B with Dr. GRPO (LoRA) on three forms of the same mathematics, **SOLVE** (write a solution),
+**JUDGE** (find the first wrong step in a solution) and **RECONSTRUCT** (recover a question from its answer and four
+clues), and measure how each skill transfers to the others. One adapter trained on an equal mixture of the three
+tasks is the best model: +17.1 SOLVE, +32.2 JUDGE error-finding and +18.3 RECONSTRUCT over the untrained model, with
+no negative transfer. We then locate the checking skill in the network (LoRA layers 0–5) and ask whether the model can
+use it to check its own answers: a judge trained on its own attempts improves, and a pre-registered contest-adaptive
+verifier beats majority vote by +1.6 points at equal compute, but the gap between "right answer present" (91%) and
+"right answer wins the vote" (80%) stays open.
 
-[`data/manifests/final-v3/`](data/manifests/final-v3/README.md) holds the training and testing data
-for all three tasks: **4,000 questions each, 3,600 train / 400 test**. The three tasks use completely
-separate DeepMath-103K questions, matched by topic and difficulty distribution rather than by
-item, and every row has a `training` block (`input`, `chain_of_thought`, `final_answer`).
-The reported transfer experiments use Dr. GRPO; historical OPD code and records are retained for provenance. See the
-[study design](docs/design/reasoning-transfer-study.md#fixed-design-decisions). The files are stored as `.jsonl.gz`. Check them with
-`.venv/bin/python scripts/audit_final_dataset.py`; this needs the DeepMath parquet files in
-`data/datasets/deepmath-103k/`, which are re-downloadable from HuggingFace `zwhe99/DeepMath-103K`.
+## Released data and models
 
-## Layout
+| What | Link |
+|---|---|
+| FINAL-v3 dataset: SOLVE, JUDGE, RECONSTRUCT, 4,000 each (3,600 train / 400 test) | [Aryama/deepmath-solve-judge-reconstruct](https://huggingface.co/datasets/Aryama/deepmath-solve-judge-reconstruct) |
+| SOLVE adapter (step 66) | [Aryama/qwen3.5-2b-grpo-solve](https://huggingface.co/Aryama/qwen3.5-2b-grpo-solve) |
+| JUDGE adapter (step 26) | [Aryama/qwen3.5-2b-grpo-judge](https://huggingface.co/Aryama/qwen3.5-2b-grpo-judge) |
+| RECONSTRUCT adapter (step 104) | [Aryama/qwen3.5-2b-grpo-reconstruct](https://huggingface.co/Aryama/qwen3.5-2b-grpo-reconstruct) |
+| Mixed-task adapter (step 75), the best model | [Aryama/qwen3.5-2b-grpo-mixed](https://huggingface.co/Aryama/qwen3.5-2b-grpo-mixed) |
+| Phase 3: 23,200 own attempts with grades, judge scores and evidence-grid outputs | [Aryama/qwen3.5-2b-self-verification-attempts](https://huggingface.co/datasets/Aryama/qwen3.5-2b-self-verification-attempts) |
 
-- `src/anlp_project/` — reusable generation, verification, manifest, and report code.
-- `scripts/` — stable command-line entry points.
-- `data/manifests/` — tracked problem manifests and evaluation subsets.
-- `data/prompts/` — versioned SOLVE, EXPLAIN, and PLAN prompts.
-- `artifacts/` — curated model outputs, reports, and evaluation evidence.
-- `docs/` — tracked experiment design and dataset notes.
-- `tests/` — deterministic unit tests.
+All adapters are LoRA r 64 on [Qwen/Qwen3.5-2B](https://huggingface.co/Qwen/Qwen3.5-2B). Data: MIT (as DeepMath-103K);
+adapters: Apache-2.0 (as Qwen3.5).
 
-The local DeepMath Arrow dataset, wheelhouse, virtual environment, API secrets,
-logs, and superseded runs are intentionally excluded from Git. Superseded files
-remain under the ignored `local/archive/legacy/` directory when they are useful
-for historical reference.
+## Results at a glance
 
-`docs/guides/turing.md` is a local operational guide and is intentionally
-ignored. It is not required to install, test, or inspect the repository.
+All numbers are on the 400-question test sets, paired against the untrained model, with 95% bootstrap CIs over
+questions; one training seed per arm unless stated.
+
+**Phase 1: cross-task transfer (Qwen3.5-2B).** Bold = own task.
+
+| Trained on | SOLVE acc | JUDGE step % | JUDGE Youden J | RECON PC-v4 |
+|---|---|---|---|---|
+| SOLVE | **+16.6 [+13.8, +19.1]** | +8.8 [+2.1, +16.1] | +15.4 [+6.2, +23.8] | +3.8 [+1.4, +6.3] |
+| JUDGE | −1.1 [−4.1, +1.9] | **+17.2 [+10.2, +24.0]** | **+28.4 [+19.5, +36.9]** | +6.0 [+3.3, +8.6] |
+| RECONSTRUCT | −10.7 [−13.7, −7.7] | +14.2 [+7.2, +21.8] | +7.9 [−1.2, +17.0] | **+21.4 [+19.1, +23.5]** |
+| Mixed (⅓ each) | **+17.1 [+14.3, +19.9]** | **+32.2 [+25.9, +38.6]** | **+45.4 [+37.4, +52.6]** | **+18.3 [+16.1, +20.5]** |
+
+- **Mixture controls:** against SOLVE-only runs on the same 750 SOLVE questions, steps and learning rate (two seeds),
+  the mixed model is +6.1 [+3.8, +8.5] avg@4 on SOLVE test, but the two control seeds differ by 7.2 points.
+- **Llama-3.2-3B replication:** own-task gains on every arm (SOLVE +20.1, JUDGE Youden J +43.0, RECONSTRUCT +40.3);
+  SOLVE training again transfers positively to the other tasks, but RECONSTRUCT training helps SOLVE (+5.9) here.
+
+**Phase 2: where the checking skill lives.**
+
+- Copying JUDGE's LoRA layers 0–5 into the SOLVE adapter adds +15.3 [+11.5, +19.2] ProcessBench F1, with null
+  controls (base weights, wrong-depth layers, RECONSTRUCT layers) and a reverse ablation; it costs −3.9 SOLVE.
+- RECONSTRUCT's apparent transfer to checking is response bias (criterion c −0.46, sensitivity at SOLVE level); only
+  mixed training adds real sensitivity (d′ 0.73 → 2.32).
+- Checkers learned on curated errors are near chance on the model's own long solutions (AUROC 0.50–0.58); a judge
+  trained on its own attempts with answer-checker labels reaches 0.665 (+0.097 [+0.066, +0.128], replicated).
+
+**Phase 3: self-verification for answer selection** (pre-registered; 800 questions × 16 attempts).
+
+- Reading the judge's verdict probability instead of sampling verdicts: AUROC +0.067 [+0.047, +0.085].
+- Within-question discrimination is at chance on contested questions (0.51 / 0.47 on test).
+- Contest-adaptive verification: 81.0%, **+1.59 [+0.51, +2.59]** over majority vote at equal compute.
+- The vote ceiling (91.4% present vs 79.8% chosen) resists 12 evidence sources and 4 sampling changes (best +0.85).
+
+## Reports
+
+| Report | Contents |
+|---|---|
+| [Dataset generation](docs/reports/dataset-generation/dataset_generation_report.pdf) | how FINAL-v3 was built, with emphasis on RECONSTRUCT |
+| [Phase 1: GRPO transfer report](docs/reports/2026-10-08-grpo-transfer-report.md) ([PDF](docs/reports/2026-10-08-grpo-transfer-report.pdf)) | recipes, transfer matrix, mixed run, checkpoint selection |
+| [Phase 2 report](docs/reports/phase2-full-report.md) and [full Phase 2 log](phase2/docs/phase2-full-report.md) | layer transplants, bias vs skill, error features, self-judge, all negatives |
+| [Mixture controls](phase2/mix_control/README.md) · [Llama study](artifacts/baselines/llama3b/README.md) | SOLVE-only controls with two seeds; the Llama-3.2-3B transfer matrix |
+| [Phase 3 results](phase3/RESULTS.md), [narrative](phase3/FULL-REPORT.md), [pre-registration](phase3/PREREGISTRATION.md) | self-verification, CAV, evidence grid, sampling |
+| [Phase 3 paper draft](paper/main.pdf) | the self-verification paper (ACL format) |
+| [Mid-project submission](docs/reports/mid-submission/mid_submission.pdf) | as submitted ([LaTeX source](docs/reports/mid-submission/source/)) |
+| [Consolidation note](docs/reports/project-consolidation-2026-10-30.md) · [project history](docs/project-history.md) | provenance of the merged results; the earlier README log |
+
+## Repository map
+
+| Path | What |
+|---|---|
+| `src/anlp_project/` | library: GRPO trainer (`opd_train.py`, `opd.py`; historical names), rewards (`rewards.py`), SOLVE checker v3 (`solution_verification.py`), strict format gates (`strict_gates.py`), LLM judges (`jev_judging.py`, `qwen_judging.py`, `gemma_judging.py`), evaluation (`baseline.py`) |
+| `scripts/` | entry points; `scripts/turing/` launches training and evaluation on the Slurm cluster (`launch.py`, `opd_run.py`, `eval_matrix.py`, `qwen_judge_run.py`) |
+| `data/manifests/final-v3/` | the dataset (`*.jsonl.gz`), dev slices and training orders; `data/prompts/` the student prompts |
+| `artifacts/baselines/` | per-model test answers and scores (`final-v3/test/`, `llama3b/`), generated matrices |
+| `artifacts/opd/evals/` | training metrics and checkpoint-selection records for every GRPO run |
+| `phase2/` | Phase 2 experiments: `next/` (transplants, bias, error features), `selfjudge/`, `failure_driven/`, `mix_control/`, `llama_transfer/`, results under `results/` |
+| `phase3/` | Phase 3 pipeline (generation, judging, grading, analysis, evidence grid, sampling, sandbox) and its outputs in `runs/` |
+| `paper/` | Phase 3 paper source, tables and figures |
+| `docs/` | reports, plans, designs, research notes |
+| `tests/` | unit tests (245) |
 
 ## Setup
 
-Python 3.12 is the supported local version.
+Python 3.12 with [uv](https://docs.astral.sh/uv/):
 
 ```bash
 uv sync
-PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests
 ```
 
-The optional local-data and notebook dependencies are available with:
+Training and evaluation need GPUs (we used 2 × L40S per arm) and vLLM; see `requirements-turing-qwen3.in`. The LLM
+judges need either the Jev API (`JEV_KEY`, training rewards) or a local Qwen3.8-27B (test scoring); keys go in an
+ignored `.env`.
+
+## Reproduce
 
 ```bash
-uv sync --extra data --extra notebooks
+# Check the dataset against DeepMath-103K (parquet files in data/datasets/deepmath-103k/)
+.venv/bin/python scripts/audit_final_dataset.py
+
+# One GRPO arm (2 GPUs): SOLVE recipe shown; --task judge|reconstruct|mixed for the others
+python3 scripts/turing/launch.py submit --name <run> --gpus 2 --hours 14 -- \
+  python scripts/turing/opd_run.py --task solve --config grpo --steps 106 \
+    --set prompts_per_step=32 --set optimizer.lr=1e-5 --set optimizer.warmup_steps=5 \
+    --set async_rollouts=true --set best_window=8 --set best_keep=3 --out <dir>
+
+# Evaluate an adapter on all three test sets, judge with the 27B, rebuild the matrix
+python scripts/turing/eval_matrix.py --name <n> --adapter <adapter> --split test --samples 4 --samples-tasks solve --out <dir>
+python scripts/turing/qwen_judge_run.py --eval-dir test:<dir>/s0 --out <log>/answers.jsonl
+uv run python scripts/report_grpo_matrix.py
+
+# Offline reproductions of the consolidated results (no GPU)
+python phase2/llama_transfer/validate_results.py && python phase2/llama_transfer/report.py
+python phase2/mix_control/reproduce.py
 ```
 
-Set `DEEPINFRA_API_KEY` in the ignored `.env` file before running DeepInfra
-generation. No API keys are stored in manifests or artifacts.
+Phase-specific commands: [Phase 1 runbook](docs/reports/2026-10-07-status-and-runbook.md) §3,
+[phase2/README.md](phase2/README.md), [phase3/README.md](phase3/README.md).
 
-## Common commands
+## Known gaps
 
-```bash
-uv run scripts/build_manifest.py --help
-uv run scripts/generate_solve.py --help
-uv run scripts/generate_explain.py --help
-uv run scripts/verify_deepseek.py --help
-uv run scripts/run_qwen.py --help
-uv run scripts/verify_qwen.py --help
-uv run scripts/run_reconstruct.py --help
-```
-
-Run any command with `--help` before a new experiment to inspect its required
-inputs and defaults. Generation commands require `DEEPINFRA_API_KEY`; local
-verification commands do not make provider requests.
-
-RECONSTRUCT uses local `Qwen/Qwen3-4B` in explicit non-thinking mode for the
-student and DeepSeek V4.1 Flash through DeepInfra for conversion, independent
-bank auditing, and source-blind scoring. Its current protocol and adaptive
-experiment plan are in
-[`docs/design/reconstruct/SKILL.md`](docs/design/reconstruct/SKILL.md) and
-[`docs/plans/2026-09-20-reconstruct-adaptive-eight-hour-plan.md`](docs/plans/2026-09-20-reconstruct-adaptive-eight-hour-plan.md).
-The completed development pilot and stopping decision are in
-[`docs/research/reconstruct/pilot-2026-09-20.md`](docs/research/reconstruct/pilot-2026-09-20.md).
-The [final operational version](docs/design/reconstruct/FINAL_V1.md) is frozen at
-**four clues plus the final answer**, using the repaired PC-v4 judges. The
-[100-source run and question/answer export](artifacts/reconstruct/final-100-v1/questions-answers.md)
-records every selected source and its validity, response and rating status.
-The completed [100-source results](artifacts/reconstruct/final-100-v1/report.md)
-contain **52 gate-passed tasks, 50 parsed Qwen responses and 47 resolved scores**.
-The mean is **44.41/100**; rating counts from1 to5 are **4,11,29,3,0**.
-There are **2 reviewed semantic recoveries and0 fully grounded recoveries**:
-the average-score target is met, but the20–40% reconstruction-success target is not.
-Download the [question/answer CSV](artifacts/reconstruct/final-100-v1/questions-answers.csv)
-or the [complete results bundle](artifacts/reconstruct/final-100-v1/reconstruct-final100-deliverables.zip).
-The current [rating policy v4](artifacts/reconstruct/balanced-ratings-v4/report.md)
-uses cutoffs18.75,43.75,56.25,75. On the same47 resolved scores, counts are
-**3,12,18,12,2**. Only the2/3 boundary changed from v3: six lower-scoring3s
-move to2; ratings1,4,5 are unchanged. This is post-hoc development calibration,
-not evidence of Gaussian scores or improved model performance.
-Use the [updated question/answer CSV](artifacts/reconstruct/balanced-ratings-v4/questions-answers.csv).
-Numerical scores and success labels remain unchanged; earlier rating versions
-and the original100-source results are preserved.
-The [extension to100 completely scored, gate-passed examples](docs/plans/reconstruct-valid-100-extension.md)
-is continuing under a [transport-recovery amendment](docs/plans/reconstruct-valid100-transport-recovery.md)
-after a connection-failure burst stopped the first phase at53 complete rows.
-Prompts and v4 thresholds are unchanged; successful responses are reused, only
-transport failures permit one retry, and a circuit breaker prevents request bursts.
-It retains47 calibration rows and adds53 new rows in a frozen source order. Follow the
-[live cohort summary](artifacts/reconstruct/valid-100-recovery-v1/summary.json) and
-[question/answer export](artifacts/reconstruct/valid-100-recovery-v1/questions-answers.csv).
-The export is incomplete until `target_met` and `terminal` are both true.
-The latest [information-bracket experiment](artifacts/reconstruct/bridge-composition-ax/decision.md)
-reached **2 verified recoveries in 6 scheduled development examples** using richer
-symbolic clues and a premises-first prompt. One success required a documented
-mathematical adjudication; the automatic gate alone accepted one. The mean raw
-quality score is66.67/100, but the rating distribution remains polarized. This
-meets the immediate recovery goal, not final benchmark validation.
-The new [partial-credit specification](docs/design/reconstruct/PARTIAL_CREDIT_V1.md)
-is not yet validated. Its [BA distribution check](artifacts/reconstruct/partial-credit-ba/decision.md)
-on saved responses found no middle-heavy score distribution and documented judge
-equivalence/shortcut errors; it does not validate the new generation prompts.
-The [repaired partial-credit judges](docs/design/reconstruct/JUDGE_VERIFICATION.md)
-now pass all19 registered development controls, including five saved-response
-regressions, under the final prompts and validator. [Full calibration history](artifacts/reconstruct/judge-calibration-be/decision.md)
-retains earlier failures and the one whitespace-only quote-validation repair.
-This fixes tested grading boundaries; unseen accuracy and the desired score
-distribution remain unvalidated.
-The current definitions and release criteria are consolidated in
-[CURRENT_PROTOCOL.md](docs/design/reconstruct/CURRENT_PROTOCOL.md), with a
-[claim-to-evidence report](docs/research/reconstruct/current-evidence.md).
-The earlier [three-clue exposure](artifacts/reconstruct/target-prefix-ap/decision.md)
-admitted 7/16 sources and averaged 28.57/100, but produced no standalone semantic
-recoveries and a five-level histogram of `[2,4,0,0,1]`.
-[Repeated seeds](artifacts/reconstruct/student-variance-as/decision.md) preserve
-the same comparable ratings; this is seven families, not 21 independent examples.
-The [fresh matched SOLVE control](artifacts/reconstruct/matched-solve-aq/decision.md)
-returned 7/15 correct answers but only 3/15 strictly reviewed explanations.
-No final generator/judge combination is approved.
-The earlier [fresh-cohort disclosure-policy comparison](artifacts/reconstruct/constructive-gate-al/decision.md)
-admitted six inputs but yielded 0/6 semantic or grounded recoveries, with a mean
-score of 10/100 on five readable outputs and one token-cap failure. One response
-correctly inferred a missing parameter but changed the requested question.
-The earlier [single-premise and output-order report](artifacts/reconstruct/one-gap-ah/decision.md)
-tests exactly matched public inputs: neither order produced a correct semantic
-reconstruction (0/3 each). The [matched direct SOLVE control](artifacts/reconstruct/matched-solve-ai/decision.md)
-got 4/12 answers correct and 3/12 with valid justifications. The [earlier screen](artifacts/reconstruct/richer-exposure-aa/final-report.md)
-includes a prompt variant with 1/3 semantic recoveries but 0/3 grounded recoveries.
-The 20–40% correctness target and 25-family confirmation remain unvalidated.
-After building `llama.cpp` with CUDA and downloading the official Q4_K_M GGUF,
-start the loopback-only server with `scripts/run_local_qwen.sh start`. The
-resumable runner supports `convert`, `audit`, `disclose`, `audit-disclosure`,
-`student`, `evaluate`, `recover`, `validate-judge`, and `report` stages. Run
-each subcommand with `--help`; provider stages enforce a configurable cost cap.
-
-For Turing execution, use the shell wrappers in `scripts/` after syncing this
-repository to the user-owned project path. They run the package from `src/` and
-keep model environments and GPU caches on the configured scratch partition.
-
-The Colab notebook workflow is archived and intentionally not part of the
-repository baseline.
-
-## Current evaluation evidence
-
-**Zero-training baselines on FINAL-v3** for the student (Qwen3.5-4B) and teacher
-(Qwen3.8-27B), with all three tasks scored by the repository pipelines, are in
-[artifacts/baselines/final-v3/REPORT.md](artifacts/baselines/final-v3/REPORT.md). The method is in
-[README.md](artifacts/baselines/final-v3/README.md) and every decision and incident is in
-[RUN_LOG.md](artifacts/baselines/final-v3/RUN_LOG.md).
-
-The earlier results below use Qwen3-4B on pilot pools, not FINAL-v3. The retained SOLVE
-results and their non-identical evaluation denominators are summarized in
-[artifacts/solve-evaluation-summary.md](artifacts/solve-evaluation-summary.md).
-
-- DeepSeek V4 Flash SOLVE: full 146-problem manifest, verifier-v2 results and
-  report under `artifacts/deepseek-v4-flash/solve/146/`.
-- DeepSeek V4 Flash EXPLAIN-v2: retained generation artifacts under
-  `artifacts/deepseek-v4-flash/explain/v2-113/`.
-- Qwen3-4B SOLVE: 113-problem subset, independently scored only against
-  dataset gold answers under `artifacts/qwen3-4b/solve/113/`.
-
-## Reproducibility policy
-
-Tracked artifacts are curated evidence for the current evaluations: DeepSeek
-V4 Flash SOLVE verification v2, DeepSeek EXPLAIN-v2 output, and Qwen3-4B SOLVE
-results. Raw transport logs, temporary bundles, old pilot runs, and incomplete
-experiments are retained locally only. Reports are stored beside the result they
-describe rather than in a separate unstructured report directory.
-
-## Consolidated project results (30 October 2026)
-
-- [Latest Phase 2 report](docs/reports/phase2-full-report.md) and [separately named working report](docs/reports/phase2-full-report_yashas.md).
-- [Completed Llama GRPO transfer matrix](artifacts/baselines/llama3b/grpo-matrix.md), [evidence](artifacts/baselines/llama3b/README.md), and [reproduction instructions](phase2/llama_transfer/README.md).
-- [Task-mixture experiment and SOLVE-only controls, including both seeds](phase2/mix_control/README.md).
-- [Local judge calibration](phase2/local_judge_calibration/README.md), [Ministral baseline](phase2/results/ministral-baseline/README.md), and [adapter archive inventory](phase2/results/adapter-archive/README.md).
-
-This collection is based on `phase2-experiments`. Independent Phase 3 verification work remains on
-[`phase3-verification-2026-10`](https://github.com/MukundHebbar/anlp-project/tree/phase3-verification-2026-10);
-its separate trainer/reward changes have not been merged here. Existing branches were not rewritten.
+- One training seed per Qwen arm; the single-task arms use different recipes and amounts of data.
+- The Phase 2 self-judge adapters and the original own-attempt converter were lost; Phase 3 rebuilt the converter
+  and retrained two judges (Stage 2), whose selection evaluation was not run.
+- Adapter weights and raw training logs are not in Git; the adapters are on Hugging Face (above).

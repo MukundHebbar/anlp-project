@@ -18,7 +18,7 @@ and cross-transfer study. Useful repository references:
 - `docs/reports/mid-submission/mid_submission.pdf`
 - `docs/reports/2026-10-08-grpo-transfer-report.md`
 - `docs/design/reasoning-transfer-study.md`
-- `phase2/docs/` and `docs/reports/phase2-full-report_yashas.md`
+- `phase2/docs/`
 - Historical actual training configs: `docs/reports/latex/configs/{solve_new,judge,reconstruct}.json`
 
 ## Current branch and source state
