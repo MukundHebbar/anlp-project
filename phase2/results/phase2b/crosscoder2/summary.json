@@ -1,0 +1,432 @@
+{
+ "tokens": 668020,
+ "steps": 8587,
+ "first_error_steps": 801,
+ "negative_steps": 5133,
+ "layers": {
+  "L12": {
+   "mean_rel_norm": 0.5005961656570435,
+   "alive": 4394,
+   "class_counts": {
+    "mixed-only": 0,
+    "shared": 4394,
+    "base-only": 0,
+    "other": 0
+   },
+   "top_shared": [
+    {
+     "index": 6926,
+     "train_auroc": 0.755,
+     "test_auroc": 0.731
+    },
+    {
+     "index": 1695,
+     "train_auroc": 0.738,
+     "test_auroc": 0.691
+    },
+    {
+     "index": 3232,
+     "train_auroc": 0.722,
+     "test_auroc": 0.697
+    },
+    {
+     "index": 7069,
+     "train_auroc": 0.703,
+     "test_auroc": 0.709
+    },
+    {
+     "index": 5328,
+     "train_auroc": 0.698,
+     "test_auroc": 0.687
+    }
+   ],
+   "top_raw_base_dims": [
+    {
+     "index": 1925,
+     "train_auroc": 0.679,
+     "test_auroc": 0.661
+    },
+    {
+     "index": 1868,
+     "train_auroc": 0.657,
+     "test_auroc": 0.637
+    },
+    {
+     "index": 716,
+     "train_auroc": 0.656,
+     "test_auroc": 0.611
+    },
+    {
+     "index": 542,
+     "train_auroc": 0.655,
+     "test_auroc": 0.617
+    },
+    {
+     "index": 611,
+     "train_auroc": 0.654,
+     "test_auroc": 0.645
+    }
+   ],
+   "top_raw_mixed_dims": [
+    {
+     "index": 1925,
+     "train_auroc": 0.678,
+     "test_auroc": 0.662
+    },
+    {
+     "index": 542,
+     "train_auroc": 0.662,
+     "test_auroc": 0.62
+    },
+    {
+     "index": 1371,
+     "train_auroc": 0.658,
+     "test_auroc": 0.617
+    },
+    {
+     "index": 611,
+     "train_auroc": 0.656,
+     "test_auroc": 0.644
+    },
+    {
+     "index": 1805,
+     "train_auroc": 0.654,
+     "test_auroc": 0.643
+    }
+   ],
+   "relative_activation_difference": 0.0914,
+   "diff_sae_fvu": 0.5165,
+   "diff_alive": 6721,
+   "top_diff_latents": [
+    {
+     "index": 3823,
+     "train_auroc": 0.708,
+     "test_auroc": 0.693
+    },
+    {
+     "index": 5886,
+     "train_auroc": 0.699,
+     "test_auroc": 0.684
+    },
+    {
+     "index": 5681,
+     "train_auroc": 0.653,
+     "test_auroc": 0.628
+    },
+    {
+     "index": 1317,
+     "train_auroc": 0.647,
+     "test_auroc": 0.627
+    },
+    {
+     "index": 1083,
+     "train_auroc": 0.643,
+     "test_auroc": 0.656
+    }
+   ],
+   "examples_best_diff_latent": [
+    {
+     "label": -1,
+     "act": 0.107,
+     "step": "However, since the coefficients of $p(x)$ are $\\pm 1$, its leading coefficient (which is 1 in this case) must be equal to the constant term for all the zeros to be real. This means that the sum of the coefficients of $p(x)$ must be equal to 1 or -1. Since the coefficients of $p(x)$ are $\\pm 1$, the "
+    },
+    {
+     "label": -1,
+     "act": 0.103,
+     "step": "Notice that the left-hand side is now the sum of the digits of $A$, and the right-hand side is 9 times the tens digit of $B$ minus the units digit of $B$. Since the units digit of $A$ is equal to the units digit of $B$, we can conclude that the tens digit of $A$ is equal to the tens digit of $B$. Le"
+    },
+    {
+     "label": -1,
+     "act": 0.102,
+     "step": "Therefore,\n\\[\n|b|^2 |d|^2 = 16,\n\\]\nand\n\\[\n|b|^2 + |d|^2 = 3.\n\\]"
+    },
+    {
+     "label": 0,
+     "act": 0.1,
+     "step": "So, \\( m \\circ 2 = \\frac{1}{2} \\) for any \\( m \\neq -2 \\)."
+    },
+    {
+     "label": 1,
+     "act": 0.1,
+     "step": "Since there are 9 gaps between 9 exits, there are actually 10 segments where the highways run (from the start to exit 41, between each pair of consecutive exits, and from exit 50 to the end). These 10 segments cover 46 km in total. Therefore, each segment (except possibly the first and last if they "
+    },
+    {
+     "label": 1,
+     "act": 0.099,
+     "step": "However, we must also account for the fact that there are spaces at either end of the necklace, which are not filled by any beads. Each of these spaces corresponds to a single bead. Since Katerina uses 8 topaz gemstones, and there are 9 \"spaces\" where beads can go, this means there are 9 spaces in t"
+    },
+    {
+     "label": 0,
+     "act": 0.095,
+     "step": "However, we know that all the remaining cups after dividing the chamomile and mint tea cups are used for cinnamon tea. Since the total number of cinnamon tea cups is 15 and there are 3 rows, the number of cinnamon tea cups per row is: \\[ \\frac{15}{3} = 5 \\]"
+    },
+    {
+     "label": 1,
+     "act": 0.095,
+     "step": "So, let's assume all 10 cats with black fur catch mice, then the number of cats that do not catch mice and have black fur will be 0."
+    }
+   ],
+   "examples_best_shared": [
+    {
+     "label": -1,
+     "act": 0.494,
+     "step": "Then \\[\\frac{32}{625} x^2 = \\frac{1}{625} \\sin 2y.\\]"
+    },
+    {
+     "label": -1,
+     "act": 0.351,
+     "step": "So, \\(c = \\frac{3}{2}\\)."
+    },
+    {
+     "label": -1,
+     "act": 0.331,
+     "step": "The answer is: \\(\\boxed{21\\sqrt{50}}\\)."
+    },
+    {
+     "label": 1,
+     "act": 0.305,
+     "step": "Thus, the final answer is:\n\\[\n\\boxed{3a-2}\n\\]"
+    },
+    {
+     "label": -1,
+     "act": 0.305,
+     "step": "Then \\[\\frac{1}{25} \\sin 2y + \\frac{16}{25} \\sin y \\cos y = \\frac{1}{25} \\sin 2y.\\]"
+    },
+    {
+     "label": -1,
+     "act": 0.288,
+     "step": "The final answer is:\n\\[ \\boxed{\\frac{5}{3}}. \\]"
+    },
+    {
+     "label": -1,
+     "act": 0.247,
+     "step": "Then,\n\\[\n(a - c)^2 + b^2 + d^2 = (a - c)^2 + 17 = \\left(\\frac{8}{|b|^2 - |d|^2}\\right)^2 + 17 = 45.\n\\]"
+    },
+    {
+     "label": 0,
+     "act": 0.244,
+     "step": "Using AM-GM, we have\n\\[\n\\frac{a+2b+3c+4d}{10} \\ge \\sqrt[10]{(a)(b^2)(c^3)(d^4)}\n\\]"
+    }
+   ],
+   "rel_norm_quantiles": [
+    0.486,
+    0.496,
+    0.501,
+    0.504,
+    0.516
+   ]
+  },
+  "L18": {
+   "mean_rel_norm": 0.499557763338089,
+   "alive": 4464,
+   "class_counts": {
+    "mixed-only": 0,
+    "shared": 4464,
+    "base-only": 0,
+    "other": 0
+   },
+   "top_shared": [
+    {
+     "index": 6596,
+     "train_auroc": 0.787,
+     "test_auroc": 0.803
+    },
+    {
+     "index": 7495,
+     "train_auroc": 0.763,
+     "test_auroc": 0.749
+    },
+    {
+     "index": 4270,
+     "train_auroc": 0.753,
+     "test_auroc": 0.741
+    },
+    {
+     "index": 5136,
+     "train_auroc": 0.69,
+     "test_auroc": 0.672
+    },
+    {
+     "index": 7225,
+     "train_auroc": 0.673,
+     "test_auroc": 0.699
+    }
+   ],
+   "top_raw_base_dims": [
+    {
+     "index": 1984,
+     "train_auroc": 0.653,
+     "test_auroc": 0.622
+    },
+    {
+     "index": 1805,
+     "train_auroc": 0.652,
+     "test_auroc": 0.638
+    },
+    {
+     "index": 1257,
+     "train_auroc": 0.647,
+     "test_auroc": 0.626
+    },
+    {
+     "index": 449,
+     "train_auroc": 0.645,
+     "test_auroc": 0.66
+    },
+    {
+     "index": 1667,
+     "train_auroc": 0.639,
+     "test_auroc": 0.637
+    }
+   ],
+   "top_raw_mixed_dims": [
+    {
+     "index": 449,
+     "train_auroc": 0.66,
+     "test_auroc": 0.677
+    },
+    {
+     "index": 1805,
+     "train_auroc": 0.658,
+     "test_auroc": 0.642
+    },
+    {
+     "index": 1984,
+     "train_auroc": 0.647,
+     "test_auroc": 0.617
+    },
+    {
+     "index": 1257,
+     "train_auroc": 0.647,
+     "test_auroc": 0.625
+    },
+    {
+     "index": 1325,
+     "train_auroc": 0.637,
+     "test_auroc": 0.571
+    }
+   ],
+   "relative_activation_difference": 0.0798,
+   "diff_sae_fvu": 0.4732,
+   "diff_alive": 7259,
+   "top_diff_latents": [
+    {
+     "index": 1656,
+     "train_auroc": 0.694,
+     "test_auroc": 0.694
+    },
+    {
+     "index": 5198,
+     "train_auroc": 0.657,
+     "test_auroc": 0.641
+    },
+    {
+     "index": 5611,
+     "train_auroc": 0.646,
+     "test_auroc": 0.631
+    },
+    {
+     "index": 7984,
+     "train_auroc": 0.643,
+     "test_auroc": 0.627
+    },
+    {
+     "index": 1158,
+     "train_auroc": 0.639,
+     "test_auroc": 0.636
+    }
+   ],
+   "examples_best_diff_latent": [
+    {
+     "label": 0,
+     "act": 0.162,
+     "step": "The bag of carrots weighed 3 pounds fewer than the sweet potatoes, so it weighed 10 - 3 = 7 pounds."
+    },
+    {
+     "label": 0,
+     "act": 0.153,
+     "step": "So the two perpendicular bisectors intersect at the point where \\( y = 0 \\) and \\( y = x \\), which is \\( (0, 0) \\). This is the center of the circle."
+    },
+    {
+     "label": -1,
+     "act": 0.141,
+     "step": "Second, if \\(b = 3\\), then \\(4a5,b32 = 475,332\\). Check divisibility by 11:\n\\[9 + b = 9 + 3 = 12\\]\n\\[a + b + 2 = 7 + 3 + 2 = 12\\]\n\\[12 - 12 = 0\\]\n(which is a multiple of 11) So, \\(475,332\\) is divisible by 11."
+    },
+    {
+     "label": -1,
+     "act": 0.132,
+     "step": "Substituting \\(c=\\frac{3}{2}\\) into the second equation, we get:\n\\[2c = \\log_2(7)\\]\n\\[2\\left(\\frac{3}{2}\\right) = \\log_2(7)\\]\n\\[3 = \\log_2(7)\\]"
+    },
+    {
+     "label": -1,
+     "act": 0.131,
+     "step": "Third, if \\(b = 6\\), then \\(4a5,b32 = 475,632\\). Check divisibility by 11:\n\\[9 + b = 9 + 6 = 15\\]\n\\[a + b + 2 = 7 + 6 + 2 = 15\\]\n\\[15 - 15 = 0\\]\n(which is a multiple of 11) So, \\(475,632\\) is divisible by 11."
+    },
+    {
+     "label": 1,
+     "act": 0.129,
+     "step": "Let \\(x = c - d\\) and \\(y = c + d\\). Then we have:\n\\[ xy = 33 \\quad \\text{and} \\quad \\frac{x + y}{2} \\cdot \\frac{x - y}{2} = -28 \\implies xy - y^2 = -112 \\implies 33 - y^2 = -112 \\implies y^2 = 145 \\implies y = \\pm \\sqrt{145} \\]"
+    },
+    {
+     "label": -1,
+     "act": 0.127,
+     "step": "Therefore,\n\\[\n|z| = \\sqrt{|z|^2} = |z + 1 - 1| = \\sqrt{(|z + 1| - |1|)^2 + (|z + 1| \\angle z + 1 - |1| \\angle 1)^2} = \\sqrt{(2 - 1)^2 + (2 \\angle z + 1 - 1)^2} = \\boxed{1}.\n\\]"
+    },
+    {
+     "label": 0,
+     "act": 0.12,
+     "step": "The distance between \\(z\\) and \\(z \\left( \\frac{-1 + \\sqrt{3}i}{2} \\right)\\) is: \\[ \\left| z - z \\left( \\frac{-1 + \\sqrt{3}i}{2} \\right) \\right| = \\left| z \\left( 1 - \\frac{-1 + \\sqrt{3}i}{2} \\right) \\right| = \\left| z \\left( \\frac{3 - \\sqrt{3}i}{2} \\right) \\right| = 2 \\left| \\frac{3 - \\sqrt{3}i}{2}"
+    }
+   ],
+   "examples_best_shared": [
+    {
+     "label": -1,
+     "act": 0.433,
+     "step": "**Step 2:** Choose 1 out of the remaining 25 students.\n\\[ \\binom{25}{1} = 25 \\]"
+    },
+    {
+     "label": -1,
+     "act": 0.326,
+     "step": "**Step 3:** Calculate the total ways to choose any 4 students from 28 (as calculated before).\n\\[ \\text{Ways to choose any 4 students} = 20475 \\]"
+    },
+    {
+     "label": 0,
+     "act": 0.232,
+     "step": "After the moves:\n- For point \\(A\\):\n- Move vertically upwards 20 units: \\(A'(a+14, b+20)\\)\n- For point \\(B\\):\n- Move vertically downwards 4 units: \\(B'(c-2, d-4)\\)"
+    },
+    {
+     "label": -1,
+     "act": 0.227,
+     "step": "Therefore, \\(b = \\frac{3}{2}\\)."
+    },
+    {
+     "label": -1,
+     "act": 0.214,
+     "step": "Therefore, the real roots are:\n\\[\n\\boxed{3, -5}.\n\\]"
+    },
+    {
+     "label": -1,
+     "act": 0.208,
+     "step": "Thus, there are no negative slope diagonals."
+    },
+    {
+     "label": -1,
+     "act": 0.186,
+     "step": "**Probability for Scenario 3:**\n\\[ \\frac{\\text{Ways to choose all 3 top students and 1 other}}{\\text{Total ways to choose any 4 students}} = \\frac{1 \\times 25}{20475} = \\frac{25}{20475} \\]\n\\[ = \\frac{25}{20475} = \\frac{1}{819} \\]"
+    },
+    {
+     "label": -1,
+     "act": 0.18,
+     "step": "Thus, there are 2 positive slope diagonals."
+    }
+   ],
+   "rel_norm_quantiles": [
+    0.484,
+    0.494,
+    0.5,
+    0.504,
+    0.513
+   ]
+  }
+ }
+}

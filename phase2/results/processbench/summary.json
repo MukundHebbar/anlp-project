@@ -1,0 +1,290 @@
+{
+ "base": {
+  "synthetic": {
+   "n": 400,
+   "acc_error": 33.5,
+   "acc_correct": 67.0,
+   "f1": 44.7,
+   "verdict_on_error": 51.0,
+   "no_verdict": 26.5,
+   "capped": 3.5
+  },
+  "gsm8k": {
+   "n": 400,
+   "acc_error": 33.8,
+   "acc_correct": 82.4,
+   "f1": 48.0,
+   "verdict_on_error": 50.2,
+   "no_verdict": 19.2,
+   "capped": 1.5
+  },
+  "math": {
+   "n": 1000,
+   "acc_error": 31.6,
+   "acc_correct": 82.3,
+   "f1": 45.7,
+   "verdict_on_error": 55.2,
+   "no_verdict": 22.8,
+   "capped": 2.8
+  },
+  "olympiadbench": {
+   "n": 1000,
+   "acc_error": 26.0,
+   "acc_correct": 74.6,
+   "f1": 38.6,
+   "verdict_on_error": 54.8,
+   "no_verdict": 27.6,
+   "capped": 4.3
+  },
+  "omnimath": {
+   "n": 1000,
+   "acc_error": 20.8,
+   "acc_correct": 71.8,
+   "f1": 32.3,
+   "verdict_on_error": 51.3,
+   "no_verdict": 31.5,
+   "capped": 6.2
+  },
+  "processbench_avg_f1": 41.1
+ },
+ "solve": {
+  "synthetic": {
+   "n": 400,
+   "acc_error": 41.0,
+   "acc_correct": 71.0,
+   "f1": 52.0,
+   "verdict_on_error": 53.5,
+   "no_verdict": 20.0,
+   "capped": 3.2
+  },
+  "gsm8k": {
+   "n": 400,
+   "acc_error": 36.2,
+   "acc_correct": 90.7,
+   "f1": 51.8,
+   "verdict_on_error": 51.7,
+   "no_verdict": 14.8,
+   "capped": 1.2
+  },
+  "math": {
+   "n": 1000,
+   "acc_error": 36.2,
+   "acc_correct": 88.9,
+   "f1": 51.4,
+   "verdict_on_error": 58.6,
+   "no_verdict": 19.6,
+   "capped": 2.3
+  },
+  "olympiadbench": {
+   "n": 1000,
+   "acc_error": 28.9,
+   "acc_correct": 82.3,
+   "f1": 42.8,
+   "verdict_on_error": 55.4,
+   "no_verdict": 24.0,
+   "capped": 4.2
+  },
+  "omnimath": {
+   "n": 1000,
+   "acc_error": 23.3,
+   "acc_correct": 81.3,
+   "f1": 36.2,
+   "verdict_on_error": 49.4,
+   "no_verdict": 30.1,
+   "capped": 5.7
+  },
+  "processbench_avg_f1": 45.5
+ },
+ "judge": {
+  "synthetic": {
+   "n": 400,
+   "acc_error": 57.0,
+   "acc_correct": 87.0,
+   "f1": 68.9,
+   "verdict_on_error": 69.0,
+   "no_verdict": 3.8,
+   "capped": 0.5
+  },
+  "gsm8k": {
+   "n": 400,
+   "acc_error": 47.3,
+   "acc_correct": 99.5,
+   "f1": 64.2,
+   "verdict_on_error": 68.1,
+   "no_verdict": 0.5,
+   "capped": 0.0
+  },
+  "math": {
+   "n": 1000,
+   "acc_error": 42.3,
+   "acc_correct": 96.3,
+   "f1": 58.7,
+   "verdict_on_error": 72.4,
+   "no_verdict": 3.5,
+   "capped": 0.3
+  },
+  "olympiadbench": {
+   "n": 1000,
+   "acc_error": 37.1,
+   "acc_correct": 95.9,
+   "f1": 53.5,
+   "verdict_on_error": 69.3,
+   "no_verdict": 3.7,
+   "capped": 0.5
+  },
+  "omnimath": {
+   "n": 1000,
+   "acc_error": 26.7,
+   "acc_correct": 96.7,
+   "f1": 41.9,
+   "verdict_on_error": 62.8,
+   "no_verdict": 5.2,
+   "capped": 0.7
+  },
+  "processbench_avg_f1": 54.6
+ },
+ "reconstruct": {
+  "synthetic": {
+   "n": 400,
+   "acc_error": 48.5,
+   "acc_correct": 52.5,
+   "f1": 50.4,
+   "verdict_on_error": 76.0,
+   "no_verdict": 12.5,
+   "capped": 0.0
+  },
+  "gsm8k": {
+   "n": 400,
+   "acc_error": 51.7,
+   "acc_correct": 85.0,
+   "f1": 64.3,
+   "verdict_on_error": 73.9,
+   "no_verdict": 9.8,
+   "capped": 0.0
+  },
+  "math": {
+   "n": 1000,
+   "acc_error": 46.1,
+   "acc_correct": 77.1,
+   "f1": 57.7,
+   "verdict_on_error": 79.3,
+   "no_verdict": 11.7,
+   "capped": 0.2
+  },
+  "olympiadbench": {
+   "n": 1000,
+   "acc_error": 39.3,
+   "acc_correct": 74.3,
+   "f1": 51.4,
+   "verdict_on_error": 77.3,
+   "no_verdict": 13.7,
+   "capped": 0.1
+  },
+  "omnimath": {
+   "n": 1000,
+   "acc_error": 37.9,
+   "acc_correct": 63.1,
+   "f1": 47.4,
+   "verdict_on_error": 75.4,
+   "no_verdict": 15.4,
+   "capped": 0.0
+  },
+  "processbench_avg_f1": 55.2
+ },
+ "mixed": {
+  "synthetic": {
+   "n": 400,
+   "acc_error": 70.0,
+   "acc_correct": 92.0,
+   "f1": 79.5,
+   "verdict_on_error": 83.0,
+   "no_verdict": 4.8,
+   "capped": 2.5
+  },
+  "gsm8k": {
+   "n": 400,
+   "acc_error": 52.2,
+   "acc_correct": 96.9,
+   "f1": 67.8,
+   "verdict_on_error": 66.7,
+   "no_verdict": 4.8,
+   "capped": 0.0
+  },
+  "math": {
+   "n": 1000,
+   "acc_error": 55.4,
+   "acc_correct": 94.6,
+   "f1": 69.9,
+   "verdict_on_error": 80.0,
+   "no_verdict": 7.2,
+   "capped": 1.6
+  },
+  "olympiadbench": {
+   "n": 1000,
+   "acc_error": 38.9,
+   "acc_correct": 94.7,
+   "f1": 55.1,
+   "verdict_on_error": 67.9,
+   "no_verdict": 11.5,
+   "capped": 4.1
+  },
+  "omnimath": {
+   "n": 1000,
+   "acc_error": 30.8,
+   "acc_correct": 93.4,
+   "f1": 46.4,
+   "verdict_on_error": 60.1,
+   "no_verdict": 15.0,
+   "capped": 6.9
+  },
+  "processbench_avg_f1": 59.8
+ },
+ "qwen3.5-9b": {
+  "synthetic": {
+   "n": 400,
+   "acc_error": 88.0,
+   "acc_correct": 80.5,
+   "f1": 84.1,
+   "verdict_on_error": 91.5,
+   "no_verdict": 7.8,
+   "capped": 2.2
+  },
+  "gsm8k": {
+   "n": 400,
+   "acc_error": 73.9,
+   "acc_correct": 93.8,
+   "f1": 82.7,
+   "verdict_on_error": 86.5,
+   "no_verdict": 3.2,
+   "capped": 0.2
+  },
+  "math": {
+   "n": 1000,
+   "acc_error": 73.6,
+   "acc_correct": 88.9,
+   "f1": 80.5,
+   "verdict_on_error": 92.9,
+   "no_verdict": 4.0,
+   "capped": 1.1
+  },
+  "olympiadbench": {
+   "n": 1000,
+   "acc_error": 64.4,
+   "acc_correct": 78.8,
+   "f1": 70.9,
+   "verdict_on_error": 92.1,
+   "no_verdict": 6.3,
+   "capped": 1.2
+  },
+  "omnimath": {
+   "n": 1000,
+   "acc_error": 57.0,
+   "acc_correct": 73.0,
+   "f1": 64.1,
+   "verdict_on_error": 89.9,
+   "no_verdict": 8.5,
+   "capped": 1.1
+  },
+  "processbench_avg_f1": 74.5
+ }
+}

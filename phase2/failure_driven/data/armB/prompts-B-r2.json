@@ -1,0 +1,14 @@
+{
+ "round": 2,
+ "prompts": 256,
+ "solve": 192,
+ "aux_slots": 64,
+ "distinct_items": 55,
+ "judge_items": 28,
+ "reconstruct_items": 27,
+ "aux_slots_by_task": {
+  "judge": 33,
+  "reconstruct": 31
+ },
+ "max_uses_per_item": 2
+}

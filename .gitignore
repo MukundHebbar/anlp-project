@@ -41,6 +41,11 @@ data/manifests/final-v3.zip
 
 # Raw model responses and judge calls are tracked gzipped (.jsonl.gz), for the reported runs only.
 artifacts/**/responses.jsonl
+artifacts/**/responses-*.jsonl
+artifacts/judge-rewording/**/rewrites.jsonl
+# Local-only: report drafts and exports, and operational guides with cluster/account details
+docs/references/archive/
+docs/guides/
 artifacts/**/judgments.jsonl
 # OPD run logs are records.
 !artifacts/opd/**/*.log

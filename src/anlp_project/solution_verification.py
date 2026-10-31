@@ -674,6 +674,18 @@ def _numeric_close(expected_normalized: str, candidate_normalized: str) -> bool 
     return abs(a - b) <= 1e-9 * max(1.0, abs(a))
 
 
+# A factorial of a factorial (23!! read as (23!)!), of a bracketed numeric expression such as (5!)! or of a 4+
+# digit number can make SymPy multiply integers with billions of digits. That is one long C call, which the
+# SIGALRM time limit below cannot interrupt (an AIME answer "23!!" hung evaluation for 30 minutes). Such answers
+# skip the SymPy-based layers and stay unverified; symbolic factorials such as (n+1)! and numeric ones up to
+# 3 digits (256!, 20!) are unaffected.
+_UNSAFE_FACTORIAL = re.compile(r"!\s*!|\(\s*[\d\s+\-*/^!.]+\)\s*!|\d{4,}\s*!")
+
+
+def _unsafe_factorial(text: str) -> bool:
+    return bool(_UNSAFE_FACTORIAL.search(str(text)))
+
+
 def _math_verify_equal(expected: str, candidate: str) -> bool | None:
     try:
         from math_verify import ExprExtractionConfig, LatexExtractionConfig, parse, verify
@@ -738,7 +750,7 @@ def _compare_full(expected: str, candidate: str | None) -> dict[str, Any]:
 
         for gold in golds:
             for form, how in forms:
-                if not _is_clean_math(form) or _several_values(form, gold):
+                if not _is_clean_math(form) or _several_values(form, gold) or _unsafe_factorial(form):
                     continue
                 if normalize_answer(form) in {"true", "false", "yes", "no"}:  # Python: True == 1
                     continue
@@ -756,7 +768,7 @@ def _compare_full(expected: str, candidate: str | None) -> dict[str, Any]:
         for gold in golds:
             for form, how in forms:
                 if (_is_clean_math(gold) and _is_clean_math(form) and not _several_values(form, gold)
-                        and _math_verify_equal(gold, form)):
+                        and not _unsafe_factorial(form) and _math_verify_equal(gold, form)):
                     return upgraded(f"{how}+math_verify", form)
     return base
 

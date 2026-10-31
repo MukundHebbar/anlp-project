@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-27",
+  "checkpoint_step": 75,
+  "samples_per_question": 4,
+  "validation_questions": 348,
+  "splits": {
+    "dev": 199,
+    "val200": 149
+  },
+  "models": {
+    "mixed75": {
+      "pooled": {
+        "questions": 348,
+        "avg_at_4_percent": 71.04885057471265,
+        "pass_at_4_percent": 85.34482758620689
+      },
+      "by_split": {
+        "dev": {
+          "questions": 199,
+          "avg_at_4_percent": 71.73366834170854,
+          "pass_at_4_percent": 85.42713567839196
+        },
+        "val200": {
+          "questions": 149,
+          "avg_at_4_percent": 70.13422818791946,
+          "pass_at_4_percent": 85.23489932885906
+        }
+      }
+    },
+    "ctrl-s0": {
+      "pooled": {
+        "questions": 348,
+        "avg_at_4_percent": 63.14655172413793,
+        "pass_at_4_percent": 83.9080459770115
+      },
+      "by_split": {
+        "dev": {
+          "questions": 199,
+          "avg_at_4_percent": 63.06532663316583,
+          "pass_at_4_percent": 82.91457286432161
+        },
+        "val200": {
+          "questions": 149,
+          "avg_at_4_percent": 63.25503355704698,
+          "pass_at_4_percent": 85.23489932885906
+        }
+      }
+    },
+    "ctrl-s1": {
+      "pooled": {
+        "questions": 348,
+        "avg_at_4_percent": 68.24712643678161,
+        "pass_at_4_percent": 87.35632183908046
+      },
+      "by_split": {
+        "dev": {
+          "questions": 199,
+          "avg_at_4_percent": 69.84924623115577,
+          "pass_at_4_percent": 88.94472361809045
+        },
+        "val200": {
+          "questions": 149,
+          "avg_at_4_percent": 66.10738255033557,
+          "pass_at_4_percent": 85.23489932885906
+        }
+      }
+    },
+    "ctrl-lr1e-5-s0": {
+      "pooled": {
+        "questions": 348,
+        "avg_at_4_percent": 62.85919540229885,
+        "pass_at_4_percent": 83.9080459770115
+      },
+      "by_split": {
+        "dev": {
+          "questions": 199,
+          "avg_at_4_percent": 64.07035175879398,
+          "pass_at_4_percent": 83.41708542713567
+        },
+        "val200": {
+          "questions": 149,
+          "avg_at_4_percent": 61.241610738255034,
+          "pass_at_4_percent": 84.56375838926175
+        }
+      }
+    },
+    "ctrl-lr1e-5-s1": {
+      "pooled": {
+        "questions": 348,
+        "avg_at_4_percent": 63.14655172413793,
+        "pass_at_4_percent": 84.19540229885058
+      },
+      "by_split": {
+        "dev": {
+          "questions": 199,
+          "avg_at_4_percent": 63.19095477386934,
+          "pass_at_4_percent": 85.42713567839196
+        },
+        "val200": {
+          "questions": 149,
+          "avg_at_4_percent": 63.08724832214765,
+          "pass_at_4_percent": 82.5503355704698
+        }
+      }
+    },
+    "ctrl-lr6.7e-6-s0": {
+      "pooled": {
+        "questions": 348,
+        "avg_at_4_percent": 62.14080459770115,
+        "pass_at_4_percent": 84.77011494252874
+      },
+      "by_split": {
+        "dev": {
+          "questions": 199,
+          "avg_at_4_percent": 63.44221105527638,
+          "pass_at_4_percent": 85.42713567839196
+        },
+        "val200": {
+          "questions": 149,
+          "avg_at_4_percent": 60.40268456375839,
+          "pass_at_4_percent": 83.89261744966443
+        }
+      }
+    },
+    "ctrl-lr6.7e-6-s1": {
+      "pooled": {
+        "questions": 348,
+        "avg_at_4_percent": 61.27873563218391,
+        "pass_at_4_percent": 84.77011494252874
+      },
+      "by_split": {
+        "dev": {
+          "questions": 199,
+          "avg_at_4_percent": 62.814070351758794,
+          "pass_at_4_percent": 83.91959798994975
+        },
+        "val200": {
+          "questions": 149,
+          "avg_at_4_percent": 59.22818791946309,
+          "pass_at_4_percent": 85.90604026845638
+        }
+      }
+    }
+  },
+  "recovery": {
+    "training_job": 51700,
+    "node": "node07",
+    "account": "priyesh.shukla",
+    "dev_job": 52201,
+    "val200_job": 52202,
+    "earlier_environment_failures": [
+      51980,
+      52200
+    ]
+  },
+  "uncertainty": "Paired question bootstrap, 10000 resamples, seed 0; does not cover training-seed uncertainty.",
+  "decision_output": "348 validation questions, step 75\n  mixed75            avg@4 71.0  pass@4 85.3\n  ctrl-s0            avg@4 63.1  pass@4 83.9\n  ctrl-s1            avg@4 68.2  pass@4 87.4\n  ctrl-lr1e-5-s0     avg@4 62.9  pass@4 83.9\n  ctrl-lr1e-5-s1     avg@4 63.1  pass@4 84.2\n  ctrl-lr6.7e-6-s0   avg@4 62.1  pass@4 84.8\n  ctrl-lr6.7e-6-s1   avg@4 61.3  pass@4 84.8\n  lr 2e-5  : mixed - mean(seeds) +5.4 [+3.0, +7.8]; seed spread +5.1 [+2.3, +8.0] -> mixed beats it\n  lr 1e-5  : mixed - mean(seeds) +8.0 [+5.6, +10.5]; seed spread +0.3 [-2.5, +3.0] -> mixed beats it\n  lr 6.7e-6: mixed - mean(seeds) +9.3 [+6.9, +11.8]; seed spread -0.9 [-3.7, +2.0] -> mixed beats it\nTransfer by content supported: mixed beats the SOLVE-only control at every lr\n"
+}

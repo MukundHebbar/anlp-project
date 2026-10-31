@@ -9,7 +9,7 @@ tools for DeepMath SOLVE, JUDGE, and RECONSTRUCT tasks.
 for all three tasks: **4,000 questions each, 3,600 train / 400 test**. The three tasks use completely
 separate DeepMath-103K questions, matched by topic and difficulty distribution rather than by
 item, and every row has a `training` block (`input`, `chain_of_thought`, `final_answer`).
-Training uses on-policy distillation only; see the
+The reported transfer experiments use Dr. GRPO; historical OPD code and records are retained for provenance. See the
 [study design](docs/design/reasoning-transfer-study.md#fixed-design-decisions). The files are stored as `.jsonl.gz`. Check them with
 `.venv/bin/python scripts/audit_final_dataset.py`; this needs the DeepMath parquet files in
 `data/datasets/deepmath-103k/`, which are re-downloadable from HuggingFace `zwhe99/DeepMath-103K`.
@@ -178,3 +178,14 @@ V4 Flash SOLVE verification v2, DeepSeek EXPLAIN-v2 output, and Qwen3-4B SOLVE
 results. Raw transport logs, temporary bundles, old pilot runs, and incomplete
 experiments are retained locally only. Reports are stored beside the result they
 describe rather than in a separate unstructured report directory.
+
+## Consolidated project results (30 October 2026)
+
+- [Latest Phase 2 report](docs/reports/phase2-full-report.md) and [separately named working report](docs/reports/phase2-full-report_yashas.md).
+- [Completed Llama GRPO transfer matrix](artifacts/baselines/llama3b/grpo-matrix.md), [evidence](artifacts/baselines/llama3b/README.md), and [reproduction instructions](phase2/llama_transfer/README.md).
+- [Task-mixture experiment and SOLVE-only controls, including both seeds](phase2/mix_control/README.md).
+- [Local judge calibration](phase2/local_judge_calibration/README.md), [Ministral baseline](phase2/results/ministral-baseline/README.md), and [adapter archive inventory](phase2/results/adapter-archive/README.md).
+
+This collection is based on `phase2-experiments`. Independent Phase 3 verification work remains on
+[`phase3-verification-2026-10`](https://github.com/MukundHebbar/anlp-project/tree/phase3-verification-2026-10);
+its separate trainer/reward changes have not been merged here. Existing branches were not rewritten.

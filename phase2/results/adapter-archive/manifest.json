@@ -1,0 +1,1264 @@
+{
+  "base_model": "Qwen/Qwen3.5-2B",
+  "base_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "source_count": 157,
+  "unique_adapters": [
+    {
+      "name": "phase1-grpo/judge26",
+      "subfolder": "adapters/phase1-grpo/judge26",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/grpo/judge26",
+      "weight_sha256": "df9261c6afc7261fd94fe947fbf0001905b6ad66c201f6c166a325d7ebbc972d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "phase1-grpo/mixed75",
+      "subfolder": "adapters/phase1-grpo/mixed75",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/grpo/mixed75",
+      "weight_sha256": "7cd4dd58cd602d70d1885f16e36ae7c08364ceb47bcbed0edda6e6f2d0cad7bd",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "phase1-grpo/recon104",
+      "subfolder": "adapters/phase1-grpo/recon104",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/grpo/recon104",
+      "weight_sha256": "ec470c48c1f9896401f44d1fffd5b7054bae49dfca31d097d3c343644a799eb6",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "phase1-grpo/solve66",
+      "subfolder": "adapters/phase1-grpo/solve66",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/grpo/solve66",
+      "weight_sha256": "14112305fcd8e131c87bd6c347e55d6fb71e02c01cf0fc245c4f074e79b4dbf5",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step75",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step75",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step75",
+      "weight_sha256": "ca8c8350eb0cbe6995e9bf246570cac275b4350fc1a295aab3f3f8f208032003",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step75",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step75",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step75",
+      "weight_sha256": "32d98e98126b8e100c08daf28d011a6c842b182e8811f3a37bb34d0df72e1c3d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step75",
+      "subfolder": "adapters/mix-control/ctrl-s0/step75",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step75",
+      "weight_sha256": "f991e8590840b6ab29ca232846833de9c71629ab3c24ec9e4396f08f9437be8c",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step75",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step75",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step75",
+      "weight_sha256": "64a047804251e7c124bd5297fc401a7c8fabcf545826fc00e6ae9f2d91c64d90",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "f7e5a0e33c635ba999e4174dbd46ad7eff772f2d"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step75",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step75",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step75",
+      "weight_sha256": "a1d5a80f5d40b6acb39f9f4713554a1b0d83741ca9410a8f1b64f6d55f68c218",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step75",
+      "subfolder": "adapters/mix-control/ctrl-s1/step75",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step75",
+      "weight_sha256": "d53e856d46a6be9165634ca25e030c4dd8f5f3ed413f98354b0bc2a6b5dd31ec",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "phase1-sft/SJ-sft470",
+      "subfolder": "adapters/phase1-sft/SJ-sft470",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/SJ-sft470",
+      "weight_sha256": "ed09abeb46cdcd5186f91ea7dc9c8b2e39c5e6668e575ea6f0e87530093d10f8",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "phase1-sft/SS-sft470",
+      "subfolder": "adapters/phase1-sft/SS-sft470",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/SS-sft470",
+      "weight_sha256": "4211f81484e1ba59b8f6b287225644e56b7c5188ab9a81975bda7b209fd2a6af",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "phase1-sft/SS2-sft470-nofilter",
+      "subfolder": "adapters/phase1-sft/SS2-sft470-nofilter",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/SS2-sft470-nofilter",
+      "weight_sha256": "98eed6ddcc3f0c8ce1f1f86c0fe67aad31e7a0bfa4799890742ec8e6d940ff0b",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "phase1-sft/sft470-adapter",
+      "subfolder": "adapters/phase1-sft/sft470-adapter",
+      "source": "/home/mukund.hebbar/anlp-opd-shared/sft470-adapter",
+      "weight_sha256": "762a725e590f7fb18b70f71124961169bb5f990370f43e3195ca3ee5f411be70",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step32",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step32",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step32",
+      "weight_sha256": "fa78937760275b7f7b62f5458d010ee1f95f2f2df34a95a19cb2c22699889cee",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step40",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step40",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step40",
+      "weight_sha256": "42152b23b804f7ea0fcc2d630deec74fdcfe6ac98120b65927e954a40a266811",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "210f1567f3bd60c405ead81628465602191182b8"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step32",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step32",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step32",
+      "weight_sha256": "2e0f7cc60dc44fd5c2172f1961ac77160c15ce0d87bf5aeaede56d43fb98c7e3",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step40",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step40",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step40",
+      "weight_sha256": "8576444b4d922050b62ff4a6cd4f213242b588e3309418ca6aceb0cb1afed9f5",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "failure-driven/armA-s1/step32",
+      "subfolder": "adapters/failure-driven/armA-s1/step32",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armA-s1/adapters/step32",
+      "weight_sha256": "293c7a82e2f6b16f18baffec2b951ce2b7e2f52ccf8c8ec05fda18cd6835ca82",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "failure-driven/armA-s1/step40",
+      "subfolder": "adapters/failure-driven/armA-s1/step40",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armA-s1/adapters/step40",
+      "weight_sha256": "eafe56786e9543168211be4e67a867bb193ea5b2c6d3ba3e137bbc27b2a5779a",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "failure-driven/armR-prefix/step32",
+      "subfolder": "adapters/failure-driven/armR-prefix/step32",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armR-prefix/adapters/step32",
+      "weight_sha256": "9fe28a8f1ec98cf7bae4785d2b4e67b4dd706efc919dba7c01875db27e4efbcb",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "failure-driven/armR-prefix/step40",
+      "subfolder": "adapters/failure-driven/armR-prefix/step40",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armR-prefix/adapters/step40",
+      "weight_sha256": "e1be5c6f01fb3480d5df61a3e4d938befe5068e8a8c95bb963d155acb336c7bd",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step32",
+      "subfolder": "adapters/mix-control/ctrl-s0/step32",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step32",
+      "weight_sha256": "a0622cf7a9457ad5c9255bbbece6e56fc73a086fe96860b831a7ef1d43c762a1",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step40",
+      "subfolder": "adapters/mix-control/ctrl-s0/step40",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step40",
+      "weight_sha256": "5bcc0eec1519143228e483547165bf1b80352ef3955fdb2a567f3979095f7ef1",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "4593a2f71ff18fe816a21ab3b97eae3a0a2dcb24"
+    },
+    {
+      "name": "failure-driven/armB2/step32",
+      "subfolder": "adapters/failure-driven/armB2/step32",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armB2/adapters/step32",
+      "weight_sha256": "f0f845f73a944146d4e6f31c119368df0c2ee6d78b3807f44745d670f927412b",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armB2/step40",
+      "subfolder": "adapters/failure-driven/armB2/step40",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armB2/adapters/step40",
+      "weight_sha256": "7c1587aff5e916bd9717a7425c07e7e30bddf3b67549f034535ebd58e9db4e00",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armBown/step32",
+      "subfolder": "adapters/failure-driven/armBown/step32",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armBown/adapters/step32",
+      "weight_sha256": "98c3cb3760e859a5b5f44af9cdebe293d130473b9004560b5bd072703bf8a66e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armBown/step40",
+      "subfolder": "adapters/failure-driven/armBown/step40",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armBown/adapters/step40",
+      "weight_sha256": "fe9c1d9c39bd3620e416379887db651d80b62c9709f8ea0297561460984f1603",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armD2/step32",
+      "subfolder": "adapters/failure-driven/armD2/step32",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armD2/adapters/step32",
+      "weight_sha256": "d65808ae1c1df32c02c07f7d41f85639ca7450f9bb103effa652da3b0510b7e0",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armD2/step40",
+      "subfolder": "adapters/failure-driven/armD2/step40",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armD2/adapters/step40",
+      "weight_sha256": "73a8b2a1443643ec9345aef67462db0d742719926f1799cf1a15599da6c3a189",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armE/step32",
+      "subfolder": "adapters/failure-driven/armE/step32",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armE/adapters/step32",
+      "weight_sha256": "ad727994b51a66edb162ca2ce66f8c76f319e4fcc734ccd0f09265e1051c35be",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armE/step40",
+      "subfolder": "adapters/failure-driven/armE/step40",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armE/adapters/step40",
+      "weight_sha256": "64a0c204bb84405fa354e41f083d5f0d4db1e638c59513a18cc02e70818d6ee7",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "46d1f62f8e8eccd1a08063373d5c499c69f6efff"
+    },
+    {
+      "name": "failure-driven/armH/step32",
+      "subfolder": "adapters/failure-driven/armH/step32",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armH/adapters/step32",
+      "weight_sha256": "736355ae7d2b044c081e2257cdf765e9b268a62cea84e4c457ce01a048dda5a1",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "failure-driven/armH/step40",
+      "subfolder": "adapters/failure-driven/armH/step40",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armH/adapters/step40",
+      "weight_sha256": "28ed146a8090372da1a6185dd4b2d4a47737dba550c7a3b660ddfb141d72edf3",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "failure-driven/armA/step32",
+      "subfolder": "adapters/failure-driven/armA/step32",
+      "source": "/scratch/node07/mukund.hebbar/failure-driven/runs/armA/adapters/step32",
+      "weight_sha256": "685a5b06b2ca88afd47b180682869da9d18d9bb2ee403fa834dcc60c2d090615",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "failure-driven/armA/step40",
+      "subfolder": "adapters/failure-driven/armA/step40",
+      "source": "/scratch/node07/mukund.hebbar/failure-driven/runs/armA/adapters/step40",
+      "weight_sha256": "39143cd2df6c1616dc1ab2207e7d8cc1472d4f8cae02a9f7bc2db9a524b22635",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step32",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step32",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step32",
+      "weight_sha256": "df088c13a11d207ce06ecb58886806e7a3a173a75b4930f31c30f451326c474d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step40",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step40",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step40",
+      "weight_sha256": "1a3b823f120fa413ae0847713fbc89919a6daba4a2ba044d0309ac81614e685d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "failure-driven/armD2-s1/step32",
+      "subfolder": "adapters/failure-driven/armD2-s1/step32",
+      "source": "/scratch/node14/mukund.hebbar/failure-driven/runs/armD2-s1/adapters/step32",
+      "weight_sha256": "82c4cd4082941e202fbc676d14d7296936f2ad3d1b3525a2922440443599f30a",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "failure-driven/armD2-s1/step40",
+      "subfolder": "adapters/failure-driven/armD2-s1/step40",
+      "source": "/scratch/node14/mukund.hebbar/failure-driven/runs/armD2-s1/adapters/step40",
+      "weight_sha256": "180b9eb8660fe6acc5dd7d8f5bb11cc19fb05e00eb4c7c4167e4def3e9faff09",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "316e164cb4eb584b4fa45b5834eb7b30c2a4cf67"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step32",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step32",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step32",
+      "weight_sha256": "de985ff80759762cede03413050b9c31524a1e8c3d6b55173ca9fa6193693561",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step40",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step40",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step40",
+      "weight_sha256": "d066d65e9acbca07d1308db23650173a20e06341215db7c64d70799923d06120",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step32",
+      "subfolder": "adapters/mix-control/ctrl-s1/step32",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step32",
+      "weight_sha256": "434e6240e525d13359cfee28711202b9e00662e70822210b1d3942042f740140",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step40",
+      "subfolder": "adapters/mix-control/ctrl-s1/step40",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step40",
+      "weight_sha256": "2e960ec8a478adc6f18ac66cb11afec98ea301bd2082b5f3cd29fb377161439f",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "failure-driven/r1/step8",
+      "subfolder": "adapters/failure-driven/r1/step8",
+      "source": "/scratch/node03/mukund.hebbar/failure-driven/runs/r1/adapters/step8",
+      "weight_sha256": "10fdc36b24b0d9ffa3a285628f77407e5d9367509a7d9d343a1f1cd4591e3d99",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/best-step43",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/best-step43",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/best-step43",
+      "weight_sha256": "b4a437a6513ee6a1d5ceb3205bbd32747050b919d997bb8e3ef6d96169aef40b",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/best-step74",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/best-step74",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/best-step74",
+      "weight_sha256": "c9f51d33534a8d2e76a8cfee7416ef0b37eb5e50f3365a325eb4723540aa202e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step16",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step16",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step16",
+      "weight_sha256": "40b264ce7d2facd868632eb6d21688bb6c414b5dac8836c73f6da7fba6874d02",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "18a3258d4c515fd24416e57b2142badf65c2d29f"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step24",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step24",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step24",
+      "weight_sha256": "095fa4a974666223b14ae65bf71f9f4dba99ed680ebcb2314541fd9f79ec4d31",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step48",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step48",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step48",
+      "weight_sha256": "cba772c8c7779fa17378412c7359be931fb69c79482b3100b18808b7e5b8d13e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step56",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step56",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step56",
+      "weight_sha256": "3d099f0f11f320b4558138d13addf3960fdc544763c10ece8d6d31edff210a28",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step64",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step64",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step64",
+      "weight_sha256": "6eeebaef1aa54028ab3c3fe94d3f57ff3ac70b839a5a8b3748d6b784b3f2091e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step72",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step72",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step72",
+      "weight_sha256": "3b5f69cc3083ddb8e42a812159d640f848390098532d153209a30dea83360615",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s0/step8",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step8",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step8",
+      "weight_sha256": "02addd4ca8a618a31942ae5618c284e022256625ed7180bbb9ca3a49e51a2a1d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/best-step44",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/best-step44",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/best-step44",
+      "weight_sha256": "2fe733d511ac226ab45fea9d54585c7bef257f318281815cd8cc3cd0236af99b",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/best-step74",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/best-step74",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/best-step74",
+      "weight_sha256": "104fb4d2caf9703b744f04d11ac4bc2af23392faa4e9f0e66244ca284d2adc40",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "66e240adb9a9092b1875ce7bac0e63ae71d886b4"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step16",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step16",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step16",
+      "weight_sha256": "00898c9a1e9be6d8fe911bc2919bd3ebdfd0e16733203c6e993b0115ca2108de",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step24",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step24",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step24",
+      "weight_sha256": "3efab02f7591ed534913e5fddc192a6911bd92be23cb12f7c00570866f9b93d9",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step48",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step48",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step48",
+      "weight_sha256": "eaedcec9566373e3ed2722fc80fbc62c0b6df8afc613e1b6095677a6ccfe042a",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step56",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step56",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step56",
+      "weight_sha256": "8f30827480308cd8ad1382c217e213d8a09fda0f3bba3e50f616e0dd6ec069e3",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step64",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step64",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step64",
+      "weight_sha256": "14d129d0033f69d2093572778e2cf622a14d814261e932c9a88f7fd54b87bf85",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step72",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step72",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step72",
+      "weight_sha256": "7f0eaf96f99a3797f8cb2159c83e6cc659d634857149f0c75c3d9137059c5943",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "mix-control/ctrl-lr6.7e-6-s1/step8",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step8",
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step8",
+      "weight_sha256": "91366d49492914e95f643f67bc8109294e673dfda05bf1a347de45b07639b49e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "failure-driven/armA-s1/step16",
+      "subfolder": "adapters/failure-driven/armA-s1/step16",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armA-s1/adapters/step16",
+      "weight_sha256": "9580093f5abc184c1602c9ff021279e4181422783a4bb90d874ea05bb511ce93",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "5377c7f5c3ba936ede796adeec111387b7350967"
+    },
+    {
+      "name": "failure-driven/armA-s1/step24",
+      "subfolder": "adapters/failure-driven/armA-s1/step24",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armA-s1/adapters/step24",
+      "weight_sha256": "9ea2a1767ab95df18e7e2903e7143e9cf17209576e5ae122fafea75e753dfef0",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "failure-driven/armR-prefix/step16",
+      "subfolder": "adapters/failure-driven/armR-prefix/step16",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armR-prefix/adapters/step16",
+      "weight_sha256": "b3bb29953368b1c2855f1323fce1ce5a1060002db0a793e9b587c9377706d6df",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "failure-driven/armR-prefix/step24",
+      "subfolder": "adapters/failure-driven/armR-prefix/step24",
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/armR-prefix/adapters/step24",
+      "weight_sha256": "71c655464dfdf4df305c2565da3270dbaa0423e61b4b2eed5b4c5248985a1f06",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "mix-control/ctrl-s0/best-step25",
+      "subfolder": "adapters/mix-control/ctrl-s0/best-step25",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/best-step25",
+      "weight_sha256": "06145d07410ca6db1f6a86c8e3ec18ce41b08b7e5c76ac95c3579206e5970ac7",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "mix-control/ctrl-s0/best-step44",
+      "subfolder": "adapters/mix-control/ctrl-s0/best-step44",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/best-step44",
+      "weight_sha256": "a5a04ef5ec69a1c039483aa50ddb7e7bf477b079b2537c27f9d0d3e74c65c849",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step16",
+      "subfolder": "adapters/mix-control/ctrl-s0/step16",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step16",
+      "weight_sha256": "e661a04d5aa7cb1a541c41339759e726a36bd1ba603e13ba849f1d8cc10a7bbe",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step24",
+      "subfolder": "adapters/mix-control/ctrl-s0/step24",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step24",
+      "weight_sha256": "6cf2baab9484dc3cff1c41379537c355baf771094f232b9468acaa102a0e6152",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step48",
+      "subfolder": "adapters/mix-control/ctrl-s0/step48",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step48",
+      "weight_sha256": "b2963abe683ac457e37a2571e18be59250347c6143bed29313881388487eb97d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "70114d97b07db90dbfd117eb89f6294a83075546"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step56",
+      "subfolder": "adapters/mix-control/ctrl-s0/step56",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step56",
+      "weight_sha256": "de1796f0027dd7fac3f9f0a4a2ad3f9cc2ccc0981e5b816e8e2d60a445d72eb2",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step64",
+      "subfolder": "adapters/mix-control/ctrl-s0/step64",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step64",
+      "weight_sha256": "a0982f9013e9d127c160f3fcb978f06eced967efab7ee02b61e9afe1491c4f31",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step72",
+      "subfolder": "adapters/mix-control/ctrl-s0/step72",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step72",
+      "weight_sha256": "7f1fa0cb95e1a5510b4357a59d73ebbb3be9383d75d05d8fae154178dbefe9c2",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "mix-control/ctrl-s0/step8",
+      "subfolder": "adapters/mix-control/ctrl-s0/step8",
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step8",
+      "weight_sha256": "76e3387af22de20aadb7c8d13bf27c3bd6eca75e4d1218aa6404d5d4c668015a",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "failure-driven/armB/step16",
+      "subfolder": "adapters/failure-driven/armB/step16",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armB/adapters/step16",
+      "weight_sha256": "9f9ba9c313a6d1e13f4f38e2d9a76b6591d00fa61cfcf34ec793d665dcefc4e6",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "failure-driven/armB/step24",
+      "subfolder": "adapters/failure-driven/armB/step24",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armB/adapters/step24",
+      "weight_sha256": "b1364402c97f556b0afb661eb532ef1b8a7575a6b0617674dbd3af60ea8431c3",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "failure-driven/armB2/step16",
+      "subfolder": "adapters/failure-driven/armB2/step16",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armB2/adapters/step16",
+      "weight_sha256": "ad267c8aa14c81f6c68c148be43671cf8926c1d37526703523ede7c0ce82ea3e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "failure-driven/armB2/step24",
+      "subfolder": "adapters/failure-driven/armB2/step24",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armB2/adapters/step24",
+      "weight_sha256": "822c39c84b6e39d1501a3094a09743c90b9b3e68d36a1f6f4648a4091dc179e5",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "830fcd6bbaa3c1c0859e9643aa59b3e1e4176cbf"
+    },
+    {
+      "name": "failure-driven/armBown/step16",
+      "subfolder": "adapters/failure-driven/armBown/step16",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armBown/adapters/step16",
+      "weight_sha256": "1434f7a748827ef4e1fb13196ef7e314a6c6ce0ce77aba66f00b6d66f0f328c9",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armBown/step24",
+      "subfolder": "adapters/failure-driven/armBown/step24",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armBown/adapters/step24",
+      "weight_sha256": "3495e6841ea1441a26053b14a9acc3d65dec278e06bbcb2a54141eacef46bd22",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armD/step16",
+      "subfolder": "adapters/failure-driven/armD/step16",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armD/adapters/step16",
+      "weight_sha256": "02e0dbc17a94b5439ade1f7272c94e97c6e6b93fcff8cddc9d09b3e820c2bb43",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armD/step24",
+      "subfolder": "adapters/failure-driven/armD/step24",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armD/adapters/step24",
+      "weight_sha256": "cc4ffdae7b360fd4b18fb7e550d58ee5491d5715c342a38c96d27c19318970c0",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armD2/step16",
+      "subfolder": "adapters/failure-driven/armD2/step16",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armD2/adapters/step16",
+      "weight_sha256": "8f66063f390aedfc881bb71cfaae8495c975e6cc8754a083582b0f23556d5b2b",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armD2/step24",
+      "subfolder": "adapters/failure-driven/armD2/step24",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armD2/adapters/step24",
+      "weight_sha256": "9f30e556d23dfab0850e69c27f2b4dcc3bcbf54ed14efcb5243922dbcc7953ee",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armE/step16",
+      "subfolder": "adapters/failure-driven/armE/step16",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armE/adapters/step16",
+      "weight_sha256": "8e05bc457fe0d0d3dde3af9434f2fd27761eb785557cffd6a273f16ee6eadf43",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armE/step24",
+      "subfolder": "adapters/failure-driven/armE/step24",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armE/adapters/step24",
+      "weight_sha256": "02c24255ce10859c9b04849d4c147e4caafca3d8fe8c1f03d5a03c4effc60e29",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "ba05504c887390c0e6fe039ab5e74e1a2a4986a9"
+    },
+    {
+      "name": "failure-driven/armH/step16",
+      "subfolder": "adapters/failure-driven/armH/step16",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armH/adapters/step16",
+      "weight_sha256": "ddd3e4b4b11016a744ce5cf4f8e07baf628904a119fc5914f99bfcb5560497b0",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "failure-driven/armH/step24",
+      "subfolder": "adapters/failure-driven/armH/step24",
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/armH/adapters/step24",
+      "weight_sha256": "fe88b19d8e47e5da1bbe2e2c2833753effa5d6b7658abfec359b54b63218895d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/best-step42",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/best-step42",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/best-step42",
+      "weight_sha256": "dc5c8077544aa27fa09c11eb67a58a580680260146a215daf577ed8585d57e35",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/best-step74",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/best-step74",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/best-step74",
+      "weight_sha256": "7a329d865edcfadc22ca77c37be09238e5271855139466618b274f0002875e26",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step16",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step16",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step16",
+      "weight_sha256": "5be646e3fde21963e45d6f620a8ebbfc60cb56e67b6253a40f67c6594708e626",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step24",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step24",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step24",
+      "weight_sha256": "0c0122ee91e4d570840786638c2d7fa6614ef23cdda8f651c87b82054dde1e45",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step48",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step48",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step48",
+      "weight_sha256": "fa4b81acac9465773e867d263e6820a9d6893e4eb655e75e042ab3b6c0f71e6e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step56",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step56",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step56",
+      "weight_sha256": "bb36c446b6410c9d202f50cc75c37fa74edf279db72527e1ee2efb8b8f3b3811",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "a791da877225d86c21f4b6921a378d100eb35697"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step64",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step64",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step64",
+      "weight_sha256": "870e23d7a9c603be472ec754e9de824b0861972a3f8291d557ad683021da3296",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step72",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step72",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step72",
+      "weight_sha256": "0235982cb07aab9c69c9855c0802ca4473feb27f1cbe77c22217d5bfc106ff71",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s1/step8",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step8",
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step8",
+      "weight_sha256": "a7502175867327835083d9b744e76e211c0295eac5b10bc56337d00b90eea33d",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "failure-driven/armD2-s1/step16",
+      "subfolder": "adapters/failure-driven/armD2-s1/step16",
+      "source": "/scratch/node14/mukund.hebbar/failure-driven/runs/armD2-s1/adapters/step16",
+      "weight_sha256": "38ddf36888cc9be99d4b45a61983daaff9ec9c201ab3137ac4b92f77993832d4",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "failure-driven/armD2-s1/step24",
+      "subfolder": "adapters/failure-driven/armD2-s1/step24",
+      "source": "/scratch/node14/mukund.hebbar/failure-driven/runs/armD2-s1/adapters/step24",
+      "weight_sha256": "76c085e29e408050c03bd370ad5af778f4da0cf7b28bf0336eb0b5bf8bf255b6",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/best-step42",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/best-step42",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/best-step42",
+      "weight_sha256": "8426ee8954b5d32047803829c4415afaa0a0736aa04c55792df1016eb2ff46c4",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/best-step44",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/best-step44",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/best-step44",
+      "weight_sha256": "d30c018ff63e050007924207058b40c2eaa1e15eddfd01da3fb3622a5ace8139",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step16",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step16",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step16",
+      "weight_sha256": "e75500c425ac988056e98faa5dcff66fcc098aa55302ed54a9ab882593e34d39",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "df818e688ee424a0218aae0c3e866f7ea7e17f48"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step24",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step24",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step24",
+      "weight_sha256": "00aecc9b2a3d40fef633b2883e60c8ed7b2000c47ea46a39df1348fe12870a19",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step48",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step48",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step48",
+      "weight_sha256": "da320648b596ef8feca37d5e9bdad58ee0f29b7a15636178c52e91be0f61046b",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step56",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step56",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step56",
+      "weight_sha256": "2babb3995037f65a21767e6ccbb04026da582f875ca1cd221e2db9146ce35aac",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step64",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step64",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step64",
+      "weight_sha256": "c27a8b594af8516efcfe40839cc3d8a9f368706ee9b966693bd8eb6efdbf82ae",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step72",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step72",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step72",
+      "weight_sha256": "24cb8bfdabe3c7553045349203beb500f69d1735d9c53e4d665feee2f1f3eb19",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-lr1e-5-s0/step8",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step8",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step8",
+      "weight_sha256": "165758f3f3c5ef36f67db9330c46233f111926cab85d520833c4b29177ae6d6a",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-s1/best-step42",
+      "subfolder": "adapters/mix-control/ctrl-s1/best-step42",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/best-step42",
+      "weight_sha256": "1b9b6156fb6a2d95a6405de8a575e151e068e9eca050a86728a745d66d2d4223",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-s1/best-step74",
+      "subfolder": "adapters/mix-control/ctrl-s1/best-step74",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/best-step74",
+      "weight_sha256": "913cfdbf66ed36b0fd545a2ffd9550dc1eefdcb753fe35a9779976727b516cb6",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "55329680a656151e5c75020addb4d96ab34d44ce"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step16",
+      "subfolder": "adapters/mix-control/ctrl-s1/step16",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step16",
+      "weight_sha256": "62eee007cef623d1badca53ef4e723ed4857f17f67066344c1959feee5c7abad",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "6f70ba9fe421c6e69065a60715735a8d296b7bcb"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step24",
+      "subfolder": "adapters/mix-control/ctrl-s1/step24",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step24",
+      "weight_sha256": "1dfaa19b279504a3006083a878f5b8ab31a7cd49fdcaf91545a45901fc1c06d2",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "6f70ba9fe421c6e69065a60715735a8d296b7bcb"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step48",
+      "subfolder": "adapters/mix-control/ctrl-s1/step48",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step48",
+      "weight_sha256": "e07d683ba30024f7f2f70f8e5fe843b46bd7872226412612e886bc9f9ec0d704",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "6f70ba9fe421c6e69065a60715735a8d296b7bcb"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step56",
+      "subfolder": "adapters/mix-control/ctrl-s1/step56",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step56",
+      "weight_sha256": "95e71e42edec01efeff999e1202b2c7fd28951cdb7f7a20461fae2e96befc404",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "6f70ba9fe421c6e69065a60715735a8d296b7bcb"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step64",
+      "subfolder": "adapters/mix-control/ctrl-s1/step64",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step64",
+      "weight_sha256": "1e4340411db61ac519c52135fff88a4f21017e86f9577305137b8c16f00ea81e",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "6f70ba9fe421c6e69065a60715735a8d296b7bcb"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step72",
+      "subfolder": "adapters/mix-control/ctrl-s1/step72",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step72",
+      "weight_sha256": "4b5046af9126b986df4779a0df63eb69919aab0c24fbc711bef4671979f1dd38",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "6f70ba9fe421c6e69065a60715735a8d296b7bcb"
+    },
+    {
+      "name": "mix-control/ctrl-s1/step8",
+      "subfolder": "adapters/mix-control/ctrl-s1/step8",
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step8",
+      "weight_sha256": "d616f5f9d4442f9ed73aee0a511ff035fb987f90add202c9a8440cee865fe6df",
+      "bytes": 250130664,
+      "tensor_count": 300,
+      "commit": "6f70ba9fe421c6e69065a60715735a8d296b7bcb"
+    }
+  ],
+  "aliases": [
+    {
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/best-step75",
+      "name": "mix-control/ctrl-lr6.7e-6-s0/best-step75",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s0/step75",
+      "weight_sha256": "ca8c8350eb0cbe6995e9bf246570cac275b4350fc1a295aab3f3f8f208032003"
+    },
+    {
+      "source": "/scratch/node03/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/best-step75",
+      "name": "mix-control/ctrl-lr6.7e-6-s1/best-step75",
+      "subfolder": "adapters/mix-control/ctrl-lr6.7e-6-s1/step75",
+      "weight_sha256": "32d98e98126b8e100c08daf28d011a6c842b182e8811f3a37bb34d0df72e1c3d"
+    },
+    {
+      "source": "/scratch/node04/mukund.hebbar/failure-driven/runs/r1/adapters/step8",
+      "name": "failure-driven/r1/step8",
+      "subfolder": "adapters/failure-driven/r1/step8",
+      "weight_sha256": "10fdc36b24b0d9ffa3a285628f77407e5d9367509a7d9d343a1f1cd4591e3d99"
+    },
+    {
+      "source": "/scratch/node04/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/best-step75",
+      "name": "mix-control/ctrl-s0/best-step75",
+      "subfolder": "adapters/mix-control/ctrl-s0/step75",
+      "weight_sha256": "f991e8590840b6ab29ca232846833de9c71629ab3c24ec9e4396f08f9437be8c"
+    },
+    {
+      "source": "/scratch/node06/mukund.hebbar/failure-driven/runs/r1/adapters/step8",
+      "name": "failure-driven/r1/step8",
+      "subfolder": "adapters/failure-driven/r1/step8",
+      "weight_sha256": "10fdc36b24b0d9ffa3a285628f77407e5d9367509a7d9d343a1f1cd4591e3d99"
+    },
+    {
+      "source": "/scratch/node07/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/best-step75",
+      "name": "mix-control/ctrl-lr1e-5-s1/best-step75",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s1/step75",
+      "weight_sha256": "64a047804251e7c124bd5297fc401a7c8fabcf545826fc00e6ae9f2d91c64d90"
+    },
+    {
+      "source": "/scratch/node14/mukund.hebbar/failure-driven/runs/r1/adapters/step8",
+      "name": "failure-driven/r1/step8",
+      "subfolder": "adapters/failure-driven/r1/step8",
+      "weight_sha256": "10fdc36b24b0d9ffa3a285628f77407e5d9367509a7d9d343a1f1cd4591e3d99"
+    },
+    {
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/best-step75",
+      "name": "mix-control/ctrl-lr1e-5-s0/best-step75",
+      "subfolder": "adapters/mix-control/ctrl-lr1e-5-s0/step75",
+      "weight_sha256": "a1d5a80f5d40b6acb39f9f4713554a1b0d83741ca9410a8f1b64f6d55f68c218"
+    },
+    {
+      "source": "/scratch/node14/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/best-step75",
+      "name": "mix-control/ctrl-s1/best-step75",
+      "subfolder": "adapters/mix-control/ctrl-s1/step75",
+      "weight_sha256": "d53e856d46a6be9165634ca25e030c4dd8f5f3ed413f98354b0bc2a6b5dd31ec"
+    }
+  ],
+  "failures": [
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step32",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step32/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids/judge",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids/judge/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids/mixed",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids/mixed/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids/solve",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids/solve/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids/solve+J0-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids/solve+J0-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids/solve+J12-17",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids/solve+J12-17/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids/solve+J18-23",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids/solve+J18-23/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids/solve+J6-11",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids/solve+J6-11/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/judge",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/judge/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/judge+S0-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/judge+S0-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/mixed",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/mixed/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-0",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-0/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-11",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-11/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-2",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-2/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J0-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J1-1",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J1-1/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J2-2",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J2-2/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J3-3",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J3-3/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J3-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J3-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J4-4",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J4-4/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J5-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+J5-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+M0-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+M0-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+R0-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+R0-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+X0-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+X0-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/hybrids2/solve+Z0-5",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/hybrids2/solve+Z0-5/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step16",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step16/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step24",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step24/adapter_model.safetensors'"
+    },
+    {
+      "source": "/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step8",
+      "error": "PermissionError: [Errno 13] Permission denied: '/scratch/node07/yashas.kotre/phase2/selfjudge-run/adapters/step8/adapter_model.safetensors'"
+    }
+  ],
+  "code_provenance": {
+    "branch": "phase2-failure-driven",
+    "commit": "c71f10bbde8e91fd48db0eb0cb36b106412d4336",
+    "sha256": {
+      "scripts/qwen_judge_calibration.py": "9af4d2e6ad9defc7e67a9324fdadc9b7847a0d14169db6f24fb2b41549e2b54e",
+      "src/anlp_project/jev_judging.py": "9a71095d7ad52a8717dd992f6ead78b0fbc1c776814fa40a77e93842078ee72f",
+      "phase2/adapter_archive/upload_remote.py": "7f352ff08ea95c56e9b6fef3b3d8b93211ac88025537d3fa9a60ed7dab567b37"
+    },
+    "calibration_matches_historical_transfer_branch": true,
+    "excludes_opd_adapters": true
+  },
+  "remote_verified": true
+}

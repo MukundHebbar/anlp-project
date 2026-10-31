@@ -27,9 +27,23 @@ from anlp_project import baseline, opd  # noqa: E402
 from anlp_project.opd_monitor import repetition_score  # noqa: E402
 
 
+UIDS_FILE = ""  # --uids-file, for --split uids
+ROWS_FILE = ""  # --rows-file: answer-key rows for --split uids outside the train split
+
+
 def rows_for(split: str, task: str) -> list[dict]:
     if split == "test":
         return baseline.rows_for("test", [task])
+    if split == "uids":  # chosen train-split questions, in the file's order (e.g. a failure buffer's halves)
+        wanted = json.loads(Path(UIDS_FILE).read_text())
+        if ROWS_FILE:  # e.g. the failure-driven pool's SOLVE rows (phase2/failure_driven/data/solve_rows.jsonl)
+            by_uid = {r["uid"]: r for r in map(json.loads, open(ROWS_FILE)) if r["task"] == task}
+        else:
+            by_uid = {r["uid"]: r for r in baseline.load_rows(task, "train")}
+        missing = [u for u in wanted if u not in by_uid]
+        if missing:
+            raise SystemExit(f"{len(missing)} uids not in the {task} rows, e.g. {missing[:3]}")
+        return [by_uid[u] for u in wanted]
     return opd.slice_rows(task, "dev")
 
 
@@ -44,17 +58,22 @@ def run_task(a, task: str, out: Path) -> None:
     from vllm.lora.request import LoRARequest
 
     t0 = time.time()
-    llm = LLM(model=snapshot_download(a.model or opd.TRIAL_CONFIG["student"], local_files_only=True), dtype="bfloat16",
+    model_path = a.model_path or snapshot_download(a.model or opd.TRIAL_CONFIG["student"], local_files_only=True)
+    loader = ({"tokenizer_mode": "mistral", "config_format": "mistral", "load_format": "mistral"}
+              if a.model_format == "mistral" else {})
+    llm = LLM(model=model_path, dtype="bfloat16",
               language_model_only=True, max_model_len=a.max_cap + 8192, gpu_memory_utilization=0.90,
-              max_num_seqs=256, seed=s["seed"], enable_lora=bool(a.adapter), max_lora_rank=64)
+              max_num_seqs=256, seed=s["seed"], enable_lora=bool(a.adapter), max_lora_rank=64, **loader)
     tok = llm.get_tokenizer()
     lora = LoRARequest("trained", 1, a.adapter) if a.adapter else None
     n = a.samples if task in a.samples_tasks.split(",") else 1
     first = SamplingParams(n=n, temperature=s["temperature"], top_p=s["top_p"], top_k=s["top_k"],
                            max_tokens=a.first_cap, seed=s["seed"])
     t1 = time.time()
+    # Instruct-only models use their native chat format, without a Qwen-specific thinking switch.
+    chat_kwargs = {"chat_template_kwargs": {"enable_thinking": False}} if a.chat_mode == "nonthinking" else {}
     outs = llm.chat([[{"role": "user", "content": p}] for p in prompts], first, lora_request=lora, use_tqdm=False,
-                    chat_template_kwargs={"enable_thinking": False})
+                    **chat_kwargs)
     t2 = time.time()
     # One entry per (question, sample); each sample hitting first_cap is continued on its own.
     ids = {(i, k): list(c.token_ids) for i, o in enumerate(outs) for k, c in enumerate(o.outputs)}
@@ -116,6 +135,7 @@ def merge(a, out: Path, tasks: list[str]) -> None:
             "accuracy", "verdict_accuracy", "parse_rate", "token_cap_rate", "mean_completion_tokens")} for t in summary}))
     meta = {"name": a.name, "adapter": a.adapter or None, "split": a.split,
             "model": a.model or opd.TRIAL_CONFIG["student"], "prompts": "v2", "samples": a.samples,
+            "model_path": a.model_path or None, "model_format": a.model_format, "chat_mode": a.chat_mode,
             "samples_tasks": a.samples_tasks,
             "limit": a.limit or None, "sampling": {**baseline.EVAL_SAMPLING, "max_tokens": a.max_cap},
             "two_pass": {"first_cap": a.first_cap, "max_cap": a.max_cap,
@@ -133,7 +153,14 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--adapter", default="")
     ap.add_argument("--model", default="", help="model to evaluate (default: the student, opd.TRIAL_CONFIG)")
-    ap.add_argument("--split", default="test", choices=["test", "dev"])
+    ap.add_argument("--model-path", default="", help="local pinned model directory; --model still records its repo ID")
+    ap.add_argument("--model-format", choices=["auto", "mistral"], default="auto",
+                    help="mistral selects the native tokenizer, config and consolidated weight format")
+    ap.add_argument("--chat-mode", choices=["nonthinking", "instruct"], default="nonthinking",
+                    help="nonthinking passes enable_thinking=False; instruct uses the model's native instruct format")
+    ap.add_argument("--split", default="test", choices=["test", "dev", "uids"])
+    ap.add_argument("--uids-file", default="", help="--split uids: JSON list of train-split uids to evaluate")
+    ap.add_argument("--rows-file", default="", help="--split uids: jsonl rows to take them from (default: train split)")
     ap.add_argument("--tasks", default="solve,judge,reconstruct")
     ap.add_argument("--first-cap", type=int, default=16384)
     ap.add_argument("--max-cap", type=int, default=32768)
@@ -143,6 +170,10 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="only the first N questions per task (smoke test)")
     ap.add_argument("--worker", default="", help=argparse.SUPPRESS)
     a = ap.parse_args()
+    global UIDS_FILE, ROWS_FILE
+    UIDS_FILE, ROWS_FILE = a.uids_file, a.rows_file
+    if a.split == "uids" and not a.uids_file:
+        raise SystemExit("--split uids needs --uids-file")
     out = Path(a.out)
     tasks = a.tasks.split(",")
     if a.worker:
@@ -160,9 +191,10 @@ def main():
             if g not in running and pending:
                 t = pending.pop(0)
                 cmd = [sys.executable, __file__, "--name", a.name, "--out", str(out), "--adapter", a.adapter,
-                       "--model", a.model, "--samples", str(a.samples), "--samples-tasks", a.samples_tasks,
+                       "--model", a.model, "--model-path", a.model_path, "--model-format", a.model_format,
+                       "--chat-mode", a.chat_mode, "--samples", str(a.samples), "--samples-tasks", a.samples_tasks,
                        "--limit", str(a.limit),
-                       "--split", a.split, "--tasks", a.tasks, "--first-cap", str(a.first_cap), "--max-cap",
+                       "--split", a.split, "--uids-file", a.uids_file, "--rows-file", a.rows_file, "--tasks", a.tasks, "--first-cap", str(a.first_cap), "--max-cap",
                        str(a.max_cap), "--worker", t]
                 out.mkdir(parents=True, exist_ok=True)
                 running[g] = (t, subprocess.Popen(cmd, env={**os.environ, "CUDA_VISIBLE_DEVICES": g},

@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-27",
+  "questions": 400,
+  "samples_per_question": 4,
+  "metrics": {
+    "mean_accuracy": {
+      "ministral_percent": 27.5625,
+      "qwen_2b_percent": 52.625,
+      "paired_difference": {
+        "points": -25.0625,
+        "ci95": [
+          -28.75,
+          -21.375
+        ]
+      }
+    },
+    "pass_at_4": {
+      "ministral_percent": 53.75,
+      "qwen_2b_percent": 80.25,
+      "paired_difference": {
+        "points": -26.5,
+        "ci95": [
+          -31.75,
+          -21.25
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "name": "ministral-instruct-bf16-solve-test",
+    "adapter": null,
+    "split": "test",
+    "model": "mistralai/Ministral-3-3B-Instruct-2512-BF16",
+    "prompts": "v2",
+    "samples": 4,
+    "model_path": "/scratch/mukund.hebbar/ministral-baseline/model",
+    "model_format": "mistral",
+    "chat_mode": "instruct",
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 400,
+        "samples": 4,
+        "continued": 12,
+        "cap_hits_final": 8,
+        "mean_repetition": 0.06168365845517431,
+        "seconds": {
+          "load": 16,
+          "first_pass": 1683,
+          "continuation": 729
+        }
+      }
+    }
+  },
+  "diagnostics": {
+    "ministral": {
+      "gate_percent": 3.6875,
+      "cap_percent": 0.5,
+      "mean_completion_tokens": 1997.536875,
+      "answer_status_counts": {
+        "correct": 443,
+        "incorrect": 509,
+        "unverified": 560,
+        "missing": 88
+      }
+    },
+    "qwen_2b": {
+      "gate_percent": 6.75,
+      "cap_percent": 0.125,
+      "mean_completion_tokens": 8089.495,
+      "answer_status_counts": {
+        "correct": 893,
+        "incorrect": 344,
+        "unverified": 304,
+        "missing": 59
+      }
+    }
+  }
+}

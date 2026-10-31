@@ -1,0 +1,22 @@
+{
+ "attempts": 800,
+ "pass@1": 63.75,
+ "pass@4": 86.5,
+ "step_format_parsed": 93.9,
+ "mean_tokens": 6474,
+ "majority_vote": 73.5,
+ "spec": {
+  "auroc_own_attempts": 0.588,
+  "flags_wrong": 11.7,
+  "flags_correct": 4.3,
+  "vote_weighted_by_p_correct": 76.0,
+  "vote_drop_judged_incorrect": 75.5
+ },
+ "mixed": {
+  "auroc_own_attempts": 0.545,
+  "flags_wrong": 13.8,
+  "flags_correct": 8.6,
+  "vote_weighted_by_p_correct": 75.0,
+  "vote_drop_judged_incorrect": 74.0
+ }
+}

@@ -1,0 +1,75 @@
+{
+  "student": "meta-llama/Llama-3.2-3B-Instruct",
+  "teacher": null,
+  "objective": "Dr. GRPO: reward minus group mean, without standard-deviation scaling",
+  "loss_normalization": "constant norm_tokens per rollout, then mean over sampled rollouts",
+  "importance_sampling_cap": 2.0,
+  "lora": {
+    "r": 64,
+    "alpha": 64,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "optimizer": {
+    "name": "adamw",
+    "lr": 5e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.0,
+    "warmup_steps": 0,
+    "grad_clip": 1.0
+  },
+  "prompts_per_step": 8,
+  "samples_per_prompt": 8,
+  "updates_per_step": 1,
+  "rollout": {
+    "temperature": 1.0,
+    "top_p": 1.0
+  },
+  "rollout_max_tokens": {
+    "solve": 16384,
+    "judge": 16384,
+    "reconstruct": 16384
+  },
+  "logprob_chunk_tokens": 1024,
+  "auto_stop": {
+    "truncation_rise": 0.15,
+    "truncation_ceiling": 0.35,
+    "patience": 3,
+    "max_mean_abs_logprob_gap": 0.5,
+    "repetition_threshold": 0.5,
+    "repetition_patience": 2
+  },
+  "drop_truncated": false,
+  "kl_anchor_beta": 0.0,
+  "overlong_penalty": 0.0,
+  "soft_length_penalty": null,
+  "teacher_system_prompt": null,
+  "loss": "sampled",
+  "teacher_signal_max_len": null,
+  "sft_mix": null,
+  "verdict_reward": null,
+  "topk_k": 20,
+  "topk_divergence": "reverse",
+  "train_micro_tokens": 16384,
+  "keep_adapters_every": 8,
+  "method": "grpo",
+  "variant": "dr_grpo",
+  "norm_tokens": 16384,
+  "reward_timeout_s": 180,
+  "task": "judge",
+  "planned_steps": 104,
+  "seed": 0,
+  "reward_judge": "gemma",
+  "reward_judge_port": 8102
+}

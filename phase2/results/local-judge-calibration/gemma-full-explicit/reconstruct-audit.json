@@ -1,0 +1,55 @@
+{
+  "model": "gemma-full-explicit",
+  "n": 241,
+  "production_score_max_absolute_difference": 0,
+  "all_heldout": {
+    "calibrated_with_shortcut": {
+      "n": 241,
+      "pearson_r": 0.7780548872994876,
+      "mean_prediction": 47.17323651452282
+    },
+    "continuous_with_shortcut": {
+      "n": 241,
+      "pearson_r": 0.7626406541766644,
+      "mean_prediction": 47.67527070030253
+    },
+    "calibrated_rubric_only": {
+      "n": 241,
+      "pearson_r": 0.745204327940027,
+      "mean_prediction": 47.977178423236516
+    },
+    "continuous_rubric_only": {
+      "n": 241,
+      "pearson_r": 0.7315542886155538,
+      "mean_prediction": 48.43546018716744
+    }
+  },
+  "reference_non_shortcuts": {
+    "calibrated_with_shortcut": {
+      "n": 232,
+      "pearson_r": 0.7882938876940865,
+      "mean_prediction": 48.168103448275865
+    },
+    "continuous_with_shortcut": {
+      "n": 232,
+      "pearson_r": 0.7827043828283531,
+      "mean_prediction": 48.53722129916497
+    },
+    "calibrated_rubric_only": {
+      "n": 232,
+      "pearson_r": 0.7972163999917373,
+      "mean_prediction": 48.383620689655174
+    },
+    "continuous_rubric_only": {
+      "n": 232,
+      "pearson_r": 0.7921760597618462,
+      "mean_prediction": 48.7157525286034
+    }
+  },
+  "shortcut_flags_by_rule": {
+    "class_probability_rule": 4,
+    "class_argmax_rule": 4,
+    "states_value_rule": 1,
+    "repeats_answer_rule": 0
+  }
+}

@@ -1,0 +1,128 @@
+{
+ "false_alarm_target": 0.05,
+ "splits": 50,
+ "evaluations_per_team": 100,
+ "items": {
+  "correct": 200,
+  "step": 200,
+  "misread": 102
+ },
+ "spec": {
+  "threshold": {
+   "mean": 0.212
+  },
+  "correct": {
+   "judge": {
+    "mean": 0.045,
+    "sd": 0.014
+   },
+   "recon": {
+    "mean": 0.048,
+    "sd": 0.028
+   },
+   "judge_or_recon": {
+    "mean": 0.088,
+    "sd": 0.029
+   },
+   "recon_only": {
+    "mean": 0.043,
+    "sd": 0.027
+   }
+  },
+  "step": {
+   "judge": {
+    "mean": 0.645,
+    "sd": 0.034
+   },
+   "recon": {
+    "mean": 0.062,
+    "sd": 0.025
+   },
+   "judge_or_recon": {
+    "mean": 0.659,
+    "sd": 0.034
+   },
+   "recon_only": {
+    "mean": 0.014,
+    "sd": 0.01
+   }
+  },
+  "misread": {
+   "judge": {
+    "mean": 0.696,
+    "sd": 0.044
+   },
+   "recon": {
+    "mean": 0.352,
+    "sd": 0.068
+   },
+   "judge_or_recon": {
+    "mean": 0.782,
+    "sd": 0.045
+   },
+   "recon_only": {
+    "mean": 0.086,
+    "sd": 0.032
+   }
+  }
+ },
+ "mixed": {
+  "threshold": {
+   "mean": 0.25
+  },
+  "correct": {
+   "judge": {
+    "mean": 0.04,
+    "sd": 0.016
+   },
+   "recon": {
+    "mean": 0.063,
+    "sd": 0.026
+   },
+   "judge_or_recon": {
+    "mean": 0.1,
+    "sd": 0.03
+   },
+   "recon_only": {
+    "mean": 0.06,
+    "sd": 0.023
+   }
+  },
+  "step": {
+   "judge": {
+    "mean": 0.805,
+    "sd": 0.028
+   },
+   "recon": {
+    "mean": 0.046,
+    "sd": 0.023
+   },
+   "judge_or_recon": {
+    "mean": 0.815,
+    "sd": 0.027
+   },
+   "recon_only": {
+    "mean": 0.01,
+    "sd": 0.007
+   }
+  },
+  "misread": {
+   "judge": {
+    "mean": 0.736,
+    "sd": 0.046
+   },
+   "recon": {
+    "mean": 0.366,
+    "sd": 0.074
+   },
+   "judge_or_recon": {
+    "mean": 0.813,
+    "sd": 0.041
+   },
+   "recon_only": {
+    "mean": 0.078,
+    "sd": 0.027
+   }
+  }
+ }
+}

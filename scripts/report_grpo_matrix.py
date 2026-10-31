@@ -17,6 +17,7 @@ JUDGE V/L/E/M and RECONSTRUCT PC-v4 use the Qwen3.8-27B judge (judged-scores.qwe
 same questions; 95% bootstrap intervals over questions (2,000 resamples).
 """
 
+import gzip
 import json
 import os
 import random
@@ -37,7 +38,12 @@ OWN = {"solve": ("solve_acc",), "judge": ("judge_step", "judge_false_alarm", "ju
 
 
 def load(p):
-    return [json.loads(l) for l in p.open()] if p.exists() else []
+    if not p.exists():
+        p = p.with_name(p.name + ".gz")
+    if not p.exists():
+        return []
+    with (gzip.open(p, "rt") if p.suffix == ".gz" else p.open()) as stream:
+        return [json.loads(line) for line in stream]
 
 
 def per_question(d: Path) -> dict[str, dict[str, float]]:

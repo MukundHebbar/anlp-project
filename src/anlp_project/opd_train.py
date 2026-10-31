@@ -137,6 +137,23 @@ def keep_best(out: Path, metrics_path: Path, adapter: Path, step: int, window: i
     log(f"best-by-reward: step {step} rolling {window}-step reward {score:.4f} (kept: {[b['step'] for b in book]})")
 
 
+def make_reward_judge(tasks, cfg):
+    """Create a reward client only for tasks/backends that actually require one."""
+    backend = cfg.get("reward_judge", "jev")
+    if backend == "none" or not any(task in ("judge", "reconstruct") for task in tasks):
+        return None
+    if backend == "gemma":
+        from .gemma_judging import GemmaJudge
+        return GemmaJudge(cfg["reward_judge_path"], cfg["reward_calibration_dir"],
+                          port=cfg.get("reward_judge_port", 8002))
+    if backend == "qwen":
+        from huggingface_hub import snapshot_download
+        from .qwen_judging import MODEL, QwenJudge
+        return QwenJudge(snapshot_download(MODEL, local_files_only=True), port=cfg.get("reward_judge_port", 8002))
+    from .jev_judging import Jev
+    return Jev()
+
+
 def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: str, teacher_path: str, *,
             steps: int, meta: dict | None = None, teacher_gpus: str = "1", teacher_tp: int = 1,
             student_gpu: str = "0", student_mem: float = 0.30, teacher_mem: float = 0.88,
@@ -172,7 +189,7 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
     # task "mixed": every prompt carries its own task (opd.mixed_prompts); one cap for all of them.
     cap = max(cfg["rollout_max_tokens"].values()) if task == "mixed" else cfg["rollout_max_tokens"][task]
     task_of = {p_["uid"]: p_.get("task", task) for p_ in prompts}
-    max_len = cap + cfg.get("prompt_max_tokens", 4096)  # self-judge prompts hold a whole own attempt (up to ~17k)
+    max_len = cap + cfg.get("prompt_max_tokens", 4096)  # room for the prompt (long for judging own attempts)
     r = cfg["lora"]["r"]
     procs = []
     try:
@@ -190,18 +207,24 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
         # Load the trainer only after the student server has profiled its GPU's memory.
         import torch
         from peft import LoraConfig, PeftModel, get_peft_model
-        from transformers import AutoTokenizer, Qwen3_5ForConditionalGeneration
+        from transformers import AutoTokenizer
+        try:
+            from .student_models import load_student, stop_tokens
+        except ImportError:  # flat modules in the existing Modal image
+            from student_models import load_student, stop_tokens
 
         # The trainer shares the student's GPU, or gets its own (``trainer_gpu``): then vLLM keeps a whole GPU
         # for rollouts. Adapters reach vLLM through files either way, so the run stays strictly on-policy.
         os.environ["CUDA_VISIBLE_DEVICES"] = trainer_gpu or student_gpu
         tok = AutoTokenizer.from_pretrained(student_path)
-        model = Qwen3_5ForConditionalGeneration.from_pretrained(student_path, dtype=torch.bfloat16,
-                                                                attn_implementation="sdpa").to("cuda:0")
+        model = load_student(student_path, dtype=torch.bfloat16,
+                             attn_implementation="sdpa").to("cuda:0")
         start_adapter = resume_from or init_adapter
         if start_adapter:
             model = PeftModel.from_pretrained(model, start_adapter, is_trainable=True)
         else:
+            if cfg.get("seed", 0):  # a repeat run: a different LoRA initialisation (seed 0 keeps the original one)
+                torch.manual_seed(cfg["seed"])
             # A plain module list (vLLM reads it from adapter_config.json); the vision tower is excluded.
             model = get_peft_model(model, LoraConfig(r=r, lora_alpha=cfg["lora"]["alpha"], lora_dropout=cfg["lora"]["dropout"],
                                                      target_modules=list(cfg["lora"]["target_modules"]),
@@ -228,15 +251,23 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
         if grpo:
             from . import rewards as rw
             from .baseline import load_rows
-            from .jev_judging import Jev
             tasks_here = sorted(set(task_of.values()))
-            reward_rows = {r_["uid"]: r_ for t_ in tasks_here if t_ != "selfjudge" for r_ in load_rows(t_, "train")}
+            reward_rows = {r_["uid"]: r_ for t_ in tasks_here if t_ in ("solve", "judge", "reconstruct")
+                           for r_ in load_rows(t_, "train")}  # other tasks (repair) only come with extra_reward_rows
             reward_rows.update({p_["uid"]: p_ for p_ in prompts if task_of[p_["uid"]] == "selfjudge"})  # label inside
-            jev = Jev() if any(t_ not in ("solve", "selfjudge") for t_ in tasks_here) else None
+            if cfg.get("extra_reward_rows"):  # answer keys for prompts outside the train split
+                for line in open(cfg["extra_reward_rows"]):
+                    r_ = json.loads(line)
+                    if r_["uid"] in reward_rows:
+                        raise ValueError(f"extra reward row {r_['uid']} collides with a train-split uid")
+                    reward_rows[r_["uid"]] = r_
+            missing = [u for u in task_of if u not in reward_rows]
+            if missing:
+                raise ValueError(f"{len(missing)} prompts have no answer-key row, e.g. {missing[:3]}")
+            jev = make_reward_judge(tasks_here, cfg)
             G = cfg["samples_per_prompt"]
 
-        eos_ids = {tok.convert_tokens_to_ids(t) for t in ("<|im_end|>", "<|endoftext|>")}
-        im_end = tok.convert_tokens_to_ids("<|im_end|>")
+        eos_ids, im_end = stop_tokens(tok, student_path)
         prompt_ids, teacher_prompt_ids = {}, {}
         system = cfg.get("teacher_system_prompt")  # teacher-only instruction (context distillation)
         for p in prompts:
@@ -351,7 +382,8 @@ def run_opd(task: str, prompts: list[dict], cfg: dict, out: Path, student_path: 
             def rollout_and_score(i_p):
                 # Each rollout is sent to the teacher (GRPO: the reward) as soon as it finishes, so scoring
                 # overlaps with the slower rollouts instead of waiting for the whole batch.
-                ro = rollout(i_p[1]["uid"], model_name, step_ * 1000 + i_p[0])
+                # cfg["seed"] (default 0, the original runs) shifts every rollout's sampling seed for a repeat run.
+                ro = rollout(i_p[1]["uid"], model_name, step_ * 1000 + i_p[0] + cfg.get("seed", 0) * 10_000_000)
                 done_at.append(time.time())
                 if grpo:
                     text_ = tok.decode(ro["ids"], skip_special_tokens=True)

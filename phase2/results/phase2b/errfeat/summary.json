@@ -1,0 +1,232 @@
+{
+ "latents": {
+  "L12": [
+   {
+    "latent": 6926,
+    "sign": 1
+   },
+   {
+    "latent": 1695,
+    "sign": 1
+   },
+   {
+    "latent": 3232,
+    "sign": 1
+   },
+   {
+    "latent": 7069,
+    "sign": 1
+   },
+   {
+    "latent": 5328,
+    "sign": 1
+   }
+  ],
+  "L18": [
+   {
+    "latent": 6596,
+    "sign": 1
+   },
+   {
+    "latent": 7495,
+    "sign": 1
+   },
+   {
+    "latent": 4270,
+    "sign": 1
+   },
+   {
+    "latent": 5136,
+    "sign": 1
+   },
+   {
+    "latent": 7225,
+    "sign": 1
+   }
+  ]
+ },
+ "step_auroc_pb-easy": {
+  "L12:6926": {
+   "all": 0.7309,
+   "gsm8k": 0.7575,
+   "math": 0.7188
+  },
+  "L12:1695": {
+   "all": 0.691,
+   "gsm8k": 0.739,
+   "math": 0.6725
+  },
+  "L12:3232": {
+   "all": 0.6971,
+   "gsm8k": 0.7438,
+   "math": 0.6809
+  },
+  "L12:7069": {
+   "all": 0.7094,
+   "gsm8k": 0.7378,
+   "math": 0.7009
+  },
+  "L12:5328": {
+   "all": 0.6872,
+   "gsm8k": 0.6407,
+   "math": 0.7053
+  },
+  "L18:6596": {
+   "all": 0.8029,
+   "gsm8k": 0.7989,
+   "math": 0.8047
+  },
+  "L18:7495": {
+   "all": 0.7486,
+   "gsm8k": 0.7318,
+   "math": 0.7591
+  },
+  "L18:4270": {
+   "all": 0.7415,
+   "gsm8k": 0.7142,
+   "math": 0.7518
+  },
+  "L18:5136": {
+   "all": 0.6716,
+   "gsm8k": 0.729,
+   "math": 0.6864
+  },
+  "L18:7225": {
+   "all": 0.6986,
+   "gsm8k": 0.7056,
+   "math": 0.6947
+  }
+ },
+ "step_auroc_pb-hard": {
+  "L12:6926": {
+   "all": 0.7327,
+   "olympiadbench": 0.7329,
+   "omnimath": 0.7336
+  },
+  "L12:1695": {
+   "all": 0.7151,
+   "olympiadbench": 0.7126,
+   "omnimath": 0.7133
+  },
+  "L12:3232": {
+   "all": 0.6891,
+   "olympiadbench": 0.6959,
+   "omnimath": 0.6809
+  },
+  "L12:7069": {
+   "all": 0.6988,
+   "olympiadbench": 0.7066,
+   "omnimath": 0.6918
+  },
+  "L12:5328": {
+   "all": 0.7327,
+   "olympiadbench": 0.7312,
+   "omnimath": 0.7361
+  },
+  "L18:6596": {
+   "all": 0.792,
+   "olympiadbench": 0.7933,
+   "omnimath": 0.7936
+  },
+  "L18:7495": {
+   "all": 0.7382,
+   "olympiadbench": 0.7456,
+   "omnimath": 0.7313
+  },
+  "L18:4270": {
+   "all": 0.7602,
+   "olympiadbench": 0.7665,
+   "omnimath": 0.7564
+  },
+  "L18:5136": {
+   "all": 0.7447,
+   "olympiadbench": 0.7492,
+   "omnimath": 0.7324
+  },
+  "L18:7225": {
+   "all": 0.7635,
+   "olympiadbench": 0.7615,
+   "omnimath": 0.7619
+  }
+ },
+ "attempts_own-free": {
+  "attempts": 748,
+  "accuracy": 74.6,
+  "feature_max_auroc": 0.5169,
+  "feature_top2_auroc": 0.5057,
+  "verbal_spec_auroc": 0.5579,
+  "verbal_mixed_auroc": 0.5499,
+  "selection_majority": 78.46,
+  "selection_oracle_pass@k": 87.69,
+  "selection_feature_weighted_cv": 78.46,
+  "selection_lambdas": [
+   0.0,
+   0.0
+  ],
+  "selection_lowest_feature_attempt": 72.82
+ },
+ "attempts_own-step": {
+  "attempts": 740,
+  "accuracy": 68.9,
+  "feature_max_auroc": 0.4966,
+  "feature_top2_auroc": 0.4778,
+  "verbal_spec_auroc": 0.5832,
+  "verbal_mixed_auroc": 0.5372,
+  "selection_majority": 73.74,
+  "selection_oracle_pass@k": 86.87,
+  "selection_feature_weighted_cv": 75.76,
+  "selection_lambdas": [
+   0.25,
+   0.25
+  ],
+  "selection_lowest_feature_attempt": 70.71
+ },
+ "attempts_base-step": {
+  "attempts": 729,
+  "accuracy": 43.2,
+  "feature_max_auroc": 0.4971,
+  "feature_top2_auroc": 0.4865,
+  "verbal_spec_auroc": 0.5503,
+  "verbal_mixed_auroc": 0.4899,
+  "selection_majority": 53.0,
+  "selection_oracle_pass@k": 67.5,
+  "selection_feature_weighted_cv": 53.0,
+  "selection_lambdas": [
+   0.0,
+   0.0
+  ],
+  "selection_lowest_feature_attempt": 36.0
+ },
+ "attempts_9b-step": {
+  "attempts": 795,
+  "accuracy": 78.0,
+  "feature_max_auroc": 0.4978,
+  "feature_top2_auroc": 0.4962,
+  "verbal_spec_auroc": 0.6277,
+  "verbal_mixed_auroc": 0.5899,
+  "selection_majority": 86.5,
+  "selection_oracle_pass@k": 93.5,
+  "selection_feature_weighted_cv": 86.5,
+  "selection_lambdas": [
+   0.25,
+   0.0
+  ],
+  "selection_lowest_feature_attempt": 73.5
+ },
+ "attempts_condensed": {
+  "attempts": 634,
+  "accuracy": 71.6,
+  "feature_max_auroc": 0.525,
+  "feature_top2_auroc": 0.5248,
+  "verbal_spec_auroc": 0.6651,
+  "verbal_mixed_auroc": 0.5863,
+  "selection_majority": 75.65,
+  "selection_oracle_pass@k": 84.46,
+  "selection_feature_weighted_cv": 75.65,
+  "selection_lambdas": [
+   0.0,
+   0.0
+  ],
+  "selection_lowest_feature_attempt": 70.47
+ }
+}

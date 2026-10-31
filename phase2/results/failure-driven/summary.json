@@ -1,0 +1,299 @@
+{
+ "dev": {
+  "questions": 200,
+  "samples": 4,
+  "split": "SOLVE dev (opd slice), 16k + 32k continuation",
+  "results": {
+   "untrained": {
+    "mean_pass@1": 52.4,
+    "pass@4": 78.5
+   },
+   "step8": {
+    "mean_pass@1": 54.2,
+    "pass@4": 79.5
+   },
+   "A16": {
+    "mean_pass@1": 55.0,
+    "pass@4": 81.5
+   },
+   "A24": {
+    "mean_pass@1": 59.9,
+    "pass@4": 85.0
+   },
+   "B16": {
+    "mean_pass@1": 59.5,
+    "pass@4": 83.5
+   },
+   "B24": {
+    "mean_pass@1": 62.1,
+    "pass@4": 85.0
+   },
+   "D16": {
+    "mean_pass@1": 60.1,
+    "pass@4": 83.0
+   },
+   "D24": {
+    "mean_pass@1": 61.1,
+    "pass@4": 84.5
+   }
+  },
+  "paired_differences_95ci": {
+   "B16 - A16": {
+    "mean_pass@1": [
+     4.5,
+     0.6,
+     8.1
+    ],
+    "pass@4": [
+     2.0,
+     -2.5,
+     7.0
+    ]
+   },
+   "D16 - A16": {
+    "mean_pass@1": [
+     5.1,
+     1.4,
+     8.9
+    ],
+    "pass@4": [
+     1.5,
+     -3.0,
+     6.0
+    ]
+   },
+   "D16 - B16": {
+    "mean_pass@1": [
+     0.6,
+     -3.1,
+     4.2
+    ],
+    "pass@4": [
+     -0.5,
+     -5.5,
+     4.0
+    ]
+   },
+   "B24 - A24": {
+    "mean_pass@1": [
+     2.2,
+     -1.2,
+     6.0
+    ],
+    "pass@4": [
+     0.0,
+     -4.0,
+     4.0
+    ]
+   },
+   "D24 - A24": {
+    "mean_pass@1": [
+     1.2,
+     -3.0,
+     5.5
+    ],
+    "pass@4": [
+     -0.5,
+     -5.5,
+     4.5
+    ]
+   },
+   "D24 - B24": {
+    "mean_pass@1": [
+     -1.0,
+     -4.9,
+     2.8
+    ],
+    "pass@4": [
+     -0.5,
+     -4.0,
+     3.0
+    ]
+   },
+   "B16 - A24": {
+    "mean_pass@1": [
+     -0.4,
+     -4.4,
+     3.5
+    ],
+    "pass@4": [
+     -1.5,
+     -6.5,
+     3.5
+    ]
+   },
+   "A24 - untrained": {
+    "mean_pass@1": [
+     7.5,
+     3.4,
+     11.6
+    ],
+    "pass@4": [
+     6.5,
+     1.5,
+     12.0
+    ]
+   },
+   "B24 - untrained": {
+    "mean_pass@1": [
+     9.8,
+     6.0,
+     13.6
+    ],
+    "pass@4": [
+     6.5,
+     2.0,
+     11.0
+    ]
+   },
+   "D24 - untrained": {
+    "mean_pass@1": [
+     8.8,
+     4.8,
+     12.9
+    ],
+    "pass@4": [
+     6.0,
+     0.5,
+     11.5
+    ]
+   }
+  }
+ },
+ "recovery_of_round1_buffer": {
+  "armA-step16": {
+   "questions": 28,
+   "still_failing": 19,
+   "recovered": 9
+  },
+  "armA-step24": {
+   "questions": 28,
+   "still_failing": 19,
+   "recovered": 9
+  },
+  "armB-step16": {
+   "questions": 28,
+   "still_failing": 16,
+   "recovered": 12
+  },
+  "armB-step24": {
+   "questions": 28,
+   "still_failing": 13,
+   "recovered": 15
+  },
+  "armD-step16": {
+   "questions": 28,
+   "still_failing": 17,
+   "recovered": 11
+  },
+  "armD-step24": {
+   "questions": 28,
+   "still_failing": 13,
+   "recovered": 15
+  }
+ },
+ "buffers": {
+  "r1 steps 1-8 (shared)": {
+   "rule": "<= 1 strictly correct of 8; >= 5 verified wrong, finished, not gated (hint_pilot with max_correct 0)",
+   "questions": 256,
+   "zero_correct": 33,
+   "rollouts_correct": 1008,
+   "rollouts_unverified": 452,
+   "rollouts_gated": 123,
+   "rollouts_wrong": 400,
+   "rollouts_truncated": 65,
+   "buffer": 28,
+   "conversion": {
+    "questions": 28,
+    "diagnosis": {
+     "checked": 27,
+     "quote not verbatim in the attempt": 1
+    },
+    "reconstruct_accepted": 27,
+    "reconstruct_by_route": {
+     "v1_audit_and_copy": 18,
+     "UNREPAIRABLE": 1,
+     "audit_correct_corrected": 6,
+     "audit_correct_unchanged": 3
+    },
+    "reconstruct_mode_accepted": {
+     "targeted": 26,
+     "direct": 1
+    },
+    "judge_items": 28,
+    "calls": 122,
+    "failed_calls": 0,
+    "tokens": {
+     "completion_tokens": 437253,
+     "prompt_tokens": 899494,
+     "total_tokens": 1336747
+    }
+   }
+  },
+  "arm B steps 9-16": {
+   "rule": "<= 1 strictly correct of 8; >= 5 verified wrong, finished, not gated (hint_pilot with max_correct 0)",
+   "questions": 192,
+   "zero_correct": 32,
+   "rollouts_correct": 754,
+   "rollouts_wrong": 377,
+   "rollouts_unverified": 267,
+   "rollouts_gated": 78,
+   "rollouts_truncated": 60,
+   "buffer": 24,
+   "conversion": {
+    "questions": 24,
+    "diagnosis": {
+     "checked": 19,
+     "quote not verbatim in the attempt": 5
+    },
+    "reconstruct_accepted": 22,
+    "reconstruct_by_route": {
+     "v1_audit_and_copy": 12,
+     "UNREPAIRABLE": 2,
+     "audit_correct_corrected": 7,
+     "audit_correct_unchanged": 3
+    },
+    "reconstruct_mode_accepted": {
+     "targeted": 18,
+     "direct": 4
+    },
+    "judge_items": 24,
+    "calls": 108,
+    "failed_calls": 0,
+    "tokens": {
+     "completion_tokens": 421013,
+     "prompt_tokens": 741042,
+     "total_tokens": 1162055
+    }
+   }
+  },
+  "arm D steps 9-16": {
+   "rule": "<= 1 strictly correct of 8; >= 5 verified wrong, finished, not gated (hint_pilot with max_correct 0)",
+   "questions": 192,
+   "zero_correct": 25,
+   "rollouts_wrong": 342,
+   "rollouts_gated": 63,
+   "rollouts_correct": 780,
+   "rollouts_unverified": 284,
+   "rollouts_truncated": 67,
+   "buffer": 17
+  }
+ },
+ "compute": [
+  "GPU-hours (Slurm-charged)",
+  "  shared round 1 (steps 1-8)       2.583",
+  "  arm A (steps 9-24)               4.967",
+  "  arm B round 2 (steps 9-16)       5.117",
+  "  arm B round 3 (steps 17-24)      5.233",
+  "  arm D (steps 9-24)               5.334",
+  "  failed setup attempts (not charged to an arm): [('fd-r1-solve', 0.033), ('fd-armB-r2', 0.083), ('fd-armB-r2b', 0.017), ('fd-armB-r2c', 0.083), ('fd-armB-r2d', 1.317)]",
+  "  cumulative: arm A step 24 = 7.55; arm B step 16 = 7.70; arm B step 24 = 12.93; arm D step 24 = 7.92",
+  "Student rollout tokens (generated)",
+  "  shared round 1   solve: 16.47M tokens in 2048 rollouts",
+  "  arm A            solve: 35.12M tokens in 4096 rollouts",
+  "  arm B            aux: 6.98M tokens in 1024 rollouts, solve: 25.67M tokens in 3072 rollouts",
+  "  arm D            solve: 36.25M tokens in 4096 rollouts",
+  "Conversion (DeepSeek V4.1 Flash, arm B)",
+  "  230 calls, 1.64M prompt + 0.86M completion tokens"
+ ]
+}

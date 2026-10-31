@@ -1,0 +1,42 @@
+{
+  "rule": "mean strict accuracy on 200 dev x4; lower LR on tie",
+  "candidates": [
+    {
+      "arm": "solve-probe-low",
+      "lr": 1e-05,
+      "mean_dev_accuracy": 0.08875,
+      "sample_accuracy": [
+        0.075,
+        0.1,
+        0.085,
+        0.095
+      ],
+      "adapter": "/scratch/mukund.hebbar/llama-transfer/runs/llama3b-probes-20261028/solve-probe-low/adapters/step8"
+    },
+    {
+      "arm": "solve-probe-high",
+      "lr": 2e-05,
+      "mean_dev_accuracy": 0.1075,
+      "sample_accuracy": [
+        0.085,
+        0.075,
+        0.115,
+        0.155
+      ],
+      "adapter": "/scratch/mukund.hebbar/llama-transfer/runs/llama3b-probes-20261028/solve-probe-high/adapters/step8"
+    }
+  ],
+  "selected": {
+    "arm": "solve-probe-high",
+    "lr": 2e-05,
+    "mean_dev_accuracy": 0.1075,
+    "sample_accuracy": [
+      0.085,
+      0.075,
+      0.115,
+      0.155
+    ],
+    "adapter": "/scratch/mukund.hebbar/llama-transfer/runs/llama3b-probes-20261028/solve-probe-high/adapters/step8"
+  },
+  "test_used_for_selection": false
+}

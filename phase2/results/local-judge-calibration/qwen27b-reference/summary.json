@@ -1,0 +1,153 @@
+{
+  "model": "qwen27b-reference",
+  "fit_arms": [
+    "base",
+    "opd-judge-s52",
+    "opd-reconstruct-s52",
+    "sft-judge"
+  ],
+  "heldout_arms": [
+    "opd-judge-s104",
+    "opd-reconstruct-s104",
+    "opd-solve-s52",
+    "sft-reconstruct"
+  ],
+  "requests": 1947,
+  "failed_requests": 0,
+  "dimensions": {
+    "judge.M": {
+      "n": 339,
+      "heldout_n": 176,
+      "raw_kappa": 0.8050044317174609,
+      "calibrated_kappa": 0.8206136900078678
+    },
+    "judge.E": {
+      "n": 220,
+      "heldout_n": 111,
+      "raw_kappa": 0.8596607099050818,
+      "calibrated_kappa": 0.8651545156512622
+    },
+    "reconstruct.P": {
+      "n": 461,
+      "heldout_n": 241,
+      "raw_kappa": 0.5519875728946497,
+      "calibrated_kappa": 0.6750620213569194
+    },
+    "reconstruct.T": {
+      "n": 461,
+      "heldout_n": 241,
+      "raw_kappa": 0.6866233968303364,
+      "calibrated_kappa": 0.7104269993595275
+    },
+    "reconstruct.E": {
+      "n": 461,
+      "heldout_n": 241,
+      "raw_kappa": 0.6221176904630141,
+      "calibrated_kappa": 0.6160731129603623
+    },
+    "reconstruct.M": {
+      "n": 461,
+      "heldout_n": 241,
+      "raw_kappa": 0.6883402002947281,
+      "calibrated_kappa": 0.7551195873065499
+    }
+  },
+  "cutoffs": {
+    "judge.M": [
+      0.5,
+      1.8,
+      3.2,
+      3.7
+    ],
+    "judge.E": [
+      0.8,
+      2.2,
+      2.4,
+      3.2
+    ],
+    "reconstruct.P": [
+      0.2,
+      0.9,
+      1.9,
+      2.6
+    ],
+    "reconstruct.T": [
+      0.2,
+      1.3,
+      2.0,
+      2.8
+    ],
+    "reconstruct.E": [
+      1.0,
+      1.5,
+      2.4,
+      2.8
+    ],
+    "reconstruct.M": [
+      0.7,
+      2.2,
+      2.8,
+      3.2
+    ]
+  },
+  "heldout_cutoffs": {
+    "judge.M": [
+      0.6,
+      1.8,
+      3.1,
+      3.8
+    ],
+    "judge.E": [
+      1.4,
+      2.4,
+      2.5,
+      3.4
+    ],
+    "reconstruct.P": [
+      0.1,
+      1.0,
+      1.9,
+      2.8
+    ],
+    "reconstruct.T": [
+      0.1,
+      1.5,
+      2.1,
+      2.8
+    ],
+    "reconstruct.E": [
+      1.0,
+      1.7,
+      2.3,
+      3.0
+    ],
+    "reconstruct.M": [
+      0.7,
+      2.3,
+      2.8,
+      3.4
+    ]
+  },
+  "heldout_total_scores": {
+    "judge": {
+      "n": 176,
+      "pearson_r": 0.9379463775808149,
+      "mae": 7.528409090909091,
+      "reference_mean": 53.125,
+      "model_mean": 49.57386363636363
+    },
+    "reconstruct": {
+      "n": 241,
+      "pearson_r": 0.8029526854479769,
+      "mae": 8.739626556016598,
+      "reference_mean": 45.15041493775934,
+      "model_mean": 43.25726141078838
+    }
+  },
+  "heldout_shortcuts": {
+    "n": 241,
+    "reference_positive": 9,
+    "caught": 5,
+    "false_positive": 3
+  }
+}

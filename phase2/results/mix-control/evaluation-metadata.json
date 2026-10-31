@@ -1,0 +1,534 @@
+{
+  "dev:mixed75": {
+    "name": "mc-dev-mixed75-step75",
+    "adapter": "/home/mukund.hebbar/anlp-opd-shared/grpo/mixed75",
+    "split": "dev",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 39,
+        "cap_hits_final": 3,
+        "mean_repetition": 0.15555207151243866,
+        "seconds": {
+          "load": 45,
+          "first_pass": 1411,
+          "continuation": 207
+        }
+      }
+    }
+  },
+  "val200:mixed75": {
+    "name": "mc-val200-mixed75-step75",
+    "adapter": "/home/mukund.hebbar/anlp-opd-shared/grpo/mixed75",
+    "split": "uids",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 56,
+        "cap_hits_final": 1,
+        "mean_repetition": 0.15929981590359277,
+        "seconds": {
+          "load": 46,
+          "first_pass": 1502,
+          "continuation": 231
+        }
+      }
+    }
+  },
+  "dev:ctrl-s0": {
+    "name": "mc-dev-ctrl-s0-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step75",
+    "split": "dev",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 1,
+        "cap_hits_final": 0,
+        "mean_repetition": 0.11049781061009738,
+        "seconds": {
+          "load": 46,
+          "first_pass": 916,
+          "continuation": 12
+        }
+      }
+    }
+  },
+  "val200:ctrl-s0": {
+    "name": "mc-val200-ctrl-s0-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-s0/adapters/step75",
+    "split": "uids",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 3,
+        "cap_hits_final": 1,
+        "mean_repetition": 0.11406017453761719,
+        "seconds": {
+          "load": 47,
+          "first_pass": 945,
+          "continuation": 137
+        }
+      }
+    }
+  },
+  "dev:ctrl-s1": {
+    "name": "mc-dev-ctrl-s1-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step75",
+    "split": "dev",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 9,
+        "cap_hits_final": 0,
+        "mean_repetition": 0.1106062253562167,
+        "seconds": {
+          "load": 50,
+          "first_pass": 1098,
+          "continuation": 47
+        }
+      }
+    }
+  },
+  "val200:ctrl-s1": {
+    "name": "mc-val200-ctrl-s1-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-s1/adapters/step75",
+    "split": "uids",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 11,
+        "cap_hits_final": 0,
+        "mean_repetition": 0.11357761556762405,
+        "seconds": {
+          "load": 49,
+          "first_pass": 1143,
+          "continuation": 80
+        }
+      }
+    }
+  },
+  "dev:ctrl-lr1e-5-s0": {
+    "name": "mc-dev-ctrl-lr1e-5-s0-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step75",
+    "split": "dev",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 35,
+        "cap_hits_final": 0,
+        "mean_repetition": 0.11581234846397571,
+        "seconds": {
+          "load": 50,
+          "first_pass": 1326,
+          "continuation": 106
+        }
+      }
+    }
+  },
+  "val200:ctrl-lr1e-5-s0": {
+    "name": "mc-val200-ctrl-lr1e-5-s0-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s0/adapters/step75",
+    "split": "uids",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 28,
+        "cap_hits_final": 0,
+        "mean_repetition": 0.1199671814914589,
+        "seconds": {
+          "load": 50,
+          "first_pass": 1406,
+          "continuation": 118
+        }
+      }
+    }
+  },
+  "dev:ctrl-lr1e-5-s1": {
+    "name": "mc-dev-ctrl-lr1e-5-s1-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step75",
+    "split": "dev",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 45,
+        "cap_hits_final": 4,
+        "mean_repetition": 0.15715673540787511,
+        "seconds": {
+          "load": 169,
+          "first_pass": 1111,
+          "continuation": 261
+        }
+      }
+    }
+  },
+  "val200:ctrl-lr1e-5-s1": {
+    "name": "mc-val200-ctrl-lr1e-5-s1-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr1e-5-s1/adapters/step75",
+    "split": "uids",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 65,
+        "cap_hits_final": 10,
+        "mean_repetition": 0.1579975516245825,
+        "seconds": {
+          "load": 49,
+          "first_pass": 1219,
+          "continuation": 327
+        }
+      }
+    }
+  },
+  "dev:ctrl-lr6.7e-6-s0": {
+    "name": "mc-dev-ctrl-lr6.7e-6-s0-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step75",
+    "split": "dev",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 33,
+        "cap_hits_final": 1,
+        "mean_repetition": 0.11990816465085066,
+        "seconds": {
+          "load": 44,
+          "first_pass": 1280,
+          "continuation": 185
+        }
+      }
+    }
+  },
+  "val200:ctrl-lr6.7e-6-s0": {
+    "name": "mc-val200-ctrl-lr6.7e-6-s0-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s0/adapters/step75",
+    "split": "uids",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 21,
+        "cap_hits_final": 1,
+        "mean_repetition": 0.12172429830569063,
+        "seconds": {
+          "load": 44,
+          "first_pass": 1370,
+          "continuation": 163
+        }
+      }
+    }
+  },
+  "dev:ctrl-lr6.7e-6-s1": {
+    "name": "mc-dev-ctrl-lr6.7e-6-s1-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step75",
+    "split": "dev",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 34,
+        "cap_hits_final": 1,
+        "mean_repetition": 0.11840864320115299,
+        "seconds": {
+          "load": 72,
+          "first_pass": 1367,
+          "continuation": 191
+        }
+      }
+    }
+  },
+  "val200:ctrl-lr6.7e-6-s1": {
+    "name": "mc-val200-ctrl-lr6.7e-6-s1-step75",
+    "adapter": "/scratch/mukund.hebbar/mix-control/runs/ctrl-lr6.7e-6-s1/adapters/step75",
+    "split": "uids",
+    "model": "Qwen/Qwen3.5-2B",
+    "prompts": "v2",
+    "samples": 4,
+    "samples_tasks": "solve",
+    "limit": null,
+    "sampling": {
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "seed": 0,
+      "max_tokens": 32768
+    },
+    "two_pass": {
+      "first_cap": 16384,
+      "max_cap": 32768,
+      "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+    },
+    "platform": "turing-l40s",
+    "timing": {
+      "solve": {
+        "task": "solve",
+        "n": 200,
+        "samples": 4,
+        "continued": 24,
+        "cap_hits_final": 2,
+        "mean_repetition": 0.12059519776139588,
+        "seconds": {
+          "load": 46,
+          "first_pass": 1419,
+          "continuation": 179
+        }
+      }
+    }
+  }
+}

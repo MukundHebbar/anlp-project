@@ -1,0 +1,68 @@
+{
+ "name": "llama-judge-test-step78",
+ "adapter": "/scratch/mukund.hebbar/llama-transfer/runs/llama3b-judge/adapters/step78",
+ "split": "test",
+ "model": "meta-llama/Llama-3.2-3B-Instruct",
+ "prompts": "v2",
+ "samples": 4,
+ "model_path": "/scratch/mukund.hebbar/llama-transfer/models/llama",
+ "model_format": "auto",
+ "chat_mode": "instruct",
+ "samples_tasks": "solve",
+ "limit": null,
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0,
+  "max_tokens": 32768
+ },
+ "two_pass": {
+  "first_cap": 16384,
+  "max_cap": 32768,
+  "rule": "samples capped at first_cap are continued from their own tokens to max_cap"
+ },
+ "platform": "turing-l40s",
+ "timing": {
+  "solve": {
+   "task": "solve",
+   "n": 400,
+   "samples": 4,
+   "continued": 0,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.10303520847395195,
+   "seconds": {
+    "load": 37,
+    "first_pass": 631,
+    "continuation": 0
+   }
+  },
+  "judge": {
+   "task": "judge",
+   "n": 400,
+   "samples": 1,
+   "continued": 0,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.01592280273166649,
+   "seconds": {
+    "load": 41,
+    "first_pass": 34,
+    "continuation": 0
+   }
+  },
+  "reconstruct": {
+   "task": "reconstruct",
+   "n": 400,
+   "samples": 1,
+   "continued": 0,
+   "cap_hits_final": 0,
+   "mean_repetition": 0.07778568218394924,
+   "seconds": {
+    "load": 40,
+    "first_pass": 76,
+    "continuation": 0
+   }
+  }
+ },
+ "sample": 2
+}

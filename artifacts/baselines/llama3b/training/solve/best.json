@@ -1,0 +1,20 @@
+[
+ {
+  "step": 93,
+  "rolling_reward": 0.30566,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/llama-transfer/runs/llama3b-solve/adapters/best-step93"
+ },
+ {
+  "step": 106,
+  "rolling_reward": 0.30566,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/llama-transfer/runs/llama3b-solve/adapters/best-step106"
+ },
+ {
+  "step": 94,
+  "rolling_reward": 0.30127,
+  "window": 8,
+  "path": "/scratch/mukund.hebbar/llama-transfer/runs/llama3b-solve/adapters/best-step94"
+ }
+]

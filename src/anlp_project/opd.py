@@ -56,6 +56,7 @@ TRIAL_CONFIG: dict[str, Any] = {
     # teacher renormalised over the teacher's top-K tokens at each position (Revisiting OPD, 2603.25562).
     "loss": "sampled",
     "teacher_signal_max_len": None,  # e.g. 8192: longer rollouts get only the length penalties
+    "prompt_max_tokens": 4096,  # vLLM context = rollout cap + this (judging the policy's own long attempts needs more)
     # e.g. {"data": "<sft.jsonl>", "per_step": 16, "weight": 1.0}: an SFT term on teacher answers each step (Stable-OPD)
     "sft_mix": None,
     "verdict_reward": None,  # JUDGE/SOLVE, e.g. {"weight": 0.5}: OPD plus a REINFORCE term on the checkable answer
@@ -232,6 +233,16 @@ GRPO_CONFIG: dict[str, Any] = {
     # (adapters/best-step<k>, out/best.json). 0 = off.
     "best_window": 0,
     "best_keep": 3,
+    # Judge for the JUDGE explanation and RECONSTRUCT rewards: "jev" (the Jev API) or "qwen" (Qwen3.8-27B logit judge,
+    # qwen_judging.QwenJudge, already serving on reward_judge_port; it answers Jev's questions in Jev's shape), or "none"
+    # when every JUDGE row is verdict_only (no explanation score is needed).
+    "reward_judge": "jev",
+    "reward_judge_port": 8002,
+    # Optional jsonl of extra answer-key rows (FINAL-v3 row format) for prompts outside the train split, such as
+    # auxiliary items built during training (phase2/failure_driven).
+    "extra_reward_rows": None,
+    # Repeat runs: shifts the rollout sampling seeds and seeds the LoRA initialisation. 0 = the original runs.
+    "seed": 0,
 }
 
 
